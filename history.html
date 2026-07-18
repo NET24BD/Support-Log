@@ -1,1 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>History | LINK4 COMMUNICATION</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:#005C3A;
+min-height:100vh;
+overflow-x:hidden;
+position:relative;
+
+}
+
+/* ========= Background ========= */
+
+.bg{
+
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+
+}
+
+.circle1{
+
+position:absolute;
+width:700px;
+height:700px;
+
+background:#E53935;
+
+border-radius:50%;
+
+left:50%;
+top:50%;
+
+transform:translate(-50%,-50%);
+
+filter:blur(130px);
+
+opacity:.35;
+
+}
+
+.circle2{
+
+position:absolute;
+
+width:280px;
+height:280px;
+
+background:#0d8f5a;
+
+border-radius:50%;
+
+top:-100px;
+left:-100px;
+
+filter:blur(100px);
+
+}
+
+.circle3{
+
+position:absolute;
+
+width:300px;
+height:300px;
+
+background:#0d8f5a;
+
+right:-120px;
+bottom:-120px;
+
+border-radius:50%;
+
+filter:blur(100px);
+
+}
+
+/* ========= Header ========= */
+
+header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:25px 50px;
+
+}
+
+.back-btn{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+text-decoration:none;
+
+background:#ffffff;
+
+color:#006A4E;
+
+padding:12px 20px;
+
+border-radius:12px;
+
+font-weight:600;
+
+transition:.3s;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.back-btn:hover{
+
+background:#E53935;
+color:white;
+
+}
+
+.title{
+
+color:white;
+
+font-size:34px;
+
+font-weight:700;
+
+}
+
+/* ========= Main ========= */
+
+.container{
+
+max-width:1400px;
+
+margin:auto;
+
+padding:20px;
+
+}
+
+/* Search */
+
+.search-box{
+
+background:white;
+
+border-radius:15px;
+
+padding:18px 25px;
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+margin-bottom:30px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.search-box i{
+
+font-size:20px;
+
+color:#006A4E;
+
+}
+
+.search-box input{
+
+border:none;
+
+outline:none;
+
+width:100%;
+
+font-size:17px;
+
+}
+
+/* Table */
+
+.table-card{
+
+background:white;
+
+border-radius:20px;
+
+padding:25px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.18);
+
+overflow-x:auto;
+
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+min-width:1100px;
+
+}
+
+thead{
+
+background:#006A4E;
+
+color:white;
+
+}
+
+th{
+
+padding:18px;
+
+text-align:left;
+
+font-size:15px;
+
+}
+
+tbody tr{
+
+border-bottom:1px solid #eee;
+
+transition:.3s;
+
+}
+
+tbody tr:hover{
+
+background:#f5f5f5;
+
+}
+
+td{
+
+padding:18px;
+
+font-size:14px;
+
+color:#444;
+
+}
+
+/* Status */
+
+.status{
+
+padding:7px 14px;
+
+border-radius:30px;
+
+font-size:13px;
+
+font-weight:600;
+
+background:#dcfce7;
+
+color:#166534;
+
+display:inline-block;
+
+}
+
+/* View Button */
+
+.view-btn{
+
+background:#006A4E;
+
+color:white;
+
+border:none;
+
+padding:9px 16px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.view-btn:hover{
+
+background:#E53935;
+
+}
+
+/* Footer */
+
+.footer{
+
+margin-top:30px;
+
+text-align:center;
+
+color:white;
+
+opacity:.8;
+
+padding-bottom:20px;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+header{
+
+padding:20px;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.title{
+
+font-size:28px;
+
+}
+
+.search-box{
+
+padding:15px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="bg">
+
+<div class="circle1"></div>
+
+<div class="circle2"></div>
+
+<div class="circle3"></div>
+
+</div>
+
+<header>
+
+<a href="index.html" class="back-btn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back
+
+</a>
+
+<div class="title">
+
+History
+
+</div>
+
+<div style="width:90px;"></div>
+
+</header>
+
+<div class="container">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+id="search"
+placeholder="Search by IP, Problem, Reference...">
+
+</div>
+
+<div class="table-card">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>IP Address</th>
+
+<th>Problem</th>
+
+<th>Date</th>
+
+<th>Reference</th>
+
+<th>Support By</th>
+
+<th>Work</th>
+
+<th>Call By</th>
+
+<th>Call Work</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="historyTable">
+  <!-- ========================= -->
+<!-- History Table Data -->
+<!-- ========================= -->
+
+<tr>
+
+<td>103.120.10.25</td>
+
+<td>Internet Down</td>
+
+<td>18 Jul 2026</td>
+
+<td>REF-1001</td>
+
+<td>Rahim</td>
+
+<td>Fiber Checked</td>
+
+<td>Karim</td>
+
+<td>Resolved</td>
+
+<td><span class="status">Completed</span></td>
+
+<td>
+
+<button class="view-btn"
+
+data-ip="103.120.10.25"
+
+data-problem="Internet Down"
+
+data-date="18 Jul 2026"
+
+data-ref="REF-1001"
+
+data-support="Rahim"
+
+data-work="Fiber Checked"
+
+data-call="Karim"
+
+data-callwork="Resolved">
+
+<i class="fa-solid fa-eye"></i>
+
+View
+
+</button>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>103.120.10.41</td>
+
+<td>ONU Offline</td>
+
+<td>19 Jul 2026</td>
+
+<td>REF-1002</td>
+
+<td>Hasan</td>
+
+<td>ONU Restart</td>
+
+<td>Sabbir</td>
+
+<td>Customer OK</td>
+
+<td><span class="status">Completed</span></td>
+
+<td>
+
+<button class="view-btn"
+
+data-ip="103.120.10.41"
+
+data-problem="ONU Offline"
+
+data-date="19 Jul 2026"
+
+data-ref="REF-1002"
+
+data-support="Hasan"
+
+data-work="ONU Restart"
+
+data-call="Sabbir"
+
+data-callwork="Customer OK">
+
+<i class="fa-solid fa-eye"></i>
+
+View
+
+</button>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>103.120.11.12</td>
+
+<td>Slow Speed</td>
+
+<td>20 Jul 2026</td>
+
+<td>REF-1003</td>
+
+<td>Nayeem</td>
+
+<td>Bandwidth Increased</td>
+
+<td>Jony</td>
+
+<td>Resolved</td>
+
+<td><span class="status">Completed</span></td>
+
+<td>
+
+<button class="view-btn"
+
+data-ip="103.120.11.12"
+
+data-problem="Slow Speed"
+
+data-date="20 Jul 2026"
+
+data-ref="REF-1003"
+
+data-support="Nayeem"
+
+data-work="Bandwidth Increased"
+
+data-call="Jony"
+
+data-callwork="Resolved">
+
+<i class="fa-solid fa-eye"></i>
+
+View
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="footer">
+
+© 2026 LINK4 COMMUNICATION | All Rights Reserved
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- View Details Modal -->
+<!-- ========================= -->
+
+<div id="viewModal"
+
+style="display:none;
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+justify-content:center;
+align-items:center;
+z-index:999;">
+
+<div style="
+background:#fff;
+width:95%;
+max-width:600px;
+border-radius:20px;
+padding:30px;
+position:relative;
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+">
+
+<span id="closeModal"
+
+style="
+position:absolute;
+right:20px;
+top:15px;
+font-size:28px;
+cursor:pointer;
+color:#E53935;
+font-weight:bold;">
+
+&times;
+
+</span>
+
+<h2 style="margin-bottom:25px;color:#006A4E;">
+
+History Details
+
+</h2>
+
+<div id="modalContent">
+
+</div>
+
+</div>
+
+</div>
+<script>
+
+// ==============================
+// Search
+// ==============================
+
+const search = document.getElementById("search");
+const rows = document.querySelectorAll("#historyTable tr");
+
+search.addEventListener("keyup", function(){
+
+const value = this.value.toLowerCase();
+
+rows.forEach(row=>{
+
+const text = row.innerText.toLowerCase();
+
+row.style.display = text.includes(value) ? "" : "none";
+
+});
+
+});
+
+// ==============================
+// View Modal
+// ==============================
+
+const modal = document.getElementById("viewModal");
+const modalContent = document.getElementById("modalContent");
+const closeModal = document.getElementById("closeModal");
+
+document.querySelectorAll(".view-btn").forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+modal.style.display="flex";
+
+modalContent.innerHTML=`
+
+<table style="width:100%;border-collapse:collapse;">
+
+<tr>
+<td style="padding:12px;font-weight:600;">IP Address</td>
+<td>${btn.dataset.ip}</td>
+</tr>
+
+<tr>
+<td style="padding:12px;font-weight:600;">Problem</td>
+<td>${btn.dataset.problem}</td>
+</tr>
+
+<tr>
+<td style="padding:12px;font-weight:600;">Date</td>
+<td>${btn.dataset.date}</td>
+</tr>
+
+<tr>
+<td style="padding:12px;font-weight:600;">Reference</td>
+<td>${btn.dataset.ref}</td>
+</tr>
+
+<tr>
+<td style="padding:12px;font-weight:600;">Support By</td>
+<td>${btn.dataset.support}</td>
+</tr>
+
+<tr>
+<td style="padding:12px;font-weight:600;">Support Work</td>
+<td>${btn.dataset.work}</td>
+</tr>
+
+<tr>
+<td style="padding:12px;font-weight:600;">Call By</td>
+<td>${btn.dataset.call}</td>
+</tr>
+
+<tr>
+<td style="padding:12px;font-weight:600;">Call Work</td>
+<td>${btn.dataset.callwork}</td>
+</tr>
+
+</table>
+
+`;
+
+});
+
+});
+
+// Close Button
+
+closeModal.onclick=function(){
+
+modal.style.display="none";
+
+}
+
+// Click Outside
+
+window.onclick=function(e){
+
+if(e.target==modal){
+
+modal.style.display="none";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

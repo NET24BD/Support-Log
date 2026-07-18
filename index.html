@@ -5,142 +5,213 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dashboard</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:25px;
+background:#006A4E;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+position:relative;
+}
+
+/* Bangladesh Flag Red Circle */
+
+body::before{
+
+content:"";
+position:absolute;
+width:700px;
+height:700px;
+background:#F42A41;
+border-radius:50%;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+z-index:0;
+
 }
 
 .container{
-    width:100%;
-    max-width:1100px;
+
+position:relative;
+z-index:5;
+
+width:100%;
+max-width:1100px;
+
+padding:30px;
+
 }
 
 .header{
-    text-align:center;
-    margin-bottom:40px;
+
+text-align:center;
+margin-bottom:45px;
+
 }
 
 .header h1{
-    color:#fff;
-    font-size:38px;
-    font-weight:700;
+
+color:white;
+font-size:42px;
+font-weight:700;
+
 }
 
 .header p{
-    color:#cbd5e1;
-    margin-top:10px;
-    font-size:16px;
+
+color:white;
+opacity:.9;
+margin-top:10px;
+font-size:17px;
+
 }
 
 .grid{
 
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+gap:25px;
 
 }
 
 .card{
 
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:22px;
-    padding:40px 20px;
-    text-align:center;
-    color:white;
-    cursor:pointer;
-    transition:.35s;
+background:#fff;
+
+border-radius:18px;
+
+padding:35px 20px;
+
+text-align:center;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:0 12px 35px rgba(0,0,0,.18);
 
 }
 
 .card:hover{
 
-    transform:translateY(-10px);
-    box-shadow:0 20px 40px rgba(0,0,0,.35);
-    background:rgba(255,255,255,.14);
+transform:translateY(-10px);
+
+box-shadow:0 18px 45px rgba(0,0,0,.30);
 
 }
 
 .icon{
 
-    width:90px;
-    height:90px;
-    margin:auto;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:38px;
-    color:#fff;
-    margin-bottom:25px;
+width:80px;
+height:80px;
+
+margin:auto;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:#006A4E;
+
+color:white;
+
+font-size:32px;
+
+margin-bottom:20px;
+
+transition:.3s;
 
 }
 
-.new .icon{
-background:#16a34a;
-}
+.card:hover .icon{
 
-.support .icon{
-background:#2563eb;
-}
+background:#F42A41;
+transform:rotate(8deg);
 
-.call .icon{
-background:#ea580c;
-}
-
-.history .icon{
-background:#7c3aed;
 }
 
 .card h2{
 
-    font-size:24px;
-    margin-bottom:12px;
+font-size:24px;
+margin-bottom:10px;
+color:#222;
 
 }
 
 .card p{
 
-    color:#d1d5db;
-    font-size:15px;
-    line-height:24px;
+color:#666;
+font-size:15px;
+line-height:24px;
 
 }
 
 .footer{
 
-    text-align:center;
-    margin-top:40px;
-    color:#94a3b8;
-    font-size:14px;
+text-align:center;
+margin-top:45px;
+color:white;
+opacity:.9;
 
 }
 
-@media(max-width:600px){
+/* Mobile */
+
+@media(max-width:768px){
+
+body::before{
+
+width:450px;
+height:450px;
+
+}
 
 .header h1{
-font-size:28px;
+
+font-size:30px;
+
+}
+
+.header p{
+
+font-size:15px;
+
 }
 
 .card{
-padding:30px 15px;
+
+padding:28px 15px;
+
+}
+
+.icon{
+
+width:70px;
+height:70px;
+font-size:28px;
+
 }
 
 }
@@ -155,16 +226,19 @@ padding:30px 15px;
 <div class="header">
 
 <h1>Dashboard</h1>
-<p>Select an option to continue</p>
+
+<p>Select an option</p>
 
 </div>
 
 <div class="grid">
 
-<div class="card new" onclick="location.href='new-entry.html'">
+<div class="card" onclick="location.href='new-entry.html'">
 
 <div class="icon">
-<i class="fa-solid fa-plus"></i>
+
+<i class="fa-solid fa-user-plus"></i>
+
 </div>
 
 <h2>New Entry</h2>
@@ -173,42 +247,45 @@ padding:30px 15px;
 
 </div>
 
-
-<div class="card support" onclick="location.href='pending-support.html'">
+<div class="card" onclick="location.href='pending-support.html'">
 
 <div class="icon">
+
 <i class="fa-solid fa-headset"></i>
+
 </div>
 
 <h2>Pending Support</h2>
 
-<p>View all pending support requests.</p>
+<p>Pending support requests.</p>
 
 </div>
 
-
-<div class="card call" onclick="location.href='pending-call.html'">
+<div class="card" onclick="location.href='pending-call.html'">
 
 <div class="icon">
-<i class="fa-solid fa-phone"></i>
+
+<i class="fa-solid fa-phone-volume"></i>
+
 </div>
 
 <h2>Pending Call</h2>
 
-<p>See all pending customer calls.</p>
+<p>Customer pending calls.</p>
 
 </div>
 
-
-<div class="card history" onclick="location.href='history.html'">
+<div class="card" onclick="location.href='history.html'">
 
 <div class="icon">
+
 <i class="fa-solid fa-clock-rotate-left"></i>
+
 </div>
 
 <h2>History</h2>
 
-<p>Open activity and update history.</p>
+<p>View complete history.</p>
 
 </div>
 

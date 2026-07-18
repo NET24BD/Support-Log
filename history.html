@@ -522,7 +522,13 @@ History Details
 
 </h2>
 
-<div id="modalContent">
+<div id="modalContent"
+
+style="
+max-height:70vh;
+overflow-y:auto;
+overflow-x:hidden;
+">
 
 </div>
 
@@ -557,19 +563,44 @@ border-collapse:collapse;
 
 }
 
+.detail-table{
+
+width:100%;
+border-collapse:collapse;
+table-layout:fixed;
+
+}
+
+
 .detail-table td{
 
 padding:14px;
 
 border-bottom:1px solid #eee;
 
+word-break:break-word;
+
+overflow-wrap:anywhere;
+
+white-space:normal;
+
 }
+
 
 .detail-table td:first-child{
 
 font-weight:700;
+
 color:#006A4E;
-width:180px;
+
+width:35%;
+
+}
+
+
+.detail-table td:last-child{
+
+width:65%;
 
 }
 

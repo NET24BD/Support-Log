@@ -34,7 +34,9 @@ position:relative;
 
 }
 
-/* ========= Background ========= */
+/* ===========================
+Background
+=========================== */
 
 .bg{
 
@@ -51,6 +53,7 @@ z-index:-1;
 .circle1{
 
 position:absolute;
+
 width:700px;
 height:700px;
 
@@ -63,7 +66,7 @@ top:50%;
 
 transform:translate(-50%,-50%);
 
-filter:blur(130px);
+filter:blur(140px);
 
 opacity:.35;
 
@@ -73,17 +76,17 @@ opacity:.35;
 
 position:absolute;
 
-width:280px;
-height:280px;
+width:260px;
+height:260px;
 
-background:#0d8f5a;
+background:#0D8F5A;
 
 border-radius:50%;
 
-top:-100px;
-left:-100px;
+left:-120px;
+top:-120px;
 
-filter:blur(100px);
+filter:blur(90px);
 
 }
 
@@ -94,18 +97,20 @@ position:absolute;
 width:300px;
 height:300px;
 
-background:#0d8f5a;
+background:#0D8F5A;
+
+border-radius:50%;
 
 right:-120px;
 bottom:-120px;
 
-border-radius:50%;
-
-filter:blur(100px);
+filter:blur(90px);
 
 }
 
-/* ========= Header ========= */
+/* ===========================
+Header
+=========================== */
 
 header{
 
@@ -113,19 +118,13 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 
-padding:25px 50px;
+padding:25px 40px;
 
 }
 
-.back-btn{
+.back{
 
-display:flex;
-align-items:center;
-gap:10px;
-
-text-decoration:none;
-
-background:#ffffff;
+background:#fff;
 
 color:#006A4E;
 
@@ -133,36 +132,62 @@ padding:12px 20px;
 
 border-radius:12px;
 
+text-decoration:none;
+
 font-weight:600;
 
 transition:.3s;
 
-box-shadow:0 10px 25px rgba(0,0,0,.15);
+box-shadow:0 15px 35px rgba(0,0,0,.15);
 
 }
 
-.back-btn:hover{
+.back:hover{
 
 background:#E53935;
+
 color:white;
 
 }
 
 .title{
 
-color:white;
-
-font-size:34px;
+font-size:36px;
 
 font-weight:700;
 
+color:white;
+
 }
 
-/* ========= Main ========= */
+.logo{
+
+width:60px;
+height:60px;
+
+background:white;
+
+border-radius:15px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:28px;
+
+color:#006A4E;
+
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+/* ===========================
+Main
+=========================== */
 
 .container{
 
-max-width:1400px;
+max-width:1450px;
 
 margin:auto;
 
@@ -178,25 +203,24 @@ background:white;
 
 border-radius:15px;
 
-padding:18px 25px;
+padding:18px 22px;
 
 display:flex;
-
 align-items:center;
 
 gap:15px;
 
-margin-bottom:30px;
+box-shadow:0 15px 35px rgba(0,0,0,.18);
 
-box-shadow:0 15px 35px rgba(0,0,0,.15);
+margin-bottom:25px;
 
 }
 
 .search-box i{
 
-font-size:20px;
-
 color:#006A4E;
+
+font-size:20px;
 
 }
 
@@ -214,17 +238,17 @@ font-size:17px;
 
 /* Table */
 
-.table-card{
+.table-box{
 
 background:white;
 
-border-radius:20px;
+border-radius:18px;
 
-padding:25px;
+padding:20px;
 
 box-shadow:0 20px 40px rgba(0,0,0,.18);
 
-overflow-x:auto;
+overflow:auto;
 
 }
 
@@ -234,7 +258,7 @@ width:100%;
 
 border-collapse:collapse;
 
-min-width:1100px;
+min-width:1200px;
 
 }
 
@@ -256,51 +280,41 @@ font-size:15px;
 
 }
 
-tbody tr{
+td{
+
+padding:18px;
 
 border-bottom:1px solid #eee;
 
-transition:.3s;
+font-size:14px;
 
 }
 
 tbody tr:hover{
 
-background:#f5f5f5;
+background:#f6f6f6;
+
+transition:.3s;
 
 }
-
-td{
-
-padding:18px;
-
-font-size:14px;
-
-color:#444;
-
-}
-
-/* Status */
 
 .status{
 
-padding:7px 14px;
+background:#DCFCE7;
 
-border-radius:30px;
+color:#166534;
+
+padding:6px 15px;
+
+border-radius:25px;
 
 font-size:13px;
 
 font-weight:600;
 
-background:#dcfce7;
-
-color:#166534;
-
 display:inline-block;
 
 }
-
-/* View Button */
 
 .view-btn{
 
@@ -310,7 +324,7 @@ color:white;
 
 border:none;
 
-padding:9px 16px;
+padding:10px 18px;
 
 border-radius:8px;
 
@@ -330,15 +344,13 @@ background:#E53935;
 
 .footer{
 
-margin-top:30px;
-
 text-align:center;
 
 color:white;
 
-opacity:.8;
+padding:30px;
 
-padding-bottom:20px;
+opacity:.8;
 
 }
 
@@ -348,23 +360,17 @@ padding-bottom:20px;
 
 header{
 
-padding:20px;
-
 flex-direction:column;
 
 gap:20px;
+
+padding:20px;
 
 }
 
 .title{
 
 font-size:28px;
-
-}
-
-.search-box{
-
-padding:15px;
 
 }
 
@@ -379,16 +385,14 @@ padding:15px;
 <div class="bg">
 
 <div class="circle1"></div>
-
 <div class="circle2"></div>
-
 <div class="circle3"></div>
 
 </div>
 
 <header>
 
-<a href="index.html" class="back-btn">
+<a href="index.html" class="back">
 
 <i class="fa-solid fa-arrow-left"></i>
 
@@ -402,7 +406,11 @@ History
 
 </div>
 
-<div style="width:90px;"></div>
+<div class="logo">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+</div>
 
 </header>
 
@@ -415,11 +423,11 @@ History
 <input
 type="text"
 id="search"
-placeholder="Search by IP, Problem, Reference...">
+placeholder="Search IP, Problem, Reference...">
 
 </div>
 
-<div class="table-card">
+<div class="table-box">
 
 <table>
 
@@ -428,23 +436,14 @@ placeholder="Search by IP, Problem, Reference...">
 <tr>
 
 <th>IP Address</th>
-
 <th>Problem</th>
-
 <th>Date</th>
-
 <th>Reference</th>
-
 <th>Support By</th>
-
-<th>Work</th>
-
+<th>Support Work</th>
 <th>Call By</th>
-
 <th>Call Work</th>
-
 <th>Status</th>
-
 <th>Action</th>
 
 </tr>
@@ -452,161 +451,8 @@ placeholder="Search by IP, Problem, Reference...">
 </thead>
 
 <tbody id="historyTable">
-  <!-- ========================= -->
-<!-- History Table Data -->
-<!-- ========================= -->
 
-<tr>
-
-<td>103.120.10.25</td>
-
-<td>Internet Down</td>
-
-<td>18 Jul 2026</td>
-
-<td>REF-1001</td>
-
-<td>Rahim</td>
-
-<td>Fiber Checked</td>
-
-<td>Karim</td>
-
-<td>Resolved</td>
-
-<td><span class="status">Completed</span></td>
-
-<td>
-
-<button class="view-btn"
-
-data-ip="103.120.10.25"
-
-data-problem="Internet Down"
-
-data-date="18 Jul 2026"
-
-data-ref="REF-1001"
-
-data-support="Rahim"
-
-data-work="Fiber Checked"
-
-data-call="Karim"
-
-data-callwork="Resolved">
-
-<i class="fa-solid fa-eye"></i>
-
-View
-
-</button>
-
-</td>
-
-</tr>
-
-
-<tr>
-
-<td>103.120.10.41</td>
-
-<td>ONU Offline</td>
-
-<td>19 Jul 2026</td>
-
-<td>REF-1002</td>
-
-<td>Hasan</td>
-
-<td>ONU Restart</td>
-
-<td>Sabbir</td>
-
-<td>Customer OK</td>
-
-<td><span class="status">Completed</span></td>
-
-<td>
-
-<button class="view-btn"
-
-data-ip="103.120.10.41"
-
-data-problem="ONU Offline"
-
-data-date="19 Jul 2026"
-
-data-ref="REF-1002"
-
-data-support="Hasan"
-
-data-work="ONU Restart"
-
-data-call="Sabbir"
-
-data-callwork="Customer OK">
-
-<i class="fa-solid fa-eye"></i>
-
-View
-
-</button>
-
-</td>
-
-</tr>
-
-
-<tr>
-
-<td>103.120.11.12</td>
-
-<td>Slow Speed</td>
-
-<td>20 Jul 2026</td>
-
-<td>REF-1003</td>
-
-<td>Nayeem</td>
-
-<td>Bandwidth Increased</td>
-
-<td>Jony</td>
-
-<td>Resolved</td>
-
-<td><span class="status">Completed</span></td>
-
-<td>
-
-<button class="view-btn"
-
-data-ip="103.120.11.12"
-
-data-problem="Slow Speed"
-
-data-date="20 Jul 2026"
-
-data-ref="REF-1003"
-
-data-support="Nayeem"
-
-data-work="Bandwidth Increased"
-
-data-call="Jony"
-
-data-callwork="Resolved">
-
-<i class="fa-solid fa-eye"></i>
-
-View
-
-</button>
-
-</td>
-
-</tr>
+<!-- Google Sheet Data এখানে আসবে -->
 
 </tbody>
 
@@ -621,50 +467,56 @@ View
 </div>
 
 </div>
-
-<!-- ========================= -->
-<!-- View Details Modal -->
-<!-- ========================= -->
+<!-- ===========================
+View Modal
+=========================== -->
 
 <div id="viewModal"
-
-style="display:none;
+style="
+display:none;
 position:fixed;
 left:0;
 top:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,.55);
+background:rgba(0,0,0,.6);
 justify-content:center;
 align-items:center;
-z-index:999;">
+z-index:999;
+">
 
-<div style="
+<div
+style="
 background:#fff;
 width:95%;
-max-width:600px;
+max-width:650px;
 border-radius:20px;
 padding:30px;
 position:relative;
-box-shadow:0 20px 40px rgba(0,0,0,.3);
+box-shadow:0 25px 60px rgba(0,0,0,.35);
+animation:popup .3s;
 ">
 
 <span id="closeModal"
-
 style="
 position:absolute;
 right:20px;
-top:15px;
-font-size:28px;
+top:12px;
+font-size:30px;
+font-weight:bold;
 cursor:pointer;
 color:#E53935;
-font-weight:bold;">
+">
 
 &times;
 
 </span>
 
-<h2 style="margin-bottom:25px;color:#006A4E;">
+<h2
+style="
+color:#006A4E;
+margin-bottom:25px;
+">
 
 History Details
 
@@ -677,114 +529,324 @@ History Details
 </div>
 
 </div>
+
+<style>
+
+@keyframes popup{
+
+0%{
+
+transform:scale(.8);
+opacity:0;
+
+}
+
+100%{
+
+transform:scale(1);
+opacity:1;
+
+}
+
+}
+
+.detail-table{
+
+width:100%;
+border-collapse:collapse;
+
+}
+
+.detail-table td{
+
+padding:14px;
+
+border-bottom:1px solid #eee;
+
+}
+
+.detail-table td:first-child{
+
+font-weight:700;
+color:#006A4E;
+width:180px;
+
+}
+
+</style>
+
 <script>
 
-// ==============================
-// Search
-// ==============================
+// ===========================
+// Google Sheet API
+// ===========================
 
-const search = document.getElementById("search");
-const rows = document.querySelectorAll("#historyTable tr");
+const API_URL =
+"https://script.google.com/macros/s/AKfycbyORO5enoKoHkRV8FkyNjrJ-9hy0uAFRtLQkSPlVlvsMUERua5brnaoN424K6yakLEM/exec";
 
-search.addEventListener("keyup", function(){
+const tbody =
+document.getElementById("historyTable");
 
-const value = this.value.toLowerCase();
+loadHistory();
 
-rows.forEach(row=>{
+async function loadHistory(){
 
-const text = row.innerText.toLowerCase();
+tbody.innerHTML=
+`<tr><td colspan="10" style="text-align:center;">Loading...</td></tr>`;
 
-row.style.display = text.includes(value) ? "" : "none";
+try{
+
+const res =
+await fetch(API_URL);
+
+const data =
+await res.json();
+
+tbody.innerHTML="";
+
+if(data.length===0){
+
+tbody.innerHTML=
+`<tr>
+<td colspan="10" style="text-align:center;">
+No History Found
+</td>
+</tr>`;
+
+return;
+
+}
+data.forEach(row=>{
+
+if(row[0]=="") return;
+
+tbody.innerHTML+=`
+
+<tr>
+
+<td>${row[0]}</td>
+
+<td>${row[1]}</td>
+
+<td>${row[2]}</td>
+
+<td>${row[3]}</td>
+
+<td>${row[4]}</td>
+
+<td>${row[5]}</td>
+
+<td>${row[6]}</td>
+
+<td>${row[7]}</td>
+
+<td>
+
+<span class="status">
+
+Completed
+
+</span>
+
+</td>
+
+<td>
+
+<button class="view-btn"
+
+onclick="showDetails(
+
+'${row[0]}',
+
+'${row[1]}',
+
+'${row[2]}',
+
+'${row[3]}',
+
+'${row[4]}',
+
+'${row[5]}',
+
+'${row[6]}',
+
+'${row[7]}'
+
+)">
+
+<i class="fa-solid fa-eye"></i>
+
+View
+
+</button>
+
+</td>
+
+</tr>
+
+`;
 
 });
 
-});
+}catch(err){
 
-// ==============================
-// View Modal
-// ==============================
+tbody.innerHTML=
+`<tr>
 
-const modal = document.getElementById("viewModal");
-const modalContent = document.getElementById("modalContent");
-const closeModal = document.getElementById("closeModal");
+<td colspan="10" style="text-align:center;color:red;">
 
-document.querySelectorAll(".view-btn").forEach(btn=>{
+Failed To Load Data
 
-btn.addEventListener("click",()=>{
+</td>
 
-modal.style.display="flex";
+</tr>`;
 
-modalContent.innerHTML=`
+console.error(err);
 
-<table style="width:100%;border-collapse:collapse;">
+}
+
+}
+
+// ===============================
+// View Details
+// ===============================
+
+function showDetails(
+
+ip,
+
+problem,
+
+date,
+
+ref,
+
+support,
+
+work,
+
+callby,
+
+callwork
+
+){
+
+document.getElementById("viewModal").style.display="flex";
+
+document.getElementById("modalContent").innerHTML=`
+
+<table class="detail-table">
 
 <tr>
-<td style="padding:12px;font-weight:600;">IP Address</td>
-<td>${btn.dataset.ip}</td>
+
+<td>IP Address</td>
+
+<td>${ip}</td>
+
 </tr>
 
 <tr>
-<td style="padding:12px;font-weight:600;">Problem</td>
-<td>${btn.dataset.problem}</td>
+
+<td>Problem</td>
+
+<td>${problem}</td>
+
 </tr>
 
 <tr>
-<td style="padding:12px;font-weight:600;">Date</td>
-<td>${btn.dataset.date}</td>
+
+<td>Date</td>
+
+<td>${date}</td>
+
 </tr>
 
 <tr>
-<td style="padding:12px;font-weight:600;">Reference</td>
-<td>${btn.dataset.ref}</td>
+
+<td>Reference</td>
+
+<td>${ref}</td>
+
 </tr>
 
 <tr>
-<td style="padding:12px;font-weight:600;">Support By</td>
-<td>${btn.dataset.support}</td>
+
+<td>Support By</td>
+
+<td>${support}</td>
+
 </tr>
 
 <tr>
-<td style="padding:12px;font-weight:600;">Support Work</td>
-<td>${btn.dataset.work}</td>
+
+<td>Support Work</td>
+
+<td>${work}</td>
+
 </tr>
 
 <tr>
-<td style="padding:12px;font-weight:600;">Call By</td>
-<td>${btn.dataset.call}</td>
+
+<td>Call By</td>
+
+<td>${callby}</td>
+
 </tr>
 
 <tr>
-<td style="padding:12px;font-weight:600;">Call Work</td>
-<td>${btn.dataset.callwork}</td>
+
+<td>Call Work</td>
+
+<td>${callwork}</td>
+
 </tr>
 
 </table>
 
 `;
 
-});
-
-});
-
-// Close Button
-
-closeModal.onclick=function(){
-
-modal.style.display="none";
-
 }
 
-// Click Outside
+// ===============================
+// Close Modal
+// ===============================
+
+document.getElementById("closeModal").onclick=function(){
+
+document.getElementById("viewModal").style.display="none";
+
+}
 
 window.onclick=function(e){
 
-if(e.target==modal){
+if(e.target==document.getElementById("viewModal")){
 
-modal.style.display="none";
+document.getElementById("viewModal").style.display="none";
+
+}
 
 }
 
-}
+// ===============================
+// Search
+// ===============================
+
+document.getElementById("search").addEventListener("keyup",function(){
+
+const value=this.value.toLowerCase();
+
+document.querySelectorAll("#historyTable tr").forEach(tr=>{
+
+tr.style.display=
+tr.innerText.toLowerCase().includes(value)
+
+? ""
+
+: "none";
+
+});
+
+});
 
 </script>
 

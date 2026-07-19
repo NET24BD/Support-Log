@@ -633,6 +633,20 @@ try{
 const res = await fetch(API_URL + "?page=history");
 
 const data = await res.json();
+
+  function formatDate(dateString){
+
+    if(!dateString) return "";
+
+    const d = new Date(dateString);
+
+    const day = String(d.getDate()).padStart(2,"0");
+    const month = String(d.getMonth()+1).padStart(2,"0");
+    const year = d.getFullYear();
+
+    return `${day}/${month}/${year}`;
+
+}
   
 console.log(data);
 console.log(data.length);
@@ -652,7 +666,9 @@ return;
 
 }
 data.forEach(row=>{
-
+  
+row[2] = formatDate(row[2]);
+  
 if(row[0]=="") return;
 
 tbody.innerHTML+=`
@@ -792,7 +808,7 @@ document.getElementById("modalContent").innerHTML=`
 
 <td>Date</td>
 
-<td>${date}</td>
+<td>${formatDate(date)}</td>
 
 </tr>
 

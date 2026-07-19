@@ -1243,3 +1243,148 @@ cursor:pointer;
 
 
 </style>
+<!-- ======================================
+PART-5
+WORK BUTTON JAVASCRIPT
+====================================== -->
+
+
+<script>
+
+
+// ===============================
+// WORK BUTTON CLICK
+// ===============================
+
+
+function workCall(index){
+
+
+const row = window.callData[index];
+
+
+// Popup Open
+
+document.getElementById("workModal").style.display="flex";
+
+
+// IP Show
+
+document.getElementById("workIP").value = row[0];
+
+
+// Previous Work Show
+
+document.getElementById("supportWork").value = row[5] || "";
+
+
+// Save করার জন্য index রাখা
+
+window.workIndex = index;
+
+
+}
+
+
+
+// ===============================
+// CLOSE WORK POPUP
+// ===============================
+
+
+document.getElementById("closeWork").onclick=function(){
+
+document.getElementById("workModal").style.display="none";
+
+}
+
+
+
+document.getElementById("cancelWorkBtn").onclick=function(){
+
+document.getElementById("workModal").style.display="none";
+
+}
+
+
+
+// ===============================
+// CLICK OUTSIDE CLOSE
+// ===============================
+
+
+window.addEventListener("click",function(e){
+
+
+if(e.target==document.getElementById("workModal")){
+
+
+document.getElementById("workModal").style.display="none";
+
+
+}
+
+
+});
+
+
+
+// ===============================
+// SAVE BUTTON
+// ===============================
+
+
+document.getElementById("saveWorkBtn").onclick=function(){
+
+
+let index = window.workIndex;
+
+
+let row = window.callData[index];
+
+
+let status =
+document.getElementById("callStatus").value;
+
+
+let work =
+document.getElementById("supportWork").value.trim();
+
+
+
+if(work==""){
+
+
+alert("Support Work লিখুন");
+
+
+return;
+
+
+}
+
+
+
+// Temporary Save
+
+row[5]=work;
+
+
+
+alert(
+"Work Saved For IP : "+row[0]
+);
+
+
+
+// Popup Close
+
+document.getElementById("workModal").style.display="none";
+
+
+
+}
+
+
+
+</script>

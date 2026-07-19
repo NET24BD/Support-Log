@@ -362,13 +362,45 @@ Submit Support
 
 <script>
 
-document.getElementById("entryForm").addEventListener("submit",function(e){
+<script>
 
-e.preventDefault();
+const API_URL = "https://script.google.com/macros/s/AKfycbyORO5enoKoHkRV8FkyNjrJ-9hy0uAFRtLQkSPlVlvsMUERua5brnaoN424K6yakLEM/exec";
 
-alert("Frontend Ready.\nNext Step: Google Sheet API Connect.");
+document.getElementById("entryForm").addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    const ip = document.getElementById("ip").value.trim();
+    const problem = document.getElementById("problem").value.trim();
+    const reference = document.getElementById("reference").value.trim();
+
+    try{
+
+        const res = await fetch(API_URL, {
+            method: "POST",
+            body: JSON.stringify({
+                ip: ip,
+                problem: problem,
+                reference: reference
+            })
+        });
+
+        const result = await res.text();
+
+        alert("Support Entry Successfully Submitted.");
+
+        document.getElementById("entryForm").reset();
+
+    }catch(err){
+
+        console.error(err);
+        alert("Failed To Submit.");
+
+    }
 
 });
+
+</script>
 
 </script>
 

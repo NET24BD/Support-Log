@@ -1388,3 +1388,132 @@ document.getElementById("workModal").style.display="none";
 
 
 </script>
+<!-- ======================================
+PART-6
+SAVE WORK TO GOOGLE SHEET
+====================================== -->
+
+
+<script>
+
+
+document.getElementById("saveWorkBtn").onclick = async function(){
+
+
+let index = window.workIndex;
+
+
+let row = window.callData[index];
+
+
+
+let status = 
+document.getElementById("callStatus").value;
+
+
+
+let work =
+document.getElementById("supportWork").value.trim();
+
+
+
+if(work==""){
+
+alert("Support Work লিখুন");
+
+return;
+
+}
+
+
+
+this.disabled=true;
+
+this.innerHTML="Saving...";
+
+
+
+try{
+
+
+const formData = new URLSearchParams();
+
+
+
+formData.append("action","saveWork");
+
+formData.append("ip",row[0]);
+
+formData.append("status",status);
+
+formData.append("work",work);
+
+
+
+const response = await fetch(API_URL,{
+
+method:"POST",
+
+body:formData
+
+});
+
+
+
+const result = await response.text();
+
+
+
+if(result=="OK"){
+
+
+alert("Support Work Saved Successfully");
+
+
+
+document.getElementById("workModal").style.display="none";
+
+
+// Reload Table
+
+loadPendingCall();
+
+
+
+}
+else{
+
+
+alert(result);
+
+
+}
+
+
+
+}
+
+catch(error){
+
+
+console.log(error);
+
+
+alert("Save Failed");
+
+
+}
+
+
+
+this.disabled=false;
+
+this.innerHTML='<i class="fa-solid fa-floppy-disk"></i> Save';
+
+
+
+}
+
+
+
+</script>

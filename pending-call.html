@@ -549,7 +549,7 @@ tbody.innerHTML += `
 
 <td>
 
-<span class="status">
+<span class="modal-status">
 
 Pending
 
@@ -735,14 +735,6 @@ opacity:1;
 }
 
 .detailTable{
-
-width:100%;
-border-collapse:collapse;
-table-layout:fixed;
-
-}
-
-.detailTable{
     width:100%;
     border-collapse:collapse;
     table-layout:auto;
@@ -768,7 +760,25 @@ table-layout:fixed;
 .detailTable td:last-child{
     width:auto;
 }
+.modal-status{
 
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+background:#FFF3CD;
+color:#B45309;
+
+padding:8px 18px;
+
+border-radius:25px;
+
+font-size:13px;
+font-weight:600;
+
+min-width:90px;
+
+}
 </style>
 
 <script>

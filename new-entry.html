@@ -381,13 +381,15 @@ document.getElementById("entryForm").addEventListener("submit", async function(e
     formData.append("problem",problem);
     formData.append("reference",reference);
 
-    const res = await fetch(API_URL,{
+    await fetch(API_URL,{
+    method:"POST",
+    mode:"no-cors",
+    body:formData
+});
 
-        method:"POST",
+alert("Support Entry Submitted");
 
-        body:formData
-
-    });
+document.getElementById("entryForm").reset();
 
     const result = await res.text();
 

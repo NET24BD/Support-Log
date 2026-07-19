@@ -861,4 +861,385 @@ document.getElementById("viewModal").style.display="none";
 }
 
 </script>
+<!-- ======================================
+PART-4
+WORK POPUP HTML
+====================================== -->
 
+
+<div id="workModal" class="work-popup">
+
+
+<div class="work-box">
+
+
+<span id="closeWork" class="work-close">
+&times;
+</span>
+
+
+<h2>
+<i class="fa-solid fa-headset"></i>
+Pending Call Work
+</h2>
+
+
+
+<div class="work-group">
+
+<label>
+IP Address
+</label>
+
+<input 
+type="text"
+id="workIP"
+readonly>
+
+</div>
+
+
+
+<div class="work-group">
+
+<label>
+Call Status
+</label>
+
+
+<select id="callStatus">
+
+<option value="Pending">
+Pending
+</option>
+
+<option value="Call Received">
+Call Received
+</option>
+
+<option value="No Answer">
+No Answer
+</option>
+
+<option value="Busy">
+Busy
+</option>
+
+<option value="Switched Off">
+Switched Off
+</option>
+
+<option value="Customer Not Available">
+Customer Not Available
+</option>
+
+<option value="Complete">
+Complete
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+<div class="work-group">
+
+
+<label>
+Support Work
+</label>
+
+
+<textarea
+
+id="supportWork"
+
+rows="6"
+
+placeholder="Write Support Work...">
+
+</textarea>
+
+
+</div>
+
+
+
+
+<div class="work-buttons">
+
+
+<button 
+id="cancelWorkBtn"
+class="cancel-work">
+
+Cancel
+
+</button>
+
+
+
+<button 
+id="saveWorkBtn"
+class="save-work">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- PART-4 CSS -->
+
+
+<style>
+
+
+.work-popup{
+
+display:none;
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+
+background:rgba(0,0,0,.65);
+
+
+justify-content:center;
+
+align-items:center;
+
+
+z-index:9999;
+
+
+}
+
+
+
+.work-box{
+
+
+background:white;
+
+width:95%;
+
+max-width:600px;
+
+
+padding:30px;
+
+
+border-radius:20px;
+
+
+position:relative;
+
+
+box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+
+animation:popup .3s;
+
+
+}
+
+
+
+.work-close{
+
+
+position:absolute;
+
+
+right:20px;
+
+top:10px;
+
+
+font-size:32px;
+
+
+cursor:pointer;
+
+
+color:#E53935;
+
+
+font-weight:bold;
+
+
+}
+
+
+
+.work-box h2{
+
+
+color:#006A4E;
+
+
+margin-bottom:25px;
+
+
+}
+
+
+
+.work-group{
+
+
+margin-bottom:18px;
+
+
+}
+
+
+
+.work-group label{
+
+
+display:block;
+
+
+font-weight:600;
+
+
+margin-bottom:8px;
+
+
+}
+
+
+
+.work-group input,
+.work-group select,
+.work-group textarea{
+
+
+width:100%;
+
+
+padding:12px 15px;
+
+
+border:1px solid #ddd;
+
+
+border-radius:10px;
+
+
+font-size:15px;
+
+
+outline:none;
+
+
+}
+
+
+
+.work-group textarea{
+
+
+resize:vertical;
+
+
+}
+
+
+
+.work-buttons{
+
+
+display:flex;
+
+
+justify-content:flex-end;
+
+
+gap:15px;
+
+
+margin-top:20px;
+
+
+}
+
+
+
+.cancel-work{
+
+
+background:#999;
+
+
+color:white;
+
+
+border:none;
+
+
+padding:12px 25px;
+
+
+border-radius:10px;
+
+
+cursor:pointer;
+
+
+}
+
+
+
+.save-work{
+
+
+background:#006A4E;
+
+
+color:white;
+
+
+border:none;
+
+
+padding:12px 25px;
+
+
+border-radius:10px;
+
+
+cursor:pointer;
+
+
+}
+
+
+
+</style>

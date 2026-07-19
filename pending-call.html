@@ -1329,61 +1329,7 @@ document.getElementById("workModal").style.display="none";
 
 
 
-// ===============================
-// SAVE BUTTON
-// ===============================
 
-
-document.getElementById("saveWorkBtn").onclick=function(){
-
-
-let index = window.workIndex;
-
-
-let row = window.callData[index];
-
-
-let status =
-document.getElementById("callStatus").value;
-
-
-let work =
-document.getElementById("callWork").value.trim();
-
-
-
-if(work==""){
-
-
-alert("Support Work লিখুন");
-
-
-return;
-
-
-}
-
-
-
-// Temporary Save
-
-row[5]=work;
-
-
-
-alert(
-"Work Saved For IP : "+row[0]
-);
-
-
-
-// Popup Close
-
-document.getElementById("workModal").style.display="none";
-
-
-
-}
 
 
 
@@ -1413,13 +1359,13 @@ document.getElementById("callStatus").value;
 
 
 let work =
-document.getElementById("supportWork").value.trim();
+document.getElementById("callWork").value.trim();
 
 
 
 if(work==""){
 
-alert("Support Work লিখুন");
+alert("Call Work লিখুন");
 
 return;
 

@@ -952,6 +952,44 @@ Submit
 </div>
 
 </div>
+  <!-- ===========================
+PART-5
+WORK POPUP
+=========================== -->
+
+<div id="workModal" class="popup">
+
+<div class="popup-box">
+
+<span id="closeWork" class="close">&times;</span>
+
+<h2>Support Work</h2>
+
+<input type="hidden" id="workIndex">
+
+<label>Support Work</label>
+
+<textarea
+id="supportWork"
+rows="6"
+placeholder="Write support work..."></textarea>
+
+<div class="popup-btns">
+
+<button id="saveWorkBtn" class="save-btn">
+<i class="fa-solid fa-floppy-disk"></i>
+Save
+</button>
+
+<button id="cancelWorkBtn" class="cancel-btn">
+Cancel
+</button>
+
+</div>
+
+</div>
+
+</div>
 .popup{
 
 display:none;
@@ -1098,3 +1136,187 @@ border-radius:10px;
 cursor:pointer;
 
 }
+.popup{
+display:none;
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.65);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.popup-box{
+background:#fff;
+width:95%;
+max-width:600px;
+border-radius:20px;
+padding:30px;
+position:relative;
+animation:popup .3s;
+box-shadow:0 25px 60px rgba(0,0,0,.35);
+}
+
+.close{
+position:absolute;
+right:20px;
+top:10px;
+font-size:30px;
+cursor:pointer;
+font-weight:bold;
+color:#E53935;
+}
+
+.popup-box h2{
+margin-bottom:20px;
+color:#006A4E;
+}
+
+.popup-box label{
+display:block;
+margin-bottom:10px;
+font-weight:600;
+}
+
+.popup-box textarea{
+width:100%;
+padding:15px;
+border:1px solid #ddd;
+border-radius:10px;
+resize:vertical;
+font-family:Poppins,sans-serif;
+font-size:14px;
+outline:none;
+}
+
+.popup-btns{
+margin-top:20px;
+display:flex;
+justify-content:flex-end;
+gap:10px;
+}
+
+.save-btn{
+background:#006A4E;
+color:#fff;
+border:none;
+padding:12px 22px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.cancel-btn{
+background:#E53935;
+color:#fff;
+border:none;
+padding:12px 22px;
+border-radius:8px;
+cursor:pointer;
+}
+<script>
+
+// ===============================
+// WORK BUTTON
+// ===============================
+
+function workCall(index){
+
+    const row = window.callData[index];
+
+    document.getElementById("workModal").style.display="flex";
+
+    document.getElementById("workIndex").value=index;
+
+    document.getElementById("supportWork").value=row[5] || "";
+
+}
+
+// ===============================
+// CLOSE WORK POPUP
+// ===============================
+
+document.getElementById("closeWork").onclick=function(){
+
+    document.getElementById("workModal").style.display="none";
+
+}
+
+document.getElementById("cancelWorkBtn").onclick=function(){
+
+    document.getElementById("workModal").style.display="none";
+
+}
+
+// ===============================
+// SAVE WORK
+// ===============================
+
+document.getElementById("saveWorkBtn").onclick = async function(){
+
+    const index = document.getElementById("workIndex").value;
+
+    const work = document.getElementById("supportWork").value.trim();
+
+    if(work==""){
+
+        alert("Please write Support Work.");
+
+        return;
+
+    }
+
+    this.disabled=true;
+    this.innerHTML="Saving...";
+
+    try{
+
+        const row = window.callData[index];
+
+        const formData = new URLSearchParams();
+
+        formData.append("action","saveWork");
+        formData.append("ip",row[0]);
+        formData.append("work",work);
+
+        const res = await fetch(API_URL,{
+
+            method:"POST",
+
+            body:formData
+
+        });
+
+        const result = await res.text();
+
+        if(result=="OK"){
+
+            alert("Support Work Saved Successfully.");
+
+            document.getElementById("workModal").style.display="none";
+
+            loadPendingCall();
+
+        }else{
+
+            alert(result);
+
+        }
+
+    }catch(err){
+
+        console.log(err);
+
+        alert("Failed To Save.");
+
+    }
+
+    this.disabled=false;
+
+    this.innerHTML='<i class="fa-solid fa-floppy-disk"></i> Save';
+
+}
+
+</script>

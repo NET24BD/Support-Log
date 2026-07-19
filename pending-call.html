@@ -907,7 +907,10 @@ Call Status
 </label>
 
 
-<select id="callStatus">
+<input 
+type="text"
+id="callBy"
+placeholder="Enter Your Name">
 
 <option value="Pending">
 Pending
@@ -1353,12 +1356,11 @@ let row = window.callData[index];
 
 
 
-let status = 
-document.getElementById("callStatus").value;
+let callBy =
+document.getElementById("callBy").value.trim();
 
 
-
-let work =
+let callWork =
 document.getElementById("callWork").value.trim();
 
 
@@ -1390,9 +1392,9 @@ formData.append("action","saveWork");
 
 formData.append("ip",row[0]);
 
-formData.append("status",status);
+formData.append("callBy",callBy);
 
-formData.append("work",work);
+formData.append("callWork",callWork);
 
 
 

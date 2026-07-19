@@ -734,29 +734,27 @@ opacity:1;
 
 .detailTable{
     width:100%;
+    table-layout:fixed;
     border-collapse:collapse;
-    table-layout:auto;
 }
 
 .detailTable td{
     padding:14px;
     border-bottom:1px solid #eee;
     vertical-align:top;
-
     white-space:pre-wrap;
     word-break:break-word;
-    overflow-wrap:break-word;
-    line-height:1.7;
+    overflow-wrap:anywhere;
 }
 
 .detailTable td:first-child{
-    width:180px;
+    width:170px;
     font-weight:700;
     color:#006A4E;
 }
 
 .detailTable td:last-child{
-    width:auto;
+    width:calc(100% - 170px);
 }
 .modal-status{
 

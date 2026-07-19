@@ -630,11 +630,13 @@ tbody.innerHTML=
 
 try{
 
-const res = await fetch(API_URL);
+const res = await fetch(API_URL + "?page=history");
 
-const data =
-await res.json();
-
+const data = await res.json();
+  
+console.log(data);
+console.log(data.length);
+  
 tbody.innerHTML="";
 
 if(data.length===0){

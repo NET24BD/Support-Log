@@ -5,10 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>New Support Entry</title>
 
@@ -19,7 +16,7 @@ content="width=device-width, initial-scale=1.0"
 
     if(localStorage.getItem("loggedIn") !== "true"){
 
-        window.location.replace("index.html");
+        window.location.replace("../index.html");
 
     }
 
@@ -594,7 +591,7 @@ if(loggedIn !== "true" || !username){
 
 localStorage.clear();
 
-window.location.replace("index.html");
+window.location.replace("../index.html");
 
 }
 
@@ -608,7 +605,7 @@ referenceInput.value = username;
 
 function goBack(){
 
-window.location.replace("dashboard.html");
+window.location.replace("index.html");
 
 }
 

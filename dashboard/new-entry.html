@@ -1,1 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<title>New Support Entry</title>
+
+
+<script>
+
+(function(){
+
+    if(localStorage.getItem("loggedIn") !== "true"){
+
+        window.location.replace("index.html");
+
+    }
+
+})();
+
+</script>
+
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet"
+>
+
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#005C3A;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px;
+position:relative;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+left:-200px;
+top:-200px;
+width:500px;
+height:500px;
+background:#E53935;
+border-radius:50%;
+filter:blur(140px);
+opacity:.35;
+pointer-events:none;
+}
+
+body::after{
+content:"";
+position:fixed;
+right:-180px;
+bottom:-180px;
+width:450px;
+height:450px;
+background:#0D8F5A;
+border-radius:50%;
+filter:blur(120px);
+opacity:.35;
+pointer-events:none;
+}
+
+.card{
+width:100%;
+max-width:650px;
+background:white;
+border-radius:25px;
+padding:40px;
+box-shadow:0 25px 60px rgba(0,0,0,.25);
+position:relative;
+z-index:1;
+}
+
+.back-btn{
+display:inline-flex;
+align-items:center;
+gap:8px;
+width:auto;
+padding:10px 16px;
+margin-bottom:25px;
+border:none;
+border-radius:10px;
+background:#f1f5f3;
+color:#006A4E;
+font-size:14px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.back-btn:hover{
+background:#006A4E;
+color:white;
+}
+
+.logo{
+width:80px;
+height:80px;
+margin:0 auto 20px;
+background:#006A4E;
+border-radius:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:35px;
+color:white;
+}
+
+h2{
+text-align:center;
+color:#006A4E;
+margin-bottom:8px;
+}
+
+.subtitle{
+text-align:center;
+color:#777;
+margin-bottom:35px;
+}
+
+.group{
+margin-bottom:22px;
+}
+
+.group label{
+display:block;
+font-weight:600;
+margin-bottom:8px;
+color:#333;
+}
+
+.input{
+position:relative;
+}
+
+.input i{
+position:absolute;
+left:16px;
+top:16px;
+color:#006A4E;
+font-size:18px;
+z-index:2;
+}
+
+.input input,
+.input textarea{
+width:100%;
+padding:15px 18px 15px 50px;
+border:2px solid #ddd;
+border-radius:12px;
+font-size:15px;
+outline:none;
+transition:.3s;
+background:white;
+}
+
+.input input:focus,
+.input textarea:focus{
+border-color:#006A4E;
+box-shadow:0 0 15px rgba(0,106,78,.2);
+}
+
+textarea{
+resize:none;
+height:120px;
+}
+
+#reference{
+background:#f5f7f6;
+color:#555;
+cursor:not-allowed;
+}
+
+.submit-btn{
+width:100%;
+padding:16px;
+border:none;
+border-radius:12px;
+background:#006A4E;
+color:white;
+font-size:17px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.submit-btn:hover{
+background:#E53935;
+}
+
+.submit-btn:disabled{
+opacity:.7;
+cursor:not-allowed;
+}
+
+.footer{
+margin-top:20px;
+text-align:center;
+font-size:13px;
+color:#777;
+}
+
+.popup-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(6px);
+display:none;
+justify-content:center;
+align-items:center;
+padding:20px;
+z-index:99999;
+}
+
+.popup-overlay.active{
+display:flex;
+animation:popupFadeIn .25s ease;
+}
+
+.popup-box{
+width:100%;
+max-width:420px;
+background:white;
+border-radius:25px;
+padding:35px 30px 30px;
+text-align:center;
+box-shadow:0 25px 80px rgba(0,0,0,.35);
+animation:popupZoomIn .3s ease;
+}
+
+.popup-icon{
+width:80px;
+height:80px;
+margin:0 auto 20px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:38px;
+}
+
+.popup-box.success .popup-icon{
+background:#E8F8F1;
+color:#006A4E;
+}
+
+.popup-box.error .popup-icon{
+background:#FDECEC;
+color:#E53935;
+}
+
+.popup-box.warning .popup-icon{
+background:#FFF6DD;
+color:#E5A400;
+}
+
+.popup-box.loading .popup-icon{
+background:#E8F8F1;
+color:#006A4E;
+}
+
+.popup-title{
+font-size:23px;
+font-weight:700;
+color:#222;
+margin-bottom:10px;
+}
+
+.popup-message{
+font-size:14px;
+line-height:1.7;
+color:#777;
+margin-bottom:25px;
+}
+
+.popup-ok{
+width:100%;
+padding:13px;
+border:none;
+border-radius:12px;
+background:#006A4E;
+color:white;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+}
+
+.popup-ok:hover{
+background:#E53935;
+}
+
+.loading-spinner{
+animation:popupSpin 1s linear infinite;
+}
+
+@keyframes popupFadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+@keyframes popupZoomIn{
+from{
+transform:scale(.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+@keyframes popupSpin{
+from{
+transform:rotate(0deg);
+}
+to{
+transform:rotate(360deg);
+}
+}
+
+@media(max-width:600px){
+
+.card{
+padding:25px;
+}
+
+.popup-box{
+padding:30px 22px 25px;
+}
+
+.popup-icon{
+width:70px;
+height:70px;
+font-size:32px;
+}
+
+.popup-title{
+font-size:20px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<button
+type="button"
+class="back-btn"
+onclick="goBack()"
+>
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back to Dashboard
+
+</button>
+
+
+<div class="logo">
+
+<i class="fa-solid fa-headset"></i>
+
+</div>
+
+
+<h2>
+
+New Support Entry
+
+</h2>
+
+
+<p class="subtitle">
+
+LINK4 COMMUNICATION
+
+</p>
+
+
+<form id="entryForm">
+
+
+<div class="group">
+
+<label>
+
+Customer ID
+
+</label>
+
+
+<div class="input">
+
+<i class="fa-solid fa-network-wired"></i>
+
+<input
+type="text"
+id="ip"
+placeholder="Enter Customer ID"
+required
+autocomplete="off"
+>
+
+</div>
+
+</div>
+
+
+<div class="group">
+
+<label>
+
+Problem
+
+</label>
+
+
+<div class="input">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+<textarea
+id="problem"
+placeholder="Write Customer Problem"
+required
+></textarea>
+
+</div>
+
+</div>
+
+
+<div class="group">
+
+<label>
+
+Reference
+
+</label>
+
+
+<div class="input">
+
+<i class="fa-solid fa-user-check"></i>
+
+<input
+type="text"
+id="reference"
+placeholder="Logged in Username"
+readonly
+>
+
+</div>
+
+</div>
+
+
+<button
+type="submit"
+class="submit-btn"
+id="submitBtn"
+>
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Submit Support
+
+</button>
+
+
+</form>
+
+
+<div class="footer">
+
+© LINK4 COMMUNICATION
+
+</div>
+
+
+</div>
+
+
+<div
+class="popup-overlay"
+id="popupOverlay"
+>
+
+<div
+class="popup-box"
+id="popupBox"
+>
+
+<div
+class="popup-icon"
+id="popupIcon"
+>
+
+<i></i>
+
+</div>
+
+
+<div
+class="popup-title"
+id="popupTitle"
+>
+
+Message
+
+</div>
+
+
+<div
+class="popup-message"
+id="popupMessage"
+>
+
+Message
+
+</div>
+
+
+<button
+class="popup-ok"
+id="popupOk"
+>
+
+OK
+
+</button>
+
+
+</div>
+
+</div>
+
+
+<script>
+
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbw1NiYF5qNEFGVXdIWZ3I3lpJXEX57uBM0M06oqVVJcRUiuCTAf8NkKycGWtyIhhxWh4g/exec";
+
+
+const loggedIn =
+localStorage.getItem("loggedIn");
+
+
+const username =
+localStorage.getItem("username") || "";
+
+
+if(loggedIn !== "true" || !username){
+
+localStorage.clear();
+
+window.location.replace("index.html");
+
+}
+
+
+const referenceInput =
+document.getElementById("reference");
+
+
+referenceInput.value = username;
+
+
+function goBack(){
+
+window.location.replace("dashboard.html");
+
+}
+
+
+const entryForm =
+document.getElementById("entryForm");
+
+
+const submitBtn =
+document.getElementById("submitBtn");
+
+
+const popupOverlay =
+document.getElementById("popupOverlay");
+
+
+const popupBox =
+document.getElementById("popupBox");
+
+
+const popupIcon =
+document.getElementById("popupIcon");
+
+
+const popupTitle =
+document.getElementById("popupTitle");
+
+
+const popupMessage =
+document.getElementById("popupMessage");
+
+
+const popupOk =
+document.getElementById("popupOk");
+
+
+function showPopup(
+type,
+title,
+message,
+showButton = true
+){
+
+popupBox.className =
+"popup-box " + type;
+
+popupTitle.textContent =
+title;
+
+popupMessage.textContent =
+message;
+
+popupOk.style.display =
+showButton ? "block" : "none";
+
+
+if(type === "success"){
+
+popupIcon.innerHTML =
+'<i class="fa-solid fa-check"></i>';
+
+}
+
+else if(type === "error"){
+
+popupIcon.innerHTML =
+'<i class="fa-solid fa-xmark"></i>';
+
+}
+
+else if(type === "warning"){
+
+popupIcon.innerHTML =
+'<i class="fa-solid fa-exclamation"></i>';
+
+}
+
+else if(type === "loading"){
+
+popupIcon.innerHTML =
+'<i class="fa-solid fa-spinner loading-spinner"></i>';
+
+}
+
+
+popupOverlay.classList.add("active");
+
+}
+
+
+function hidePopup(){
+
+popupOverlay.classList.remove("active");
+
+}
+
+
+popupOk.addEventListener(
+"click",
+hidePopup
+);
+
+
+popupOverlay.addEventListener(
+"click",
+function(e){
+
+if(e.target === popupOverlay){
+
+hidePopup();
+
+}
+
+}
+);
+
+
+entryForm.addEventListener(
+"submit",
+async function(e){
+
+e.preventDefault();
+
+
+const customerId =
+document.getElementById("ip").value.trim();
+
+
+const problem =
+document.getElementById("problem").value.trim();
+
+
+const reference =
+localStorage.getItem("username") || "";
+
+
+if(!customerId){
+
+showPopup(
+"warning",
+"Customer ID Required",
+"Please enter the Customer ID."
+);
+
+return;
+
+}
+
+
+if(!problem){
+
+showPopup(
+"warning",
+"Problem Required",
+"Please enter the Customer Problem."
+);
+
+return;
+
+}
+
+
+if(!reference){
+
+showPopup(
+"error",
+"Login Error",
+"Username not found. Please login again."
+);
+
+return;
+
+}
+
+
+const oldButtonText =
+submitBtn.innerHTML;
+
+
+submitBtn.disabled = true;
+
+
+submitBtn.innerHTML =
+'<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
+
+
+showPopup(
+"loading",
+"Submitting...",
+"Please wait while your support request is being submitted.",
+false
+);
+
+
+const formData =
+new URLSearchParams();
+
+
+formData.append(
+"action",
+"newEntry"
+);
+
+
+formData.append(
+"customerId",
+customerId
+);
+
+
+formData.append(
+"problem",
+problem
+);
+
+
+formData.append(
+"reference",
+reference
+);
+
+
+try{
+
+
+await fetch(
+API_URL,
+{
+method:"POST",
+mode:"no-cors",
+headers:{
+"Content-Type":
+"application/x-www-form-urlencoded;charset=UTF-8"
+},
+body:
+formData.toString()
+}
+);
+
+
+showPopup(
+"success",
+"Support Submitted!",
+"Your support request has been successfully submitted."
+);
+
+
+document.getElementById("ip").value = "";
+
+document.getElementById("problem").value = "";
+
+referenceInput.value =
+localStorage.getItem("username") || "";
+
+
+}
+catch(error){
+
+
+console.error(
+"Submit Error:",
+error
+);
+
+
+showPopup(
+"error",
+"Submission Failed",
+"Unable to submit your support request. Please try again."
+);
+
+
+}
+
+
+submitBtn.disabled = false;
+
+
+submitBtn.innerHTML =
+oldButtonText;
+
+
+}
+);
+
+</script>
+
+
+</body>
+
+</html>

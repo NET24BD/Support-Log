@@ -70,7 +70,7 @@ padding:30px;
 
 
 /* =========================================
-   BACKGROUND EFFECT
+   BACKGROUND
 ========================================= */
 
 body::before{
@@ -244,7 +244,7 @@ color:#333;
 
 
 /* =========================================
-   INPUT AREA
+   INPUT
 ========================================= */
 
 .input{
@@ -255,7 +255,7 @@ position:relative;
 
 
 /* =========================================
-   INPUT ICON
+   ICON
 ========================================= */
 
 .input i{
@@ -276,7 +276,7 @@ z-index:2;
 
 
 /* =========================================
-   INPUT & TEXTAREA
+   INPUT + TEXTAREA
 ========================================= */
 
 .input input,
@@ -324,7 +324,7 @@ height:120px;
 
 
 /* =========================================
-   INPUT FOCUS
+   FOCUS
 ========================================= */
 
 .input input:focus,
@@ -475,7 +475,7 @@ LINK4 COMMUNICATION
 
 
 <!-- =========================================
-     ENTRY FORM
+     FORM
 ========================================= -->
 
 <form id="entryForm">
@@ -604,7 +604,7 @@ autocomplete="off"
 
 
 <!-- =========================================
-     SUBMIT BUTTON
+     SUBMIT
 ========================================= -->
 
 <button
@@ -655,7 +655,7 @@ const API_URL =
 
 
 /*************************************************
- * ENTRY FORM
+ * GET FORM
  *************************************************/
 
 const entryForm =
@@ -669,7 +669,7 @@ document.getElementById(
 
 
 /*************************************************
- * SUBMIT BUTTON
+ * GET SUBMIT BUTTON
  *************************************************/
 
 const submitBtn =
@@ -694,7 +694,7 @@ async function(e){
 
 
 /*************************************************
- * STOP PAGE RELOAD
+ * STOP DEFAULT SUBMIT
  *************************************************/
 
 e.preventDefault();
@@ -794,7 +794,7 @@ return;
 
 
 /*************************************************
- * SAVE ORIGINAL BUTTON TEXT
+ * SAVE BUTTON TEXT
  *************************************************/
 
 const oldButtonText =
@@ -812,7 +812,7 @@ submitBtn.disabled = true;
 
 
 /*************************************************
- * SHOW LOADING
+ * LOADING
  *************************************************/
 
 submitBtn.innerHTML =
@@ -825,10 +825,74 @@ try{
 
 
 /*************************************************
- * SEND DATA TO GOOGLE APPS SCRIPT
+ * CREATE FORM DATA
  *************************************************/
 
-const response =
+const formData =
+
+new FormData();
+
+
+
+/*************************************************
+ * ACTION
+ *************************************************/
+
+formData.append(
+
+"action",
+
+"newEntry"
+
+);
+
+
+
+/*************************************************
+ * CUSTOMER ID
+ *************************************************/
+
+formData.append(
+
+"customerId",
+
+customerId
+
+);
+
+
+
+/*************************************************
+ * PROBLEM
+ *************************************************/
+
+formData.append(
+
+"problem",
+
+problem
+
+);
+
+
+
+/*************************************************
+ * REFERENCE
+ *************************************************/
+
+formData.append(
+
+"reference",
+
+reference
+
+);
+
+
+
+/*************************************************
+ * SEND DATA
+ *************************************************/
 
 await fetch(
 
@@ -838,25 +902,9 @@ API_URL,
 
 method:"POST",
 
-body:
+mode:"no-cors",
 
-JSON.stringify({
-
-action:"newEntry",
-
-customerId:
-
-customerId,
-
-problem:
-
-problem,
-
-reference:
-
-reference
-
-})
+body:formData
 
 }
 
@@ -865,25 +913,8 @@ reference
 
 
 /*************************************************
- * READ RESPONSE
+ * SUCCESS MESSAGE
  *************************************************/
-
-const result =
-
-await response.json();
-
-
-
-/*************************************************
- * SUCCESS
- *************************************************/
-
-if(
-
-result.success === true
-
-){
-
 
 alert(
 
@@ -904,29 +935,7 @@ entryForm.reset();
 
 
 /*************************************************
- * SERVER ERROR
- *************************************************/
-
-else{
-
-
-alert(
-
-result.message ||
-
-"Failed To Submit Support Entry."
-
-);
-
-
-}
-
-
-}
-
-
-/*************************************************
- * CONNECTION ERROR
+ * ERROR
  *************************************************/
 
 catch(error){
@@ -934,7 +943,7 @@ catch(error){
 
 console.error(
 
-"Google Apps Script Error:",
+"Submit Error:",
 
 error
 
@@ -943,7 +952,7 @@ error
 
 alert(
 
-"Failed To Submit. Please check your internet connection and try again."
+"Failed To Submit. Please try again."
 
 );
 
@@ -960,7 +969,7 @@ submitBtn.disabled = false;
 
 
 /*************************************************
- * RESTORE BUTTON TEXT
+ * RESTORE BUTTON
  *************************************************/
 
 submitBtn.innerHTML =

@@ -15,6 +15,8 @@ content="width=device-width, initial-scale=1.0"
 
 <!-- =================================================
      AUTO REDIRECT IF ALREADY LOGGED IN
+     ROOT: index.html
+     DASHBOARD: dashboard/index.html
 ================================================= -->
 
 <script>
@@ -23,9 +25,10 @@ content="width=device-width, initial-scale=1.0"
 
     try{
 
-        if(
-            localStorage.getItem("loggedIn") === "true"
-        ){
+        const loggedIn =
+            localStorage.getItem("loggedIn");
+
+        if(loggedIn === "true"){
 
             window.location.replace(
                 "dashboard/index.html"
@@ -35,7 +38,10 @@ content="width=device-width, initial-scale=1.0"
 
     }catch(error){
 
-        console.log(error);
+        console.error(
+            "Session Check Error:",
+            error
+        );
 
     }
 
@@ -992,99 +998,77 @@ const LOGIN_API_URL =
 const loginForm =
 
 document.getElementById(
-
 "loginForm"
-
 );
 
 
 const usernameInput =
 
 document.getElementById(
-
 "username"
-
 );
 
 
 const passwordInput =
 
 document.getElementById(
-
 "password"
-
 );
 
 
 const loginBtn =
 
 document.getElementById(
-
 "loginBtn"
-
 );
 
 
 const passwordToggle =
 
 document.getElementById(
-
 "passwordToggle"
-
 );
 
 
 const popupOverlay =
 
 document.getElementById(
-
 "popupOverlay"
-
 );
 
 
 const popupBox =
 
 document.getElementById(
-
 "popupBox"
-
 );
 
 
 const popupIcon =
 
 document.getElementById(
-
 "popupIcon"
-
 );
 
 
 const popupTitle =
 
 document.getElementById(
-
 "popupTitle"
-
 );
 
 
 const popupMessage =
 
 document.getElementById(
-
 "popupMessage"
-
 );
 
 
 const popupBtn =
 
 document.getElementById(
-
 "popupBtn"
-
 );
 
 
@@ -1102,13 +1086,11 @@ function(){
 if(
 
 passwordInput.type ===
-
 "password"
 
 ){
 
 passwordInput.type =
-
 "text";
 
 
@@ -1121,7 +1103,6 @@ passwordToggle.innerHTML =
 else{
 
 passwordInput.type =
-
 "password";
 
 
@@ -1330,7 +1311,6 @@ loginBtn.innerHTML =
 '<i class="fa-solid fa-spinner fa-spin"></i> Checking...';
 
 
-
 showPopup(
 
 "loading",
@@ -1346,7 +1326,7 @@ false
 
 
 // =================================================
-// API URL
+// CREATE API URL
 // =================================================
 
 const apiUrl =
@@ -1393,7 +1373,7 @@ redirect:"follow"
 
 
 // =================================================
-// CHECK SERVER
+// CHECK SERVER RESPONSE
 // =================================================
 
 if(!response.ok){
@@ -1411,7 +1391,7 @@ response.status
 
 
 // =================================================
-// GET RESPONSE
+// READ API RESPONSE
 // =================================================
 
 const result =

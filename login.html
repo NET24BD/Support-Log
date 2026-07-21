@@ -1,1 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<title>Login | Support System</title>
+
+
+<!-- Google Font -->
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet"
+>
+
+
+<!-- Font Awesome -->
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
+
+
+<style>
+
+/* =========================================
+   RESET
+========================================= */
+
+*{
+
+margin:0;
+padding:0;
+
+box-sizing:border-box;
+
+font-family:'Poppins',sans-serif;
+
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:25px;
+
+background:#005C3A;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+/* =========================================
+   BACKGROUND EFFECT
+========================================= */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+left:-200px;
+
+top:-200px;
+
+width:500px;
+
+height:500px;
+
+background:#E53935;
+
+border-radius:50%;
+
+filter:blur(140px);
+
+opacity:.35;
+
+pointer-events:none;
+
+}
+
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+right:-180px;
+
+bottom:-180px;
+
+width:450px;
+
+height:450px;
+
+background:#0D8F5A;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:.35;
+
+pointer-events:none;
+
+}
+
+
+/* =========================================
+   LOGIN CARD
+========================================= */
+
+.login-card{
+
+width:100%;
+
+max-width:450px;
+
+background:white;
+
+border-radius:25px;
+
+padding:40px;
+
+box-shadow:
+
+0 25px 60px
+
+rgba(0,0,0,.25);
+
+position:relative;
+
+z-index:1;
+
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo{
+
+width:85px;
+
+height:85px;
+
+margin:0 auto 20px;
+
+background:#006A4E;
+
+border-radius:22px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:38px;
+
+color:white;
+
+box-shadow:
+
+0 10px 25px
+
+rgba(0,106,78,.25);
+
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+h2{
+
+text-align:center;
+
+color:#006A4E;
+
+font-size:25px;
+
+margin-bottom:8px;
+
+}
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.subtitle{
+
+text-align:center;
+
+color:#777;
+
+font-size:14px;
+
+margin-bottom:30px;
+
+}
+
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.group{
+
+margin-bottom:20px;
+
+}
+
+
+.group label{
+
+display:block;
+
+font-size:14px;
+
+font-weight:600;
+
+color:#333;
+
+margin-bottom:8px;
+
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.input-box{
+
+position:relative;
+
+}
+
+
+.input-box i{
+
+position:absolute;
+
+left:16px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+color:#006A4E;
+
+font-size:18px;
+
+z-index:2;
+
+}
+
+
+.input-box input{
+
+width:100%;
+
+padding:
+
+15px
+
+50px;
+
+border:2px solid #ddd;
+
+border-radius:12px;
+
+font-size:15px;
+
+outline:none;
+
+transition:.3s;
+
+background:white;
+
+}
+
+
+.input-box input:focus{
+
+border-color:#006A4E;
+
+box-shadow:
+
+0 0 15px
+
+rgba(0,106,78,.15);
+
+}
+
+
+/* =========================================
+   PASSWORD TOGGLE
+========================================= */
+
+.password-toggle{
+
+position:absolute;
+
+right:16px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+color:#777;
+
+cursor:pointer;
+
+font-size:17px;
+
+z-index:3;
+
+}
+
+
+.password-toggle:hover{
+
+color:#006A4E;
+
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.login-btn{
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:12px;
+
+background:#006A4E;
+
+color:white;
+
+font-size:17px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+margin-top:5px;
+
+}
+
+
+.login-btn:hover{
+
+background:#E53935;
+
+}
+
+
+.login-btn:disabled{
+
+opacity:.7;
+
+cursor:not-allowed;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer{
+
+margin-top:25px;
+
+text-align:center;
+
+font-size:13px;
+
+color:#777;
+
+}
+
+
+/* =========================================
+   CUSTOM POPUP
+========================================= */
+
+.popup-overlay{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:
+
+rgba(0,0,0,.55);
+
+backdrop-filter:blur(6px);
+
+-webkit-backdrop-filter:blur(6px);
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+padding:20px;
+
+z-index:99999;
+
+}
+
+
+.popup-overlay.active{
+
+display:flex;
+
+animation:
+
+fadeIn .25s ease;
+
+}
+
+
+.popup-box{
+
+width:100%;
+
+max-width:400px;
+
+background:white;
+
+border-radius:25px;
+
+padding:35px 30px 30px;
+
+text-align:center;
+
+box-shadow:
+
+0 25px 80px
+
+rgba(0,0,0,.35);
+
+animation:
+
+zoomIn .3s ease;
+
+}
+
+
+/* =========================================
+   POPUP ICON
+========================================= */
+
+.popup-icon{
+
+width:75px;
+
+height:75px;
+
+margin:0 auto 20px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:35px;
+
+}
+
+
+/* SUCCESS */
+
+.popup-box.success
+
+.popup-icon{
+
+background:#E8F8F1;
+
+color:#006A4E;
+
+}
+
+
+/* ERROR */
+
+.popup-box.error
+
+.popup-icon{
+
+background:#FDECEC;
+
+color:#E53935;
+
+}
+
+
+/* LOADING */
+
+.popup-box.loading
+
+.popup-icon{
+
+background:#E8F8F1;
+
+color:#006A4E;
+
+}
+
+
+/* =========================================
+   POPUP TEXT
+========================================= */
+
+.popup-title{
+
+font-size:22px;
+
+font-weight:700;
+
+color:#222;
+
+margin-bottom:10px;
+
+}
+
+
+.popup-message{
+
+font-size:14px;
+
+color:#777;
+
+line-height:1.7;
+
+margin-bottom:25px;
+
+}
+
+
+/* =========================================
+   POPUP BUTTON
+========================================= */
+
+.popup-btn{
+
+width:100%;
+
+padding:13px;
+
+border:none;
+
+border-radius:12px;
+
+background:#006A4E;
+
+color:white;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+}
+
+
+.popup-btn:hover{
+
+background:#E53935;
+
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+
+@keyframes zoomIn{
+
+from{
+
+transform:scale(.8);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+
+/* =========================================
+   SPINNER
+========================================= */
+
+.spinner{
+
+animation:
+
+spin 1s linear infinite;
+
+}
+
+
+@keyframes spin{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:600px){
+
+.login-card{
+
+padding:28px 22px;
+
+}
+
+h2{
+
+font-size:22px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     LOGIN CARD
+========================================= -->
+
+<div class="login-card">
+
+
+<!-- LOGO -->
+
+<div class="logo">
+
+<i class="fa-solid fa-headset"></i>
+
+</div>
+
+
+<!-- TITLE -->
+
+<h2>
+
+Support System Login
+
+</h2>
+
+
+<div class="subtitle">
+
+LINK4 COMMUNICATION
+
+</div>
+
+
+<!-- =========================================
+     LOGIN FORM
+========================================= -->
+
+<form id="loginForm">
+
+
+<!-- USERNAME -->
+
+<div class="group">
+
+<label>
+
+Username
+
+</label>
+
+
+<div class="input-box">
+
+<i class="fa-solid fa-user"></i>
+
+
+<input
+
+type="text"
+
+id="username"
+
+placeholder="Enter Username"
+
+autocomplete="username"
+
+required
+
+>
+
+</div>
+
+</div>
+
+
+<!-- PASSWORD -->
+
+<div class="group">
+
+<label>
+
+Password
+
+</label>
+
+
+<div class="input-box">
+
+<i class="fa-solid fa-lock"></i>
+
+
+<input
+
+type="password"
+
+id="password"
+
+placeholder="Enter Password"
+
+autocomplete="current-password"
+
+required
+
+>
+
+
+<span
+
+class="password-toggle"
+
+id="passwordToggle"
+
+>
+
+<i class="fa-solid fa-eye"></i>
+
+</span>
+
+
+</div>
+
+</div>
+
+
+<!-- LOGIN BUTTON -->
+
+<button
+
+type="submit"
+
+class="login-btn"
+
+id="loginBtn"
+
+>
+
+<i class="fa-solid fa-right-to-bracket"></i>
+
+Login
+
+</button>
+
+
+</form>
+
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+© LINK4 COMMUNICATION
+
+</div>
+
+
+</div>
+
+
+
+<!-- =========================================
+     POPUP
+========================================= -->
+
+<div
+
+class="popup-overlay"
+
+id="popupOverlay"
+
+>
+
+
+<div
+
+class="popup-box"
+
+id="popupBox"
+
+>
+
+
+<div
+
+class="popup-icon"
+
+id="popupIcon"
+
+>
+
+<i></i>
+
+</div>
+
+
+<div
+
+class="popup-title"
+
+id="popupTitle"
+
+>
+
+Message
+
+</div>
+
+
+<div
+
+class="popup-message"
+
+id="popupMessage"
+
+>
+
+Message
+
+</div>
+
+
+<button
+
+class="popup-btn"
+
+id="popupBtn"
+
+>
+
+OK
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+
+// ============================================
+// LOGIN API URL
+// ============================================
+//
+// এখানে Google Apps Script Login Web App URL বসাবেন
+//
+// উদাহরণ:
+// https://script.google.com/macros/s/XXXXX/exec
+//
+// ============================================
+
+const LOGIN_API_URL =
+
+"YOUR_LOGIN_API_URL";
+
+
+
+// ============================================
+// GET ELEMENTS
+// ============================================
+
+const loginForm =
+
+document.getElementById(
+
+"loginForm"
+
+);
+
+
+const usernameInput =
+
+document.getElementById(
+
+"username"
+
+);
+
+
+const passwordInput =
+
+document.getElementById(
+
+"password"
+
+);
+
+
+const loginBtn =
+
+document.getElementById(
+
+"loginBtn"
+
+);
+
+
+const passwordToggle =
+
+document.getElementById(
+
+"passwordToggle"
+
+);
+
+
+const popupOverlay =
+
+document.getElementById(
+
+"popupOverlay"
+
+);
+
+
+const popupBox =
+
+document.getElementById(
+
+"popupBox"
+
+);
+
+
+const popupIcon =
+
+document.getElementById(
+
+"popupIcon"
+
+);
+
+
+const popupTitle =
+
+document.getElementById(
+
+"popupTitle"
+
+);
+
+
+const popupMessage =
+
+document.getElementById(
+
+"popupMessage"
+
+);
+
+
+const popupBtn =
+
+document.getElementById(
+
+"popupBtn"
+
+);
+
+
+
+// ============================================
+// PASSWORD SHOW / HIDE
+// ============================================
+
+passwordToggle.addEventListener(
+
+"click",
+
+function(){
+
+if(
+
+passwordInput.type ===
+
+"password"
+
+){
+
+passwordInput.type =
+
+"text";
+
+
+passwordToggle.innerHTML =
+
+'<i class="fa-solid fa-eye-slash"></i>';
+
+}
+
+else{
+
+passwordInput.type =
+
+"password";
+
+
+passwordToggle.innerHTML =
+
+'<i class="fa-solid fa-eye"></i>';
+
+}
+
+}
+
+);
+
+
+
+// ============================================
+// SHOW POPUP
+// ============================================
+
+function showPopup(
+
+type,
+
+title,
+
+message,
+
+showButton = true
+
+){
+
+
+popupBox.classList.remove(
+
+"success",
+
+"error",
+
+"loading"
+
+);
+
+
+popupBox.classList.add(
+
+type
+
+);
+
+
+popupTitle.textContent =
+
+title;
+
+
+popupMessage.textContent =
+
+message;
+
+
+popupBtn.style.display =
+
+showButton
+
+? "block"
+
+: "none";
+
+
+if(type === "success"){
+
+popupIcon.innerHTML =
+
+'<i class="fa-solid fa-check"></i>';
+
+}
+
+
+else if(type === "error"){
+
+popupIcon.innerHTML =
+
+'<i class="fa-solid fa-xmark"></i>';
+
+}
+
+
+else if(type === "loading"){
+
+popupIcon.innerHTML =
+
+'<i class="fa-solid fa-spinner spinner"></i>';
+
+}
+
+
+popupOverlay.classList.add(
+
+"active"
+
+);
+
+}
+
+
+
+// ============================================
+// HIDE POPUP
+// ============================================
+
+function hidePopup(){
+
+popupOverlay.classList.remove(
+
+"active"
+
+);
+
+}
+
+
+popupBtn.addEventListener(
+
+"click",
+
+hidePopup
+
+);
+
+
+
+// ============================================
+// LOGIN
+// ============================================
+
+loginForm.addEventListener(
+
+"submit",
+
+async function(e){
+
+e.preventDefault();
+
+
+const username =
+
+usernameInput.value.trim();
+
+
+const password =
+
+passwordInput.value.trim();
+
+
+if(!username){
+
+showPopup(
+
+"error",
+
+"Username Required",
+
+"Please enter your username."
+
+);
+
+return;
+
+}
+
+
+if(!password){
+
+showPopup(
+
+"error",
+
+"Password Required",
+
+"Please enter your password."
+
+);
+
+return;
+
+}
+
+
+// ==========================================
+// DISABLE BUTTON
+// ==========================================
+
+loginBtn.disabled = true;
+
+
+loginBtn.innerHTML =
+
+'<i class="fa-solid fa-spinner fa-spin"></i> Logging In...';
+
+
+// ==========================================
+// LOADING
+// ==========================================
+
+showPopup(
+
+"loading",
+
+"Checking Login",
+
+"Please wait while we verify your account.",
+
+false
+
+);
+
+
+try{
+
+
+const response =
+
+await fetch(
+
+LOGIN_API_URL +
+
+"?action=login" +
+
+"&username=" +
+
+encodeURIComponent(username) +
+
+"&password=" +
+
+encodeURIComponent(password)
+
+);
+
+
+const result =
+
+await response.json();
+
+
+if(
+
+result.success === true
+
+){
+
+
+// ========================================
+// SAVE LOGIN INFORMATION
+// ========================================
+
+localStorage.setItem(
+
+"loggedIn",
+
+"true"
+
+);
+
+
+localStorage.setItem(
+
+"username",
+
+result.username || username
+
+);
+
+
+localStorage.setItem(
+
+"name",
+
+result.name || ""
+
+);
+
+
+localStorage.setItem(
+
+"role",
+
+result.role || ""
+
+);
+
+
+// ========================================
+// SUCCESS
+// ========================================
+
+showPopup(
+
+"success",
+
+"Login Successful",
+
+"Welcome " +
+
+(result.name || username) +
+
+". Redirecting..."
+
+);
+
+
+// ========================================
+// REDIRECT
+// ========================================
+//
+// পরে এখানে আপনার Dashboard URL বসাবেন
+//
+// ========================================
+
+setTimeout(
+
+function(){
+
+if(
+
+result.role ===
+
+"admin"
+
+){
+
+window.location.href =
+
+"admin.html";
+
+}
+
+else if(
+
+result.role ===
+
+"support"
+
+){
+
+window.location.href =
+
+"pending-support.html";
+
+}
+
+else if(
+
+result.role ===
+
+"call"
+
+){
+
+window.location.href =
+
+"pending-call.html";
+
+}
+
+else{
+
+window.location.href =
+
+"index.html";
+
+}
+
+},
+
+1500
+
+);
+
+
+}
+
+else{
+
+
+showPopup(
+
+"error",
+
+"Login Failed",
+
+result.message ||
+
+"Invalid Username or Password."
+
+);
+
+}
+
+
+}
+
+catch(error){
+
+
+console.error(
+
+"Login Error:",
+
+error
+
+);
+
+
+showPopup(
+
+"error",
+
+"Connection Error",
+
+"Unable to connect to the Login Server. Please try again."
+
+);
+
+
+}
+
+
+// ==========================================
+// ENABLE BUTTON
+// ==========================================
+
+loginBtn.disabled = false;
+
+
+loginBtn.innerHTML =
+
+'<i class="fa-solid fa-right-to-bracket"></i> Login';
+
+
+}
+
+);
+
+</script>
+
+
+</body>
+
+</html>

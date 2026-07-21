@@ -5,13 +5,9 @@
 
 <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Pending Support | LINK4 COMMUNICATION</title>
-
 
 <!-- =====================================================
      LOGIN SECURITY
@@ -21,9 +17,15 @@ content="width=device-width, initial-scale=1.0"
 
 (function(){
 
-    if(
-        localStorage.getItem("loggedIn") !== "true"
-    ){
+    try{
+
+        if(localStorage.getItem("loggedIn") !== "true"){
+
+            window.location.replace("../index.html");
+
+        }
+
+    }catch(error){
 
         window.location.replace("../index.html");
 
@@ -50,7 +52,7 @@ crossorigin
 >
 
 <link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;500;600;600;700;700;800&display=swap"
 rel="stylesheet"
 >
 
@@ -73,10 +75,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 *{
 
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
 
 }
 
@@ -87,13 +92,27 @@ font-family:'Poppins',sans-serif;
 
 body{
 
-min-height:100vh;
+    min-height:100vh;
 
-background:#005C3A;
+    background:
 
-padding:20px;
+    radial-gradient(
+        circle at top left,
+        rgba(229,57,53,.25),
+        transparent 30%
+    ),
 
-color:#222;
+    radial-gradient(
+        circle at bottom right,
+        rgba(13,143,90,.25),
+        transparent 30%
+    ),
+
+    #005C3A;
+
+    padding:25px;
+
+    color:#222;
 
 }
 
@@ -104,11 +123,11 @@ color:#222;
 
 .container{
 
-width:100%;
+    width:100%;
 
-max-width:1400px;
+    max-width:1500px;
 
-margin:auto;
+    margin:auto;
 
 }
 
@@ -119,148 +138,200 @@ margin:auto;
 
 .header{
 
-background:white;
+    background:rgba(255,255,255,.97);
 
-border-radius:20px;
+    border-radius:22px;
 
-padding:20px 25px;
+    padding:18px 22px;
 
-display:flex;
+    display:flex;
 
-justify-content:space-between;
+    justify-content:space-between;
 
-align-items:center;
+    align-items:center;
 
-gap:20px;
+    gap:20px;
 
-box-shadow:
+    box-shadow:
 
-0 15px 40px
+    0 20px 50px rgba(0,0,0,.20);
 
-rgba(0,0,0,.18);
-
-margin-bottom:25px;
+    margin-bottom:18px;
 
 }
 
+
+/* =====================================================
+   HEADER LEFT
+===================================================== */
 
 .header-left{
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-gap:15px;
+    gap:15px;
 
 }
 
+
+/* =====================================================
+   LOGO
+===================================================== */
 
 .logo{
 
-width:55px;
+    width:58px;
 
-height:55px;
+    height:58px;
 
-border-radius:15px;
+    border-radius:17px;
 
-background:#006A4E;
+    background:
 
-color:white;
+    linear-gradient(
+        135deg,
+        #006A4E,
+        #008f68
+    );
 
-display:flex;
+    color:white;
 
-justify-content:center;
+    display:flex;
 
-align-items:center;
+    justify-content:center;
 
-font-size:24px;
+    align-items:center;
+
+    font-size:25px;
+
+    box-shadow:
+
+    0 8px 20px rgba(0,106,78,.25);
 
 }
 
 
+/* =====================================================
+   HEADER TITLE
+===================================================== */
+
 .header-title h1{
 
-font-size:24px;
+    font-size:23px;
 
-color:#006A4E;
+    font-weight:700;
+
+    color:#006A4E;
+
+    line-height:1.2;
 
 }
 
 
 .header-title p{
 
-font-size:13px;
+    font-size:12px;
 
-color:#777;
+    color:#777;
 
-margin-top:3px;
+    margin-top:4px;
 
 }
 
+
+/* =====================================================
+   HEADER RIGHT
+===================================================== */
 
 .header-right{
 
-display:flex;
+    display:flex;
 
-gap:10px;
+    gap:9px;
 
 }
 
+
+/* =====================================================
+   BUTTON COMMON
+===================================================== */
 
 .back-btn,
 .refresh-btn{
 
-border:none;
+    border:none;
 
-padding:11px 16px;
+    padding:11px 17px;
 
-border-radius:10px;
+    border-radius:11px;
 
-cursor:pointer;
+    cursor:pointer;
 
-font-weight:600;
+    font-weight:600;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-gap:8px;
+    justify-content:center;
 
-transition:.3s;
+    gap:8px;
+
+    transition:.25s;
+
+    font-size:13px;
 
 }
 
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
 
 .back-btn{
 
-background:#006A4E;
+    background:#006A4E;
 
-color:white;
+    color:white;
 
-}
+    box-shadow:
 
-
-.refresh-btn{
-
-background:#e8f8f1;
-
-color:#006A4E;
+    0 6px 15px rgba(0,106,78,.20);
 
 }
 
 
 .back-btn:hover{
 
-background:#E53935;
+    background:#E53935;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* =====================================================
+   REFRESH BUTTON
+===================================================== */
+
+.refresh-btn{
+
+    background:#e9f8f2;
+
+    color:#006A4E;
 
 }
 
 
 .refresh-btn:hover{
 
-background:#006A4E;
+    background:#006A4E;
 
-color:white;
+    color:white;
+
+    transform:translateY(-2px);
 
 }
 
@@ -271,85 +342,93 @@ color:white;
 
 .user-bar{
 
-background:rgba(255,255,255,.12);
+    background:rgba(255,255,255,.12);
 
-color:white;
+    border:1px solid rgba(255,255,255,.15);
 
-padding:12px 18px;
+    backdrop-filter:blur(10px);
 
-border-radius:12px;
+    color:white;
 
-margin-bottom:20px;
+    padding:11px 17px;
 
-display:flex;
+    border-radius:13px;
 
-justify-content:space-between;
+    margin-bottom:18px;
 
-align-items:center;
+    display:flex;
 
-font-size:14px;
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    font-size:13px;
 
 }
 
 
 .user-name{
 
-font-weight:600;
+    font-weight:700;
+
+    color:#fff;
 
 }
 
 
 /* =====================================================
-   STATUS MESSAGE
+   STATUS
 ===================================================== */
 
 .status{
 
-display:none;
+    display:none;
 
-padding:14px 18px;
+    padding:12px 16px;
 
-border-radius:12px;
+    border-radius:12px;
 
-margin-bottom:20px;
+    margin-bottom:18px;
 
-font-size:14px;
+    font-size:13px;
 
-font-weight:500;
+    font-weight:500;
 
 }
 
 
 .status.show{
 
-display:block;
+    display:block;
 
 }
 
 
 .status.loading{
 
-background:#fff8e1;
+    background:#fff7df;
 
-color:#8a6500;
+    color:#8a6500;
 
 }
 
 
 .status.success{
 
-background:#e8f8f1;
+    background:#e8f8f1;
 
-color:#006A4E;
+    color:#006A4E;
 
 }
 
 
 .status.error{
 
-background:#fdecec;
+    background:#fdecec;
 
-color:#c62828;
+    color:#c62828;
 
 }
 
@@ -360,17 +439,15 @@ color:#c62828;
 
 .table-container{
 
-background:white;
+    background:#fff;
 
-border-radius:20px;
+    border-radius:22px;
 
-box-shadow:
+    overflow:hidden;
 
-0 20px 50px
+    box-shadow:
 
-rgba(0,0,0,.18);
-
-overflow:hidden;
+    0 25px 60px rgba(0,0,0,.20);
 
 }
 
@@ -381,41 +458,114 @@ overflow:hidden;
 
 .table-header{
 
-padding:20px 25px;
+    padding:18px 22px;
 
-border-bottom:1px solid #eee;
+    display:flex;
 
-display:flex;
+    justify-content:space-between;
 
-justify-content:space-between;
+    align-items:center;
 
-align-items:center;
+    gap:15px;
+
+    border-bottom:1px solid #edf0ee;
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #ffffff,
+        #fbfdfc
+    );
+
+}
+
+
+.table-header-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+.table-header-icon{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:12px;
+
+    background:#e8f8f1;
+
+    color:#006A4E;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:18px;
 
 }
 
 
 .table-header h2{
 
-font-size:20px;
+    font-size:18px;
 
-color:#222;
+    color:#222;
+
+    font-weight:700;
 
 }
 
 
+.table-header p{
+
+    color:#888;
+
+    font-size:11px;
+
+    margin-top:2px;
+
+}
+
+
+/* =====================================================
+   PENDING COUNT
+===================================================== */
+
 .pending-count{
 
-background:#2563eb;
+    background:
 
-color:white;
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
 
-padding:6px 12px;
+    color:white;
 
-border-radius:20px;
+    padding:7px 13px;
 
-font-size:13px;
+    border-radius:30px;
 
-font-weight:600;
+    font-size:12px;
+
+    font-weight:700;
+
+    box-shadow:
+
+    0 5px 15px rgba(37,99,235,.20);
+
+    white-space:nowrap;
 
 }
 
@@ -426,9 +576,9 @@ font-weight:600;
 
 .table-scroll{
 
-width:100%;
+    width:100%;
 
-overflow-x:auto;
+    overflow-x:auto;
 
 }
 
@@ -439,70 +589,256 @@ overflow-x:auto;
 
 table{
 
-width:100%;
+    width:100%;
 
-border-collapse:collapse;
+    border-collapse:separate;
 
-min-width:1100px;
+    border-spacing:0;
+
+    min-width:1150px;
 
 }
 
 
+/* =====================================================
+   TABLE HEAD
+===================================================== */
+
 thead{
 
-background:#006A4E;
+    background:#006A4E;
 
-color:white;
+    color:white;
 
 }
 
 
 th{
 
-padding:15px 12px;
+    padding:13px 14px;
 
-font-size:13px;
+    font-size:12px;
 
-font-weight:600;
+    font-weight:600;
 
-text-align:left;
+    text-align:left;
 
-white-space:nowrap;
+    white-space:nowrap;
 
 }
 
 
+th:first-child{
+
+    padding-left:20px;
+
+}
+
+
+th:last-child{
+
+    padding-right:20px;
+
+}
+
+
+/* =====================================================
+   TABLE BODY
+===================================================== */
+
 td{
 
-padding:14px 12px;
+    padding:13px 14px;
 
-border-bottom:1px solid #eee;
+    border-bottom:1px solid #edf0ee;
 
-font-size:13px;
+    font-size:12px;
 
-vertical-align:top;
+    vertical-align:middle;
+
+}
+
+
+tbody tr{
+
+    transition:.2s;
 
 }
 
 
 tbody tr:hover{
 
-background:#f7fffb;
+    background:#f8fcfa;
+
+    box-shadow:
+
+    inset 4px 0 0 #006A4E;
+
+}
+
+
+tbody tr:last-child td{
+
+    border-bottom:none;
 
 }
 
 
 /* =====================================================
-   READ ONLY DATA
+   CUSTOMER ID
 ===================================================== */
 
-.readonly{
+.customer-badge{
 
-background:#f5f5f5;
+    display:inline-flex;
 
-color:#555;
+    align-items:center;
 
-font-weight:500;
+    gap:7px;
+
+    background:#f1f7f5;
+
+    color:#006A4E;
+
+    padding:8px 10px;
+
+    border-radius:9px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+}
+
+
+.customer-badge i{
+
+    font-size:12px;
+
+}
+
+
+/* =====================================================
+   DATE BADGE
+===================================================== */
+
+.date-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    background:#f5f7ff;
+
+    color:#4054b2;
+
+    padding:8px 10px;
+
+    border-radius:9px;
+
+    white-space:nowrap;
+
+    font-weight:600;
+
+}
+
+
+.date-badge i{
+
+    font-size:12px;
+
+}
+
+
+/* =====================================================
+   PROBLEM BOX
+===================================================== */
+
+.problem-box{
+
+    max-width:260px;
+
+    background:#fff8f8;
+
+    border-left:3px solid #E53935;
+
+    padding:9px 11px;
+
+    border-radius:7px;
+
+    color:#555;
+
+    line-height:1.5;
+
+}
+
+
+/* =====================================================
+   REF BADGE
+===================================================== */
+
+.ref-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    background:#fff7e6;
+
+    color:#a66b00;
+
+    padding:8px 10px;
+
+    border-radius:9px;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+}
+
+
+.ref-badge i{
+
+    font-size:12px;
+
+}
+
+
+/* =====================================================
+   INPUT WRAPPER
+===================================================== */
+
+.input-wrapper{
+
+    position:relative;
+
+    min-width:200px;
+
+}
+
+
+/* =====================================================
+   INPUT ICON
+===================================================== */
+
+.input-wrapper i{
+
+    position:absolute;
+
+    left:12px;
+
+    top:13px;
+
+    color:#006A4E;
+
+    font-size:13px;
+
+    z-index:2;
 
 }
 
@@ -514,23 +850,39 @@ font-weight:500;
 .support-input,
 .work-input{
 
-width:100%;
+    width:100%;
 
-min-width:180px;
+    min-width:200px;
 
-border:2px solid #ddd;
+    min-height:75px;
 
-border-radius:9px;
+    border:1.5px solid #dfe6e2;
 
-padding:10px;
+    border-radius:10px;
 
-font-size:13px;
+    padding:10px 11px 10px 35px;
 
-outline:none;
+    font-size:12px;
 
-resize:vertical;
+    outline:none;
 
-transition:.3s;
+    resize:vertical;
+
+    background:#fbfdfc;
+
+    color:#333;
+
+    line-height:1.5;
+
+    transition:.25s;
+
+}
+
+
+.support-input::placeholder,
+.work-input::placeholder{
+
+    color:#aaa;
 
 }
 
@@ -538,13 +890,46 @@ transition:.3s;
 .support-input:focus,
 .work-input:focus{
 
-border-color:#006A4E;
+    background:white;
 
-box-shadow:
+    border-color:#006A4E;
 
-0 0 10px
+    box-shadow:
 
-rgba(0,106,78,.12);
+    0 0 0 3px rgba(0,106,78,.08);
+
+}
+
+
+/* =====================================================
+   WORK INPUT DIFFERENT COLOR
+===================================================== */
+
+.work-wrapper i{
+
+    color:#2563eb;
+
+}
+
+
+.work-input:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:
+
+    0 0 0 3px rgba(37,99,235,.08);
+
+}
+
+
+/* =====================================================
+   ACTION CELL
+===================================================== */
+
+.action-cell{
+
+    text-align:center;
 
 }
 
@@ -555,47 +940,73 @@ rgba(0,106,78,.12);
 
 .submit-btn{
 
-border:none;
+    border:none;
 
-background:#006A4E;
+    background:
 
-color:white;
+    linear-gradient(
+        135deg,
+        #006A4E,
+        #008f68
+    );
 
-padding:10px 16px;
+    color:white;
 
-border-radius:9px;
+    padding:11px 16px;
 
-cursor:pointer;
+    border-radius:10px;
 
-font-weight:600;
+    cursor:pointer;
 
-font-size:13px;
+    font-weight:600;
 
-display:flex;
+    font-size:12px;
 
-align-items:center;
+    display:inline-flex;
 
-gap:7px;
+    align-items:center;
 
-white-space:nowrap;
+    justify-content:center;
 
-transition:.3s;
+    gap:7px;
+
+    white-space:nowrap;
+
+    transition:.25s;
+
+    box-shadow:
+
+    0 6px 15px rgba(0,106,78,.18);
 
 }
 
 
 .submit-btn:hover{
 
-background:#E53935;
+    background:
+
+    linear-gradient(
+        135deg,
+        #E53935,
+        #ef5350
+    );
+
+    transform:translateY(-2px);
+
+    box-shadow:
+
+    0 8px 18px rgba(229,57,53,.20);
 
 }
 
 
 .submit-btn:disabled{
 
-opacity:.6;
+    opacity:.6;
 
-cursor:not-allowed;
+    cursor:not-allowed;
+
+    transform:none;
 
 }
 
@@ -606,61 +1017,67 @@ cursor:not-allowed;
 
 .empty-state{
 
-display:none;
+    display:none;
 
-padding:70px 20px;
+    padding:65px 20px;
 
-text-align:center;
+    text-align:center;
 
 }
 
 
 .empty-state.show{
 
-display:block;
+    display:block;
 
 }
 
 
 .empty-icon{
 
-width:80px;
+    width:75px;
 
-height:80px;
+    height:75px;
 
-border-radius:50%;
+    border-radius:50%;
 
-background:#e8f8f1;
+    background:#e8f8f1;
 
-color:#006A4E;
+    color:#006A4E;
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-align-items:center;
+    align-items:center;
 
-font-size:35px;
+    font-size:32px;
 
-margin:0 auto 20px;
+    margin:0 auto 18px;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,106,78,.10);
 
 }
 
 
 .empty-state h3{
 
-font-size:20px;
+    font-size:19px;
 
-margin-bottom:8px;
+    margin-bottom:7px;
+
+    color:#333;
 
 }
 
 
 .empty-state p{
 
-color:#777;
+    color:#888;
 
-font-size:14px;
+    font-size:13px;
 
 }
 
@@ -671,20 +1088,29 @@ font-size:14px;
 
 .loading-state{
 
-padding:70px 20px;
+    padding:65px 20px;
 
-text-align:center;
+    text-align:center;
 
 }
 
 
 .spinner{
 
-font-size:35px;
+    font-size:34px;
 
-color:#006A4E;
+    color:#006A4E;
 
-margin-bottom:15px;
+    margin-bottom:12px;
+
+}
+
+
+.loading-state p{
+
+    color:#888;
+
+    font-size:13px;
 
 }
 
@@ -695,74 +1121,140 @@ margin-bottom:15px;
 
 @media(max-width:768px){
 
-body{
+    body{
 
-padding:12px;
+        padding:12px;
+
+    }
+
+
+    .header{
+
+        padding:16px;
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+
+    .header-left{
+
+        width:100%;
+
+    }
+
+
+    .header-right{
+
+        width:100%;
+
+        display:grid;
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+
+    .back-btn,
+    .refresh-btn{
+
+        width:100%;
+
+        padding:10px;
+
+    }
+
+
+    .header-title h1{
+
+        font-size:19px;
+
+    }
+
+
+    .header-title p{
+
+        font-size:10px;
+
+    }
+
+
+    .user-bar{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        font-size:11px;
+
+    }
+
+
+    .table-header{
+
+        padding:15px;
+
+    }
+
+
+    .table-header h2{
+
+        font-size:16px;
+
+    }
+
+
+    .table-header p{
+
+        display:none;
+
+    }
+
+
+    .table-header-icon{
+
+        width:38px;
+
+        height:38px;
+
+    }
 
 }
 
 
-.header{
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 
-padding:18px;
+@media(max-width:450px){
 
-align-items:flex-start;
+    .header-right{
 
-}
+        grid-template-columns:1fr;
 
-
-.header-title h1{
-
-font-size:19px;
-
-}
+    }
 
 
-.header-title p{
+    .logo{
 
-font-size:11px;
+        width:50px;
 
-}
+        height:50px;
 
+        font-size:21px;
 
-.header-right{
-
-flex-direction:column;
-
-}
+    }
 
 
-.back-btn,
-.refresh-btn{
+    .pending-count{
 
-justify-content:center;
+        font-size:11px;
 
-padding:9px 12px;
+        padding:6px 10px;
 
-font-size:12px;
-
-}
-
-
-.user-bar{
-
-font-size:12px;
-
-}
-
-
-.table-header{
-
-padding:15px;
-
-}
-
-
-.table-header h2{
-
-font-size:17px;
-
-}
+    }
 
 }
 
@@ -804,7 +1296,7 @@ Pending Support
 
 <p>
 
-Manage pending customer support requests
+Manage and process pending customer support requests
 
 </p>
 
@@ -859,6 +1351,8 @@ Dashboard
 
 <i class="fa-solid fa-user"></i>
 
+&nbsp;
+
 Logged in as:
 
 <span
@@ -870,11 +1364,14 @@ User
 
 </div>
 
+
 <div>
 
-<i class="fa-solid fa-lock"></i>
+<i class="fa-solid fa-shield-halved"></i>
 
-Read-only customer information
+&nbsp;
+
+Customer information is read-only
 
 </div>
 
@@ -892,19 +1389,47 @@ id="status"
 
 
 <!-- =====================================================
-     TABLE
+     TABLE CONTAINER
 ===================================================== -->
 
 <div class="table-container">
 
 
+<!-- =====================================================
+     TABLE HEADER
+===================================================== -->
+
 <div class="table-header">
+
+
+<div class="table-header-left">
+
+
+<div class="table-header-icon">
+
+<i class="fa-solid fa-list-check"></i>
+
+</div>
+
+
+<div>
 
 <h2>
 
 Pending Support Requests
 
 </h2>
+
+<p>
+
+Complete the Support and Support Work fields to continue
+
+</p>
+
+</div>
+
+
+</div>
 
 
 <div
@@ -916,10 +1441,13 @@ id="pendingCount"
 
 </div>
 
+
 </div>
 
 
-<!-- LOADING -->
+<!-- =====================================================
+     LOADING
+===================================================== -->
 
 <div
 class="loading-state"
@@ -941,7 +1469,9 @@ Loading pending support requests...
 </div>
 
 
-<!-- EMPTY -->
+<!-- =====================================================
+     EMPTY
+===================================================== -->
 
 <div
 class="empty-state"
@@ -969,13 +1499,16 @@ There are currently no pending support requests.
 </div>
 
 
-<!-- TABLE -->
+<!-- =====================================================
+     TABLE
+===================================================== -->
 
 <div
 class="table-scroll"
 id="tableWrapper"
 style="display:none;"
 >
+
 
 <table>
 
@@ -1004,7 +1537,7 @@ Problem
 
 <th>
 
-REF
+Reference
 
 </th>
 
@@ -1040,6 +1573,7 @@ id="supportTableBody"
 
 </table>
 
+
 </div>
 
 
@@ -1051,12 +1585,8 @@ id="supportTableBody"
 
 <script>
 
-
 /* =====================================================
    API URL
-
-   IMPORTANT:
-   এখানে তোমার Google Apps Script Web App URL বসাও
 ===================================================== */
 
 const PENDING_SUPPORT_API_URL =
@@ -1155,12 +1685,20 @@ document.getElementById(
 
 const savedName =
 
-localStorage.getItem("name");
+localStorage.getItem(
+
+"name"
+
+);
 
 
 const savedUsername =
 
-localStorage.getItem("username");
+localStorage.getItem(
+
+"username"
+
+);
 
 
 if(savedName){
@@ -1182,23 +1720,31 @@ userName.textContent = savedUsername;
 
 function checkLogin(){
 
-if(
+    if(
 
-localStorage.getItem("loggedIn") !== "true"
+        localStorage.getItem(
 
-){
+            "loggedIn"
 
-window.location.replace(
+        )
 
-"../index.html"
+        !==
 
-);
+        "true"
 
-return false;
+    ){
 
-}
+        window.location.replace(
 
-return true;
+            "../index.html"
+
+        );
+
+        return false;
+
+    }
+
+    return true;
 
 }
 
@@ -1209,17 +1755,19 @@ return true;
 
 function showStatus(
 
-message,
+    message,
 
-type
+    type
 
 ){
 
-statusBox.textContent = message;
+    statusBox.textContent = message;
 
-statusBox.className =
+    statusBox.className =
 
-"status show " + type;
+    "status show " +
+
+    type;
 
 }
 
@@ -1230,799 +1778,1101 @@ statusBox.className =
 
 function hideStatus(){
 
-statusBox.className =
+    statusBox.className =
 
-"status";
+    "status";
 
 }
 
 
 /* =====================================================
-   LOAD DATA
+   CREATE SAFE TEXT
+===================================================== */
+
+function safeValue(
+
+    value
+
+){
+
+    if(
+
+        value === null ||
+
+        value === undefined
+
+    ){
+
+        return "";
+
+    }
+
+    return String(value);
+
+}
+
+
+/* =====================================================
+   LOAD PENDING SUPPORT
 ===================================================== */
 
 async function loadPendingSupport(){
 
 
-if(!checkLogin()){
+    if(!checkLogin()){
 
-return;
+        return;
 
-}
+    }
 
 
-loadingState.style.display =
+    loadingState.style.display =
 
-"block";
+    "block";
 
 
-emptyState.classList.remove(
+    emptyState.classList.remove(
 
-"show"
+        "show"
 
-);
+    );
 
 
-tableWrapper.style.display =
+    tableWrapper.style.display =
 
-"none";
+    "none";
 
 
-tableBody.innerHTML =
+    tableBody.innerHTML =
 
-"";
+    "";
 
 
-pendingCount.textContent =
+    pendingCount.textContent =
 
-"Loading...";
+    "Loading...";
 
 
-showStatus(
+    showStatus(
 
-"Loading pending support requests...",
+        "Loading pending support requests...",
 
-"loading"
+        "loading"
 
-);
+    );
 
 
-try{
+    try{
 
 
-const url =
+        const url =
 
-PENDING_SUPPORT_API_URL +
+        PENDING_SUPPORT_API_URL +
 
-"?action=pendingSupport";
+        "?action=pendingSupport&_=" +
 
+        Date.now();
 
-const response =
 
-await fetch(
+        const response =
 
-url,
+        await fetch(
 
-{
+            url,
 
-method:"GET",
+            {
 
-cache:"no-store",
+                method:"GET",
 
-redirect:"follow"
+                cache:"no-store",
 
-}
+                redirect:"follow"
 
-);
+            }
 
+        );
 
-if(!response.ok){
 
-throw new Error(
+        if(!response.ok){
 
-"Server Error: " +
+            throw new Error(
 
-response.status
+                "Server Error: " +
 
-);
+                response.status
 
-}
+            );
 
+        }
 
-const result =
 
-await response.json();
+        const result =
 
+        await response.json();
 
-loadingState.style.display =
 
-"none";
+        loadingState.style.display =
 
+        "none";
 
-/* =================================================
-   CHECK RESPONSE
-================================================= */
 
-if(
+        if(
 
-result.success !== true
+            result.success !== true
 
-){
+        ){
 
-throw new Error(
+            throw new Error(
 
-result.message ||
+                result.message ||
 
-"Unable to load data."
+                "Unable to load data."
 
-);
+            );
 
-}
+        }
 
 
-/* =================================================
-   GET DATA
-================================================= */
+        const data =
 
-const data =
+        Array.isArray(
 
-Array.isArray(result.data)
+            result.data
 
-? result.data
+        )
 
-: [];
+        ?
 
+        result.data
 
-/* =================================================
-   EMPTY
-================================================= */
+        :
 
-if(data.length === 0){
+        [];
 
-emptyState.classList.add(
 
-"show"
+        /* =============================================
+           EMPTY
+        ============================================= */
 
-);
+        if(
 
-pendingCount.textContent =
+            data.length === 0
 
-"0 Pending";
+        ){
 
-hideStatus();
+            emptyState.classList.add(
 
-return;
+                "show"
 
-}
+            );
 
 
-/* =================================================
-   SHOW TABLE
-================================================= */
+            pendingCount.textContent =
 
-tableWrapper.style.display =
+            "0 Pending";
 
-"block";
 
+            hideStatus();
 
-pendingCount.textContent =
 
-data.length +
+            return;
 
-" Pending";
+        }
 
 
-/* =================================================
-   CREATE ROWS
-================================================= */
+        /* =============================================
+           SHOW TABLE
+        ============================================= */
 
-data.forEach(
+        tableWrapper.style.display =
 
-function(item){
+        "block";
 
 
-const tr =
+        pendingCount.textContent =
 
-document.createElement(
+        data.length +
 
-"tr"
+        " Pending";
 
-);
 
+        /* =============================================
+           CREATE ROW
+        ============================================= */
 
-/* CUSTOMER NUMBER */
+        data.forEach(
 
-const tdIP =
+            function(item){
 
-document.createElement(
 
-"td"
+                const tr =
 
-);
+                document.createElement(
 
-tdIP.className =
+                    "tr"
 
-"readonly";
+                );
 
-tdIP.textContent =
 
-item.ip ||
+                /* =====================================
+                   CUSTOMER NUMBER
+                ===================================== */
 
-item.IP ||
+                const tdIP =
 
-item.customerNumber ||
+                document.createElement(
 
-"";
+                    "td"
 
+                );
 
-/* DATE */
 
-const tdDate =
+                const customerBadge =
 
-document.createElement(
+                document.createElement(
 
-"td"
+                    "div"
 
-);
+                );
 
-tdDate.className =
 
-"readonly";
+                customerBadge.className =
 
-tdDate.textContent =
+                "customer-badge";
 
-item.date ||
 
-item.Date ||
+                customerBadge.innerHTML =
 
-"";
+                '<i class="fa-solid fa-network-wired"></i>';
 
 
-/* PROBLEM */
+                const customerText =
 
-const tdProblem =
+                document.createTextNode(
 
-document.createElement(
+                    safeValue(
 
-"td"
+                        item.ip ||
 
-);
+                        item.IP ||
 
-tdProblem.className =
+                        item.customerNumber
 
-"readonly";
+                    )
 
-tdProblem.textContent =
+                );
 
-item.problem ||
 
-item.Problem ||
+                customerBadge.appendChild(
 
-"";
+                    customerText
 
+                );
 
-/* REF */
 
-const tdRef =
+                tdIP.appendChild(
 
-document.createElement(
+                    customerBadge
 
-"td"
+                );
 
-);
 
-tdRef.className =
+                /* =====================================
+                   DATE
+                ===================================== */
 
-"readonly";
+                const tdDate =
 
-tdRef.textContent =
+                document.createElement(
 
-item.ref ||
+                    "td"
 
-item.REF ||
+                );
 
-"";
 
+                const dateBadge =
 
-/* SUPPORT */
+                document.createElement(
 
-const tdSupport =
+                    "div"
 
-document.createElement(
+                );
 
-"td"
 
-);
+                dateBadge.className =
 
-const supportInput =
+                "date-badge";
 
-document.createElement(
 
-"textarea"
+                dateBadge.innerHTML =
 
-);
+                '<i class="fa-regular fa-calendar"></i>';
 
-supportInput.className =
 
-"support-input";
+                dateBadge.appendChild(
 
-supportInput.placeholder =
+                    document.createTextNode(
 
-"Enter Support";
+                        safeValue(
 
-supportInput.value =
+                            item.date ||
 
-"";
+                            item.Date
 
-tdSupport.appendChild(
+                        )
 
-supportInput
+                    )
 
-);
+                );
 
 
-/* SUPPORT WORK */
+                tdDate.appendChild(
 
-const tdWork =
+                    dateBadge
 
-document.createElement(
+                );
 
-"td"
 
-);
+                /* =====================================
+                   PROBLEM
+                ===================================== */
 
-const workInput =
+                const tdProblem =
 
-document.createElement(
+                document.createElement(
 
-"textarea"
+                    "td"
 
-);
+                );
 
-workInput.className =
 
-"work-input";
+                const problemBox =
 
-workInput.placeholder =
+                document.createElement(
 
-"Enter Support Work";
+                    "div"
 
-workInput.value =
+                );
 
-"";
 
-tdWork.appendChild(
+                problemBox.className =
 
-workInput
+                "problem-box";
 
-);
 
+                problemBox.textContent =
 
-/* ACTION */
+                safeValue(
 
-const tdAction =
+                    item.problem ||
 
-document.createElement(
+                    item.Problem
 
-"td"
+                );
 
-);
 
+                tdProblem.appendChild(
 
-const submitBtn =
+                    problemBox
 
-document.createElement(
+                );
 
-"button"
 
-);
+                /* =====================================
+                   REF
+                ===================================== */
 
-submitBtn.className =
+                const tdRef =
 
-"submit-btn";
+                document.createElement(
 
-submitBtn.type =
+                    "td"
 
-"button";
+                );
 
 
-submitBtn.innerHTML =
+                const refBadge =
 
-'<i class="fa-solid fa-paper-plane"></i> Submit';
+                document.createElement(
 
+                    "div"
 
-/* =================================================
-   SUBMIT
-================================================= */
+                );
 
-submitBtn.addEventListener(
 
-"click",
+                refBadge.className =
 
-async function(){
+                "ref-badge";
 
 
-if(!checkLogin()){
+                refBadge.innerHTML =
 
-return;
+                '<i class="fa-solid fa-user-check"></i>';
 
-}
 
+                refBadge.appendChild(
 
-const support =
+                    document.createTextNode(
 
-supportInput.value.trim();
+                        safeValue(
 
+                            item.ref ||
 
-const supportWork =
+                            item.REF ||
 
-workInput.value.trim();
+                            item.reference
 
+                        )
 
-if(!support){
+                    )
 
-showStatus(
+                );
 
-"Please enter Support information.",
 
-"error"
+                tdRef.appendChild(
 
-);
+                    refBadge
 
-supportInput.focus();
+                );
 
-return;
 
-}
+                /* =====================================
+                   SUPPORT
+                ===================================== */
 
+                const tdSupport =
 
-if(!supportWork){
+                document.createElement(
 
-showStatus(
+                    "td"
 
-"Please enter Support Work information.",
+                );
 
-"error"
 
-);
+                const supportWrapper =
 
-workInput.focus();
+                document.createElement(
 
-return;
+                    "div"
 
-}
+                );
 
 
-submitBtn.disabled =
+                supportWrapper.className =
 
-true;
+                "input-wrapper";
 
 
-submitBtn.innerHTML =
+                const supportIcon =
 
-'<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
+                document.createElement(
 
+                    "i"
 
-try{
+                );
 
 
-const payload = {
+                supportIcon.className =
 
-action:
+                "fa-solid fa-headset";
 
-"submitSupport",
 
-ip:
+                const supportInput =
 
-item.ip ||
+                document.createElement(
 
-item.IP ||
+                    "textarea"
 
-item.customerNumber ||
+                );
 
-"",
 
-date:
+                supportInput.className =
 
-item.date ||
+                "support-input";
 
-item.Date ||
 
-"",
+                supportInput.placeholder =
 
-problem:
+                "Write support solution...";
 
-item.problem ||
 
-item.Problem ||
+                supportWrapper.appendChild(
 
-"",
+                    supportIcon
 
-ref:
+                );
 
-item.ref ||
 
-item.REF ||
+                supportWrapper.appendChild(
 
-"",
+                    supportInput
 
-support:
+                );
 
-support,
 
-supportWork:
+                tdSupport.appendChild(
 
-supportWork,
+                    supportWrapper
 
-username:
+                );
 
-localStorage.getItem(
 
-"username"
+                /* =====================================
+                   SUPPORT WORK
+                ===================================== */
 
-)||
+                const tdWork =
 
-"",
+                document.createElement(
 
-name:
+                    "td"
 
-localStorage.getItem(
+                );
 
-"name"
 
-)||
+                const workWrapper =
 
-""
+                document.createElement(
 
-};
+                    "div"
 
+                );
 
-const response =
 
-await fetch(
+                workWrapper.className =
 
-PENDING_SUPPORT_API_URL,
+                "input-wrapper work-wrapper";
 
-{
 
-method:"POST",
+                const workIcon =
 
-headers:{
+                document.createElement(
 
-"Content-Type":
+                    "i"
 
-"text/plain;charset=utf-8"
+                );
 
-},
 
-body:
+                workIcon.className =
 
-JSON.stringify(
+                "fa-solid fa-screwdriver-wrench";
 
-payload
 
-)
+                const workInput =
 
-}
+                document.createElement(
 
-);
+                    "textarea"
 
+                );
 
-const result =
 
-await response.json();
+                workInput.className =
 
+                "work-input";
 
-if(
 
-result.success !== true
+                workInput.placeholder =
 
-){
+                "Write work details...";
 
-throw new Error(
 
-result.message ||
+                workWrapper.appendChild(
 
-"Failed to save support."
+                    workIcon
 
-);
+                );
 
-}
 
+                workWrapper.appendChild(
 
-showStatus(
+                    workInput
 
-"Support submitted successfully.",
+                );
 
-"success"
 
-);
+                tdWork.appendChild(
 
+                    workWrapper
 
-/* REMOVE SUBMITTED ROW */
+                );
 
-tr.remove();
 
+                /* =====================================
+                   ACTION
+                ===================================== */
 
-/* UPDATE COUNT */
+                const tdAction =
 
-const remaining =
+                document.createElement(
 
-tableBody.querySelectorAll(
+                    "td"
 
-"tr"
+                );
 
-).length;
 
+                tdAction.className =
 
-pendingCount.textContent =
+                "action-cell";
 
-remaining +
 
-" Pending";
+                const submitBtn =
 
+                document.createElement(
 
-if(remaining === 0){
+                    "button"
 
-tableWrapper.style.display =
+                );
 
-"none";
 
-emptyState.classList.add(
+                submitBtn.className =
 
-"show"
+                "submit-btn";
 
-);
 
-pendingCount.textContent =
+                submitBtn.type =
 
-"0 Pending";
+                "button";
 
-}
 
+                submitBtn.innerHTML =
 
-}catch(error){
+                '<i class="fa-solid fa-paper-plane"></i> Submit';
 
 
-console.error(
+                /* =====================================
+                   SUBMIT SUPPORT
+                ===================================== */
 
-"Submit Error:",
+                submitBtn.addEventListener(
 
-error
+                    "click",
 
-);
+                    async function(){
 
 
-showStatus(
+                        if(!checkLogin()){
 
-error.message ||
+                            return;
 
-"Unable to save support information.",
+                        }
 
-"error"
 
-);
+                        const support =
 
+                        supportInput.value.trim();
 
-submitBtn.disabled =
 
-false;
+                        const supportWork =
 
+                        workInput.value.trim();
 
-submitBtn.innerHTML =
 
-'<i class="fa-solid fa-paper-plane"></i> Submit';
+                        /* =================================
+                           VALIDATION
+                        ================================= */
 
+                        if(!support){
 
-}
+                            showStatus(
 
-}
+                                "Please enter Support information.",
 
-);
+                                "error"
 
+                            );
 
-/* =================================================
-   ADD ROW
-================================================= */
 
-tdAction.appendChild(
+                            supportInput.focus();
 
-submitBtn
+                            return;
 
-);
+                        }
 
 
-tr.appendChild(
+                        if(!supportWork){
 
-tdIP
+                            showStatus(
 
-);
+                                "Please enter Support Work information.",
 
-tr.appendChild(
+                                "error"
 
-tdDate
+                            );
 
-);
 
-tr.appendChild(
+                            workInput.focus();
 
-tdProblem
+                            return;
 
-);
+                        }
 
-tr.appendChild(
 
-tdRef
+                        submitBtn.disabled =
 
-);
+                        true;
 
-tr.appendChild(
 
-tdSupport
+                        submitBtn.innerHTML =
 
-);
+                        '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
 
-tr.appendChild(
 
-tdWork
+                        try{
 
-);
 
-tr.appendChild(
+                            const payload = {
 
-tdAction
 
-);
+                                action:
 
+                                "submitSupport",
 
-tableBody.appendChild(
 
-tr
+                                ip:
 
-);
+                                item.ip ||
 
+                                item.IP ||
 
-}
+                                item.customerNumber ||
 
-);
+                                "",
 
 
-hideStatus();
+                                date:
 
+                                item.date ||
 
-}catch(error){
+                                item.Date ||
 
+                                "",
 
-console.error(
 
-"Load Error:",
+                                problem:
 
-error
+                                item.problem ||
 
-);
+                                item.Problem ||
 
+                                "",
 
-loadingState.style.display =
 
-"none";
+                                ref:
 
+                                item.ref ||
 
-pendingCount.textContent =
+                                item.REF ||
 
-"0 Pending";
+                                item.reference ||
 
+                                "",
 
-showStatus(
 
-error.message ||
+                                support:
 
-"Unable to load pending support requests.",
+                                support,
 
-"error"
 
-);
+                                supportWork:
 
-}
+                                supportWork,
+
+
+                                username:
+
+                                localStorage.getItem(
+
+                                    "username"
+
+                                ) ||
+
+                                "",
+
+
+                                name:
+
+                                localStorage.getItem(
+
+                                    "name"
+
+                                ) ||
+
+                                ""
+
+                            };
+
+
+                            const response =
+
+                            await fetch(
+
+                                PENDING_SUPPORT_API_URL,
+
+                                {
+
+                                    method:"POST",
+
+                                    headers:{
+
+                                        "Content-Type":
+
+                                        "text/plain;charset=utf-8"
+
+                                    },
+
+                                    body:
+
+                                    JSON.stringify(
+
+                                        payload
+
+                                    )
+
+                                }
+
+                            );
+
+
+                            const result =
+
+                            await response.json();
+
+
+                            if(
+
+                                result.success !== true
+
+                            ){
+
+                                throw new Error(
+
+                                    result.message ||
+
+                                    "Failed to save support."
+
+                                );
+
+                            }
+
+
+                            /* =========================
+                               SUCCESS
+                            ========================= */
+
+                            showStatus(
+
+                                "Support submitted successfully.",
+
+                                "success"
+
+                            );
+
+
+                            tr.remove();
+
+
+                            const remaining =
+
+                            tableBody.querySelectorAll(
+
+                                "tr"
+
+                            ).length;
+
+
+                            pendingCount.textContent =
+
+                            remaining +
+
+                            " Pending";
+
+
+                            if(
+
+                                remaining === 0
+
+                            ){
+
+                                tableWrapper.style.display =
+
+                                "none";
+
+
+                                emptyState.classList.add(
+
+                                    "show"
+
+                                );
+
+
+                                pendingCount.textContent =
+
+                                "0 Pending";
+
+                            }
+
+
+                        }
+
+
+                        catch(error){
+
+
+                            console.error(
+
+                                "Submit Error:",
+
+                                error
+
+                            );
+
+
+                            showStatus(
+
+                                error.message ||
+
+                                "Unable to save support information.",
+
+                                "error"
+
+                            );
+
+
+                            submitBtn.disabled =
+
+                            false;
+
+
+                            submitBtn.innerHTML =
+
+                            '<i class="fa-solid fa-paper-plane"></i> Submit';
+
+
+                        }
+
+
+                    }
+
+                );
+
+
+                /* =====================================
+                   ADD ACTION
+                ===================================== */
+
+                tdAction.appendChild(
+
+                    submitBtn
+
+                );
+
+
+                /* =====================================
+                   ADD ALL CELLS
+                ===================================== */
+
+                tr.appendChild(
+
+                    tdIP
+
+                );
+
+
+                tr.appendChild(
+
+                    tdDate
+
+                );
+
+
+                tr.appendChild(
+
+                    tdProblem
+
+                );
+
+
+                tr.appendChild(
+
+                    tdRef
+
+                );
+
+
+                tr.appendChild(
+
+                    tdSupport
+
+                );
+
+
+                tr.appendChild(
+
+                    tdWork
+
+                );
+
+
+                tr.appendChild(
+
+                    tdAction
+
+                );
+
+
+                tableBody.appendChild(
+
+                    tr
+
+                );
+
+
+            }
+
+        );
+
+
+        hideStatus();
+
+
+    }
+
+
+    catch(error){
+
+
+        console.error(
+
+            "Load Error:",
+
+            error
+
+        );
+
+
+        loadingState.style.display =
+
+        "none";
+
+
+        pendingCount.textContent =
+
+        "0 Pending";
+
+
+        showStatus(
+
+            error.message ||
+
+            "Unable to load pending support requests.",
+
+            "error"
+
+        );
+
+
+    }
 
 }
 
@@ -2033,13 +2883,13 @@ error.message ||
 
 refreshBtn.addEventListener(
 
-"click",
+    "click",
 
-function(){
+    function(){
 
-loadPendingSupport();
+        loadPendingSupport();
 
-}
+    }
 
 );
 
@@ -2050,21 +2900,24 @@ loadPendingSupport();
 
 backBtn.addEventListener(
 
-"click",
+    "click",
 
-function(){
+    function(){
 
-if(!checkLogin()){
 
-return;
+        if(!checkLogin()){
 
-}
+            return;
 
-window.location.href =
+        }
 
-"index.html";
 
-}
+        window.location.href =
+
+        "index.html";
+
+
+    }
 
 );
 
@@ -2075,38 +2928,42 @@ window.location.href =
 
 document.addEventListener(
 
-"visibilitychange",
+    "visibilitychange",
 
-function(){
+    function(){
 
-if(
 
-document.visibilityState ===
+        if(
 
-"visible"
+            document.visibilityState ===
 
-){
+            "visible"
 
-checkLogin();
+        ){
 
-}
+            checkLogin();
 
-});
+        }
+
+
+    }
+
+);
 
 
 /* =====================================================
-   BROWSER BACK / CACHE SECURITY
+   BROWSER CACHE SECURITY
 ===================================================== */
 
 window.addEventListener(
 
-"pageshow",
+    "pageshow",
 
-function(){
+    function(){
 
-checkLogin();
+        checkLogin();
 
-}
+    }
 
 );
 

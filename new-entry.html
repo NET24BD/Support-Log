@@ -13,12 +13,14 @@ content="width=device-width, initial-scale=1.0"
 <title>New Support Entry</title>
 
 
+<!-- Google Font -->
 <link
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
 rel="stylesheet"
 >
 
 
+<!-- Font Awesome -->
 <link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -27,29 +29,46 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <style>
 
+/* =========================================
+   RESET
+========================================= */
+
 *{
 
 margin:0;
 padding:0;
+
 box-sizing:border-box;
+
 font-family:'Poppins',sans-serif;
 
 }
 
 
+/* =========================================
+   BODY
+========================================= */
+
 body{
 
 background:#005C3A;
+
 min-height:100vh;
 
 display:flex;
+
 justify-content:center;
+
 align-items:center;
 
 padding:30px;
 
 }
 
+
+/* =========================================
+   BACKGROUND EFFECT
+========================================= */
 
 body::before{
 
@@ -58,9 +77,11 @@ content:"";
 position:fixed;
 
 left:-200px;
+
 top:-200px;
 
 width:500px;
+
 height:500px;
 
 background:#E53935;
@@ -83,9 +104,11 @@ content:"";
 position:fixed;
 
 right:-180px;
+
 bottom:-180px;
 
 width:450px;
+
 height:450px;
 
 background:#0D8F5A;
@@ -101,9 +124,14 @@ pointer-events:none;
 }
 
 
+/* =========================================
+   CARD
+========================================= */
+
 .card{
 
 width:100%;
+
 max-width:650px;
 
 background:white;
@@ -113,7 +141,9 @@ border-radius:25px;
 padding:40px;
 
 box-shadow:
+
 0 25px 60px
+
 rgba(0,0,0,.25);
 
 position:relative;
@@ -123,9 +153,14 @@ z-index:1;
 }
 
 
+/* =========================================
+   LOGO
+========================================= */
+
 .logo{
 
 width:80px;
+
 height:80px;
 
 margin:0 auto 20px;
@@ -137,6 +172,7 @@ border-radius:20px;
 display:flex;
 
 justify-content:center;
+
 align-items:center;
 
 font-size:35px;
@@ -145,6 +181,10 @@ color:white;
 
 }
 
+
+/* =========================================
+   TITLE
+========================================= */
 
 h2{
 
@@ -157,6 +197,10 @@ margin-bottom:8px;
 }
 
 
+/* =========================================
+   SUBTITLE
+========================================= */
+
 p{
 
 text-align:center;
@@ -167,6 +211,10 @@ margin-bottom:35px;
 
 }
 
+
+/* =========================================
+   FORM GROUP
+========================================= */
 
 .group{
 
@@ -188,6 +236,10 @@ color:#333;
 }
 
 
+/* =========================================
+   INPUT
+========================================= */
+
 .input{
 
 position:relative;
@@ -200,6 +252,7 @@ position:relative;
 position:absolute;
 
 left:16px;
+
 top:16px;
 
 color:#006A4E;
@@ -212,14 +265,19 @@ z-index:2;
 
 
 .input input,
+
 .input textarea{
 
 width:100%;
 
 padding:
+
 15px
+
 18px
+
 15px
+
 50px;
 
 border:2px solid #ddd;
@@ -246,17 +304,28 @@ height:120px;
 }
 
 
+/* =========================================
+   INPUT FOCUS
+========================================= */
+
 .input input:focus,
+
 .input textarea:focus{
 
 border-color:#006A4E;
 
 box-shadow:
+
 0 0 15px
+
 rgba(0,106,78,.2);
 
 }
 
+
+/* =========================================
+   BUTTON
+========================================= */
 
 button{
 
@@ -299,6 +368,10 @@ cursor:not-allowed;
 }
 
 
+/* =========================================
+   FOOTER
+========================================= */
+
 .footer{
 
 margin-top:20px;
@@ -312,11 +385,383 @@ color:#777;
 }
 
 
+/* =========================================
+   CUSTOM POPUP OVERLAY
+========================================= */
+
+.popup-overlay{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:
+
+rgba(0,0,0,.55);
+
+backdrop-filter:
+
+blur(6px);
+
+-webkit-backdrop-filter:
+
+blur(6px);
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+padding:20px;
+
+z-index:99999;
+
+}
+
+
+/* =========================================
+   POPUP ACTIVE
+========================================= */
+
+.popup-overlay.active{
+
+display:flex;
+
+animation:
+
+popupFadeIn .25s ease;
+
+}
+
+
+/* =========================================
+   POPUP BOX
+========================================= */
+
+.popup-box{
+
+width:100%;
+
+max-width:420px;
+
+background:white;
+
+border-radius:25px;
+
+padding:35px 30px 30px;
+
+text-align:center;
+
+box-shadow:
+
+0 25px 80px
+
+rgba(0,0,0,.35);
+
+transform:
+
+scale(.8);
+
+opacity:0;
+
+animation:
+
+popupZoomIn .3s ease forwards;
+
+position:relative;
+
+}
+
+
+/* =========================================
+   POPUP ICON
+========================================= */
+
+.popup-icon{
+
+width:80px;
+
+height:80px;
+
+margin:0 auto 20px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:38px;
+
+}
+
+
+/* =========================================
+   SUCCESS ICON
+========================================= */
+
+.popup-box.success
+
+.popup-icon{
+
+background:#E8F8F1;
+
+color:#006A4E;
+
+}
+
+
+/* =========================================
+   ERROR ICON
+========================================= */
+
+.popup-box.error
+
+.popup-icon{
+
+background:#FDECEC;
+
+color:#E53935;
+
+}
+
+
+/* =========================================
+   WARNING ICON
+========================================= */
+
+.popup-box.warning
+
+.popup-icon{
+
+background:#FFF6DD;
+
+color:#E5A400;
+
+}
+
+
+/* =========================================
+   INFO ICON
+========================================= */
+
+.popup-box.info
+
+.popup-icon{
+
+background:#EAF4FF;
+
+color:#1976D2;
+
+}
+
+
+/* =========================================
+   LOADING ICON
+========================================= */
+
+.popup-box.loading
+
+.popup-icon{
+
+background:#E8F8F1;
+
+color:#006A4E;
+
+}
+
+
+/* =========================================
+   POPUP TITLE
+========================================= */
+
+.popup-title{
+
+font-size:23px;
+
+font-weight:700;
+
+color:#222;
+
+margin-bottom:10px;
+
+}
+
+
+/* =========================================
+   POPUP MESSAGE
+========================================= */
+
+.popup-message{
+
+font-size:14px;
+
+line-height:1.7;
+
+color:#777;
+
+margin-bottom:25px;
+
+}
+
+
+/* =========================================
+   POPUP BUTTON
+========================================= */
+
+.popup-ok{
+
+width:100%;
+
+padding:13px;
+
+border:none;
+
+border-radius:12px;
+
+background:#006A4E;
+
+color:white;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+.popup-ok:hover{
+
+background:#E53935;
+
+}
+
+
+/* =========================================
+   LOADING SPINNER
+========================================= */
+
+.loading-spinner{
+
+animation:
+
+popupSpin 1s linear infinite;
+
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes popupFadeIn{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+
+@keyframes popupZoomIn{
+
+from{
+
+transform:scale(.8);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+
+@keyframes popupSpin{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
 @media(max-width:600px){
 
 .card{
 
 padding:25px;
+
+}
+
+
+.popup-box{
+
+padding:
+
+30px
+
+22px
+
+25px;
+
+}
+
+
+.popup-icon{
+
+width:70px;
+
+height:70px;
+
+font-size:32px;
+
+}
+
+
+.popup-title{
+
+font-size:20px;
 
 }
 
@@ -330,8 +775,14 @@ padding:25px;
 <body>
 
 
+<!-- =========================================
+     MAIN CARD
+========================================= -->
+
 <div class="card">
 
+
+<!-- LOGO -->
 
 <div class="logo">
 
@@ -340,12 +791,16 @@ padding:25px;
 </div>
 
 
+<!-- TITLE -->
+
 <h2>
 
 New Support Entry
 
 </h2>
 
+
+<!-- COMPANY -->
 
 <p>
 
@@ -354,8 +809,14 @@ LINK4 COMMUNICATION
 </p>
 
 
+<!-- =========================================
+     FORM
+========================================= -->
+
 <form id="entryForm">
 
+
+<!-- CUSTOMER ID -->
 
 <div class="group">
 
@@ -390,6 +851,7 @@ autocomplete="off"
 </div>
 
 
+<!-- PROBLEM -->
 
 <div class="group">
 
@@ -420,6 +882,7 @@ required
 </div>
 
 
+<!-- REFERENCE -->
 
 <div class="group">
 
@@ -452,6 +915,7 @@ autocomplete="off"
 </div>
 
 
+<!-- SUBMIT -->
 
 <button
 
@@ -471,6 +935,7 @@ Submit Support
 </form>
 
 
+<!-- FOOTER -->
 
 <div class="footer">
 
@@ -483,6 +948,90 @@ Submit Support
 
 
 
+<!-- =========================================
+     CUSTOM POPUP
+========================================= -->
+
+<div
+
+class="popup-overlay"
+
+id="popupOverlay"
+
+>
+
+
+<div
+
+class="popup-box"
+
+id="popupBox"
+
+>
+
+
+<div
+
+class="popup-icon"
+
+id="popupIcon"
+
+>
+
+<i></i>
+
+</div>
+
+
+<div
+
+class="popup-title"
+
+id="popupTitle"
+
+>
+
+Message
+
+</div>
+
+
+<div
+
+class="popup-message"
+
+id="popupMessage"
+
+>
+
+Message
+
+</div>
+
+
+<button
+
+class="popup-ok"
+
+id="popupOk"
+
+>
+
+OK
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
 <script>
 
 
@@ -491,250 +1040,588 @@ Submit Support
 // ============================================
 
 const API_URL =
+
 "https://script.google.com/macros/s/AKfycbw1NiYF5qNEFGVXdIWZ3I3lpJXEX57uBM0M06oqVVJcRUiuCTAf8NkKycGWtyIhhxWh4g/exec";
 
 
 
 // ============================================
-// GET FORM
+// GET ELEMENTS
 // ============================================
 
 const entryForm =
-document.getElementById("entryForm");
 
+document.getElementById(
 
-// ============================================
-// GET BUTTON
-// ============================================
+"entryForm"
+
+);
+
 
 const submitBtn =
-document.getElementById("submitBtn");
+
+document.getElementById(
+
+"submitBtn"
+
+);
+
+
+const popupOverlay =
+
+document.getElementById(
+
+"popupOverlay"
+
+);
+
+
+const popupBox =
+
+document.getElementById(
+
+"popupBox"
+
+);
+
+
+const popupIcon =
+
+document.getElementById(
+
+"popupIcon"
+
+);
+
+
+const popupTitle =
+
+document.getElementById(
+
+"popupTitle"
+
+);
+
+
+const popupMessage =
+
+document.getElementById(
+
+"popupMessage"
+
+);
+
+
+const popupOk =
+
+document.getElementById(
+
+"popupOk"
+
+);
 
 
 
 // ============================================
-// SUBMIT FORM
+// SHOW POPUP FUNCTION
+// ============================================
+
+function showPopup(
+
+type,
+
+title,
+
+message,
+
+showButton = true
+
+){
+
+  
+  // Remove old types
+
+  popupBox.classList.remove(
+
+    "success",
+
+    "error",
+
+    "warning",
+
+    "info",
+
+    "loading"
+
+  );
+
+
+  // Add new type
+
+  popupBox.classList.add(
+
+    type
+
+  );
+
+
+  // Set Title
+
+  popupTitle.textContent =
+
+    title;
+
+
+  // Set Message
+
+  popupMessage.textContent =
+
+    message;
+
+
+  // Show OK Button
+
+  popupOk.style.display =
+
+    showButton
+
+    ? "block"
+
+    : "none";
+
+
+  // Set Icon
+
+  if(type === "success"){
+
+    popupIcon.innerHTML =
+
+      '<i class="fa-solid fa-check"></i>';
+
+  }
+
+
+  else if(type === "error"){
+
+    popupIcon.innerHTML =
+
+      '<i class="fa-solid fa-xmark"></i>';
+
+  }
+
+
+  else if(type === "warning"){
+
+    popupIcon.innerHTML =
+
+      '<i class="fa-solid fa-exclamation"></i>';
+
+  }
+
+
+  else if(type === "info"){
+
+    popupIcon.innerHTML =
+
+      '<i class="fa-solid fa-info"></i>';
+
+  }
+
+
+  else if(type === "loading"){
+
+    popupIcon.innerHTML =
+
+      '<i class="fa-solid fa-spinner loading-spinner"></i>';
+
+  }
+
+
+  // Show Popup
+
+  popupOverlay.classList.add(
+
+    "active"
+
+  );
+
+}
+
+
+
+// ============================================
+// HIDE POPUP
+// ============================================
+
+function hidePopup(){
+
+  popupOverlay.classList.remove(
+
+    "active"
+
+  );
+
+}
+
+
+
+// ============================================
+// OK BUTTON
+// ============================================
+
+popupOk.addEventListener(
+
+"click",
+
+function(){
+
+  hidePopup();
+
+}
+
+);
+
+
+
+// ============================================
+// CLICK OUTSIDE POPUP
+// ============================================
+
+popupOverlay.addEventListener(
+
+"click",
+
+function(e){
+
+  if(
+
+    e.target ===
+
+    popupOverlay
+
+  ){
+
+    hidePopup();
+
+  }
+
+}
+
+);
+
+
+
+// ============================================
+// FORM SUBMIT
 // ============================================
 
 entryForm.addEventListener(
+
 "submit",
+
 async function(e){
 
-e.preventDefault();
 
+  e.preventDefault();
 
-// ==========================================
-// GET CUSTOMER ID
-// ==========================================
 
-const customerId =
-document
-.getElementById("ip")
-.value
-.trim();
+  // ==========================================
+  // GET CUSTOMER ID
+  // ==========================================
 
+  const customerId =
 
-// ==========================================
-// GET PROBLEM
-// ==========================================
+    document
 
-const problem =
-document
-.getElementById("problem")
-.value
-.trim();
+    .getElementById("ip")
 
+    .value
 
-// ==========================================
-// GET REFERENCE
-// ==========================================
+    .trim();
 
-const reference =
-document
-.getElementById("reference")
-.value
-.trim();
 
+  // ==========================================
+  // GET PROBLEM
+  // ==========================================
 
-// ==========================================
-// VALIDATION
-// ==========================================
+  const problem =
 
-if(!customerId){
+    document
 
-alert(
-"Please enter Customer ID."
-);
+    .getElementById("problem")
 
-return;
+    .value
 
-}
+    .trim();
 
 
-if(!problem){
+  // ==========================================
+  // GET REFERENCE
+  // ==========================================
 
-alert(
-"Please enter Customer Problem."
-);
+  const reference =
 
-return;
+    document
 
-}
+    .getElementById("reference")
 
+    .value
 
-// ==========================================
-// SAVE BUTTON TEXT
-// ==========================================
+    .trim();
 
-const oldButtonText =
-submitBtn.innerHTML;
 
+  // ==========================================
+  // VALIDATION
+  // ==========================================
 
-// ==========================================
-// DISABLE BUTTON
-// ==========================================
+  if(!customerId){
 
-submitBtn.disabled = true;
+    showPopup(
 
-submitBtn.innerHTML =
-'<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
+      "warning",
 
+      "Customer ID Required",
 
-// ==========================================
-// CREATE FORM DATA
-// ==========================================
+      "Please enter the Customer ID."
 
-const formData =
-new URLSearchParams();
+    );
 
+    return;
 
-// ==========================================
-// ACTION
-// ==========================================
+  }
 
-formData.append(
-"action",
-"newEntry"
-);
 
+  if(!problem){
 
-// ==========================================
-// CUSTOMER ID
-// ==========================================
+    showPopup(
 
-formData.append(
-"customerId",
-customerId
-);
+      "warning",
 
+      "Problem Required",
 
-// ==========================================
-// PROBLEM
-// ==========================================
+      "Please enter the Customer Problem."
 
-formData.append(
-"problem",
-problem
-);
+    );
 
+    return;
 
-// ==========================================
-// REFERENCE
-// ==========================================
+  }
 
-formData.append(
-"reference",
-reference
-);
 
+  // ==========================================
+  // SAVE BUTTON TEXT
+  // ==========================================
 
-// ==========================================
-// SEND TO GOOGLE SHEET
-// ==========================================
+  const oldButtonText =
 
-try{
+    submitBtn.innerHTML;
 
 
-await fetch(
+  // ==========================================
+  // DISABLE BUTTON
+  // ==========================================
 
-API_URL,
+  submitBtn.disabled =
 
-{
+    true;
 
-method:"POST",
 
-mode:"no-cors",
+  submitBtn.innerHTML =
 
-headers:{
+    '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
 
-"Content-Type":
-"application/x-www-form-urlencoded;charset=UTF-8"
 
-},
+  // ==========================================
+  // SHOW LOADING POPUP
+  // ==========================================
 
-body:
-formData.toString()
+  showPopup(
 
-}
+    "loading",
 
-);
+    "Submitting...",
 
+    "Please wait while your support request is being submitted.",
 
-// ==========================================
-// SUCCESS
-// ==========================================
+    false
 
-alert(
+  );
 
-"Support Entry Successfully Submitted!"
 
-);
+  // ==========================================
+  // CREATE FORM DATA
+  // ==========================================
 
+  const formData =
 
-// ==========================================
-// RESET FORM
-// ==========================================
+    new URLSearchParams();
 
-entryForm.reset();
 
+  // ==========================================
+  // ACTION
+  // ==========================================
 
-}
+  formData.append(
 
-catch(error){
+    "action",
 
+    "newEntry"
 
-console.error(
+  );
 
-"Submit Error:",
 
-error
+  // ==========================================
+  // CUSTOMER ID
+  // ==========================================
 
-);
+  formData.append(
 
+    "customerId",
 
-alert(
+    customerId
 
-"Failed To Submit. Please try again."
+  );
 
-);
 
+  // ==========================================
+  // PROBLEM
+  // ==========================================
 
-}
+  formData.append(
 
+    "problem",
 
-// ==========================================
-// ENABLE BUTTON
-// ==========================================
+    problem
 
-submitBtn.disabled = false;
+  );
 
 
-// ==========================================
-// RESTORE BUTTON
-// ==========================================
+  // ==========================================
+  // REFERENCE
+  // ==========================================
 
-submitBtn.innerHTML =
-oldButtonText;
+  formData.append(
+
+    "reference",
+
+    reference
+
+  );
+
+
+  // ==========================================
+  // SEND DATA
+  // ==========================================
+
+  try{
+
+
+    await fetch(
+
+      API_URL,
+
+      {
+
+        method:
+
+          "POST",
+
+
+        mode:
+
+          "no-cors",
+
+
+        headers:
+
+        {
+
+          "Content-Type":
+
+            "application/x-www-form-urlencoded;charset=UTF-8"
+
+        },
+
+
+        body:
+
+          formData.toString()
+
+      }
+
+    );
+
+
+    // ========================================
+    // SUCCESS POPUP
+    // ========================================
+
+    showPopup(
+
+      "success",
+
+      "Support Submitted!",
+
+      "Your support request has been successfully submitted."
+
+    );
+
+
+    // ========================================
+    // RESET FORM
+    // ========================================
+
+    entryForm.reset();
+
+
+  }
+
+  catch(error){
+
+
+    console.error(
+
+      "Submit Error:",
+
+      error
+
+    );
+
+
+    // ========================================
+    // ERROR POPUP
+    // ========================================
+
+    showPopup(
+
+      "error",
+
+      "Submission Failed",
+
+      "Unable to submit your support request. Please try again."
+
+    );
+
+
+  }
+
+
+  // ==========================================
+  // ENABLE BUTTON
+  // ==========================================
+
+  submitBtn.disabled =
+
+    false;
+
+
+  // ==========================================
+  // RESTORE BUTTON
+  // ==========================================
+
+  submitBtn.innerHTML =
+
+    oldButtonText;
 
 
 }

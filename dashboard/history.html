@@ -13,18 +13,15 @@ content="width=device-width, initial-scale=1.0"
 <title>History | LINK4 COMMUNICATION</title>
 
 
-<!-- =================================================
-     LOGIN PROTECTION
-================================================= -->
-
 <script>
+
+/* LOGIN PROTECTION */
 
 (function(){
 
-    const loggedIn =
-        localStorage.getItem("loggedIn");
-
-    if(loggedIn !== "true"){
+    if(
+        localStorage.getItem("loggedIn") !== "true"
+    ){
 
         window.location.replace(
             "../index.html"
@@ -36,10 +33,6 @@ content="width=device-width, initial-scale=1.0"
 
 </script>
 
-
-<!-- =================================================
-     GOOGLE FONT
-================================================= -->
 
 <link
 rel="preconnect"
@@ -58,10 +51,6 @@ rel="stylesheet"
 >
 
 
-<!-- =================================================
-     FONT AWESOME
-================================================= -->
-
 <link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -70,16 +59,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <style>
 
-/* =================================================
-   RESET
-================================================= */
+/* RESET */
 
 *{
 
 margin:0;
-
 padding:0;
-
 box-sizing:border-box;
 
 font-family:'Poppins',sans-serif;
@@ -87,9 +72,7 @@ font-family:'Poppins',sans-serif;
 }
 
 
-/* =================================================
-   BODY
-================================================= */
+/* BODY */
 
 body{
 
@@ -104,20 +87,16 @@ position:relative;
 }
 
 
-/* =================================================
-   BACKGROUND
-================================================= */
+/* BACKGROUND */
 
 .bg{
 
 position:fixed;
 
 left:0;
-
 top:0;
 
 width:100%;
-
 height:100%;
 
 overflow:hidden;
@@ -132,7 +111,6 @@ z-index:-1;
 position:absolute;
 
 width:700px;
-
 height:700px;
 
 background:#E53935;
@@ -140,7 +118,6 @@ background:#E53935;
 border-radius:50%;
 
 left:50%;
-
 top:50%;
 
 transform:translate(-50%,-50%);
@@ -148,8 +125,6 @@ transform:translate(-50%,-50%);
 filter:blur(140px);
 
 opacity:.35;
-
-pointer-events:none;
 
 }
 
@@ -159,7 +134,6 @@ pointer-events:none;
 position:absolute;
 
 width:260px;
-
 height:260px;
 
 background:#0D8F5A;
@@ -167,12 +141,9 @@ background:#0D8F5A;
 border-radius:50%;
 
 left:-120px;
-
 top:-120px;
 
 filter:blur(90px);
-
-pointer-events:none;
 
 }
 
@@ -182,7 +153,6 @@ pointer-events:none;
 position:absolute;
 
 width:300px;
-
 height:300px;
 
 background:#0D8F5A;
@@ -190,19 +160,14 @@ background:#0D8F5A;
 border-radius:50%;
 
 right:-120px;
-
 bottom:-120px;
 
 filter:blur(90px);
 
-pointer-events:none;
-
 }
 
 
-/* =================================================
-   HEADER
-================================================= */
+/* HEADER */
 
 header{
 
@@ -214,22 +179,12 @@ align-items:center;
 
 padding:25px 40px;
 
-gap:20px;
-
 }
 
 
-/* =================================================
-   BACK BUTTON
-================================================= */
+/* BACK BUTTON */
 
 .back{
-
-display:inline-flex;
-
-align-items:center;
-
-gap:8px;
 
 background:#fff;
 
@@ -256,14 +211,10 @@ background:#E53935;
 
 color:white;
 
-transform:translateY(-2px);
-
 }
 
 
-/* =================================================
-   TITLE
-================================================= */
+/* TITLE */
 
 .title{
 
@@ -273,19 +224,14 @@ font-weight:700;
 
 color:white;
 
-text-align:center;
-
 }
 
 
-/* =================================================
-   REFRESH BUTTON
-================================================= */
+/* REFRESH BUTTON */
 
 .logo{
 
 width:60px;
-
 height:60px;
 
 background:white;
@@ -295,7 +241,6 @@ border-radius:15px;
 display:flex;
 
 justify-content:center;
-
 align-items:center;
 
 font-size:28px;
@@ -322,9 +267,7 @@ transform:rotate(180deg);
 }
 
 
-/* =================================================
-   MAIN CONTAINER
-================================================= */
+/* MAIN */
 
 .container{
 
@@ -337,9 +280,7 @@ padding:20px;
 }
 
 
-/* =================================================
-   SEARCH BOX
-================================================= */
+/* SEARCH */
 
 .search-box{
 
@@ -381,14 +322,10 @@ width:100%;
 
 font-size:17px;
 
-background:transparent;
-
 }
 
 
-/* =================================================
-   TABLE BOX
-================================================= */
+/* TABLE BOX */
 
 .table-box{
 
@@ -405,9 +342,7 @@ overflow:auto;
 }
 
 
-/* =================================================
-   TABLE
-================================================= */
+/* TABLE */
 
 table{
 
@@ -437,8 +372,6 @@ text-align:left;
 
 font-size:15px;
 
-white-space:nowrap;
-
 }
 
 
@@ -450,8 +383,6 @@ border-bottom:1px solid #eee;
 
 font-size:14px;
 
-vertical-align:top;
-
 }
 
 
@@ -459,14 +390,10 @@ tbody tr:hover{
 
 background:#f6f6f6;
 
-transition:.3s;
-
 }
 
 
-/* =================================================
-   STATUS
-================================================= */
+/* STATUS */
 
 .status{
 
@@ -484,14 +411,10 @@ font-weight:600;
 
 display:inline-block;
 
-white-space:nowrap;
-
 }
 
 
-/* =================================================
-   VIEW BUTTON
-================================================= */
+/* VIEW BUTTON */
 
 .view-btn{
 
@@ -509,8 +432,6 @@ cursor:pointer;
 
 transition:.3s;
 
-font-weight:600;
-
 }
 
 
@@ -518,14 +439,10 @@ font-weight:600;
 
 background:#E53935;
 
-transform:translateY(-2px);
-
 }
 
 
-/* =================================================
-   FOOTER
-================================================= */
+/* FOOTER */
 
 .footer{
 
@@ -540,9 +457,7 @@ opacity:.8;
 }
 
 
-/* =================================================
-   MODAL
-================================================= */
+/* MODAL */
 
 #viewModal{
 
@@ -551,11 +466,9 @@ display:none;
 position:fixed;
 
 left:0;
-
 top:0;
 
 width:100%;
-
 height:100%;
 
 background:rgba(0,0,0,.6);
@@ -564,7 +477,7 @@ justify-content:center;
 
 align-items:center;
 
-z-index:9999;
+z-index:999;
 
 padding:20px;
 
@@ -608,51 +521,19 @@ cursor:pointer;
 
 color:#E53935;
 
-transition:.3s;
-
 }
 
 
-.close-modal:hover{
-
-transform:rotate(90deg);
-
-}
-
-
-/* =================================================
-   MODAL TITLE
-================================================= */
-
-.modal-box h2{
+.modal-title{
 
 color:#006A4E;
 
 margin-bottom:25px;
 
-padding-right:35px;
-
 }
 
 
-/* =================================================
-   MODAL CONTENT
-================================================= */
-
-#modalContent{
-
-max-height:70vh;
-
-overflow-y:auto;
-
-overflow-x:hidden;
-
-}
-
-
-/* =================================================
-   DETAIL TABLE
-================================================= */
+/* DETAIL TABLE */
 
 .detail-table{
 
@@ -698,43 +579,7 @@ width:65%;
 }
 
 
-/* =================================================
-   LOADING
-================================================= */
-
-.loading{
-
-text-align:center;
-
-padding:30px;
-
-color:#006A4E;
-
-font-weight:600;
-
-}
-
-
-/* =================================================
-   ERROR
-================================================= */
-
-.error-message{
-
-text-align:center;
-
-padding:30px;
-
-color:#E53935;
-
-font-weight:600;
-
-}
-
-
-/* =================================================
-   ANIMATION
-================================================= */
+/* ANIMATION */
 
 @keyframes popup{
 
@@ -757,9 +602,7 @@ opacity:1;
 }
 
 
-/* =================================================
-   RESPONSIVE
-================================================= */
+/* MOBILE */
 
 @media(max-width:768px){
 
@@ -790,88 +633,10 @@ order:2;
 
 .logo{
 
-order:1;
+order:3;
 
 }
 
-
-.title{
-
-order:0;
-
-}
-
-
-.container{
-
-padding:15px;
-
-}
-
-
-.table-box{
-
-padding:12px;
-
-}
-
-
-.search-box{
-
-padding:15px;
-
-}
-
-}
-
-
-/* =================================================
-   SMALL MOBILE
-================================================= */
-
-@media(max-width:450px){
-
-.title{
-
-font-size:25px;
-
-}
-
-
-.back{
-
-padding:10px 15px;
-
-font-size:14px;
-
-}
-
-
-.logo{
-
-width:50px;
-
-height:50px;
-
-font-size:22px;
-
-}
-
-
-.modal-box{
-
-padding:25px 18px;
-
-}
-
-
-.detail-table td{
-
-padding:10px;
-
-font-size:13px;
-
-}
 
 }
 
@@ -883,9 +648,7 @@ font-size:13px;
 <body>
 
 
-<!-- =================================================
-     BACKGROUND
-================================================= -->
+<!-- BACKGROUND -->
 
 <div class="bg">
 
@@ -898,30 +661,24 @@ font-size:13px;
 </div>
 
 
-
-<!-- =================================================
-     HEADER
-================================================= -->
+<!-- HEADER -->
 
 <header>
 
 
-<!-- BACK TO DASHBOARD -->
+<!-- BACK TO DASHBOARD AREA -->
 
 <a
-href="index.html"
+href="new-entry.html"
 class="back"
 >
 
 <i class="fa-solid fa-arrow-left"></i>
 
-Back to Dashboard
+Back
 
 </a>
 
-
-
-<!-- PAGE TITLE -->
 
 <div class="title">
 
@@ -930,12 +687,11 @@ History
 </div>
 
 
-
 <!-- REFRESH -->
 
 <div
 class="logo"
-id="refreshBtn"
+onclick="loadHistory()"
 title="Refresh History"
 >
 
@@ -947,17 +703,12 @@ title="Refresh History"
 </header>
 
 
-
-<!-- =================================================
-     MAIN
-================================================= -->
+<!-- MAIN -->
 
 <div class="container">
 
 
-<!-- =================================================
-     SEARCH
-================================================= -->
+<!-- SEARCH -->
 
 <div class="search-box">
 
@@ -967,16 +718,12 @@ title="Refresh History"
 type="text"
 id="search"
 placeholder="Search IP, Problem, Reference..."
-autocomplete="off"
 >
 
 </div>
 
 
-
-<!-- =================================================
-     TABLE
-================================================= -->
+<!-- TABLE -->
 
 <div class="table-box">
 
@@ -1017,14 +764,10 @@ autocomplete="off"
 
 <td
 colspan="10"
-class="loading"
+style="text-align:center;"
 >
 
-<i class="fa-solid fa-spinner fa-spin"></i>
-
-&nbsp;
-
-Loading History...
+Loading...
 
 </td>
 
@@ -1037,10 +780,7 @@ Loading History...
 </div>
 
 
-
-<!-- =================================================
-     FOOTER
-================================================= -->
+<!-- FOOTER -->
 
 <div class="footer">
 
@@ -1052,10 +792,7 @@ Loading History...
 </div>
 
 
-
-<!-- =================================================
-     VIEW MODAL
-================================================= -->
+<!-- VIEW MODAL -->
 
 <div
 id="viewModal"
@@ -1063,8 +800,6 @@ id="viewModal"
 
 <div class="modal-box">
 
-
-<!-- CLOSE -->
 
 <span
 id="closeModal"
@@ -1076,16 +811,21 @@ class="close-modal"
 </span>
 
 
-
-<h2>
+<h2 class="modal-title">
 
 History Details
 
 </h2>
 
 
-
-<div id="modalContent">
+<div
+id="modalContent"
+style="
+max-height:70vh;
+overflow-y:auto;
+overflow-x:hidden;
+"
+>
 
 </div>
 
@@ -1093,22 +833,26 @@ History Details
 </div>
 
 </div>
-
 
 
 <script>
 
 
-/* =================================================
-   LOGIN PROTECTION
-================================================= */
+/* GOOGLE SHEET API */
+
+const API_URL =
+
+"https://script.google.com/macros/s/AKfycbyORO5enoKoHkRV8FkyNjrJ-9hy0uAFRtLQkSPlVlvsMUERua5brnaoN424K6yakLEM/exec";
+
+
+
+/* LOGIN CHECK */
 
 function checkLogin(){
 
-    const loggedIn =
-        localStorage.getItem("loggedIn");
-
-    if(loggedIn !== "true"){
+    if(
+        localStorage.getItem("loggedIn") !== "true"
+    ){
 
         window.location.replace(
             "../index.html"
@@ -1124,66 +868,7 @@ function checkLogin(){
 
 
 
-/* =================================================
-   GOOGLE APPS SCRIPT API
-================================================= */
-
-const API_URL =
-
-"https://script.google.com/macros/s/AKfycbyORO5enoKoHkRV8FkyNjrJ-9hy0uAFRtLQkSPlVlvsMUERua5brnaoN424K6yakLEM/exec";
-
-
-
-/* =================================================
-   ELEMENTS
-================================================= */
-
-const tbody =
-
-document.getElementById(
-    "historyTable"
-);
-
-
-const searchInput =
-
-document.getElementById(
-    "search"
-);
-
-
-const viewModal =
-
-document.getElementById(
-    "viewModal"
-);
-
-
-const closeModal =
-
-document.getElementById(
-    "closeModal"
-);
-
-
-const modalContent =
-
-document.getElementById(
-    "modalContent"
-);
-
-
-const refreshBtn =
-
-document.getElementById(
-    "refreshBtn"
-);
-
-
-
-/* =================================================
-   DATE FORMAT
-================================================= */
+/* DATE FORMAT */
 
 function formatDate(dateString){
 
@@ -1194,11 +879,10 @@ function formatDate(dateString){
     }
 
 
-    const d =
-        new Date(dateString);
+    const d = new Date(dateString);
 
 
-    if(isNaN(d.getTime())){
+    if(isNaN(d)){
 
         return dateString;
 
@@ -1207,64 +891,51 @@ function formatDate(dateString){
 
     const day =
 
-        String(
-            d.getDate()
-        ).padStart(2,"0");
+    String(
+
+        d.getDate()
+
+    ).padStart(2,"0");
 
 
     const month =
 
-        String(
-            d.getMonth() + 1
-        ).padStart(2,"0");
+    String(
+
+        d.getMonth()+1
+
+    ).padStart(2,"0");
 
 
     const year =
 
-        d.getFullYear();
+    d.getFullYear();
 
 
     return
 
-        `${day}/${month}/${year}`;
+    `${day}/${month}/${year}`;
 
 }
 
 
 
-/* =================================================
-   HTML SAFE TEXT
-================================================= */
+/* TABLE */
 
-function escapeHTML(value){
+const tbody =
 
-    if(value === null ||
-       value === undefined){
+document.getElementById(
 
-        return "";
+"historyTable"
 
-    }
-
-
-    const div =
-        document.createElement("div");
-
-
-    div.textContent =
-        String(value);
-
-
-    return div.innerHTML;
-
-}
+);
 
 
 
-/* =================================================
-   LOAD HISTORY
-================================================= */
+/* LOAD HISTORY */
 
 async function loadHistory(){
+
 
     if(!checkLogin()){
 
@@ -1281,14 +952,10 @@ async function loadHistory(){
 
     <td
     colspan="10"
-    class="loading"
+    style="text-align:center;"
     >
 
-    <i class="fa-solid fa-spinner fa-spin"></i>
-
-    &nbsp;
-
-    Loading History...
+    Loading...
 
     </td>
 
@@ -1300,48 +967,32 @@ async function loadHistory(){
     try{
 
 
-        const response =
+        const res =
 
         await fetch(
 
             API_URL +
-            "?page=history&_=" +
-            Date.now(),
 
-            {
-
-                method:"GET",
-
-                cache:"no-store"
-
-            }
+            "?page=history"
 
         );
-
-
-        if(!response.ok){
-
-            throw new Error(
-                "Server Error: " +
-                response.status
-            );
-
-        }
 
 
         const data =
 
-        await response.json();
+        await res.json();
 
 
         console.log(
+
             "History Data:",
+
             data
+
         );
 
 
         tbody.innerHTML = "";
-
 
 
         if(
@@ -1360,7 +1011,7 @@ async function loadHistory(){
 
             <td
             colspan="10"
-            style="text-align:center;padding:30px;"
+            style="text-align:center;"
             >
 
             No History Found
@@ -1376,14 +1027,10 @@ async function loadHistory(){
         }
 
 
-
-        let foundData = false;
-
-
-
         data.forEach(
 
         function(row){
+
 
             if(
 
@@ -1398,77 +1045,118 @@ async function loadHistory(){
             }
 
 
-            foundData = true;
+            const ip =
+
+            row[0] || "";
+
+
+            const problem =
+
+            row[1] || "";
+
+
+            const date =
+
+            formatDate(
+
+                row[2]
+
+            );
+
+
+            const reference =
+
+            row[3] || "";
+
+
+            const support =
+
+            row[4] || "";
+
+
+            const work =
+
+            row[5] || "";
+
+
+            const callBy =
+
+            row[6] || "";
+
+
+            const callWork =
+
+            row[7] || "";
 
 
             const tr =
 
             document.createElement(
+
                 "tr"
-            );
-
-
-            const values = [
-
-                row[0] || "",
-
-                row[1] || "",
-
-                formatDate(
-                    row[2]
-                ),
-
-                row[3] || "",
-
-                row[4] || "",
-
-                row[5] || "",
-
-                row[6] || "",
-
-                row[7] || ""
-
-            ];
-
-
-
-            values.forEach(
-
-            function(value){
-
-                const td =
-
-                document.createElement(
-                    "td"
-                );
-
-
-                td.textContent =
-                    value;
-
-
-                tr.appendChild(
-                    td
-                );
-
-            }
 
             );
 
 
+            tr.innerHTML = `
 
-            /* STATUS */
+            <td>
 
-            const statusTd =
+            ${escapeHTML(ip)}
 
-            document.createElement(
-                "td"
-            );
+            </td>
 
 
-            statusTd.innerHTML =
+            <td>
 
-            `
+            ${escapeHTML(problem)}
+
+            </td>
+
+
+            <td>
+
+            ${escapeHTML(date)}
+
+            </td>
+
+
+            <td>
+
+            ${escapeHTML(reference)}
+
+            </td>
+
+
+            <td>
+
+            ${escapeHTML(support)}
+
+            </td>
+
+
+            <td>
+
+            ${escapeHTML(work)}
+
+            </td>
+
+
+            <td>
+
+            ${escapeHTML(callBy)}
+
+            </td>
+
+
+            <td>
+
+            ${escapeHTML(callWork)}
+
+            </td>
+
+
+            <td>
 
             <span class="status">
 
@@ -1476,111 +1164,73 @@ async function loadHistory(){
 
             </span>
 
-            `;
+            </td>
 
 
-            tr.appendChild(
-                statusTd
-            );
+            <td>
 
-
-
-            /* ACTION */
-
-            const actionTd =
-
-            document.createElement(
-                "td"
-            );
-
-
-            const viewButton =
-
-            document.createElement(
-                "button"
-            );
-
-
-            viewButton.className =
-                "view-btn";
-
-
-            viewButton.innerHTML =
-
-            `
+            <button
+            class="view-btn"
+            >
 
             <i class="fa-solid fa-eye"></i>
 
             View
 
+            </button>
+
+            </td>
+
             `;
 
 
-            viewButton.addEventListener(
+            tr
 
-                "click",
+            .querySelector(
 
-                function(){
+                ".view-btn"
 
-                    showDetails(
-                        values[0],
-                        values[1],
-                        values[2],
-                        values[3],
-                        values[4],
-                        values[5],
-                        values[6],
-                        values[7]
-                    );
+            )
 
-                }
+            .addEventListener(
 
-            );
+            "click",
 
+            function(){
 
-            actionTd.appendChild(
-                viewButton
-            );
+                showDetails(
 
+                    ip,
 
-            tr.appendChild(
-                actionTd
+                    problem,
+
+                    date,
+
+                    reference,
+
+                    support,
+
+                    work,
+
+                    callBy,
+
+                    callWork
+
+                );
+
+            }
+
             );
 
 
             tbody.appendChild(
+
                 tr
+
             );
 
 
-        }
-
-        );
-
-
-
-        if(!foundData){
-
-            tbody.innerHTML =
-
-            `
-
-            <tr>
-
-            <td
-            colspan="10"
-            style="text-align:center;padding:30px;"
-            >
-
-            No History Found
-
-            </td>
-
-            </tr>
-
-            `;
-
-        }
+        });
 
 
     }
@@ -1590,7 +1240,7 @@ async function loadHistory(){
 
         console.error(
 
-            "History Load Error:",
+            "History Error:",
 
             error
 
@@ -1605,14 +1255,13 @@ async function loadHistory(){
 
         <td
         colspan="10"
-        class="error-message"
+        style="
+        text-align:center;
+        color:red;
+        "
         >
 
-        <i class="fa-solid fa-circle-exclamation"></i>
-
-        <br><br>
-
-        Failed To Load History Data
+        Failed To Load Data
 
         </td>
 
@@ -1620,42 +1269,117 @@ async function loadHistory(){
 
         `;
 
+
     }
 
 }
 
 
 
-/* =================================================
-   SHOW HISTORY DETAILS
-================================================= */
+/* SAFE HTML */
+
+function escapeHTML(value){
+
+    return String(
+
+        value || ""
+
+    )
+
+    .replace(
+
+        /&/g,
+
+        "&amp;"
+
+    )
+
+    .replace(
+
+        /</g,
+
+        "&lt;"
+
+    )
+
+    .replace(
+
+        />/g,
+
+        "&gt;"
+
+    )
+
+    .replace(
+
+        /"/g,
+
+        "&quot;"
+
+    )
+
+    .replace(
+
+        /'/g,
+
+        "&#039;"
+
+    );
+
+}
+
+
+
+/* SHOW DETAILS */
 
 function showDetails(
 
-    ip,
+ip,
 
-    problem,
+problem,
 
-    date,
+date,
 
-    reference,
+ref,
 
-    support,
+support,
 
-    work,
+work,
 
-    callBy,
+callby,
 
-    callWork
+callwork
 
 ){
 
 
-    modalContent.innerHTML =
+    document
+
+    .getElementById(
+
+        "viewModal"
+
+    )
+
+    .style.display =
+
+    "flex";
+
+
+    document
+
+    .getElementById(
+
+        "modalContent"
+
+    )
+
+    .innerHTML =
 
     `
 
     <table class="detail-table">
+
 
     <tr>
 
@@ -1688,7 +1412,7 @@ function showDetails(
 
     <td>Reference</td>
 
-    <td>${escapeHTML(reference)}</td>
+    <td>${escapeHTML(ref)}</td>
 
     </tr>
 
@@ -1715,7 +1439,7 @@ function showDetails(
 
     <td>Call By</td>
 
-    <td>${escapeHTML(callBy)}</td>
+    <td>${escapeHTML(callby)}</td>
 
     </tr>
 
@@ -1724,7 +1448,7 @@ function showDetails(
 
     <td>Call Work</td>
 
-    <td>${escapeHTML(callWork)}</td>
+    <td>${escapeHTML(callwork)}</td>
 
     </tr>
 
@@ -1733,196 +1457,171 @@ function showDetails(
 
     `;
 
-
-    viewModal.style.display =
-        "flex";
-
 }
 
 
 
-/* =================================================
-   CLOSE MODAL
-================================================= */
+/* CLOSE MODAL */
 
-function hideModal(){
+document
 
-    viewModal.style.display =
+.getElementById(
+
+"closeModal"
+
+)
+
+.onclick =
+
+function(){
+
+    document
+
+    .getElementById(
+
+        "viewModal"
+
+    )
+
+    .style.display =
+
+    "none";
+
+};
+
+
+
+/* CLICK OUTSIDE MODAL */
+
+window.onclick =
+
+function(e){
+
+    const modal =
+
+    document.getElementById(
+
+        "viewModal"
+
+    );
+
+
+    if(
+
+        e.target === modal
+
+    ){
+
+        modal.style.display =
+
         "none";
 
-}
-
-
-closeModal.addEventListener(
-
-    "click",
-
-    hideModal
-
-);
-
-
-
-/* =================================================
-   CLICK OUTSIDE MODAL
-================================================= */
-
-viewModal.addEventListener(
-
-    "click",
-
-    function(e){
-
-        if(
-
-            e.target ===
-
-            viewModal
-
-        ){
-
-            hideModal();
-
-        }
-
     }
 
-);
+};
 
 
 
-/* =================================================
-   ESC KEY CLOSE MODAL
-================================================= */
+/* SEARCH */
 
-document.addEventListener(
+document
 
-    "keydown",
+.getElementById(
 
-    function(e){
+"search"
 
-        if(e.key === "Escape"){
+)
 
-            hideModal();
+.addEventListener(
 
-        }
+"keyup",
 
-    }
-
-);
+function(){
 
 
+    const value =
 
-/* =================================================
-   SEARCH HISTORY
-================================================= */
+    this.value
 
-searchInput.addEventListener(
+    .toLowerCase();
 
-    "input",
 
-    function(){
+    document
 
-        const value =
+    .querySelectorAll(
 
-        this.value
+        "#historyTable tr"
+
+    )
+
+    .forEach(
+
+    function(tr){
+
+
+        tr.style.display =
+
+        tr.innerText
 
         .toLowerCase()
 
-        .trim();
+        .includes(
 
-
-        document
-
-        .querySelectorAll(
-
-            "#historyTable tr"
+            value
 
         )
 
-        .forEach(
+        ? ""
 
-        function(tr){
-
-            const text =
-
-            tr.innerText
-
-            .toLowerCase();
+        : "none";
 
 
-            tr.style.display =
+    }
 
-            text.includes(value)
+    );
 
-            ? ""
 
-            : "none";
+}
 
-        }
+);
+
+
+
+/* INITIAL LOAD */
+
+loadHistory();
+
+
+
+/* BROWSER CACHE PROTECTION */
+
+window.addEventListener(
+
+"pageshow",
+
+function(){
+
+    if(
+
+        localStorage.getItem(
+
+            "loggedIn"
+
+        ) !== "true"
+
+    ){
+
+        window.location.replace(
+
+            "../index.html"
 
         );
 
     }
 
-);
-
-
-
-/* =================================================
-   REFRESH BUTTON
-================================================= */
-
-refreshBtn.addEventListener(
-
-    "click",
-
-    function(){
-
-        loadHistory();
-
-    }
+}
 
 );
-
-
-
-/* =================================================
-   BROWSER BACK / CACHE PROTECTION
-================================================= */
-
-window.addEventListener(
-
-    "pageshow",
-
-    function(){
-
-        if(
-
-            localStorage.getItem(
-                "loggedIn"
-            ) !== "true"
-
-        ){
-
-            window.location.replace(
-                "../index.html"
-            );
-
-        }
-
-    }
-
-);
-
-
-
-/* =================================================
-   START
-================================================= */
-
-loadHistory();
-
 
 </script>
 

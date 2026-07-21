@@ -13,7 +13,31 @@ content="width=device-width, initial-scale=1.0"
 <title>Login | Support System</title>
 
 
-<!-- Google Font -->
+<!-- ==============================
+     LOGIN PAGE PROTECTION
+================================ -->
+
+<script>
+
+(function(){
+
+    // যদি আগে থেকেই Login করা থাকে
+    // তাহলে Login Page দেখাবে না
+
+    if(
+        localStorage.getItem("loggedIn") === "true"
+    ){
+
+        window.location.replace("index.html");
+
+    }
+
+})();
+
+</script>
+
+
+<!-- GOOGLE FONT -->
 
 <link
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -21,7 +45,7 @@ rel="stylesheet"
 >
 
 
-<!-- Font Awesome -->
+<!-- FONT AWESOME -->
 
 <link
 rel="stylesheet"
@@ -31,13 +55,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <style>
 
-/* =========================================
+/* =================================
    RESET
-========================================= */
+================================= */
 
 *{
 
 margin:0;
+
 padding:0;
 
 box-sizing:border-box;
@@ -47,9 +72,9 @@ font-family:'Poppins',sans-serif;
 }
 
 
-/* =========================================
+/* =================================
    BODY
-========================================= */
+================================= */
 
 body{
 
@@ -72,9 +97,9 @@ overflow:hidden;
 }
 
 
-/* =========================================
-   BACKGROUND EFFECT
-========================================= */
+/* =================================
+   BACKGROUND
+================================= */
 
 body::before{
 
@@ -130,9 +155,9 @@ pointer-events:none;
 }
 
 
-/* =========================================
+/* =================================
    LOGIN CARD
-========================================= */
+================================= */
 
 .login-card{
 
@@ -159,9 +184,9 @@ z-index:1;
 }
 
 
-/* =========================================
+/* =================================
    LOGO
-========================================= */
+================================= */
 
 .logo{
 
@@ -194,9 +219,9 @@ rgba(0,106,78,.25);
 }
 
 
-/* =========================================
+/* =================================
    TITLE
-========================================= */
+================================= */
 
 h2{
 
@@ -211,9 +236,9 @@ margin-bottom:8px;
 }
 
 
-/* =========================================
+/* =================================
    SUBTITLE
-========================================= */
+================================= */
 
 .subtitle{
 
@@ -228,9 +253,9 @@ margin-bottom:30px;
 }
 
 
-/* =========================================
-   FORM GROUP
-========================================= */
+/* =================================
+   GROUP
+================================= */
 
 .group{
 
@@ -254,9 +279,9 @@ margin-bottom:8px;
 }
 
 
-/* =========================================
+/* =================================
    INPUT
-========================================= */
+================================= */
 
 .input-box{
 
@@ -322,9 +347,9 @@ rgba(0,106,78,.15);
 }
 
 
-/* =========================================
+/* =================================
    PASSWORD TOGGLE
-========================================= */
+================================= */
 
 .password-toggle{
 
@@ -354,9 +379,9 @@ color:#006A4E;
 }
 
 
-/* =========================================
+/* =================================
    LOGIN BUTTON
-========================================= */
+================================= */
 
 .login-btn{
 
@@ -401,9 +426,9 @@ cursor:not-allowed;
 }
 
 
-/* =========================================
+/* =================================
    FOOTER
-========================================= */
+================================= */
 
 .footer{
 
@@ -418,9 +443,9 @@ color:#777;
 }
 
 
-/* =========================================
-   CUSTOM POPUP
-========================================= */
+/* =================================
+   POPUP
+================================= */
 
 .popup-overlay{
 
@@ -439,8 +464,6 @@ background:
 rgba(0,0,0,.55);
 
 backdrop-filter:blur(6px);
-
--webkit-backdrop-filter:blur(6px);
 
 display:none;
 
@@ -493,10 +516,6 @@ zoomIn .3s ease;
 }
 
 
-/* =========================================
-   POPUP ICON
-========================================= */
-
 .popup-icon{
 
 width:75px;
@@ -518,11 +537,7 @@ font-size:35px;
 }
 
 
-/* SUCCESS */
-
-.popup-box.success
-
-.popup-icon{
+.popup-box.success .popup-icon{
 
 background:#E8F8F1;
 
@@ -531,11 +546,7 @@ color:#006A4E;
 }
 
 
-/* ERROR */
-
-.popup-box.error
-
-.popup-icon{
+.popup-box.error .popup-icon{
 
 background:#FDECEC;
 
@@ -544,11 +555,7 @@ color:#E53935;
 }
 
 
-/* LOADING */
-
-.popup-box.loading
-
-.popup-icon{
+.popup-box.loading .popup-icon{
 
 background:#E8F8F1;
 
@@ -556,10 +563,6 @@ color:#006A4E;
 
 }
 
-
-/* =========================================
-   POPUP TEXT
-========================================= */
 
 .popup-title{
 
@@ -586,10 +589,6 @@ margin-bottom:25px;
 
 }
 
-
-/* =========================================
-   POPUP BUTTON
-========================================= */
 
 .popup-btn{
 
@@ -621,9 +620,9 @@ background:#E53935;
 }
 
 
-/* =========================================
+/* =================================
    ANIMATION
-========================================= */
+================================= */
 
 @keyframes fadeIn{
 
@@ -663,39 +662,9 @@ opacity:1;
 }
 
 
-/* =========================================
-   SPINNER
-========================================= */
-
-.spinner{
-
-animation:
-
-spin 1s linear infinite;
-
-}
-
-
-@keyframes spin{
-
-from{
-
-transform:rotate(0deg);
-
-}
-
-to{
-
-transform:rotate(360deg);
-
-}
-
-}
-
-
-/* =========================================
+/* =================================
    MOBILE
-========================================= */
+================================= */
 
 @media(max-width:600px){
 
@@ -721,14 +690,12 @@ font-size:22px;
 <body>
 
 
-<!-- =========================================
+<!-- =================================
      LOGIN CARD
-========================================= -->
+================================= -->
 
 <div class="login-card">
 
-
-<!-- LOGO -->
 
 <div class="logo">
 
@@ -736,8 +703,6 @@ font-size:22px;
 
 </div>
 
-
-<!-- TITLE -->
 
 <h2>
 
@@ -752,10 +717,6 @@ LINK4 COMMUNICATION
 
 </div>
 
-
-<!-- =========================================
-     LOGIN FORM
-========================================= -->
 
 <form id="loginForm">
 
@@ -844,8 +805,6 @@ id="passwordToggle"
 </div>
 
 
-<!-- LOGIN BUTTON -->
-
 <button
 
 type="submit"
@@ -866,8 +825,6 @@ Login
 </form>
 
 
-<!-- FOOTER -->
-
 <div class="footer">
 
 © LINK4 COMMUNICATION
@@ -879,9 +836,9 @@ Login
 
 
 
-<!-- =========================================
+<!-- =================================
      POPUP
-========================================= -->
+================================= -->
 
 <div
 
@@ -962,16 +919,9 @@ OK
 <script>
 
 
-// ============================================
-// LOGIN API URL
-// ============================================
-//
-// এখানে Google Apps Script Login Web App URL বসাবেন
-//
-// উদাহরণ:
-// https://script.google.com/macros/s/XXXXX/exec
-//
-// ============================================
+/* =================================
+   LOGIN API
+================================= */
 
 const LOGIN_API_URL =
 
@@ -979,9 +929,9 @@ const LOGIN_API_URL =
 
 
 
-// ============================================
-// GET ELEMENTS
-// ============================================
+/* =================================
+   ELEMENTS
+================================= */
 
 const loginForm =
 
@@ -1083,9 +1033,9 @@ document.getElementById(
 
 
 
-// ============================================
-// PASSWORD SHOW / HIDE
-// ============================================
+/* =================================
+   PASSWORD SHOW / HIDE
+================================= */
 
 passwordToggle.addEventListener(
 
@@ -1131,9 +1081,9 @@ passwordToggle.innerHTML =
 
 
 
-// ============================================
-// SHOW POPUP
-// ============================================
+/* =================================
+   POPUP
+================================= */
 
 function showPopup(
 
@@ -1143,27 +1093,15 @@ title,
 
 message,
 
-showButton = true
+showButton=true
 
 ){
 
+popupBox.className =
 
-popupBox.classList.remove(
+"popup-box " +
 
-"success",
-
-"error",
-
-"loading"
-
-);
-
-
-popupBox.classList.add(
-
-type
-
-);
+type;
 
 
 popupTitle.textContent =
@@ -1185,7 +1123,11 @@ showButton
 : "none";
 
 
-if(type === "success"){
+if(
+
+type === "success"
+
+){
 
 popupIcon.innerHTML =
 
@@ -1193,8 +1135,11 @@ popupIcon.innerHTML =
 
 }
 
+else if(
 
-else if(type === "error"){
+type === "error"
+
+){
 
 popupIcon.innerHTML =
 
@@ -1202,12 +1147,11 @@ popupIcon.innerHTML =
 
 }
 
-
-else if(type === "loading"){
+else{
 
 popupIcon.innerHTML =
 
-'<i class="fa-solid fa-spinner spinner"></i>';
+'<i class="fa-solid fa-spinner fa-spin"></i>';
 
 }
 
@@ -1220,11 +1164,6 @@ popupOverlay.classList.add(
 
 }
 
-
-
-// ============================================
-// HIDE POPUP
-// ============================================
 
 function hidePopup(){
 
@@ -1247,9 +1186,9 @@ hidePopup
 
 
 
-// ============================================
-// LOGIN
-// ============================================
+/* =================================
+   LOGIN
+================================= */
 
 loginForm.addEventListener(
 
@@ -1304,21 +1243,15 @@ return;
 }
 
 
-// ==========================================
-// DISABLE BUTTON
-// ==========================================
+loginBtn.disabled =
 
-loginBtn.disabled = true;
+true;
 
 
 loginBtn.innerHTML =
 
-'<i class="fa-solid fa-spinner fa-spin"></i> Logging In...';
+'<i class="fa-solid fa-spinner fa-spin"></i> Checking...';
 
-
-// ==========================================
-// LOADING
-// ==========================================
 
 showPopup(
 
@@ -1336,9 +1269,11 @@ false
 try{
 
 
-const response =
+/* =================================
+   BUILD SECURE API REQUEST
+================================= */
 
-await fetch(
+const apiUrl =
 
 LOGIN_API_URL +
 
@@ -1350,15 +1285,54 @@ encodeURIComponent(username) +
 
 "&password=" +
 
-encodeURIComponent(password)
+encodeURIComponent(password);
+
+
+/* =================================
+   SEND REQUEST
+================================= */
+
+const response =
+
+await fetch(
+
+apiUrl,
+
+{
+
+method:"GET",
+
+cache:"no-store",
+
+redirect:"follow"
+
+}
 
 );
+
+
+if(!response.ok){
+
+throw new Error(
+
+"Server Error: " +
+
+response.status
+
+);
+
+}
 
 
 const result =
 
 await response.json();
 
+
+
+/* =================================
+   LOGIN SUCCESS
+================================= */
 
 if(
 
@@ -1367,9 +1341,9 @@ result.success === true
 ){
 
 
-// ========================================
-// SAVE LOGIN INFORMATION
-// ========================================
+/* =================================
+   SAVE SESSION
+================================= */
 
 localStorage.setItem(
 
@@ -1384,7 +1358,9 @@ localStorage.setItem(
 
 "username",
 
-result.username || username
+result.username ||
+
+username
 
 );
 
@@ -1393,7 +1369,9 @@ localStorage.setItem(
 
 "name",
 
-result.name || ""
+result.name ||
+
+""
 
 );
 
@@ -1402,14 +1380,16 @@ localStorage.setItem(
 
 "role",
 
-result.role || ""
+result.role ||
+
+""
 
 );
 
 
-// ========================================
-// SUCCESS
-// ========================================
+/* =================================
+   SUCCESS POPUP
+================================= */
 
 showPopup(
 
@@ -1419,78 +1399,34 @@ showPopup(
 
 "Welcome " +
 
-(result.name || username) +
+(
+
+result.name ||
+
+result.username ||
+
+username
+
+) +
 
 ". Redirecting..."
 
 );
 
 
-// ========================================
-// REDIRECT
-// ========================================
-//
-// পরে এখানে আপনার Dashboard URL বসাবেন
-//
-// ========================================
-
 setTimeout(
 
 function(){
 
-if(
+window.location.replace(
 
-result.role ===
+"index.html"
 
-"admin"
-
-){
-
-window.location.href =
-
-"admin.html";
-
-}
-
-else if(
-
-result.role ===
-
-"support"
-
-){
-
-window.location.href =
-
-"pending-support.html";
-
-}
-
-else if(
-
-result.role ===
-
-"call"
-
-){
-
-window.location.href =
-
-"pending-call.html";
-
-}
-
-else{
-
-window.location.href =
-
-"index.html";
-
-}
+);
 
 },
 
-1500
+1200
 
 );
 
@@ -1535,19 +1471,16 @@ showPopup(
 
 "Connection Error",
 
-"Unable to connect to the Login Server. Please try again."
+"Unable to connect to the Login Server. Please check your internet connection or try again."
 
 );
-
 
 }
 
 
-// ==========================================
-// ENABLE BUTTON
-// ==========================================
+loginBtn.disabled =
 
-loginBtn.disabled = false;
+false;
 
 
 loginBtn.innerHTML =

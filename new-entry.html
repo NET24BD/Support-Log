@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,15 +14,11 @@ content="width=device-width, initial-scale=1.0"
 <title>New Support Entry</title>
 
 
-<!-- GOOGLE FONT -->
-
 <link
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
 rel="stylesheet"
 >
 
-
-<!-- FONT AWESOME -->
 
 <link
 rel="stylesheet"
@@ -31,47 +28,29 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <style>
 
-/* =========================================
-   RESET
-========================================= */
-
 *{
 
 margin:0;
-
 padding:0;
-
 box-sizing:border-box;
-
 font-family:'Poppins',sans-serif;
 
 }
 
 
-/* =========================================
-   BODY
-========================================= */
-
 body{
 
 background:#005C3A;
-
 min-height:100vh;
 
 display:flex;
-
 justify-content:center;
-
 align-items:center;
 
 padding:30px;
 
 }
 
-
-/* =========================================
-   BACKGROUND
-========================================= */
 
 body::before{
 
@@ -80,11 +59,9 @@ content:"";
 position:fixed;
 
 left:-200px;
-
 top:-200px;
 
 width:500px;
-
 height:500px;
 
 background:#E53935;
@@ -107,11 +84,9 @@ content:"";
 position:fixed;
 
 right:-180px;
-
 bottom:-180px;
 
 width:450px;
-
 height:450px;
 
 background:#0D8F5A;
@@ -127,14 +102,9 @@ pointer-events:none;
 }
 
 
-/* =========================================
-   CARD
-========================================= */
-
 .card{
 
 width:100%;
-
 max-width:650px;
 
 background:white;
@@ -146,7 +116,6 @@ padding:40px;
 box-shadow:
 
 0 25px 60px
-
 rgba(0,0,0,.25);
 
 position:relative;
@@ -156,17 +125,12 @@ z-index:1;
 }
 
 
-/* =========================================
-   LOGO
-========================================= */
-
 .logo{
 
 width:80px;
-
 height:80px;
 
-margin:0 auto 20px;
+margin:auto;
 
 background:#006A4E;
 
@@ -175,19 +139,16 @@ border-radius:20px;
 display:flex;
 
 justify-content:center;
-
 align-items:center;
 
 font-size:35px;
 
 color:white;
 
+margin-bottom:20px;
+
 }
 
-
-/* =========================================
-   TITLE
-========================================= */
 
 h2{
 
@@ -200,10 +161,6 @@ margin-bottom:8px;
 }
 
 
-/* =========================================
-   SUBTITLE
-========================================= */
-
 p{
 
 text-align:center;
@@ -215,20 +172,12 @@ margin-bottom:35px;
 }
 
 
-/* =========================================
-   FORM GROUP
-========================================= */
-
 .group{
 
 margin-bottom:22px;
 
 }
 
-
-/* =========================================
-   LABEL
-========================================= */
 
 .group label{
 
@@ -243,10 +192,6 @@ color:#333;
 }
 
 
-/* =========================================
-   INPUT
-========================================= */
-
 .input{
 
 position:relative;
@@ -254,30 +199,19 @@ position:relative;
 }
 
 
-/* =========================================
-   ICON
-========================================= */
-
 .input i{
 
 position:absolute;
 
 left:16px;
-
 top:16px;
 
 color:#006A4E;
 
 font-size:18px;
 
-z-index:2;
-
 }
 
-
-/* =========================================
-   INPUT + TEXTAREA
-========================================= */
 
 .input input,
 
@@ -287,17 +221,9 @@ width:100%;
 
 padding:
 
-15px
+15px 18px 15px 50px;
 
-18px
-
-15px
-
-50px;
-
-border:
-
-2px solid #ddd;
+border:2px solid #ddd;
 
 border-radius:12px;
 
@@ -310,10 +236,6 @@ transition:.3s;
 }
 
 
-/* =========================================
-   TEXTAREA
-========================================= */
-
 textarea{
 
 resize:none;
@@ -322,10 +244,6 @@ height:120px;
 
 }
 
-
-/* =========================================
-   FOCUS
-========================================= */
 
 .input input:focus,
 
@@ -336,15 +254,10 @@ border-color:#006A4E;
 box-shadow:
 
 0 0 15px
-
 rgba(0,106,78,.2);
 
 }
 
-
-/* =========================================
-   BUTTON
-========================================= */
 
 button{
 
@@ -371,20 +284,12 @@ transition:.3s;
 }
 
 
-/* =========================================
-   BUTTON HOVER
-========================================= */
-
 button:hover{
 
 background:#E53935;
 
 }
 
-
-/* =========================================
-   BUTTON DISABLED
-========================================= */
 
 button:disabled{
 
@@ -394,10 +299,6 @@ cursor:not-allowed;
 
 }
 
-
-/* =========================================
-   FOOTER
-========================================= */
 
 .footer{
 
@@ -411,10 +312,6 @@ color:#777;
 
 }
 
-
-/* =========================================
-   MOBILE
-========================================= */
 
 @media(max-width:600px){
 
@@ -434,16 +331,8 @@ padding:25px;
 <body>
 
 
-<!-- =========================================
-     MAIN CARD
-========================================= -->
-
 <div class="card">
 
-
-<!-- =========================================
-     LOGO
-========================================= -->
 
 <div class="logo">
 
@@ -452,20 +341,12 @@ padding:25px;
 </div>
 
 
-<!-- =========================================
-     TITLE
-========================================= -->
-
 <h2>
 
 New Support Entry
 
 </h2>
 
-
-<!-- =========================================
-     COMPANY
-========================================= -->
 
 <p>
 
@@ -474,19 +355,10 @@ LINK4 COMMUNICATION
 </p>
 
 
-<!-- =========================================
-     FORM
-========================================= -->
-
 <form id="entryForm">
 
 
-<!-- =========================================
-     CUSTOMER ID
-========================================= -->
-
 <div class="group">
-
 
 <label>
 
@@ -496,7 +368,6 @@ Customer ID
 
 
 <div class="input">
-
 
 <i class="fa-solid fa-network-wired"></i>
 
@@ -515,20 +386,13 @@ autocomplete="off"
 
 >
 
+</div>
 
 </div>
 
 
-</div>
-
-
-
-<!-- =========================================
-     PROBLEM
-========================================= -->
 
 <div class="group">
-
 
 <label>
 
@@ -538,7 +402,6 @@ Problem
 
 
 <div class="input">
-
 
 <i class="fa-solid fa-triangle-exclamation"></i>
 
@@ -553,20 +416,13 @@ required
 
 ></textarea>
 
+</div>
 
 </div>
 
 
-</div>
-
-
-
-<!-- =========================================
-     REFERENCE
-========================================= -->
 
 <div class="group">
-
 
 <label>
 
@@ -576,7 +432,6 @@ Reference
 
 
 <div class="input">
-
 
 <i class="fa-solid fa-file-lines"></i>
 
@@ -589,23 +444,15 @@ id="reference"
 
 placeholder="Reference Number"
 
-required
-
 autocomplete="off"
 
 >
 
+</div>
 
 </div>
 
 
-</div>
-
-
-
-<!-- =========================================
-     SUBMIT
-========================================= -->
 
 <button
 
@@ -625,11 +472,6 @@ Submit Support
 </form>
 
 
-
-<!-- =========================================
-     FOOTER
-========================================= -->
-
 <div class="footer">
 
 © LINK4 COMMUNICATION
@@ -644,121 +486,75 @@ Submit Support
 <script>
 
 
-/*************************************************
- * GOOGLE APPS SCRIPT WEB APP URL
- *************************************************/
+// =================================================
+// APPS SCRIPT URL
+// =================================================
 
 const API_URL =
 
 "https://script.google.com/macros/s/AKfycbw1NiYF5qNEFGVXdIWZ3I3lpJXEX57uBM0M06oqVVJcRUiuCTAf8NkKycGWtyIhhxWh4g/exec";
 
 
-
-/*************************************************
- * GET FORM
- *************************************************/
+// =================================================
+// FORM
+// =================================================
 
 const entryForm =
 
 document.getElementById(
-
 "entryForm"
-
 );
 
 
-
-/*************************************************
- * GET SUBMIT BUTTON
- *************************************************/
+// =================================================
+// BUTTON
+// =================================================
 
 const submitBtn =
 
 document.getElementById(
-
 "submitBtn"
-
 );
 
 
-
-/*************************************************
- * FORM SUBMIT
- *************************************************/
+// =================================================
+// SUBMIT
+// =================================================
 
 entryForm.addEventListener(
 
 "submit",
 
-async function(e){
-
-
-/*************************************************
- * STOP DEFAULT SUBMIT
- *************************************************/
+function(e){
 
 e.preventDefault();
 
 
+const ip =
 
-/*************************************************
- * GET CUSTOMER ID
- *************************************************/
+document.getElementById(
+"ip"
+).value.trim();
 
-const customerId =
-
-document
-
-.getElementById("ip")
-
-.value
-
-.trim();
-
-
-
-/*************************************************
- * GET PROBLEM
- *************************************************/
 
 const problem =
 
-document
+document.getElementById(
+"problem"
+).value.trim();
 
-.getElementById("problem")
-
-.value
-
-.trim();
-
-
-
-/*************************************************
- * GET REFERENCE
- *************************************************/
 
 const reference =
 
-document
-
-.getElementById("reference")
-
-.value
-
-.trim();
+document.getElementById(
+"reference"
+).value.trim();
 
 
-
-/*************************************************
- * VALIDATION
- *************************************************/
-
-if(!customerId){
+if(!ip){
 
 alert(
-
 "Please enter Customer ID."
-
 );
 
 return;
@@ -769,132 +565,60 @@ return;
 if(!problem){
 
 alert(
-
 "Please enter Customer Problem."
-
 );
 
 return;
 
 }
 
-
-if(!reference){
-
-alert(
-
-"Please enter Reference."
-
-);
-
-return;
-
-}
-
-
-
-/*************************************************
- * SAVE BUTTON TEXT
- *************************************************/
-
-const oldButtonText =
-
-submitBtn.innerHTML;
-
-
-
-/*************************************************
- * DISABLE BUTTON
- *************************************************/
 
 submitBtn.disabled = true;
 
-
-
-/*************************************************
- * LOADING
- *************************************************/
 
 submitBtn.innerHTML =
 
 '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
 
 
-
-try{
-
-
-/*************************************************
- * CREATE FORM DATA
- *************************************************/
+// =================================================
+// FORM DATA
+// =================================================
 
 const formData =
 
-new FormData();
+new URLSearchParams();
 
-
-
-/*************************************************
- * ACTION
- *************************************************/
 
 formData.append(
-
 "action",
-
 "newEntry"
-
 );
 
 
-
-/*************************************************
- * CUSTOMER ID
- *************************************************/
-
 formData.append(
-
-"customerId",
-
-customerId
-
+"ip",
+ip
 );
 
 
-
-/*************************************************
- * PROBLEM
- *************************************************/
-
 formData.append(
-
 "problem",
-
 problem
-
 );
 
-
-
-/*************************************************
- * REFERENCE
- *************************************************/
 
 formData.append(
-
 "reference",
-
 reference
-
 );
 
 
+// =================================================
+// SEND DATA
+// =================================================
 
-/*************************************************
- * SEND DATA
- *************************************************/
-
-await fetch(
+fetch(
 
 API_URL,
 
@@ -902,19 +626,28 @@ API_URL,
 
 method:"POST",
 
-mode:"no-cors",
-
 body:formData
 
 }
 
-);
+)
+
+.then(
+
+response =>
+
+response.json()
+
+)
+
+.then(
+
+result => {
 
 
-
-/*************************************************
- * SUCCESS MESSAGE
- *************************************************/
+if(
+result.success
+){
 
 alert(
 
@@ -922,31 +655,33 @@ alert(
 
 );
 
-
-
-/*************************************************
- * RESET FORM
- *************************************************/
-
 entryForm.reset();
-
 
 }
 
+else{
 
-/*************************************************
- * ERROR
- *************************************************/
+alert(
 
-catch(error){
+result.message ||
+
+"Failed To Submit"
+
+);
+
+}
+
+}
+
+)
+
+.catch(
+
+error => {
 
 
 console.error(
-
-"Submit Error:",
-
 error
-
 );
 
 
@@ -956,25 +691,25 @@ alert(
 
 );
 
-
 }
 
+)
 
-/*************************************************
- * ENABLE BUTTON
- *************************************************/
+.finally(
+
+() => {
+
 
 submitBtn.disabled = false;
 
 
-
-/*************************************************
- * RESTORE BUTTON
- *************************************************/
-
 submitBtn.innerHTML =
 
-oldButtonText;
+'<i class="fa-solid fa-paper-plane"></i> Submit Support';
+
+}
+
+);
 
 
 }

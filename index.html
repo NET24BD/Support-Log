@@ -4,66 +4,164 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
 <title>LINK 4 COMMUNICATION</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- =========================================
+     LOGIN PROTECTION
+========================================= -->
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+<script>
+
+(function () {
+
+    // Login করা না থাকলে
+    // সরাসরি Login Page-এ পাঠাবে
+
+    if (
+        localStorage.getItem("loggedIn") !== "true"
+    ) {
+
+        window.location.replace(
+            "login.html"
+        );
+
+    }
+
+})();
+
+</script>
+
+
+<!-- =========================================
+     GOOGLE FONT
+========================================= -->
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com"
+>
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet"
+>
+
+
+<!-- =========================================
+     FONT AWESOME
+========================================= -->
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+/>
+
 
 <style>
 
+/* =========================================
+   RESET
+========================================= */
+
 *{
+
 margin:0;
+
 padding:0;
+
 box-sizing:border-box;
+
 font-family:'Poppins',sans-serif;
+
 }
 
+
+/* =========================================
+   HTML
+========================================= */
+
 html{
+
 scroll-behavior:smooth;
+
 }
+
+
+/* =========================================
+   BODY
+========================================= */
 
 body{
 
 background:#005C3A;
+
 min-height:100vh;
+
 overflow-x:hidden;
+
 position:relative;
 
 }
 
-/* Background */
+
+/* =========================================
+   BACKGROUND
+========================================= */
 
 .bg{
 
 position:fixed;
+
 left:0;
+
 top:0;
+
 width:100%;
+
 height:100%;
+
 overflow:hidden;
+
 z-index:-1;
 
 }
 
+
+/* =========================================
+   BACKGROUND CIRCLE 1
+========================================= */
+
 .circle1{
 
 position:absolute;
+
 width:650px;
+
 height:650px;
+
 background:#E53935;
+
 border-radius:50%;
 
 left:50%;
+
 top:50%;
 
-transform:translate(-50%,-50%);
+transform:
+translate(-50%,-50%);
 
 filter:blur(120px);
 
@@ -71,11 +169,17 @@ opacity:.45;
 
 }
 
+
+/* =========================================
+   BACKGROUND CIRCLE 2
+========================================= */
+
 .circle2{
 
 position:absolute;
 
 width:300px;
+
 height:300px;
 
 background:#0D8F5A;
@@ -83,22 +187,30 @@ background:#0D8F5A;
 border-radius:50%;
 
 top:-120px;
+
 left:-120px;
 
 filter:blur(100px);
 
 }
 
+
+/* =========================================
+   BACKGROUND CIRCLE 3
+========================================= */
+
 .circle3{
 
 position:absolute;
 
 width:280px;
+
 height:280px;
 
 background:#0D8F5A;
 
 right:-120px;
+
 bottom:-120px;
 
 border-radius:50%;
@@ -107,29 +219,49 @@ filter:blur(90px);
 
 }
 
+
+/* =========================================
+   HEADER
+========================================= */
+
 header{
 
 width:100%;
+
 padding:20px 60px;
 
 display:flex;
 
 justify-content:space-between;
+
 align-items:center;
 
 }
+
+
+/* =========================================
+   LOGO
+========================================= */
 
 .logo{
 
 display:flex;
+
 align-items:center;
+
 gap:15px;
 
 }
 
+
+/* =========================================
+   LOGO BOX
+========================================= */
+
 .logo-box{
 
 width:55px;
+
 height:55px;
 
 background:white;
@@ -137,7 +269,9 @@ background:white;
 border-radius:15px;
 
 display:flex;
+
 justify-content:center;
+
 align-items:center;
 
 color:#006A4E;
@@ -146,42 +280,136 @@ font-size:24px;
 
 font-weight:bold;
 
-box-shadow:0 10px 25px rgba(0,0,0,.2);
+box-shadow:
+
+0 10px 25px
+
+rgba(0,0,0,.2);
 
 }
+
+
+/* =========================================
+   LOGO TITLE
+========================================= */
 
 .logo h2{
 
 color:white;
+
 font-weight:700;
 
 }
 
+
+/* =========================================
+   PROFILE
+========================================= */
+
 .profile{
 
 display:flex;
+
 align-items:center;
-gap:15px;
+
+gap:12px;
 
 }
+
+
+/* =========================================
+   WELCOME USER
+========================================= */
+
+.profile span{
+
+color:white;
+
+font-weight:600;
+
+font-size:15px;
+
+}
+
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
 
 .profile img{
 
 width:48px;
+
 height:48px;
 
 border-radius:50%;
 
 border:3px solid white;
 
+object-fit:cover;
+
 }
 
-.profile span{
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
+
+.logout-btn{
+
+border:none;
+
+background:#E53935;
 
 color:white;
+
+padding:
+
+10px
+
+15px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+font-size:14px;
+
 font-weight:600;
 
+display:flex;
+
+align-items:center;
+
+gap:7px;
+
+transition:.3s;
+
+box-shadow:
+
+0 5px 15px
+
+rgba(0,0,0,.15);
+
 }
+
+
+/* =========================================
+   LOGOUT HOVER
+========================================= */
+
+.logout-btn:hover{
+
+background:#b71c1c;
+
+transform:translateY(-2px);
+
+}
+
+
+/* =========================================
+   DASHBOARD
+========================================= */
 
 .dashboard{
 
@@ -193,20 +421,36 @@ padding:40px;
 
 }
 
+
+/* =========================================
+   TITLE
+========================================= */
+
 .title{
 
 margin-bottom:40px;
 
 }
 
+
+/* =========================================
+   TITLE H1
+========================================= */
+
 .title h1{
 
 font-size:42px;
+
 color:white;
 
 font-weight:700;
 
 }
+
+
+/* =========================================
+   TITLE P
+========================================= */
 
 .title p{
 
@@ -218,15 +462,39 @@ font-size:17px;
 
 }
 
+
+/* =========================================
+   CARDS
+========================================= */
+
 .cards{
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:
+
+repeat(
+
+auto-fit,
+
+minmax(
+
+260px,
+
+1fr
+
+)
+
+);
 
 gap:30px;
 
 }
+
+
+/* =========================================
+   CARD
+========================================= */
 
 .card{
 
@@ -240,7 +508,11 @@ cursor:pointer;
 
 transition:.35s;
 
-box-shadow:0 20px 45px rgba(0,0,0,.15);
+box-shadow:
+
+0 20px 45px
+
+rgba(0,0,0,.15);
 
 position:relative;
 
@@ -248,13 +520,29 @@ overflow:hidden;
 
 }
 
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
 .card:hover{
 
-transform:translateY(-12px);
+transform:
 
-box-shadow:0 30px 60px rgba(0,0,0,.25);
+translateY(-12px);
+
+box-shadow:
+
+0 30px 60px
+
+rgba(0,0,0,.25);
 
 }
+
+
+/* =========================================
+   CARD TOP LINE
+========================================= */
 
 .card::before{
 
@@ -263,18 +551,26 @@ content:"";
 position:absolute;
 
 left:0;
+
 top:0;
 
 width:100%;
+
 height:6px;
 
 background:#006A4E;
 
 }
 
+
+/* =========================================
+   ICON
+========================================= */
+
 .icon{
 
 width:80px;
+
 height:80px;
 
 border-radius:20px;
@@ -282,6 +578,7 @@ border-radius:20px;
 display:flex;
 
 justify-content:center;
+
 align-items:center;
 
 font-size:34px;
@@ -292,30 +589,69 @@ margin-bottom:25px;
 
 }
 
+
+/* =========================================
+   GREEN
+========================================= */
+
 .green{
+
 background:#16a34a;
+
 }
+
+
+/* =========================================
+   BLUE
+========================================= */
 
 .blue{
+
 background:#2563eb;
+
 }
+
+
+/* =========================================
+   ORANGE
+========================================= */
 
 .orange{
+
 background:#ea580c;
+
 }
 
+
+/* =========================================
+   RED
+========================================= */
+
 .red{
+
 background:#dc2626;
+
 }
+
+
+/* =========================================
+   CARD H2
+========================================= */
 
 .card h2{
 
 font-size:24px;
+
 color:#222;
 
 margin-bottom:10px;
 
 }
+
+
+/* =========================================
+   CARD P
+========================================= */
 
 .card p{
 
@@ -326,6 +662,11 @@ line-height:25px;
 font-size:15px;
 
 }
+
+
+/* =========================================
+   CARD BUTTON
+========================================= */
 
 .btn{
 
@@ -341,7 +682,11 @@ background:#006A4E;
 
 color:white;
 
-padding:12px 22px;
+padding:
+
+12px
+
+22px;
 
 border-radius:10px;
 
@@ -351,11 +696,21 @@ transition:.3s;
 
 }
 
+
+/* =========================================
+   CARD BUTTON HOVER
+========================================= */
+
 .card:hover .btn{
 
 background:#E53935;
 
 }
+
+
+/* =========================================
+   FOOTER
+========================================= */
 
 .footer{
 
@@ -371,19 +726,31 @@ font-size:15px;
 
 }
 
+
+/* =========================================
+   MOBILE
+========================================= */
+
 @media(max-width:768px){
+
 
 header{
 
-padding:20px;
+padding:
+
+20px;
 
 }
+
 
 .dashboard{
 
-padding:20px;
+padding:
+
+20px;
 
 }
+
 
 .title h1{
 
@@ -391,9 +758,61 @@ font-size:30px;
 
 }
 
+
 .profile span{
 
 display:none;
+
+}
+
+
+.logout-btn{
+
+padding:
+
+9px
+
+12px;
+
+font-size:13px;
+
+}
+
+
+.profile img{
+
+width:42px;
+
+height:42px;
+
+}
+
+}
+
+
+/* =========================================
+   RIPPLE ANIMATION
+========================================= */
+
+@keyframes ripple{
+
+0%{
+
+transform:
+
+scale(0);
+
+opacity:.8;
+
+}
+
+100%{
+
+transform:
+
+scale(4);
+
+opacity:0;
 
 }
 
@@ -403,7 +822,13 @@ display:none;
 
 </head>
 
+
 <body>
+
+
+<!-- =========================================
+     BACKGROUND
+========================================= -->
 
 <div class="bg">
 
@@ -415,215 +840,723 @@ display:none;
 
 </div>
 
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
 <header>
+
+
+<!-- =========================================
+     LOGO
+========================================= -->
 
 <div class="logo">
 
+
 <div class="logo-box">
 
-<i class="fa-solid fa-chart-simple"></i>
+<i
+class="fa-solid fa-chart-simple"
+></i>
 
 </div>
 
-<h2>LINK4 COMMUNICATION</h2>
+
+<h2>
+
+LINK4 COMMUNICATION
+
+</h2>
+
 
 </div>
+
+
+
+<!-- =========================================
+     PROFILE
+========================================= -->
 
 <div class="profile">
 
-<span>Welcome</span>
 
-<img src="https://i.pravatar.cc/100">
+<span id="welcomeUser">
+
+Welcome
+
+</span>
+
+
+<img
+src="https://i.pravatar.cc/100"
+alt="Profile"
+>
+
+
+<button
+
+class="logout-btn"
+
+onclick="logout()"
+
+>
+
+<i
+class="fa-solid fa-right-from-bracket"
+></i>
+
+Logout
+
+</button>
+
 
 </div>
+
 
 </header>
 
+
+
+<!-- =========================================
+     DASHBOARD
+========================================= -->
+
 <div class="dashboard">
+
+
+<!-- =========================================
+     TITLE
+========================================= -->
 
 <div class="title">
 
-<h1>Dashboard</h1>
 
-<p>Select an option below to continue.</p>
+<h1>
+
+Dashboard
+
+</h1>
+
+
+<p>
+
+Select an option below to continue.
+
+</p>
+
 
 </div>
+
+
+
+<!-- =========================================
+     CARDS
+========================================= -->
 
 <div class="cards">
-  <!-- ========================= -->
-<!-- Dashboard Cards -->
-<!-- ========================= -->
-
-<div class="card" onclick="location.href='new-entry.html'">
-
-    <div class="icon green">
-        <i class="fa-solid fa-user-plus"></i>
-    </div>
-
-    <h2>New Entry</h2>
-
-    <p>
-        Add a new customer entry to the database quickly and securely.
-    </p>
-
-    <div class="btn">
-        Open
-        <i class="fa-solid fa-arrow-right"></i>
-    </div>
-
-</div>
 
 
-<div class="card" onclick="location.href='pending-support.html'">
 
-    <div class="icon blue">
-        <i class="fa-solid fa-headset"></i>
-    </div>
+<!-- =========================================
+     NEW ENTRY
+========================================= -->
 
-    <h2>Pending Support</h2>
+<div
 
-    <p>
-        View and manage all pending support requests from customers.
-    </p>
+class="card"
 
-    <div class="btn">
-        Open
-        <i class="fa-solid fa-arrow-right"></i>
-    </div>
+onclick="location.href='new-entry.html'"
+
+>
+
+
+<div class="icon green">
+
+<i
+class="fa-solid fa-user-plus"
+></i>
 
 </div>
 
 
-<div class="card" onclick="location.href='pending-call.html'">
+<h2>
 
-    <div class="icon orange">
-        <i class="fa-solid fa-phone-volume"></i>
-    </div>
+New Entry
 
-    <h2>Pending Call</h2>
+</h2>
 
-    <p>
-        Check customers waiting for phone calls and follow-up.
-    </p>
 
-    <div class="btn">
-        Open
-        <i class="fa-solid fa-arrow-right"></i>
-    </div>
+<p>
+
+Add a new customer entry to the database quickly and securely.
+
+</p>
+
+
+<div class="btn">
+
+Open
+
+<i
+class="fa-solid fa-arrow-right"
+></i>
+
+</div>
+
 
 </div>
 
 
-<div class="card" onclick="location.href='history.html'">
 
-    <div class="icon red">
-        <i class="fa-solid fa-clock-rotate-left"></i>
-    </div>
+<!-- =========================================
+     PENDING SUPPORT
+========================================= -->
 
-    <h2>History</h2>
+<div
 
-    <p>
-        Browse complete activity history and previous updates.
-    </p>
+class="card"
 
-    <div class="btn">
-        Open
-        <i class="fa-solid fa-arrow-right"></i>
-    </div>
+onclick="location.href='pending-support.html'"
+
+>
+
+
+<div class="icon blue">
+
+<i
+class="fa-solid fa-headset"
+></i>
 
 </div>
 
+
+<h2>
+
+Pending Support
+
+</h2>
+
+
+<p>
+
+View and manage all pending support requests from customers.
+
+</p>
+
+
+<div class="btn">
+
+Open
+
+<i
+class="fa-solid fa-arrow-right"
+></i>
+
 </div>
+
+
+</div>
+
+
+
+<!-- =========================================
+     PENDING CALL
+========================================= -->
+
+<div
+
+class="card"
+
+onclick="location.href='pending-call.html'"
+
+>
+
+
+<div class="icon orange">
+
+<i
+class="fa-solid fa-phone-volume"
+></i>
+
+</div>
+
+
+<h2>
+
+Pending Call
+
+</h2>
+
+
+<p>
+
+Check customers waiting for phone calls and follow-up.
+
+</p>
+
+
+<div class="btn">
+
+Open
+
+<i
+class="fa-solid fa-arrow-right"
+></i>
+
+</div>
+
+
+</div>
+
+
+
+<!-- =========================================
+     HISTORY
+========================================= -->
+
+<div
+
+class="card"
+
+onclick="location.href='history.html'"
+
+>
+
+
+<div class="icon red">
+
+<i
+class="fa-solid fa-clock-rotate-left"
+></i>
+
+</div>
+
+
+<h2>
+
+History
+
+</h2>
+
+
+<p>
+
+Browse complete activity history and previous updates.
+
+</p>
+
+
+<div class="btn">
+
+Open
+
+<i
+class="fa-solid fa-arrow-right"
+></i>
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
 
 <div class="footer">
 
-    © 2026 RS Dashboard | All Rights Reserved
+© 2026 LINK4 COMMUNICATION | All Rights Reserved
 
 </div>
 
+
 </div>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
 <script>
 
-// ==============================
-// RS Dashboard
-// ==============================
 
-// Smooth Card Animation
-document.querySelectorAll(".card").forEach(card=>{
+// =================================================
+// GET LOGIN USER INFORMATION
+// =================================================
 
-card.addEventListener("mouseenter",()=>{
+const loggedInName =
 
-card.style.transition=".35s";
+localStorage.getItem(
 
-});
+"name"
 
-});
+);
 
 
-// Click Ripple Effect
-document.querySelectorAll(".card").forEach(card=>{
+const loggedInUsername =
 
-card.addEventListener("click",function(e){
+localStorage.getItem(
 
-const ripple=document.createElement("span");
+"username"
 
-const rect=this.getBoundingClientRect();
+);
 
-const size=Math.max(rect.width,rect.height);
 
-ripple.style.width=size+"px";
-ripple.style.height=size+"px";
+const loggedInRole =
 
-ripple.style.position="absolute";
-ripple.style.borderRadius="50%";
-ripple.style.background="rgba(255,255,255,.45)";
-ripple.style.transform="scale(0)";
-ripple.style.animation="ripple .6s linear";
-ripple.style.pointerEvents="none";
+localStorage.getItem(
 
-ripple.style.left=(e.clientX-rect.left-size/2)+"px";
-ripple.style.top=(e.clientY-rect.top-size/2)+"px";
+"role"
 
-this.appendChild(ripple);
+);
 
-setTimeout(()=>{
+
+const welcomeUser =
+
+document.getElementById(
+
+"welcomeUser"
+
+);
+
+
+// =================================================
+// SHOW USER NAME
+// =================================================
+
+if (
+
+loggedInName &&
+
+loggedInName.trim() !== ""
+
+) {
+
+
+welcomeUser.innerText =
+
+"Welcome, " +
+
+loggedInName;
+
+
+}
+
+else if (
+
+loggedInUsername &&
+
+loggedInUsername.trim() !== ""
+
+) {
+
+
+welcomeUser.innerText =
+
+"Welcome, " +
+
+loggedInUsername;
+
+
+}
+
+else {
+
+
+welcomeUser.innerText =
+
+"Welcome";
+
+
+}
+
+
+
+// =================================================
+// LOGOUT FUNCTION
+// =================================================
+
+function logout() {
+
+
+    // =============================================
+    // REMOVE LOGIN INFORMATION
+    // =============================================
+
+    localStorage.removeItem(
+
+        "loggedIn"
+
+    );
+
+
+    localStorage.removeItem(
+
+        "username"
+
+    );
+
+
+    localStorage.removeItem(
+
+        "name"
+
+    );
+
+
+    localStorage.removeItem(
+
+        "role"
+
+    );
+
+
+    // =============================================
+    // GO TO LOGIN PAGE
+    // =============================================
+
+    window.location.replace(
+
+        "login.html"
+
+    );
+
+}
+
+
+
+// =================================================
+// CARD HOVER
+// =================================================
+
+document
+
+.querySelectorAll(
+
+".card"
+
+)
+
+.forEach(
+
+function(card){
+
+
+card.addEventListener(
+
+"mouseenter",
+
+function(){
+
+card.style.transition =
+
+".35s";
+
+}
+
+);
+
+
+}
+
+);
+
+
+
+// =================================================
+// CLICK RIPPLE EFFECT
+// =================================================
+
+document
+
+.querySelectorAll(
+
+".card"
+
+)
+
+.forEach(
+
+function(card){
+
+
+card.addEventListener(
+
+"click",
+
+function(e){
+
+
+const ripple =
+
+document.createElement(
+
+"span"
+
+);
+
+
+const rect =
+
+this.getBoundingClientRect();
+
+
+const size =
+
+Math.max(
+
+rect.width,
+
+rect.height
+
+);
+
+
+ripple.style.width =
+
+size +
+
+"px";
+
+
+ripple.style.height =
+
+size +
+
+"px";
+
+
+ripple.style.position =
+
+"absolute";
+
+
+ripple.style.borderRadius =
+
+"50%";
+
+
+ripple.style.background =
+
+"rgba(255,255,255,.45)";
+
+
+ripple.style.transform =
+
+"scale(0)";
+
+
+ripple.style.animation =
+
+"ripple .6s linear";
+
+
+ripple.style.pointerEvents =
+
+"none";
+
+
+ripple.style.left =
+
+(
+
+e.clientX -
+
+rect.left -
+
+size / 2
+
+) +
+
+"px";
+
+
+ripple.style.top =
+
+(
+
+e.clientY -
+
+rect.top -
+
+size / 2
+
+) +
+
+"px";
+
+
+this.appendChild(
+
+ripple
+
+);
+
+
+setTimeout(
+
+function(){
+
 ripple.remove();
-},600);
 
-});
+},
 
-});
+600
+
+);
 
 
-// Current Year
-const footer=document.querySelector(".footer");
-const year=new Date().getFullYear();
+}
 
-footer.innerHTML="© "+year+" RS Dashboard | All Rights Reserved";
+);
+
+}
+
+);
+
+
+
+// =================================================
+// CURRENT YEAR
+// =================================================
+
+const footer =
+
+document.querySelector(
+
+".footer"
+
+);
+
+
+const year =
+
+new Date()
+
+.getFullYear();
+
+
+footer.innerHTML =
+
+"© " +
+
+year +
+
+" LINK4 COMMUNICATION | All Rights Reserved";
+
 
 </script>
 
-<style>
-
-@keyframes ripple{
-
-0%{
-
-transform:scale(0);
-opacity:.8;
-
-}
-
-100%{
-
-transform:scale(4);
-opacity:0;
-
-}
-
-}
-
-</style>
 
 </body>
 

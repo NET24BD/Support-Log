@@ -14,12 +14,14 @@ content="width=device-width, initial-scale=1.0"
 <title>New Support Entry</title>
 
 
+<!-- Google Font -->
 <link
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
 rel="stylesheet"
 >
 
 
+<!-- Font Awesome -->
 <link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -28,29 +30,46 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <style>
 
+/* =========================================
+   RESET
+========================================= */
+
 *{
 
 margin:0;
 padding:0;
+
 box-sizing:border-box;
+
 font-family:'Poppins',sans-serif;
 
 }
 
 
+/* =========================================
+   BODY
+========================================= */
+
 body{
 
 background:#005C3A;
+
 min-height:100vh;
 
 display:flex;
+
 justify-content:center;
+
 align-items:center;
 
 padding:30px;
 
 }
 
+
+/* =========================================
+   BACKGROUND EFFECT
+========================================= */
 
 body::before{
 
@@ -59,9 +78,11 @@ content:"";
 position:fixed;
 
 left:-200px;
+
 top:-200px;
 
 width:500px;
+
 height:500px;
 
 background:#E53935;
@@ -84,9 +105,11 @@ content:"";
 position:fixed;
 
 right:-180px;
+
 bottom:-180px;
 
 width:450px;
+
 height:450px;
 
 background:#0D8F5A;
@@ -102,9 +125,14 @@ pointer-events:none;
 }
 
 
+/* =========================================
+   CARD
+========================================= */
+
 .card{
 
 width:100%;
+
 max-width:650px;
 
 background:white;
@@ -116,6 +144,7 @@ padding:40px;
 box-shadow:
 
 0 25px 60px
+
 rgba(0,0,0,.25);
 
 position:relative;
@@ -125,12 +154,17 @@ z-index:1;
 }
 
 
+/* =========================================
+   LOGO
+========================================= */
+
 .logo{
 
 width:80px;
+
 height:80px;
 
-margin:auto;
+margin:0 auto 20px;
 
 background:#006A4E;
 
@@ -139,16 +173,19 @@ border-radius:20px;
 display:flex;
 
 justify-content:center;
+
 align-items:center;
 
 font-size:35px;
 
 color:white;
 
-margin-bottom:20px;
-
 }
 
+
+/* =========================================
+   TITLE
+========================================= */
 
 h2{
 
@@ -161,6 +198,10 @@ margin-bottom:8px;
 }
 
 
+/* =========================================
+   SUBTITLE
+========================================= */
+
 p{
 
 text-align:center;
@@ -171,6 +212,10 @@ margin-bottom:35px;
 
 }
 
+
+/* =========================================
+   FORM GROUP
+========================================= */
 
 .group{
 
@@ -192,6 +237,10 @@ color:#333;
 }
 
 
+/* =========================================
+   INPUT
+========================================= */
+
 .input{
 
 position:relative;
@@ -204,11 +253,14 @@ position:relative;
 position:absolute;
 
 left:16px;
+
 top:16px;
 
 color:#006A4E;
 
 font-size:18px;
+
+z-index:2;
 
 }
 
@@ -221,7 +273,13 @@ width:100%;
 
 padding:
 
-15px 18px 15px 50px;
+15px
+
+18px
+
+15px
+
+50px;
 
 border:2px solid #ddd;
 
@@ -233,8 +291,14 @@ outline:none;
 
 transition:.3s;
 
+background:white;
+
 }
 
+
+/* =========================================
+   TEXTAREA
+========================================= */
 
 textarea{
 
@@ -245,6 +309,10 @@ height:120px;
 }
 
 
+/* =========================================
+   INPUT FOCUS
+========================================= */
+
 .input input:focus,
 
 .input textarea:focus{
@@ -254,10 +322,15 @@ border-color:#006A4E;
 box-shadow:
 
 0 0 15px
+
 rgba(0,106,78,.2);
 
 }
 
+
+/* =========================================
+   BUTTON
+========================================= */
 
 button{
 
@@ -284,12 +357,20 @@ transition:.3s;
 }
 
 
+/* =========================================
+   BUTTON HOVER
+========================================= */
+
 button:hover{
 
 background:#E53935;
 
 }
 
+
+/* =========================================
+   BUTTON DISABLED
+========================================= */
 
 button:disabled{
 
@@ -299,6 +380,10 @@ cursor:not-allowed;
 
 }
 
+
+/* =========================================
+   FOOTER
+========================================= */
 
 .footer{
 
@@ -312,6 +397,10 @@ color:#777;
 
 }
 
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media(max-width:600px){
 
@@ -331,8 +420,14 @@ padding:25px;
 <body>
 
 
+<!-- =========================================
+     CARD
+========================================= -->
+
 <div class="card">
 
+
+<!-- LOGO -->
 
 <div class="logo">
 
@@ -341,12 +436,16 @@ padding:25px;
 </div>
 
 
+<!-- TITLE -->
+
 <h2>
 
 New Support Entry
 
 </h2>
 
+
+<!-- COMPANY -->
 
 <p>
 
@@ -355,10 +454,20 @@ LINK4 COMMUNICATION
 </p>
 
 
+
+<!-- =========================================
+     FORM
+========================================= -->
+
 <form id="entryForm">
 
 
+<!-- =========================================
+     CUSTOMER ID
+========================================= -->
+
 <div class="group">
+
 
 <label>
 
@@ -368,6 +477,7 @@ Customer ID
 
 
 <div class="input">
+
 
 <i class="fa-solid fa-network-wired"></i>
 
@@ -386,13 +496,20 @@ autocomplete="off"
 
 >
 
-</div>
 
 </div>
 
 
+</div>
+
+
+
+<!-- =========================================
+     PROBLEM
+========================================= -->
 
 <div class="group">
+
 
 <label>
 
@@ -402,6 +519,7 @@ Problem
 
 
 <div class="input">
+
 
 <i class="fa-solid fa-triangle-exclamation"></i>
 
@@ -416,13 +534,20 @@ required
 
 ></textarea>
 
-</div>
 
 </div>
 
 
+</div>
+
+
+
+<!-- =========================================
+     REFERENCE
+========================================= -->
 
 <div class="group">
+
 
 <label>
 
@@ -432,6 +557,7 @@ Reference
 
 
 <div class="input">
+
 
 <i class="fa-solid fa-file-lines"></i>
 
@@ -448,11 +574,17 @@ autocomplete="off"
 
 >
 
-</div>
 
 </div>
 
 
+</div>
+
+
+
+<!-- =========================================
+     SUBMIT BUTTON
+========================================= -->
 
 <button
 
@@ -472,6 +604,11 @@ Submit Support
 </form>
 
 
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
 <div class="footer">
 
 © LINK4 COMMUNICATION
@@ -483,11 +620,15 @@ Submit Support
 
 
 
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
 <script>
 
 
 // =================================================
-// APPS SCRIPT URL
+// GOOGLE APPS SCRIPT WEB APP URL
 // =================================================
 
 const API_URL =
@@ -496,220 +637,320 @@ const API_URL =
 
 
 // =================================================
-// FORM
+// GET FORM
 // =================================================
 
 const entryForm =
 
 document.getElementById(
+
 "entryForm"
+
 );
 
 
 // =================================================
-// BUTTON
+// GET SUBMIT BUTTON
 // =================================================
 
 const submitBtn =
 
 document.getElementById(
+
 "submitBtn"
+
 );
 
 
 // =================================================
-// SUBMIT
+// FORM SUBMIT
 // =================================================
 
 entryForm.addEventListener(
 
 "submit",
 
-function(e){
+async function(e){
 
-e.preventDefault();
 
+    // =============================================
+    // STOP PAGE RELOAD
+    // =============================================
 
-const ip =
+    e.preventDefault();
 
-document.getElementById(
-"ip"
-).value.trim();
 
+    // =============================================
+    // GET CUSTOMER ID
+    // =============================================
 
-const problem =
+    const ip =
 
-document.getElementById(
-"problem"
-).value.trim();
+    document.getElementById(
 
+        "ip"
 
-const reference =
+    )
 
-document.getElementById(
-"reference"
-).value.trim();
+    .value
 
+    .trim();
 
-if(!ip){
 
-alert(
-"Please enter Customer ID."
-);
+    // =============================================
+    // GET PROBLEM
+    // =============================================
 
-return;
+    const problem =
 
-}
+    document.getElementById(
 
+        "problem"
 
-if(!problem){
+    )
 
-alert(
-"Please enter Customer Problem."
-);
+    .value
 
-return;
+    .trim();
 
-}
 
+    // =============================================
+    // GET REFERENCE
+    // =============================================
 
-submitBtn.disabled = true;
+    const reference =
 
+    document.getElementById(
 
-submitBtn.innerHTML =
+        "reference"
 
-'<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
+    )
 
+    .value
 
-// =================================================
-// FORM DATA
-// =================================================
+    .trim();
 
-const formData =
 
-new URLSearchParams();
+    // =============================================
+    // VALIDATION
+    // =============================================
 
+    if(!ip){
 
-formData.append(
-"action",
-"newEntry"
-);
+        alert(
 
+            "Please enter Customer ID."
 
-formData.append(
-"ip",
-ip
-);
+        );
 
+        return;
 
-formData.append(
-"problem",
-problem
-);
+    }
 
 
-formData.append(
-"reference",
-reference
-);
+    if(!problem){
 
+        alert(
 
-// =================================================
-// SEND DATA
-// =================================================
+            "Please enter Customer Problem."
 
-fetch(
+        );
 
-API_URL,
+        return;
 
-{
+    }
 
-method:"POST",
 
-body:formData
+    // =============================================
+    // SAVE OLD BUTTON TEXT
+    // =============================================
 
-}
+    const oldButtonText =
 
-)
+    submitBtn.innerHTML;
 
-.then(
 
-response =>
+    // =============================================
+    // DISABLE BUTTON
+    // =============================================
 
-response.json()
+    submitBtn.disabled = true;
 
-)
 
-.then(
+    submitBtn.innerHTML =
 
-result => {
+    '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
 
 
-if(
-result.success
-){
 
-alert(
+    try{
 
-"Support Entry Successfully Submitted!"
 
-);
+        // =========================================
+        // CREATE FORM DATA
+        // =========================================
 
-entryForm.reset();
+        const formData =
 
-}
+        new URLSearchParams();
 
-else{
 
-alert(
+        // =========================================
+        // ACTION
+        // =========================================
 
-result.message ||
+        formData.append(
 
-"Failed To Submit"
+            "action",
 
-);
+            "newEntry"
 
-}
+        );
 
-}
 
-)
+        // =========================================
+        // CUSTOMER ID
+        // =========================================
 
-.catch(
+        formData.append(
 
-error => {
+            "ip",
 
+            ip
 
-console.error(
-error
-);
+        );
 
 
-alert(
+        // =========================================
+        // PROBLEM
+        // =========================================
 
-"Failed To Submit. Please try again."
+        formData.append(
 
-);
+            "problem",
 
-}
+            problem
 
-)
+        );
 
-.finally(
 
-() => {
+        // =========================================
+        // REFERENCE
+        // =========================================
 
+        formData.append(
 
-submitBtn.disabled = false;
+            "reference",
 
+            reference
 
-submitBtn.innerHTML =
+        );
 
-'<i class="fa-solid fa-paper-plane"></i> Submit Support';
 
-}
+        // =========================================
+        // SEND DATA TO GOOGLE APPS SCRIPT
+        // =========================================
 
-);
+        await fetch(
+
+            API_URL,
+
+            {
+
+                method:
+
+                "POST",
+
+
+                mode:
+
+                "no-cors",
+
+
+                headers:
+
+                {
+
+                    "Content-Type":
+
+                    "application/x-www-form-urlencoded;charset=UTF-8"
+
+                },
+
+
+                body:
+
+                formData.toString()
+
+            }
+
+        );
+
+
+        // =========================================
+        // SUCCESS MESSAGE
+        // =========================================
+
+        alert(
+
+            "Support Entry Successfully Submitted!"
+
+        );
+
+
+        // =========================================
+        // RESET FORM
+        // =========================================
+
+        entryForm.reset();
+
+
+    }
+
+    catch(error){
+
+
+        // =========================================
+        // CONSOLE ERROR
+        // =========================================
+
+        console.error(
+
+            "Submit Error:",
+
+            error
+
+        );
+
+
+        // =========================================
+        // ERROR MESSAGE
+        // =========================================
+
+        alert(
+
+            "Failed To Submit. Please try again."
+
+        );
+
+
+    }
+
+
+    // =============================================
+    // ENABLE BUTTON
+    // =============================================
+
+    submitBtn.disabled = false;
+
+
+    // =============================================
+    // RESTORE BUTTON
+    // =============================================
+
+    submitBtn.innerHTML =
+
+    oldButtonText;
 
 
 }

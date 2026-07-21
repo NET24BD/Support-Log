@@ -12,23 +12,25 @@ content="width=device-width, initial-scale=1.0"
 
 <title>Login | Support System</title>
 
-
-<!-- ==============================
-     LOGIN PAGE PROTECTION
-================================ -->
-
 <script>
 
 (function(){
 
-    // যদি আগে থেকেই Login করা থাকে
-    // তাহলে Login Page দেখাবে না
+    try{
 
-    if(
-        localStorage.getItem("loggedIn") === "true"
-    ){
+        if(
+            localStorage.getItem("loggedIn") === "true"
+        ){
 
-        window.location.replace("dashboard.html");
+            window.location.replace(
+                "dashboard.html"
+            );
+
+        }
+
+    }catch(error){
+
+        console.log(error);
 
     }
 
@@ -36,28 +38,17 @@ content="width=device-width, initial-scale=1.0"
 
 </script>
 
-
-<!-- GOOGLE FONT -->
-
 <link
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
 rel="stylesheet"
 >
-
-
-<!-- FONT AWESOME -->
 
 <link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 >
 
-
 <style>
-
-/* =================================
-   RESET
-================================= */
 
 *{
 
@@ -70,11 +61,6 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 
 }
-
-
-/* =================================
-   BODY
-================================= */
 
 body{
 
@@ -95,11 +81,6 @@ position:relative;
 overflow:hidden;
 
 }
-
-
-/* =================================
-   BACKGROUND
-================================= */
 
 body::before{
 
@@ -127,7 +108,6 @@ pointer-events:none;
 
 }
 
-
 body::after{
 
 content:"";
@@ -154,11 +134,6 @@ pointer-events:none;
 
 }
 
-
-/* =================================
-   LOGIN CARD
-================================= */
-
 .login-card{
 
 width:100%;
@@ -182,11 +157,6 @@ position:relative;
 z-index:1;
 
 }
-
-
-/* =================================
-   LOGO
-================================= */
 
 .logo{
 
@@ -218,11 +188,6 @@ rgba(0,106,78,.25);
 
 }
 
-
-/* =================================
-   TITLE
-================================= */
-
 h2{
 
 text-align:center;
@@ -234,11 +199,6 @@ font-size:25px;
 margin-bottom:8px;
 
 }
-
-
-/* =================================
-   SUBTITLE
-================================= */
 
 .subtitle{
 
@@ -252,17 +212,11 @@ margin-bottom:30px;
 
 }
 
-
-/* =================================
-   GROUP
-================================= */
-
 .group{
 
 margin-bottom:20px;
 
 }
-
 
 .group label{
 
@@ -278,17 +232,11 @@ margin-bottom:8px;
 
 }
 
-
-/* =================================
-   INPUT
-================================= */
-
 .input-box{
 
 position:relative;
 
 }
-
 
 .input-box i{
 
@@ -308,16 +256,11 @@ z-index:2;
 
 }
 
-
 .input-box input{
 
 width:100%;
 
-padding:
-
-15px
-
-50px;
+padding:15px 50px;
 
 border:2px solid #ddd;
 
@@ -333,7 +276,6 @@ background:white;
 
 }
 
-
 .input-box input:focus{
 
 border-color:#006A4E;
@@ -345,11 +287,6 @@ box-shadow:
 rgba(0,106,78,.15);
 
 }
-
-
-/* =================================
-   PASSWORD TOGGLE
-================================= */
 
 .password-toggle{
 
@@ -371,17 +308,11 @@ z-index:3;
 
 }
 
-
 .password-toggle:hover{
 
 color:#006A4E;
 
 }
-
-
-/* =================================
-   LOGIN BUTTON
-================================= */
 
 .login-btn{
 
@@ -409,13 +340,11 @@ margin-top:5px;
 
 }
 
-
 .login-btn:hover{
 
 background:#E53935;
 
 }
-
 
 .login-btn:disabled{
 
@@ -424,11 +353,6 @@ opacity:.7;
 cursor:not-allowed;
 
 }
-
-
-/* =================================
-   FOOTER
-================================= */
 
 .footer{
 
@@ -442,11 +366,6 @@ color:#777;
 
 }
 
-
-/* =================================
-   POPUP
-================================= */
-
 .popup-overlay{
 
 position:fixed;
@@ -459,11 +378,11 @@ width:100%;
 
 height:100%;
 
-background:
-
-rgba(0,0,0,.55);
+background:rgba(0,0,0,.55);
 
 backdrop-filter:blur(6px);
+
+-webkit-backdrop-filter:blur(6px);
 
 display:none;
 
@@ -477,17 +396,13 @@ z-index:99999;
 
 }
 
-
 .popup-overlay.active{
 
 display:flex;
 
-animation:
-
-fadeIn .25s ease;
+animation:fadeIn .25s ease;
 
 }
-
 
 .popup-box{
 
@@ -509,12 +424,9 @@ box-shadow:
 
 rgba(0,0,0,.35);
 
-animation:
-
-zoomIn .3s ease;
+animation:zoomIn .3s ease;
 
 }
-
 
 .popup-icon{
 
@@ -536,7 +448,6 @@ font-size:35px;
 
 }
 
-
 .popup-box.success .popup-icon{
 
 background:#E8F8F1;
@@ -544,7 +455,6 @@ background:#E8F8F1;
 color:#006A4E;
 
 }
-
 
 .popup-box.error .popup-icon{
 
@@ -554,7 +464,6 @@ color:#E53935;
 
 }
 
-
 .popup-box.loading .popup-icon{
 
 background:#E8F8F1;
@@ -562,7 +471,6 @@ background:#E8F8F1;
 color:#006A4E;
 
 }
-
 
 .popup-title{
 
@@ -576,7 +484,6 @@ margin-bottom:10px;
 
 }
 
-
 .popup-message{
 
 font-size:14px;
@@ -588,7 +495,6 @@ line-height:1.7;
 margin-bottom:25px;
 
 }
-
 
 .popup-btn{
 
@@ -612,17 +518,11 @@ cursor:pointer;
 
 }
 
-
 .popup-btn:hover{
 
 background:#E53935;
 
 }
-
-
-/* =================================
-   ANIMATION
-================================= */
 
 @keyframes fadeIn{
 
@@ -639,7 +539,6 @@ opacity:1;
 }
 
 }
-
 
 @keyframes zoomIn{
 
@@ -661,11 +560,6 @@ opacity:1;
 
 }
 
-
-/* =================================
-   MOBILE
-================================= */
-
 @media(max-width:600px){
 
 .login-card{
@@ -686,16 +580,9 @@ font-size:22px;
 
 </head>
 
-
 <body>
 
-
-<!-- =================================
-     LOGIN CARD
-================================= -->
-
 <div class="login-card">
-
 
 <div class="logo">
 
@@ -703,13 +590,11 @@ font-size:22px;
 
 </div>
 
-
 <h2>
 
 Support System Login
 
 </h2>
-
 
 <div class="subtitle">
 
@@ -717,11 +602,7 @@ LINK4 COMMUNICATION
 
 </div>
 
-
 <form id="loginForm">
-
-
-<!-- USERNAME -->
 
 <div class="group">
 
@@ -731,11 +612,9 @@ Username
 
 </label>
 
-
 <div class="input-box">
 
 <i class="fa-solid fa-user"></i>
-
 
 <input
 
@@ -755,9 +634,6 @@ required
 
 </div>
 
-
-<!-- PASSWORD -->
-
 <div class="group">
 
 <label>
@@ -766,11 +642,9 @@ Password
 
 </label>
 
-
 <div class="input-box">
 
 <i class="fa-solid fa-lock"></i>
-
 
 <input
 
@@ -786,7 +660,6 @@ required
 
 >
 
-
 <span
 
 class="password-toggle"
@@ -799,11 +672,9 @@ id="passwordToggle"
 
 </span>
 
-
 </div>
 
 </div>
-
 
 <button
 
@@ -821,9 +692,7 @@ Login
 
 </button>
 
-
 </form>
-
 
 <div class="footer">
 
@@ -831,14 +700,7 @@ Login
 
 </div>
 
-
 </div>
-
-
-
-<!-- =================================
-     POPUP
-================================= -->
 
 <div
 
@@ -848,7 +710,6 @@ id="popupOverlay"
 
 >
 
-
 <div
 
 class="popup-box"
@@ -856,7 +717,6 @@ class="popup-box"
 id="popupBox"
 
 >
-
 
 <div
 
@@ -870,7 +730,6 @@ id="popupIcon"
 
 </div>
 
-
 <div
 
 class="popup-title"
@@ -882,7 +741,6 @@ id="popupTitle"
 Message
 
 </div>
-
 
 <div
 
@@ -896,7 +754,6 @@ Message
 
 </div>
 
-
 <button
 
 class="popup-btn"
@@ -909,305 +766,101 @@ OK
 
 </button>
 
-
 </div>
 
 </div>
-
-
 
 <script>
 
+const LOGIN_API_URL="https://script.google.com/macros/s/AKfycbwu8quYg1YUhI-ZggQc3nfkEiKVpBuLKAxgex9E9Ab8Cjtsbele-mtAXlJ5xgw4_EZC/exec";
 
-/* =================================
-   LOGIN API
-================================= */
+const loginForm=document.getElementById("loginForm");
 
-const LOGIN_API_URL =
+const usernameInput=document.getElementById("username");
 
-"https://script.google.com/macros/s/AKfycbwu8quYg1YUhI-ZggQc3nfkEiKVpBuLKAxgex9E9Ab8Cjtsbele-mtAXlJ5xgw4_EZC/exec";
+const passwordInput=document.getElementById("password");
 
+const loginBtn=document.getElementById("loginBtn");
 
+const passwordToggle=document.getElementById("passwordToggle");
 
-/* =================================
-   ELEMENTS
-================================= */
+const popupOverlay=document.getElementById("popupOverlay");
 
-const loginForm =
+const popupBox=document.getElementById("popupBox");
 
-document.getElementById(
+const popupIcon=document.getElementById("popupIcon");
 
-"loginForm"
+const popupTitle=document.getElementById("popupTitle");
 
-);
+const popupMessage=document.getElementById("popupMessage");
 
+const popupBtn=document.getElementById("popupBtn");
 
-const usernameInput =
+passwordToggle.addEventListener("click",function(){
 
-document.getElementById(
+if(passwordInput.type==="password"){
 
-"username"
+passwordInput.type="text";
 
-);
+passwordToggle.innerHTML='<i class="fa-solid fa-eye-slash"></i>';
 
+}else{
 
-const passwordInput =
+passwordInput.type="password";
 
-document.getElementById(
-
-"password"
-
-);
-
-
-const loginBtn =
-
-document.getElementById(
-
-"loginBtn"
-
-);
-
-
-const passwordToggle =
-
-document.getElementById(
-
-"passwordToggle"
-
-);
-
-
-const popupOverlay =
-
-document.getElementById(
-
-"popupOverlay"
-
-);
-
-
-const popupBox =
-
-document.getElementById(
-
-"popupBox"
-
-);
-
-
-const popupIcon =
-
-document.getElementById(
-
-"popupIcon"
-
-);
-
-
-const popupTitle =
-
-document.getElementById(
-
-"popupTitle"
-
-);
-
-
-const popupMessage =
-
-document.getElementById(
-
-"popupMessage"
-
-);
-
-
-const popupBtn =
-
-document.getElementById(
-
-"popupBtn"
-
-);
-
-
-
-/* =================================
-   PASSWORD SHOW / HIDE
-================================= */
-
-passwordToggle.addEventListener(
-
-"click",
-
-function(){
-
-if(
-
-passwordInput.type ===
-
-"password"
-
-){
-
-passwordInput.type =
-
-"text";
-
-
-passwordToggle.innerHTML =
-
-'<i class="fa-solid fa-eye-slash"></i>';
+passwordToggle.innerHTML='<i class="fa-solid fa-eye"></i>';
 
 }
 
-else{
+});
 
-passwordInput.type =
+function showPopup(type,title,message,showButton=true){
 
-"password";
+popupBox.className="popup-box "+type;
 
+popupTitle.textContent=title;
 
-passwordToggle.innerHTML =
+popupMessage.textContent=message;
 
-'<i class="fa-solid fa-eye"></i>';
+popupBtn.style.display=showButton?"block":"none";
 
-}
+if(type==="success"){
 
-}
+popupIcon.innerHTML='<i class="fa-solid fa-check"></i>';
 
-);
+}else if(type==="error"){
 
+popupIcon.innerHTML='<i class="fa-solid fa-xmark"></i>';
 
+}else{
 
-/* =================================
-   POPUP
-================================= */
-
-function showPopup(
-
-type,
-
-title,
-
-message,
-
-showButton=true
-
-){
-
-popupBox.className =
-
-"popup-box " +
-
-type;
-
-
-popupTitle.textContent =
-
-title;
-
-
-popupMessage.textContent =
-
-message;
-
-
-popupBtn.style.display =
-
-showButton
-
-? "block"
-
-: "none";
-
-
-if(
-
-type === "success"
-
-){
-
-popupIcon.innerHTML =
-
-'<i class="fa-solid fa-check"></i>';
+popupIcon.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i>';
 
 }
 
-else if(
-
-type === "error"
-
-){
-
-popupIcon.innerHTML =
-
-'<i class="fa-solid fa-xmark"></i>';
+popupOverlay.classList.add("active");
 
 }
-
-else{
-
-popupIcon.innerHTML =
-
-'<i class="fa-solid fa-spinner fa-spin"></i>';
-
-}
-
-
-popupOverlay.classList.add(
-
-"active"
-
-);
-
-}
-
 
 function hidePopup(){
 
-popupOverlay.classList.remove(
-
-"active"
-
-);
+popupOverlay.classList.remove("active");
 
 }
 
+popupBtn.addEventListener("click",function(){
 
-popupBtn.addEventListener(
+hidePopup();
 
-"click",
+});
 
-hidePopup
-
-);
-
-
-
-/* =================================
-   LOGIN
-================================= */
-
-loginForm.addEventListener(
-
-"submit",
-
-async function(e){
+loginForm.addEventListener("submit",async function(e){
 
 e.preventDefault();
 
+const username=usernameInput.value.trim();
 
-const username =
-
-usernameInput.value.trim();
-
-
-const password =
-
-passwordInput.value.trim();
-
+const password=passwordInput.value.trim();
 
 if(!username){
 
@@ -1225,7 +878,6 @@ return;
 
 }
 
-
 if(!password){
 
 showPopup(
@@ -1242,16 +894,9 @@ return;
 
 }
 
+loginBtn.disabled=true;
 
-loginBtn.disabled =
-
-true;
-
-
-loginBtn.innerHTML =
-
-'<i class="fa-solid fa-spinner fa-spin"></i> Checking...';
-
+loginBtn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Checking...';
 
 showPopup(
 
@@ -1265,36 +910,23 @@ false
 
 );
 
-
 try{
 
+const apiUrl=
 
-/* =================================
-   BUILD SECURE API REQUEST
-================================= */
+LOGIN_API_URL+
 
-const apiUrl =
+"?action=login"+
 
-LOGIN_API_URL +
+"&username="+
 
-"?action=login" +
+encodeURIComponent(username)+
 
-"&username=" +
-
-encodeURIComponent(username) +
-
-"&password=" +
+"&password="+
 
 encodeURIComponent(password);
 
-
-/* =================================
-   SEND REQUEST
-================================= */
-
-const response =
-
-await fetch(
+const response=await fetch(
 
 apiUrl,
 
@@ -1310,40 +942,19 @@ redirect:"follow"
 
 );
 
-
 if(!response.ok){
 
 throw new Error(
 
-"Server Error: " +
-
-response.status
+"Server Error: "+response.status
 
 );
 
 }
 
+const result=await response.json();
 
-const result =
-
-await response.json();
-
-
-
-/* =================================
-   LOGIN SUCCESS
-================================= */
-
-if(
-
-result.success === true
-
-){
-
-
-/* =================================
-   SAVE SESSION
-================================= */
+if(result.success===true){
 
 localStorage.setItem(
 
@@ -1353,43 +964,29 @@ localStorage.setItem(
 
 );
 
-
 localStorage.setItem(
 
 "username",
 
-result.username ||
-
-username
+result.username||username
 
 );
-
 
 localStorage.setItem(
 
 "name",
 
-result.name ||
-
-""
+result.name||""
 
 );
-
 
 localStorage.setItem(
 
 "role",
 
-result.role ||
-
-""
+result.role||""
 
 );
-
-
-/* =================================
-   SUCCESS POPUP
-================================= */
 
 showPopup(
 
@@ -1397,44 +994,33 @@ showPopup(
 
 "Login Successful",
 
-"Welcome " +
+"Welcome "+
 
 (
 
-result.name ||
+result.name||
 
-result.username ||
+result.username||
 
 username
 
-) +
+)+
 
 ". Redirecting..."
 
 );
 
-
-setTimeout(
-
-function(){
+setTimeout(function(){
 
 window.location.replace(
 
-"index.html"
+"dashboard.html"
 
 );
 
-},
+},1000);
 
-1200
-
-);
-
-
-}
-
-else{
-
+}else{
 
 showPopup(
 
@@ -1442,7 +1028,7 @@ showPopup(
 
 "Login Failed",
 
-result.message ||
+result.message||
 
 "Invalid Username or Password."
 
@@ -1450,11 +1036,7 @@ result.message ||
 
 }
 
-
-}
-
-catch(error){
-
+}catch(error){
 
 console.error(
 
@@ -1463,7 +1045,6 @@ console.error(
 error
 
 );
-
 
 showPopup(
 
@@ -1477,23 +1058,13 @@ showPopup(
 
 }
 
+loginBtn.disabled=false;
 
-loginBtn.disabled =
+loginBtn.innerHTML='<i class="fa-solid fa-right-to-bracket"></i> Login';
 
-false;
-
-
-loginBtn.innerHTML =
-
-'<i class="fa-solid fa-right-to-bracket"></i> Login';
-
-
-}
-
-);
+});
 
 </script>
-
 
 </body>
 

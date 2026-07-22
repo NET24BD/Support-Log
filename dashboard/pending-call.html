@@ -48,7 +48,7 @@ crossorigin
 >
 
 <link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;500;600;700;800&display=swap"
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
 rel="stylesheet"
 >
 
@@ -1752,7 +1752,7 @@ placeholder="Search Customer ID, Problem, Reference, Support..."
 
 <i class="fa-solid fa-calendar-days"></i>
 
-Last Days
+Older Than Days
 
 </label>
 
@@ -2552,15 +2552,19 @@ async function loadPendingCall(){
 
 /* =====================================================
    DATE CHECK
-   OLD DATA FILTER
+   IMPORTANT:
+   SHOW DATA OLDER THAN SELECTED DAYS
 
    Example:
-   Last Days = 7
+   Today = 15
+   Filter = 5
 
-   আজ থেকে 7 দিন আগের এবং তার আগের
-   পুরোনো data দেখাবে।
+   Show:
+   10 তারিখ এবং তার আগের Data
 
-   গত 7 দিনের নতুন data দেখাবে না।
+   Hide:
+   11,12,13,14,15 তারিখের Data
+
 ===================================================== */
 
 function isWithinDays(
@@ -2568,8 +2572,7 @@ function isWithinDays(
     days
 ){
 
-
-    // খালি বা 0 হলে সব data দেখাবে
+    // Filter empty বা 0 হলে সব data দেখাবে
 
     if(
         !days ||
@@ -2581,8 +2584,6 @@ function isWithinDays(
     }
 
 
-    // Date না থাকলে দেখাবে না
-
     if(!dateValue){
 
         return false;
@@ -2590,113 +2591,116 @@ function isWithinDays(
     }
 
 
+    /*
+       Date parsing function
+
+       Google Sheet থেকে যদি
+       DD-MM-YYYY
+       অথবা
+       DD/MM/YYYY
+       আসে তাহলে সেটাও handle করবে
+    */
+
     let itemDate;
 
 
-    const value =
-
-    String(
-        dateValue
-    ).trim();
-
-
-    // =================================================
-    // DD-MM-YYYY
-    // Example: 15-07-2026
-    // =================================================
-
     if(
-        /^\d{2}-\d{2}-\d{4}$/.test(
-            value
-        )
+        typeof dateValue === "string"
     ){
+
+        const cleanDate =
+
+        dateValue
+        .trim()
+        .split(" ")[0];
+
 
         const parts =
 
-        value.split("-");
-
-
-        itemDate =
-
-        new Date(
-
-            Number(
-                parts[2]
-            ),
-
-            Number(
-                parts[1]
-            ) - 1,
-
-            Number(
-                parts[0]
-            )
-
+        cleanDate.split(
+            /[-\/.]
         );
 
+
+        /*
+           DD-MM-YYYY
+        */
+
+        if(
+
+            parts.length === 3 &&
+
+            parts[2].length === 4
+
+        ){
+
+            const day =
+
+            parseInt(
+                parts[0],
+                10
+            );
+
+
+            const month =
+
+            parseInt(
+                parts[1],
+                10
+            ) - 1;
+
+
+            const year =
+
+            parseInt(
+                parts[2],
+                10
+            );
+
+
+            itemDate =
+
+            new Date(
+
+                year,
+
+                month,
+
+                day
+
+            );
+
+        }
+
+        else{
+
+            itemDate =
+
+            new Date(
+                dateValue
+            );
+
+        }
+
     }
-
-
-    // =================================================
-    // DD/MM/YYYY
-    // Example: 15/07/2026
-    // =================================================
-
-    else if(
-        /^\d{2}\/\d{2}\/\d{4}$/.test(
-            value
-        )
-    ){
-
-        const parts =
-
-        value.split("/");
-
-
-        itemDate =
-
-        new Date(
-
-            Number(
-                parts[2]
-            ),
-
-            Number(
-                parts[1]
-            ) - 1,
-
-            Number(
-                parts[0]
-            )
-
-        );
-
-    }
-
-
-    // =================================================
-    // অন্যান্য Date Format
-    // =================================================
 
     else{
 
         itemDate =
 
         new Date(
-            value
+            dateValue
         );
 
     }
 
 
-    // =================================================
-    // Invalid Date
-    // =================================================
-
     if(
+
         isNaN(
             itemDate.getTime()
         )
+
     ){
 
         return false;
@@ -2704,81 +2708,98 @@ function isWithinDays(
     }
 
 
-    // Item Date-এর সময় 00:00 করা
+    /*
+       Today-এর শুধু Date নেওয়া হচ্ছে
+    */
 
-    itemDate.setHours(
-        0,
-        0,
-        0,
-        0
-    );
-
-
-    // =================================================
-    // আজকের তারিখ
-    // =================================================
-
-    const today =
+    const now =
 
     new Date();
 
 
-    today.setHours(
-        0,
-        0,
-        0,
-        0
-    );
-
-
-    // =================================================
-    // আজ থেকে নির্দিষ্ট দিন আগে
-    // =================================================
-
-    const cutoffDate =
+    const today =
 
     new Date(
-        today
+
+        now.getFullYear(),
+
+        now.getMonth(),
+
+        now.getDate()
+
     );
 
 
-    cutoffDate.setDate(
+    /*
+       Data-এর শুধু Date নেওয়া হচ্ছে
+    */
 
-        cutoffDate.getDate()
+    const dataDate =
 
-        -
+    new Date(
 
-        Number(
-            days
+        itemDate.getFullYear(),
+
+        itemDate.getMonth(),
+
+        itemDate.getDate()
+
+    );
+
+
+    /*
+       আজ থেকে কত দিন পুরোনো
+    */
+
+    const diffTime =
+
+    today.getTime() -
+
+    dataDate.getTime();
+
+
+    const diffDays =
+
+    Math.floor(
+
+        diffTime /
+
+        (
+
+            1000 *
+
+            60 *
+
+            60 *
+
+            24
+
         )
 
     );
 
 
-    cutoffDate.setHours(
-        0,
-        0,
-        0,
-        0
-    );
+    /*
+       MAIN FILTER
 
+       Example:
 
-    // =================================================
-    // RESULT
-    //
-    // 7 দিলে:
-    // আজ থেকে 7 দিন আগের এবং তার আগের data দেখাবে
-    //
-    // 7 দিনের ভেতরের নতুন data দেখাবে না
-    // =================================================
+       Today = 15
+       Filter = 5
 
-    return (
+       diffDays:
 
-        itemDate <=
+       15 = 0
+       14 = 1
+       13 = 2
+       12 = 3
+       11 = 4
+       10 = 5  <-- SHOW
 
-        cutoffDate
+       তাই 10 এবং তার আগের সব দেখাবে
+    */
 
-    );
+    return diffDays >= days;
 
 }
 

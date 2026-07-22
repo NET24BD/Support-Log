@@ -5,10 +5,8 @@
 
 <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Pending Call | LINK4 COMMUNICATION</title>
 
@@ -92,34 +90,36 @@ body{
 
     min-height:100vh;
 
+    padding:20px;
+
+    color:#222;
+
     background:
 
     linear-gradient(
 
         135deg,
 
-        #005C3A,
+        #004d3a,
 
-        #006A4E
+        #006a4e,
+
+        #008f6b
 
     );
-
-    padding:20px;
-
-    color:#222;
 
 }
 
 
 /* =====================================================
-   CONTAINER
+   MAIN CONTAINER
 ===================================================== */
 
 .container{
 
     width:100%;
 
-    max-width:1450px;
+    max-width:1500px;
 
     margin:auto;
 
@@ -132,9 +132,7 @@ body{
 
 .header{
 
-    background:
-
-    rgba(255,255,255,.97);
+    background:rgba(255,255,255,.97);
 
     border-radius:22px;
 
@@ -150,7 +148,7 @@ body{
 
     box-shadow:
 
-    0 20px 50px
+    0 15px 40px
 
     rgba(0,0,0,.20);
 
@@ -184,9 +182,9 @@ body{
 
         135deg,
 
-        #006A4E,
+        #006a4e,
 
-        #00916E
+        #00a878
 
     );
 
@@ -213,7 +211,7 @@ body{
 
     font-size:24px;
 
-    color:#006A4E;
+    color:#006a4e;
 
     font-weight:700;
 
@@ -222,7 +220,7 @@ body{
 
 .header-title p{
 
-    font-size:12px;
+    font-size:13px;
 
     color:#777;
 
@@ -237,6 +235,8 @@ body{
 
     gap:10px;
 
+    flex-wrap:wrap;
+
 }
 
 
@@ -245,7 +245,7 @@ body{
 
     border:none;
 
-    padding:11px 17px;
+    padding:11px 16px;
 
     border-radius:11px;
 
@@ -266,7 +266,7 @@ body{
 
 .back-btn{
 
-    background:#006A4E;
+    background:#006a4e;
 
     color:white;
 
@@ -275,16 +275,16 @@ body{
 
 .refresh-btn{
 
-    background:#e8f8f1;
+    background:#e7f8f2;
 
-    color:#006A4E;
+    color:#006a4e;
 
 }
 
 
 .back-btn:hover{
 
-    background:#E53935;
+    background:#e53935;
 
     transform:translateY(-2px);
 
@@ -293,7 +293,7 @@ body{
 
 .refresh-btn:hover{
 
-    background:#006A4E;
+    background:#006a4e;
 
     color:white;
 
@@ -310,19 +310,21 @@ body{
 
     background:
 
-    rgba(255,255,255,.15);
+    rgba(255,255,255,.14);
 
-    backdrop-filter:
+    border:
 
-    blur(10px);
+    1px solid
+
+    rgba(255,255,255,.18);
 
     color:white;
 
     padding:13px 18px;
 
-    border-radius:14px;
+    border-radius:13px;
 
-    margin-bottom:18px;
+    margin-bottom:20px;
 
     display:flex;
 
@@ -330,7 +332,11 @@ body{
 
     align-items:center;
 
-    font-size:13px;
+    gap:15px;
+
+    font-size:14px;
+
+    backdrop-filter:blur(10px);
 
 }
 
@@ -343,156 +349,45 @@ body{
 
 
 /* =====================================================
-   FILTER PANEL
+   CONTROL BAR
 ===================================================== */
 
-.filter-panel{
+.control-bar{
 
     background:white;
 
-    border-radius:18px;
-
     padding:18px;
+
+    border-radius:18px;
 
     margin-bottom:20px;
 
-    box-shadow:
-
-    0 15px 40px
-
-    rgba(0,0,0,.15);
-
     display:flex;
+
+    justify-content:space-between;
 
     align-items:center;
 
-    gap:12px;
+    gap:15px;
 
     flex-wrap:wrap;
 
-}
-
-
-.filter-title{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:9px;
-
-    color:#006A4E;
-
-    font-weight:700;
-
-    margin-right:8px;
-
-}
-
-
-.days-box{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-}
-
-
-.days-box label{
-
-    font-size:13px;
-
-    color:#555;
-
-    font-weight:600;
-
-}
-
-
-.days-input{
-
-    width:90px;
-
-    padding:10px 12px;
-
-    border:2px solid #ddd;
-
-    border-radius:10px;
-
-    outline:none;
-
-    font-size:13px;
-
-    text-align:center;
-
-    transition:.3s;
-
-}
-
-
-.days-input:focus{
-
-    border-color:#006A4E;
-
     box-shadow:
 
-    0 0 0 4px
+    0 12px 35px
 
-    rgba(0,106,78,.08);
-
-}
-
-
-.filter-btn{
-
-    border:none;
-
-    background:#006A4E;
-
-    color:white;
-
-    padding:10px 18px;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    font-weight:600;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:7px;
-
-    transition:.3s;
+    rgba(0,0,0,.14);
 
 }
 
-
-.filter-btn:hover{
-
-    background:#E53935;
-
-    transform:translateY(-2px);
-
-}
-
-
-/* =====================================================
-   SEARCH
-===================================================== */
 
 .search-box{
 
-    margin-left:auto;
+    flex:1;
+
+    min-width:250px;
 
     position:relative;
-
-    min-width:260px;
 
 }
 
@@ -501,13 +396,13 @@ body{
 
     position:absolute;
 
-    left:13px;
+    left:15px;
 
     top:50%;
 
     transform:translateY(-50%);
 
-    color:#777;
+    color:#008f6b;
 
 }
 
@@ -516,11 +411,15 @@ body{
 
     width:100%;
 
-    padding:11px 14px 11px 40px;
+    padding:13px 15px 13px 45px;
 
-    border:2px solid #e3e3e3;
+    border:
 
-    border-radius:11px;
+    2px solid
+
+    #e3eee9;
+
+    border-radius:12px;
 
     outline:none;
 
@@ -533,68 +432,65 @@ body{
 
 .search-box input:focus{
 
-    border-color:#006A4E;
+    border-color:#00a878;
 
     box-shadow:
 
     0 0 0 4px
 
-    rgba(0,106,78,.08);
+    rgba(0,168,120,.10);
 
 }
 
 
-/* =====================================================
-   STATUS
-===================================================== */
+.day-filter{
 
-.status{
+    display:flex;
 
-    display:none;
+    align-items:center;
 
-    padding:13px 17px;
+    gap:10px;
 
-    border-radius:12px;
+}
 
-    margin-bottom:18px;
+
+.day-filter label{
 
     font-size:13px;
 
-    font-weight:500;
+    font-weight:600;
+
+    color:#555;
 
 }
 
 
-.status.show{
+.day-filter input{
 
-    display:block;
+    width:100px;
 
-}
+    padding:12px;
 
+    border:
 
-.status.loading{
+    2px solid
 
-    background:#fff8e1;
+    #e3eee9;
 
-    color:#8a6500;
+    border-radius:10px;
 
-}
+    outline:none;
 
+    text-align:center;
 
-.status.success{
-
-    background:#e8f8f1;
-
-    color:#006A4E;
+    font-weight:600;
 
 }
 
 
-.status.error{
+.day-filter input:focus{
 
-    background:#fdecec;
-
-    color:#c62828;
+    border-color:#00a878;
 
 }
 
@@ -605,17 +501,19 @@ body{
 
 .table-container{
 
-    background:white;
+    background:
 
-    border-radius:20px;
+    rgba(255,255,255,.97);
+
+    border-radius:22px;
+
+    overflow:hidden;
 
     box-shadow:
 
-    0 20px 55px
+    0 20px 50px
 
-    rgba(0,0,0,.18);
-
-    overflow:hidden;
+    rgba(0,0,0,.20);
 
 }
 
@@ -626,9 +524,7 @@ body{
 
 .table-header{
 
-    padding:19px 23px;
-
-    border-bottom:1px solid #eee;
+    padding:20px 25px;
 
     display:flex;
 
@@ -636,12 +532,18 @@ body{
 
     align-items:center;
 
+    border-bottom:
+
+    1px solid
+
+    #e9f1ee;
+
 }
 
 
 .table-header h2{
 
-    font-size:19px;
+    font-size:20px;
 
     color:#222;
 
@@ -656,9 +558,9 @@ body{
 
         135deg,
 
-        #2563eb,
+        #006a4e,
 
-        #1d4ed8
+        #00a878
 
     );
 
@@ -668,7 +570,7 @@ body{
 
     border-radius:20px;
 
-    font-size:12px;
+    font-size:13px;
 
     font-weight:700;
 
@@ -696,12 +598,18 @@ table{
 
     width:100%;
 
-    border-collapse:collapse;
+    border-collapse:separate;
 
-    min-width:1150px;
+    border-spacing:0;
+
+    min-width:1100px;
 
 }
 
+
+/* =====================================================
+   TABLE HEAD
+===================================================== */
 
 thead{
 
@@ -711,9 +619,9 @@ thead{
 
         135deg,
 
-        #006A4E,
+        #007a59,
 
-        #008F6A
+        #009b70
 
     );
 
@@ -726,9 +634,9 @@ th{
 
     padding:15px 13px;
 
-    font-size:12px;
+    font-size:13px;
 
-    font-weight:600;
+    font-weight:700;
 
     text-align:left;
 
@@ -737,13 +645,28 @@ th{
 }
 
 
+th i{
+
+    margin-right:7px;
+
+}
+
+
+/* =====================================================
+   TABLE BODY
+===================================================== */
+
 td{
 
-    padding:14px 13px;
+    padding:12px;
 
-    border-bottom:1px solid #edf1ef;
+    border-bottom:
 
-    font-size:12px;
+    1px solid
+
+    #edf2f0;
+
+    font-size:13px;
 
     vertical-align:middle;
 
@@ -759,65 +682,183 @@ tbody tr{
 
 tbody tr:hover{
 
-    background:#f3fbf7;
+    background:#f7fffb;
 
-    transform:scale(1.001);
+    transform:scale(1.002);
 
 }
 
 
 /* =====================================================
-   DATA BADGES
+   COLORFUL CELLS
 ===================================================== */
 
-.customer-badge{
+.customer-cell{
 
-    display:inline-flex;
+    background:
 
-    align-items:center;
+    linear-gradient(
 
-    gap:6px;
+        135deg,
 
-    background:#e8f8f1;
+        #e5f8f1,
 
-    color:#006A4E;
+        #d7f4ea
 
-    padding:6px 10px;
+    );
 
-    border-radius:8px;
+    color:#006a4e;
 
     font-weight:700;
 
-}
-
-
-.date-badge{
-
-    color:#555;
-
-    white-space:nowrap;
+    border-radius:10px;
 
 }
 
 
-.problem-text{
+.date-cell{
 
-    max-width:220px;
+    background:
 
-    line-height:1.5;
+    linear-gradient(
+
+        135deg,
+
+        #edf5ff,
+
+        #e1efff
+
+    );
+
+    color:#1769aa;
+
+    border-radius:10px;
 
 }
 
 
-.ref-badge{
+.problem-cell{
 
-    background:#f3f4f6;
+    background:
 
-    color:#555;
+    linear-gradient(
 
-    padding:5px 9px;
+        135deg,
 
-    border-radius:7px;
+        #fff8e4,
+
+        #fff1c7
+
+    );
+
+    color:#795500;
+
+    border-radius:10px;
+
+    max-width:300px;
+
+}
+
+
+.reference-cell{
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #f5eaff,
+
+        #eee0ff
+
+    );
+
+    color:#7432a8;
+
+    border-radius:10px;
+
+}
+
+
+.support-cell{
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #e4f9f6,
+
+        #d7f2ef
+
+    );
+
+    color:#00796b;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+}
+
+
+.support-work-cell{
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #fff0e5,
+
+        #ffe5d1
+
+    );
+
+    color:#b85c00;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+}
+
+
+/* =====================================================
+   CELL INNER
+===================================================== */
+
+.cell-content{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+}
+
+
+.cell-icon{
+
+    width:32px;
+
+    height:32px;
+
+    border-radius:9px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.75);
+
+    flex-shrink:0;
 
 }
 
@@ -836,23 +877,23 @@ tbody tr:hover{
 
         135deg,
 
-        #2563eb,
+        #006a4e,
 
-        #1d4ed8
+        #00a878
 
     );
 
     color:white;
 
-    padding:9px 15px;
+    padding:10px 16px;
 
-    border-radius:9px;
+    border-radius:10px;
 
     cursor:pointer;
 
-    font-size:12px;
+    font-size:13px;
 
-    font-weight:600;
+    font-weight:700;
 
     display:flex;
 
@@ -862,10 +903,14 @@ tbody tr:hover{
 
     transition:.3s;
 
+    white-space:nowrap;
+
 }
 
 
 .view-btn:hover{
+
+    background:#e53935;
 
     transform:translateY(-2px);
 
@@ -873,7 +918,7 @@ tbody tr:hover{
 
     0 7px 18px
 
-    rgba(37,99,235,.25);
+    rgba(229,57,53,.25);
 
 }
 
@@ -893,11 +938,18 @@ tbody tr:hover{
 
 .spinner{
 
-    font-size:35px;
+    font-size:38px;
 
-    color:#006A4E;
+    color:#008f6b;
 
     margin-bottom:15px;
+
+}
+
+
+.loading-state p{
+
+    color:#777;
 
 }
 
@@ -926,15 +978,15 @@ tbody tr:hover{
 
 .empty-icon{
 
-    width:80px;
+    width:85px;
 
-    height:80px;
+    height:85px;
 
     border-radius:50%;
 
-    background:#e8f8f1;
+    background:#e7f8f2;
 
-    color:#006A4E;
+    color:#008f6b;
 
     display:flex;
 
@@ -942,7 +994,7 @@ tbody tr:hover{
 
     align-items:center;
 
-    font-size:35px;
+    font-size:38px;
 
     margin:0 auto 20px;
 
@@ -962,7 +1014,53 @@ tbody tr:hover{
 
     color:#777;
 
+    font-size:14px;
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status{
+
+    display:none;
+
+    padding:13px 18px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
     font-size:13px;
+
+    font-weight:600;
+
+}
+
+
+.status.show{
+
+    display:block;
+
+}
+
+
+.status.error{
+
+    background:#fdecec;
+
+    color:#c62828;
+
+}
+
+
+.status.success{
+
+    background:#e7f8f2;
+
+    color:#006a4e;
 
 }
 
@@ -977,17 +1075,15 @@ tbody tr:hover{
 
     position:fixed;
 
-    z-index:9999;
-
     inset:0;
+
+    z-index:9999;
 
     background:
 
-    rgba(0,0,0,.60);
+    rgba(0,40,30,.72);
 
-    backdrop-filter:
-
-    blur(6px);
+    backdrop-filter:blur(7px);
 
     padding:20px;
 
@@ -1005,7 +1101,7 @@ tbody tr:hover{
 }
 
 
-.modal-content{
+.modal-box{
 
     width:100%;
 
@@ -1021,7 +1117,7 @@ tbody tr:hover{
 
     box-shadow:
 
-    0 25px 80px
+    0 25px 70px
 
     rgba(0,0,0,.35);
 
@@ -1038,11 +1134,7 @@ tbody tr:hover{
 
         opacity:0;
 
-        transform:
-
-        translateY(20px)
-
-        scale(.97);
+        transform:translateY(20px) scale(.97);
 
     }
 
@@ -1050,11 +1142,7 @@ tbody tr:hover{
 
         opacity:1;
 
-        transform:
-
-        translateY(0)
-
-        scale(1);
+        transform:translateY(0) scale(1);
 
     }
 
@@ -1067,21 +1155,21 @@ tbody tr:hover{
 
 .modal-header{
 
+    padding:20px 22px;
+
+    color:white;
+
     background:
 
     linear-gradient(
 
         135deg,
 
-        #006A4E,
+        #006a4e,
 
-        #008F6A
+        #00a878
 
     );
-
-    color:white;
-
-    padding:20px 22px;
 
     display:flex;
 
@@ -1092,26 +1180,26 @@ tbody tr:hover{
 }
 
 
-.modal-header h2{
+.modal-header h3{
 
     font-size:19px;
 
 }
 
 
-.close-btn{
+.close-modal{
 
-    width:36px;
+    width:38px;
 
-    height:36px;
+    height:38px;
 
     border:none;
 
-    border-radius:50%;
+    border-radius:10px;
 
     background:
 
-    rgba(255,255,255,.15);
+    rgba(255,255,255,.18);
 
     color:white;
 
@@ -1119,22 +1207,18 @@ tbody tr:hover{
 
     font-size:18px;
 
-    transition:.3s;
-
 }
 
 
-.close-btn:hover{
+.close-modal:hover{
 
-    background:#E53935;
-
-    transform:rotate(90deg);
+    background:#e53935;
 
 }
 
 
 /* =====================================================
-   MODAL BODY
+   MODAL CONTENT
 ===================================================== */
 
 .modal-body{
@@ -1143,10 +1227,6 @@ tbody tr:hover{
 
 }
 
-
-/* =====================================================
-   INFORMATION GRID
-===================================================== */
 
 .info-grid{
 
@@ -1158,57 +1238,92 @@ tbody tr:hover{
 
     gap:14px;
 
-    margin-bottom:22px;
-
 }
 
 
 .info-card{
 
-    background:#f7faf8;
+    padding:15px;
 
-    border:1px solid #e5eee9;
-
-    border-radius:12px;
-
-    padding:13px;
+    border-radius:13px;
 
 }
 
 
-.info-card.full{
+.info-card small{
 
-    grid-column:
-
-    1 / -1;
-
-}
-
-
-.info-label{
+    display:block;
 
     font-size:11px;
 
-    color:#777;
+    font-weight:700;
 
-    margin-bottom:5px;
+    margin-bottom:6px;
 
-    font-weight:600;
+    opacity:.7;
 
 }
 
 
-.info-value{
+.info-card strong{
 
-    color:#222;
-
-    font-size:13px;
-
-    font-weight:600;
-
-    line-height:1.5;
+    font-size:14px;
 
     word-break:break-word;
+
+}
+
+
+.info-customer{
+
+    background:#e5f8f1;
+
+    color:#006a4e;
+
+}
+
+
+.info-date{
+
+    background:#edf5ff;
+
+    color:#1769aa;
+
+}
+
+
+.info-problem{
+
+    background:#fff8e4;
+
+    color:#795500;
+
+}
+
+
+.info-reference{
+
+    background:#f5eaff;
+
+    color:#7432a8;
+
+}
+
+
+.info-support{
+
+    background:#e4f9f6;
+
+    color:#00796b;
+
+}
+
+
+.info-support-work{
+
+    background:#fff0e5;
+
+    color:#b85c00;
 
 }
 
@@ -1219,30 +1334,15 @@ tbody tr:hover{
 
 .call-form{
 
-    border-top:
-
-    1px solid #eee;
+    margin-top:20px;
 
     padding-top:20px;
 
-}
+    border-top:
 
+    1px solid
 
-.form-title{
-
-    color:#006A4E;
-
-    font-size:16px;
-
-    font-weight:700;
-
-    margin-bottom:15px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
+    #e9efed;
 
 }
 
@@ -1258,11 +1358,11 @@ tbody tr:hover{
 
     display:block;
 
-    font-size:12px;
+    font-size:13px;
 
-    color:#555;
+    font-weight:700;
 
-    font-weight:600;
+    color:#444;
 
     margin-bottom:7px;
 
@@ -1274,11 +1374,15 @@ tbody tr:hover{
 
     width:100%;
 
-    border:2px solid #ddd;
+    border:
 
-    border-radius:10px;
+    2px solid
 
-    padding:11px 13px;
+    #e0ebe7;
+
+    border-radius:11px;
+
+    padding:12px;
 
     outline:none;
 
@@ -1292,24 +1396,13 @@ tbody tr:hover{
 .form-group input:focus,
 .form-group textarea:focus{
 
-    border-color:#006A4E;
+    border-color:#00a878;
 
     box-shadow:
 
     0 0 0 4px
 
-    rgba(0,106,78,.08);
-
-}
-
-
-.form-group input[readonly]{
-
-    background:#f1f5f3;
-
-    color:#555;
-
-    cursor:not-allowed;
+    rgba(0,168,120,.10);
 
 }
 
@@ -1324,10 +1417,25 @@ tbody tr:hover{
 
 
 /* =====================================================
-   MODAL ACTION
+   CALL PERSON READONLY
 ===================================================== */
 
-.modal-actions{
+.call-person{
+
+    background:#f3f7f5 !important;
+
+    color:#006a4e;
+
+    font-weight:700;
+
+}
+
+
+/* =====================================================
+   MODAL FOOTER
+===================================================== */
+
+.modal-footer{
 
     display:flex;
 
@@ -1335,45 +1443,23 @@ tbody tr:hover{
 
     gap:10px;
 
-    margin-top:18px;
+    margin-top:20px;
 
 }
 
 
-.cancel-btn{
-
-    border:none;
-
-    background:#f1f3f4;
-
-    color:#555;
-
-    padding:11px 18px;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    font-weight:600;
-
-}
-
-
+.cancel-btn,
 .submit-call-btn{
 
     border:none;
 
-    background:#006A4E;
-
-    color:white;
-
-    padding:11px 20px;
+    padding:12px 18px;
 
     border-radius:10px;
 
     cursor:pointer;
 
-    font-weight:600;
+    font-weight:700;
 
     display:flex;
 
@@ -1384,9 +1470,37 @@ tbody tr:hover{
 }
 
 
+.cancel-btn{
+
+    background:#f0f2f1;
+
+    color:#555;
+
+}
+
+
+.submit-call-btn{
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #006a4e,
+
+        #00a878
+
+    );
+
+    color:white;
+
+}
+
+
 .submit-call-btn:hover{
 
-    background:#E53935;
+    background:#e53935;
 
 }
 
@@ -1415,30 +1529,18 @@ tbody tr:hover{
 
     .header{
 
-        padding:17px;
+        padding:18px;
 
         align-items:flex-start;
 
-    }
-
-
-    .header-title h1{
-
-        font-size:19px;
-
-    }
-
-
-    .header-title p{
-
-        font-size:10px;
+        flex-direction:column;
 
     }
 
 
     .header-right{
 
-        flex-direction:column;
+        width:100%;
 
     }
 
@@ -1446,68 +1548,32 @@ tbody tr:hover{
     .back-btn,
     .refresh-btn{
 
+        flex:1;
+
         justify-content:center;
-
-        padding:9px 12px;
-
-        font-size:11px;
 
     }
 
 
     .user-bar{
 
-        font-size:11px;
-
         flex-direction:column;
 
         align-items:flex-start;
-
-        gap:8px;
-
-    }
-
-
-    .filter-panel{
-
-        align-items:stretch;
-
-    }
-
-
-    .filter-title{
-
-        width:100%;
-
-    }
-
-
-    .search-box{
-
-        margin-left:0;
-
-        min-width:100%;
-
-    }
-
-
-    .days-box{
-
-        flex-wrap:wrap;
 
     }
 
 
     .table-header{
 
-        padding:15px;
+        padding:16px;
 
     }
 
 
     .table-header h2{
 
-        font-size:16px;
+        font-size:17px;
 
     }
 
@@ -1519,16 +1585,16 @@ tbody tr:hover{
     }
 
 
-    .info-card.full{
+    .modal{
 
-        grid-column:auto;
+        padding:10px;
 
     }
 
 
-    .modal-content{
+    .modal-body{
 
-        max-height:94vh;
+        padding:16px;
 
     }
 
@@ -1572,7 +1638,7 @@ Pending Call
 
 <p>
 
-Manage pending customer calls
+View and manage all pending customer call requests
 
 </p>
 
@@ -1641,83 +1707,11 @@ User
 
 <div>
 
-<i class="fa-solid fa-lock"></i>
+<i class="fa-solid fa-phone"></i>
 
-Support information is read-only
-
-</div>
+Pending Call Management
 
 </div>
-
-
-<!-- =====================================================
-     FILTER PANEL
-===================================================== -->
-
-<div class="filter-panel">
-
-
-<div class="filter-title">
-
-<i class="fa-solid fa-filter"></i>
-
-Filter Pending Call
-
-</div>
-
-
-<div class="days-box">
-
-<label for="daysInput">
-
-Older than:
-
-</label>
-
-
-<input
-type="number"
-id="daysInput"
-class="days-input"
-min="0"
-placeholder="7"
->
-
-
-<span>
-
-Days
-
-</span>
-
-
-<button
-type="button"
-class="filter-btn"
-id="filterBtn"
->
-
-<i class="fa-solid fa-magnifying-glass"></i>
-
-Filter
-
-</button>
-
-</div>
-
-
-<div class="search-box">
-
-<i class="fa-solid fa-search"></i>
-
-<input
-type="text"
-id="searchInput"
-placeholder="Search Customer ID, Problem, Reference..."
->
-
-</div>
-
 
 </div>
 
@@ -1733,6 +1727,49 @@ id="status"
 
 
 <!-- =====================================================
+     CONTROL BAR
+===================================================== -->
+
+<div class="control-bar">
+
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search Customer ID, Problem, Reference, Support..."
+>
+
+</div>
+
+
+<div class="day-filter">
+
+<label>
+
+<i class="fa-solid fa-calendar-days"></i>
+
+Last Days
+
+</label>
+
+<input
+type="number"
+id="daysInput"
+min="0"
+placeholder="All"
+>
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
      TABLE
 ===================================================== -->
 
@@ -1740,6 +1777,7 @@ id="status"
 
 
 <div class="table-header">
+
 
 <h2>
 
@@ -1756,6 +1794,7 @@ id="pendingCount"
 0 Pending
 
 </div>
+
 
 </div>
 
@@ -1775,7 +1814,7 @@ id="loadingState"
 
 <p>
 
-Loading pending calls...
+Loading pending call requests...
 
 </p>
 
@@ -1827,41 +1866,61 @@ style="display:none;"
 
 <th>
 
+<i class="fa-solid fa-user"></i>
+
 Customer ID
 
 </th>
 
+
 <th>
+
+<i class="fa-solid fa-calendar"></i>
 
 Date
 
 </th>
 
+
 <th>
+
+<i class="fa-solid fa-circle-exclamation"></i>
 
 Problem
 
 </th>
 
+
 <th>
+
+<i class="fa-solid fa-link"></i>
 
 Reference
 
 </th>
 
+
 <th>
+
+<i class="fa-solid fa-headset"></i>
 
 Support
 
 </th>
 
+
 <th>
+
+<i class="fa-solid fa-screwdriver-wrench"></i>
 
 Support Work
 
 </th>
 
+
 <th>
+
+<i class="fa-solid fa-eye"></i>
 
 Action
 
@@ -1890,9 +1949,6 @@ id="callTableBody"
 </div>
 
 
-</div>
-
-
 <!-- =====================================================
      VIEW MODAL
 ===================================================== -->
@@ -1903,23 +1959,24 @@ id="viewModal"
 >
 
 
-<div class="modal-content">
+<div class="modal-box">
 
 
 <div class="modal-header">
 
-<h2>
+
+<h3>
 
 <i class="fa-solid fa-phone"></i>
 
-Call Information
+Call Request Details
 
-</h2>
+</h3>
 
 
 <button
-class="close-btn"
-id="closeModalBtn"
+class="close-modal"
+id="closeModal"
 type="button"
 >
 
@@ -1927,121 +1984,114 @@ type="button"
 
 </button>
 
+
 </div>
 
 
 <div class="modal-body">
 
 
-<!-- INFORMATION -->
-
 <div class="info-grid">
 
 
-<div class="info-card">
+<div class="info-card info-customer">
 
-<div class="info-label">
+<small>
 
-Customer ID
+CUSTOMER ID
 
-</div>
+</small>
 
-<div
-class="info-value"
-id="modalCustomerId"
+<strong
+id="modalCustomer"
 >
 -
-</div>
+</strong>
 
 </div>
 
 
-<div class="info-card">
+<div class="info-card info-date">
 
-<div class="info-label">
+<small>
 
-Date
+DATE
 
-</div>
+</small>
 
-<div
-class="info-value"
+<strong
 id="modalDate"
 >
 -
-</div>
+</strong>
 
 </div>
 
 
-<div class="info-card full">
+<div class="info-card info-problem">
 
-<div class="info-label">
+<small>
 
-Problem
+PROBLEM
 
-</div>
+</small>
 
-<div
-class="info-value"
+<strong
 id="modalProblem"
 >
 -
-</div>
+</strong>
 
 </div>
 
 
-<div class="info-card">
+<div class="info-card info-reference">
 
-<div class="info-label">
+<small>
 
-Reference
+REFERENCE
 
-</div>
+</small>
 
-<div
-class="info-value"
+<strong
 id="modalReference"
 >
 -
-</div>
+</strong>
 
 </div>
 
 
-<div class="info-card">
+<div class="info-card info-support">
 
-<div class="info-label">
+<small>
 
-Support
+SUPPORT
 
-</div>
+</small>
 
-<div
-class="info-value"
+<strong
 id="modalSupport"
 >
 -
-</div>
+</strong>
 
 </div>
 
 
-<div class="info-card full">
+<div class="info-card info-support-work">
 
-<div class="info-label">
+<small>
 
-Support Work
+SUPPORT WORK
 
-</div>
+</small>
 
-<div
-class="info-value"
+<strong
 id="modalSupportWork"
 >
 -
-</div>
+</strong>
 
 </div>
 
@@ -2054,20 +2104,13 @@ id="modalSupportWork"
 <div class="call-form">
 
 
-<div class="form-title">
-
-<i class="fa-solid fa-phone-volume"></i>
-
-Complete Call
-
-</div>
-
-
 <div class="form-group">
 
 <label>
 
-Call Person Name
+<i class="fa-solid fa-user"></i>
+
+Call Person
 
 </label>
 
@@ -2075,6 +2118,7 @@ Call Person Name
 <input
 type="text"
 id="callPerson"
+class="call-person"
 readonly
 >
 
@@ -2085,27 +2129,31 @@ readonly
 
 <label>
 
-Call Work / Conversation Details
+<i class="fa-solid fa-phone"></i>
+
+Call Work
 
 </label>
 
 
 <textarea
 id="callWork"
-placeholder="Write what was discussed with the customer..."
+placeholder="Write what was discussed or done during the call..."
 ></textarea>
 
 </div>
 
 
-<div class="modal-actions">
+<div class="modal-footer">
 
 
 <button
-type="button"
 class="cancel-btn"
 id="cancelBtn"
+type="button"
 >
+
+<i class="fa-solid fa-xmark"></i>
 
 Cancel
 
@@ -2113,9 +2161,9 @@ Cancel
 
 
 <button
-type="button"
 class="submit-call-btn"
 id="submitCallBtn"
+type="button"
 >
 
 <i class="fa-solid fa-paper-plane"></i>
@@ -2147,7 +2195,7 @@ Submit Call
    API URL
 ===================================================== */
 
-const PENDING_CALL_API_URL =
+const API_URL =
 
 "https://script.google.com/macros/s/AKfycbw1NiYF5qNEFGVXdIWZ3I3lpJXEX57uBM0M06oqVVJcRUiuCTAf8NkKycGWtyIhhxWh4g/exec";
 
@@ -2205,17 +2253,10 @@ document.getElementById(
 );
 
 
-const filterBtn =
+const backBtn =
 
 document.getElementById(
-"filterBtn"
-);
-
-
-const daysInput =
-
-document.getElementById(
-"daysInput"
+"backBtn"
 );
 
 
@@ -2226,17 +2267,10 @@ document.getElementById(
 );
 
 
-const backBtn =
+const daysInput =
 
 document.getElementById(
-"backBtn"
-);
-
-
-const userName =
-
-document.getElementById(
-"userName"
+"daysInput"
 );
 
 
@@ -2247,10 +2281,10 @@ document.getElementById(
 );
 
 
-const closeModalBtn =
+const closeModal =
 
 document.getElementById(
-"closeModalBtn"
+"closeModal"
 );
 
 
@@ -2283,90 +2317,43 @@ document.getElementById(
 
 
 /* =====================================================
-   MODAL ELEMENTS
-===================================================== */
-
-const modalCustomerId =
-
-document.getElementById(
-"modalCustomerId"
-);
-
-
-const modalDate =
-
-document.getElementById(
-"modalDate"
-);
-
-
-const modalProblem =
-
-document.getElementById(
-"modalProblem"
-);
-
-
-const modalReference =
-
-document.getElementById(
-"modalReference"
-);
-
-
-const modalSupport =
-
-document.getElementById(
-"modalSupport"
-);
-
-
-const modalSupportWork =
-
-document.getElementById(
-"modalSupportWork"
-);
-
-
-/* =====================================================
-   VARIABLES
-===================================================== */
-
-let pendingCallData = [];
-
-let selectedItem = null;
-
-
-/* =====================================================
-   USER NAME
+   USER
 ===================================================== */
 
 const savedName =
 
-localStorage.getItem(
-"name"
-);
+localStorage.getItem("name");
 
 
 const savedUsername =
 
-localStorage.getItem(
-"username"
-);
+localStorage.getItem("username");
 
 
-if(savedName){
+const currentUser =
 
-    userName.textContent =
-        savedName;
+savedName ||
 
-}
-else if(savedUsername){
+savedUsername ||
 
-    userName.textContent =
-        savedUsername;
+"User";
 
-}
+
+document.getElementById(
+"userName"
+).textContent = currentUser;
+
+
+callPerson.value = currentUser;
+
+
+/* =====================================================
+   DATA STORAGE
+===================================================== */
+
+let allCallData = [];
+
+let selectedCall = null;
 
 
 /* =====================================================
@@ -2379,11 +2366,7 @@ function checkLogin(){
 
         localStorage.getItem(
             "loggedIn"
-        )
-
-        !==
-
-        "true"
+        ) !== "true"
 
     ){
 
@@ -2413,16 +2396,7 @@ function showStatus(
         message;
 
     statusBox.className =
-        "status show " +
-        type;
-
-}
-
-
-function hideStatus(){
-
-    statusBox.className =
-        "status";
+        "status show " + type;
 
 }
 
@@ -2434,20 +2408,11 @@ function hideStatus(){
 async function loadPendingCall(){
 
 
-    if(
-        !checkLogin()
-    ){
+    if(!checkLogin()){
 
         return;
 
     }
-
-
-    const days =
-
-        Number(
-            daysInput.value
-        ) || 0;
 
 
     loadingState.style.display =
@@ -2471,58 +2436,33 @@ async function loadPendingCall(){
         "Loading...";
 
 
-    showStatus(
-
-        "Loading pending calls...",
-
-        "loading"
-
-    );
-
-
     try{
-
-
-        const url =
-
-            PENDING_CALL_API_URL +
-
-            "?action=pendingCall&days=" +
-
-            encodeURIComponent(
-                days
-            ) +
-
-            "&t=" +
-
-            Date.now();
 
 
         const response =
 
-            await fetch(
+        await fetch(
 
-                url,
+            API_URL +
 
-                {
+            "?action=pendingCall" +
 
-                    method:
-                        "GET",
+            "&t=" +
 
-                    cache:
-                        "no-store",
+            Date.now(),
 
-                    redirect:
-                        "follow"
+            {
 
-                }
+                method:"GET",
 
-            );
+                cache:"no-store"
+
+            }
+
+        );
 
 
-        if(
-            !response.ok
-        ){
+        if(!response.ok){
 
             throw new Error(
 
@@ -2537,59 +2477,52 @@ async function loadPendingCall(){
 
         const result =
 
-            await response.json();
+        await response.json();
 
 
         if(
-
-            result.success !==
-            true
-
+            result.success !== true
         ){
 
             throw new Error(
 
                 result.message ||
 
-                "Unable to load Pending Call."
+                "Unable to load data."
 
             );
 
         }
 
 
-        pendingCallData =
+        allCallData =
 
-            Array.isArray(
-                result.data
-            )
-
-            ?
-
+        Array.isArray(
             result.data
+        )
 
-            :
+        ?
 
-            [];
+        result.data
+
+        :
+
+        [];
 
 
         loadingState.style.display =
             "none";
 
 
-        renderTable(
-            pendingCallData
-        );
+        renderTable();
 
 
-        hideStatus();
+    }
 
-
-    }catch(error){
+    catch(error){
 
 
         console.error(
-            "Load Error:",
             error
         );
 
@@ -2618,20 +2551,223 @@ async function loadPendingCall(){
 
 
 /* =====================================================
+   DATE CHECK
+===================================================== */
+
+function isWithinDays(
+    dateValue,
+    days
+){
+
+
+    if(
+        !days ||
+        days <= 0
+    ){
+
+        return true;
+
+    }
+
+
+    if(!dateValue){
+
+        return false;
+
+    }
+
+
+    const itemDate =
+
+    new Date(
+        dateValue
+    );
+
+
+    if(
+        isNaN(
+            itemDate.getTime()
+        )
+    ){
+
+        return true;
+
+    }
+
+
+    const now =
+        new Date();
+
+
+    const diff =
+
+    now.getTime() -
+
+    itemDate.getTime();
+
+
+    const diffDays =
+
+    diff /
+
+    (
+        1000 *
+        60 *
+        60 *
+        24
+    );
+
+
+    return (
+
+        diffDays >= 0 &&
+
+        diffDays <= days
+
+    );
+
+}
+
+
+/* =====================================================
    RENDER TABLE
 ===================================================== */
 
-function renderTable(
-    data
-){
+function renderTable(){
+
+
+    const search =
+
+    searchInput.value
+
+    .trim()
+
+    .toLowerCase();
+
+
+    const days =
+
+    parseInt(
+        daysInput.value
+    ) || 0;
+
+
+    const filtered =
+
+    allCallData.filter(
+
+        function(item){
+
+
+            const text =
+
+            (
+
+                item.customerNumber ||
+
+                item.ip ||
+
+                ""
+
+            )
+
+            +
+
+            " " +
+
+            (
+
+                item.problem ||
+
+                ""
+
+            )
+
+            +
+
+            " " +
+
+            (
+
+                item.reference ||
+
+                item.ref ||
+
+                ""
+
+            )
+
+            +
+
+            " " +
+
+            (
+
+                item.support ||
+
+                ""
+
+            )
+
+            +
+
+            " " +
+
+            (
+
+                item.supportWork ||
+
+                ""
+
+            );
+
+
+            const matchesSearch =
+
+            !search ||
+
+            text
+            .toLowerCase()
+            .includes(search);
+
+
+            const matchesDays =
+
+            isWithinDays(
+
+                item.date,
+
+                days
+
+            );
+
+
+            return (
+
+                matchesSearch &&
+
+                matchesDays
+
+            );
+
+        }
+
+    );
 
 
     tableBody.innerHTML =
         "";
 
 
+    pendingCount.textContent =
+
+    filtered.length +
+
+    " Pending";
+
+
     if(
-        data.length === 0
+        filtered.length === 0
     ){
 
         tableWrapper.style.display =
@@ -2641,10 +2777,6 @@ function renderTable(
         emptyState.classList.add(
             "show"
         );
-
-
-        pendingCount.textContent =
-            "0 Pending";
 
 
         return;
@@ -2661,242 +2793,12 @@ function renderTable(
         "block";
 
 
-    pendingCount.textContent =
-
-        data.length +
-
-        " Pending";
-
-
-    data.forEach(
+    filtered.forEach(
 
         function(item){
 
-            const tr =
-
-                document.createElement(
-                    "tr"
-                );
-
-
-            /* CUSTOMER ID */
-
-            const tdId =
-
-                document.createElement(
-                    "td"
-                );
-
-
-            tdId.innerHTML =
-
-                '<span class="customer-badge">' +
-
-                '<i class="fa-solid fa-user"></i>' +
-
-                escapeHtml(
-
-                    item.customerNumber ||
-
-                    item.ip ||
-
-                    ""
-
-                ) +
-
-                '</span>';
-
-
-            /* DATE */
-
-            const tdDate =
-
-                document.createElement(
-                    "td"
-                );
-
-
-            tdDate.innerHTML =
-
-                '<span class="date-badge">' +
-
-                escapeHtml(
-
-                    item.date ||
-
-                    ""
-
-                ) +
-
-                '</span>';
-
-
-            /* PROBLEM */
-
-            const tdProblem =
-
-                document.createElement(
-                    "td"
-                );
-
-
-            tdProblem.innerHTML =
-
-                '<div class="problem-text">' +
-
-                escapeHtml(
-
-                    item.problem ||
-
-                    ""
-
-                ) +
-
-                '</div>';
-
-
-            /* REFERENCE */
-
-            const tdRef =
-
-                document.createElement(
-                    "td"
-                );
-
-
-            tdRef.innerHTML =
-
-                '<span class="ref-badge">' +
-
-                escapeHtml(
-
-                    item.reference ||
-
-                    item.ref ||
-
-                    "-"
-
-                ) +
-
-                '</span>';
-
-
-            /* SUPPORT */
-
-            const tdSupport =
-
-                document.createElement(
-                    "td"
-                );
-
-
-            tdSupport.textContent =
-
-                item.support ||
-
-                "-";
-
-
-            /* SUPPORT WORK */
-
-            const tdSupportWork =
-
-                document.createElement(
-                    "td"
-                );
-
-
-            tdSupportWork.textContent =
-
-                item.supportWork ||
-
-                "-";
-
-
-            /* ACTION */
-
-            const tdAction =
-
-                document.createElement(
-                    "td"
-                );
-
-
-            const viewBtn =
-
-                document.createElement(
-                    "button"
-                );
-
-
-            viewBtn.className =
-                "view-btn";
-
-
-            viewBtn.innerHTML =
-
-                '<i class="fa-solid fa-eye"></i> View';
-
-
-            viewBtn.addEventListener(
-
-                "click",
-
-                function(){
-
-                    openModal(
-                        item
-                    );
-
-                }
-
-            );
-
-
-            tdAction.appendChild(
-                viewBtn
-            );
-
-
-            /* ADD */
-
-            tr.appendChild(
-                tdId
-            );
-
-
-            tr.appendChild(
-                tdDate
-            );
-
-
-            tr.appendChild(
-                tdProblem
-            );
-
-
-            tr.appendChild(
-                tdRef
-            );
-
-
-            tr.appendChild(
-                tdSupport
-            );
-
-
-            tr.appendChild(
-                tdSupportWork
-            );
-
-
-            tr.appendChild(
-                tdAction
-            );
-
-
-            tableBody.appendChild(
-                tr
+            createRow(
+                item
             );
 
         }
@@ -2907,86 +2809,330 @@ function renderTable(
 
 
 /* =====================================================
-   SEARCH
+   CREATE TABLE ROW
 ===================================================== */
 
-searchInput.addEventListener(
-
-    "input",
-
-    function(){
-
-        const search =
-
-            this.value
-
-            .trim()
-
-            .toLowerCase();
+function createRow(
+    item
+){
 
 
-        if(
-            !search
-        ){
+    const tr =
 
-            renderTable(
-                pendingCallData
+    document.createElement(
+        "tr"
+    );
+
+
+    /* CUSTOMER */
+
+    const customerTd =
+
+    document.createElement(
+        "td"
+    );
+
+
+    customerTd.innerHTML =
+
+    `
+
+    <div class="cell-content customer-cell">
+
+        <div class="cell-icon">
+
+            <i class="fa-solid fa-user"></i>
+
+        </div>
+
+        <span>
+
+            ${escapeHtml(
+
+                item.customerNumber ||
+
+                item.ip ||
+
+                ""
+
+            )}
+
+        </span>
+
+    </div>
+
+    `;
+
+
+    /* DATE */
+
+    const dateTd =
+
+    document.createElement(
+        "td"
+    );
+
+
+    dateTd.innerHTML =
+
+    `
+
+    <div class="cell-content date-cell">
+
+        <div class="cell-icon">
+
+            <i class="fa-solid fa-calendar"></i>
+
+        </div>
+
+        <span>
+
+            ${escapeHtml(
+
+                item.date || ""
+
+            )}
+
+        </span>
+
+    </div>
+
+    `;
+
+
+    /* PROBLEM */
+
+    const problemTd =
+
+    document.createElement(
+        "td"
+    );
+
+
+    problemTd.innerHTML =
+
+    `
+
+    <div class="cell-content problem-cell">
+
+        <div class="cell-icon">
+
+            <i class="fa-solid fa-circle-exclamation"></i>
+
+        </div>
+
+        <span>
+
+            ${escapeHtml(
+
+                item.problem || ""
+
+            )}
+
+        </span>
+
+    </div>
+
+    `;
+
+
+    /* REFERENCE */
+
+    const refTd =
+
+    document.createElement(
+        "td"
+    );
+
+
+    refTd.innerHTML =
+
+    `
+
+    <div class="cell-content reference-cell">
+
+        <div class="cell-icon">
+
+            <i class="fa-solid fa-link"></i>
+
+        </div>
+
+        <span>
+
+            ${escapeHtml(
+
+                item.reference ||
+
+                item.ref ||
+
+                ""
+
+            )}
+
+        </span>
+
+    </div>
+
+    `;
+
+
+    /* SUPPORT */
+
+    const supportTd =
+
+    document.createElement(
+        "td"
+    );
+
+
+    supportTd.innerHTML =
+
+    `
+
+    <div class="cell-content support-cell">
+
+        <div class="cell-icon">
+
+            <i class="fa-solid fa-headset"></i>
+
+        </div>
+
+        <span>
+
+            ${escapeHtml(
+
+                item.support || ""
+
+            )}
+
+        </span>
+
+    </div>
+
+    `;
+
+
+    /* SUPPORT WORK */
+
+    const supportWorkTd =
+
+    document.createElement(
+        "td"
+    );
+
+
+    supportWorkTd.innerHTML =
+
+    `
+
+    <div class="cell-content support-work-cell">
+
+        <div class="cell-icon">
+
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+
+        </div>
+
+        <span>
+
+            ${escapeHtml(
+
+                item.supportWork || ""
+
+            )}
+
+        </span>
+
+    </div>
+
+    `;
+
+
+    /* VIEW */
+
+    const actionTd =
+
+    document.createElement(
+        "td"
+    );
+
+
+    const viewBtn =
+
+    document.createElement(
+        "button"
+    );
+
+
+    viewBtn.className =
+        "view-btn";
+
+
+    viewBtn.innerHTML =
+
+    `
+
+    <i class="fa-solid fa-eye"></i>
+
+    View
+
+    `;
+
+
+    viewBtn.addEventListener(
+
+        "click",
+
+        function(){
+
+            openModal(
+                item
             );
-
-            return;
 
         }
 
-
-        const filtered =
-
-            pendingCallData.filter(
-
-                function(item){
-
-                    const text =
-
-                        [
-
-                            item.customerNumber,
-
-                            item.ip,
-
-                            item.date,
-
-                            item.problem,
-
-                            item.reference,
-
-                            item.ref,
-
-                            item.support,
-
-                            item.supportWork
-
-                        ]
-
-                        .join(" ")
-
-                        .toLowerCase();
+    );
 
 
-                    return text.includes(
-                        search
-                    );
-
-                }
-
-            );
+    actionTd.appendChild(
+        viewBtn
+    );
 
 
-        renderTable(
-            filtered
-        );
+    tr.appendChild(
+        customerTd
+    );
 
-    }
+    tr.appendChild(
+        dateTd
+    );
 
-);
+    tr.appendChild(
+        problemTd
+    );
+
+    tr.appendChild(
+        refTd
+    );
+
+    tr.appendChild(
+        supportTd
+    );
+
+    tr.appendChild(
+        supportWorkTd
+    );
+
+    tr.appendChild(
+        actionTd
+    );
+
+
+    tableBody.appendChild(
+        tr
+    );
+
+}
 
 
 /* =====================================================
@@ -2998,75 +3144,69 @@ function openModal(
 ){
 
 
-    selectedItem =
-        item;
+    selectedCall = item;
 
 
-    modalCustomerId.textContent =
+    document.getElementById(
+        "modalCustomer"
+    ).textContent =
 
-        item.customerNumber ||
+    item.customerNumber ||
 
-        item.ip ||
+    item.ip ||
 
-        "-";
-
-
-    modalDate.textContent =
-
-        item.date ||
-
-        "-";
+    "-";
 
 
-    modalProblem.textContent =
+    document.getElementById(
+        "modalDate"
+    ).textContent =
 
-        item.problem ||
+    item.date ||
 
-        "-";
-
-
-    modalReference.textContent =
-
-        item.reference ||
-
-        item.ref ||
-
-        "-";
+    "-";
 
 
-    modalSupport.textContent =
+    document.getElementById(
+        "modalProblem"
+    ).textContent =
 
-        item.support ||
+    item.problem ||
 
-        "-";
-
-
-    modalSupportWork.textContent =
-
-        item.supportWork ||
-
-        "-";
+    "-";
 
 
-    /* ================================================
-       AUTO USER NAME
-    ================================================ */
+    document.getElementById(
+        "modalReference"
+    ).textContent =
 
-    const name =
+    item.reference ||
 
-        localStorage.getItem(
-            "name"
-        ) ||
+    item.ref ||
 
-        localStorage.getItem(
-            "username"
-        ) ||
+    "-";
 
-        "Unknown User";
+
+    document.getElementById(
+        "modalSupport"
+    ).textContent =
+
+    item.support ||
+
+    "-";
+
+
+    document.getElementById(
+        "modalSupportWork"
+    ).textContent =
+
+    item.supportWork ||
+
+    "-";
 
 
     callPerson.value =
-        name;
+        currentUser;
 
 
     callWork.value =
@@ -3079,7 +3219,13 @@ function openModal(
 
     submitCallBtn.innerHTML =
 
-        '<i class="fa-solid fa-paper-plane"></i> Submit Call';
+    `
+
+    <i class="fa-solid fa-paper-plane"></i>
+
+    Submit Call
+
+    `;
 
 
     viewModal.classList.add(
@@ -3093,23 +3239,23 @@ function openModal(
    CLOSE MODAL
 ===================================================== */
 
-function closeModal(){
+function closeViewModal(){
 
     viewModal.classList.remove(
         "show"
     );
 
-    selectedItem =
+    selectedCall =
         null;
 
 }
 
 
-closeModalBtn.addEventListener(
+closeModal.addEventListener(
 
     "click",
 
-    closeModal
+    closeViewModal
 
 );
 
@@ -3118,14 +3264,10 @@ cancelBtn.addEventListener(
 
     "click",
 
-    closeModal
+    closeViewModal
 
 );
 
-
-/* =====================================================
-   CLICK OUTSIDE MODAL
-===================================================== */
 
 viewModal.addEventListener(
 
@@ -3138,31 +3280,7 @@ viewModal.addEventListener(
             viewModal
         ){
 
-            closeModal();
-
-        }
-
-    }
-
-);
-
-
-/* =====================================================
-   ESC KEY
-===================================================== */
-
-document.addEventListener(
-
-    "keydown",
-
-    function(e){
-
-        if(
-            e.key ===
-            "Escape"
-        ){
-
-            closeModal();
+            closeViewModal();
 
         }
 
@@ -3183,25 +3301,8 @@ submitCallBtn.addEventListener(
 
 
         if(
-            !checkLogin()
+            !selectedCall
         ){
-
-            return;
-
-        }
-
-
-        if(
-            !selectedItem
-        ){
-
-            showStatus(
-
-                "Please select a Call request.",
-
-                "error"
-
-            );
 
             return;
 
@@ -3210,12 +3311,10 @@ submitCallBtn.addEventListener(
 
         const work =
 
-            callWork.value.trim();
+        callWork.value.trim();
 
 
-        if(
-            !work
-        ){
+        if(!work){
 
             alert(
 
@@ -3230,41 +3329,19 @@ submitCallBtn.addEventListener(
         }
 
 
-        const personName =
-
-            localStorage.getItem(
-                "name"
-            ) ||
-
-            localStorage.getItem(
-                "username"
-            ) ||
-
-            "";
-
-
-        if(
-            !personName
-        ){
-
-            alert(
-
-                "Logged in user name not found."
-
-            );
-
-            return;
-
-        }
-
-
         submitCallBtn.disabled =
             true;
 
 
         submitCallBtn.innerHTML =
 
-            '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
+        `
+
+        <i class="fa-solid fa-spinner fa-spin"></i>
+
+        Saving...
+
+        `;
 
 
         try{
@@ -3272,96 +3349,138 @@ submitCallBtn.addEventListener(
 
             const payload = {
 
+
                 action:
-                    "submitCall",
+
+                "submitCall",
 
 
                 customerId:
 
-                    selectedItem.customerNumber ||
+                selectedCall.customerNumber ||
 
-                    selectedItem.ip ||
+                selectedCall.ip ||
 
-                    "",
+                "",
+
+
+                date:
+
+                selectedCall.date ||
+
+                "",
+
+
+                problem:
+
+                selectedCall.problem ||
+
+                "",
+
+
+                reference:
+
+                selectedCall.reference ||
+
+                selectedCall.ref ||
+
+                "",
+
+
+                support:
+
+                selectedCall.support ||
+
+                "",
+
+
+                supportWork:
+
+                selectedCall.supportWork ||
+
+                "",
 
 
                 call:
-                    personName,
+
+                currentUser,
 
 
                 callWork:
-                    work,
+
+                work,
 
 
                 username:
 
-                    localStorage.getItem(
-                        "username"
-                    ) ||
+                localStorage.getItem(
+                    "username"
+                ) ||
 
-                    "",
+
+                "",
 
 
                 name:
-                    personName
+
+                currentUser
+
 
             };
 
 
             const response =
 
-                await fetch(
+            await fetch(
 
-                    PENDING_CALL_API_URL,
+                API_URL,
 
-                    {
+                {
 
-                        method:
-                            "POST",
+                    method:
 
-                        headers:{
+                    "POST",
 
-                            "Content-Type":
+                    headers:{
 
-                                "text/plain;charset=utf-8"
+                        "Content-Type":
 
-                        },
+                        "text/plain;charset=utf-8"
 
-                        body:
+                    },
 
-                            JSON.stringify(
-                                payload
-                            )
+                    body:
 
-                    }
+                    JSON.stringify(
+                        payload
+                    )
 
-                );
+                }
+
+            );
 
 
             const result =
 
-                await response.json();
+            await response.json();
 
 
             if(
-
-                result.success !==
-                true
-
+                result.success !== true
             ){
 
                 throw new Error(
 
                     result.message ||
 
-                    "Failed to submit Call."
+                    "Failed to submit call."
 
                 );
 
             }
 
 
-            closeModal();
+            closeViewModal();
 
 
             showStatus(
@@ -3373,22 +3492,16 @@ submitCallBtn.addEventListener(
             );
 
 
-            /* ========================================
-               RELOAD
-            ======================================== */
-
-            await loadPendingCall();
+            loadPendingCall();
 
 
-        }catch(error){
+        }
+
+        catch(error){
 
 
             console.error(
-
-                "Submit Call Error:",
-
                 error
-
             );
 
 
@@ -3396,7 +3509,7 @@ submitCallBtn.addEventListener(
 
                 error.message ||
 
-                "Unable to submit Call.",
+                "Unable to submit call.",
 
                 "error"
 
@@ -3409,7 +3522,14 @@ submitCallBtn.addEventListener(
 
             submitCallBtn.innerHTML =
 
-                '<i class="fa-solid fa-paper-plane"></i> Submit Call';
+            `
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+            Submit Call
+
+            `;
+
 
         }
 
@@ -3419,19 +3539,16 @@ submitCallBtn.addEventListener(
 
 
 /* =====================================================
-   FILTER BUTTON
+   SEARCH
 ===================================================== */
 
-filterBtn.addEventListener(
+searchInput.addEventListener(
 
-    "click",
+    "input",
 
     function(){
 
-        searchInput.value =
-            "";
-
-        loadPendingCall();
+        renderTable();
 
     }
 
@@ -3439,26 +3556,16 @@ filterBtn.addEventListener(
 
 
 /* =====================================================
-   ENTER KEY FILTER
+   DAYS FILTER
 ===================================================== */
 
 daysInput.addEventListener(
 
-    "keydown",
+    "input",
 
-    function(e){
+    function(){
 
-        if(
-            e.key ===
-            "Enter"
-        ){
-
-            searchInput.value =
-                "";
-
-            loadPendingCall();
-
-        }
+        renderTable();
 
     }
 
@@ -3474,9 +3581,6 @@ refreshBtn.addEventListener(
     "click",
 
     function(){
-
-        searchInput.value =
-            "";
 
         loadPendingCall();
 
@@ -3496,16 +3600,13 @@ backBtn.addEventListener(
     function(){
 
         if(
-            !checkLogin()
+            checkLogin()
         ){
 
-            return;
+            window.location.href =
+                "index.html";
 
         }
-
-
-        window.location.href =
-            "index.html";
 
     }
 

@@ -13,6 +13,10 @@ content="width=device-width, initial-scale=1.0"
 <title>Pending Call | LINK4 COMMUNICATION</title>
 
 
+<!-- =====================================================
+     LOGIN SECURITY
+===================================================== -->
+
 <script>
 
 (function(){
@@ -30,10 +34,9 @@ content="width=device-width, initial-scale=1.0"
 </script>
 
 
-<link
-rel="preconnect"
-href="https://fonts.googleapis.com"
->
+<!-- =====================================================
+     GOOGLE FONT
+===================================================== -->
 
 <link
 rel="preconnect"
@@ -41,10 +44,20 @@ href="https://fonts.googleapis.com"
 >
 
 <link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;500;600;700;800&display=swap"
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
 rel="stylesheet"
 >
 
+
+<!-- =====================================================
+     FONT AWESOME
+===================================================== -->
 
 <link
 rel="stylesheet"
@@ -83,11 +96,11 @@ linear-gradient(
 
 135deg,
 
-#003d29,
+#005C3A 0%,
 
-#006A4E,
+#006A4E 45%,
 
-#008f63
+#003d2a 100%
 
 );
 
@@ -127,7 +140,7 @@ linear-gradient(
 
 #ffffff,
 
-#f3fff9
+#f4fffa
 
 );
 
@@ -149,7 +162,7 @@ box-shadow:
 
 rgba(0,0,0,.20);
 
-margin-bottom:20px;
+margin-bottom:22px;
 
 border:1px solid
 
@@ -185,7 +198,7 @@ linear-gradient(
 
 #006A4E,
 
-#00a875
+#00a86b
 
 );
 
@@ -203,7 +216,7 @@ box-shadow:
 
 0 8px 20px
 
-rgba(0,106,78,.30);
+rgba(0,106,78,.3);
 
 }
 
@@ -240,6 +253,7 @@ gap:10px;
 
 
 .back-btn,
+
 .refresh-btn{
 
 border:none;
@@ -274,7 +288,7 @@ color:white;
 
 .refresh-btn{
 
-background:#e5f8f0;
+background:#e6f8f0;
 
 color:#006A4E;
 
@@ -309,9 +323,13 @@ transform:translateY(-2px);
 
 background:
 
-rgba(255,255,255,.15);
+rgba(255,255,255,.13);
 
-backdrop-filter:blur(10px);
+border:
+
+1px solid
+
+rgba(255,255,255,.15);
 
 color:white;
 
@@ -329,9 +347,7 @@ align-items:center;
 
 font-size:14px;
 
-border:1px solid
-
-rgba(255,255,255,.15);
+backdrop-filter:blur(8px);
 
 }
 
@@ -346,22 +362,22 @@ color:#fff;
 
 
 /* =====================================================
-   SEARCH AREA
+   SEARCH BOX
 ===================================================== */
 
 .search-box{
 
 background:white;
 
-padding:16px 20px;
+padding:16px;
 
-border-radius:18px;
+border-radius:17px;
 
 margin-bottom:20px;
 
 box-shadow:
 
-0 12px 35px
+0 12px 30px
 
 rgba(0,0,0,.15);
 
@@ -376,9 +392,9 @@ gap:12px;
 
 .search-icon{
 
-width:42px;
+width:45px;
 
-height:42px;
+height:45px;
 
 border-radius:11px;
 
@@ -388,9 +404,9 @@ color:#006A4E;
 
 display:flex;
 
-align-items:center;
-
 justify-content:center;
+
+align-items:center;
 
 font-size:18px;
 
@@ -405,11 +421,11 @@ border:2px solid #e3e8e5;
 
 border-radius:11px;
 
-padding:12px 15px;
-
-font-size:14px;
+padding:13px 15px;
 
 outline:none;
+
+font-size:14px;
 
 transition:.3s;
 
@@ -425,34 +441,6 @@ box-shadow:
 0 0 12px
 
 rgba(0,106,78,.12);
-
-}
-
-
-.clear-search{
-
-border:none;
-
-background:#f5eeee;
-
-color:#d32f2f;
-
-padding:11px 15px;
-
-border-radius:10px;
-
-cursor:pointer;
-
-font-weight:600;
-
-}
-
-
-.clear-search:hover{
-
-background:#E53935;
-
-color:white;
 
 }
 
@@ -487,7 +475,7 @@ display:block;
 
 .status.loading{
 
-background:#fff8df;
+background:#fff8e1;
 
 color:#8a6500;
 
@@ -541,7 +529,7 @@ overflow:hidden;
 
 padding:20px 25px;
 
-border-bottom:1px solid #e8eeeb;
+border-bottom:1px solid #eee;
 
 display:flex;
 
@@ -557,7 +545,7 @@ linear-gradient(
 
 #ffffff,
 
-#f7fffb
+#f8fffb
 
 );
 
@@ -583,7 +571,7 @@ linear-gradient(
 
 #2563eb,
 
-#4f8cff
+#4f46e5
 
 );
 
@@ -591,7 +579,7 @@ color:white;
 
 padding:7px 14px;
 
-border-radius:25px;
+border-radius:20px;
 
 font-size:13px;
 
@@ -627,18 +615,12 @@ table{
 
 width:100%;
 
-border-collapse:separate;
+border-collapse:collapse;
 
-border-spacing:0;
-
-min-width:1250px;
+min-width:1450px;
 
 }
 
-
-/* =====================================================
-   THEAD
-===================================================== */
 
 thead{
 
@@ -648,9 +630,9 @@ linear-gradient(
 
 135deg,
 
-#005c3a,
+#006A4E,
 
-#00845a
+#008f68
 
 );
 
@@ -661,7 +643,7 @@ color:white;
 
 th{
 
-padding:16px 14px;
+padding:16px 13px;
 
 font-size:13px;
 
@@ -674,20 +656,9 @@ white-space:nowrap;
 }
 
 
-th:first-child{
-
-border-top-left-radius:0;
-
-}
-
-
-/* =====================================================
-   TD
-===================================================== */
-
 td{
 
-padding:14px;
+padding:15px 13px;
 
 border-bottom:1px solid #edf1ef;
 
@@ -707,9 +678,7 @@ transition:.25s;
 
 tbody tr:hover{
 
-background:#f4fff9;
-
-transform:scale(1.001);
+background:#f5fffa;
 
 }
 
@@ -720,41 +689,47 @@ transform:scale(1.001);
 
 .readonly{
 
-background:#f4f7f5;
+background:#f5f7f6;
 
-color:#4f5d56;
+color:#444;
 
 font-weight:500;
+
+border-radius:7px;
 
 }
 
 
 /* =====================================================
-   SUPPORT DATA
+   SUPPORT BADGES
 ===================================================== */
 
-.support-data{
+.support-box{
 
-background:#f0f7ff;
+background:#eef8ff;
 
-color:#31577d;
+border-left:4px solid #2196f3;
 
-border-left:4px solid #3b82f6;
+padding:10px;
 
-font-weight:500;
+border-radius:8px;
+
+min-width:180px;
 
 }
 
 
-.support-work-data{
+.work-box{
 
-background:#fff8ed;
+background:#fff8e8;
 
-color:#805b24;
+border-left:4px solid #f5a623;
 
-border-left:4px solid #f59e0b;
+padding:10px;
 
-font-weight:500;
+border-radius:8px;
+
+min-width:200px;
 
 }
 
@@ -775,15 +750,15 @@ linear-gradient(
 
 #2563eb,
 
-#4f8cff
+#4f46e5
 
 );
 
 color:white;
 
-padding:10px 16px;
+padding:10px 17px;
 
-border-radius:10px;
+border-radius:9px;
 
 cursor:pointer;
 
@@ -801,12 +776,6 @@ white-space:nowrap;
 
 transition:.3s;
 
-box-shadow:
-
-0 5px 14px
-
-rgba(37,99,235,.22);
-
 }
 
 
@@ -816,9 +785,9 @@ transform:translateY(-2px);
 
 box-shadow:
 
-0 8px 18px
+0 7px 18px
 
-rgba(37,99,235,.32);
+rgba(37,99,235,.25);
 
 }
 
@@ -831,25 +800,7 @@ rgba(37,99,235,.32);
 
 display:none;
 
-margin-top:5px;
-
-padding:15px;
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#f0fff8,
-
-#f8fffc
-
-);
-
-border:1px solid #d8eee4;
-
-border-radius:14px;
+min-width:260px;
 
 }
 
@@ -858,36 +809,59 @@ border-radius:14px;
 
 display:block;
 
-animation:slideDown .25s ease;
+animation:fadeIn .25s ease;
 
 }
 
 
-.call-label{
+/* =====================================================
+   CALL NAME
+===================================================== */
 
-display:block;
-
-font-size:12px;
-
-font-weight:700;
-
-color:#006A4E;
-
-margin-bottom:6px;
-
-}
-
-
-.call-input,
-.call-work-input{
+.call-name{
 
 width:100%;
 
-border:2px solid #dce7e1;
+background:#f1f5f3;
 
-border-radius:10px;
+border:2px solid #dce5e1;
 
-padding:11px 12px;
+border-radius:9px;
+
+padding:11px;
+
+font-size:13px;
+
+font-weight:600;
+
+color:#006A4E;
+
+outline:none;
+
+cursor:not-allowed;
+
+margin-bottom:9px;
+
+}
+
+
+/* =====================================================
+   CALL WORK
+===================================================== */
+
+.call-work{
+
+width:100%;
+
+min-height:85px;
+
+resize:vertical;
+
+border:2px solid #ddd;
+
+border-radius:9px;
+
+padding:11px;
 
 font-size:13px;
 
@@ -895,42 +869,16 @@ outline:none;
 
 transition:.3s;
 
-background:white;
-
 }
 
 
-.call-input{
-
-margin-bottom:12px;
-
-background:#f3f6f4;
-
-color:#555;
-
-cursor:not-allowed;
-
-font-weight:600;
-
-}
-
-
-.call-work-input{
-
-min-height:90px;
-
-resize:vertical;
-
-}
-
-
-.call-work-input:focus{
+.call-work:focus{
 
 border-color:#006A4E;
 
 box-shadow:
 
-0 0 12px
+0 0 10px
 
 rgba(0,106,78,.12);
 
@@ -938,16 +886,14 @@ rgba(0,106,78,.12);
 
 
 /* =====================================================
-   SUBMIT BUTTON
+   SUBMIT CALL
 ===================================================== */
 
-.submit-btn{
-
-display:none;
+.submit-call-btn{
 
 width:100%;
 
-margin-top:12px;
+margin-top:9px;
 
 border:none;
 
@@ -959,15 +905,15 @@ linear-gradient(
 
 #006A4E,
 
-#00a875
+#00a86b
 
 );
 
 color:white;
 
-padding:12px 16px;
+padding:11px;
 
-border-radius:10px;
+border-radius:9px;
 
 cursor:pointer;
 
@@ -975,9 +921,11 @@ font-weight:600;
 
 font-size:13px;
 
-align-items:center;
+display:flex;
 
 justify-content:center;
+
+align-items:center;
 
 gap:7px;
 
@@ -986,33 +934,16 @@ transition:.3s;
 }
 
 
-.submit-btn.show{
+.submit-call-btn:hover{
 
-display:flex;
+background:#E53935;
 
-}
-
-
-.submit-btn:hover{
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#E53935,
-
-#f45b58
-
-);
-
-transform:translateY(-2px);
+transform:translateY(-1px);
 
 }
 
 
-.submit-btn:disabled{
+.submit-call-btn:disabled{
 
 opacity:.6;
 
@@ -1067,22 +998,14 @@ font-size:38px;
 
 margin:0 auto 20px;
 
-box-shadow:
-
-0 10px 25px
-
-rgba(0,106,78,.12);
-
 }
 
 
 .empty-state h3{
 
-font-size:20px;
+font-size:21px;
 
 margin-bottom:8px;
-
-color:#222;
 
 }
 
@@ -1124,13 +1047,13 @@ margin-bottom:15px;
    ANIMATION
 ===================================================== */
 
-@keyframes slideDown{
+@keyframes fadeIn{
 
 from{
 
 opacity:0;
 
-transform:translateY(-8px);
+transform:translateY(5px);
 
 }
 
@@ -1189,6 +1112,7 @@ flex-direction:column;
 
 
 .back-btn,
+
 .refresh-btn{
 
 justify-content:center;
@@ -1208,7 +1132,7 @@ flex-direction:column;
 
 align-items:flex-start;
 
-gap:7px;
+gap:8px;
 
 }
 
@@ -1229,16 +1153,7 @@ font-size:17px;
 
 .search-box{
 
-padding:13px;
-
-}
-
-
-.clear-search{
-
-padding:10px;
-
-font-size:12px;
+padding:12px;
 
 }
 
@@ -1282,7 +1197,7 @@ Pending Call
 
 <p>
 
-Manage pending customer calls
+Manage pending customer call requests
 
 </p>
 
@@ -1333,6 +1248,7 @@ Dashboard
 
 <div class="user-bar">
 
+
 <div>
 
 <i class="fa-solid fa-user"></i>
@@ -1343,7 +1259,9 @@ Logged in as:
 class="user-name"
 id="userName"
 >
+
 User
+
 </span>
 
 </div>
@@ -1353,9 +1271,10 @@ User
 
 <i class="fa-solid fa-lock"></i>
 
-Customer, Support & Support Work are read-only
+Customer & Support information are read-only
 
 </div>
+
 
 </div>
 
@@ -1380,28 +1299,11 @@ type="text"
 
 id="searchInput"
 
-placeholder="Search by Customer Number, Problem, REF, Support or Support Work..."
+placeholder="Search Customer Number, Problem, Reference or Support..."
 
 autocomplete="off"
 
 >
-
-
-<button
-
-type="button"
-
-class="clear-search"
-
-id="clearSearch"
-
->
-
-<i class="fa-solid fa-xmark"></i>
-
-Clear
-
-</button>
 
 
 </div>
@@ -1460,11 +1362,13 @@ id="loadingState"
 
 </div>
 
+
 <p>
 
 Loading pending call requests...
 
 </p>
+
 
 </div>
 
@@ -1492,9 +1396,10 @@ No Pending Call
 
 <p>
 
-There are currently no pending customer calls.
+There are currently no pending call requests.
 
 </p>
+
 
 </div>
 
@@ -1504,15 +1409,20 @@ There are currently no pending customer calls.
 <div
 class="table-scroll"
 id="tableWrapper"
+
 style="display:none;"
+
 >
+
 
 <table>
 
 
 <thead>
 
+
 <tr>
+
 
 <th>
 
@@ -1520,11 +1430,13 @@ Customer Number
 
 </th>
 
+
 <th>
 
 Date
 
 </th>
+
 
 <th>
 
@@ -1532,11 +1444,13 @@ Problem
 
 </th>
 
+
 <th>
 
 REF
 
 </th>
+
 
 <th>
 
@@ -1544,11 +1458,13 @@ Support
 
 </th>
 
+
 <th>
 
 Support Work
 
 </th>
+
 
 <th>
 
@@ -1556,13 +1472,23 @@ Call
 
 </th>
 
+
+<th>
+
+Call Work
+
+</th>
+
+
 <th>
 
 Action
 
 </th>
 
+
 </tr>
+
 
 </thead>
 
@@ -1571,10 +1497,12 @@ Action
 id="callTableBody"
 >
 
+
 </tbody>
 
 
 </table>
+
 
 </div>
 
@@ -1592,7 +1520,7 @@ id="callTableBody"
    API URL
 ===================================================== */
 
-const PENDING_CALL_API_URL =
+const API_URL =
 
 "https://script.google.com/macros/s/AKfycbw1NiYF5qNEFGVXdIWZ3I3lpJXEX57uBM0M06oqVVJcRUiuCTAf8NkKycGWtyIhhxWh4g/exec";
 
@@ -1673,15 +1601,6 @@ document.getElementById(
 );
 
 
-const userName =
-
-document.getElementById(
-
-"userName"
-
-);
-
-
 const searchInput =
 
 document.getElementById(
@@ -1691,35 +1610,50 @@ document.getElementById(
 );
 
 
-const clearSearch =
+const userName =
 
 document.getElementById(
 
-"clearSearch"
+"userName"
 
 );
 
 
 /* =====================================================
-   LOGGED USER
+   CURRENT USER
 ===================================================== */
 
-const loggedName =
+const currentUsername =
 
-localStorage.getItem("name")
+localStorage.getItem(
+
+"username"
+
+)
 
 ||
 
-localStorage.getItem("username")
+localStorage.getItem(
+
+"name"
+
+)
 
 ||
 
-"User";
+"Unknown User";
 
 
 userName.textContent =
 
-loggedName;
+currentUsername;
+
+
+/* =====================================================
+   DATA STORAGE
+===================================================== */
+
+let allCallData = [];
 
 
 /* =====================================================
@@ -1730,7 +1664,11 @@ function checkLogin(){
 
 if(
 
-localStorage.getItem("loggedIn") !== "true"
+localStorage.getItem("loggedIn")
+
+!==
+
+"true"
 
 ){
 
@@ -1782,13 +1720,6 @@ statusBox.className =
 
 
 /* =====================================================
-   GLOBAL DATA
-===================================================== */
-
-let allData = [];
-
-
-/* =====================================================
    GET VALUE
 ===================================================== */
 
@@ -1814,7 +1745,11 @@ item[key] !== null
 
 ){
 
-return item[key];
+return String(
+
+item[key]
+
+);
 
 }
 
@@ -1826,150 +1761,7 @@ return "";
 
 
 /* =====================================================
-   FILTER DATA
-===================================================== */
-
-function filterData(){
-
-const search =
-
-searchInput.value
-
-.toLowerCase()
-
-.trim();
-
-
-if(!search){
-
-renderData(allData);
-
-return;
-
-}
-
-
-const filtered =
-
-allData.filter(
-
-function(item){
-
-const text = [
-
-getValue(
-
-item,
-
-[
-
-"ip",
-
-"IP",
-
-"customerNumber",
-
-"Customer Number"
-
-]
-
-),
-
-getValue(
-
-item,
-
-[
-
-"date",
-
-"Date"
-
-]
-
-),
-
-getValue(
-
-item,
-
-[
-
-"problem",
-
-"Problem"
-
-]
-
-),
-
-getValue(
-
-item,
-
-[
-
-"ref",
-
-"REF",
-
-"reference",
-
-"Reference"
-
-]
-
-),
-
-getValue(
-
-item,
-
-[
-
-"support",
-
-"Support"
-
-]
-
-),
-
-getValue(
-
-item,
-
-[
-
-"supportWork",
-
-"Support Work"
-
-]
-
-)
-
-]
-
-.join(" ")
-
-.toLowerCase();
-
-
-return text.includes(search);
-
-}
-
-);
-
-
-renderData(filtered);
-
-}
-
-
-/* =====================================================
-   LOAD DATA
+   LOAD PENDING CALL
 ===================================================== */
 
 async function loadPendingCall(){
@@ -2023,9 +1815,11 @@ try{
 
 const url =
 
-PENDING_CALL_API_URL +
+API_URL +
 
-"?action=pendingCall";
+"?action=pendingCall&t=" +
+
+Date.now();
 
 
 const response =
@@ -2065,11 +1859,6 @@ const result =
 await response.json();
 
 
-loadingState.style.display =
-
-"none";
-
-
 if(
 
 result.success !== true
@@ -2080,16 +1869,20 @@ throw new Error(
 
 result.message ||
 
-"Unable to load pending call data."
+"Unable to load pending calls."
 
 );
 
 }
 
 
-allData =
+allCallData =
 
-Array.isArray(result.data)
+Array.isArray(
+
+result.data
+
+)
 
 ?
 
@@ -2100,7 +1893,19 @@ result.data
 [];
 
 
-filterData();
+loadingState.style.display =
+
+"none";
+
+
+renderTable(
+
+allCallData
+
+);
+
+
+hideStatus();
 
 
 }catch(error){
@@ -2108,7 +1913,7 @@ filterData();
 
 console.error(
 
-"Load Error:",
+"Pending Call Load Error:",
 
 error
 
@@ -2141,10 +1946,14 @@ error.message ||
 
 
 /* =====================================================
-   RENDER DATA
+   RENDER TABLE
 ===================================================== */
 
-function renderData(data){
+function renderTable(
+
+data
+
+){
 
 
 tableBody.innerHTML =
@@ -2152,23 +1961,29 @@ tableBody.innerHTML =
 "";
 
 
-if(data.length === 0){
+pendingCount.textContent =
+
+data.length +
+
+" Pending";
+
+
+if(
+
+data.length === 0
+
+){
 
 tableWrapper.style.display =
 
 "none";
+
 
 emptyState.classList.add(
 
 "show"
 
 );
-
-pendingCount.textContent =
-
-"0 Pending";
-
-hideStatus();
 
 return;
 
@@ -2181,21 +1996,15 @@ emptyState.classList.remove(
 
 );
 
+
 tableWrapper.style.display =
 
 "block";
 
 
-pendingCount.textContent =
-
-data.length +
-
-" Pending";
-
-
 data.forEach(
 
-function(item){
+function(item,index){
 
 
 const tr =
@@ -2208,7 +2017,7 @@ document.createElement(
 
 
 /* =================================================
-   DATA
+   CUSTOMER NUMBER
 ================================================= */
 
 const customerNumber =
@@ -2225,103 +2034,14 @@ item,
 
 "customerNumber",
 
-"Customer Number"
+"Customer Number",
+
+"CustomerNumber"
 
 ]
 
 );
 
-
-const date =
-
-getValue(
-
-item,
-
-[
-
-"date",
-
-"Date"
-
-]
-
-);
-
-
-const problem =
-
-getValue(
-
-item,
-
-[
-
-"problem",
-
-"Problem"
-
-]
-
-);
-
-
-const ref =
-
-getValue(
-
-item,
-
-[
-
-"ref",
-
-"REF",
-
-"reference",
-
-"Reference"
-
-);
-
-
-const support =
-
-getValue(
-
-item,
-
-[
-
-"support",
-
-"Support"
-
-]
-
-);
-
-
-const supportWork =
-
-getValue(
-
-item,
-
-[
-
-"supportWork",
-
-"Support Work"
-
-]
-
-);
-
-
-/* =================================================
-   CUSTOMER
-================================================= */
 
 const tdCustomer =
 
@@ -2344,6 +2064,23 @@ customerNumber;
    DATE
 ================================================= */
 
+const date =
+
+getValue(
+
+item,
+
+[
+
+"date",
+
+"Date"
+
+]
+
+);
+
+
 const tdDate =
 
 document.createElement(
@@ -2364,6 +2101,23 @@ date;
 /* =================================================
    PROBLEM
 ================================================= */
+
+const problem =
+
+getValue(
+
+item,
+
+[
+
+"problem",
+
+"Problem"
+
+]
+
+);
+
 
 const tdProblem =
 
@@ -2386,6 +2140,27 @@ problem;
    REF
 ================================================= */
 
+const ref =
+
+getValue(
+
+item,
+
+[
+
+"ref",
+
+"REF",
+
+"reference",
+
+"Reference"
+
+]
+
+);
+
+
 const tdRef =
 
 document.createElement(
@@ -2407,6 +2182,23 @@ ref;
    SUPPORT
 ================================================= */
 
+const support =
+
+getValue(
+
+item,
+
+[
+
+"support",
+
+"Support"
+
+]
+
+);
+
+
 const tdSupport =
 
 document.createElement(
@@ -2415,18 +2207,53 @@ document.createElement(
 
 );
 
-tdSupport.className =
 
-"support-data";
+const supportBox =
 
-tdSupport.textContent =
+document.createElement(
+
+"div"
+
+);
+
+supportBox.className =
+
+"support-box";
+
+supportBox.textContent =
 
 support;
+
+
+tdSupport.appendChild(
+
+supportBox
+
+);
 
 
 /* =================================================
    SUPPORT WORK
 ================================================= */
+
+const supportWork =
+
+getValue(
+
+item,
+
+[
+
+"supportWork",
+
+"Support Work",
+
+"support_work"
+
+]
+
+);
+
 
 const tdSupportWork =
 
@@ -2436,17 +2263,33 @@ document.createElement(
 
 );
 
-tdSupportWork.className =
 
-"support-work-data";
+const workBox =
 
-tdSupportWork.textContent =
+document.createElement(
+
+"div"
+
+);
+
+workBox.className =
+
+"work-box";
+
+workBox.textContent =
 
 supportWork;
 
 
+tdSupportWork.appendChild(
+
+workBox
+
+);
+
+
 /* =================================================
-   CALL COLUMN
+   CALL
 ================================================= */
 
 const tdCall =
@@ -2457,35 +2300,6 @@ document.createElement(
 
 );
 
-
-/* =================================================
-   VIEW BUTTON
-================================================= */
-
-const viewBtn =
-
-document.createElement(
-
-"button"
-
-);
-
-viewBtn.className =
-
-"view-btn";
-
-viewBtn.type =
-
-"button";
-
-viewBtn.innerHTML =
-
-'<i class="fa-solid fa-eye"></i> View';
-
-
-/* =================================================
-   CALL AREA
-================================================= */
 
 const callArea =
 
@@ -2500,25 +2314,6 @@ callArea.className =
 "call-area";
 
 
-/* CALL NAME */
-
-const callLabel =
-
-document.createElement(
-
-"label"
-
-);
-
-callLabel.className =
-
-"call-label";
-
-callLabel.textContent =
-
-"Call — Person Name";
-
-
 const callInput =
 
 document.createElement(
@@ -2529,7 +2324,7 @@ document.createElement(
 
 callInput.className =
 
-"call-input";
+"call-name";
 
 callInput.type =
 
@@ -2541,26 +2336,51 @@ true;
 
 callInput.value =
 
-loggedName;
+currentUsername;
+
+callInput.placeholder =
+
+"Call Name";
 
 
-/* CALL WORK */
+callArea.appendChild(
 
-const callWorkLabel =
-
-document.createElement(
-
-"label"
+callInput
 
 );
 
-callWorkLabel.className =
 
-"call-label";
+tdCall.appendChild(
 
-callWorkLabel.textContent =
+callArea
 
-"Call Work — Conversation / Work Details";
+);
+
+
+/* =================================================
+   CALL WORK
+================================================= */
+
+const tdCallWork =
+
+document.createElement(
+
+"td"
+
+);
+
+
+const callWorkArea =
+
+document.createElement(
+
+"div"
+
+);
+
+callWorkArea.className =
+
+"call-area";
 
 
 const callWorkInput =
@@ -2573,74 +2393,23 @@ document.createElement(
 
 callWorkInput.className =
 
-"call-work-input";
+"call-work";
 
 callWorkInput.placeholder =
 
-"Write what was discussed with the customer or what work was done...";
+"Write what happened during the call...";
 
 
-/* SUBMIT */
-
-const submitBtn =
-
-document.createElement(
-
-"button"
-
-);
-
-submitBtn.className =
-
-"submit-btn";
-
-submitBtn.type =
-
-"button";
-
-submitBtn.innerHTML =
-
-'<i class="fa-solid fa-paper-plane"></i> Submit Call';
-
-
-/* =================================================
-   ADD
-================================================= */
-
-callArea.appendChild(
-
-callLabel
-
-);
-
-callArea.appendChild(
-
-callInput
-
-);
-
-callArea.appendChild(
-
-callWorkLabel
-
-);
-
-callArea.appendChild(
+callWorkArea.appendChild(
 
 callWorkInput
 
 );
 
-callArea.appendChild(
 
-submitBtn
+tdCallWork.appendChild(
 
-);
-
-
-tdCall.appendChild(
-
-callArea
+callWorkArea
 
 );
 
@@ -2658,16 +2427,27 @@ document.createElement(
 );
 
 
-tdAction.appendChild(
+const viewBtn =
 
-viewBtn
+document.createElement(
+
+"button"
 
 );
 
+viewBtn.className =
 
-/* =================================================
-   VIEW CLICK
-================================================= */
+"view-btn";
+
+viewBtn.type =
+
+"button";
+
+
+viewBtn.innerHTML =
+
+'<i class="fa-solid fa-eye"></i> View';
+
 
 viewBtn.addEventListener(
 
@@ -2676,64 +2456,78 @@ viewBtn.addEventListener(
 function(){
 
 
-const isOpen =
+callArea.classList.toggle(
+
+"show"
+
+);
+
+
+callWorkArea.classList.toggle(
+
+"show"
+
+);
+
+
+if(
 
 callArea.classList.contains(
 
 "show"
 
-);
+)
 
-
-if(isOpen){
-
-callArea.classList.remove(
-
-"show"
-
-);
-
-viewBtn.innerHTML =
-
-'<i class="fa-solid fa-eye"></i> View';
-
-return;
-
-}
-
-
-callArea.classList.add(
-
-"show"
-
-);
+){
 
 viewBtn.innerHTML =
 
 '<i class="fa-solid fa-eye-slash"></i> Hide';
 
+}
 
-callInput.value =
+else{
 
-loggedName;
+viewBtn.innerHTML =
 
+'<i class="fa-solid fa-eye"></i> View';
 
-/* CALL NAME CANNOT EDIT */
+}
 
-callInput.readOnly =
-
-true;
-
-
-/* SHOW SUBMIT */
-
-submitBtn.classList.add(
-
-"show"
+}
 
 );
 
-}
+
+/* =================================================
+   SUBMIT BUTTON
+================================================= */
+
+const submitBtn =
+
+document.createElement(
+
+"button"
+
+);
+
+submitBtn.className =
+
+"submit-call-btn";
+
+submitBtn.type =
+
+"button";
+
+
+submitBtn.innerHTML =
+
+'<i class="fa-solid fa-paper-plane"></i> Submit Call';
+
+
+callWorkArea.appendChild(
+
+submitBtn
 
 );
 
@@ -2756,9 +2550,9 @@ return;
 }
 
 
-const call =
+const callName =
 
-callInput.value.trim();
+currentUsername;
 
 
 const callWork =
@@ -2766,11 +2560,11 @@ const callWork =
 callWorkInput.value.trim();
 
 
-if(!call){
+if(!callName){
 
 showStatus(
 
-"Call name is missing.",
+"Logged in user name not found.",
 
 "error"
 
@@ -2785,7 +2579,7 @@ if(!callWork){
 
 showStatus(
 
-"Please write Call Work information.",
+"Please write what happened during the call.",
 
 "error"
 
@@ -2817,37 +2611,46 @@ action:
 
 "submitCall",
 
+
 ip:
 
 customerNumber,
+
 
 date:
 
 date,
 
+
 problem:
 
 problem,
+
 
 ref:
 
 ref,
 
+
 support:
 
 support,
+
 
 supportWork:
 
 supportWork,
 
+
 call:
 
-call,
+callName,
+
 
 callWork:
 
 callWork,
+
 
 username:
 
@@ -2855,13 +2658,24 @@ localStorage.getItem(
 
 "username"
 
-)||
+)
+
+||
 
 "",
 
+
 name:
 
-loggedName
+localStorage.getItem(
+
+"name"
+
+)
+
+||
+
+""
 
 };
 
@@ -2870,7 +2684,7 @@ const response =
 
 await fetch(
 
-PENDING_CALL_API_URL,
+API_URL,
 
 {
 
@@ -2928,27 +2742,69 @@ showStatus(
 );
 
 
-/* REMOVE */
+/* REMOVE ROW */
 
-const index =
-
-allData.indexOf(item);
+tr.remove();
 
 
-if(index !== -1){
+/* UPDATE DATA */
 
-allData.splice(
+allCallData =
 
-index,
+allCallData.filter(
 
-1
+function(
 
-);
+row,
+
+rowIndex
+
+){
+
+return rowIndex !== index;
 
 }
 
+);
 
-filterData();
+
+const remaining =
+
+tableBody.querySelectorAll(
+
+"tr"
+
+).length;
+
+
+pendingCount.textContent =
+
+remaining +
+
+" Pending";
+
+
+if(
+
+remaining === 0
+
+){
+
+tableWrapper.style.display =
+
+"none";
+
+emptyState.classList.add(
+
+"show"
+
+);
+
+pendingCount.textContent =
+
+"0 Pending";
+
+}
 
 
 }catch(error){
@@ -2983,15 +2839,23 @@ submitBtn.innerHTML =
 
 '<i class="fa-solid fa-paper-plane"></i> Submit Call';
 
+}
 
 }
 
-});
+);
 
 
 /* =================================================
-   APPEND ROW
+   ADD ELEMENTS
 ================================================= */
+
+tdAction.appendChild(
+
+viewBtn
+
+);
+
 
 tr.appendChild(
 
@@ -3037,6 +2901,12 @@ tdCall
 
 tr.appendChild(
 
+tdCallWork
+
+);
+
+tr.appendChild(
+
 tdAction
 
 );
@@ -3053,9 +2923,6 @@ tr
 
 );
 
-
-hideStatus();
-
 }
 
 
@@ -3067,28 +2934,188 @@ searchInput.addEventListener(
 
 "input",
 
-filterData
+function(){
+
+
+const searchText =
+
+searchInput.value
+
+.trim()
+
+.toLowerCase();
+
+
+if(!searchText){
+
+renderTable(
+
+allCallData
+
+);
+
+return;
+
+}
+
+
+const filtered =
+
+allCallData.filter(
+
+function(item){
+
+
+const customerNumber =
+
+getValue(
+
+item,
+
+[
+
+"ip",
+
+"IP",
+
+"customerNumber",
+
+"Customer Number",
+
+"CustomerNumber"
+
+]
+
+).toLowerCase();
+
+
+const date =
+
+getValue(
+
+item,
+
+[
+
+"date",
+
+"Date"
+
+]
+
+).toLowerCase();
+
+
+const problem =
+
+getValue(
+
+item,
+
+[
+
+"problem",
+
+"Problem"
+
+]
+
+).toLowerCase();
+
+
+const ref =
+
+getValue(
+
+item,
+
+[
+
+"ref",
+
+"REF",
+
+"reference",
+
+"Reference"
+
+]
+
+).toLowerCase();
+
+
+const support =
+
+getValue(
+
+item,
+
+[
+
+"support",
+
+"Support"
+
+]
+
+).toLowerCase();
+
+
+const supportWork =
+
+getValue(
+
+item,
+
+[
+
+"supportWork",
+
+"Support Work",
+
+"support_work"
+
+]
+
+).toLowerCase();
+
+
+return (
+
+customerNumber.includes(searchText)
+
+||
+
+date.includes(searchText)
+
+||
+
+problem.includes(searchText)
+
+||
+
+ref.includes(searchText)
+
+||
+
+support.includes(searchText)
+
+||
+
+supportWork.includes(searchText)
+
+);
+
+}
 
 );
 
 
-/* =====================================================
-   CLEAR SEARCH
-===================================================== */
+renderTable(
 
-clearSearch.addEventListener(
+filtered
 
-"click",
-
-function(){
-
-searchInput.value =
-
-"";
-
-filterData();
-
-searchInput.focus();
+);
 
 }
 
@@ -3113,7 +3140,7 @@ loadPendingCall();
 
 
 /* =====================================================
-   BACK
+   DASHBOARD
 ===================================================== */
 
 backBtn.addEventListener(
@@ -3128,6 +3155,7 @@ return;
 
 }
 
+
 window.location.href =
 
 "index.html";
@@ -3138,7 +3166,7 @@ window.location.href =
 
 
 /* =====================================================
-   SECURITY
+   LOGIN SECURITY
 ===================================================== */
 
 document.addEventListener(
@@ -3170,7 +3198,9 @@ function(){
 
 checkLogin();
 
-});
+}
+
+);
 
 
 /* =====================================================
@@ -3178,6 +3208,7 @@ checkLogin();
 ===================================================== */
 
 loadPendingCall();
+
 
 </script>
 

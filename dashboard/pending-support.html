@@ -5,8 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Pending Support | LINK4 COMMUNICATION</title>
 
@@ -14,29 +13,29 @@ content="width=device-width, initial-scale=1.0">
 
 (function(){
 
-if(localStorage.getItem("loggedIn") !== "true"){
+    if(localStorage.getItem("loggedIn") !== "true"){
 
-window.location.replace("../index.html");
+        window.location.replace("../index.html");
 
-}
+    }
 
 })();
 
 </script>
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet"
+>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
 
 <style>
 
@@ -49,6 +48,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 margin:0;
 padding:0;
 box-sizing:border-box;
+
 font-family:'Poppins',sans-serif;
 
 }
@@ -63,14 +63,22 @@ body{
 min-height:100vh;
 
 background:
-linear-gradient(
-135deg,
-#004d33,
-#006A4E,
-#008f63
-);
 
-padding:25px;
+radial-gradient(
+circle at top left,
+rgba(229,57,53,.25),
+transparent 35%
+),
+
+radial-gradient(
+circle at bottom right,
+rgba(13,143,90,.25),
+transparent 35%
+),
+
+#005C3A;
+
+padding:20px;
 
 color:#222;
 
@@ -82,6 +90,8 @@ color:#222;
 ===================================================== */
 
 .container{
+
+width:100%;
 
 max-width:1500px;
 
@@ -96,7 +106,13 @@ margin:auto;
 
 .header{
 
-background:rgba(255,255,255,.97);
+background:
+
+linear-gradient(
+135deg,
+#ffffff,
+#f5fffa
+);
 
 border-radius:22px;
 
@@ -111,10 +127,14 @@ align-items:center;
 gap:20px;
 
 box-shadow:
+
 0 20px 50px
-rgba(0,0,0,.2);
+rgba(0,0,0,.20);
 
 margin-bottom:20px;
+
+border:1px solid
+rgba(255,255,255,.5);
 
 }
 
@@ -136,28 +156,30 @@ width:58px;
 
 height:58px;
 
-border-radius:16px;
+border-radius:17px;
 
 background:
+
 linear-gradient(
 135deg,
 #006A4E,
-#00a873
+#00A86B
 );
 
 color:white;
 
 display:flex;
 
-align-items:center;
-
 justify-content:center;
+
+align-items:center;
 
 font-size:25px;
 
 box-shadow:
+
 0 8px 20px
-rgba(0,106,78,.3);
+rgba(0,106,78,.25);
 
 }
 
@@ -193,15 +215,8 @@ gap:10px;
 }
 
 
-button{
-
-font-family:'Poppins',sans-serif;
-
-}
-
-
-.refresh-btn,
-.back-btn{
+.back-btn,
+.refresh-btn{
 
 border:none;
 
@@ -224,20 +239,49 @@ transition:.3s;
 }
 
 
-.refresh-btn{
+.back-btn{
 
-background:#e8f8f1;
+background:
 
-color:#006A4E;
+linear-gradient(
+135deg,
+#006A4E,
+#008F68
+);
+
+color:white;
+
+box-shadow:
+
+0 5px 15px
+rgba(0,106,78,.2);
 
 }
 
 
-.back-btn{
+.refresh-btn{
 
-background:#006A4E;
+background:#E8F8F1;
 
-color:white;
+color:#006A4E;
+
+border:1px solid
+#c9eee0;
+
+}
+
+
+.back-btn:hover{
+
+background:
+
+linear-gradient(
+135deg,
+#E53935,
+#C62828
+);
+
+transform:translateY(-2px);
 
 }
 
@@ -253,25 +297,19 @@ transform:translateY(-2px);
 }
 
 
-.back-btn:hover{
-
-background:#E53935;
-
-transform:translateY(-2px);
-
-}
-
-
 /* =====================================================
    USER BAR
 ===================================================== */
 
 .user-bar{
 
-background:rgba(255,255,255,.13);
+background:
 
-border:1px solid
-rgba(255,255,255,.2);
+rgba(255,255,255,.13);
+
+backdrop-filter:blur(10px);
+
+-webkit-backdrop-filter:blur(10px);
 
 color:white;
 
@@ -287,11 +325,10 @@ justify-content:space-between;
 
 align-items:center;
 
-gap:10px;
-
 font-size:14px;
 
-backdrop-filter:blur(10px);
+border:1px solid
+rgba(255,255,255,.15);
 
 }
 
@@ -301,156 +338,6 @@ backdrop-filter:blur(10px);
 font-weight:700;
 
 color:#fff;
-
-}
-
-
-/* =====================================================
-   TOOLBAR
-===================================================== */
-
-.toolbar{
-
-background:white;
-
-padding:18px;
-
-border-radius:18px;
-
-margin-bottom:20px;
-
-display:flex;
-
-align-items:center;
-
-gap:15px;
-
-box-shadow:
-0 12px 35px
-rgba(0,0,0,.15);
-
-}
-
-
-.search-box{
-
-position:relative;
-
-flex:1;
-
-}
-
-
-.search-box i{
-
-position:absolute;
-
-left:17px;
-
-top:15px;
-
-color:#006A4E;
-
-font-size:17px;
-
-}
-
-
-.search-box input{
-
-width:100%;
-
-height:48px;
-
-border:2px solid #e2e8e5;
-
-border-radius:12px;
-
-padding:
-0 45px 0 48px;
-
-font-size:14px;
-
-outline:none;
-
-transition:.3s;
-
-}
-
-
-.search-box input:focus{
-
-border-color:#006A4E;
-
-box-shadow:
-0 0 0 4px
-rgba(0,106,78,.08);
-
-}
-
-
-.clear-search{
-
-position:absolute;
-
-right:12px;
-
-top:10px;
-
-width:30px;
-
-height:30px;
-
-border:none;
-
-border-radius:50%;
-
-background:#f1f5f3;
-
-color:#777;
-
-cursor:pointer;
-
-display:none;
-
-}
-
-
-.clear-search:hover{
-
-background:#E53935;
-
-color:white;
-
-}
-
-
-.count-box{
-
-min-width:150px;
-
-height:48px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-background:
-linear-gradient(
-135deg,
-#006A4E,
-#008f63
-);
-
-color:white;
-
-border-radius:12px;
-
-font-size:14px;
-
-font-weight:600;
 
 }
 
@@ -485,101 +372,71 @@ display:block;
 
 .status.loading{
 
-background:#fff8e1;
+background:#FFF8E1;
 
-color:#8a6500;
+color:#8A6500;
+
+border-left:5px solid #F4B400;
 
 }
 
 
 .status.success{
 
-background:#e8f8f1;
+background:#E8F8F1;
 
 color:#006A4E;
+
+border-left:5px solid #00A86B;
 
 }
 
 
 .status.error{
 
-background:#fdecec;
+background:#FDECEC;
 
-color:#c62828;
+color:#C62828;
 
-}
-
-
-/* =====================================================
-   REQUEST GRID
-===================================================== */
-
-.request-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(
-auto-fill,
-minmax(480px,1fr)
-);
-
-gap:20px;
+border-left:5px solid #E53935;
 
 }
 
 
 /* =====================================================
-   REQUEST CARD
+   TABLE CONTAINER
 ===================================================== */
 
-.request-card{
+.table-container{
 
-background:white;
+background:
 
-border-radius:20px;
+rgba(255,255,255,.98);
+
+border-radius:22px;
+
+box-shadow:
+
+0 25px 60px
+rgba(0,0,0,.22);
 
 overflow:hidden;
 
-box-shadow:
-0 15px 40px
-rgba(0,0,0,.16);
-
 border:1px solid
-rgba(255,255,255,.5);
-
-transition:.3s;
-
-}
-
-
-.request-card:hover{
-
-transform:translateY(-4px);
-
-box-shadow:
-0 20px 50px
-rgba(0,0,0,.22);
+rgba(255,255,255,.7);
 
 }
 
 
 /* =====================================================
-   CARD TOP
+   TABLE HEADER
 ===================================================== */
 
-.card-top{
+.table-header{
 
-background:
-linear-gradient(
-135deg,
-#006A4E,
-#008f63
-);
+padding:20px 25px;
 
-padding:18px 20px;
-
-color:white;
+border-bottom:1px solid #e8eeee;
 
 display:flex;
 
@@ -587,132 +444,327 @@ justify-content:space-between;
 
 align-items:center;
 
-gap:10px;
-
-}
-
-
-.card-title{
-
-display:flex;
-
-align-items:center;
-
-gap:10px;
-
-}
-
-
-.card-icon{
-
-width:40px;
-
-height:40px;
-
-border-radius:10px;
+gap:20px;
 
 background:
-rgba(255,255,255,.18);
 
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-}
-
-
-.card-title h3{
-
-font-size:16px;
+linear-gradient(
+135deg,
+#ffffff,
+#f5fffa
+);
 
 }
 
 
-.pending-badge{
+.table-header h2{
 
-background:#fff;
+font-size:20px;
 
 color:#006A4E;
 
-padding:6px 11px;
+font-weight:700;
+
+}
+
+
+/* =====================================================
+   SEARCH BOX
+===================================================== */
+
+.search-area{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+
+.search-box{
+
+position:relative;
+
+}
+
+
+.search-box i{
+
+position:absolute;
+
+left:14px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+color:#006A4E;
+
+}
+
+
+.search-box input{
+
+width:280px;
+
+padding:11px 15px 11px 42px;
+
+border-radius:11px;
+
+border:2px solid #dcebe5;
+
+outline:none;
+
+font-size:13px;
+
+background:#fff;
+
+transition:.3s;
+
+}
+
+
+.search-box input:focus{
+
+border-color:#006A4E;
+
+box-shadow:
+
+0 0 0 4px
+rgba(0,106,78,.08);
+
+}
+
+
+.pending-count{
+
+background:
+
+linear-gradient(
+135deg,
+#2563EB,
+#4F46E5
+);
+
+color:white;
+
+padding:7px 13px;
 
 border-radius:20px;
 
-font-size:11px;
+font-size:12px;
 
 font-weight:700;
+
+box-shadow:
+
+0 5px 15px
+rgba(37,99,235,.2);
+
+white-space:nowrap;
 
 }
 
 
 /* =====================================================
-   CARD BODY
+   TABLE SCROLL
 ===================================================== */
 
-.card-body{
+.table-scroll{
 
-padding:20px;
+width:100%;
+
+overflow-x:auto;
+
+padding:5px;
 
 }
 
 
 /* =====================================================
-   INFO GRID
+   TABLE
 ===================================================== */
 
-.info-grid{
+table{
 
-display:grid;
+width:100%;
 
-grid-template-columns:
-repeat(2,1fr);
+border-collapse:separate;
 
-gap:12px;
+border-spacing:0 8px;
 
-margin-bottom:18px;
-
-}
-
-
-.info-box{
-
-background:#f7faf9;
-
-border:1px solid #e6eeea;
-
-border-radius:12px;
-
-padding:12px;
+min-width:1150px;
 
 }
 
 
-.info-label{
+/* =====================================================
+   TABLE HEAD
+===================================================== */
 
-font-size:10px;
+thead{
 
-font-weight:700;
+background:
 
-text-transform:uppercase;
+linear-gradient(
+135deg,
+#006A4E,
+#008F68
+);
 
-color:#89938e;
-
-margin-bottom:5px;
+color:white;
 
 }
 
 
-.info-value{
+thead th{
+
+padding:15px 14px;
 
 font-size:13px;
 
 font-weight:600;
 
-color:#26332e;
+text-align:left;
 
-word-break:break-word;
+white-space:nowrap;
+
+}
+
+
+thead th:first-child{
+
+border-radius:12px 0 0 12px;
+
+}
+
+
+thead th:last-child{
+
+border-radius:0 12px 12px 0;
+
+}
+
+
+/* =====================================================
+   TABLE BODY
+===================================================== */
+
+tbody tr{
+
+background:white;
+
+box-shadow:
+
+0 3px 15px
+rgba(0,0,0,.06);
+
+transition:.3s;
+
+}
+
+
+tbody tr:hover{
+
+transform:translateY(-2px);
+
+box-shadow:
+
+0 8px 25px
+rgba(0,106,78,.13);
+
+}
+
+
+td{
+
+padding:15px 12px;
+
+font-size:13px;
+
+vertical-align:middle;
+
+border-top:1px solid #edf2f0;
+
+border-bottom:1px solid #edf2f0;
+
+}
+
+
+td:first-child{
+
+border-left:1px solid #edf2f0;
+
+border-radius:12px 0 0 12px;
+
+}
+
+
+td:last-child{
+
+border-right:1px solid #edf2f0;
+
+border-radius:0 12px 12px 0;
+
+}
+
+
+/* =====================================================
+   CUSTOMER NUMBER
+===================================================== */
+
+.customer-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:7px;
+
+background:#EEF6FF;
+
+color:#2563EB;
+
+border:1px solid #D8E8FF;
+
+padding:8px 11px;
+
+border-radius:9px;
+
+font-weight:600;
+
+white-space:nowrap;
+
+}
+
+
+/* =====================================================
+   DATE
+===================================================== */
+
+.date-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:7px;
+
+background:#F5F0FF;
+
+color:#7C3AED;
+
+border:1px solid #E8DDFF;
+
+padding:8px 11px;
+
+border-radius:9px;
+
+font-weight:600;
+
+white-space:nowrap;
 
 }
 
@@ -723,166 +775,193 @@ word-break:break-word;
 
 .problem-box{
 
+min-width:190px;
+
+max-width:300px;
+
 background:
+
 linear-gradient(
 135deg,
-#fff8e1,
-#fffdf5
+#FFF8F8,
+#FFFDFD
 );
 
-border-left:4px solid #f2b705;
+border-left:4px solid #E53935;
 
-border-radius:10px;
+padding:10px 12px;
 
-padding:14px;
+border-radius:9px;
 
-margin-bottom:18px;
-
-}
-
-
-.problem-label{
-
-font-size:11px;
-
-font-weight:700;
-
-color:#9a7200;
-
-margin-bottom:5px;
-
-}
-
-
-.problem-text{
-
-font-size:13px;
-
-line-height:1.7;
-
-color:#4b4b4b;
-
-}
-
-
-/* =====================================================
-   FORM AREA
-===================================================== */
-
-.form-title{
-
-font-size:14px;
-
-font-weight:700;
-
-color:#006A4E;
-
-margin-bottom:12px;
-
-display:flex;
-
-align-items:center;
-
-gap:7px;
-
-}
-
-
-.input-group{
-
-margin-bottom:14px;
-
-}
-
-
-.input-group label{
-
-display:block;
-
-font-size:12px;
-
-font-weight:600;
-
-color:#555;
-
-margin-bottom:7px;
-
-}
-
-
-.input-group textarea{
-
-width:100%;
-
-min-height:85px;
-
-resize:vertical;
-
-padding:12px 14px;
-
-border:2px solid #e0e7e3;
-
-border-radius:11px;
-
-outline:none;
-
-font-size:13px;
+color:#444;
 
 line-height:1.6;
 
-transition:.3s;
-
-background:#fff;
-
 }
 
 
-.input-group textarea:focus{
+/* =====================================================
+   REF
+===================================================== */
 
-border-color:#006A4E;
+.ref-badge{
 
-box-shadow:
-0 0 0 4px
-rgba(0,106,78,.08);
+display:inline-flex;
 
-}
+align-items:center;
 
+gap:6px;
 
-.input-group textarea::placeholder{
+background:#FFF7E6;
 
-color:#aaa;
+color:#C77B00;
+
+border:1px solid #FFE5B3;
+
+padding:8px 11px;
+
+border-radius:9px;
+
+font-weight:600;
 
 }
 
 
 /* =====================================================
-   SUBMIT
+   SUPPORT INPUT
+===================================================== */
+
+.support-input{
+
+width:100%;
+
+min-width:190px;
+
+min-height:75px;
+
+border:2px solid #B7E6D1;
+
+border-radius:11px;
+
+padding:11px 12px;
+
+font-size:13px;
+
+outline:none;
+
+resize:vertical;
+
+background:#F3FFF9;
+
+color:#155B42;
+
+transition:.3s;
+
+}
+
+
+.support-input::placeholder{
+
+color:#77A996;
+
+}
+
+
+.support-input:focus{
+
+border-color:#00A86B;
+
+background:white;
+
+box-shadow:
+
+0 0 0 4px
+rgba(0,168,107,.08);
+
+}
+
+
+/* =====================================================
+   SUPPORT WORK INPUT
+===================================================== */
+
+.work-input{
+
+width:100%;
+
+min-width:190px;
+
+min-height:75px;
+
+border:2px solid #BFD7FF;
+
+border-radius:11px;
+
+padding:11px 12px;
+
+font-size:13px;
+
+outline:none;
+
+resize:vertical;
+
+background:#F5F9FF;
+
+color:#234A7C;
+
+transition:.3s;
+
+}
+
+
+.work-input::placeholder{
+
+color:#7899C5;
+
+}
+
+
+.work-input:focus{
+
+border-color:#2563EB;
+
+background:white;
+
+box-shadow:
+
+0 0 0 4px
+rgba(37,99,235,.08);
+
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
 ===================================================== */
 
 .submit-btn{
 
-width:100%;
-
-height:48px;
-
 border:none;
 
-border-radius:11px;
-
 background:
+
 linear-gradient(
 135deg,
 #006A4E,
-#008f63
+#00A86B
 );
 
 color:white;
 
-font-size:14px;
+padding:11px 17px;
 
-font-weight:700;
+border-radius:10px;
 
 cursor:pointer;
+
+font-weight:600;
+
+font-size:13px;
 
 display:flex;
 
@@ -890,9 +969,16 @@ align-items:center;
 
 justify-content:center;
 
-gap:8px;
+gap:7px;
+
+white-space:nowrap;
 
 transition:.3s;
+
+box-shadow:
+
+0 6px 15px
+rgba(0,106,78,.18);
 
 }
 
@@ -900,13 +986,19 @@ transition:.3s;
 .submit-btn:hover{
 
 background:
+
 linear-gradient(
 135deg,
 #E53935,
-#c62828
+#C62828
 );
 
 transform:translateY(-2px);
+
+box-shadow:
+
+0 7px 18px
+rgba(229,57,53,.22);
 
 }
 
@@ -923,24 +1015,16 @@ transform:none;
 
 
 /* =====================================================
-   EMPTY
+   EMPTY STATE
 ===================================================== */
 
 .empty-state{
 
 display:none;
 
-background:white;
-
-border-radius:20px;
-
 padding:70px 20px;
 
 text-align:center;
-
-box-shadow:
-0 15px 40px
-rgba(0,0,0,.15);
 
 }
 
@@ -954,47 +1038,56 @@ display:block;
 
 .empty-icon{
 
-width:90px;
+width:85px;
 
-height:90px;
-
-margin:auto;
-
-margin-bottom:20px;
+height:85px;
 
 border-radius:50%;
 
-background:#e8f8f1;
+background:
+
+linear-gradient(
+135deg,
+#E8F8F1,
+#D7F5E9
+);
 
 color:#006A4E;
 
 display:flex;
 
-align-items:center;
-
 justify-content:center;
 
-font-size:38px;
+align-items:center;
+
+font-size:35px;
+
+margin:0 auto 20px;
+
+box-shadow:
+
+0 10px 25px
+rgba(0,106,78,.12);
 
 }
 
 
 .empty-state h3{
 
-font-size:21px;
+font-size:20px;
 
 margin-bottom:8px;
 
-color:#222;
+color:#333;
 
 }
 
 
 .empty-state p{
 
-font-size:14px;
-
 color:#777;
+
+font-size:14px;
 
 }
 
@@ -1005,63 +1098,18 @@ color:#777;
 
 .loading-state{
 
-background:white;
-
-border-radius:20px;
-
 padding:70px 20px;
 
 text-align:center;
-
-box-shadow:
-0 15px 40px
-rgba(0,0,0,.15);
 
 }
 
 
 .spinner{
 
-font-size:38px;
+font-size:35px;
 
 color:#006A4E;
-
-margin-bottom:15px;
-
-}
-
-
-/* =====================================================
-   NO SEARCH RESULT
-===================================================== */
-
-.no-result{
-
-display:none;
-
-background:white;
-
-border-radius:20px;
-
-padding:50px 20px;
-
-text-align:center;
-
-}
-
-
-.no-result.show{
-
-display:block;
-
-}
-
-
-.no-result i{
-
-font-size:40px;
-
-color:#999;
 
 margin-bottom:15px;
 
@@ -1074,25 +1122,6 @@ margin-bottom:15px;
 
 @media(max-width:900px){
 
-.request-grid{
-
-grid-template-columns:
-1fr;
-
-}
-
-}
-
-
-@media(max-width:700px){
-
-body{
-
-padding:12px;
-
-}
-
-
 .header{
 
 flex-direction:column;
@@ -1104,17 +1133,105 @@ align-items:stretch;
 
 .header-right{
 
-display:grid;
-
-grid-template-columns:1fr 1fr;
+justify-content:flex-end;
 
 }
 
 
-.refresh-btn,
-.back-btn{
+.table-header{
+
+flex-direction:column;
+
+align-items:stretch;
+
+}
+
+
+.search-area{
+
+width:100%;
+
+}
+
+
+.search-box{
+
+width:100%;
+
+}
+
+
+.search-box input{
+
+width:100%;
+
+}
+
+
+.pending-count{
+
+align-self:flex-start;
+
+}
+
+
+}
+
+
+@media(max-width:600px){
+
+body{
+
+padding:10px;
+
+}
+
+
+.header{
+
+padding:17px;
+
+}
+
+
+.header-left{
+
+align-items:flex-start;
+
+}
+
+
+.header-title h1{
+
+font-size:19px;
+
+}
+
+
+.header-title p{
+
+font-size:11px;
+
+}
+
+
+.header-right{
+
+width:100%;
+
+}
+
+
+.back-btn,
+.refresh-btn{
+
+flex:1;
 
 justify-content:center;
+
+padding:10px;
+
+font-size:12px;
 
 }
 
@@ -1125,56 +1242,23 @@ flex-direction:column;
 
 align-items:flex-start;
 
+gap:8px;
+
 font-size:12px;
 
 }
 
 
-.toolbar{
+.table-header{
 
-flex-direction:column;
-
-align-items:stretch;
+padding:17px;
 
 }
 
 
-.count-box{
+.table-header h2{
 
-width:100%;
-
-}
-
-
-}
-
-
-@media(max-width:520px){
-
-.info-grid{
-
-grid-template-columns:1fr;
-
-}
-
-
-.card-top{
-
-padding:15px;
-
-}
-
-
-.card-body{
-
-padding:15px;
-
-}
-
-
-.header-title h1{
-
-font-size:20px;
+font-size:17px;
 
 }
 
@@ -1197,7 +1281,9 @@ font-size:20px;
 
 <div class="header">
 
+
 <div class="header-left">
+
 
 <div class="logo">
 
@@ -1205,20 +1291,29 @@ font-size:20px;
 
 </div>
 
+
 <div class="header-title">
 
-<h1>Pending Support</h1>
+<h1>
+
+Pending Support
+
+</h1>
 
 <p>
-Manage and process customer support requests
+
+Manage pending customer support requests
+
 </p>
 
 </div>
+
 
 </div>
 
 
 <div class="header-right">
+
 
 <button
 class="refresh-btn"
@@ -1245,7 +1340,9 @@ Dashboard
 
 </button>
 
+
 </div>
+
 
 </div>
 
@@ -1256,11 +1353,10 @@ Dashboard
 
 <div class="user-bar">
 
+
 <div>
 
 <i class="fa-solid fa-user"></i>
-
-&nbsp;
 
 Logged in as:
 
@@ -1276,13 +1372,12 @@ User
 
 <div>
 
-<i class="fa-solid fa-shield-halved"></i>
+<i class="fa-solid fa-lock"></i>
 
-&nbsp;
-
-Customer information is read-only
+Read-only customer information
 
 </div>
+
 
 </div>
 
@@ -1298,10 +1393,29 @@ id="status"
 
 
 <!-- =====================================================
-     SEARCH TOOLBAR
+     TABLE CONTAINER
 ===================================================== -->
 
-<div class="toolbar">
+<div class="table-container">
+
+
+<!-- =====================================================
+     TABLE HEADER
+===================================================== -->
+
+<div class="table-header">
+
+
+<h2>
+
+<i class="fa-solid fa-list-check"></i>
+
+&nbsp; Pending Support Requests
+
+</h2>
+
+
+<div class="search-area">
 
 
 <div class="search-box">
@@ -1311,29 +1425,22 @@ id="status"
 <input
 type="text"
 id="searchInput"
-placeholder="Search by Customer Number, Problem or Reference..."
+placeholder="Search Customer ID, Problem, REF..."
 autocomplete="off"
 >
-
-<button
-class="clear-search"
-id="clearSearch"
-type="button"
->
-
-<i class="fa-solid fa-xmark"></i>
-
-</button>
 
 </div>
 
 
 <div
-class="count-box"
+class="pending-count"
 id="pendingCount"
 >
 
 0 Pending
+
+</div>
+
 
 </div>
 
@@ -1357,39 +1464,9 @@ id="loadingState"
 </div>
 
 <p>
+
 Loading pending support requests...
-</p>
 
-</div>
-
-
-<!-- =====================================================
-     REQUEST GRID
-===================================================== -->
-
-<div
-class="request-grid"
-id="requestGrid"
-style="display:none;"
->
-</div>
-
-
-<!-- =====================================================
-     NO SEARCH RESULT
-===================================================== -->
-
-<div
-class="no-result"
-id="noResult"
->
-
-<i class="fa-solid fa-magnifying-glass"></i>
-
-<h3>No Matching Request</h3>
-
-<p>
-No pending support request matches your search.
 </p>
 
 </div>
@@ -1410,13 +1487,121 @@ id="emptyState"
 
 </div>
 
+
 <h3>
+
 No Pending Support
+
 </h3>
 
+
 <p>
+
 There are currently no pending support requests.
+
 </p>
+
+
+</div>
+
+
+<!-- =====================================================
+     TABLE
+===================================================== -->
+
+<div
+class="table-scroll"
+id="tableWrapper"
+style="display:none;"
+>
+
+
+<table>
+
+
+<thead>
+
+<tr>
+
+<th>
+
+<i class="fa-solid fa-id-card"></i>
+
+Customer Number
+
+</th>
+
+
+<th>
+
+<i class="fa-solid fa-calendar"></i>
+
+Date
+
+</th>
+
+
+<th>
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+Problem
+
+</th>
+
+
+<th>
+
+<i class="fa-solid fa-link"></i>
+
+REF
+
+</th>
+
+
+<th>
+
+<i class="fa-solid fa-headset"></i>
+
+Support
+
+</th>
+
+
+<th>
+
+<i class="fa-solid fa-screwdriver-wrench"></i>
+
+Support Work
+
+</th>
+
+
+<th>
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Action
+
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody
+id="supportTableBody"
+>
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
 
 </div>
 
@@ -1426,118 +1611,109 @@ There are currently no pending support requests.
 
 <script>
 
-
 /* =====================================================
    API URL
 ===================================================== */
 
-const API_URL =
+const PENDING_SUPPORT_API_URL =
 
 "https://script.google.com/macros/s/AKfycbw1NiYF5qNEFGVXdIWZ3I3lpJXEX57uBM0M06oqVVJcRUiuCTAf8NkKycGWtyIhhxWh4g/exec";
 
 
 /* =====================================================
-   ELEMENTS
+   GET ELEMENTS
 ===================================================== */
 
-const requestGrid =
-document.getElementById(
-"requestGrid"
-);
+const tableBody =
+
+document.getElementById("supportTableBody");
+
 
 const loadingState =
-document.getElementById(
-"loadingState"
-);
+
+document.getElementById("loadingState");
+
 
 const emptyState =
-document.getElementById(
-"emptyState"
-);
 
-const noResult =
-document.getElementById(
-"noResult"
-);
+document.getElementById("emptyState");
+
+
+const tableWrapper =
+
+document.getElementById("tableWrapper");
+
 
 const pendingCount =
-document.getElementById(
-"pendingCount"
-);
+
+document.getElementById("pendingCount");
+
 
 const statusBox =
-document.getElementById(
-"status"
-);
 
-const searchInput =
-document.getElementById(
-"searchInput"
-);
+document.getElementById("status");
 
-const clearSearch =
-document.getElementById(
-"clearSearch"
-);
 
 const refreshBtn =
-document.getElementById(
-"refreshBtn"
-);
+
+document.getElementById("refreshBtn");
+
 
 const backBtn =
-document.getElementById(
-"backBtn"
-);
+
+document.getElementById("backBtn");
+
 
 const userName =
-document.getElementById(
-"userName"
-);
+
+document.getElementById("userName");
+
+
+const searchInput =
+
+document.getElementById("searchInput");
 
 
 /* =====================================================
-   USER
+   USER NAME
 ===================================================== */
 
 const savedName =
+
 localStorage.getItem("name");
 
+
 const savedUsername =
+
 localStorage.getItem("username");
 
 
 if(savedName){
 
-userName.textContent =
-savedName;
+userName.textContent = savedName;
 
 }
 
 else if(savedUsername){
 
-userName.textContent =
-savedUsername;
+userName.textContent = savedUsername;
 
 }
 
 
 /* =====================================================
-   LOGIN
+   LOGIN CHECK
 ===================================================== */
 
 function checkLogin(){
 
 if(
-localStorage.getItem(
-"loggedIn"
-)
-!== "true"
+
+localStorage.getItem("loggedIn") !== "true"
+
 ){
 
-window.location.replace(
-"../index.html"
-);
+window.location.replace("../index.html");
 
 return false;
 
@@ -1549,40 +1725,115 @@ return true;
 
 
 /* =====================================================
-   STATUS
+   SHOW STATUS
 ===================================================== */
 
-function showStatus(
-message,
-type
-){
+function showStatus(message,type){
 
-statusBox.textContent =
-message;
+statusBox.textContent = message;
 
 statusBox.className =
+
 "status show " + type;
 
 }
 
 
+/* =====================================================
+   HIDE STATUS
+===================================================== */
+
 function hideStatus(){
 
-statusBox.className =
-"status";
+statusBox.className = "status";
 
 }
 
 
 /* =====================================================
-   DATA STORAGE
+   SEARCH
 ===================================================== */
 
-let allRequests = [];
+searchInput.addEventListener(
+
+"input",
+
+function(){
+
+const searchValue =
+
+searchInput.value
+
+.toLowerCase()
+
+.trim();
+
+
+const rows =
+
+tableBody.querySelectorAll("tr");
+
+
+let visibleCount = 0;
+
+
+rows.forEach(function(row){
+
+const text =
+
+row.textContent
+
+.toLowerCase();
+
+
+if(
+
+text.includes(searchValue)
+
+){
+
+row.style.display = "";
+
+visibleCount++;
+
+}
+
+else{
+
+row.style.display = "none";
+
+}
+
+});
+
+
+if(searchValue){
+
+pendingCount.textContent =
+
+visibleCount +
+
+" Found";
+
+}
+
+else{
+
+pendingCount.textContent =
+
+rows.length +
+
+" Pending";
+
+}
+
+}
+
+);
 
 
 /* =====================================================
-   LOAD SUPPORT
+   LOAD DATA
 ===================================================== */
 
 async function loadPendingSupport(){
@@ -1595,42 +1846,42 @@ return;
 }
 
 
-loadingState.style.display =
-"block";
+loadingState.style.display = "block";
 
-requestGrid.style.display =
-"none";
+emptyState.classList.remove("show");
 
-emptyState.classList.remove(
-"show"
-);
+tableWrapper.style.display = "none";
 
-noResult.classList.remove(
-"show"
-);
+tableBody.innerHTML = "";
+
+pendingCount.textContent = "Loading...";
 
 hideStatus();
 
-pendingCount.textContent =
-"Loading...";
-
 
 try{
+
+
+const url =
+
+PENDING_SUPPORT_API_URL +
+
+"?action=pendingSupport";
 
 
 const response =
 
 await fetch(
 
-API_URL +
-"?action=pendingSupport&_=" +
-Date.now(),
+url,
 
 {
 
 method:"GET",
 
-cache:"no-store"
+cache:"no-store",
+
+redirect:"follow"
 
 }
 
@@ -1640,295 +1891,168 @@ cache:"no-store"
 if(!response.ok){
 
 throw new Error(
+
 "Server Error: " +
+
 response.status
+
 );
 
 }
 
 
 const result =
+
 await response.json();
 
 
-if(
-result.success !== true
-){
+loadingState.style.display = "none";
+
+
+if(result.success !== true){
 
 throw new Error(
 
 result.message ||
 
-"Unable to load pending support."
+"Unable to load data."
 
 );
 
 }
 
 
-allRequests =
+const data =
 
-Array.isArray(
-result.data
-)
+Array.isArray(result.data)
 
-?
+? result.data
 
-result.data
-
-:
-
-[];
+: [];
 
 
-loadingState.style.display =
-"none";
+if(data.length === 0){
 
+emptyState.classList.add("show");
 
-if(
-allRequests.length === 0
-){
-
-emptyState.classList.add(
-"show"
-);
-
-pendingCount.textContent =
-"0 Pending";
+pendingCount.textContent = "0 Pending";
 
 return;
 
 }
 
 
-renderRequests(
-allRequests
-);
-
-hideStatus();
-
-
-}catch(error){
-
-
-console.error(
-"Load Error:",
-error
-);
-
-
-loadingState.style.display =
-"none";
-
+tableWrapper.style.display = "block";
 
 pendingCount.textContent =
-"0 Pending";
 
-
-showStatus(
-
-error.message ||
-
-"Unable to load pending support requests.",
-
-"error"
-
-);
-
-}
-
-}
-
-
-/* =====================================================
-   RENDER REQUESTS
-===================================================== */
-
-function renderRequests(
-data
-){
-
-
-requestGrid.innerHTML =
-"";
-
-
-const searchText =
-
-searchInput.value
-.trim()
-.toLowerCase();
-
-
-const filtered =
-
-data.filter(
-
-function(item){
-
-const customerId =
-
-String(
-
-item.customerId ||
-
-item.ip ||
-
-item.IP ||
-
-""
-
-)
-
-.toLowerCase();
-
-
-const problem =
-
-String(
-
-item.problem ||
-
-item.Problem ||
-
-""
-
-)
-
-.toLowerCase();
-
-
-const reference =
-
-String(
-
-item.reference ||
-
-item.ref ||
-
-item.REF ||
-
-""
-
-)
-
-.toLowerCase();
-
-
-return (
-
-customerId.includes(
-searchText
-)
-
-||
-
-problem.includes(
-searchText
-)
-
-||
-
-reference.includes(
-searchText
-)
-
-);
-
-}
-
-);
-
-
-pendingCount.textContent =
-
-filtered.length +
+data.length +
 
 " Pending";
 
 
-clearSearch.style.display =
-
-searchText
-
-?
-
-"block"
-
-:
-
-"none";
-
-
-if(
-filtered.length === 0
-){
-
-requestGrid.style.display =
-"none";
-
-noResult.classList.add(
-"show"
-);
-
-return;
-
-}
-
-
-noResult.classList.remove(
-"show"
-);
-
-requestGrid.style.display =
-"grid";
-
-
-filtered.forEach(
-
-function(item){
-
-createRequestCard(
-item
-);
-
-}
-
-);
-
-}
-
-
 /* =====================================================
-   CREATE CARD
+   CREATE ROWS
 ===================================================== */
 
-function createRequestCard(
-item
-){
+data.forEach(function(item){
 
 
-const customerId =
+const tr =
 
-item.customerId ||
+document.createElement("tr");
+
+
+/* CUSTOMER NUMBER */
+
+const tdIP =
+
+document.createElement("td");
+
+
+const customerBadge =
+
+document.createElement("div");
+
+
+customerBadge.className =
+
+"customer-badge";
+
+
+customerBadge.innerHTML =
+
+'<i class="fa-solid fa-network-wired"></i> ' +
+
+(
 
 item.ip ||
 
 item.IP ||
 
-"";
+item.customerNumber ||
+
+""
+
+);
 
 
-const date =
+tdIP.appendChild(customerBadge);
+
+
+/* DATE */
+
+const tdDate =
+
+document.createElement("td");
+
+
+const dateBadge =
+
+document.createElement("div");
+
+
+dateBadge.className =
+
+"date-badge";
+
+
+dateBadge.innerHTML =
+
+'<i class="fa-solid fa-calendar-days"></i> ' +
+
+(
 
 item.date ||
 
 item.Date ||
 
-"";
+""
+
+);
 
 
-const problem =
+tdDate.appendChild(dateBadge);
+
+
+/* PROBLEM */
+
+const tdProblem =
+
+document.createElement("td");
+
+
+const problemBox =
+
+document.createElement("div");
+
+
+problemBox.className =
+
+"problem-box";
+
+
+problemBox.textContent =
 
 item.problem ||
 
@@ -1937,275 +2061,136 @@ item.Problem ||
 "";
 
 
-const reference =
+tdProblem.appendChild(problemBox);
 
-item.reference ||
+
+/* REF */
+
+const tdRef =
+
+document.createElement("td");
+
+
+const refBadge =
+
+document.createElement("div");
+
+
+refBadge.className =
+
+"ref-badge";
+
+
+refBadge.innerHTML =
+
+'<i class="fa-solid fa-link"></i> ' +
+
+(
 
 item.ref ||
 
 item.REF ||
 
-"";
+""
 
-
-const card =
-
-document.createElement(
-"div"
 );
 
-card.className =
-"request-card";
 
+tdRef.appendChild(refBadge);
 
-card.innerHTML = `
 
-<div class="card-top">
+/* SUPPORT */
 
-<div class="card-title">
+const tdSupport =
 
-<div class="card-icon">
-
-<i class="fa-solid fa-headset"></i>
-
-</div>
-
-<div>
-
-<h3>Support Request</h3>
-
-</div>
-
-</div>
-
-<div class="pending-badge">
-
-PENDING
-
-</div>
-
-</div>
-
-
-<div class="card-body">
-
-
-<div class="info-grid">
-
-
-<div class="info-box">
-
-<div class="info-label">
-
-Customer Number
-
-</div>
-
-<div class="info-value">
-
-<i class="fa-solid fa-network-wired"></i>
-
-&nbsp;
-
-${escapeHTML(customerId)}
-
-</div>
-
-</div>
-
-
-<div class="info-box">
-
-<div class="info-label">
-
-Date
-
-</div>
-
-<div class="info-value">
-
-<i class="fa-regular fa-calendar"></i>
-
-&nbsp;
-
-${escapeHTML(date)}
-
-</div>
-
-</div>
-
-
-<div class="info-box">
-
-<div class="info-label">
-
-Reference
-
-</div>
-
-<div class="info-value">
-
-<i class="fa-solid fa-user-check"></i>
-
-&nbsp;
-
-${escapeHTML(reference)}
-
-</div>
-
-</div>
-
-
-</div>
-
-
-<div class="problem-box">
-
-<div class="problem-label">
-
-<i class="fa-solid fa-triangle-exclamation"></i>
-
-CUSTOMER PROBLEM
-
-</div>
-
-<div class="problem-text">
-
-${escapeHTML(problem)}
-
-</div>
-
-</div>
-
-
-<div class="form-title">
-
-<i class="fa-solid fa-screwdriver-wrench"></i>
-
-Support Information
-
-</div>
-
-
-<div class="input-group">
-
-<label>
-
-Support
-
-</label>
-
-<textarea
-class="support-input"
-placeholder="Write support information..."
-></textarea>
-
-</div>
-
-
-<div class="input-group">
-
-<label>
-
-Support Work
-
-</label>
-
-<textarea
-class="work-input"
-placeholder="Write what work has been completed..."
-></textarea>
-
-</div>
-
-
-<button
-class="submit-btn"
-type="button"
->
-
-<i class="fa-solid fa-paper-plane"></i>
-
-Submit Support
-
-</button>
-
-
-</div>
-
-`;
+document.createElement("td");
 
 
 const supportInput =
 
-card.querySelector(
-".support-input"
+document.createElement("textarea");
+
+
+supportInput.className =
+
+"support-input";
+
+
+supportInput.placeholder =
+
+"Write support information...";
+
+
+tdSupport.appendChild(
+
+supportInput
+
 );
+
+
+/* SUPPORT WORK */
+
+const tdWork =
+
+document.createElement("td");
 
 
 const workInput =
 
-card.querySelector(
-".work-input"
+document.createElement("textarea");
+
+
+workInput.className =
+
+"work-input";
+
+
+workInput.placeholder =
+
+"Write support work details...";
+
+
+tdWork.appendChild(
+
+workInput
+
 );
+
+
+/* ACTION */
+
+const tdAction =
+
+document.createElement("td");
 
 
 const submitBtn =
 
-card.querySelector(
-".submit-btn"
-);
+document.createElement("button");
 
 
-submitBtn.addEventListener(
+submitBtn.className =
 
-"click",
-
-function(){
-
-submitSupport(
-
-item,
-
-supportInput,
-
-workInput,
-
-submitBtn,
-
-card
-
-);
-
-}
-
-);
+"submit-btn";
 
 
-requestGrid.appendChild(
-card
-);
+submitBtn.type = "button";
 
-}
+
+submitBtn.innerHTML =
+
+'<i class="fa-solid fa-paper-plane"></i> Submit';
 
 
 /* =====================================================
    SUBMIT SUPPORT
 ===================================================== */
 
-async function submitSupport(
+submitBtn.addEventListener(
 
-item,
+"click",
 
-supportInput,
-
-workInput,
-
-submitBtn,
-
-card
-
-){
+async function(){
 
 
 if(!checkLogin()){
@@ -2217,14 +2202,12 @@ return;
 
 const support =
 
-supportInput.value
-.trim();
+supportInput.value.trim();
 
 
 const supportWork =
 
-workInput.value
-.trim();
+workInput.value.trim();
 
 
 if(!support){
@@ -2261,48 +2244,7 @@ return;
 }
 
 
-const customerId =
-
-item.customerId ||
-
-item.ip ||
-
-item.IP ||
-
-"";
-
-
-const date =
-
-item.date ||
-
-item.Date ||
-
-"";
-
-
-const problem =
-
-item.problem ||
-
-item.Problem ||
-
-"";
-
-
-const reference =
-
-item.reference ||
-
-item.ref ||
-
-item.REF ||
-
-"";
-
-
-submitBtn.disabled =
-true;
+submitBtn.disabled = true;
 
 
 submitBtn.innerHTML =
@@ -2316,41 +2258,62 @@ try{
 const payload = {
 
 action:
+
 "submitSupport",
 
-customerId:
-customerId,
-
 ip:
-customerId,
+
+item.ip ||
+
+item.IP ||
+
+item.customerNumber ||
+
+"",
 
 date:
-date,
+
+item.date ||
+
+item.Date ||
+
+"",
 
 problem:
-problem,
 
-reference:
-reference,
+item.problem ||
+
+item.Problem ||
+
+"",
 
 ref:
-reference,
+
+item.ref ||
+
+item.REF ||
+
+"",
 
 support:
+
 support,
 
 supportWork:
+
 supportWork,
 
 username:
-localStorage.getItem(
-"username"
-) || "",
+
+localStorage.getItem("username") ||
+
+"",
 
 name:
-localStorage.getItem(
-"name"
-) || ""
+
+localStorage.getItem("name") ||
+
+""
 
 };
 
@@ -2359,7 +2322,7 @@ const response =
 
 await fetch(
 
-API_URL,
+PENDING_SUPPORT_API_URL,
 
 {
 
@@ -2368,15 +2331,14 @@ method:"POST",
 headers:{
 
 "Content-Type":
+
 "text/plain;charset=utf-8"
 
 },
 
 body:
 
-JSON.stringify(
-payload
-)
+JSON.stringify(payload)
 
 }
 
@@ -2384,12 +2346,11 @@ payload
 
 
 const result =
+
 await response.json();
 
 
-if(
-result.success !== true
-){
+if(result.success !== true){
 
 throw new Error(
 
@@ -2404,85 +2365,45 @@ result.message ||
 
 showStatus(
 
-"Support completed successfully. Request moved to Call.",
+"Support submitted successfully.",
 
 "success"
 
 );
 
 
-card.style.transition =
-".4s";
-
-card.style.opacity =
-"0";
-
-card.style.transform =
-"scale(.95)";
+tr.remove();
 
 
-setTimeout(
+const remaining =
 
-function(){
+tableBody.querySelectorAll("tr").length;
 
-allRequests =
-
-allRequests.filter(
-
-function(request){
-
-const id =
-
-request.customerId ||
-
-request.ip ||
-
-request.IP ||
-
-"";
-
-
-return String(id)
-!== String(customerId);
-
-}
-
-);
-
-
-renderRequests(
-allRequests
-);
-
-
-if(
-allRequests.length === 0
-){
-
-requestGrid.style.display =
-"none";
-
-noResult.classList.remove(
-"show"
-);
-
-emptyState.classList.add(
-"show"
-);
 
 pendingCount.textContent =
+
+remaining +
+
+" Pending";
+
+
+if(remaining === 0){
+
+tableWrapper.style.display = "none";
+
+emptyState.classList.add("show");
+
+pendingCount.textContent =
+
 "0 Pending";
 
 }
 
-},
 
-400
-
-);
+}
 
 
-}catch(error){
+catch(error){
 
 
 console.error(
@@ -2498,79 +2419,22 @@ showStatus(
 
 error.message ||
 
-"Unable to submit support.",
+"Unable to save support information.",
 
 "error"
 
 );
 
 
-submitBtn.disabled =
-false;
+submitBtn.disabled = false;
 
 
 submitBtn.innerHTML =
 
-'<i class="fa-solid fa-paper-plane"></i> Submit Support';
+'<i class="fa-solid fa-paper-plane"></i> Submit';
+
 
 }
-
-}
-
-
-/* =====================================================
-   ESCAPE HTML
-===================================================== */
-
-function escapeHTML(
-value
-){
-
-return String(
-value || ""
-)
-
-.replace(
-/&/g,
-"&amp;"
-)
-
-.replace(
-/</g,
-"&lt;"
-)
-
-.replace(
-/>/g,
-"&gt;"
-)
-
-.replace(
-/"/g,
-"&quot;"
-)
-
-.replace(
-/'/g,
-"&#039;"
-);
-
-}
-
-
-/* =====================================================
-   SEARCH
-===================================================== */
-
-searchInput.addEventListener(
-
-"input",
-
-function(){
-
-renderRequests(
-allRequests
-);
 
 }
 
@@ -2578,27 +2442,74 @@ allRequests
 
 
 /* =====================================================
-   CLEAR SEARCH
+   ADD ROW
 ===================================================== */
 
-clearSearch.addEventListener(
+tdAction.appendChild(submitBtn);
 
-"click",
 
-function(){
+tr.appendChild(tdIP);
 
-searchInput.value =
-"";
+tr.appendChild(tdDate);
 
-renderRequests(
-allRequests
-);
+tr.appendChild(tdProblem);
 
-searchInput.focus();
+tr.appendChild(tdRef);
+
+tr.appendChild(tdSupport);
+
+tr.appendChild(tdWork);
+
+tr.appendChild(tdAction);
+
+
+tableBody.appendChild(tr);
+
+
+});
+
+
+hideStatus();
+
 
 }
 
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+catch(error){
+
+
+console.error(
+
+"Load Error:",
+
+error
+
 );
+
+
+loadingState.style.display = "none";
+
+
+pendingCount.textContent = "0 Pending";
+
+
+showStatus(
+
+error.message ||
+
+"Unable to load pending support requests.",
+
+"error"
+
+);
+
+}
+
+}
 
 
 /* =====================================================
@@ -2611,6 +2522,8 @@ refreshBtn.addEventListener(
 
 function(){
 
+searchInput.value = "";
+
 loadPendingSupport();
 
 }
@@ -2619,7 +2532,7 @@ loadPendingSupport();
 
 
 /* =====================================================
-   BACK
+   BACK TO DASHBOARD
 ===================================================== */
 
 backBtn.addEventListener(
@@ -2634,8 +2547,7 @@ return;
 
 }
 
-window.location.href =
-"index.html";
+window.location.href = "index.html";
 
 }
 
@@ -2645,6 +2557,25 @@ window.location.href =
 /* =====================================================
    PAGE SECURITY
 ===================================================== */
+
+document.addEventListener(
+
+"visibilitychange",
+
+function(){
+
+if(
+
+document.visibilityState === "visible"
+
+){
+
+checkLogin();
+
+}
+
+});
+
 
 window.addEventListener(
 
@@ -2659,33 +2590,14 @@ checkLogin();
 );
 
 
-document.addEventListener(
-
-"visibilitychange",
-
-function(){
-
-if(
-document.visibilityState
-===
-"visible"
-){
-
-checkLogin();
-
-}
-
-});
-
-
 /* =====================================================
    INITIAL LOAD
 ===================================================== */
 
 loadPendingSupport();
 
-
 </script>
+
 
 </body>
 

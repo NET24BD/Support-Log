@@ -5,9 +5,13 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
 <title>Pending Support | LINK4 COMMUNICATION</title>
+
 
 <!-- =====================================================
      LOGIN SECURITY
@@ -19,13 +23,17 @@
 
     try{
 
-        if(localStorage.getItem("loggedIn") !== "true"){
+        if(
+            localStorage.getItem("loggedIn") !== "true"
+        ){
 
             window.location.replace("../index.html");
 
         }
 
     }catch(error){
+
+        console.error(error);
 
         window.location.replace("../index.html");
 
@@ -47,12 +55,12 @@ href="https://fonts.googleapis.com"
 
 <link
 rel="preconnect"
-href="https://fonts.gstatic.com"
+href="https://fonts.googleapis.com"
 crossorigin
 >
 
 <link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;500;600;600;700;700;800&display=swap"
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
 rel="stylesheet"
 >
 
@@ -75,13 +83,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 *{
 
-    margin:0;
+margin:0;
 
-    padding:0;
+padding:0;
 
-    box-sizing:border-box;
+box-sizing:border-box;
 
-    font-family:'Poppins',sans-serif;
+font-family:'Poppins',sans-serif;
 
 }
 
@@ -92,27 +100,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 body{
 
-    min-height:100vh;
+min-height:100vh;
 
-    background:
+background:#005C3A;
 
-    radial-gradient(
-        circle at top left,
-        rgba(229,57,53,.25),
-        transparent 30%
-    ),
+padding:20px;
 
-    radial-gradient(
-        circle at bottom right,
-        rgba(13,143,90,.25),
-        transparent 30%
-    ),
-
-    #005C3A;
-
-    padding:25px;
-
-    color:#222;
+color:#222;
 
 }
 
@@ -123,11 +117,11 @@ body{
 
 .container{
 
-    width:100%;
+width:100%;
 
-    max-width:1500px;
+max-width:1500px;
 
-    margin:auto;
+margin:auto;
 
 }
 
@@ -138,200 +132,148 @@ body{
 
 .header{
 
-    background:rgba(255,255,255,.97);
+background:white;
 
-    border-radius:22px;
+border-radius:20px;
 
-    padding:18px 22px;
+padding:20px 25px;
 
-    display:flex;
+display:flex;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    align-items:center;
+align-items:center;
 
-    gap:20px;
+gap:20px;
 
-    box-shadow:
+box-shadow:
 
-    0 20px 50px rgba(0,0,0,.20);
+0 15px 40px
 
-    margin-bottom:18px;
+rgba(0,0,0,.18);
+
+margin-bottom:25px;
 
 }
 
-
-/* =====================================================
-   HEADER LEFT
-===================================================== */
 
 .header-left{
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    gap:15px;
+gap:15px;
 
 }
 
-
-/* =====================================================
-   LOGO
-===================================================== */
 
 .logo{
 
-    width:58px;
+width:55px;
 
-    height:58px;
+height:55px;
 
-    border-radius:17px;
+border-radius:15px;
 
-    background:
+background:#006A4E;
 
-    linear-gradient(
-        135deg,
-        #006A4E,
-        #008f68
-    );
+color:white;
 
-    color:white;
+display:flex;
 
-    display:flex;
+justify-content:center;
 
-    justify-content:center;
+align-items:center;
 
-    align-items:center;
-
-    font-size:25px;
-
-    box-shadow:
-
-    0 8px 20px rgba(0,106,78,.25);
+font-size:24px;
 
 }
 
 
-/* =====================================================
-   HEADER TITLE
-===================================================== */
-
 .header-title h1{
 
-    font-size:23px;
+font-size:24px;
 
-    font-weight:700;
-
-    color:#006A4E;
-
-    line-height:1.2;
+color:#006A4E;
 
 }
 
 
 .header-title p{
 
-    font-size:12px;
+font-size:13px;
 
-    color:#777;
+color:#777;
 
-    margin-top:4px;
+margin-top:3px;
 
 }
 
-
-/* =====================================================
-   HEADER RIGHT
-===================================================== */
 
 .header-right{
 
-    display:flex;
+display:flex;
 
-    gap:9px;
+gap:10px;
 
 }
 
-
-/* =====================================================
-   BUTTON COMMON
-===================================================== */
 
 .back-btn,
 .refresh-btn{
 
-    border:none;
+border:none;
 
-    padding:11px 17px;
+padding:11px 16px;
 
-    border-radius:11px;
+border-radius:10px;
 
-    cursor:pointer;
+cursor:pointer;
 
-    font-weight:600;
+font-weight:600;
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    justify-content:center;
+gap:8px;
 
-    gap:8px;
-
-    transition:.25s;
-
-    font-size:13px;
+transition:.3s;
 
 }
 
 
-/* =====================================================
-   BACK BUTTON
-===================================================== */
-
 .back-btn{
 
-    background:#006A4E;
+background:#006A4E;
 
-    color:white;
+color:white;
 
-    box-shadow:
+}
 
-    0 6px 15px rgba(0,106,78,.20);
+
+.refresh-btn{
+
+background:#e8f8f1;
+
+color:#006A4E;
 
 }
 
 
 .back-btn:hover{
 
-    background:#E53935;
-
-    transform:translateY(-2px);
-
-}
-
-
-/* =====================================================
-   REFRESH BUTTON
-===================================================== */
-
-.refresh-btn{
-
-    background:#e9f8f2;
-
-    color:#006A4E;
+background:#E53935;
 
 }
 
 
 .refresh-btn:hover{
 
-    background:#006A4E;
+background:#006A4E;
 
-    color:white;
-
-    transform:translateY(-2px);
+color:white;
 
 }
 
@@ -342,93 +284,87 @@ body{
 
 .user-bar{
 
-    background:rgba(255,255,255,.12);
+background:rgba(255,255,255,.12);
 
-    border:1px solid rgba(255,255,255,.15);
+color:white;
 
-    backdrop-filter:blur(10px);
+padding:12px 18px;
 
-    color:white;
+border-radius:12px;
 
-    padding:11px 17px;
+margin-bottom:20px;
 
-    border-radius:13px;
+display:flex;
 
-    margin-bottom:18px;
+justify-content:space-between;
 
-    display:flex;
+align-items:center;
 
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:15px;
-
-    font-size:13px;
+font-size:14px;
 
 }
 
 
 .user-name{
 
-    font-weight:700;
+font-weight:600;
 
-    color:#fff;
+color:#fff;
 
 }
 
 
 /* =====================================================
-   STATUS
+   STATUS MESSAGE
 ===================================================== */
 
 .status{
 
-    display:none;
+display:none;
 
-    padding:12px 16px;
+padding:14px 18px;
 
-    border-radius:12px;
+border-radius:12px;
 
-    margin-bottom:18px;
+margin-bottom:20px;
 
-    font-size:13px;
+font-size:14px;
 
-    font-weight:500;
+font-weight:500;
 
 }
 
 
 .status.show{
 
-    display:block;
+display:block;
 
 }
 
 
 .status.loading{
 
-    background:#fff7df;
+background:#fff8e1;
 
-    color:#8a6500;
+color:#8a6500;
 
 }
 
 
 .status.success{
 
-    background:#e8f8f1;
+background:#e8f8f1;
 
-    color:#006A4E;
+color:#006A4E;
 
 }
 
 
 .status.error{
 
-    background:#fdecec;
+background:#fdecec;
 
-    color:#c62828;
+color:#c62828;
 
 }
 
@@ -439,15 +375,17 @@ body{
 
 .table-container{
 
-    background:#fff;
+background:white;
 
-    border-radius:22px;
+border-radius:20px;
 
-    overflow:hidden;
+box-shadow:
 
-    box-shadow:
+0 20px 50px
 
-    0 25px 60px rgba(0,0,0,.20);
+rgba(0,0,0,.18);
+
+overflow:hidden;
 
 }
 
@@ -458,81 +396,204 @@ body{
 
 .table-header{
 
-    padding:18px 22px;
+padding:22px 25px;
 
-    display:flex;
+border-bottom:1px solid #eee;
 
-    justify-content:space-between;
+display:flex;
 
-    align-items:center;
+justify-content:space-between;
 
-    gap:15px;
+align-items:center;
 
-    border-bottom:1px solid #edf0ee;
+gap:20px;
 
-    background:
-
-    linear-gradient(
-        180deg,
-        #ffffff,
-        #fbfdfc
-    );
+flex-wrap:wrap;
 
 }
 
 
-.table-header-left{
+/* =====================================================
+   TABLE TITLE
+===================================================== */
 
-    display:flex;
+.table-title-area{
 
-    align-items:center;
+display:flex;
 
-    gap:12px;
+flex-direction:column;
 
-}
-
-
-.table-header-icon{
-
-    width:42px;
-
-    height:42px;
-
-    border-radius:12px;
-
-    background:#e8f8f1;
-
-    color:#006A4E;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:18px;
+gap:4px;
 
 }
 
 
-.table-header h2{
+.table-title-area h2{
 
-    font-size:18px;
+font-size:20px;
 
-    color:#222;
+color:#222;
 
-    font-weight:700;
+margin:0;
 
 }
 
 
-.table-header p{
+.table-title-area p{
 
-    color:#888;
+font-size:12px;
 
-    font-size:11px;
+color:#888;
 
-    margin-top:2px;
+margin:0;
+
+}
+
+
+/* =====================================================
+   TABLE ACTIONS
+===================================================== */
+
+.table-actions{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+flex-wrap:wrap;
+
+}
+
+
+/* =====================================================
+   SEARCH BOX
+===================================================== */
+
+.search-box{
+
+position:relative;
+
+width:340px;
+
+height:46px;
+
+display:flex;
+
+align-items:center;
+
+}
+
+
+.search-box > i{
+
+position:absolute;
+
+left:15px;
+
+color:#006A4E;
+
+font-size:15px;
+
+pointer-events:none;
+
+z-index:2;
+
+}
+
+
+.search-box input{
+
+width:100%;
+
+height:100%;
+
+border:2px solid #e2e8e5;
+
+border-radius:12px;
+
+padding:
+
+0 45px
+
+0 42px;
+
+outline:none;
+
+font-size:13px;
+
+color:#333;
+
+background:#f9fbfa;
+
+transition:.3s;
+
+}
+
+
+.search-box input::placeholder{
+
+color:#999;
+
+}
+
+
+.search-box input:focus{
+
+border-color:#006A4E;
+
+background:white;
+
+box-shadow:
+
+0 5px 18px
+
+rgba(0,106,78,.12);
+
+}
+
+
+/* =====================================================
+   CLEAR SEARCH BUTTON
+===================================================== */
+
+#clearSearch{
+
+position:absolute;
+
+right:9px;
+
+width:29px;
+
+height:29px;
+
+border:none;
+
+border-radius:50%;
+
+background:#e8f8f1;
+
+color:#006A4E;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+#clearSearch:hover{
+
+background:#E53935;
+
+color:white;
 
 }
 
@@ -543,29 +604,25 @@ body{
 
 .pending-count{
 
-    background:
+background:#006A4E;
 
-    linear-gradient(
-        135deg,
-        #2563eb,
-        #3b82f6
-    );
+color:white;
 
-    color:white;
+padding:8px 15px;
 
-    padding:7px 13px;
+border-radius:20px;
 
-    border-radius:30px;
+font-size:12px;
 
-    font-size:12px;
+font-weight:600;
 
-    font-weight:700;
+white-space:nowrap;
 
-    box-shadow:
+box-shadow:
 
-    0 5px 15px rgba(37,99,235,.20);
+0 5px 15px
 
-    white-space:nowrap;
+rgba(0,106,78,.2);
 
 }
 
@@ -576,9 +633,9 @@ body{
 
 .table-scroll{
 
-    width:100%;
+width:100%;
 
-    overflow-x:auto;
+overflow-x:auto;
 
 }
 
@@ -589,13 +646,13 @@ body{
 
 table{
 
-    width:100%;
+width:100%;
 
-    border-collapse:separate;
+border-collapse:separate;
 
-    border-spacing:0;
+border-spacing:0;
 
-    min-width:1150px;
+min-width:1200px;
 
 }
 
@@ -606,38 +663,38 @@ table{
 
 thead{
 
-    background:#006A4E;
+background:#006A4E;
 
-    color:white;
+color:white;
 
 }
 
 
 th{
 
-    padding:13px 14px;
+padding:16px 14px;
 
-    font-size:12px;
+font-size:13px;
 
-    font-weight:600;
+font-weight:600;
 
-    text-align:left;
+text-align:left;
 
-    white-space:nowrap;
+white-space:nowrap;
 
 }
 
 
 th:first-child{
 
-    padding-left:20px;
+padding-left:20px;
 
 }
 
 
 th:last-child{
 
-    padding-right:20px;
+padding-right:20px;
 
 }
 
@@ -648,38 +705,58 @@ th:last-child{
 
 td{
 
-    padding:13px 14px;
+padding:15px 14px;
 
-    border-bottom:1px solid #edf0ee;
+border-bottom:1px solid #edf1ef;
 
-    font-size:12px;
+font-size:13px;
 
-    vertical-align:middle;
+vertical-align:middle;
+
+background:white;
+
+}
+
+
+td:first-child{
+
+padding-left:20px;
+
+}
+
+
+td:last-child{
+
+padding-right:20px;
 
 }
 
 
 tbody tr{
 
-    transition:.2s;
+transition:.2s;
 
 }
 
 
-tbody tr:hover{
+tbody tr:hover td{
 
-    background:#f8fcfa;
-
-    box-shadow:
-
-    inset 4px 0 0 #006A4E;
+background:#f7fffb;
 
 }
 
 
-tbody tr:last-child td{
+/* =====================================================
+   READ ONLY DATA
+===================================================== */
 
-    border-bottom:none;
+.readonly{
+
+background:#f7f9f8 !important;
+
+color:#444;
+
+font-weight:500;
 
 }
 
@@ -688,157 +765,67 @@ tbody tr:last-child td{
    CUSTOMER ID
 ===================================================== */
 
-.customer-badge{
+.customer-id-cell{
 
-    display:inline-flex;
+font-weight:700;
 
-    align-items:center;
-
-    gap:7px;
-
-    background:#f1f7f5;
-
-    color:#006A4E;
-
-    padding:8px 10px;
-
-    border-radius:9px;
-
-    font-weight:700;
-
-    white-space:nowrap;
-
-}
-
-
-.customer-badge i{
-
-    font-size:12px;
+color:#006A4E;
 
 }
 
 
 /* =====================================================
-   DATE BADGE
+   PROBLEM CELL
 ===================================================== */
 
-.date-badge{
+.problem-cell{
 
-    display:inline-flex;
+max-width:260px;
 
-    align-items:center;
+min-width:220px;
 
-    gap:7px;
+line-height:1.6;
 
-    background:#f5f7ff;
-
-    color:#4054b2;
-
-    padding:8px 10px;
-
-    border-radius:9px;
-
-    white-space:nowrap;
-
-    font-weight:600;
-
-}
-
-
-.date-badge i{
-
-    font-size:12px;
+color:#444;
 
 }
 
 
 /* =====================================================
-   PROBLEM BOX
+   DATE CELL
 ===================================================== */
 
-.problem-box{
+.date-cell{
 
-    max-width:260px;
+white-space:nowrap;
 
-    background:#fff8f8;
-
-    border-left:3px solid #E53935;
-
-    padding:9px 11px;
-
-    border-radius:7px;
-
-    color:#555;
-
-    line-height:1.5;
+color:#555;
 
 }
 
 
 /* =====================================================
-   REF BADGE
+   REF CELL
 ===================================================== */
 
-.ref-badge{
+.ref-cell{
 
-    display:inline-flex;
+font-weight:600;
 
-    align-items:center;
-
-    gap:7px;
-
-    background:#fff7e6;
-
-    color:#a66b00;
-
-    padding:8px 10px;
-
-    border-radius:9px;
-
-    font-weight:600;
-
-    white-space:nowrap;
-
-}
-
-
-.ref-badge i{
-
-    font-size:12px;
+color:#555;
 
 }
 
 
 /* =====================================================
-   INPUT WRAPPER
+   INPUT AREA
 ===================================================== */
 
 .input-wrapper{
 
-    position:relative;
+position:relative;
 
-    min-width:200px;
-
-}
-
-
-/* =====================================================
-   INPUT ICON
-===================================================== */
-
-.input-wrapper i{
-
-    position:absolute;
-
-    left:12px;
-
-    top:13px;
-
-    color:#006A4E;
-
-    font-size:13px;
-
-    z-index:2;
+width:100%;
 
 }
 
@@ -850,31 +837,31 @@ tbody tr:last-child td{
 .support-input,
 .work-input{
 
-    width:100%;
+width:100%;
 
-    min-width:200px;
+min-width:220px;
 
-    min-height:75px;
+min-height:90px;
 
-    border:1.5px solid #dfe6e2;
+border:2px solid #e1e7e4;
 
-    border-radius:10px;
+border-radius:12px;
 
-    padding:10px 11px 10px 35px;
+padding:12px 14px;
 
-    font-size:12px;
+font-size:13px;
 
-    outline:none;
+line-height:1.5;
 
-    resize:vertical;
+outline:none;
 
-    background:#fbfdfc;
+resize:vertical;
 
-    color:#333;
+background:#fbfdfc;
 
-    line-height:1.5;
+color:#333;
 
-    transition:.25s;
+transition:.3s;
 
 }
 
@@ -882,7 +869,7 @@ tbody tr:last-child td{
 .support-input::placeholder,
 .work-input::placeholder{
 
-    color:#aaa;
+color:#aaa;
 
 }
 
@@ -890,123 +877,80 @@ tbody tr:last-child td{
 .support-input:focus,
 .work-input:focus{
 
-    background:white;
+border-color:#006A4E;
 
-    border-color:#006A4E;
+background:white;
 
-    box-shadow:
+box-shadow:
 
-    0 0 0 3px rgba(0,106,78,.08);
+0 5px 15px
 
-}
-
-
-/* =====================================================
-   WORK INPUT DIFFERENT COLOR
-===================================================== */
-
-.work-wrapper i{
-
-    color:#2563eb;
-
-}
-
-
-.work-input:focus{
-
-    border-color:#2563eb;
-
-    box-shadow:
-
-    0 0 0 3px rgba(37,99,235,.08);
+rgba(0,106,78,.10);
 
 }
 
 
 /* =====================================================
-   ACTION CELL
-===================================================== */
-
-.action-cell{
-
-    text-align:center;
-
-}
-
-
-/* =====================================================
-   SUBMIT BUTTON
+   ACTION BUTTON
 ===================================================== */
 
 .submit-btn{
 
-    border:none;
+border:none;
 
-    background:
+background:#006A4E;
 
-    linear-gradient(
-        135deg,
-        #006A4E,
-        #008f68
-    );
+color:white;
 
-    color:white;
+padding:12px 18px;
 
-    padding:11px 16px;
+border-radius:10px;
 
-    border-radius:10px;
+cursor:pointer;
 
-    cursor:pointer;
+font-weight:600;
 
-    font-weight:600;
+font-size:13px;
 
-    font-size:12px;
+display:flex;
 
-    display:inline-flex;
+align-items:center;
 
-    align-items:center;
+justify-content:center;
 
-    justify-content:center;
+gap:8px;
 
-    gap:7px;
+white-space:nowrap;
 
-    white-space:nowrap;
+transition:.3s;
 
-    transition:.25s;
-
-    box-shadow:
-
-    0 6px 15px rgba(0,106,78,.18);
+min-width:105px;
 
 }
 
 
 .submit-btn:hover{
 
-    background:
+background:#E53935;
 
-    linear-gradient(
-        135deg,
-        #E53935,
-        #ef5350
-    );
+transform:translateY(-1px);
 
-    transform:translateY(-2px);
+box-shadow:
 
-    box-shadow:
+0 6px 15px
 
-    0 8px 18px rgba(229,57,53,.20);
+rgba(229,57,53,.2);
 
 }
 
 
 .submit-btn:disabled{
 
-    opacity:.6;
+opacity:.6;
 
-    cursor:not-allowed;
+cursor:not-allowed;
 
-    transform:none;
+transform:none;
 
 }
 
@@ -1017,67 +961,130 @@ tbody tr:last-child td{
 
 .empty-state{
 
-    display:none;
+display:none;
 
-    padding:65px 20px;
+padding:75px 20px;
 
-    text-align:center;
+text-align:center;
 
 }
 
 
 .empty-state.show{
 
-    display:block;
+display:block;
 
 }
 
 
 .empty-icon{
 
-    width:75px;
+width:85px;
 
-    height:75px;
+height:85px;
 
-    border-radius:50%;
+border-radius:50%;
 
-    background:#e8f8f1;
+background:#e8f8f1;
 
-    color:#006A4E;
+color:#006A4E;
 
-    display:flex;
+display:flex;
 
-    justify-content:center;
+justify-content:center;
 
-    align-items:center;
+align-items:center;
 
-    font-size:32px;
+font-size:38px;
 
-    margin:0 auto 18px;
-
-    box-shadow:
-
-    0 10px 25px rgba(0,106,78,.10);
+margin:0 auto 20px;
 
 }
 
 
 .empty-state h3{
 
-    font-size:19px;
+font-size:20px;
 
-    margin-bottom:7px;
+margin-bottom:8px;
 
-    color:#333;
+color:#222;
 
 }
 
 
 .empty-state p{
 
-    color:#888;
+color:#777;
 
-    font-size:13px;
+font-size:14px;
+
+}
+
+
+/* =====================================================
+   NO SEARCH RESULT
+===================================================== */
+
+.no-search-result{
+
+display:none;
+
+padding:65px 20px;
+
+text-align:center;
+
+}
+
+
+.no-search-result.show{
+
+display:block;
+
+}
+
+
+.no-search-result-icon{
+
+width:75px;
+
+height:75px;
+
+border-radius:50%;
+
+background:#f1f5f3;
+
+color:#006A4E;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:32px;
+
+margin:0 auto 18px;
+
+}
+
+
+.no-search-result h3{
+
+font-size:19px;
+
+margin-bottom:7px;
+
+color:#222;
+
+}
+
+
+.no-search-result p{
+
+font-size:13px;
+
+color:#888;
 
 }
 
@@ -1088,29 +1095,29 @@ tbody tr:last-child td{
 
 .loading-state{
 
-    padding:65px 20px;
+padding:75px 20px;
 
-    text-align:center;
+text-align:center;
 
 }
 
 
 .spinner{
 
-    font-size:34px;
+font-size:35px;
 
-    color:#006A4E;
+color:#006A4E;
 
-    margin-bottom:12px;
+margin-bottom:15px;
 
 }
 
 
 .loading-state p{
 
-    color:#888;
+font-size:14px;
 
-    font-size:13px;
+color:#777;
 
 }
 
@@ -1121,140 +1128,107 @@ tbody tr:last-child td{
 
 @media(max-width:768px){
 
-    body{
+body{
 
-        padding:12px;
-
-    }
-
-
-    .header{
-
-        padding:16px;
-
-        align-items:flex-start;
-
-        flex-direction:column;
-
-    }
-
-
-    .header-left{
-
-        width:100%;
-
-    }
-
-
-    .header-right{
-
-        width:100%;
-
-        display:grid;
-
-        grid-template-columns:1fr 1fr;
-
-    }
-
-
-    .back-btn,
-    .refresh-btn{
-
-        width:100%;
-
-        padding:10px;
-
-    }
-
-
-    .header-title h1{
-
-        font-size:19px;
-
-    }
-
-
-    .header-title p{
-
-        font-size:10px;
-
-    }
-
-
-    .user-bar{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        font-size:11px;
-
-    }
-
-
-    .table-header{
-
-        padding:15px;
-
-    }
-
-
-    .table-header h2{
-
-        font-size:16px;
-
-    }
-
-
-    .table-header p{
-
-        display:none;
-
-    }
-
-
-    .table-header-icon{
-
-        width:38px;
-
-        height:38px;
-
-    }
+padding:12px;
 
 }
 
 
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
+.header{
 
-@media(max-width:450px){
+padding:18px;
 
-    .header-right{
+align-items:flex-start;
 
-        grid-template-columns:1fr;
-
-    }
+}
 
 
-    .logo{
+.header-title h1{
 
-        width:50px;
+font-size:19px;
 
-        height:50px;
-
-        font-size:21px;
-
-    }
+}
 
 
-    .pending-count{
+.header-title p{
 
-        font-size:11px;
+font-size:11px;
 
-        padding:6px 10px;
+}
 
-    }
+
+.header-right{
+
+flex-direction:column;
+
+}
+
+
+.back-btn,
+.refresh-btn{
+
+justify-content:center;
+
+padding:9px 12px;
+
+font-size:12px;
+
+}
+
+
+.user-bar{
+
+font-size:12px;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:8px;
+
+}
+
+
+.table-header{
+
+padding:18px;
+
+align-items:stretch;
+
+}
+
+
+.table-title-area h2{
+
+font-size:18px;
+
+}
+
+
+.table-actions{
+
+width:100%;
+
+flex-direction:column;
+
+align-items:stretch;
+
+}
+
+
+.search-box{
+
+width:100%;
+
+}
+
+
+.pending-count{
+
+text-align:center;
+
+}
 
 }
 
@@ -1296,7 +1270,7 @@ Pending Support
 
 <p>
 
-Manage and process pending customer support requests
+Manage pending customer support requests
 
 </p>
 
@@ -1351,8 +1325,6 @@ Dashboard
 
 <i class="fa-solid fa-user"></i>
 
-&nbsp;
-
 Logged in as:
 
 <span
@@ -1367,11 +1339,9 @@ User
 
 <div>
 
-<i class="fa-solid fa-shield-halved"></i>
+<i class="fa-solid fa-lock"></i>
 
-&nbsp;
-
-Customer information is read-only
+Read-only customer information
 
 </div>
 
@@ -1402,17 +1372,7 @@ id="status"
 <div class="table-header">
 
 
-<div class="table-header-left">
-
-
-<div class="table-header-icon">
-
-<i class="fa-solid fa-list-check"></i>
-
-</div>
-
-
-<div>
+<div class="table-title-area">
 
 <h2>
 
@@ -1422,15 +1382,51 @@ Pending Support Requests
 
 <p>
 
-Complete the Support and Support Work fields to continue
+Search and manage customer support requests
 
 </p>
 
 </div>
 
 
+<div class="table-actions">
+
+
+<!-- =================================================
+     SEARCH BAR
+================================================= -->
+
+<div class="search-box">
+
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search Customer ID, Problem, REF..."
+autocomplete="off"
+>
+
+
+<button
+type="button"
+id="clearSearch"
+title="Clear Search"
+>
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+
 </div>
 
+
+<!-- =================================================
+     PENDING COUNT
+================================================= -->
 
 <div
 class="pending-count"
@@ -1445,8 +1441,11 @@ id="pendingCount"
 </div>
 
 
+</div>
+
+
 <!-- =====================================================
-     LOADING
+     LOADING STATE
 ===================================================== -->
 
 <div
@@ -1470,7 +1469,7 @@ Loading pending support requests...
 
 
 <!-- =====================================================
-     EMPTY
+     EMPTY STATE
 ===================================================== -->
 
 <div
@@ -1500,6 +1499,36 @@ There are currently no pending support requests.
 
 
 <!-- =====================================================
+     NO SEARCH RESULT
+===================================================== -->
+
+<div
+class="no-search-result"
+id="noSearchResult"
+>
+
+<div class="no-search-result-icon">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+
+<h3>
+
+No Matching Support Found
+
+</h3>
+
+<p>
+
+Try searching with another Customer ID, Problem or REF.
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
      TABLE
 ===================================================== -->
 
@@ -1508,7 +1537,6 @@ class="table-scroll"
 id="tableWrapper"
 style="display:none;"
 >
-
 
 <table>
 
@@ -1537,7 +1565,7 @@ Problem
 
 <th>
 
-Reference
+REF
 
 </th>
 
@@ -1573,7 +1601,6 @@ id="supportTableBody"
 
 </table>
 
-
 </div>
 
 
@@ -1584,6 +1611,7 @@ id="supportTableBody"
 
 
 <script>
+
 
 /* =====================================================
    API URL
@@ -1621,6 +1649,15 @@ const emptyState =
 document.getElementById(
 
 "emptyState"
+
+);
+
+
+const noSearchResult =
+
+document.getElementById(
+
+"noSearchResult"
 
 );
 
@@ -1675,6 +1712,24 @@ const userName =
 document.getElementById(
 
 "userName"
+
+);
+
+
+const searchInput =
+
+document.getElementById(
+
+"searchInput"
+
+);
+
+
+const clearSearch =
+
+document.getElementById(
+
+"clearSearch"
 
 );
 
@@ -1765,9 +1820,9 @@ function showStatus(
 
     statusBox.className =
 
-    "status show " +
+        "status show " +
 
-    type;
+        type;
 
 }
 
@@ -1780,36 +1835,173 @@ function hideStatus(){
 
     statusBox.className =
 
-    "status";
+        "status";
 
 }
 
 
 /* =====================================================
-   CREATE SAFE TEXT
+   SEARCH FUNCTION
 ===================================================== */
 
-function safeValue(
+function searchPendingSupport(){
 
-    value
 
-){
+    const searchText =
+
+        searchInput.value
+
+        .trim()
+
+        .toLowerCase();
+
+
+    const rows =
+
+        tableBody.querySelectorAll(
+
+            "tr"
+
+        );
+
+
+    let visibleCount = 0;
+
+
+    rows.forEach(
+
+        function(row){
+
+            const rowText =
+
+                row.textContent
+
+                .toLowerCase();
+
+
+            if(
+
+                rowText.includes(
+
+                    searchText
+
+                )
+
+            ){
+
+                row.style.display = "";
+
+                visibleCount++;
+
+            }
+
+            else{
+
+                row.style.display = "none";
+
+            }
+
+        }
+
+    );
+
+
+    /* ================================================
+       NO SEARCH RESULT
+    ================================================ */
 
     if(
 
-        value === null ||
+        searchText &&
 
-        value === undefined
+        visibleCount === 0 &&
+
+        rows.length > 0
 
     ){
 
-        return "";
+        noSearchResult.classList.add(
+
+            "show"
+
+        );
 
     }
 
-    return String(value);
+    else{
+
+        noSearchResult.classList.remove(
+
+            "show"
+
+        );
+
+    }
+
+
+    /* ================================================
+       UPDATE COUNT
+    ================================================ */
+
+    if(searchText){
+
+        pendingCount.textContent =
+
+            visibleCount +
+
+            " Found";
+
+    }
+
+    else{
+
+        pendingCount.textContent =
+
+            rows.length +
+
+            " Pending";
+
+    }
 
 }
+
+
+/* =====================================================
+   SEARCH INPUT EVENT
+===================================================== */
+
+searchInput.addEventListener(
+
+    "input",
+
+    function(){
+
+        searchPendingSupport();
+
+    }
+
+);
+
+
+/* =====================================================
+   CLEAR SEARCH
+===================================================== */
+
+clearSearch.addEventListener(
+
+    "click",
+
+    function(){
+
+        searchInput.value = "";
+
+        searchPendingSupport();
+
+        searchInput.focus();
+
+    }
+
+);
 
 
 /* =====================================================
@@ -1826,9 +2018,13 @@ async function loadPendingSupport(){
     }
 
 
+    /* ================================================
+       RESET UI
+    ================================================ */
+
     loadingState.style.display =
 
-    "block";
+        "block";
 
 
     emptyState.classList.remove(
@@ -1838,19 +2034,29 @@ async function loadPendingSupport(){
     );
 
 
+    noSearchResult.classList.remove(
+
+        "show"
+
+    );
+
+
     tableWrapper.style.display =
 
-    "none";
+        "none";
 
 
     tableBody.innerHTML =
 
-    "";
+        "";
+
+
+    searchInput.value = "";
 
 
     pendingCount.textContent =
 
-    "Loading...";
+        "Loading...";
 
 
     showStatus(
@@ -1865,32 +2071,40 @@ async function loadPendingSupport(){
     try{
 
 
+        /* ============================================
+           API URL
+        ============================================ */
+
         const url =
 
-        PENDING_SUPPORT_API_URL +
+            PENDING_SUPPORT_API_URL +
 
-        "?action=pendingSupport&_=" +
+            "?action=pendingSupport&ts=" +
 
-        Date.now();
+            Date.now();
 
+
+        /* ============================================
+           FETCH
+        ============================================ */
 
         const response =
 
-        await fetch(
+            await fetch(
 
-            url,
+                url,
 
-            {
+                {
 
-                method:"GET",
+                    method:"GET",
 
-                cache:"no-store",
+                    cache:"no-store",
 
-                redirect:"follow"
+                    redirect:"follow"
 
-            }
+                }
 
-        );
+            );
 
 
         if(!response.ok){
@@ -1906,15 +2120,23 @@ async function loadPendingSupport(){
         }
 
 
+        /* ============================================
+           JSON RESPONSE
+        ============================================ */
+
         const result =
 
-        await response.json();
+            await response.json();
 
 
         loadingState.style.display =
 
-        "none";
+            "none";
 
+
+        /* ============================================
+           CHECK RESPONSE
+        ============================================ */
 
         if(
 
@@ -1933,26 +2155,30 @@ async function loadPendingSupport(){
         }
 
 
+        /* ============================================
+           GET DATA
+        ============================================ */
+
         const data =
 
-        Array.isArray(
+            Array.isArray(
+
+                result.data
+
+            )
+
+            ?
 
             result.data
 
-        )
+            :
 
-        ?
-
-        result.data
-
-        :
-
-        [];
+            [];
 
 
-        /* =============================================
-           EMPTY
-        ============================================= */
+        /* ============================================
+           EMPTY DATA
+        ============================================ */
 
         if(
 
@@ -1969,7 +2195,7 @@ async function loadPendingSupport(){
 
             pendingCount.textContent =
 
-            "0 Pending";
+                "0 Pending";
 
 
             hideStatus();
@@ -1980,25 +2206,25 @@ async function loadPendingSupport(){
         }
 
 
-        /* =============================================
+        /* ============================================
            SHOW TABLE
-        ============================================= */
+        ============================================ */
 
         tableWrapper.style.display =
 
-        "block";
+            "block";
 
 
         pendingCount.textContent =
 
-        data.length +
+            data.length +
 
-        " Pending";
+            " Pending";
 
 
-        /* =============================================
-           CREATE ROW
-        ============================================= */
+        /* ============================================
+           CREATE ROWS
+        ============================================ */
 
         data.forEach(
 
@@ -2007,442 +2233,271 @@ async function loadPendingSupport(){
 
                 const tr =
 
-                document.createElement(
+                    document.createElement(
 
-                    "tr"
+                        "tr"
 
-                );
+                    );
 
 
-                /* =====================================
+                /* ====================================
                    CUSTOMER NUMBER
-                ===================================== */
+                ==================================== */
+
+                const customerId =
+
+                    item.ip ||
+
+                    item.IP ||
+
+                    item.customerId ||
+
+                    item.customerID ||
+
+                    item.customerNumber ||
+
+                    item["Customer Number"] ||
+
+                    "";
+
 
                 const tdIP =
 
-                document.createElement(
+                    document.createElement(
 
-                    "td"
+                        "td"
 
-                );
-
-
-                const customerBadge =
-
-                document.createElement(
-
-                    "div"
-
-                );
+                    );
 
 
-                customerBadge.className =
+                tdIP.className =
 
-                "customer-badge";
-
-
-                customerBadge.innerHTML =
-
-                '<i class="fa-solid fa-network-wired"></i>';
+                    "readonly customer-id-cell";
 
 
-                const customerText =
+                tdIP.textContent =
 
-                document.createTextNode(
-
-                    safeValue(
-
-                        item.ip ||
-
-                        item.IP ||
-
-                        item.customerNumber
-
-                    )
-
-                );
+                    customerId;
 
 
-                customerBadge.appendChild(
-
-                    customerText
-
-                );
-
-
-                tdIP.appendChild(
-
-                    customerBadge
-
-                );
-
-
-                /* =====================================
+                /* ====================================
                    DATE
-                ===================================== */
+                ==================================== */
+
+                const dateValue =
+
+                    item.date ||
+
+                    item.Date ||
+
+                    "";
+
 
                 const tdDate =
 
-                document.createElement(
+                    document.createElement(
 
-                    "td"
+                        "td"
 
-                );
-
-
-                const dateBadge =
-
-                document.createElement(
-
-                    "div"
-
-                );
+                    );
 
 
-                dateBadge.className =
+                tdDate.className =
 
-                "date-badge";
-
-
-                dateBadge.innerHTML =
-
-                '<i class="fa-regular fa-calendar"></i>';
+                    "readonly date-cell";
 
 
-                dateBadge.appendChild(
+                tdDate.textContent =
 
-                    document.createTextNode(
-
-                        safeValue(
-
-                            item.date ||
-
-                            item.Date
-
-                        )
-
-                    )
-
-                );
+                    dateValue;
 
 
-                tdDate.appendChild(
-
-                    dateBadge
-
-                );
-
-
-                /* =====================================
+                /* ====================================
                    PROBLEM
-                ===================================== */
+                ==================================== */
 
-                const tdProblem =
-
-                document.createElement(
-
-                    "td"
-
-                );
-
-
-                const problemBox =
-
-                document.createElement(
-
-                    "div"
-
-                );
-
-
-                problemBox.className =
-
-                "problem-box";
-
-
-                problemBox.textContent =
-
-                safeValue(
+                const problemValue =
 
                     item.problem ||
 
-                    item.Problem
+                    item.Problem ||
 
-                );
-
-
-                tdProblem.appendChild(
-
-                    problemBox
-
-                );
+                    "";
 
 
-                /* =====================================
+                const tdProblem =
+
+                    document.createElement(
+
+                        "td"
+
+                    );
+
+
+                tdProblem.className =
+
+                    "readonly problem-cell";
+
+
+                tdProblem.textContent =
+
+                    problemValue;
+
+
+                /* ====================================
                    REF
-                ===================================== */
+                ==================================== */
+
+                const refValue =
+
+                    item.ref ||
+
+                    item.REF ||
+
+                    item.reference ||
+
+                    item.Reference ||
+
+                    "";
+
 
                 const tdRef =
 
-                document.createElement(
+                    document.createElement(
 
-                    "td"
+                        "td"
 
-                );
-
-
-                const refBadge =
-
-                document.createElement(
-
-                    "div"
-
-                );
+                    );
 
 
-                refBadge.className =
+                tdRef.className =
 
-                "ref-badge";
-
-
-                refBadge.innerHTML =
-
-                '<i class="fa-solid fa-user-check"></i>';
+                    "readonly ref-cell";
 
 
-                refBadge.appendChild(
+                tdRef.textContent =
 
-                    document.createTextNode(
-
-                        safeValue(
-
-                            item.ref ||
-
-                            item.REF ||
-
-                            item.reference
-
-                        )
-
-                    )
-
-                );
+                    refValue;
 
 
-                tdRef.appendChild(
-
-                    refBadge
-
-                );
-
-
-                /* =====================================
-                   SUPPORT
-                ===================================== */
+                /* ====================================
+                   SUPPORT INPUT
+                ==================================== */
 
                 const tdSupport =
 
-                document.createElement(
+                    document.createElement(
 
-                    "td"
+                        "td"
 
-                );
-
-
-                const supportWrapper =
-
-                document.createElement(
-
-                    "div"
-
-                );
-
-
-                supportWrapper.className =
-
-                "input-wrapper";
-
-
-                const supportIcon =
-
-                document.createElement(
-
-                    "i"
-
-                );
-
-
-                supportIcon.className =
-
-                "fa-solid fa-headset";
+                    );
 
 
                 const supportInput =
 
-                document.createElement(
+                    document.createElement(
 
-                    "textarea"
+                        "textarea"
 
-                );
+                    );
 
 
                 supportInput.className =
 
-                "support-input";
+                    "support-input";
 
 
                 supportInput.placeholder =
 
-                "Write support solution...";
+                    "Write support information here...";
 
 
-                supportWrapper.appendChild(
-
-                    supportIcon
-
-                );
-
-
-                supportWrapper.appendChild(
+                tdSupport.appendChild(
 
                     supportInput
 
                 );
 
 
-                tdSupport.appendChild(
-
-                    supportWrapper
-
-                );
-
-
-                /* =====================================
-                   SUPPORT WORK
-                ===================================== */
+                /* ====================================
+                   SUPPORT WORK INPUT
+                ==================================== */
 
                 const tdWork =
 
-                document.createElement(
+                    document.createElement(
 
-                    "td"
+                        "td"
 
-                );
-
-
-                const workWrapper =
-
-                document.createElement(
-
-                    "div"
-
-                );
-
-
-                workWrapper.className =
-
-                "input-wrapper work-wrapper";
-
-
-                const workIcon =
-
-                document.createElement(
-
-                    "i"
-
-                );
-
-
-                workIcon.className =
-
-                "fa-solid fa-screwdriver-wrench";
+                    );
 
 
                 const workInput =
 
-                document.createElement(
+                    document.createElement(
 
-                    "textarea"
+                        "textarea"
 
-                );
+                    );
 
 
                 workInput.className =
 
-                "work-input";
+                    "work-input";
 
 
                 workInput.placeholder =
 
-                "Write work details...";
+                    "Write support work details here...";
 
 
-                workWrapper.appendChild(
-
-                    workIcon
-
-                );
-
-
-                workWrapper.appendChild(
+                tdWork.appendChild(
 
                     workInput
 
                 );
 
 
-                tdWork.appendChild(
-
-                    workWrapper
-
-                );
-
-
-                /* =====================================
+                /* ====================================
                    ACTION
-                ===================================== */
+                ==================================== */
 
                 const tdAction =
 
-                document.createElement(
+                    document.createElement(
 
-                    "td"
+                        "td"
 
-                );
-
-
-                tdAction.className =
-
-                "action-cell";
+                    );
 
 
                 const submitBtn =
 
-                document.createElement(
+                    document.createElement(
 
-                    "button"
+                        "button"
 
-                );
+                    );
 
 
                 submitBtn.className =
 
-                "submit-btn";
+                    "submit-btn";
 
 
                 submitBtn.type =
 
-                "button";
+                    "button";
 
 
                 submitBtn.innerHTML =
 
-                '<i class="fa-solid fa-paper-plane"></i> Submit';
+                    '<i class="fa-solid fa-paper-plane"></i> Submit';
 
 
-                /* =====================================
-                   SUBMIT SUPPORT
-                ===================================== */
+                /* ====================================
+                   SUBMIT EVENT
+                ==================================== */
 
                 submitBtn.addEventListener(
 
@@ -2460,12 +2515,12 @@ async function loadPendingSupport(){
 
                         const support =
 
-                        supportInput.value.trim();
+                            supportInput.value.trim();
 
 
                         const supportWork =
 
-                        workInput.value.trim();
+                            workInput.value.trim();
 
 
                         /* =================================
@@ -2508,135 +2563,135 @@ async function loadPendingSupport(){
                         }
 
 
+                        /* =================================
+                           DISABLE BUTTON
+                        ================================= */
+
                         submitBtn.disabled =
 
-                        true;
+                            true;
 
 
                         submitBtn.innerHTML =
 
-                        '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
+                            '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
 
 
                         try{
 
+
+                            /* =============================
+                               PAYLOAD
+                            ============================= */
 
                             const payload = {
 
 
                                 action:
 
-                                "submitSupport",
+                                    "submitSupport",
 
 
                                 ip:
 
-                                item.ip ||
-
-                                item.IP ||
-
-                                item.customerNumber ||
-
-                                "",
+                                    customerId,
 
 
                                 date:
 
-                                item.date ||
-
-                                item.Date ||
-
-                                "",
+                                    dateValue,
 
 
                                 problem:
 
-                                item.problem ||
-
-                                item.Problem ||
-
-                                "",
+                                    problemValue,
 
 
                                 ref:
 
-                                item.ref ||
-
-                                item.REF ||
-
-                                item.reference ||
-
-                                "",
+                                    refValue,
 
 
                                 support:
 
-                                support,
+                                    support,
 
 
                                 supportWork:
 
-                                supportWork,
+                                    supportWork,
 
 
                                 username:
 
-                                localStorage.getItem(
+                                    localStorage.getItem(
 
-                                    "username"
+                                        "username"
 
-                                ) ||
+                                    )
 
-                                "",
+                                    ||
+
+                                    "",
 
 
                                 name:
 
-                                localStorage.getItem(
+                                    localStorage.getItem(
 
-                                    "name"
+                                        "name"
 
-                                ) ||
+                                    )
 
-                                ""
+                                    ||
+
+                                    ""
 
                             };
 
 
+                            /* =============================
+                               SEND DATA
+                            ============================= */
+
                             const response =
 
-                            await fetch(
+                                await fetch(
 
-                                PENDING_SUPPORT_API_URL,
+                                    PENDING_SUPPORT_API_URL,
 
-                                {
+                                    {
 
-                                    method:"POST",
+                                        method:"POST",
 
-                                    headers:{
+                                        headers:{
 
-                                        "Content-Type":
+                                            "Content-Type":
 
-                                        "text/plain;charset=utf-8"
+                                                "text/plain;charset=utf-8"
 
-                                    },
+                                        },
 
-                                    body:
+                                        body:
 
-                                    JSON.stringify(
+                                            JSON.stringify(
 
-                                        payload
+                                                payload
 
-                                    )
+                                            )
 
-                                }
+                                    }
 
-                            );
+                                );
 
+
+                            /* =============================
+                               GET RESPONSE
+                            ============================= */
 
                             const result =
 
-                            await response.json();
+                                await response.json();
 
 
                             if(
@@ -2656,9 +2711,9 @@ async function loadPendingSupport(){
                             }
 
 
-                            /* =========================
+                            /* =============================
                                SUCCESS
-                            ========================= */
+                            ============================= */
 
                             showStatus(
 
@@ -2669,24 +2724,36 @@ async function loadPendingSupport(){
                             );
 
 
+                            /* =============================
+                               REMOVE ROW
+                            ============================= */
+
                             tr.remove();
 
 
+                            /* =============================
+                               UPDATE COUNT
+                            ============================= */
+
                             const remaining =
 
-                            tableBody.querySelectorAll(
+                                tableBody.querySelectorAll(
 
-                                "tr"
+                                    "tr"
 
-                            ).length;
+                                ).length;
 
 
                             pendingCount.textContent =
 
-                            remaining +
+                                remaining +
 
-                            " Pending";
+                                " Pending";
 
+
+                            /* =============================
+                               NO DATA LEFT
+                            ============================= */
 
                             if(
 
@@ -2696,7 +2763,7 @@ async function loadPendingSupport(){
 
                                 tableWrapper.style.display =
 
-                                "none";
+                                    "none";
 
 
                                 emptyState.classList.add(
@@ -2708,7 +2775,14 @@ async function loadPendingSupport(){
 
                                 pendingCount.textContent =
 
-                                "0 Pending";
+                                    "0 Pending";
+
+                            }
+
+
+                            else{
+
+                                searchPendingSupport();
 
                             }
 
@@ -2741,12 +2815,12 @@ async function loadPendingSupport(){
 
                             submitBtn.disabled =
 
-                            false;
+                                false;
 
 
                             submitBtn.innerHTML =
 
-                            '<i class="fa-solid fa-paper-plane"></i> Submit';
+                                '<i class="fa-solid fa-paper-plane"></i> Submit';
 
 
                         }
@@ -2757,9 +2831,9 @@ async function loadPendingSupport(){
                 );
 
 
-                /* =====================================
-                   ADD ACTION
-                ===================================== */
+                /* ====================================
+                   ADD ACTION BUTTON
+                ==================================== */
 
                 tdAction.appendChild(
 
@@ -2768,9 +2842,9 @@ async function loadPendingSupport(){
                 );
 
 
-                /* =====================================
-                   ADD ALL CELLS
-                ===================================== */
+                /* ====================================
+                   ADD CELLS
+                ==================================== */
 
                 tr.appendChild(
 
@@ -2821,6 +2895,10 @@ async function loadPendingSupport(){
                 );
 
 
+                /* ====================================
+                   ADD ROW
+                ==================================== */
+
                 tableBody.appendChild(
 
                     tr
@@ -2833,7 +2911,18 @@ async function loadPendingSupport(){
         );
 
 
+        /* ============================================
+           HIDE STATUS
+        ============================================ */
+
         hideStatus();
+
+
+        /* ============================================
+           INITIAL SEARCH STATE
+        ============================================ */
+
+        searchPendingSupport();
 
 
     }
@@ -2853,12 +2942,24 @@ async function loadPendingSupport(){
 
         loadingState.style.display =
 
-        "none";
+            "none";
+
+
+        tableWrapper.style.display =
+
+            "none";
+
+
+        emptyState.classList.remove(
+
+            "show"
+
+        );
 
 
         pendingCount.textContent =
 
-        "0 Pending";
+            "0 Pending";
 
 
         showStatus(
@@ -2871,14 +2972,13 @@ async function loadPendingSupport(){
 
         );
 
-
     }
 
 }
 
 
 /* =====================================================
-   REFRESH
+   REFRESH BUTTON
 ===================================================== */
 
 refreshBtn.addEventListener(
@@ -2914,7 +3014,7 @@ backBtn.addEventListener(
 
         window.location.href =
 
-        "index.html";
+            "index.html";
 
 
     }
@@ -2952,7 +3052,7 @@ document.addEventListener(
 
 
 /* =====================================================
-   BROWSER CACHE SECURITY
+   BROWSER BACK / CACHE SECURITY
 ===================================================== */
 
 window.addEventListener(
@@ -2973,6 +3073,7 @@ window.addEventListener(
 ===================================================== */
 
 loadPendingSupport();
+
 
 </script>
 

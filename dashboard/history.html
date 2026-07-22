@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -8,8 +9,8 @@
 <title>Support Log History</title>
 
 <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 >
 
 <style>
@@ -19,9 +20,9 @@
 ===================================================== */
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 
@@ -31,24 +32,25 @@
 
 body{
 
-  font-family:
-  Arial,
-  Helvetica,
-  sans-serif;
+    width:100%;
+    min-height:100vh;
 
-  background:
-  linear-gradient(
-    135deg,
-    #005b45,
-    #007d61,
-    #008f6d
-  );
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-  min-height:100vh;
+    background:
+    linear-gradient(
+        135deg,
+        #005b45,
+        #007d61,
+        #008f6d
+    );
 
-  padding:16px 24px;
+    padding:16px 24px;
 
-  color:#14201d;
+    color:#14201d;
 
 }
 
@@ -59,11 +61,11 @@ body{
 
 .container{
 
-  width:100%;
+    width:100%;
 
-  max-width:1500px;
+    max-width:1500px;
 
-  margin:auto;
+    margin:auto;
 
 }
 
@@ -74,142 +76,142 @@ body{
 
 .header{
 
-  background:#f7fbfa;
+    background:#f7fbfa;
 
-  border-radius:26px;
+    border-radius:26px;
 
-  min-height:122px;
+    min-height:122px;
 
-  padding:24px 30px;
+    padding:24px 30px;
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  justify-content:space-between;
+    justify-content:space-between;
 
-  gap:20px;
+    gap:20px;
 
-  box-shadow:
-  0 10px 30px
-  rgba(0,0,0,.08);
+    box-shadow:
+    0 10px 30px
+    rgba(0,0,0,.08);
 
 }
 
 
 .header-left{
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  gap:20px;
+    gap:20px;
 
 }
 
 
 .header-icon{
 
-  width:74px;
+    width:74px;
 
-  height:74px;
+    height:74px;
 
-  border-radius:20px;
+    border-radius:20px;
 
-  background:#009b73;
+    background:#009b73;
 
-  color:white;
+    color:white;
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  justify-content:center;
+    justify-content:center;
 
-  font-size:34px;
+    font-size:34px;
 
-  box-shadow:
-  0 10px 20px
-  rgba(0,120,90,.25);
+    box-shadow:
+    0 10px 20px
+    rgba(0,120,90,.25);
 
 }
 
 
 .header-title h1{
 
-  font-size:32px;
+    font-size:32px;
 
-  color:#00765b;
+    color:#00765b;
 
-  margin-bottom:5px;
+    margin-bottom:5px;
 
 }
 
 
 .header-title p{
 
-  font-size:16px;
+    font-size:16px;
 
-  color:#66736f;
+    color:#66736f;
 
 }
 
 
 .header-buttons{
 
-  display:flex;
+    display:flex;
 
-  gap:12px;
+    gap:12px;
 
 }
 
 
 .btn{
 
-  border:none;
+    border:none;
 
-  border-radius:15px;
+    border-radius:15px;
 
-  padding:14px 22px;
+    padding:14px 22px;
 
-  font-size:16px;
+    font-size:16px;
 
-  font-weight:bold;
+    font-weight:bold;
 
-  cursor:pointer;
+    cursor:pointer;
 
-  transition:.2s;
+    transition:.2s;
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  gap:9px;
+    gap:9px;
 
 }
 
 
 .btn:hover{
 
-  transform:translateY(-2px);
+    transform:translateY(-2px);
 
 }
 
 
 .btn-refresh{
 
-  background:#e5f6f1;
+    background:#e5f6f1;
 
-  color:#007c60;
+    color:#007c60;
 
 }
 
 
 .btn-dashboard{
 
-  background:#00785b;
+    background:#00785b;
 
-  color:white;
+    color:white;
 
 }
 
@@ -220,44 +222,44 @@ body{
 
 .user-bar{
 
-  margin-top:24px;
+    margin-top:24px;
 
-  background:
-  rgba(255,255,255,.12);
+    background:
+    rgba(255,255,255,.12);
 
-  border:
-  1px solid
-  rgba(255,255,255,.25);
+    border:
+    1px solid
+    rgba(255,255,255,.25);
 
-  border-radius:18px;
+    border-radius:18px;
 
-  min-height:55px;
+    min-height:55px;
 
-  padding:0 22px;
+    padding:0 22px;
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  justify-content:space-between;
+    justify-content:space-between;
 
-  color:white;
+    color:white;
 
-  font-size:16px;
+    font-size:16px;
 
 }
 
 
 .user-name{
 
-  font-weight:bold;
+    font-weight:bold;
 
 }
 
 
 .page-label{
 
-  font-weight:bold;
+    font-weight:bold;
 
 }
 
@@ -268,17 +270,17 @@ body{
 
 .filter-area{
 
-  background:#f7fbfa;
+    background:#f7fbfa;
 
-  margin-top:24px;
+    margin-top:24px;
 
-  border-radius:24px;
+    border-radius:24px;
 
-  padding:22px;
+    padding:22px;
 
-  box-shadow:
-  0 10px 30px
-  rgba(0,0,0,.06);
+    box-shadow:
+    0 10px 30px
+    rgba(0,0,0,.06);
 
 }
 
@@ -289,64 +291,64 @@ body{
 
 .search-box{
 
-  width:100%;
+    width:100%;
 
-  position:relative;
+    position:relative;
 
 }
 
 
 .search-box i{
 
-  position:absolute;
+    position:absolute;
 
-  left:18px;
+    left:18px;
 
-  top:50%;
+    top:50%;
 
-  transform:
-  translateY(-50%);
+    transform:
+    translateY(-50%);
 
-  color:#009875;
+    color:#009875;
 
-  font-size:19px;
+    font-size:19px;
 
 }
 
 
 .search-box input{
 
-  width:100%;
+    width:100%;
 
-  height:56px;
+    height:56px;
 
-  border:
-  2px solid
-  #dcebe7;
+    border:
+    2px solid
+    #dcebe7;
 
-  border-radius:16px;
+    border-radius:16px;
 
-  outline:none;
+    outline:none;
 
-  padding:
-  0 20px 0 52px;
+    padding:
+    0 20px 0 52px;
 
-  font-size:16px;
+    font-size:16px;
 
-  color:#26332f;
+    color:#26332f;
 
-  transition:.2s;
+    transition:.2s;
 
 }
 
 
 .search-box input:focus{
 
-  border-color:#00a27a;
+    border-color:#00a27a;
 
-  box-shadow:
-  0 0 0 4px
-  rgba(0,162,122,.08);
+    box-shadow:
+    0 0 0 4px
+    rgba(0,162,122,.08);
 
 }
 
@@ -357,28 +359,28 @@ body{
 
 .filter-row{
 
-  margin-top:15px;
+    margin-top:15px;
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  justify-content:flex-end;
+    justify-content:flex-end;
 
-  gap:10px;
+    gap:10px;
 
-  flex-wrap:wrap;
+    flex-wrap:wrap;
 
 }
 
 
 .filter-label{
 
-  font-weight:bold;
+    font-weight:bold;
 
-  color:#53625d;
+    color:#53625d;
 
-  white-space:nowrap;
+    white-space:nowrap;
 
 }
 
@@ -389,50 +391,50 @@ body{
 
 .last-days-box{
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  gap:7px;
+    gap:7px;
 
 }
 
 
 .last-days-box i{
 
-  color:#007e60;
+    color:#007e60;
 
 }
 
 
 .last-days-input{
 
-  width:75px;
+    width:75px;
 
-  height:42px;
+    height:42px;
 
-  border:
-  2px solid
-  #dcebe7;
+    border:
+    2px solid
+    #dcebe7;
 
-  border-radius:10px;
+    border-radius:10px;
 
-  outline:none;
+    outline:none;
 
-  text-align:center;
+    text-align:center;
 
-  font-size:15px;
+    font-size:15px;
 
-  font-weight:bold;
+    font-weight:bold;
 
-  color:#007b5d;
+    color:#007b5d;
 
 }
 
 
 .last-days-input:focus{
 
-  border-color:#009b73;
+    border-color:#009b73;
 
 }
 
@@ -443,52 +445,52 @@ body{
 
 .date-box{
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  gap:6px;
+    gap:6px;
 
 }
 
 
 .date-box label{
 
-  font-size:13px;
+    font-size:13px;
 
-  font-weight:bold;
+    font-weight:bold;
 
-  color:#68756f;
+    color:#68756f;
 
 }
 
 
 .date-box input{
 
-  width:125px;
+    width:125px;
 
-  height:42px;
+    height:42px;
 
-  border:
-  2px solid
-  #dcebe7;
+    border:
+    2px solid
+    #dcebe7;
 
-  border-radius:10px;
+    border-radius:10px;
 
-  padding:0 8px;
+    padding:0 8px;
 
-  outline:none;
+    outline:none;
 
-  font-size:13px;
+    font-size:13px;
 
-  color:#40504b;
+    color:#40504b;
 
 }
 
 
 .date-box input:focus{
 
-  border-color:#009b73;
+    border-color:#009b73;
 
 }
 
@@ -499,29 +501,29 @@ body{
 
 .filter-select{
 
-  height:42px;
+    height:42px;
 
-  min-width:105px;
+    min-width:105px;
 
-  border:
-  2px solid
-  #dcebe7;
+    border:
+    2px solid
+    #dcebe7;
 
-  border-radius:10px;
+    border-radius:10px;
 
-  padding:0 12px;
+    padding:0 12px;
 
-  background:white;
+    background:white;
 
-  color:#56635f;
+    color:#56635f;
 
-  font-size:14px;
+    font-size:14px;
 
-  font-weight:bold;
+    font-weight:bold;
 
-  outline:none;
+    outline:none;
 
-  cursor:pointer;
+    cursor:pointer;
 
 }
 
@@ -532,28 +534,28 @@ body{
 
 .clear-btn{
 
-  height:42px;
+    height:42px;
 
-  padding:0 15px;
+    padding:0 15px;
 
-  border:none;
+    border:none;
 
-  border-radius:10px;
+    border-radius:10px;
 
-  background:#e8f6f2;
+    background:#e8f6f2;
 
-  color:#007c5e;
+    color:#007c5e;
 
-  font-weight:bold;
+    font-weight:bold;
 
-  cursor:pointer;
+    cursor:pointer;
 
 }
 
 
 .clear-btn:hover{
 
-  background:#d5eee7;
+    background:#d5eee7;
 
 }
 
@@ -564,62 +566,62 @@ body{
 
 .content-card{
 
-  background:#f7fbfa;
+    background:#f7fbfa;
 
-  margin-top:24px;
+    margin-top:24px;
 
-  border-radius:26px;
+    border-radius:26px;
 
-  overflow:hidden;
+    overflow:hidden;
 
-  min-height:400px;
+    min-height:400px;
 
-  box-shadow:
-  0 10px 30px
-  rgba(0,0,0,.06);
+    box-shadow:
+    0 10px 30px
+    rgba(0,0,0,.06);
 
 }
 
 
 .content-header{
 
-  padding:
-  25px 32px;
+    padding:
+    25px 32px;
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  justify-content:space-between;
+    justify-content:space-between;
 
-  border-bottom:
-  1px solid
-  #e6eeeb;
+    border-bottom:
+    1px solid
+    #e6eeeb;
 
 }
 
 
 .content-header h2{
 
-  font-size:25px;
+    font-size:25px;
 
-  color:#26332f;
+    color:#26332f;
 
 }
 
 
 .pending-count{
 
-  background:#008f6b;
+    background:#008f6b;
 
-  color:white;
+    color:white;
 
-  padding:
-  10px 18px;
+    padding:
+    10px 18px;
 
-  border-radius:20px;
+    border-radius:20px;
 
-  font-weight:bold;
+    font-weight:bold;
 
 }
 
@@ -630,144 +632,142 @@ body{
 
 .table-wrapper{
 
-  width:100%;
+    width:100%;
 
-  overflow-x:auto;
+    overflow-x:auto;
 
 }
 
 
 table{
 
-  width:100%;
+    width:100%;
 
-  border-collapse:collapse;
+    border-collapse:collapse;
 
-  min-width:850px;
+    min-width:850px;
 
 }
 
 
 thead{
 
-  background:#00886a;
+    background:#00886a;
 
-  color:white;
+    color:white;
 
 }
 
 
 th{
 
-  padding:16px;
+    padding:16px;
 
-  text-align:left;
+    text-align:left;
 
-  font-size:14px;
+    font-size:14px;
 
 }
 
 
 td{
 
-  padding:17px 16px;
+    padding:17px 16px;
 
-  border-bottom:
-  1px solid
-  #e6eeeb;
+    border-bottom:
+    1px solid
+    #e6eeeb;
 
-  font-size:14px;
+    font-size:14px;
 
 }
 
 
 tbody tr{
 
-  transition:.2s;
+    transition:.2s;
 
 }
 
 
 tbody tr:hover{
 
-  background:#f0f8f5;
-
-  transform:scale(1.001);
+    background:#f0f8f5;
 
 }
 
 
 .customer-badge{
 
-  display:inline-flex;
+    display:inline-flex;
 
-  align-items:center;
+    align-items:center;
 
-  gap:7px;
+    gap:7px;
 
-  background:#e6f6f1;
+    background:#e6f6f1;
 
-  color:#007b5e;
+    color:#007b5e;
 
-  padding:
-  7px 12px;
+    padding:
+    7px 12px;
 
-  border-radius:9px;
+    border-radius:9px;
 
-  font-weight:bold;
+    font-weight:bold;
 
 }
 
 
 .ref-badge{
 
-  background:#f1f3f5;
+    background:#f1f3f5;
 
-  color:#5d6663;
+    color:#5d6663;
 
-  padding:
-  7px 12px;
+    padding:
+    7px 12px;
 
-  border-radius:8px;
+    border-radius:8px;
 
-  display:inline-block;
+    display:inline-block;
 
 }
 
 
 .view-btn{
 
-  border:none;
+    border:none;
 
-  background:#008f6b;
+    background:#008f6b;
 
-  color:white;
+    color:white;
 
-  padding:
-  9px 15px;
+    padding:
+    9px 15px;
 
-  border-radius:9px;
+    border-radius:9px;
 
-  cursor:pointer;
+    cursor:pointer;
 
-  font-weight:bold;
+    font-weight:bold;
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  gap:7px;
+    gap:7px;
 
-  transition:.2s;
+    transition:.2s;
 
 }
 
 
 .view-btn:hover{
 
-  background:#007657;
+    background:#007657;
 
-  transform:translateY(-1px);
+    transform:translateY(-1px);
 
 }
 
@@ -778,57 +778,57 @@ tbody tr:hover{
 
 .empty{
 
-  min-height:350px;
+    min-height:350px;
 
-  display:flex;
+    display:flex;
 
-  flex-direction:column;
+    flex-direction:column;
 
-  align-items:center;
+    align-items:center;
 
-  justify-content:center;
+    justify-content:center;
 
-  text-align:center;
+    text-align:center;
 
-  color:#65736e;
+    color:#65736e;
 
-  padding:30px;
+    padding:30px;
 
 }
 
 
 .empty-icon{
 
-  width:90px;
+    width:90px;
 
-  height:90px;
+    height:90px;
 
-  border-radius:50%;
+    border-radius:50%;
 
-  background:#e7f7f2;
+    background:#e7f7f2;
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  justify-content:center;
+    justify-content:center;
 
-  color:#009b73;
+    color:#009b73;
 
-  font-size:38px;
+    font-size:38px;
 
-  margin-bottom:20px;
+    margin-bottom:20px;
 
 }
 
 
 .empty h3{
 
-  color:#26322f;
+    color:#26322f;
 
-  font-size:24px;
+    font-size:24px;
 
-  margin-bottom:8px;
+    margin-bottom:8px;
 
 }
 
@@ -839,52 +839,52 @@ tbody tr:hover{
 
 .loading{
 
-  min-height:300px;
+    min-height:300px;
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  justify-content:center;
+    justify-content:center;
 
-  color:#008f6b;
+    color:#008f6b;
 
-  font-size:18px;
+    font-size:18px;
 
-  font-weight:bold;
+    font-weight:bold;
 
 }
 
 
 .spinner{
 
-  width:28px;
+    width:28px;
 
-  height:28px;
+    height:28px;
 
-  border:
-  4px solid
-  #d8eee8;
+    border:
+    4px solid
+    #d8eee8;
 
-  border-top-color:#008f6b;
+    border-top-color:#008f6b;
 
-  border-radius:50%;
+    border-radius:50%;
 
-  animation:
-  spin 1s linear infinite;
+    animation:
+    spin 1s linear infinite;
 
-  margin-right:12px;
+    margin-right:12px;
 
 }
 
 
 @keyframes spin{
 
-  to{
+    to{
 
-    transform:rotate(360deg);
+        transform:rotate(360deg);
 
-  }
+    }
 
 }
 
@@ -895,32 +895,32 @@ tbody tr:hover{
 
 .modal{
 
-  display:none;
+    display:none;
 
-  position:fixed;
+    position:fixed;
 
-  inset:0;
+    inset:0;
 
-  background:
-  rgba(0,30,23,.68);
+    background:
+    rgba(0,30,23,.68);
 
-  backdrop-filter:
-  blur(5px);
+    backdrop-filter:
+    blur(5px);
 
-  z-index:9999;
+    z-index:9999;
 
-  padding:20px;
+    padding:20px;
 
-  align-items:center;
+    align-items:center;
 
-  justify-content:center;
+    justify-content:center;
 
 }
 
 
 .modal.show{
 
-  display:flex;
+    display:flex;
 
 }
 
@@ -931,49 +931,49 @@ tbody tr:hover{
 
 .modal-box{
 
-  width:100%;
+    width:100%;
 
-  max-width:780px;
+    max-width:780px;
 
-  max-height:92vh;
+    max-height:92vh;
 
-  overflow-y:auto;
+    overflow-y:auto;
 
-  background:#f4faf8;
+    background:#f4faf8;
 
-  border-radius:26px;
+    border-radius:26px;
 
-  box-shadow:
-  0 25px 70px
-  rgba(0,0,0,.3);
+    box-shadow:
+    0 25px 70px
+    rgba(0,0,0,.3);
 
-  animation:
-  modalIn .2s ease;
+    animation:
+    modalIn .2s ease;
 
 }
 
 
 @keyframes modalIn{
 
-  from{
+    from{
 
-    transform:
-    translateY(15px)
-    scale(.96);
+        transform:
+        translateY(15px)
+        scale(.96);
 
-    opacity:0;
+        opacity:0;
 
-  }
+    }
 
-  to{
+    to{
 
-    transform:
-    translateY(0)
-    scale(1);
+        transform:
+        translateY(0)
+        scale(1);
 
-    opacity:1;
+        opacity:1;
 
-  }
+    }
 
 }
 
@@ -984,63 +984,63 @@ tbody tr:hover{
 
 .modal-header{
 
-  background:
-  linear-gradient(
-    135deg,
-    #007b5e,
-    #00a47c
-  );
+    background:
+    linear-gradient(
+        135deg,
+        #007b5e,
+        #00a47c
+    );
 
-  color:white;
+    color:white;
 
-  padding:20px 24px;
+    padding:20px 24px;
 
-  display:flex;
+    display:flex;
 
-  justify-content:space-between;
+    justify-content:space-between;
 
-  align-items:center;
+    align-items:center;
 
 }
 
 
 .modal-header h3{
 
-  font-size:21px;
+    font-size:21px;
 
 }
 
 
 .close-btn{
 
-  width:40px;
+    width:40px;
 
-  height:40px;
+    height:40px;
 
-  border:none;
+    border:none;
 
-  border-radius:50%;
+    border-radius:50%;
 
-  background:
-  rgba(255,255,255,.18);
+    background:
+    rgba(255,255,255,.18);
 
-  color:white;
+    color:white;
 
-  font-size:22px;
+    font-size:22px;
 
-  cursor:pointer;
+    cursor:pointer;
 
-  transition:.2s;
+    transition:.2s;
 
 }
 
 
 .close-btn:hover{
 
-  background:
-  rgba(255,255,255,.3);
+    background:
+    rgba(255,255,255,.3);
 
-  transform:rotate(90deg);
+    transform:rotate(90deg);
 
 }
 
@@ -1051,438 +1051,404 @@ tbody tr:hover{
 
 .details{
 
-  padding:24px;
+    padding:24px;
 
 }
 
 
 .detail-grid{
 
-  display:grid;
+    display:grid;
 
-  grid-template-columns:
-  repeat(2,1fr);
+    grid-template-columns:
+    repeat(2,1fr);
 
-  gap:15px;
+    gap:15px;
 
 }
 
 
 /* =====================================================
-   COLORFUL DETAIL CARDS
+   READ ONLY DETAIL CARDS
 ===================================================== */
 
 .detail-item{
 
-  position:relative;
+    position:relative;
 
-  overflow:hidden;
+    overflow:hidden;
 
-  background:white;
+    border-radius:15px;
 
-  border-radius:16px;
+    padding:17px;
 
-  padding:17px;
+    border:
+    1px solid
+    rgba(0,0,0,.04);
 
-  border:
-  1px solid
-  rgba(0,0,0,.06);
+    box-shadow:
+    0 5px 15px
+    rgba(0,60,45,.05);
 
-  box-shadow:
-  0 6px 18px
-  rgba(0,60,45,.06);
-
-  transition:.2s;
-
-}
-
-
-.detail-item:hover{
-
-  transform:
-  translateY(-2px);
-
-  box-shadow:
-  0 10px 25px
-  rgba(0,60,45,.10);
+    min-height:85px;
 
 }
 
 
 .detail-item::before{
 
-  content:"";
+    content:"";
 
-  position:absolute;
+    position:absolute;
 
-  left:0;
+    left:0;
 
-  top:0;
+    top:0;
 
-  bottom:0;
+    bottom:0;
 
-  width:5px;
-
-  background:#009b73;
+    width:5px;
 
 }
 
 
-/* Customer */
+/* =====================================================
+   CUSTOMER ID
+===================================================== */
 
 .detail-item:nth-child(1){
 
-  background:
-  linear-gradient(
-    135deg,
-    #effcf7,
-    #ffffff
-  );
+    background:
+    linear-gradient(
+        135deg,
+        #dff7ef,
+        #eafbf6
+    );
 
 }
 
 
 .detail-item:nth-child(1)::before{
 
-  background:#009b73;
+    background:#009b73;
 
 }
 
 
-/* Date */
+/* =====================================================
+   DATE
+===================================================== */
 
 .detail-item:nth-child(2){
 
-  background:
-  linear-gradient(
-    135deg,
-    #eef7ff,
-    #ffffff
-  );
+    background:
+    linear-gradient(
+        135deg,
+        #e5f0ff,
+        #edf5ff
+    );
 
 }
 
 
 .detail-item:nth-child(2)::before{
 
-  background:#3488d8;
+    background:#3488d8;
 
 }
 
 
-/* Problem */
+/* =====================================================
+   PROBLEM
+===================================================== */
 
 .detail-item:nth-child(3){
 
-  background:
-  linear-gradient(
-    135deg,
-    #fff8ed,
-    #ffffff
-  );
+    background:
+    linear-gradient(
+        135deg,
+        #fff3d7,
+        #fff8e8
+    );
 
 }
 
 
 .detail-item:nth-child(3)::before{
 
-  background:#f29a2e;
+    background:#f0a22e;
 
 }
 
 
-/* Reference */
+/* =====================================================
+   REFERENCE
+===================================================== */
 
 .detail-item:nth-child(4){
 
-  background:
-  linear-gradient(
-    135deg,
-    #f5f0ff,
-    #ffffff
-  );
+    background:
+    linear-gradient(
+        135deg,
+        #f0e3ff,
+        #f6edff
+    );
 
 }
 
 
 .detail-item:nth-child(4)::before{
 
-  background:#8b62d9;
+    background:#8b62d9;
 
 }
 
 
-/* Support */
+/* =====================================================
+   SUPPORT
+===================================================== */
 
 .detail-item:nth-child(5){
 
-  background:
-  linear-gradient(
-    135deg,
-    #edfff7,
-    #ffffff
-  );
+    background:
+    linear-gradient(
+        135deg,
+        #dff8f0,
+        #eafbf6
+    );
 
 }
 
 
 .detail-item:nth-child(5)::before{
 
-  background:#10a66f;
+    background:#10a66f;
 
 }
 
 
-/* Support Work */
+/* =====================================================
+   SUPPORT WORK
+===================================================== */
 
 .detail-item:nth-child(6){
 
-  background:
-  linear-gradient(
-    135deg,
-    #fff0f5,
-    #ffffff
-  );
+    background:
+    linear-gradient(
+        135deg,
+        #fff0e4,
+        #fff6ed
+    );
 
 }
 
 
 .detail-item:nth-child(6)::before{
 
-  background:#d95783;
+    background:#e58b3d;
 
 }
 
 
-/* Call Person */
-
-.detail-item:nth-child(7){
-
-  background:
-  linear-gradient(
-    135deg,
-    #eef2ff,
-    #ffffff
-  );
-
-}
-
-
-.detail-item:nth-child(7)::before{
-
-  background:#5869d8;
-
-}
-
+/* =====================================================
+   FULL WIDTH
+===================================================== */
 
 .detail-item.full{
 
-  grid-column:
-  1 / -1;
+    grid-column:
+    1 / -1;
 
 }
 
+
+/* =====================================================
+   LABEL
+===================================================== */
 
 .detail-label{
 
-  font-size:11px;
+    font-size:11px;
 
-  color:#72807b;
+    color:#66736e;
 
-  font-weight:bold;
+    font-weight:bold;
 
-  margin-bottom:8px;
+    margin-bottom:8px;
 
-  text-transform:uppercase;
+    text-transform:uppercase;
 
-  letter-spacing:.5px;
+    letter-spacing:.5px;
 
 }
 
+
+/* =====================================================
+   VALUE
+===================================================== */
 
 .detail-value{
 
-  font-size:15px;
+    font-size:15px;
 
-  color:#24332e;
+    color:#24332e;
 
-  line-height:1.6;
+    line-height:1.6;
 
-  word-break:break-word;
+    word-break:break-word;
 
-  font-weight:500;
+    font-weight:600;
 
 }
 
 
 /* =====================================================
-   CALL WORK
+   CALL PERSON / CALL WORK READ ONLY
 ===================================================== */
 
-.call-work-box{
+.readonly-section{
 
-  margin-top:20px;
+    margin-top:20px;
 
-  background:
-  linear-gradient(
-    135deg,
-    #fff8ed,
-    #ffffff
-  );
+    padding-top:20px;
 
-  border:
-  1px solid
-  #f1dfc4;
-
-  border-radius:17px;
-
-  padding:18px;
-
-  box-shadow:
-  0 6px 18px
-  rgba(130,80,20,.06);
+    border-top:
+    1px solid
+    #dfe9e5;
 
 }
 
 
-.call-work-box label{
+.readonly-box{
 
-  display:block;
+    margin-top:10px;
 
-  font-weight:bold;
-
-  color:#7a521d;
-
-  margin-bottom:9px;
+    margin-bottom:18px;
 
 }
 
 
-.call-work-box textarea{
+.readonly-label{
 
-  width:100%;
+    display:block;
 
-  min-height:110px;
+    font-size:14px;
 
-  resize:vertical;
+    font-weight:bold;
 
-  border:
-  2px solid
-  #eadcc8;
+    color:#26332f;
 
-  border-radius:13px;
-
-  padding:14px;
-
-  outline:none;
-
-  font-size:15px;
-
-  font-family:inherit;
-
-  background:white;
+    margin-bottom:8px;
 
 }
 
 
-.call-work-box textarea:focus{
+.readonly-value{
 
-  border-color:#d99537;
+    width:100%;
 
-  box-shadow:
-  0 0 0 4px
-  rgba(217,149,55,.10);
+    min-height:43px;
+
+    padding:
+    11px 14px;
+
+    border:
+    2px solid
+    #d9e7e2;
+
+    border-radius:12px;
+
+    background:
+    #f1f6f4;
+
+    color:#007b62;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    line-height:1.6;
+
+    word-break:break-word;
 
 }
 
 
 /* =====================================================
-   MODAL ACTIONS
+   CALL WORK VALUE
+===================================================== */
+
+.call-work-value{
+
+    width:100%;
+
+    min-height:85px;
+
+    padding:
+    13px 14px;
+
+    border:
+    2px solid
+    #eadcc8;
+
+    border-radius:12px;
+
+    background:
+    #fff8ed;
+
+    color:#7a521d;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    line-height:1.6;
+
+    white-space:pre-wrap;
+
+    word-break:break-word;
+
+}
+
+
+/* =====================================================
+   MODAL CLOSE AREA
 ===================================================== */
 
 .modal-actions{
 
-  margin-top:20px;
+    margin-top:20px;
 
-  display:flex;
+    display:flex;
 
-  justify-content:flex-end;
-
-  gap:10px;
+    justify-content:flex-end;
 
 }
 
 
 .cancel-btn{
 
-  border:none;
+    border:none;
 
-  padding:
-  12px 20px;
+    padding:
+    12px 22px;
 
-  border-radius:11px;
+    border-radius:11px;
 
-  background:#e9efed;
+    background:#e9efed;
 
-  color:#52615c;
+    color:#52615c;
 
-  font-weight:bold;
+    font-weight:bold;
 
-  cursor:pointer;
+    cursor:pointer;
 
 }
 
 
 .cancel-btn:hover{
 
-  background:#dce6e2;
-
-}
-
-
-.submit-btn{
-
-  border:none;
-
-  padding:
-  12px 22px;
-
-  border-radius:11px;
-
-  background:
-  linear-gradient(
-    135deg,
-    #008f6b,
-    #00a77e
-  );
-
-  color:white;
-
-  font-weight:bold;
-
-  cursor:pointer;
-
-  transition:.2s;
-
-}
-
-
-.submit-btn:hover{
-
-  transform:translateY(-1px);
-
-  box-shadow:
-  0 6px 15px
-  rgba(0,143,107,.25);
-
-}
-
-
-.submit-btn:disabled{
-
-  opacity:.6;
-
-  cursor:not-allowed;
+    background:#dce6e2;
 
 }
 
@@ -1493,35 +1459,35 @@ tbody tr:hover{
 
 .toast{
 
-  position:fixed;
+    position:fixed;
 
-  right:25px;
+    right:25px;
 
-  bottom:25px;
+    bottom:25px;
 
-  background:#15221e;
+    background:#15221e;
 
-  color:white;
+    color:white;
 
-  padding:
-  14px 20px;
+    padding:
+    14px 20px;
 
-  border-radius:12px;
+    border-radius:12px;
 
-  display:none;
+    display:none;
 
-  z-index:10000;
+    z-index:10000;
 
-  box-shadow:
-  0 10px 30px
-  rgba(0,0,0,.2);
+    box-shadow:
+    0 10px 30px
+    rgba(0,0,0,.2);
 
 }
 
 
 .toast.show{
 
-  display:block;
+    display:block;
 
 }
 
@@ -1532,178 +1498,178 @@ tbody tr:hover{
 
 @media(max-width:900px){
 
-  body{
+    body{
 
-    padding:12px;
+        padding:12px;
 
-  }
-
-
-  .header{
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-  }
+    }
 
 
-  .header-buttons{
+    .header{
 
-    width:100%;
+        flex-direction:column;
 
-  }
+        align-items:flex-start;
 
-
-  .header-buttons .btn{
-
-    flex:1;
-
-    justify-content:center;
-
-  }
+    }
 
 
-  .user-bar{
+    .header-buttons{
 
-    flex-direction:column;
+        width:100%;
 
-    align-items:flex-start;
-
-    gap:10px;
-
-    padding:15px 18px;
-
-  }
+    }
 
 
-  .filter-row{
+    .header-buttons .btn{
 
-    justify-content:flex-start;
+        flex:1;
 
-  }
+        justify-content:center;
+
+    }
+
+
+    .user-bar{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:10px;
+
+        padding:15px 18px;
+
+    }
+
+
+    .filter-row{
+
+        justify-content:flex-start;
+
+    }
 
 }
 
 
 @media(max-width:600px){
 
-  .header{
+    .header{
 
-    padding:20px;
+        padding:20px;
 
-    border-radius:20px;
+        border-radius:20px;
 
-  }
-
-
-  .header-left{
-
-    align-items:flex-start;
-
-  }
+    }
 
 
-  .header-icon{
+    .header-left{
 
-    width:58px;
+        align-items:flex-start;
 
-    height:58px;
-
-    font-size:25px;
-
-  }
+    }
 
 
-  .header-title h1{
+    .header-icon{
 
-    font-size:25px;
+        width:58px;
 
-  }
+        height:58px;
 
+        font-size:25px;
 
-  .header-title p{
-
-    font-size:13px;
-
-  }
+    }
 
 
-  .content-header{
+    .header-title h1{
 
-    padding:
-    20px;
+        font-size:25px;
 
-  }
-
-
-  .content-header h2{
-
-    font-size:20px;
-
-  }
+    }
 
 
-  .detail-grid{
+    .header-title p{
 
-    grid-template-columns:1fr;
+        font-size:13px;
 
-  }
-
-
-  .detail-item.full{
-
-    grid-column:auto;
-
-  }
+    }
 
 
-  .date-box input{
+    .content-header{
 
-    width:110px;
+        padding:
+        20px;
 
-  }
-
-
-  .filter-row{
-
-    flex-direction:column;
-
-    align-items:stretch;
-
-  }
+    }
 
 
-  .last-days-box,
-  .date-box{
+    .content-header h2{
 
-    width:100%;
+        font-size:20px;
 
-  }
-
-
-  .last-days-input{
-
-    flex:1;
-
-  }
+    }
 
 
-  .date-box input{
+    .detail-grid{
 
-    flex:1;
+        grid-template-columns:1fr;
 
-    width:auto;
-
-  }
+    }
 
 
-  .filter-select,
-  .clear-btn{
+    .detail-item.full{
 
-    width:100%;
+        grid-column:auto;
 
-  }
+    }
+
+
+    .date-box input{
+
+        width:110px;
+
+    }
+
+
+    .filter-row{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+
+    .last-days-box,
+    .date-box{
+
+        width:100%;
+
+    }
+
+
+    .last-days-input{
+
+        flex:1;
+
+    }
+
+
+    .date-box input{
+
+        flex:1;
+
+        width:auto;
+
+    }
+
+
+    .filter-select,
+    .clear-btn{
+
+        width:100%;
+
+    }
 
 }
 
@@ -1725,58 +1691,58 @@ tbody tr:hover{
 <div class="header">
 
 
-  <div class="header-left">
+    <div class="header-left">
 
 
-    <div class="header-icon">
+        <div class="header-icon">
 
-      <i class="fa-solid fa-clock-rotate-left"></i>
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+        </div>
+
+
+        <div class="header-title">
+
+            <h1>SUPPORT LOG HISTORY</h1>
+
+            <p>
+                View completed support requests
+            </p>
+
+        </div>
+
 
     </div>
 
 
-    <div class="header-title">
+    <div class="header-buttons">
 
-      <h1>SUPPORT LOG HISTORY</h1>
 
-      <p>
-        View and manage all completed support requests
-      </p>
+        <button
+        class="btn btn-refresh"
+        onclick="loadData()"
+        >
+
+            <i class="fa-solid fa-rotate"></i>
+
+            Refresh
+
+        </button>
+
+
+        <button
+        class="btn btn-dashboard"
+        onclick="goDashboard()"
+        >
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Dashboard
+
+        </button>
+
 
     </div>
-
-
-  </div>
-
-
-  <div class="header-buttons">
-
-
-    <button
-      class="btn btn-refresh"
-      onclick="loadData()"
-    >
-
-      <i class="fa-solid fa-rotate"></i>
-
-      Refresh
-
-    </button>
-
-
-    <button
-      class="btn btn-dashboard"
-      onclick="goDashboard()"
-    >
-
-      <i class="fa-solid fa-arrow-left"></i>
-
-      Dashboard
-
-    </button>
-
-
-  </div>
 
 
 </div>
@@ -1789,29 +1755,29 @@ tbody tr:hover{
 <div class="user-bar">
 
 
-  <div>
+    <div>
 
-    <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-user"></i>
 
-    Logged in as:
+        Logged in as:
 
-    <span
-      class="user-name"
-      id="loggedUser"
-    >
-      User
-    </span>
+        <span
+        class="user-name"
+        id="loggedUser"
+        >
+            User
+        </span>
 
-  </div>
+    </div>
 
 
-  <div class="page-label">
+    <div class="page-label">
 
-    <i class="fa-solid fa-clock-rotate-left"></i>
+        <i class="fa-solid fa-clock-rotate-left"></i>
 
-    Support Log History
+        Support Log History
 
-  </div>
+    </div>
 
 
 </div>
@@ -1824,130 +1790,106 @@ tbody tr:hover{
 <div class="filter-area">
 
 
-  <!-- SEARCH -->
-
-  <div class="search-box">
+    <div class="search-box">
 
 
-    <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-magnifying-glass"></i>
 
 
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="Search Customer ID, Problem, Reference, Support..."
-      oninput="applyFilters()"
-    >
-
-
-  </div>
-
-
-  <!-- FILTER ROW -->
-
-  <div class="filter-row">
-
-
-    <!-- LAST DAYS -->
-
-    <div class="last-days-box">
-
-
-      <i class="fa-regular fa-calendar"></i>
-
-
-      <span class="filter-label">
-        Last Days
-      </span>
-
-
-      <input
-        type="number"
-        id="lastDays"
-        class="last-days-input"
-        min="1"
-        placeholder="All"
+        <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Customer ID, Problem, Reference, Support..."
         oninput="applyFilters()"
-      >
+        >
 
 
     </div>
 
 
-    <!-- FROM -->
-
-    <div class="date-box">
+    <div class="filter-row">
 
 
-      <label>
-        From
-      </label>
+        <div class="last-days-box">
+
+            <i class="fa-regular fa-calendar"></i>
+
+            <span class="filter-label">
+                Last Days
+            </span>
+
+            <input
+            type="number"
+            id="lastDays"
+            class="last-days-input"
+            min="1"
+            placeholder="All"
+            oninput="applyFilters()"
+            >
+
+        </div>
 
 
-      <input
-        type="date"
-        id="fromDate"
+        <div class="date-box">
+
+            <label>
+                From
+            </label>
+
+            <input
+            type="date"
+            id="fromDate"
+            onchange="applyFilters()"
+            >
+
+        </div>
+
+
+        <div class="date-box">
+
+            <label>
+                To
+            </label>
+
+            <input
+            type="date"
+            id="toDate"
+            onchange="applyFilters()"
+            >
+
+        </div>
+
+
+        <select
+        id="statusFilter"
+        class="filter-select"
         onchange="applyFilters()"
-      >
+        >
+
+            <option value="all">
+                All
+            </option>
+
+            <option value="completed">
+                Completed
+            </option>
+
+        </select>
+
+
+        <button
+        class="clear-btn"
+        onclick="clearFilters()"
+        >
+
+            <i class="fa-solid fa-filter-circle-xmark"></i>
+
+            Clear
+
+        </button>
 
 
     </div>
-
-
-    <!-- TO -->
-
-    <div class="date-box">
-
-
-      <label>
-        To
-      </label>
-
-
-      <input
-        type="date"
-        id="toDate"
-        onchange="applyFilters()"
-      >
-
-
-    </div>
-
-
-    <!-- FILTER -->
-
-    <select
-      id="statusFilter"
-      class="filter-select"
-      onchange="applyFilters()"
-    >
-
-      <option value="all">
-        All
-      </option>
-
-      <option value="completed">
-        Completed
-      </option>
-
-    </select>
-
-
-    <!-- CLEAR -->
-
-    <button
-      class="clear-btn"
-      onclick="clearFilters()"
-    >
-
-      <i class="fa-solid fa-filter-circle-xmark"></i>
-
-      Clear
-
-    </button>
-
-
-  </div>
 
 
 </div>
@@ -1960,41 +1902,41 @@ tbody tr:hover{
 <div class="content-card">
 
 
-  <div class="content-header">
+    <div class="content-header">
 
 
-    <h2>
+        <h2>
 
-      <i class="fa-solid fa-list-check"></i>
+            <i class="fa-solid fa-list-check"></i>
 
-      History Records
+            History Records
 
-    </h2>
+        </h2>
 
 
-    <div
-      class="pending-count"
-      id="pendingCount"
-    >
+        <div
+        class="pending-count"
+        id="pendingCount"
+        >
 
-      0 Records
+            0 Records
+
+        </div>
+
 
     </div>
 
 
-  </div>
-
-
-  <div
+    <div
     id="content"
     class="loading"
-  >
+    >
 
-    <div class="spinner"></div>
+        <div class="spinner"></div>
 
-    Loading History...
+        Loading History...
 
-  </div>
+    </div>
 
 
 </div>
@@ -2005,271 +1947,260 @@ tbody tr:hover{
 
 <!-- ===================================================
      VIEW MODAL
+     READ ONLY
 =================================================== -->
 
 <div
-  class="modal"
-  id="callModal"
-  onclick="outsideModal(event)"
+class="modal"
+id="callModal"
+onclick="outsideModal(event)"
 >
 
 
-  <div class="modal-box">
+    <div class="modal-box">
 
 
-    <div class="modal-header">
+        <div class="modal-header">
 
 
-      <h3>
+            <h3>
 
-        <i class="fa-solid fa-circle-info"></i>
+                <i class="fa-solid fa-circle-info"></i>
 
-        Support Details
+                Support Details
 
-      </h3>
+            </h3>
 
 
-      <button
-        class="close-btn"
-        onclick="closeModal()"
-      >
+            <button
+            class="close-btn"
+            onclick="closeModal()"
+            >
 
-        ×
+                ×
 
-      </button>
+            </button>
+
+
+        </div>
+
+
+        <div class="details">
+
+
+            <div class="detail-grid">
+
+
+                <!-- CUSTOMER -->
+
+                <div class="detail-item">
+
+                    <div class="detail-label">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        Customer ID
+
+                    </div>
+
+
+                    <div
+                    class="detail-value"
+                    id="mCustomer"
+                    ></div>
+
+                </div>
+
+
+                <!-- DATE -->
+
+                <div class="detail-item">
+
+                    <div class="detail-label">
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        Date
+
+                    </div>
+
+
+                    <div
+                    class="detail-value"
+                    id="mDate"
+                    ></div>
+
+                </div>
+
+
+                <!-- PROBLEM -->
+
+                <div class="detail-item full">
+
+                    <div class="detail-label">
+
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+
+                        Problem
+
+                    </div>
+
+
+                    <div
+                    class="detail-value"
+                    id="mProblem"
+                    ></div>
+
+                </div>
+
+
+                <!-- REFERENCE -->
+
+                <div class="detail-item">
+
+                    <div class="detail-label">
+
+                        <i class="fa-solid fa-link"></i>
+
+                        Reference
+
+                    </div>
+
+
+                    <div
+                    class="detail-value"
+                    id="mReference"
+                    ></div>
+
+                </div>
+
+
+                <!-- SUPPORT -->
+
+                <div class="detail-item">
+
+                    <div class="detail-label">
+
+                        <i class="fa-solid fa-headset"></i>
+
+                        Support
+
+                    </div>
+
+
+                    <div
+                    class="detail-value"
+                    id="mSupport"
+                    ></div>
+
+                </div>
+
+
+                <!-- SUPPORT WORK -->
+
+                <div class="detail-item full">
+
+                    <div class="detail-label">
+
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                        Support Work
+
+                    </div>
+
+
+                    <div
+                    class="detail-value"
+                    id="mSupportWork"
+                    ></div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 CALL PERSON + CALL WORK
+                 READ ONLY
+            ================================================== -->
+
+            <div class="readonly-section">
+
+
+                <!-- CALL PERSON -->
+
+                <div class="readonly-box">
+
+
+                    <label class="readonly-label">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        Call Person
+
+                    </label>
+
+
+                    <div
+                    class="readonly-value"
+                    id="mCallPerson"
+                    ></div>
+
+
+                </div>
+
+
+                <!-- CALL WORK -->
+
+                <div class="readonly-box">
+
+
+                    <label class="readonly-label">
+
+                        <i class="fa-solid fa-phone-volume"></i>
+
+                        Call Work
+
+                    </label>
+
+
+                    <div
+                    class="call-work-value"
+                    id="mCallWork"
+                    ></div>
+
+
+                </div>
+
+
+                <!-- CLOSE ONLY -->
+
+                <div class="modal-actions">
+
+
+                    <button
+                    class="cancel-btn"
+                    onclick="closeModal()"
+                    >
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                        Close
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
 
 
     </div>
-
-
-    <div class="details">
-
-
-      <div class="detail-grid">
-
-
-        <!-- CUSTOMER -->
-
-        <div class="detail-item">
-
-
-          <div class="detail-label">
-
-            <i class="fa-solid fa-user"></i>
-
-            Customer ID
-
-          </div>
-
-
-          <div
-            class="detail-value"
-            id="mCustomer"
-          ></div>
-
-
-        </div>
-
-
-        <!-- DATE -->
-
-        <div class="detail-item">
-
-
-          <div class="detail-label">
-
-            <i class="fa-regular fa-calendar"></i>
-
-            Date
-
-          </div>
-
-
-          <div
-            class="detail-value"
-            id="mDate"
-          ></div>
-
-
-        </div>
-
-
-        <!-- PROBLEM -->
-
-        <div class="detail-item full">
-
-
-          <div class="detail-label">
-
-            <i class="fa-solid fa-triangle-exclamation"></i>
-
-            Problem
-
-          </div>
-
-
-          <div
-            class="detail-value"
-            id="mProblem"
-          ></div>
-
-
-        </div>
-
-
-        <!-- REFERENCE -->
-
-        <div class="detail-item">
-
-
-          <div class="detail-label">
-
-            <i class="fa-solid fa-link"></i>
-
-            Reference
-
-          </div>
-
-
-          <div
-            class="detail-value"
-            id="mReference"
-          ></div>
-
-
-        </div>
-
-
-        <!-- SUPPORT -->
-
-        <div class="detail-item">
-
-
-          <div class="detail-label">
-
-            <i class="fa-solid fa-headset"></i>
-
-            Support
-
-          </div>
-
-
-          <div
-            class="detail-value"
-            id="mSupport"
-          ></div>
-
-
-        </div>
-
-
-        <!-- SUPPORT WORK -->
-
-        <div class="detail-item full">
-
-
-          <div class="detail-label">
-
-            <i class="fa-solid fa-screwdriver-wrench"></i>
-
-            Support Work
-
-          </div>
-
-
-          <div
-            class="detail-value"
-            id="mSupportWork"
-          ></div>
-
-
-        </div>
-
-
-        <!-- CALL PERSON -->
-
-        <div class="detail-item">
-
-
-          <div class="detail-label">
-
-            <i class="fa-solid fa-phone"></i>
-
-            Call Person
-
-          </div>
-
-
-          <div
-            class="detail-value"
-            id="mCallPerson"
-          ></div>
-
-
-        </div>
-
-
-      </div>
-
-
-      <!-- CALL WORK -->
-
-      <div class="call-work-box">
-
-
-        <label>
-
-          <i class="fa-solid fa-phone-volume"></i>
-
-          Call Work
-
-        </label>
-
-
-        <textarea
-          id="callWorkInput"
-          placeholder="Write what happened during the call..."
-        ></textarea>
-
-
-      </div>
-
-
-      <!-- ACTIONS -->
-
-      <div class="modal-actions">
-
-
-        <button
-          class="cancel-btn"
-          onclick="closeModal()"
-        >
-
-          Cancel
-
-        </button>
-
-
-        <button
-          class="submit-btn"
-          id="submitCallBtn"
-          onclick="submitCall()"
-        >
-
-          <i class="fa-solid fa-paper-plane"></i>
-
-          Submit
-
-        </button>
-
-
-      </div>
-
-
-    </div>
-
-
-  </div>
 
 
 </div>
@@ -2280,8 +2211,8 @@ tbody tr:hover{
 =================================================== -->
 
 <div
-  class="toast"
-  id="toast"
+class="toast"
+id="toast"
 ></div>
 
 
@@ -2313,15 +2244,15 @@ let filteredData = [];
 
 document.addEventListener(
 
-  "DOMContentLoaded",
+"DOMContentLoaded",
 
-  function(){
+function(){
 
     loadUser();
 
     loadData();
 
-  }
+}
 
 );
 
@@ -2332,24 +2263,24 @@ document.addEventListener(
 
 function loadUser(){
 
-  const username =
+    const username =
 
-    localStorage.getItem("username") ||
+        localStorage.getItem("username") ||
 
-    localStorage.getItem("userName") ||
+        localStorage.getItem("userName") ||
 
-    localStorage.getItem("name") ||
+        localStorage.getItem("name") ||
 
-    sessionStorage.getItem("username") ||
+        sessionStorage.getItem("username") ||
 
-    "User";
+        "User";
 
 
-  document.getElementById(
+    document.getElementById(
 
-    "loggedUser"
+        "loggedUser"
 
-  ).textContent = username;
+    ).textContent = username;
 
 }
 
@@ -2360,119 +2291,125 @@ function loadUser(){
 
 async function loadData(){
 
-  const content =
+    const content =
 
-    document.getElementById(
+        document.getElementById(
 
-      "content"
+            "content"
 
-    );
-
-
-  content.className =
-
-    "loading";
-
-
-  content.innerHTML =
-
-    '<div class="spinner"></div>' +
-
-    'Loading History...';
-
-
-  try{
-
-
-    const response =
-
-      await fetch(
-
-        API_URL +
-
-        "?action=history&_=" +
-
-        Date.now(),
-
-        {
-
-          method:"GET",
-
-          cache:"no-store"
-
-        }
-
-      );
-
-
-    const result =
-
-      await response.json();
-
-
-    if(
-
-      !result.success
-
-    ){
-
-      throw new Error(
-
-        result.message ||
-
-        "Failed to load History."
-
-      );
-
-    }
-
-
-    allData =
-
-      Array.isArray(
-
-        result.data
-
-      )
-
-      ? result.data
-
-      : [];
-
-
-    applyFilters();
-
-
-  }catch(error){
+        );
 
 
     content.className =
 
-      "empty";
+        "loading";
 
 
     content.innerHTML =
 
-      '<div class="empty-icon">' +
+        '<div class="spinner"></div>' +
 
-      '<i class="fa-solid fa-triangle-exclamation"></i>' +
-
-      '</div>' +
-
-      '<h3>Failed to Load</h3>' +
-
-      '<p>' +
-
-      escapeHtml(
-
-        error.message
-
-      ) +
-
-      '</p>';
+        'Loading History...';
 
 
-  }
+    try{
+
+
+        const response =
+
+            await fetch(
+
+                API_URL +
+
+                "?action=history&_=" +
+
+                Date.now(),
+
+                {
+
+                    method:"GET",
+
+                    cache:"no-store"
+
+                }
+
+            );
+
+
+        const result =
+
+            await response.json();
+
+
+        if(
+
+            !result.success
+
+        ){
+
+            throw new Error(
+
+                result.message ||
+
+                "Failed to load History."
+
+            );
+
+        }
+
+
+        allData =
+
+            Array.isArray(
+
+                result.data
+
+            )
+
+            ?
+
+            result.data
+
+            :
+
+            [];
+
+
+        applyFilters();
+
+
+    }
+
+    catch(error){
+
+
+        content.className =
+
+            "empty";
+
+
+        content.innerHTML =
+
+            '<div class="empty-icon">' +
+
+            '<i class="fa-solid fa-triangle-exclamation"></i>' +
+
+            '</div>' +
+
+            '<h3>Failed to Load</h3>' +
+
+            '<p>' +
+
+            escapeHtml(
+
+                error.message
+
+            ) +
+
+            '</p>';
+
+
+    }
 
 }
 
@@ -2484,346 +2421,350 @@ async function loadData(){
 function applyFilters(){
 
 
-  const search =
+    const search =
 
-    document.getElementById(
+        document.getElementById(
 
-      "searchInput"
+            "searchInput"
 
-    )
+        )
 
-    .value
+        .value
 
-    .toLowerCase()
+        .toLowerCase()
 
-    .trim();
+        .trim();
 
 
-  const lastDaysValue =
+    const lastDaysValue =
 
-    document.getElementById(
+        document.getElementById(
 
-      "lastDays"
+            "lastDays"
 
-    ).value;
+        ).value;
 
 
-  const lastDays =
+    const lastDays =
 
-    lastDaysValue
+        lastDaysValue
 
-    ? parseInt(
+        ?
 
-        lastDaysValue,
+        parseInt(
 
-        10
+            lastDaysValue,
 
-      )
+            10
 
-    : null;
+        )
 
+        :
 
-  const fromDate =
+        null;
 
-    document.getElementById(
 
-      "fromDate"
+    const fromDate =
 
-    ).value;
+        document.getElementById(
 
+            "fromDate"
 
-  const toDate =
+        ).value;
 
-    document.getElementById(
 
-      "toDate"
+    const toDate =
 
-    ).value;
+        document.getElementById(
 
+            "toDate"
 
-  filteredData =
+        ).value;
 
-    allData.filter(
 
-      function(item){
+    filteredData =
 
+        allData.filter(
 
-        const searchable =
+            function(item){
 
-          (
 
-            item.customerId ||
+                const searchable =
 
-            item.customerNumber ||
+                (
 
-            item.ip ||
+                    item.customerId ||
 
-            ""
+                    item.customerNumber ||
 
-          ) +
+                    item.ip ||
 
-          " " +
+                    ""
 
-          (
+                ) +
 
-            item.problem ||
+                " " +
 
-            ""
+                (
 
-          ) +
+                    item.problem ||
 
-          " " +
+                    ""
 
-          (
+                ) +
 
-            item.reference ||
+                " " +
 
-            item.ref ||
+                (
 
-            ""
+                    item.reference ||
 
-          ) +
+                    item.ref ||
 
-          " " +
+                    ""
 
-          (
+                ) +
 
-            item.support ||
+                " " +
 
-            ""
+                (
 
-          ) +
+                    item.support ||
 
-          " " +
+                    ""
 
-          (
+                ) +
 
-            item.supportWork ||
+                " " +
 
-            ""
+                (
 
-          ) +
+                    item.supportWork ||
 
-          " " +
+                    ""
 
-          (
+                ) +
 
-            item.call ||
+                " " +
 
-            item.callPerson ||
+                (
 
-            ""
+                    item.call ||
 
-          ) +
+                    item.callPerson ||
 
-          " " +
+                    ""
 
-          (
+                ) +
 
-            item.callWork ||
+                " " +
 
-            ""
+                (
 
-          );
+                    item.callWork ||
 
+                    ""
 
-        if(
+                );
 
-          search &&
 
-          !searchable
+                if(
 
-            .toLowerCase()
+                    search &&
 
-            .includes(search)
+                    !searchable
 
-        ){
+                    .toLowerCase()
 
-          return false;
+                    .includes(search)
 
-        }
+                ){
 
+                    return false;
 
-        const itemDate =
+                }
 
-          parseDate(
 
-            item.date
+                const itemDate =
 
-          );
+                    parseDate(
 
+                        item.date
 
-        /* LAST DAYS */
+                    );
 
-        if(
 
-          lastDays !== null &&
+                /* LAST DAYS */
 
-          !isNaN(lastDays)
+                if(
 
-        ){
+                    lastDays !== null &&
 
+                    !isNaN(lastDays)
 
-          if(
+                ){
 
-            !itemDate
 
-          ){
+                    if(
 
-            return false;
+                        !itemDate
 
-          }
+                    ){
 
+                        return false;
 
-          const today =
+                    }
 
-            new Date();
 
+                    const today =
 
-          today.setHours(
+                        new Date();
 
-            23,
 
-            59,
+                    today.setHours(
 
-            59,
+                        23,
 
-            999
+                        59,
 
-          );
+                        59,
 
+                        999
 
-          const start =
+                    );
 
-            new Date(
 
-              today
+                    const start =
 
-            );
+                        new Date(
 
+                            today
 
-          start.setDate(
+                        );
 
-            start.getDate() -
 
-            lastDays +
+                    start.setDate(
 
-            1
+                        start.getDate() -
 
-          );
+                        lastDays +
 
+                        1
 
-          start.setHours(
+                    );
 
-            0,
 
-            0,
+                    start.setHours(
 
-            0,
+                        0,
 
-            0
+                        0,
 
-          );
+                        0,
 
+                        0
 
-          if(
+                    );
 
-            itemDate < start ||
 
-            itemDate > today
+                    if(
 
-          ){
+                        itemDate < start ||
 
-            return false;
+                        itemDate > today
 
-          }
+                    ){
 
-        }
+                        return false;
 
+                    }
 
-        /* FROM */
+                }
 
-        if(
 
-          fromDate
+                /* FROM */
 
-        ){
+                if(
 
+                    fromDate
 
-          const from =
+                ){
 
-            new Date(
 
-              fromDate +
+                    const from =
 
-              "T00:00:00"
+                        new Date(
 
-            );
+                            fromDate +
 
+                            "T00:00:00"
 
-          if(
+                        );
 
-            !itemDate ||
 
-            itemDate < from
+                    if(
 
-          ){
+                        !itemDate ||
 
-            return false;
+                        itemDate < from
 
-          }
+                    ){
 
-        }
+                        return false;
 
+                    }
 
-        /* TO */
+                }
 
-        if(
 
-          toDate
+                /* TO */
 
-        ){
+                if(
 
+                    toDate
 
-          const to =
+                ){
 
-            new Date(
 
-              toDate +
+                    const to =
 
-              "T23:59:59"
+                        new Date(
 
-            );
+                            toDate +
 
+                            "T23:59:59"
 
-          if(
+                        );
 
-            !itemDate ||
 
-            itemDate > to
+                    if(
 
-          ){
+                        !itemDate ||
 
-            return false;
+                        itemDate > to
 
-          }
+                    ){
 
-        }
+                        return false;
 
+                    }
 
-        return true;
+                }
 
 
-      }
+                return true;
+
+
+            }
+
+        );
+
+
+    renderData(
+
+        filteredData
 
     );
-
-
-  renderData(
-
-    filteredData
-
-  );
 
 }
 
@@ -2835,409 +2776,396 @@ function applyFilters(){
 function renderData(data){
 
 
-  const content =
+    const content =
+
+        document.getElementById(
+
+            "content"
+
+        );
+
 
     document.getElementById(
 
-      "content"
+        "pendingCount"
 
-    );
+    ).textContent =
 
+        data.length +
 
-  document.getElementById(
-
-    "pendingCount"
-
-  ).textContent =
-
-    data.length +
-
-    " Records";
+        " Records";
 
 
-  if(
+    if(
 
-    data.length === 0
+        data.length === 0
 
-  ){
+    ){
+
+
+        content.className =
+
+            "empty";
+
+
+        content.innerHTML =
+
+            '<div class="empty-icon">' +
+
+            '<i class="fa-solid fa-folder-open"></i>' +
+
+            '</div>' +
+
+            '<h3>No History Found</h3>' +
+
+            '<p>No completed support records found.</p>';
+
+
+        return;
+
+    }
 
 
     content.className =
 
-      "empty";
+        "table-wrapper";
+
+
+    let html =
+
+        '<table>' +
+
+        '<thead>' +
+
+        '<tr>' +
+
+        '<th>Customer ID</th>' +
+
+        '<th>Date</th>' +
+
+        '<th>Problem</th>' +
+
+        '<th>Reference</th>' +
+
+        '<th>Support</th>' +
+
+        '<th>Call</th>' +
+
+        '<th>Action</th>' +
+
+        '</tr>' +
+
+        '</thead>' +
+
+        '<tbody>';
+
+
+    data.forEach(
+
+        function(item,index){
+
+
+            html +=
+
+                '<tr>' +
+
+
+                '<td>' +
+
+                '<span class="customer-badge">' +
+
+                '<i class="fa-solid fa-user"></i>' +
+
+                escapeHtml(
+
+                    item.customerId ||
+
+                    item.customerNumber ||
+
+                    item.ip ||
+
+                    ""
+
+                ) +
+
+                '</span>' +
+
+                '</td>' +
+
+
+                '<td>' +
+
+                escapeHtml(
+
+                    formatDateDMY(
+
+                        item.date ||
+
+                        ""
+
+                    )
+
+                ) +
+
+                '</td>' +
+
+
+                '<td>' +
+
+                escapeHtml(
+
+                    item.problem ||
+
+                    ""
+
+                ) +
+
+                '</td>' +
+
+
+                '<td>' +
+
+                '<span class="ref-badge">' +
+
+                escapeHtml(
+
+                    item.reference ||
+
+                    item.ref ||
+
+                    "-"
+
+                ) +
+
+                '</span>' +
+
+                '</td>' +
+
+
+                '<td>' +
+
+                escapeHtml(
+
+                    item.support ||
+
+                    ""
+
+                ) +
+
+                '</td>' +
+
+
+                '<td>' +
+
+                escapeHtml(
+
+                    item.call ||
+
+                    item.callPerson ||
+
+                    ""
+
+                ) +
+
+                '</td>' +
+
+
+                '<td>' +
+
+                '<button class="view-btn" ' +
+
+                'onclick="openModal(' +
+
+                index +
+
+                ')">' +
+
+                '<i class="fa-solid fa-eye"></i>' +
+
+                'View' +
+
+                '</button>' +
+
+                '</td>' +
+
+
+                '</tr>';
+
+        }
+
+    );
+
+
+    html +=
+
+        '</tbody>' +
+
+        '</table>';
 
 
     content.innerHTML =
 
-      '<div class="empty-icon">' +
-
-      '<i class="fa-solid fa-folder-open"></i>' +
-
-      '</div>' +
-
-      '<h3>No History Found</h3>' +
-
-      '<p>No completed support records found.</p>';
-
-
-    return;
-
-  }
-
-
-  content.className =
-
-    "table-wrapper";
-
-
-  let html =
-
-    '<table>' +
-
-    '<thead>' +
-
-    '<tr>' +
-
-    '<th>Customer ID</th>' +
-
-    '<th>Date</th>' +
-
-    '<th>Problem</th>' +
-
-    '<th>Reference</th>' +
-
-    '<th>Support</th>' +
-
-    '<th>Call</th>' +
-
-    '<th>Action</th>' +
-
-    '</tr>' +
-
-    '</thead>' +
-
-    '<tbody>';
-
-
-  data.forEach(
-
-    function(item,index){
-
-
-      html +=
-
-        '<tr>' +
-
-
-        /* CUSTOMER */
-
-        '<td>' +
-
-        '<span class="customer-badge">' +
-
-        '<i class="fa-solid fa-user"></i>' +
-
-        escapeHtml(
-
-          item.customerId ||
-
-          item.customerNumber ||
-
-          item.ip ||
-
-          ""
-
-        ) +
-
-        '</span>' +
-
-        '</td>' +
-
-
-        /* DATE */
-
-        '<td>' +
-
-        escapeHtml(
-
-          formatDateDMY(
-
-            item.date ||
-
-            ""
-
-          )
-
-        ) +
-
-        '</td>' +
-
-
-        /* PROBLEM */
-
-        '<td>' +
-
-        escapeHtml(
-
-          item.problem ||
-
-          ""
-
-        ) +
-
-        '</td>' +
-
-
-        /* REFERENCE */
-
-        '<td>' +
-
-        '<span class="ref-badge">' +
-
-        escapeHtml(
-
-          item.reference ||
-
-          item.ref ||
-
-          "-"
-
-        ) +
-
-        '</span>' +
-
-        '</td>' +
-
-
-        /* SUPPORT */
-
-        '<td>' +
-
-        escapeHtml(
-
-          item.support ||
-
-          ""
-
-        ) +
-
-        '</td>' +
-
-
-        /* CALL */
-
-        '<td>' +
-
-        escapeHtml(
-
-          item.call ||
-
-          item.callPerson ||
-
-          ""
-
-        ) +
-
-        '</td>' +
-
-
-        /* ACTION */
-
-        '<td>' +
-
-        '<button class="view-btn" ' +
-
-        'onclick="openModal(' +
-
-        index +
-
-        ')">' +
-
-        '<i class="fa-solid fa-eye"></i>' +
-
-        'View' +
-
-        '</button>' +
-
-        '</td>' +
-
-
-        '</tr>';
-
-    }
-
-  );
-
-
-  html +=
-
-    '</tbody>' +
-
-    '</table>';
-
-
-  content.innerHTML =
-
-    html;
+        html;
 
 }
 
 
 /* =====================================================
    OPEN MODAL
+   READ ONLY
 ===================================================== */
 
 function openModal(index){
 
 
-  const data =
+    const data =
 
-    filteredData[index];
-
-
-  if(
-
-    !data
-
-  ){
-
-    return;
-
-  }
+        filteredData[index];
 
 
-  selectedItem =
+    if(
 
-    data;
+        !data
 
+    ){
 
-  /* CUSTOMER */
+        return;
 
-  document.getElementById(
-
-    "mCustomer"
-
-  ).textContent =
-
-    data.customerId ||
-
-    data.customerNumber ||
-
-    data.ip ||
-
-    "";
+    }
 
 
-  /* DATE */
+    selectedItem =
 
-  document.getElementById(
+        data;
 
-    "mDate"
 
-  ).textContent =
+    /* CUSTOMER */
 
-    formatDateDMY(
+    document.getElementById(
 
-      data.date ||
+        "mCustomer"
 
-      ""
+    ).textContent =
+
+        data.customerId ||
+
+        data.customerNumber ||
+
+        data.ip ||
+
+        "";
+
+
+    /* DATE */
+
+    document.getElementById(
+
+        "mDate"
+
+    ).textContent =
+
+        formatDateDMY(
+
+            data.date ||
+
+            ""
+
+        );
+
+
+    /* PROBLEM */
+
+    document.getElementById(
+
+        "mProblem"
+
+    ).textContent =
+
+        data.problem ||
+
+        "";
+
+
+    /* REFERENCE */
+
+    document.getElementById(
+
+        "mReference"
+
+    ).textContent =
+
+        data.reference ||
+
+        data.ref ||
+
+        "-";
+
+
+    /* SUPPORT */
+
+    document.getElementById(
+
+        "mSupport"
+
+    ).textContent =
+
+        data.support ||
+
+        "";
+
+
+    /* SUPPORT WORK */
+
+    document.getElementById(
+
+        "mSupportWork"
+
+    ).textContent =
+
+        data.supportWork ||
+
+        "";
+
+
+    /* CALL PERSON */
+
+    document.getElementById(
+
+        "mCallPerson"
+
+    ).textContent =
+
+        data.call ||
+
+        data.callPerson ||
+
+        "Unknown";
+
+
+    /* CALL WORK */
+
+    document.getElementById(
+
+        "mCallWork"
+
+    ).textContent =
+
+        data.callWork ||
+
+        "No Call Work Available";
+
+
+    /* SHOW MODAL */
+
+    document.getElementById(
+
+        "callModal"
+
+    ).classList.add(
+
+        "show"
 
     );
-
-
-  /* PROBLEM */
-
-  document.getElementById(
-
-    "mProblem"
-
-  ).textContent =
-
-    data.problem ||
-
-    "";
-
-
-  /* REFERENCE */
-
-  document.getElementById(
-
-    "mReference"
-
-  ).textContent =
-
-    data.reference ||
-
-    data.ref ||
-
-    "-";
-
-
-  /* SUPPORT */
-
-  document.getElementById(
-
-    "mSupport"
-
-  ).textContent =
-
-    data.support ||
-
-    "";
-
-
-  /* SUPPORT WORK */
-
-  document.getElementById(
-
-    "mSupportWork"
-
-  ).textContent =
-
-    data.supportWork ||
-
-    "";
-
-
-  /* CALL PERSON */
-
-  document.getElementById(
-
-    "mCallPerson"
-
-  ).textContent =
-
-    data.call ||
-
-    data.callPerson ||
-
-    "Unknown";
-
-
-  /* CALL WORK */
-
-  document.getElementById(
-
-    "callWorkInput"
-
-  ).value =
-
-    data.callWork ||
-
-    "";
-
-
-  /* SHOW MODAL */
-
-  document.getElementById(
-
-    "callModal"
-
-  ).classList.add(
-
-    "show"
-
-  );
 
 }
 
@@ -3249,20 +3177,20 @@ function openModal(index){
 function closeModal(){
 
 
-  document.getElementById(
+    document.getElementById(
 
-    "callModal"
+        "callModal"
 
-  ).classList.remove(
+    ).classList.remove(
 
-    "show"
+        "show"
 
-  );
+    );
 
 
-  selectedItem =
+    selectedItem =
 
-    null;
+        null;
 
 }
 
@@ -3274,252 +3202,17 @@ function closeModal(){
 function outsideModal(event){
 
 
-  if(
-
-    event.target.id ===
-
-    "callModal"
-
-  ){
-
-    closeModal();
-
-  }
-
-}
-
-
-/* =====================================================
-   SUBMIT CALL
-===================================================== */
-
-async function submitCall(){
-
-
-  if(
-
-    !selectedItem
-
-  ){
-
-    return;
-
-  }
-
-
-  const callWork =
-
-    document.getElementById(
-
-      "callWorkInput"
-
-    )
-
-    .value
-
-    .trim();
-
-
-  if(
-
-    !callWork
-
-  ){
-
-    showToast(
-
-      "Please write Call Work."
-
-    );
-
-    return;
-
-  }
-
-
-  const username =
-
-    localStorage.getItem(
-
-      "username"
-
-    ) ||
-
-    localStorage.getItem(
-
-      "userName"
-
-    ) ||
-
-    localStorage.getItem(
-
-      "name"
-
-    ) ||
-
-    sessionStorage.getItem(
-
-      "username"
-
-    ) ||
-
-    "";
-
-
-  const customerId =
-
-    selectedItem.customerId ||
-
-    selectedItem.customerNumber ||
-
-    selectedItem.ip ||
-
-    "";
-
-
-  const button =
-
-    document.getElementById(
-
-      "submitCallBtn"
-
-    );
-
-
-  button.disabled =
-
-    true;
-
-
-  button.innerHTML =
-
-    '<i class="fa-solid fa-spinner fa-spin"></i>' +
-
-    ' Submitting...';
-
-
-  try{
-
-
-    const response =
-
-      await fetch(
-
-        API_URL,
-
-        {
-
-          method:"POST",
-
-          headers:{
-
-            "Content-Type":
-
-            "text/plain;charset=utf-8"
-
-          },
-
-          body:
-
-          JSON.stringify({
-
-            action:
-
-              "submitCall",
-
-            customerId:
-
-              customerId,
-
-            call:
-
-              username,
-
-            callWork:
-
-              callWork,
-
-            username:
-
-              username
-
-          })
-
-        }
-
-      );
-
-
-    const result =
-
-      await response.json();
-
-
     if(
 
-      !result.success
+        event.target.id ===
+
+        "callModal"
 
     ){
 
-      throw new Error(
-
-        result.message ||
-
-        "Submit failed."
-
-      );
+        closeModal();
 
     }
-
-
-    closeModal();
-
-
-    showToast(
-
-      "Call completed successfully."
-
-    );
-
-
-    setTimeout(
-
-      function(){
-
-        loadData();
-
-      },
-
-      700
-
-    );
-
-
-  }catch(error){
-
-
-    showToast(
-
-      error.message
-
-    );
-
-
-  }finally{
-
-
-    button.disabled =
-
-      false;
-
-
-    button.innerHTML =
-
-      '<i class="fa-solid fa-paper-plane"></i>' +
-
-      ' Submit';
-
-  }
 
 }
 
@@ -3532,195 +3225,195 @@ async function submitCall(){
 function formatDateDMY(value){
 
 
-  if(
+    if(
 
-    !value
+        !value
 
-  ){
+    ){
 
-    return "";
+        return "";
 
-  }
+    }
 
 
-  const text =
+    const text =
 
-    String(
+        String(
 
-      value
+            value
 
-    ).trim();
+        ).trim();
 
 
-  /* DD-MM-YYYY */
+    /* DD-MM-YYYY */
 
-  let match =
+    let match =
 
-    text.match(
+        text.match(
 
-      /^(\d{1,2})-(\d{1,2})-(\d{4})(.*)$/
+            /^(\d{1,2})-(\d{1,2})-(\d{4})(.*)$/
 
-    );
+        );
 
 
-  if(
+    if(
 
-    match
+        match
 
-  ){
+    ){
 
-    return (
+        return (
 
-      String(
+            String(
 
-        match[1]
+                match[1]
 
-      ).padStart(
+            ).padStart(
 
-        2,
+                2,
 
-        "0"
+                "0"
 
-      ) +
+            ) +
 
-      "-" +
+            "-" +
 
-      String(
+            String(
 
-        match[2]
+                match[2]
 
-      ).padStart(
+            ).padStart(
 
-        2,
+                2,
 
-        "0"
+                "0"
 
-      ) +
+            ) +
 
-      "-" +
+            "-" +
 
-      match[3] +
+            match[3] +
 
-      match[4]
+            match[4]
 
-    );
+        );
 
-  }
+    }
 
 
-  /* MM/DD/YYYY */
+    /* MM/DD/YYYY */
 
-  match =
+    match =
 
-    text.match(
+        text.match(
 
-      /^(\d{1,2})\/(\d{1,2})\/(\d{4})(.*)$/
+            /^(\d{1,2})\/(\d{1,2})\/(\d{4})(.*)$/
 
-    );
+        );
 
 
-  if(
+    if(
 
-    match
+        match
 
-  ){
+    ){
 
-    return (
+        return (
 
-      String(
+            String(
 
-        match[2]
+                match[2]
 
-      ).padStart(
+            ).padStart(
 
-        2,
+                2,
 
-        "0"
+                "0"
 
-      ) +
+            ) +
 
-      "-" +
+            "-" +
 
-      String(
+            String(
 
-        match[1]
+                match[1]
 
-      ).padStart(
+            ).padStart(
 
-        2,
+                2,
 
-        "0"
+                "0"
 
-      ) +
+            ) +
 
-      "-" +
+            "-" +
 
-      match[3] +
+            match[3] +
 
-      match[4]
+            match[4]
 
-    );
+        );
 
-  }
+    }
 
 
-  /* YYYY-MM-DD */
+    /* YYYY-MM-DD */
 
-  match =
+    match =
 
-    text.match(
+        text.match(
 
-      /^(\d{4})-(\d{1,2})-(\d{1,2})(.*)$/
+            /^(\d{4})-(\d{1,2})-(\d{1,2})(.*)$/
 
-    );
+        );
 
 
-  if(
+    if(
 
-    match
+        match
 
-  ){
+    ){
 
-    return (
+        return (
 
-      String(
+            String(
 
-        match[3]
+                match[3]
 
-      ).padStart(
+            ).padStart(
 
-        2,
+                2,
 
-        "0"
+                "0"
 
-      ) +
+            ) +
 
-      "-" +
+            "-" +
 
-      String(
+            String(
 
-        match[2]
+                match[2]
 
-      ).padStart(
+            ).padStart(
 
-        2,
+                2,
 
-        "0"
+                "0"
 
-      ) +
+            ) +
 
-      "-" +
+            "-" +
 
-      match[1] +
+            match[1] +
 
-      match[4]
+            match[4]
 
-    );
+        );
 
-  }
+    }
 
 
-  return text;
+    return text;
 
 }
 
@@ -3732,209 +3425,225 @@ function formatDateDMY(value){
 function parseDate(value){
 
 
-  if(
+    if(
 
-    !value
+        !value
 
-  ){
+    ){
 
-    return null;
+        return null;
 
-  }
-
-
-  const text =
-
-    String(
-
-      value
-
-    ).trim();
+    }
 
 
-  /* DD-MM-YYYY */
+    const text =
 
-  let match =
+        String(
 
-    text.match(
+            value
 
-      /^(\d{1,2})-(\d{1,2})-(\d{4})/
-
-    );
+        ).trim();
 
 
-  if(
+    /* DD-MM-YYYY */
 
-    match
+    let match =
 
-  ){
+        text.match(
 
-    const date =
+            /^(\d{1,2})-(\d{1,2})-(\d{4})/
 
-      new Date(
+        );
 
-        Number(
 
-          match[3]
+    if(
 
-        ),
+        match
 
-        Number(
+    ){
 
-          match[2]
+        const date =
 
-        ) - 1,
+            new Date(
 
-        Number(
+                Number(
 
-          match[1]
+                    match[3]
+
+                ),
+
+                Number(
+
+                    match[2]
+
+                ) - 1,
+
+                Number(
+
+                    match[1]
+
+                )
+
+            );
+
+
+        return isNaN(
+
+            date.getTime()
 
         )
 
-      );
+        ?
+
+        null
+
+        :
+
+        date;
+
+    }
+
+
+    /* MM/DD/YYYY */
+
+    match =
+
+        text.match(
+
+            /^(\d{1,2})\/(\d{1,2})\/(\d{4})/
+
+        );
+
+
+    if(
+
+        match
+
+    ){
+
+        const date =
+
+            new Date(
+
+                Number(
+
+                    match[3]
+
+                ),
+
+                Number(
+
+                    match[1]
+
+                ) - 1,
+
+                Number(
+
+                    match[2]
+
+                )
+
+            );
+
+
+        return isNaN(
+
+            date.getTime()
+
+        )
+
+        ?
+
+        null
+
+        :
+
+        date;
+
+    }
+
+
+    /* YYYY-MM-DD */
+
+    match =
+
+        text.match(
+
+            /^(\d{4})-(\d{1,2})-(\d{1,2})/
+
+        );
+
+
+    if(
+
+        match
+
+    ){
+
+        const date =
+
+            new Date(
+
+                Number(
+
+                    match[1]
+
+                ),
+
+                Number(
+
+                    match[2]
+
+                ) - 1,
+
+                Number(
+
+                    match[3]
+
+                )
+
+            );
+
+
+        return isNaN(
+
+            date.getTime()
+
+        )
+
+        ?
+
+        null
+
+        :
+
+        date;
+
+    }
+
+
+    const date =
+
+        new Date(
+
+            text
+
+        );
 
 
     return isNaN(
 
-      date.getTime()
+        date.getTime()
 
     )
 
-    ? null
+    ?
 
-    : date;
+    null
 
-  }
+    :
 
-
-  /* MM/DD/YYYY */
-
-  match =
-
-    text.match(
-
-      /^(\d{1,2})\/(\d{1,2})\/(\d{4})/
-
-    );
-
-
-  if(
-
-    match
-
-  ){
-
-    const date =
-
-      new Date(
-
-        Number(
-
-          match[3]
-
-        ),
-
-        Number(
-
-          match[1]
-
-        ) - 1,
-
-        Number(
-
-          match[2]
-
-        )
-
-      );
-
-
-    return isNaN(
-
-      date.getTime()
-
-    )
-
-    ? null
-
-    : date;
-
-  }
-
-
-  /* YYYY-MM-DD */
-
-  match =
-
-    text.match(
-
-      /^(\d{4})-(\d{1,2})-(\d{1,2})/
-
-    );
-
-
-  if(
-
-    match
-
-  ){
-
-    const date =
-
-      new Date(
-
-        Number(
-
-          match[1]
-
-        ),
-
-        Number(
-
-          match[2]
-
-        ) - 1,
-
-        Number(
-
-          match[3]
-
-        )
-
-      );
-
-
-    return isNaN(
-
-      date.getTime()
-
-    )
-
-    ? null
-
-    : date;
-
-  }
-
-
-  const date =
-
-    new Date(
-
-      text
-
-    );
-
-
-  return isNaN(
-
-    date.getTime()
-
-  )
-
-  ? null
-
-  : date;
+    date;
 
 }
 
@@ -3946,44 +3655,44 @@ function parseDate(value){
 function clearFilters(){
 
 
-  document.getElementById(
+    document.getElementById(
 
-    "searchInput"
+        "searchInput"
 
-  ).value = "";
-
-
-  document.getElementById(
-
-    "lastDays"
-
-  ).value = "";
+    ).value = "";
 
 
-  document.getElementById(
+    document.getElementById(
 
-    "fromDate"
+        "lastDays"
 
-  ).value = "";
-
-
-  document.getElementById(
-
-    "toDate"
-
-  ).value = "";
+    ).value = "";
 
 
-  document.getElementById(
+    document.getElementById(
 
-    "statusFilter"
+        "fromDate"
 
-  ).value =
-
-    "all";
+    ).value = "";
 
 
-  applyFilters();
+    document.getElementById(
+
+        "toDate"
+
+    ).value = "";
+
+
+    document.getElementById(
+
+        "statusFilter"
+
+    ).value =
+
+        "all";
+
+
+    applyFilters();
 
 }
 
@@ -3995,22 +3704,23 @@ function clearFilters(){
 function goDashboard(){
 
 
-  if(
+    if(
 
-    document.referrer
+        document.referrer
 
-  ){
+    ){
 
-    history.back();
+        history.back();
 
-  }else{
+    }
 
+    else{
 
-    window.location.href =
+        window.location.href =
 
-      "dashboard.html";
+            "dashboard.html";
 
-  }
+    }
 
 }
 
@@ -4022,44 +3732,42 @@ function goDashboard(){
 function showToast(message){
 
 
-  const toast =
+    const toast =
 
-    document.getElementById(
+        document.getElementById(
 
-      "toast"
+            "toast"
+
+        );
+
+
+    toast.textContent =
+
+        message;
+
+
+    toast.classList.add(
+
+        "show"
 
     );
 
 
-  toast.textContent =
+    setTimeout(
 
-    message;
+        function(){
 
+            toast.classList.remove(
 
-  toast.classList.add(
+                "show"
 
-    "show"
+            );
 
-  );
+        },
 
+        3000
 
-  setTimeout(
-
-    function(){
-
-
-      toast.classList.remove(
-
-        "show"
-
-      );
-
-
-    },
-
-    3000
-
-  );
+    );
 
 }
 
@@ -4071,51 +3779,53 @@ function showToast(message){
 function escapeHtml(value){
 
 
-  return String(
+    return String(
 
-    value || ""
+        value ||
 
-  )
+        ""
 
-  .replace(
+    )
 
-    /&/g,
+    .replace(
 
-    "&amp;"
+        /&/g,
 
-  )
+        "&amp;"
 
-  .replace(
+    )
 
-    /</g,
+    .replace(
 
-    "&lt;"
+        /</g,
 
-  )
+        "&lt;"
 
-  .replace(
+    )
 
-    />/g,
+    .replace(
 
-    "&gt;"
+        />/g,
 
-  )
+        "&gt;"
 
-  .replace(
+    )
 
-    /"/g,
+    .replace(
 
-    "&quot;"
+        /"/g,
 
-  )
+        "&quot;"
 
-  .replace(
+    )
 
-    /'/g,
+    .replace(
 
-    "&#039;"
+        /'/g,
 
-  );
+        "&#039;"
+
+    );
 
 }
 
@@ -4126,28 +3836,29 @@ function escapeHtml(value){
 
 document.addEventListener(
 
-  "keydown",
+"keydown",
 
-  function(event){
+function(event){
 
 
     if(
 
-      event.key ===
+        event.key ===
 
-      "Escape"
+        "Escape"
 
     ){
 
-      closeModal();
+        closeModal();
 
     }
 
-  }
+}
 
 );
 
 </script>
+
 
 </body>
 

@@ -1251,7 +1251,7 @@ function goToPage(page){
 
 
 /* =====================================================
-   LOGOUT
+   MANUAL LOGOUT
 ===================================================== */
 
 document
@@ -1302,10 +1302,14 @@ function(){
 
 
     /* ================================================
-       GO TO MAIN LOGIN PAGE
+       CLEAR SESSION STORAGE
+    ================================================ */
 
-       dashboard/index.html থেকে
-       ../index.html হলো Main Login Page
+    sessionStorage.clear();
+
+
+    /* ================================================
+       GO TO MAIN LOGIN PAGE
     ================================================ */
 
     window.location.replace(
@@ -1318,6 +1322,225 @@ function(){
 }
 
 );
+
+
+/* =====================================================
+   AUTO LOGOUT AFTER 3 MINUTES OF INACTIVITY
+===================================================== */
+
+/*
+
+   3 Minutes = 180000 Milliseconds
+
+   User যদি ৩ মিনিট কোনো কাজ না করে
+   তাহলে automatically logout হবে।
+
+*/
+
+const AUTO_LOGOUT_TIME =
+
+3 * 60 * 1000;
+
+
+let inactivityTimer = null;
+
+
+/* =====================================================
+   AUTO LOGOUT FUNCTION
+===================================================== */
+
+function autoLogout(){
+
+    /* ================================================
+       CLEAR TIMER
+    ================================================ */
+
+    if(
+
+        inactivityTimer
+
+    ){
+
+        clearTimeout(
+
+            inactivityTimer
+
+        );
+
+    }
+
+
+    /* ================================================
+       CLEAR LOGIN DATA
+    ================================================ */
+
+    localStorage.removeItem(
+
+        "loggedIn"
+
+    );
+
+
+    localStorage.removeItem(
+
+        "username"
+
+    );
+
+
+    localStorage.removeItem(
+
+        "name"
+
+    );
+
+
+    localStorage.removeItem(
+
+        "role"
+
+    );
+
+
+    /* ================================================
+       CLEAR SESSION STORAGE
+    ================================================ */
+
+    sessionStorage.clear();
+
+
+    /* ================================================
+       REDIRECT LOGIN PAGE
+    ================================================ */
+
+    window.location.replace(
+
+        "../index.html?session=expired"
+
+    );
+
+}
+
+
+/* =====================================================
+   RESET AUTO LOGOUT TIMER
+===================================================== */
+
+function resetInactivityTimer(){
+
+    /* ================================================
+       USER LOGGED IN কিনা CHECK
+    ================================================ */
+
+    if(
+
+        localStorage.getItem(
+
+            "loggedIn"
+
+        ) !== "true"
+
+    ){
+
+        return;
+
+    }
+
+
+    /* ================================================
+       OLD TIMER CLEAR
+    ================================================ */
+
+    if(
+
+        inactivityTimer
+
+    ){
+
+        clearTimeout(
+
+            inactivityTimer
+
+        );
+
+    }
+
+
+    /* ================================================
+       START NEW 3 MINUTE TIMER
+    ================================================ */
+
+    inactivityTimer =
+
+    setTimeout(
+
+        autoLogout,
+
+        AUTO_LOGOUT_TIME
+
+    );
+
+}
+
+
+/* =====================================================
+   USER ACTIVITY EVENTS
+===================================================== */
+
+/*
+
+   নিচের যেকোনো কাজ করলে
+   ৩ মিনিটের Timer আবার শুরু হবে।
+
+*/
+
+const activityEvents = [
+
+    "mousemove",
+
+    "mousedown",
+
+    "click",
+
+    "keydown",
+
+    "keypress",
+
+    "scroll",
+
+    "touchstart",
+
+    "touchmove",
+
+    "wheel"
+
+];
+
+
+activityEvents.forEach(
+
+    function(eventName){
+
+        document.addEventListener(
+
+            eventName,
+
+            resetInactivityTimer,
+
+            true
+
+        );
+
+    }
+
+);
+
+
+/* =====================================================
+   START AUTO LOGOUT TIMER
+===================================================== */
+
+resetInactivityTimer();
 
 
 /* =====================================================
@@ -1542,9 +1765,8 @@ function(){
 
     }
 
-}
+});
 
-);
 
 </script>
 

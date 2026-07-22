@@ -10,11 +10,6 @@ content="width=device-width, initial-scale=1.0">
 
 <title>Pending Call | LINK4 COMMUNICATION</title>
 
-
-<!-- =====================================================
-     LOGIN SECURITY
-===================================================== -->
-
 <script>
 
 (function(){
@@ -30,11 +25,6 @@ content="width=device-width, initial-scale=1.0">
 })();
 
 </script>
-
-
-<!-- =====================================================
-     GOOGLE FONT
-===================================================== -->
 
 <link
 rel="preconnect"
@@ -52,1550 +42,785 @@ href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;
 rel="stylesheet"
 >
 
-
-<!-- =====================================================
-     FONT AWESOME
-===================================================== -->
-
 <link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 >
 
-
 <style>
 
-/* =====================================================
-   RESET
-===================================================== */
-
 *{
-
     margin:0;
-
     padding:0;
-
     box-sizing:border-box;
-
     font-family:'Poppins',sans-serif;
-
 }
-
-
-/* =====================================================
-   BODY
-===================================================== */
 
 body{
-
     min-height:100vh;
-
     padding:20px;
-
     color:#222;
-
     background:
-
     linear-gradient(
-
         135deg,
-
         #004d3a,
-
         #006a4e,
-
         #008f6b
-
     );
-
 }
-
-
-/* =====================================================
-   MAIN CONTAINER
-===================================================== */
 
 .container{
-
     width:100%;
-
     max-width:1500px;
-
     margin:auto;
-
 }
-
-
-/* =====================================================
-   HEADER
-===================================================== */
 
 .header{
-
     background:rgba(255,255,255,.97);
-
     border-radius:22px;
-
     padding:20px 25px;
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     gap:20px;
-
     box-shadow:
-
     0 15px 40px
-
     rgba(0,0,0,.20);
-
     margin-bottom:20px;
-
 }
-
 
 .header-left{
-
     display:flex;
-
     align-items:center;
-
     gap:15px;
-
 }
-
 
 .logo{
-
     width:58px;
-
     height:58px;
-
     border-radius:17px;
-
     background:
-
     linear-gradient(
-
         135deg,
-
         #006a4e,
-
         #00a878
-
     );
-
     color:white;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     font-size:25px;
-
     box-shadow:
-
     0 8px 20px
-
     rgba(0,106,78,.25);
-
 }
-
 
 .header-title h1{
-
     font-size:24px;
-
     color:#006a4e;
-
     font-weight:700;
-
 }
-
 
 .header-title p{
-
     font-size:13px;
-
     color:#777;
-
     margin-top:3px;
-
 }
-
 
 .header-right{
-
     display:flex;
-
     gap:10px;
-
     flex-wrap:wrap;
-
 }
-
 
 .back-btn,
 .refresh-btn{
-
     border:none;
-
     padding:11px 16px;
-
     border-radius:11px;
-
     cursor:pointer;
-
     font-weight:600;
-
     display:flex;
-
     align-items:center;
-
     gap:8px;
-
     transition:.3s;
-
 }
-
 
 .back-btn{
-
     background:#006a4e;
-
     color:white;
-
 }
-
 
 .refresh-btn{
-
     background:#e7f8f2;
-
     color:#006a4e;
-
 }
-
 
 .back-btn:hover{
-
     background:#e53935;
-
     transform:translateY(-2px);
-
 }
-
 
 .refresh-btn:hover{
-
     background:#006a4e;
-
     color:white;
-
     transform:translateY(-2px);
-
 }
-
-
-/* =====================================================
-   USER BAR
-===================================================== */
 
 .user-bar{
-
     background:
-
     rgba(255,255,255,.14);
-
     border:
-
     1px solid
-
     rgba(255,255,255,.18);
-
     color:white;
-
     padding:13px 18px;
-
     border-radius:13px;
-
     margin-bottom:20px;
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     gap:15px;
-
     font-size:14px;
-
     backdrop-filter:blur(10px);
-
 }
-
 
 .user-name{
-
     font-weight:700;
-
 }
-
-
-/* =====================================================
-   CONTROL BAR
-===================================================== */
 
 .control-bar{
-
     background:white;
-
     padding:18px;
-
     border-radius:18px;
-
     margin-bottom:20px;
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     gap:15px;
-
     flex-wrap:wrap;
-
     box-shadow:
-
     0 12px 35px
-
     rgba(0,0,0,.14);
-
 }
-
 
 .search-box{
-
     flex:1;
-
     min-width:250px;
-
     position:relative;
-
 }
-
 
 .search-box i{
-
     position:absolute;
-
     left:15px;
-
     top:50%;
-
     transform:translateY(-50%);
-
     color:#008f6b;
-
 }
-
 
 .search-box input{
-
     width:100%;
-
     padding:13px 15px 13px 45px;
-
     border:
-
     2px solid
-
     #e3eee9;
-
     border-radius:12px;
-
     outline:none;
-
     font-size:13px;
-
     transition:.3s;
-
 }
-
 
 .search-box input:focus{
-
     border-color:#00a878;
-
     box-shadow:
-
     0 0 0 4px
-
     rgba(0,168,120,.10);
-
 }
-
 
 .day-filter{
-
     display:flex;
-
     align-items:center;
-
     gap:10px;
-
 }
-
 
 .day-filter label{
-
     font-size:13px;
-
     font-weight:600;
-
     color:#555;
-
 }
-
 
 .day-filter input{
-
     width:100px;
-
     padding:12px;
-
     border:
-
     2px solid
-
     #e3eee9;
-
     border-radius:10px;
-
     outline:none;
-
     text-align:center;
-
     font-weight:600;
-
 }
-
 
 .day-filter input:focus{
-
     border-color:#00a878;
-
 }
-
-
-/* =====================================================
-   TABLE CONTAINER
-===================================================== */
 
 .table-container{
-
     background:
-
     rgba(255,255,255,.97);
-
     border-radius:22px;
-
     overflow:hidden;
-
     box-shadow:
-
     0 20px 50px
-
     rgba(0,0,0,.20);
-
 }
-
-
-/* =====================================================
-   TABLE HEADER
-===================================================== */
 
 .table-header{
-
     padding:20px 25px;
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     border-bottom:
-
     1px solid
-
     #e9f1ee;
-
 }
-
 
 .table-header h2{
-
     font-size:20px;
-
     color:#222;
-
 }
-
 
 .pending-count{
-
     background:
-
     linear-gradient(
-
         135deg,
-
         #006a4e,
-
         #00a878
-
     );
-
     color:white;
-
     padding:7px 14px;
-
     border-radius:20px;
-
     font-size:13px;
-
     font-weight:700;
-
 }
-
-
-/* =====================================================
-   TABLE SCROLL
-===================================================== */
 
 .table-scroll{
-
     width:100%;
-
     overflow-x:auto;
-
 }
-
-
-/* =====================================================
-   TABLE
-===================================================== */
 
 table{
-
     width:100%;
-
     border-collapse:separate;
-
     border-spacing:0;
-
     min-width:1100px;
-
 }
-
-
-/* =====================================================
-   TABLE HEAD
-===================================================== */
 
 thead{
-
     background:
-
     linear-gradient(
-
         135deg,
-
         #007a59,
-
         #009b70
-
     );
-
     color:white;
-
 }
-
 
 th{
-
     padding:15px 13px;
-
     font-size:13px;
-
     font-weight:700;
-
     text-align:left;
-
     white-space:nowrap;
-
 }
-
 
 th i{
-
     margin-right:7px;
-
 }
-
-
-/* =====================================================
-   TABLE BODY
-===================================================== */
 
 td{
-
     padding:12px;
-
     border-bottom:
-
     1px solid
-
     #edf2f0;
-
     font-size:13px;
-
     vertical-align:middle;
-
 }
-
 
 tbody tr{
-
     transition:.25s;
-
 }
-
 
 tbody tr:hover{
-
     background:#f7fffb;
-
     transform:scale(1.002);
-
 }
-
-
-/* =====================================================
-   COLORFUL CELLS
-===================================================== */
 
 .customer-cell{
-
     background:
-
     linear-gradient(
-
         135deg,
-
         #e5f8f1,
-
         #d7f4ea
-
     );
-
     color:#006a4e;
-
     font-weight:700;
-
     border-radius:10px;
-
 }
-
 
 .date-cell{
-
     background:
-
     linear-gradient(
-
         135deg,
-
         #edf5ff,
-
         #e1efff
-
     );
-
     color:#1769aa;
-
     border-radius:10px;
-
 }
-
 
 .problem-cell{
-
     background:
-
     linear-gradient(
-
         135deg,
-
         #fff8e4,
-
         #fff1c7
-
     );
-
     color:#795500;
-
     border-radius:10px;
-
     max-width:300px;
-
 }
-
 
 .reference-cell{
-
     background:
-
     linear-gradient(
-
         135deg,
-
         #f5eaff,
-
         #eee0ff
-
     );
-
     color:#7432a8;
-
     border-radius:10px;
-
 }
-
 
 .support-cell{
-
     background:
-
     linear-gradient(
-
         135deg,
-
         #e4f9f6,
-
         #d7f2ef
-
     );
-
     color:#00796b;
-
     border-radius:10px;
-
     font-weight:600;
-
 }
-
 
 .support-work-cell{
-
     background:
-
     linear-gradient(
-
         135deg,
-
         #fff0e5,
-
         #ffe5d1
-
     );
-
     color:#b85c00;
-
     border-radius:10px;
-
     font-weight:600;
-
 }
-
-
-/* =====================================================
-   CELL INNER
-===================================================== */
 
 .cell-content{
-
     display:flex;
-
     align-items:center;
-
     gap:9px;
-
 }
-
 
 .cell-icon{
-
     width:32px;
-
     height:32px;
-
     border-radius:9px;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     background:rgba(255,255,255,.75);
-
     flex-shrink:0;
-
 }
-
-
-/* =====================================================
-   VIEW BUTTON
-===================================================== */
 
 .view-btn{
-
     border:none;
-
     background:
-
     linear-gradient(
-
         135deg,
-
         #006a4e,
-
         #00a878
-
     );
-
     color:white;
-
     padding:10px 16px;
-
     border-radius:10px;
-
     cursor:pointer;
-
     font-size:13px;
-
     font-weight:700;
-
     display:flex;
-
     align-items:center;
-
     gap:7px;
-
     transition:.3s;
-
     white-space:nowrap;
-
 }
-
 
 .view-btn:hover{
-
     background:#e53935;
-
     transform:translateY(-2px);
-
     box-shadow:
-
     0 7px 18px
-
     rgba(229,57,53,.25);
-
 }
-
-
-/* =====================================================
-   LOADING
-===================================================== */
 
 .loading-state{
-
     padding:70px 20px;
-
     text-align:center;
-
 }
-
 
 .spinner{
-
     font-size:38px;
-
     color:#008f6b;
-
     margin-bottom:15px;
-
 }
-
 
 .loading-state p{
-
     color:#777;
-
 }
-
-
-/* =====================================================
-   EMPTY
-===================================================== */
 
 .empty-state{
-
     display:none;
-
     padding:70px 20px;
-
     text-align:center;
-
 }
-
 
 .empty-state.show{
-
     display:block;
-
 }
-
 
 .empty-icon{
-
     width:85px;
-
     height:85px;
-
     border-radius:50%;
-
     background:#e7f8f2;
-
     color:#008f6b;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     font-size:38px;
-
     margin:0 auto 20px;
-
 }
-
 
 .empty-state h3{
-
     font-size:20px;
-
     margin-bottom:8px;
-
 }
-
 
 .empty-state p{
-
     color:#777;
-
     font-size:14px;
-
 }
-
-
-/* =====================================================
-   STATUS
-===================================================== */
 
 .status{
-
     display:none;
-
     padding:13px 18px;
-
     border-radius:12px;
-
     margin-bottom:20px;
-
     font-size:13px;
-
     font-weight:600;
-
 }
-
 
 .status.show{
-
     display:block;
-
 }
-
 
 .status.error{
-
     background:#fdecec;
-
     color:#c62828;
-
 }
-
 
 .status.success{
-
     background:#e7f8f2;
-
     color:#006a4e;
-
 }
-
-
-/* =====================================================
-   MODAL
-===================================================== */
 
 .modal{
-
     display:none;
-
     position:fixed;
-
     inset:0;
-
     z-index:9999;
-
     background:
-
     rgba(0,40,30,.72);
-
     backdrop-filter:blur(7px);
-
     padding:20px;
-
     align-items:center;
-
     justify-content:center;
-
 }
-
 
 .modal.show{
-
     display:flex;
-
 }
-
 
 .modal-box{
-
     width:100%;
-
     max-width:720px;
-
     max-height:90vh;
-
     overflow-y:auto;
-
     background:white;
-
     border-radius:22px;
-
     box-shadow:
-
     0 25px 70px
-
     rgba(0,0,0,.35);
-
     animation:
-
     modalIn .25s ease;
-
 }
-
 
 @keyframes modalIn{
 
     from{
-
         opacity:0;
-
         transform:translateY(20px) scale(.97);
-
     }
 
     to{
-
         opacity:1;
-
         transform:translateY(0) scale(1);
-
     }
 
 }
 
-
-/* =====================================================
-   MODAL HEADER
-===================================================== */
-
 .modal-header{
-
     padding:20px 22px;
-
     color:white;
-
     background:
-
     linear-gradient(
-
         135deg,
-
         #006a4e,
-
         #00a878
-
     );
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
 }
-
 
 .modal-header h3{
-
     font-size:19px;
-
 }
-
 
 .close-modal{
-
     width:38px;
-
     height:38px;
-
     border:none;
-
     border-radius:10px;
-
     background:
-
     rgba(255,255,255,.18);
-
     color:white;
-
     cursor:pointer;
-
     font-size:18px;
-
 }
-
 
 .close-modal:hover{
-
     background:#e53935;
-
 }
-
-
-/* =====================================================
-   MODAL CONTENT
-===================================================== */
 
 .modal-body{
-
     padding:22px;
-
 }
-
 
 .info-grid{
-
     display:grid;
-
     grid-template-columns:
-
     repeat(2,1fr);
-
     gap:14px;
-
 }
-
 
 .info-card{
-
     padding:15px;
-
     border-radius:13px;
-
 }
-
 
 .info-card small{
-
     display:block;
-
     font-size:11px;
-
     font-weight:700;
-
     margin-bottom:6px;
-
     opacity:.7;
-
 }
-
 
 .info-card strong{
-
     font-size:14px;
-
     word-break:break-word;
-
 }
-
 
 .info-customer{
-
     background:#e5f8f1;
-
     color:#006a4e;
-
 }
-
 
 .info-date{
-
     background:#edf5ff;
-
     color:#1769aa;
-
 }
-
 
 .info-problem{
-
     background:#fff8e4;
-
     color:#795500;
-
 }
-
 
 .info-reference{
-
     background:#f5eaff;
-
     color:#7432a8;
-
 }
-
 
 .info-support{
-
     background:#e4f9f6;
-
     color:#00796b;
-
 }
-
 
 .info-support-work{
-
     background:#fff0e5;
-
     color:#b85c00;
-
 }
-
-
-/* =====================================================
-   CALL FORM
-===================================================== */
 
 .call-form{
-
     margin-top:20px;
-
     padding-top:20px;
-
     border-top:
-
     1px solid
-
     #e9efed;
-
 }
-
 
 .form-group{
-
     margin-bottom:15px;
-
 }
-
 
 .form-group label{
-
     display:block;
-
     font-size:13px;
-
     font-weight:700;
-
     color:#444;
-
     margin-bottom:7px;
-
 }
-
 
 .form-group input,
 .form-group textarea{
-
     width:100%;
-
     border:
-
     2px solid
-
     #e0ebe7;
-
     border-radius:11px;
-
     padding:12px;
-
     outline:none;
-
     font-size:13px;
-
     transition:.3s;
-
 }
-
 
 .form-group input:focus,
 .form-group textarea:focus{
-
     border-color:#00a878;
-
     box-shadow:
-
     0 0 0 4px
-
     rgba(0,168,120,.10);
-
 }
-
 
 .form-group textarea{
-
     min-height:110px;
-
     resize:vertical;
-
 }
-
-
-/* =====================================================
-   CALL PERSON READONLY
-===================================================== */
 
 .call-person{
-
     background:#f3f7f5 !important;
-
     color:#006a4e;
-
     font-weight:700;
-
 }
-
-
-/* =====================================================
-   MODAL FOOTER
-===================================================== */
 
 .modal-footer{
-
     display:flex;
-
     justify-content:flex-end;
-
     gap:10px;
-
     margin-top:20px;
-
 }
-
 
 .cancel-btn,
 .submit-call-btn{
-
     border:none;
-
     padding:12px 18px;
-
     border-radius:10px;
-
     cursor:pointer;
-
     font-weight:700;
-
     display:flex;
-
     align-items:center;
-
     gap:8px;
-
 }
-
 
 .cancel-btn{
-
     background:#f0f2f1;
-
     color:#555;
-
 }
-
 
 .submit-call-btn{
-
     background:
-
     linear-gradient(
-
         135deg,
-
         #006a4e,
-
         #00a878
-
     );
-
     color:white;
-
 }
-
 
 .submit-call-btn:hover{
-
     background:#e53935;
-
 }
-
 
 .submit-call-btn:disabled{
-
     opacity:.6;
-
     cursor:not-allowed;
-
 }
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
 
 @media(max-width:768px){
 
     body{
-
         padding:12px;
-
     }
-
 
     .header{
-
         padding:18px;
-
         align-items:flex-start;
-
         flex-direction:column;
-
     }
-
 
     .header-right{
-
         width:100%;
-
     }
-
 
     .back-btn,
     .refresh-btn{
-
         flex:1;
-
         justify-content:center;
-
     }
-
 
     .user-bar{
-
         flex-direction:column;
-
         align-items:flex-start;
-
     }
-
 
     .table-header{
-
         padding:16px;
-
     }
-
 
     .table-header h2{
-
         font-size:17px;
-
     }
-
 
     .info-grid{
-
         grid-template-columns:1fr;
-
     }
-
 
     .modal{
-
         padding:10px;
-
     }
 
-
     .modal-body{
-
         padding:16px;
-
     }
 
 }
@@ -1604,22 +829,13 @@ tbody tr:hover{
 
 </head>
 
-
 <body>
-
 
 <div class="container">
 
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
 <div class="header">
 
-
 <div class="header-left">
-
 
 <div class="logo">
 
@@ -1627,29 +843,19 @@ tbody tr:hover{
 
 </div>
 
-
 <div class="header-title">
 
-<h1>
-
-Pending Call
-
-</h1>
+<h1>Pending Call</h1>
 
 <p>
-
 View and manage all pending customer call requests
-
 </p>
 
 </div>
 
-
 </div>
 
-
 <div class="header-right">
-
 
 <button
 class="refresh-btn"
@@ -1663,7 +869,6 @@ Refresh
 
 </button>
 
-
 <button
 class="back-btn"
 id="backBtn"
@@ -1676,16 +881,9 @@ Dashboard
 
 </button>
 
-
 </div>
 
-
 </div>
-
-
-<!-- =====================================================
-     USER BAR
-===================================================== -->
 
 <div class="user-bar">
 
@@ -1704,7 +902,6 @@ User
 
 </div>
 
-
 <div>
 
 <i class="fa-solid fa-phone"></i>
@@ -1715,23 +912,12 @@ Pending Call Management
 
 </div>
 
-
-<!-- =====================================================
-     STATUS
-===================================================== -->
-
 <div
 class="status"
 id="status"
 ></div>
 
-
-<!-- =====================================================
-     CONTROL BAR
-===================================================== -->
-
 <div class="control-bar">
-
 
 <div class="search-box">
 
@@ -1745,14 +931,13 @@ placeholder="Search Customer ID, Problem, Reference, Support..."
 
 </div>
 
-
 <div class="day-filter">
 
 <label>
 
 <i class="fa-solid fa-calendar-days"></i>
 
-Older Than Days
+Last Days
 
 </label>
 
@@ -1760,46 +945,30 @@ Older Than Days
 type="number"
 id="daysInput"
 min="0"
+step="1"
 placeholder="All"
 >
 
 </div>
 
-
 </div>
-
-
-<!-- =====================================================
-     TABLE
-===================================================== -->
 
 <div class="table-container">
 
-
 <div class="table-header">
 
-
 <h2>
-
 Pending Call Requests
-
 </h2>
-
 
 <div
 class="pending-count"
 id="pendingCount"
 >
-
 0 Pending
-
 </div>
 
-
 </div>
-
-
-<!-- LOADING -->
 
 <div
 class="loading-state"
@@ -1813,15 +982,10 @@ id="loadingState"
 </div>
 
 <p>
-
 Loading pending call requests...
-
 </p>
 
 </div>
-
-
-<!-- EMPTY -->
 
 <div
 class="empty-state"
@@ -1835,21 +999,14 @@ id="emptyState"
 </div>
 
 <h3>
-
 No Pending Call
-
 </h3>
 
 <p>
-
 There are currently no pending call requests.
-
 </p>
 
 </div>
-
-
-<!-- TABLE -->
 
 <div
 class="table-scroll"
@@ -1859,111 +1016,69 @@ style="display:none;"
 
 <table>
 
-
 <thead>
 
 <tr>
 
 <th>
-
 <i class="fa-solid fa-user"></i>
-
 Customer ID
-
 </th>
 
-
 <th>
-
 <i class="fa-solid fa-calendar"></i>
-
 Date
-
 </th>
 
-
 <th>
-
 <i class="fa-solid fa-circle-exclamation"></i>
-
 Problem
-
 </th>
 
-
 <th>
-
 <i class="fa-solid fa-link"></i>
-
 Reference
-
 </th>
 
-
 <th>
-
 <i class="fa-solid fa-headset"></i>
-
 Support
-
 </th>
 
-
 <th>
-
 <i class="fa-solid fa-screwdriver-wrench"></i>
-
 Support Work
-
 </th>
 
-
 <th>
-
 <i class="fa-solid fa-eye"></i>
-
 Action
-
 </th>
 
 </tr>
 
 </thead>
 
-
 <tbody
 id="callTableBody"
->
-
-</tbody>
-
+></tbody>
 
 </table>
 
 </div>
 
-
 </div>
 
-
 </div>
-
-
-<!-- =====================================================
-     VIEW MODAL
-===================================================== -->
 
 <div
 class="modal"
 id="viewModal"
 >
 
-
 <div class="modal-box">
 
-
 <div class="modal-header">
-
 
 <h3>
 
@@ -1972,7 +1087,6 @@ id="viewModal"
 Call Request Details
 
 </h3>
-
 
 <button
 class="close-modal"
@@ -1984,22 +1098,16 @@ type="button"
 
 </button>
 
-
 </div>
-
 
 <div class="modal-body">
 
-
 <div class="info-grid">
-
 
 <div class="info-card info-customer">
 
 <small>
-
 CUSTOMER ID
-
 </small>
 
 <strong
@@ -2010,13 +1118,10 @@ id="modalCustomer"
 
 </div>
 
-
 <div class="info-card info-date">
 
 <small>
-
 DATE
-
 </small>
 
 <strong
@@ -2027,13 +1132,10 @@ id="modalDate"
 
 </div>
 
-
 <div class="info-card info-problem">
 
 <small>
-
 PROBLEM
-
 </small>
 
 <strong
@@ -2044,13 +1146,10 @@ id="modalProblem"
 
 </div>
 
-
 <div class="info-card info-reference">
 
 <small>
-
 REFERENCE
-
 </small>
 
 <strong
@@ -2061,13 +1160,10 @@ id="modalReference"
 
 </div>
 
-
 <div class="info-card info-support">
 
 <small>
-
 SUPPORT
-
 </small>
 
 <strong
@@ -2078,13 +1174,10 @@ id="modalSupport"
 
 </div>
 
-
 <div class="info-card info-support-work">
 
 <small>
-
 SUPPORT WORK
-
 </small>
 
 <strong
@@ -2095,14 +1188,9 @@ id="modalSupportWork"
 
 </div>
 
-
 </div>
 
-
-<!-- CALL FORM -->
-
 <div class="call-form">
-
 
 <div class="form-group">
 
@@ -2114,7 +1202,6 @@ Call Person
 
 </label>
 
-
 <input
 type="text"
 id="callPerson"
@@ -2123,7 +1210,6 @@ readonly
 >
 
 </div>
-
 
 <div class="form-group">
 
@@ -2135,7 +1221,6 @@ Call Work
 
 </label>
 
-
 <textarea
 id="callWork"
 placeholder="Write what was discussed or done during the call..."
@@ -2143,9 +1228,7 @@ placeholder="Write what was discussed or done during the call..."
 
 </div>
 
-
 <div class="modal-footer">
-
 
 <button
 class="cancel-btn"
@@ -2159,7 +1242,6 @@ Cancel
 
 </button>
 
-
 <button
 class="submit-call-btn"
 id="submitCallBtn"
@@ -2172,31 +1254,23 @@ Submit Call
 
 </button>
 
+</div>
 
 </div>
 
+</div>
 
 </div>
 
-
 </div>
-
-
-</div>
-
-
-</div>
-
 
 <script>
-
 
 /* =====================================================
    API URL
 ===================================================== */
 
 const API_URL =
-
 "https://script.google.com/macros/s/AKfycbw1NiYF5qNEFGVXdIWZ3I3lpJXEX57uBM0M06oqVVJcRUiuCTAf8NkKycGWtyIhhxWh4g/exec";
 
 
@@ -2205,115 +1279,52 @@ const API_URL =
 ===================================================== */
 
 const tableBody =
-
-document.getElementById(
-"callTableBody"
-);
-
+document.getElementById("callTableBody");
 
 const loadingState =
-
-document.getElementById(
-"loadingState"
-);
-
+document.getElementById("loadingState");
 
 const emptyState =
-
-document.getElementById(
-"emptyState"
-);
-
+document.getElementById("emptyState");
 
 const tableWrapper =
-
-document.getElementById(
-"tableWrapper"
-);
-
+document.getElementById("tableWrapper");
 
 const pendingCount =
-
-document.getElementById(
-"pendingCount"
-);
-
+document.getElementById("pendingCount");
 
 const statusBox =
-
-document.getElementById(
-"status"
-);
-
+document.getElementById("status");
 
 const refreshBtn =
-
-document.getElementById(
-"refreshBtn"
-);
-
+document.getElementById("refreshBtn");
 
 const backBtn =
-
-document.getElementById(
-"backBtn"
-);
-
+document.getElementById("backBtn");
 
 const searchInput =
-
-document.getElementById(
-"searchInput"
-);
-
+document.getElementById("searchInput");
 
 const daysInput =
-
-document.getElementById(
-"daysInput"
-);
-
+document.getElementById("daysInput");
 
 const viewModal =
-
-document.getElementById(
-"viewModal"
-);
-
+document.getElementById("viewModal");
 
 const closeModal =
-
-document.getElementById(
-"closeModal"
-);
-
+document.getElementById("closeModal");
 
 const cancelBtn =
-
-document.getElementById(
-"cancelBtn"
-);
-
+document.getElementById("cancelBtn");
 
 const submitCallBtn =
-
-document.getElementById(
-"submitCallBtn"
-);
-
+document.getElementById("submitCallBtn");
 
 const callPerson =
-
-document.getElementById(
-"callPerson"
-);
-
+document.getElementById("callPerson");
 
 const callWork =
-
-document.getElementById(
-"callWork"
-);
+document.getElementById("callWork");
 
 
 /* =====================================================
@@ -2321,34 +1332,27 @@ document.getElementById(
 ===================================================== */
 
 const savedName =
-
 localStorage.getItem("name");
 
-
 const savedUsername =
-
 localStorage.getItem("username");
 
-
 const currentUser =
-
 savedName ||
-
 savedUsername ||
-
 "User";
-
 
 document.getElementById(
 "userName"
-).textContent = currentUser;
+).textContent =
+currentUser;
 
-
-callPerson.value = currentUser;
+callPerson.value =
+currentUser;
 
 
 /* =====================================================
-   DATA STORAGE
+   DATA
 ===================================================== */
 
 let allCallData = [];
@@ -2363,11 +1367,7 @@ let selectedCall = null;
 function checkLogin(){
 
     if(
-
-        localStorage.getItem(
-            "loggedIn"
-        ) !== "true"
-
+        localStorage.getItem("loggedIn") !== "true"
     ){
 
         window.location.replace(
@@ -2407,142 +1407,94 @@ function showStatus(
 
 async function loadPendingCall(){
 
-
     if(!checkLogin()){
-
         return;
-
     }
-
 
     loadingState.style.display =
         "block";
-
 
     emptyState.classList.remove(
         "show"
     );
 
-
     tableWrapper.style.display =
         "none";
-
 
     tableBody.innerHTML =
         "";
 
-
     pendingCount.textContent =
         "Loading...";
 
-
     try{
 
-
         const response =
-
         await fetch(
 
             API_URL +
-
             "?action=pendingCall" +
-
             "&t=" +
-
             Date.now(),
 
             {
-
                 method:"GET",
-
                 cache:"no-store"
-
             }
 
         );
 
-
         if(!response.ok){
 
             throw new Error(
-
                 "Server Error: " +
-
                 response.status
-
             );
 
         }
 
-
         const result =
-
         await response.json();
-
 
         if(
             result.success !== true
         ){
 
             throw new Error(
-
                 result.message ||
-
                 "Unable to load data."
-
             );
 
         }
 
-
         allCallData =
-
-        Array.isArray(
-            result.data
-        )
-
+        Array.isArray(result.data)
         ?
-
         result.data
-
         :
-
         [];
-
 
         loadingState.style.display =
             "none";
 
-
         renderTable();
-
 
     }
 
     catch(error){
 
-
-        console.error(
-            error
-        );
-
+        console.error(error);
 
         loadingState.style.display =
             "none";
 
-
         pendingCount.textContent =
             "0 Pending";
 
-
         showStatus(
-
             error.message ||
-
             "Unable to load pending calls.",
-
             "error"
-
         );
 
     }
@@ -2551,20 +1503,291 @@ async function loadPendingCall(){
 
 
 /* =====================================================
-   DATE CHECK
-   IMPORTANT:
-   SHOW DATA OLDER THAN SELECTED DAYS
+   DATE PARSER
+   SUPPORTS:
 
-   Example:
-   Today = 15
-   Filter = 5
+   22-07-2026 23:31
+   22/07/2026 23:31
+   22-07-2026
+   2026-07-22
+   2026-07-22T17:31:00.000Z
+===================================================== */
 
-   Show:
-   10 তারিখ এবং তার আগের Data
+function parseSheetDate(
+    dateValue
+){
 
-   Hide:
-   11,12,13,14,15 তারিখের Data
+    if(
+        dateValue === null ||
+        dateValue === undefined ||
+        dateValue === ""
+    ){
 
+        return null;
+
+    }
+
+    /* If already Date object */
+
+    if(
+        dateValue instanceof Date
+    ){
+
+        if(
+            !isNaN(
+                dateValue.getTime()
+            )
+        ){
+
+            return dateValue;
+
+        }
+
+    }
+
+
+    const value =
+    String(
+        dateValue
+    ).trim();
+
+
+    if(!value){
+
+        return null;
+
+    }
+
+
+    /*
+       DD-MM-YYYY
+       DD/MM/YYYY
+       DD.MM.YYYY
+    */
+
+    let match =
+    value.match(
+
+        /^(\d{1,2})[-\/.](\d{1,2})[-\/.](\d{4})(?:\s+(\d{1,2}):(\d{2})(?::(\d{2}))?)?/
+
+    );
+
+
+    if(match){
+
+        const day =
+        parseInt(
+            match[1],
+            10
+        );
+
+        const month =
+        parseInt(
+            match[2],
+            10
+        ) - 1;
+
+        const year =
+        parseInt(
+            match[3],
+            10
+        );
+
+        const hour =
+        match[4]
+        ?
+        parseInt(
+            match[4],
+            10
+        )
+        :
+        0;
+
+        const minute =
+        match[5]
+        ?
+        parseInt(
+            match[5],
+            10
+        )
+        :
+        0;
+
+        const second =
+        match[6]
+        ?
+        parseInt(
+            match[6],
+            10
+        )
+        :
+        0;
+
+        const result =
+        new Date(
+            year,
+            month,
+            day,
+            hour,
+            minute,
+            second,
+            0
+        );
+
+        if(
+            !isNaN(
+                result.getTime()
+            )
+        ){
+
+            return result;
+
+        }
+
+    }
+
+
+    /*
+       YYYY-MM-DD
+       ISO format
+    */
+
+    match =
+    value.match(
+
+        /^(\d{4})-(\d{1,2})-(\d{1,2})/
+
+    );
+
+
+    if(match){
+
+        const year =
+        parseInt(
+            match[1],
+            10
+        );
+
+        const month =
+        parseInt(
+            match[2],
+            10
+        ) - 1;
+
+        const day =
+        parseInt(
+            match[3],
+            10
+        );
+
+
+        /*
+           Read time if available
+        */
+
+        let hour = 0;
+
+        let minute = 0;
+
+        let second = 0;
+
+
+        const timeMatch =
+        value.match(
+
+            /T(\d{1,2}):(\d{2})(?::(\d{2}))?/
+
+        );
+
+
+        if(timeMatch){
+
+            hour =
+            parseInt(
+                timeMatch[1],
+                10
+            );
+
+            minute =
+            parseInt(
+                timeMatch[2],
+                10
+            );
+
+            second =
+            timeMatch[3]
+            ?
+            parseInt(
+                timeMatch[3],
+                10
+            )
+            :
+            0;
+
+        }
+
+
+        const result =
+        new Date(
+            year,
+            month,
+            day,
+            hour,
+            minute,
+            second,
+            0
+        );
+
+
+        if(
+            !isNaN(
+                result.getTime()
+            )
+        ){
+
+            return result;
+
+        }
+
+    }
+
+
+    /*
+       Last fallback
+    */
+
+    const fallback =
+    new Date(
+        value
+    );
+
+
+    if(
+        !isNaN(
+            fallback.getTime()
+        )
+    ){
+
+        return fallback;
+
+    }
+
+
+    return null;
+
+}
+
+
+/* =====================================================
+   LAST DAYS FILTER
+
+   TODAY = 22-07-2026
+
+   5 = SHOW 17-07-2026 AND OLDER
+
+   7 = SHOW 15-07-2026 AND OLDER
+
+   EMPTY / 0 = SHOW ALL
 ===================================================== */
 
 function isWithinDays(
@@ -2572,11 +1795,21 @@ function isWithinDays(
     days
 ){
 
-    // Filter empty বা 0 হলে সব data দেখাবে
+    const numberOfDays =
+    Number(days);
+
+
+    /*
+       Empty / 0
+       = Show All
+    */
 
     if(
-        !days ||
-        days <= 0
+        !Number.isFinite(
+            numberOfDays
+        )
+        ||
+        numberOfDays <= 0
     ){
 
         return true;
@@ -2584,124 +1817,18 @@ function isWithinDays(
     }
 
 
-    if(!dateValue){
-
-        return false;
-
-    }
+    const itemDate =
+    parseSheetDate(
+        dateValue
+    );
 
 
     /*
-       Date parsing function
-
-       Google Sheet থেকে যদি
-       DD-MM-YYYY
-       অথবা
-       DD/MM/YYYY
-       আসে তাহলে সেটাও handle করবে
+       Invalid / missing date
+       = Don't show
     */
 
-    let itemDate;
-
-
-    if(
-        typeof dateValue === "string"
-    ){
-
-        const cleanDate =
-
-        dateValue
-        .trim()
-        .split(" ")[0];
-
-
-        const parts =
-
-        cleanDate.split(
-            /[-\/.]
-        );
-
-
-        /*
-           DD-MM-YYYY
-        */
-
-        if(
-
-            parts.length === 3 &&
-
-            parts[2].length === 4
-
-        ){
-
-            const day =
-
-            parseInt(
-                parts[0],
-                10
-            );
-
-
-            const month =
-
-            parseInt(
-                parts[1],
-                10
-            ) - 1;
-
-
-            const year =
-
-            parseInt(
-                parts[2],
-                10
-            );
-
-
-            itemDate =
-
-            new Date(
-
-                year,
-
-                month,
-
-                day
-
-            );
-
-        }
-
-        else{
-
-            itemDate =
-
-            new Date(
-                dateValue
-            );
-
-        }
-
-    }
-
-    else{
-
-        itemDate =
-
-        new Date(
-            dateValue
-        );
-
-    }
-
-
-    if(
-
-        isNaN(
-            itemDate.getTime()
-        )
-
-    ){
+    if(!itemDate){
 
         return false;
 
@@ -2709,97 +1836,102 @@ function isWithinDays(
 
 
     /*
-       Today-এর শুধু Date নেওয়া হচ্ছে
+       TODAY
+       Using local date
     */
 
     const now =
-
     new Date();
 
 
     const today =
-
     new Date(
 
         now.getFullYear(),
 
         now.getMonth(),
 
-        now.getDate()
+        now.getDate(),
+
+        0,
+
+        0,
+
+        0,
+
+        0
 
     );
 
 
     /*
-       Data-এর শুধু Date নেওয়া হচ্ছে
+       CUTOFF DATE
+
+       Example:
+
+       Today 22
+       Days 5
+
+       22 - 5 = 17
     */
 
-    const dataDate =
+    const cutoffDate =
+    new Date(
+        today
+    );
 
+
+    cutoffDate.setDate(
+
+        cutoffDate.getDate()
+        -
+        numberOfDays
+
+    );
+
+
+    /*
+       ITEM DATE
+       Remove time
+    */
+
+    const itemDay =
     new Date(
 
         itemDate.getFullYear(),
 
         itemDate.getMonth(),
 
-        itemDate.getDate()
+        itemDate.getDate(),
+
+        0,
+
+        0,
+
+        0,
+
+        0
 
     );
 
 
     /*
-       আজ থেকে কত দিন পুরোনো
+       Only old data
+
+       17 <= 17 = TRUE
+       16 <= 17 = TRUE
+
+       18 <= 17 = FALSE
+       22 <= 17 = FALSE
     */
 
-    const diffTime =
+    return (
 
-    today.getTime() -
-
-    dataDate.getTime();
-
-
-    const diffDays =
-
-    Math.floor(
-
-        diffTime /
-
-        (
-
-            1000 *
-
-            60 *
-
-            60 *
-
-            24
-
-        )
+        itemDay.getTime()
+        <=
+        cutoffDate.getTime()
 
     );
-
-
-    /*
-       MAIN FILTER
-
-       Example:
-
-       Today = 15
-       Filter = 5
-
-       diffDays:
-
-       15 = 0
-       14 = 1
-       13 = 2
-       12 = 3
-       11 = 4
-       10 = 5  <-- SHOW
-
-       তাই 10 এবং তার আগের সব দেখাবে
-    */
-
-    return diffDays >= days;
 
 }
 
@@ -2810,29 +1942,22 @@ function isWithinDays(
 
 function renderTable(){
 
-
     const search =
-
     searchInput.value
-
     .trim()
-
     .toLowerCase();
 
 
     const days =
-
-    parseInt(
+    Number(
         daysInput.value
     ) || 0;
 
 
     const filtered =
-
     allCallData.filter(
 
         function(item){
-
 
             const text =
 
@@ -2948,11 +2073,9 @@ function renderTable(){
         tableWrapper.style.display =
             "none";
 
-
         emptyState.classList.add(
             "show"
         );
-
 
         return;
 
@@ -2984,29 +2107,23 @@ function renderTable(){
 
 
 /* =====================================================
-   CREATE TABLE ROW
+   CREATE ROW
 ===================================================== */
 
 function createRow(
     item
 ){
 
-
     const tr =
-
     document.createElement(
         "tr"
     );
 
 
-    /* CUSTOMER */
-
     const customerTd =
-
     document.createElement(
         "td"
     );
-
 
     customerTd.innerHTML =
 
@@ -3039,14 +2156,10 @@ function createRow(
     `;
 
 
-    /* DATE */
-
     const dateTd =
-
     document.createElement(
         "td"
     );
-
 
     dateTd.innerHTML =
 
@@ -3075,14 +2188,10 @@ function createRow(
     `;
 
 
-    /* PROBLEM */
-
     const problemTd =
-
     document.createElement(
         "td"
     );
-
 
     problemTd.innerHTML =
 
@@ -3111,14 +2220,10 @@ function createRow(
     `;
 
 
-    /* REFERENCE */
-
     const refTd =
-
     document.createElement(
         "td"
     );
-
 
     refTd.innerHTML =
 
@@ -3151,14 +2256,10 @@ function createRow(
     `;
 
 
-    /* SUPPORT */
-
     const supportTd =
-
     document.createElement(
         "td"
     );
-
 
     supportTd.innerHTML =
 
@@ -3187,14 +2288,10 @@ function createRow(
     `;
 
 
-    /* SUPPORT WORK */
-
     const supportWorkTd =
-
     document.createElement(
         "td"
     );
-
 
     supportWorkTd.innerHTML =
 
@@ -3223,17 +2320,13 @@ function createRow(
     `;
 
 
-    /* VIEW */
-
     const actionTd =
-
     document.createElement(
         "td"
     );
 
 
     const viewBtn =
-
     document.createElement(
         "button"
     );
@@ -3318,8 +2411,8 @@ function openModal(
     item
 ){
 
-
-    selectedCall = item;
+    selectedCall =
+        item;
 
 
     document.getElementById(
@@ -3427,20 +2520,14 @@ function closeViewModal(){
 
 
 closeModal.addEventListener(
-
     "click",
-
     closeViewModal
-
 );
 
 
 cancelBtn.addEventListener(
-
     "click",
-
     closeViewModal
-
 );
 
 
@@ -3474,7 +2561,6 @@ submitCallBtn.addEventListener(
 
     async function(){
 
-
         if(
             !selectedCall
         ){
@@ -3485,16 +2571,13 @@ submitCallBtn.addEventListener(
 
 
         const work =
-
         callWork.value.trim();
 
 
         if(!work){
 
             alert(
-
                 "Please enter Call Work."
-
             );
 
             callWork.focus();
@@ -3521,14 +2604,10 @@ submitCallBtn.addEventListener(
 
         try{
 
-
             const payload = {
 
-
                 action:
-
                 "submitCall",
-
 
                 customerId:
 
@@ -3538,20 +2617,17 @@ submitCallBtn.addEventListener(
 
                 "",
 
-
                 date:
 
                 selectedCall.date ||
 
                 "",
 
-
                 problem:
 
                 selectedCall.problem ||
 
                 "",
-
 
                 reference:
 
@@ -3561,13 +2637,11 @@ submitCallBtn.addEventListener(
 
                 "",
 
-
                 support:
 
                 selectedCall.support ||
 
                 "",
-
 
                 supportWork:
 
@@ -3575,37 +2649,28 @@ submitCallBtn.addEventListener(
 
                 "",
 
-
                 call:
 
                 currentUser,
-
 
                 callWork:
 
                 work,
 
-
                 username:
 
                 localStorage.getItem(
                     "username"
-                ) ||
-
-
-                "",
-
+                ) || "",
 
                 name:
 
                 currentUser
 
-
             };
 
 
             const response =
-
             await fetch(
 
                 API_URL,
@@ -3613,13 +2678,11 @@ submitCallBtn.addEventListener(
                 {
 
                     method:
-
                     "POST",
 
                     headers:{
 
                         "Content-Type":
-
                         "text/plain;charset=utf-8"
 
                     },
@@ -3636,7 +2699,6 @@ submitCallBtn.addEventListener(
 
 
             const result =
-
             await response.json();
 
 
@@ -3669,11 +2731,9 @@ submitCallBtn.addEventListener(
 
             loadPendingCall();
 
-
         }
 
         catch(error){
-
 
             console.error(
                 error
@@ -3704,7 +2764,6 @@ submitCallBtn.addEventListener(
             Submit Call
 
             `;
-
 
         }
 
@@ -3879,7 +2938,6 @@ window.addEventListener(
 loadPendingCall();
 
 </script>
-
 
 </body>
 

@@ -1,853 +1,1603 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>History Management</title>
+<title>Pending Call</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    min-height:100vh;
-    background:linear-gradient(135deg,#005f46,#007f60,#008f6b);
-    color:#17202a;
-    padding:16px 24px 40px;
+  font-family:
+  Arial,
+  Helvetica,
+  sans-serif;
+
+  background:
+  linear-gradient(
+    135deg,
+    #005b45,
+    #007d61,
+    #008f6d
+  );
+
+  min-height:100vh;
+
+  padding:16px 24px;
+
+  color:#14201d;
 }
 
-/* ================================
-   TOP HEADER
-================================ */
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.container{
+  width:100%;
+  max-width:1500px;
+  margin:auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 .header{
-    max-width:1400px;
-    margin:auto;
-    background:#f7faf9;
-    border-radius:28px;
-    padding:24px 30px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.12);
+  background:#f7fbfa;
+
+  border-radius:26px;
+
+  min-height:122px;
+
+  padding:24px 30px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+  box-shadow:
+  0 10px 30px
+  rgba(0,0,0,.08);
 }
+
 
 .header-left{
-    display:flex;
-    align-items:center;
-    gap:20px;
+  display:flex;
+
+  align-items:center;
+
+  gap:20px;
 }
+
 
 .header-icon{
-    width:74px;
-    height:74px;
-    border-radius:22px;
-    background:#009b72;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:34px;
-    box-shadow:0 8px 20px rgba(0,155,114,.25);
+  width:74px;
+  height:74px;
+
+  border-radius:20px;
+
+  background:#009b73;
+
+  color:white;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:34px;
+
+  box-shadow:
+  0 10px 20px
+  rgba(0,120,90,.25);
 }
+
 
 .header-title h1{
-    color:#00765a;
-    font-size:32px;
-    margin-bottom:6px;
+  font-size:32px;
+
+  color:#00765b;
+
+  margin-bottom:5px;
 }
+
 
 .header-title p{
-    color:#65727b;
-    font-size:16px;
+  font-size:16px;
+
+  color:#66736f;
 }
+
 
 .header-buttons{
-    display:flex;
-    gap:12px;
+  display:flex;
+
+  gap:12px;
 }
+
 
 .btn{
-    border:none;
-    border-radius:15px;
-    padding:14px 22px;
-    font-size:16px;
-    font-weight:700;
-    cursor:pointer;
-    transition:.2s;
-    display:flex;
-    align-items:center;
-    gap:9px;
+  border:none;
+
+  border-radius:15px;
+
+  padding:14px 22px;
+
+  font-size:16px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:.2s;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:9px;
 }
+
 
 .btn:hover{
-    transform:translateY(-2px);
+  transform:translateY(-2px);
 }
 
-.refresh-btn{
-    background:#e5f6f1;
-    color:#007f60;
+
+.btn-refresh{
+  background:#e5f6f1;
+
+  color:#007c60;
 }
 
-.dashboard-btn{
-    background:#00785b;
-    color:#fff;
+
+.btn-dashboard{
+  background:#00785b;
+
+  color:white;
 }
 
-/* ================================
+
+/* =====================================================
    USER BAR
-================================ */
+===================================================== */
 
 .user-bar{
-    max-width:1400px;
-    margin:24px auto;
-    padding:16px 24px;
-    border:1px solid rgba(255,255,255,.25);
-    border-radius:17px;
-    background:rgba(255,255,255,.12);
-    color:#fff;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-size:17px;
-    font-weight:600;
+  margin-top:24px;
+
+  background:
+  rgba(255,255,255,.12);
+
+  border:
+  1px solid
+  rgba(255,255,255,.25);
+
+  border-radius:18px;
+
+  min-height:55px;
+
+  padding:0 22px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  color:white;
+
+  font-size:16px;
 }
 
-.user-bar i{
-    margin-right:8px;
+
+.user-name{
+  font-weight:bold;
 }
 
-/* ================================
+
+.page-label{
+  font-weight:bold;
+}
+
+
+/* =====================================================
    FILTER AREA
-================================ */
+===================================================== */
 
-.filter-box{
-    max-width:1400px;
-    margin:auto;
-    background:#f8fbfa;
-    border-radius:25px;
-    padding:22px;
-    box-shadow:0 10px 25px rgba(0,0,0,.10);
+.filter-area{
+  background:#f7fbfa;
+
+  margin-top:24px;
+
+  border-radius:24px;
+
+  padding:22px;
+
+  box-shadow:
+  0 10px 30px
+  rgba(0,0,0,.06);
 }
 
-.filter-grid{
-    display:grid;
-    grid-template-columns:
-        minmax(260px,2fr)
-        160px
-        170px
-        170px
-        130px;
-    gap:12px;
-    align-items:center;
+
+/* SEARCH ALADA */
+
+.search-box{
+  width:100%;
+
+  position:relative;
 }
 
-.input-box{
-    position:relative;
+
+.search-box i{
+  position:absolute;
+
+  left:18px;
+
+  top:50%;
+
+  transform:
+  translateY(-50%);
+
+  color:#009875;
+
+  font-size:19px;
 }
 
-.input-box i{
-    position:absolute;
-    left:17px;
-    top:50%;
-    transform:translateY(-50%);
-    color:#009b72;
-    font-size:18px;
+
+.search-box input{
+  width:100%;
+
+  height:56px;
+
+  border:
+  2px solid
+  #dcebe7;
+
+  border-radius:16px;
+
+  outline:none;
+
+  padding:
+  0 20px 0 52px;
+
+  font-size:16px;
+
+  color:#26332f;
+
+  transition:.2s;
 }
 
-.input-box input{
-    width:100%;
-    height:54px;
-    border:2px solid #e1ece8;
-    border-radius:15px;
-    outline:none;
-    padding:0 16px 0 50px;
-    font-size:15px;
-    color:#263238;
-    background:#fff;
+
+.search-box input:focus{
+  border-color:#00a27a;
+
+  box-shadow:
+  0 0 0 4px
+  rgba(0,162,122,.08);
 }
 
-.input-box input:focus{
-    border-color:#00a47a;
-    box-shadow:0 0 0 3px rgba(0,164,122,.10);
+
+/* FILTER ROW */
+
+.filter-row{
+  margin-top:15px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:flex-end;
+
+  gap:10px;
+
+  flex-wrap:wrap;
 }
 
-.date-input{
-    width:100%;
-    height:54px;
-    border:2px solid #e1ece8;
-    border-radius:15px;
-    outline:none;
-    padding:0 14px;
-    font-size:14px;
-    background:#fff;
-    color:#455a64;
+
+/* DATE LABEL */
+
+.filter-label{
+  font-weight:bold;
+
+  color:#53625d;
+
+  white-space:nowrap;
 }
 
-.date-input:focus{
-    border-color:#00a47a;
+
+/* LAST DAYS */
+
+.last-days-box{
+  display:flex;
+
+  align-items:center;
+
+  gap:7px;
 }
 
-.days-box{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    white-space:nowrap;
-    font-weight:700;
-    color:#37474f;
+
+.last-days-box i{
+  color:#007e60;
 }
 
-.days-box i{
-    color:#008b68;
+
+.last-days-input{
+  width:75px;
+
+  height:42px;
+
+  border:
+  2px solid
+  #dcebe7;
+
+  border-radius:10px;
+
+  outline:none;
+
+  text-align:center;
+
+  font-size:15px;
+
+  font-weight:bold;
+
+  color:#007b5d;
 }
 
-.days-input{
-    width:100%;
-    height:54px;
-    border:2px solid #e1ece8;
-    border-radius:15px;
-    outline:none;
-    padding:0 14px;
-    font-size:15px;
+
+.last-days-input:focus{
+  border-color:#009b73;
 }
 
-.filter-btn{
-    height:54px;
-    border:none;
-    border-radius:15px;
-    background:#007f60;
-    color:white;
-    font-size:15px;
-    font-weight:700;
-    cursor:pointer;
+
+/* FROM TO */
+
+.date-box{
+  display:flex;
+
+  align-items:center;
+
+  gap:6px;
 }
 
-.filter-btn:hover{
-    background:#00694f;
+
+.date-box label{
+  font-size:13px;
+
+  font-weight:bold;
+
+  color:#68756f;
 }
 
-/* ================================
-   HISTORY CARD
-================================ */
 
-.history-card{
-    max-width:1400px;
-    margin:24px auto 0;
-    background:#f7faf9;
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.12);
+.date-box input{
+  width:125px;
+
+  height:42px;
+
+  border:
+  2px solid
+  #dcebe7;
+
+  border-radius:10px;
+
+  padding:0 8px;
+
+  outline:none;
+
+  font-size:13px;
+
+  color:#40504b;
 }
 
-.history-head{
-    padding:24px 30px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    border-bottom:1px solid #e6eeeb;
+
+.date-box input:focus{
+  border-color:#009b73;
 }
 
-.history-head h2{
-    font-size:24px;
+
+/* FILTER BUTTON */
+
+.filter-select{
+  height:42px;
+
+  min-width:105px;
+
+  border:
+  2px solid
+  #dcebe7;
+
+  border-radius:10px;
+
+  padding:0 12px;
+
+  background:white;
+
+  color:#56635f;
+
+  font-size:14px;
+
+  font-weight:bold;
+
+  outline:none;
+
+  cursor:pointer;
 }
 
-.count-badge{
-    background:#008b68;
-    color:#fff;
-    padding:10px 18px;
-    border-radius:25px;
-    font-weight:700;
+
+/* CLEAR */
+
+.clear-btn{
+  height:42px;
+
+  padding:0 15px;
+
+  border:none;
+
+  border-radius:10px;
+
+  background:#e8f6f2;
+
+  color:#007c5e;
+
+  font-weight:bold;
+
+  cursor:pointer;
 }
 
-/* ================================
+
+/* =====================================================
+   CONTENT CARD
+===================================================== */
+
+.content-card{
+  background:#f7fbfa;
+
+  margin-top:24px;
+
+  border-radius:26px;
+
+  overflow:hidden;
+
+  min-height:400px;
+
+  box-shadow:
+  0 10px 30px
+  rgba(0,0,0,.06);
+}
+
+
+.content-header{
+  padding:
+  25px 32px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  border-bottom:
+  1px solid
+  #e6eeeb;
+}
+
+
+.content-header h2{
+  font-size:25px;
+}
+
+
+.pending-count{
+  background:#008f6b;
+
+  color:white;
+
+  padding:
+  10px 18px;
+
+  border-radius:20px;
+
+  font-weight:bold;
+}
+
+
+/* =====================================================
    TABLE
-================================ */
+===================================================== */
 
 .table-wrapper{
-    width:100%;
-    overflow-x:auto;
+  width:100%;
+
+  overflow-x:auto;
 }
+
 
 table{
-    width:100%;
-    min-width:950px;
-    border-collapse:collapse;
+  width:100%;
+
+  border-collapse:collapse;
+
+  min-width:900px;
 }
+
 
 thead{
-    background:#00866a;
-    color:#fff;
+  background:#00886a;
+
+  color:white;
 }
+
 
 th{
-    padding:17px 14px;
-    text-align:left;
-    font-size:13px;
-    white-space:nowrap;
+  padding:16px;
+
+  text-align:left;
+
+  font-size:14px;
 }
+
 
 td{
-    padding:17px 14px;
-    border-bottom:1px solid #e8efed;
-    font-size:14px;
-    color:#263238;
-    vertical-align:middle;
+  padding:17px 16px;
+
+  border-bottom:
+  1px solid
+  #e6eeeb;
+
+  font-size:14px;
 }
 
-tbody tr{
-    transition:.2s;
-}
 
 tbody tr:hover{
-    background:#f0faf7;
+  background:#f0f8f5;
 }
+
 
 .customer-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:7px;
-    padding:7px 12px;
-    border-radius:10px;
-    background:#e5f6f1;
-    color:#00795c;
-    font-weight:700;
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:7px;
+
+  background:#e6f6f1;
+
+  color:#007b5e;
+
+  padding:
+  7px 12px;
+
+  border-radius:9px;
+
+  font-weight:bold;
 }
+
 
 .ref-badge{
-    background:#f0f2f5;
-    padding:7px 11px;
-    border-radius:9px;
-    display:inline-block;
+  background:#f1f3f5;
+
+  color:#5d6663;
+
+  padding:
+  7px 12px;
+
+  border-radius:8px;
+
+  display:inline-block;
 }
+
 
 .view-btn{
-    border:none;
-    background:#007f60;
-    color:#fff;
-    padding:9px 15px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:700;
-    display:inline-flex;
-    align-items:center;
-    gap:7px;
+  border:none;
+
+  background:#008f6b;
+
+  color:white;
+
+  padding:
+  9px 15px;
+
+  border-radius:9px;
+
+  cursor:pointer;
+
+  font-weight:bold;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:7px;
 }
+
 
 .view-btn:hover{
-    background:#00664d;
+  background:#007657;
 }
 
-/* ================================
-   EMPTY / LOADING
-================================ */
 
-.message-box{
-    padding:70px 20px;
-    text-align:center;
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.empty{
+  min-height:350px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  text-align:center;
+
+  color:#65736e;
 }
 
-.message-icon{
-    width:75px;
-    height:75px;
-    margin:0 auto 20px;
-    border-radius:50%;
-    background:#e3f7f1;
-    color:#009b72;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:32px;
+
+.empty-icon{
+  width:90px;
+
+  height:90px;
+
+  border-radius:50%;
+
+  background:#e7f7f2;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  color:#009b73;
+
+  font-size:38px;
+
+  margin-bottom:20px;
 }
 
-.message-box h3{
-    font-size:23px;
-    margin-bottom:10px;
+
+.empty h3{
+  color:#26322f;
+
+  font-size:24px;
+
+  margin-bottom:8px;
 }
 
-.message-box p{
-    color:#78909c;
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading{
+  min-height:300px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  color:#008f6b;
+
+  font-size:18px;
+
+  font-weight:bold;
 }
 
-/* ================================
+
+.spinner{
+  width:28px;
+
+  height:28px;
+
+  border:
+  4px solid
+  #d8eee8;
+
+  border-top-color:#008f6b;
+
+  border-radius:50%;
+
+  animation:
+  spin 1s linear infinite;
+
+  margin-right:12px;
+}
+
+
+@keyframes spin{
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+
+/* =====================================================
    POPUP
-================================ */
+===================================================== */
 
 .modal{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.55);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-    z-index:9999;
+  display:none;
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+  rgba(0,0,0,.55);
+
+  z-index:9999;
+
+  padding:20px;
+
+  align-items:center;
+
+  justify-content:center;
 }
+
 
 .modal.show{
-    display:flex;
+  display:flex;
 }
 
-.modal-content{
-    width:100%;
-    max-width:720px;
-    max-height:90vh;
-    overflow-y:auto;
-    background:#fff;
-    border-radius:24px;
-    box-shadow:0 20px 60px rgba(0,0,0,.25);
-    animation:popup .2s ease;
+
+.modal-box{
+  width:100%;
+
+  max-width:720px;
+
+  max-height:90vh;
+
+  overflow-y:auto;
+
+  background:#f7fbfa;
+
+  border-radius:24px;
+
+  box-shadow:
+  0 25px 70px
+  rgba(0,0,0,.25);
+
+  animation:
+  modalIn .2s ease;
 }
 
-@keyframes popup{
-    from{
-        opacity:0;
-        transform:scale(.95);
-    }
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
+
+@keyframes modalIn{
+
+  from{
+    transform:scale(.95);
+
+    opacity:0;
+  }
+
+  to{
+    transform:scale(1);
+
+    opacity:1;
+  }
+
 }
+
 
 .modal-header{
-    background:#007f60;
-    color:#fff;
-    padding:20px 24px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+  background:#008f6b;
+
+  color:white;
+
+  padding:20px 24px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
 }
 
-.modal-header h2{
-    font-size:21px;
+
+.modal-header h3{
+  font-size:21px;
 }
+
 
 .close-btn{
-    width:38px;
-    height:38px;
-    border:none;
-    border-radius:50%;
-    background:rgba(255,255,255,.15);
-    color:#fff;
-    font-size:20px;
-    cursor:pointer;
+  width:38px;
+
+  height:38px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:
+  rgba(255,255,255,.2);
+
+  color:white;
+
+  font-size:20px;
+
+  cursor:pointer;
 }
 
-.close-btn:hover{
-    background:rgba(255,255,255,.25);
+
+/* =====================================================
+   DETAILS
+===================================================== */
+
+.details{
+  padding:24px;
 }
 
-.modal-body{
-    padding:24px;
+
+.detail-grid{
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:15px;
 }
 
-.details-list{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-}
 
 .detail-item{
-    display:grid;
-    grid-template-columns:180px 1fr;
-    gap:15px;
-    padding:14px 16px;
-    border:1px solid #e5eeeb;
-    border-radius:13px;
-    background:#f8fbfa;
+  background:white;
+
+  border:
+  1px solid
+  #e2eeea;
+
+  border-radius:13px;
+
+  padding:14px;
 }
+
+
+.detail-item.full{
+  grid-column:
+  1 / -1;
+}
+
 
 .detail-label{
-    font-weight:700;
-    color:#007b5e;
+  font-size:12px;
+
+  color:#788681;
+
+  font-weight:bold;
+
+  margin-bottom:7px;
+
+  text-transform:uppercase;
 }
+
 
 .detail-value{
-    color:#263238;
-    word-break:break-word;
-    white-space:pre-wrap;
+  font-size:15px;
+
+  color:#24332e;
+
+  line-height:1.5;
+
+  word-break:break-word;
 }
 
-.modal-footer{
-    padding:18px 24px;
-    border-top:1px solid #e8efed;
-    display:flex;
-    justify-content:flex-end;
+
+/* CALL WORK */
+
+.call-work-box{
+  margin-top:20px;
 }
 
-.close-main{
-    border:none;
-    background:#007f60;
-    color:#fff;
-    padding:12px 22px;
-    border-radius:12px;
-    cursor:pointer;
-    font-weight:700;
+
+.call-work-box label{
+  display:block;
+
+  font-weight:bold;
+
+  color:#263a34;
+
+  margin-bottom:8px;
 }
 
-/* ================================
+
+.call-work-box textarea{
+  width:100%;
+
+  min-height:110px;
+
+  resize:vertical;
+
+  border:
+  2px solid
+  #d7e9e4;
+
+  border-radius:13px;
+
+  padding:14px;
+
+  outline:none;
+
+  font-size:15px;
+
+  font-family:inherit;
+}
+
+
+.call-work-box textarea:focus{
+  border-color:#009b73;
+
+  box-shadow:
+  0 0 0 4px
+  rgba(0,155,115,.08);
+}
+
+
+.modal-actions{
+  margin-top:20px;
+
+  display:flex;
+
+  justify-content:flex-end;
+
+  gap:10px;
+}
+
+
+.cancel-btn{
+  border:none;
+
+  padding:
+  12px 20px;
+
+  border-radius:11px;
+
+  background:#e9efed;
+
+  color:#52615c;
+
+  font-weight:bold;
+
+  cursor:pointer;
+}
+
+
+.submit-btn{
+  border:none;
+
+  padding:
+  12px 22px;
+
+  border-radius:11px;
+
+  background:#008f6b;
+
+  color:white;
+
+  font-weight:bold;
+
+  cursor:pointer;
+}
+
+
+.submit-btn:disabled{
+  opacity:.6;
+
+  cursor:not-allowed;
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast{
+  position:fixed;
+
+  right:25px;
+
+  bottom:25px;
+
+  background:#15221e;
+
+  color:white;
+
+  padding:
+  14px 20px;
+
+  border-radius:12px;
+
+  display:none;
+
+  z-index:10000;
+
+  box-shadow:
+  0 10px 30px
+  rgba(0,0,0,.2);
+}
+
+
+.toast.show{
+  display:block;
+}
+
+
+/* =====================================================
    RESPONSIVE
-================================ */
+===================================================== */
 
-@media(max-width:1000px){
+@media(max-width:900px){
 
-    .filter-grid{
-        grid-template-columns:1fr 1fr;
-    }
+  body{
+    padding:12px;
+  }
 
-    .input-box{
-        grid-column:1/-1;
-    }
+  .header{
+    flex-direction:column;
+
+    align-items:flex-start;
+  }
+
+  .header-buttons{
+    width:100%;
+  }
+
+  .header-buttons .btn{
+    flex:1;
+
+    justify-content:center;
+  }
+
+  .user-bar{
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    padding:15px 18px;
+  }
+
+  .filter-row{
+    justify-content:flex-start;
+  }
 
 }
 
-@media(max-width:700px){
 
-    body{
-        padding:10px;
-    }
+@media(max-width:600px){
 
-    .header{
-        padding:18px;
-        border-radius:20px;
-        flex-direction:column;
-        align-items:flex-start;
-    }
+  .header{
+    padding:20px;
 
-    .header-left{
-        width:100%;
-    }
+    border-radius:20px;
+  }
 
-    .header-icon{
-        width:58px;
-        height:58px;
-        font-size:25px;
-    }
+  .header-left{
+    align-items:flex-start;
+  }
 
-    .header-title h1{
-        font-size:25px;
-    }
+  .header-icon{
+    width:58px;
 
-    .header-buttons{
-        width:100%;
-    }
+    height:58px;
 
-    .header-buttons .btn{
-        flex:1;
-        justify-content:center;
-    }
+    font-size:25px;
+  }
 
-    .user-bar{
-        margin:15px 0;
-        flex-direction:column;
-        align-items:flex-start;
-        gap:8px;
-    }
+  .header-title h1{
+    font-size:25px;
+  }
 
-    .filter-box{
-        padding:15px;
-        border-radius:20px;
-    }
+  .header-title p{
+    font-size:13px;
+  }
 
-    .filter-grid{
-        grid-template-columns:1fr;
-    }
+  .content-header{
+    padding:
+    20px;
+  }
 
-    .input-box{
-        grid-column:auto;
-    }
+  .content-header h2{
+    font-size:20px;
+  }
 
-    .history-card{
-        border-radius:20px;
-    }
+  .detail-grid{
+    grid-template-columns:1fr;
+  }
 
-    .history-head{
-        padding:20px;
-    }
+  .detail-item.full{
+    grid-column:auto;
+  }
 
-    .detail-item{
-        grid-template-columns:1fr;
-        gap:6px;
-    }
+  .date-box input{
+    width:110px;
+  }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- ================================
+<div class="container">
+
+
+<!-- ===================================================
      HEADER
-================================ -->
+=================================================== -->
 
 <div class="header">
 
-    <div class="header-left">
+  <div class="header-left">
 
-        <div class="header-icon">
-            <i class="fa-solid fa-clock-rotate-left"></i>
-        </div>
+    <div class="header-icon">
+      <i class="fa-solid fa-phone-volume"></i>
+    </div>
 
-        <div class="header-title">
+    <div class="header-title">
 
-            <h1>History</h1>
+      <h1>Pending Call</h1>
 
-            <p>
-                View and manage completed support and call records
-            </p>
-
-        </div>
+      <p>
+        View and manage all pending customer call requests
+      </p>
 
     </div>
 
-
-    <div class="header-buttons">
-
-        <button
-            class="btn refresh-btn"
-            onclick="loadHistory()"
-        >
-            <i class="fa-solid fa-rotate"></i>
-            Refresh
-        </button>
+  </div>
 
 
-        <button
-            class="btn dashboard-btn"
-            onclick="goDashboard()"
-        >
-            <i class="fa-solid fa-arrow-left"></i>
-            Dashboard
-        </button>
+  <div class="header-buttons">
 
-    </div>
+    <button
+      class="btn btn-refresh"
+      onclick="loadData()"
+    >
+      <i class="fa-solid fa-rotate"></i>
+      Refresh
+    </button>
+
+
+    <button
+      class="btn btn-dashboard"
+      onclick="goDashboard()"
+    >
+      <i class="fa-solid fa-arrow-left"></i>
+      Dashboard
+    </button>
+
+  </div>
 
 </div>
 
 
-<!-- ================================
+<!-- ===================================================
      USER BAR
-================================ -->
+=================================================== -->
 
 <div class="user-bar">
 
-    <div>
-        <i class="fa-solid fa-user"></i>
-        Logged in as:
-        <strong id="loggedUser">User</strong>
-    </div>
-
-    <div>
-        <i class="fa-solid fa-clock-rotate-left"></i>
-        History Management
-    </div>
-
-</div>
+  <div>
+    <i class="fa-solid fa-user"></i>
+    Logged in as:
+    <span
+      class="user-name"
+      id="loggedUser"
+    >
+      User
+    </span>
+  </div>
 
 
-<!-- ================================
-     FILTER
-================================ -->
+  <div class="page-label">
 
-<div class="filter-box">
+    <i class="fa-solid fa-phone"></i>
 
-    <div class="filter-grid">
+    Pending Call Management
 
-
-        <!-- SEARCH -->
-
-        <div class="input-box">
-
-            <i class="fa-solid fa-magnifying-glass"></i>
-
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Search Customer ID, Problem, Reference, Support..."
-                oninput="applyFilters()"
-            >
-
-        </div>
-
-
-        <!-- LAST DAYS -->
-
-        <div class="days-box">
-
-            <i class="fa-regular fa-calendar"></i>
-
-            <span>Last Days</span>
-
-            <input
-                type="number"
-                id="lastDays"
-                class="days-input"
-                min="1"
-                placeholder="All"
-                oninput="applyFilters()"
-            >
-
-        </div>
-
-
-        <!-- DATE FROM -->
-
-        <input
-            type="date"
-            id="dateFrom"
-            class="date-input"
-            onchange="applyFilters()"
-        >
-
-
-        <!-- DATE TO -->
-
-        <input
-            type="date"
-            id="dateTo"
-            class="date-input"
-            onchange="applyFilters()"
-        >
-
-
-        <!-- ALL / RESET -->
-
-        <button
-            class="filter-btn"
-            onclick="clearFilters()"
-        >
-            <i class="fa-solid fa-list"></i>
-            All
-        </button>
-
-    </div>
+  </div>
 
 </div>
 
 
-<!-- ================================
-     HISTORY TABLE
-================================ -->
+<!-- ===================================================
+     FILTER AREA
+=================================================== -->
 
-<div class="history-card">
+<div class="filter-area">
 
-    <div class="history-head">
 
-        <h2>
-            History Records
-        </h2>
+  <!-- SEARCH ALADA -->
 
-        <div class="count-badge">
+  <div class="search-box">
 
-            <span id="recordCount">
-                0
-            </span>
+    <i class="fa-solid fa-magnifying-glass"></i>
 
-            Records
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search Customer ID, Problem, Reference, Support..."
+      oninput="applyFilters()"
+    >
 
-        </div>
+  </div>
+
+
+  <!-- FILTER ROW -->
+
+  <div class="filter-row">
+
+
+    <!-- LAST DAYS -->
+
+    <div class="last-days-box">
+
+      <i class="fa-regular fa-calendar"></i>
+
+      <span class="filter-label">
+        Last Days
+      </span>
+
+      <input
+        type="number"
+        id="lastDays"
+        class="last-days-input"
+        min="1"
+        placeholder="All"
+        oninput="applyFilters()"
+      >
 
     </div>
+
+
+    <!-- FROM -->
+
+    <div class="date-box">
+
+      <label>
+        From
+      </label>
+
+      <input
+        type="date"
+        id="fromDate"
+        onchange="applyFilters()"
+      >
+
+    </div>
+
+
+    <!-- TO -->
+
+    <div class="date-box">
+
+      <label>
+        To
+      </label>
+
+      <input
+        type="date"
+        id="toDate"
+        onchange="applyFilters()"
+      >
+
+    </div>
+
+
+    <!-- FILTER -->
+
+    <select
+      id="statusFilter"
+      class="filter-select"
+      onchange="applyFilters()"
+    >
+
+      <option value="all">
+        All
+      </option>
+
+      <option value="pending">
+        Pending
+      </option>
+
+    </select>
+
+
+    <!-- CLEAR -->
+
+    <button
+      class="clear-btn"
+      onclick="clearFilters()"
+    >
+
+      <i class="fa-solid fa-filter-circle-xmark"></i>
+
+      Clear
+
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- ===================================================
+     CONTENT
+=================================================== -->
+
+<div class="content-card">
+
+
+  <div class="content-header">
+
+    <h2>
+      Pending Call Requests
+    </h2>
 
 
     <div
-        id="contentArea"
-        class="table-wrapper"
+      class="pending-count"
+      id="pendingCount"
     >
-
-        <div class="message-box">
-
-            <div class="message-icon">
-
-                <i class="fa-solid fa-spinner fa-spin"></i>
-
-            </div>
-
-            <h3>
-                Loading History
-            </h3>
-
-            <p>
-                Please wait...
-            </p>
-
-        </div>
-
+      0 Pending
     </div>
+
+  </div>
+
+
+  <div
+    id="content"
+    class="loading"
+  >
+
+    <div class="spinner"></div>
+
+    Loading pending calls...
+
+  </div>
+
 
 </div>
 
 
-<!-- ================================
-     VIEW MODAL
-================================ -->
+</div>
+
+
+<!-- ===================================================
+     MODAL
+=================================================== -->
 
 <div
-    id="viewModal"
-    class="modal"
-    onclick="closeModalOutside(event)"
+  class="modal"
+  id="callModal"
+  onclick="outsideModal(event)"
 >
 
-    <div class="modal-content">
+
+<div class="modal-box">
 
 
-        <div class="modal-header">
+  <div class="modal-header">
 
-            <h2>
-                <i class="fa-solid fa-circle-info"></i>
-                History Details
-            </h2>
+    <h3>
+      <i class="fa-solid fa-phone"></i>
+      Call Request Details
+    </h3>
 
-            <button
-                class="close-btn"
-                onclick="closeModal()"
-            >
-                <i class="fa-solid fa-xmark"></i>
-            </button>
 
+    <button
+      class="close-btn"
+      onclick="closeModal()"
+    >
+      ×
+    </button>
+
+  </div>
+
+
+  <div class="details">
+
+
+    <div class="detail-grid">
+
+
+      <div class="detail-item">
+
+        <div class="detail-label">
+          Customer ID
         </div>
-
 
         <div
-            id="modalBody"
-            class="modal-body"
+          class="detail-value"
+          id="mCustomer"
+        ></div>
+
+      </div>
+
+
+      <div class="detail-item">
+
+        <div class="detail-label">
+          Date
+        </div>
+
+        <div
+          class="detail-value"
+          id="mDate"
+        ></div>
+
+      </div>
+
+
+      <div class="detail-item full">
+
+        <div class="detail-label">
+          Problem
+        </div>
+
+        <div
+          class="detail-value"
+          id="mProblem"
+        ></div>
+
+      </div>
+
+
+      <div class="detail-item">
+
+        <div class="detail-label">
+          Reference
+        </div>
+
+        <div
+          class="detail-value"
+          id="mReference"
+        ></div>
+
+      </div>
+
+
+      <div class="detail-item">
+
+        <div class="detail-label">
+          Support
+        </div>
+
+        <div
+          class="detail-value"
+          id="mSupport"
+        ></div>
+
+      </div>
+
+
+      <div class="detail-item full">
+
+        <div class="detail-label">
+          Support Work
+        </div>
+
+        <div
+          class="detail-value"
+          id="mSupportWork"
+        ></div>
+
+      </div>
+
+
+      <div class="detail-item">
+
+        <div class="detail-label">
+          Call Person
+        </div>
+
+        <div
+          class="detail-value"
+          id="mCallPerson"
         >
+          Auto
         </div>
 
+      </div>
 
-        <div class="modal-footer">
-
-            <button
-                class="close-main"
-                onclick="closeModal()"
-            >
-                Close
-            </button>
-
-        </div>
 
     </div>
 
+
+    <!-- CALL WORK -->
+
+    <div class="call-work-box">
+
+      <label>
+        <i class="fa-solid fa-pen"></i>
+        Call Work
+      </label>
+
+
+      <textarea
+        id="callWorkInput"
+        placeholder="Write what happened during the call..."
+      ></textarea>
+
+    </div>
+
+
+    <div class="modal-actions">
+
+      <button
+        class="cancel-btn"
+        onclick="closeModal()"
+      >
+        Cancel
+      </button>
+
+
+      <button
+        class="submit-btn"
+        id="submitCallBtn"
+        onclick="submitCall()"
+      >
+        <i class="fa-solid fa-paper-plane"></i>
+        Submit
+      </button>
+
+    </div>
+
+
+  </div>
+
+
 </div>
+
+</div>
+
+
+<!-- ===================================================
+     TOAST
+=================================================== -->
+
+<div
+  class="toast"
+  id="toast"
+></div>
 
 
 <script>
 
+
 /* =====================================================
-   CONFIG
+   API URL
 ===================================================== */
 
 const API_URL =
@@ -855,27 +1605,27 @@ const API_URL =
 
 
 /* =====================================================
-   GLOBAL DATA
+   VARIABLES
 ===================================================== */
 
-let allHistory = [];
+let allData = [];
 
-let filteredHistory = [];
+let selectedItem = null;
 
 
 /* =====================================================
-   PAGE LOAD
+   INIT
 ===================================================== */
 
 document.addEventListener(
-    "DOMContentLoaded",
-    function(){
+  "DOMContentLoaded",
+  function(){
 
-        loadUser();
+    loadUser();
 
-        loadHistory();
+    loadData();
 
-    }
+  }
 );
 
 
@@ -885,87 +1635,115 @@ document.addEventListener(
 
 function loadUser(){
 
-    const user =
-        localStorage.getItem("username") ||
+  const username =
+    localStorage.getItem("username") ||
+    localStorage.getItem("userName") ||
+    localStorage.getItem("name") ||
+    sessionStorage.getItem("username") ||
+    "User";
 
-        localStorage.getItem("userName") ||
-
-        localStorage.getItem("name") ||
-
-        sessionStorage.getItem("username") ||
-
-        sessionStorage.getItem("userName") ||
-
-        "User";
-
-
-    document.getElementById(
-        "loggedUser"
-    ).textContent =
-        user;
+  document.getElementById(
+    "loggedUser"
+  ).textContent =
+    username;
 
 }
 
 
 /* =====================================================
-   LOAD HISTORY
+   LOAD DATA
 ===================================================== */
 
-async function loadHistory(){
+async function loadData(){
 
-    showLoading();
-
-
-    try{
-
-        const response =
-            await fetch(
-                API_URL +
-                "?action=history"
-            );
+  const content =
+    document.getElementById(
+      "content"
+    );
 
 
-        const result =
-            await response.json();
+  content.className =
+    "loading";
 
 
-        if(
-            !result ||
-            result.success === false
-        ){
+  content.innerHTML =
 
-            throw new Error(
-                result.message ||
-                "Failed to load history."
-            );
+    '<div class="spinner"></div>' +
 
+    'Loading pending calls...';
+
+
+  try{
+
+
+    const response =
+      await fetch(
+
+        API_URL +
+        "?action=pendingCall&_=" +
+        Date.now(),
+
+        {
+          method:"GET",
+
+          cache:"no-store"
         }
 
-
-        allHistory =
-            Array.isArray(
-                result.data
-            )
-            ? result.data
-            : [];
+      );
 
 
-        filteredHistory =
-            [...allHistory];
+    const result =
+      await response.json();
 
 
-        applyFilters();
+    if(
+      !result.success
+    ){
 
-
-    }catch(error){
-
-        console.error(error);
-
-        showError(
-            error.message
-        );
+      throw new Error(
+        result.message ||
+        "Failed to load data."
+      );
 
     }
+
+
+    allData =
+      Array.isArray(
+        result.data
+      )
+      ? result.data
+      : [];
+
+
+    applyFilters();
+
+
+  }catch(error){
+
+    content.className =
+      "empty";
+
+
+    content.innerHTML =
+
+      '<div class="empty-icon">' +
+
+      '<i class="fa-solid fa-triangle-exclamation"></i>' +
+
+      '</div>' +
+
+      '<h3>Failed to Load</h3>' +
+
+      '<p>' +
+
+      escapeHtml(
+        error.message
+      ) +
+
+      '</p>';
+
+  }
 
 }
 
@@ -976,655 +1754,577 @@ async function loadHistory(){
 
 function applyFilters(){
 
-    const search =
-        document
-        .getElementById(
-            "searchInput"
-        )
-        .value
-        .toLowerCase()
-        .trim();
-
-
-    const lastDaysValue =
-        document
-        .getElementById(
-            "lastDays"
-        )
-        .value;
-
-
-    const lastDays =
-        parseInt(
-            lastDaysValue
-        );
-
-
-    const dateFrom =
-        document
-        .getElementById(
-            "dateFrom"
-        )
-        .value;
-
-
-    const dateTo =
-        document
-        .getElementById(
-            "dateTo"
-        )
-        .value;
-
-
-    const now =
-        new Date();
-
-
-    filteredHistory =
-        allHistory.filter(
-            function(item){
-
-
-                /* ============================
-                   SEARCH
-                ============================ */
-
-                const searchable = [
-
-                    item.customerId,
-
-                    item.customerNumber,
-
-                    item.date,
-
-                    item.problem,
-
-                    item.reference,
-
-                    item.ref,
-
-                    item.support,
-
-                    item.call
-
-                ]
-                .join(" ")
-                .toLowerCase();
-
-
-                if(
-                    search &&
-                    !searchable.includes(
-                        search
-                    )
-                ){
-
-                    return false;
-
-                }
-
-
-                /* ============================
-                   DATE
-                ============================ */
-
-                const itemDate =
-                    parseHistoryDate(
-                        item.date
-                    );
-
-
-                /* ============================
-                   LAST DAYS
-                ============================ */
-
-                if(
-                    !isNaN(lastDays) &&
-                    lastDays > 0
-                ){
-
-                    if(
-                        !itemDate
-                    ){
-
-                        return false;
-
-                    }
-
-
-                    const start =
-                        new Date(
-                            now
-                        );
-
-
-                    start.setHours(
-                        0,0,0,0
-                    );
-
-
-                    start.setDate(
-                        start.getDate()
-                        -
-                        lastDays
-                        +
-                        1
-                    );
-
-
-                    if(
-                        itemDate <
-                        start
-                    ){
-
-                        return false;
-
-                    }
-
-                }
-
-
-                /* ============================
-                   DATE FROM
-                ============================ */
-
-                if(
-                    dateFrom
-                ){
-
-                    const from =
-                        new Date(
-                            dateFrom +
-                            "T00:00:00"
-                        );
-
-
-                    if(
-                        itemDate &&
-                        itemDate < from
-                    ){
-
-                        return false;
-
-                    }
-
-                }
-
-
-                /* ============================
-                   DATE TO
-                ============================ */
-
-                if(
-                    dateTo
-                ){
-
-                    const to =
-                        new Date(
-                            dateTo +
-                            "T23:59:59"
-                        );
-
-
-                    if(
-                        itemDate &&
-                        itemDate > to
-                    ){
-
-                        return false;
-
-                    }
-
-                }
-
-
-                return true;
-
-            }
-        );
-
-
-    renderHistory();
-
-}
-
-
-/* =====================================================
-   PARSE DATE
-===================================================== */
-
-function parseHistoryDate(
-    value
-){
-
-    if(
-        !value
-    ){
-
-        return null;
-
-    }
-
-
-    const text =
-        String(
-            value
-        ).trim();
-
-
-    /* YYYY-MM-DD */
-
-    if(
-        /^\d{4}-\d{2}-\d{2}/
-        .test(text)
-    ){
-
-        const d =
-            new Date(
-                text.replace(
-                    " ",
-                    "T"
-                )
-            );
-
-
-        return isNaN(
-            d.getTime()
-        )
-        ? null
-        : d;
-
-    }
-
-
-    /* DD-MM-YYYY */
-
-    const match =
-        text.match(
-            /^(\d{1,2})-(\d{1,2})-(\d{4})/
-        );
-
-
-    if(match){
-
-        const d =
-            new Date(
-
-                Number(
-                    match[3]
-                ),
-
-                Number(
-                    match[2]
-                ) - 1,
-
-                Number(
-                    match[1]
-                )
-
-            );
-
-
-        return isNaN(
-            d.getTime()
-        )
-        ? null
-        : d;
-
-    }
-
-
-    const normal =
-        new Date(
-            text
-        );
-
-
-    return isNaN(
-        normal.getTime()
+  const search =
+    document.getElementById(
+      "searchInput"
     )
-    ? null
-    : normal;
-
-}
-
-
-/* =====================================================
-   RENDER HISTORY
-===================================================== */
-
-function renderHistory(){
-
-    const area =
-        document.getElementById(
-            "contentArea"
-        );
+    .value
+    .toLowerCase()
+    .trim();
 
 
+  const lastDaysValue =
     document.getElementById(
-        "recordCount"
-    ).textContent =
-        filteredHistory.length;
+      "lastDays"
+    ).value;
 
 
-    if(
-        filteredHistory.length === 0
-    ){
+  const lastDays =
+    lastDaysValue
+    ? parseInt(
+        lastDaysValue,
+        10
+      )
+    : null;
 
-        area.innerHTML = `
 
-            <div class="message-box">
+  const fromDate =
+    document.getElementById(
+      "fromDate"
+    ).value;
 
-                <div class="message-icon">
 
-                    <i class="fa-solid fa-check"></i>
+  const toDate =
+    document.getElementById(
+      "toDate"
+    ).value;
 
-                </div>
 
-                <h3>
-                    No History Found
-                </h3>
+  let filtered =
+    allData.filter(
 
-                <p>
-                    No matching history records were found.
-                </p>
+      function(item){
 
-            </div>
+        const searchable =
 
-        `;
+          (
 
-        return;
-
-    }
-
-
-    let html = `
-
-        <table>
-
-            <thead>
-
-                <tr>
-
-                    <th>Customer ID</th>
-
-                    <th>Date</th>
-
-                    <th>Problem</th>
-
-                    <th>Reference</th>
-
-                    <th>Support</th>
-
-                    <th>Call</th>
-
-                    <th>Action</th>
-
-                </tr>
-
-            </thead>
-
-            <tbody>
-
-    `;
-
-
-    filteredHistory.forEach(
-        function(item,index){
-
-            html += `
-
-                <tr>
-
-                    <td>
-
-                        <span
-                            class="customer-badge"
-                        >
-
-                            <i
-                                class="fa-solid fa-user"
-                            ></i>
-
-                            ${escapeHTML(
-                                item.customerId ||
-                                item.customerNumber ||
-                                ""
-                            )}
-
-                        </span>
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(
-                            item.date ||
-                            ""
-                        )}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(
-                            item.problem ||
-                            ""
-                        )}
-
-                    </td>
-
-
-                    <td>
-
-                        <span
-                            class="ref-badge"
-                        >
-
-                            ${escapeHTML(
-                                item.reference ||
-                                item.ref ||
-                                ""
-                            )}
-
-                        </span>
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(
-                            item.support ||
-                            ""
-                        )}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(
-                            item.call ||
-                            ""
-                        )}
-
-                    </td>
-
-
-                    <td>
-
-                        <button
-                            class="view-btn"
-                            onclick="viewHistory(${index})"
-                        >
-
-                            <i
-                                class="fa-solid fa-eye"
-                            ></i>
-
-                            View
-
-                        </button>
-
-                    </td>
-
-                </tr>
-
-            `;
-
-        }
-    );
-
-
-    html += `
-
-            </tbody>
-
-        </table>
-
-    `;
-
-
-    area.innerHTML =
-        html;
-
-}
-
-
-/* =====================================================
-   VIEW HISTORY
-===================================================== */
-
-function viewHistory(
-    index
-){
-
-    const item =
-        filteredHistory[index];
-
-
-    if(
-        !item
-    ){
-
-        return;
-
-    }
-
-
-    const details = [
-
-        [
-            "Customer ID",
             item.customerId ||
+
             item.customerNumber ||
-            ""
-        ],
 
-        [
-            "Date",
-            item.date ||
-            ""
-        ],
+            item.ip ||
 
-        [
-            "Problem",
+            ""
+
+          ) +
+
+          " " +
+
+          (
+
             item.problem ||
-            ""
-        ],
 
-        [
-            "Reference",
+            ""
+
+          ) +
+
+          " " +
+
+          (
+
             item.reference ||
+
             item.ref ||
-            ""
-        ],
 
-        [
-            "Support",
+            ""
+
+          ) +
+
+          " " +
+
+          (
+
             item.support ||
-            ""
-        ],
 
-        [
-            "Support Work",
+            ""
+
+          ) +
+
+          " " +
+
+          (
+
             item.supportWork ||
+
             ""
-        ],
 
-        [
-            "Call",
-            item.call ||
-            ""
-        ],
-
-        [
-            "Call Work",
-            item.callWork ||
-            ""
-        ]
-
-    ];
+          );
 
 
-    let html =
-        '<div class="details-list">';
+        if(
 
+          search &&
 
-    details.forEach(
-        function(detail){
+          !searchable
+          .toLowerCase()
+          .includes(search)
 
-            html += `
+        ){
 
-                <div class="detail-item">
-
-                    <div
-                        class="detail-label"
-                    >
-
-                        ${escapeHTML(
-                            detail[0]
-                        )}
-
-                    </div>
-
-                    <div
-                        class="detail-value"
-                    >
-
-                        ${escapeHTML(
-                            detail[1] ||
-                            "N/A"
-                        )}
-
-                    </div>
-
-                </div>
-
-            `;
+          return false;
 
         }
+
+
+        const itemDate =
+          parseDate(
+            item.date
+          );
+
+
+        if(
+          lastDays !== null
+        ){
+
+          if(
+            !itemDate
+          ){
+
+            return false;
+
+          }
+
+
+          const today =
+            new Date();
+
+
+          today.setHours(
+            23,
+            59,
+            59,
+            999
+          );
+
+
+          const start =
+            new Date(
+              today
+            );
+
+
+          start.setDate(
+
+            start.getDate()
+            -
+            lastDays
+
+          );
+
+
+          if(
+            itemDate < start ||
+            itemDate > today
+          ){
+
+            return false;
+
+          }
+
+        }
+
+
+        if(
+          fromDate
+        ){
+
+          const from =
+            new Date(
+              fromDate +
+              "T00:00:00"
+            );
+
+
+          if(
+            !itemDate ||
+            itemDate < from
+          ){
+
+            return false;
+
+          }
+
+        }
+
+
+        if(
+          toDate
+        ){
+
+          const to =
+            new Date(
+              toDate +
+              "T23:59:59"
+            );
+
+
+          if(
+            !itemDate ||
+            itemDate > to
+          ){
+
+            return false;
+
+          }
+
+        }
+
+
+        return true;
+
+      }
+
     );
 
 
-    html +=
-        "</div>";
+  renderData(
+    filtered
+  );
+
+}
 
 
+/* =====================================================
+   RENDER DATA
+===================================================== */
+
+function renderData(data){
+
+  const content =
     document.getElementById(
-        "modalBody"
-    ).innerHTML =
-        html;
-
-
-    document.getElementById(
-        "viewModal"
-    ).classList.add(
-        "show"
+      "content"
     );
+
+
+  document.getElementById(
+    "pendingCount"
+  ).textContent =
+
+    data.length +
+
+    " Pending";
+
+
+  if(
+    data.length === 0
+  ){
+
+    content.className =
+      "empty";
+
+
+    content.innerHTML =
+
+      '<div class="empty-icon">' +
+
+      '<i class="fa-solid fa-check"></i>' +
+
+      '</div>' +
+
+      '<h3>No Pending Call</h3>' +
+
+      '<p>There are currently no pending call requests.</p>';
+
+
+    return;
+
+  }
+
+
+  content.className =
+    "table-wrapper";
+
+
+  let html =
+
+    '<table>' +
+
+    '<thead>' +
+
+    '<tr>' +
+
+    '<th>Customer ID</th>' +
+
+    '<th>Date</th>' +
+
+    '<th>Problem</th>' +
+
+    '<th>Reference</th>' +
+
+    '<th>Support</th>' +
+
+    '<th>Support Work</th>' +
+
+    '<th>Action</th>' +
+
+    '</tr>' +
+
+    '</thead>' +
+
+    '<tbody>';
+
+
+  data.forEach(
+
+    function(item,index){
+
+      html +=
+
+        '<tr>' +
+
+        '<td>' +
+
+        '<span class="customer-badge">' +
+
+        '<i class="fa-solid fa-user"></i>' +
+
+        escapeHtml(
+
+          item.customerId ||
+
+          item.customerNumber ||
+
+          item.ip ||
+
+          ""
+
+        ) +
+
+        '</span>' +
+
+        '</td>' +
+
+
+        '<td>' +
+
+        escapeHtml(
+
+          item.date ||
+
+          ""
+
+        ) +
+
+        '</td>' +
+
+
+        '<td>' +
+
+        escapeHtml(
+
+          item.problem ||
+
+          ""
+
+        ) +
+
+        '</td>' +
+
+
+        '<td>' +
+
+        '<span class="ref-badge">' +
+
+        escapeHtml(
+
+          item.reference ||
+
+          item.ref ||
+
+          "-"
+
+        ) +
+
+        '</span>' +
+
+        '</td>' +
+
+
+        '<td>' +
+
+        escapeHtml(
+
+          item.support ||
+
+          ""
+
+        ) +
+
+        '</td>' +
+
+
+        '<td>' +
+
+        escapeHtml(
+
+          item.supportWork ||
+
+          ""
+
+        ) +
+
+        '</td>' +
+
+
+        '<td>' +
+
+        '<button class="view-btn" ' +
+
+        'onclick="openModal(' +
+
+        index +
+
+        ')">' +
+
+        '<i class="fa-solid fa-eye"></i>' +
+
+        'View' +
+
+        '</button>' +
+
+        '</td>' +
+
+
+        '</tr>';
+
+    }
+
+  );
+
+
+  html +=
+
+    '</tbody>' +
+
+    '</table>';
+
+
+  content.innerHTML =
+    html;
+
+
+  window.filteredData =
+    data;
+
+}
+
+
+/* =====================================================
+   OPEN MODAL
+===================================================== */
+
+function openModal(index){
+
+  const data =
+    window.filteredData[index];
+
+
+  if(
+    !data
+  ){
+
+    return;
+
+  }
+
+
+  selectedItem =
+    data;
+
+
+  document.getElementById(
+    "mCustomer"
+  ).textContent =
+
+    data.customerId ||
+
+    data.customerNumber ||
+
+    data.ip ||
+
+    "";
+
+
+  document.getElementById(
+    "mDate"
+  ).textContent =
+
+    data.date ||
+
+    "";
+
+
+  document.getElementById(
+    "mProblem"
+  ).textContent =
+
+    data.problem ||
+
+    "";
+
+
+  document.getElementById(
+    "mReference"
+  ).textContent =
+
+    data.reference ||
+
+    data.ref ||
+
+    "-";
+
+
+  document.getElementById(
+    "mSupport"
+  ).textContent =
+
+    data.support ||
+
+    "";
+
+
+  document.getElementById(
+    "mSupportWork"
+  ).textContent =
+
+    data.supportWork ||
+
+    "";
+
+
+  /* AUTO USERNAME */
+
+  const username =
+
+    localStorage.getItem("username") ||
+
+    localStorage.getItem("userName") ||
+
+    localStorage.getItem("name") ||
+
+    sessionStorage.getItem("username") ||
+
+    "User";
+
+
+  document.getElementById(
+    "mCallPerson"
+  ).textContent =
+
+    username;
+
+
+  document.getElementById(
+    "callWorkInput"
+  ).value = "";
+
+
+  document.getElementById(
+    "callModal"
+  ).classList.add(
+    "show"
+  );
 
 }
 
@@ -1635,27 +2335,312 @@ function viewHistory(
 
 function closeModal(){
 
-    document.getElementById(
-        "viewModal"
-    ).classList.remove(
-        "show"
-    );
+  document.getElementById(
+    "callModal"
+  ).classList.remove(
+    "show"
+  );
+
+  selectedItem =
+    null;
 
 }
 
 
-function closeModalOutside(
-    event
-){
+/* =====================================================
+   OUTSIDE MODAL
+===================================================== */
+
+function outsideModal(event){
+
+  if(
+    event.target.id ===
+    "callModal"
+  ){
+
+    closeModal();
+
+  }
+
+}
+
+
+/* =====================================================
+   SUBMIT CALL
+===================================================== */
+
+async function submitCall(){
+
+  if(
+    !selectedItem
+  ){
+
+    return;
+
+  }
+
+
+  const callWork =
+    document.getElementById(
+      "callWorkInput"
+    )
+    .value
+    .trim();
+
+
+  if(
+    !callWork
+  ){
+
+    showToast(
+      "Please write Call Work."
+    );
+
+    return;
+
+  }
+
+
+  const username =
+
+    localStorage.getItem("username") ||
+
+    localStorage.getItem("userName") ||
+
+    localStorage.getItem("name") ||
+
+    sessionStorage.getItem("username") ||
+
+    "";
+
+
+  const customerId =
+
+    selectedItem.customerId ||
+
+    selectedItem.customerNumber ||
+
+    selectedItem.ip ||
+
+    "";
+
+
+  const button =
+    document.getElementById(
+      "submitCallBtn"
+    );
+
+
+  button.disabled =
+    true;
+
+
+  button.innerHTML =
+
+    '<i class="fa-solid fa-spinner fa-spin"></i>' +
+
+    ' Submitting...';
+
+
+  try{
+
+
+    const response =
+      await fetch(
+
+        API_URL,
+
+        {
+
+          method:"POST",
+
+          headers:{
+
+            "Content-Type":
+            "text/plain;charset=utf-8"
+
+          },
+
+          body:
+
+          JSON.stringify({
+
+            action:
+              "submitCall",
+
+            customerId:
+              customerId,
+
+            call:
+              username,
+
+            callWork:
+              callWork,
+
+            username:
+              username
+
+          })
+
+        }
+
+      );
+
+
+    const result =
+      await response.json();
+
 
     if(
-        event.target.id ===
-        "viewModal"
+      !result.success
     ){
 
-        closeModal();
+      throw new Error(
+
+        result.message ||
+
+        "Submit failed."
+
+      );
 
     }
+
+
+    closeModal();
+
+
+    showToast(
+
+      "Call completed successfully."
+
+    );
+
+
+    setTimeout(
+
+      function(){
+
+        loadData();
+
+      },
+
+      700
+
+    );
+
+
+  }catch(error){
+
+    showToast(
+
+      error.message
+
+    );
+
+  }finally{
+
+    button.disabled =
+      false;
+
+
+    button.innerHTML =
+
+      '<i class="fa-solid fa-paper-plane"></i>' +
+
+      ' Submit';
+
+  }
+
+}
+
+
+/* =====================================================
+   PARSE DATE
+===================================================== */
+
+function parseDate(value){
+
+  if(
+    !value
+  ){
+
+    return null;
+
+  }
+
+
+  const text =
+    String(value)
+    .trim();
+
+
+  /* Google Sheet Date Format */
+
+  let match =
+
+    text.match(
+
+      /^(\d{1,2})\/(\d{1,2})\/(\d{4})/
+
+    );
+
+
+  if(
+    match
+  ){
+
+    return new Date(
+
+      Number(match[3]),
+
+      Number(match[1]) - 1,
+
+      Number(match[2])
+
+    );
+
+  }
+
+
+  /* DD-MM-YYYY */
+
+  match =
+
+    text.match(
+
+      /^(\d{1,2})-(\d{1,2})-(\d{4})/
+
+    );
+
+
+  if(
+    match
+  ){
+
+    return new Date(
+
+      Number(match[3]),
+
+      Number(match[2]) - 1,
+
+      Number(match[1])
+
+    );
+
+  }
+
+
+  const date =
+    new Date(
+      text
+    );
+
+
+  return isNaN(
+    date.getTime()
+  )
+  ? null
+  : date;
 
 }
 
@@ -1666,106 +2651,33 @@ function closeModalOutside(
 
 function clearFilters(){
 
-    document.getElementById(
-        "searchInput"
-    ).value =
-        "";
-
-    document.getElementById(
-        "lastDays"
-    ).value =
-        "";
-
-    document.getElementById(
-        "dateFrom"
-    ).value =
-        "";
-
-    document.getElementById(
-        "dateTo"
-    ).value =
-        "";
+  document.getElementById(
+    "searchInput"
+  ).value = "";
 
 
-    filteredHistory =
-        [...allHistory];
+  document.getElementById(
+    "lastDays"
+  ).value = "";
 
 
-    renderHistory();
-
-}
-
-
-/* =====================================================
-   LOADING
-===================================================== */
-
-function showLoading(){
-
-    document.getElementById(
-        "contentArea"
-    ).innerHTML = `
-
-        <div class="message-box">
-
-            <div class="message-icon">
-
-                <i
-                    class="fa-solid fa-spinner fa-spin"
-                ></i>
-
-            </div>
-
-            <h3>
-                Loading History
-            </h3>
-
-            <p>
-                Please wait...
-            </p>
-
-        </div>
-
-    `;
-
-}
+  document.getElementById(
+    "fromDate"
+  ).value = "";
 
 
-/* =====================================================
-   ERROR
-===================================================== */
+  document.getElementById(
+    "toDate"
+  ).value = "";
 
-function showError(
-    message
-){
 
-    document.getElementById(
-        "contentArea"
-    ).innerHTML = `
+  document.getElementById(
+    "statusFilter"
+  ).value =
+    "all";
 
-        <div class="message-box">
 
-            <div class="message-icon">
-
-                <i
-                    class="fa-solid fa-triangle-exclamation"
-                ></i>
-
-            </div>
-
-            <h3>
-                Failed to Load History
-            </h3>
-
-            <p>
-                ${escapeHTML(
-                    message
-                )}
-            </p>
-
-        </div>
-
-    `;
+  applyFilters();
 
 }
 
@@ -1776,8 +2688,56 @@ function showError(
 
 function goDashboard(){
 
+  if(
+    document.referrer
+  ){
+
+    history.back();
+
+  }else{
+
     window.location.href =
-        "dashboard.html";
+      "dashboard.html";
+
+  }
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showToast(message){
+
+  const toast =
+    document.getElementById(
+      "toast"
+    );
+
+
+  toast.textContent =
+    message;
+
+
+  toast.classList.add(
+    "show"
+  );
+
+
+  setTimeout(
+
+    function(){
+
+      toast.classList.remove(
+        "show"
+      );
+
+    },
+
+    3000
+
+  );
 
 }
 
@@ -1786,36 +2746,62 @@ function goDashboard(){
    ESCAPE HTML
 ===================================================== */
 
-function escapeHTML(
-value
-){
+function escapeHtml(value){
 
-    return String(
-        value ??
-        ""
-    )
-    .replace(
-        /&/g,
-        "&amp;"
-    )
-    .replace(
-        /</g,
-        "&lt;"
-    )
-    .replace(
-        />/g,
-        "&gt;"
-    )
-    .replace(
-        /"/g,
-        "&quot;"
-    )
-    .replace(
-        /'/g,
-        "&#039;"
-    );
+  return String(
+    value || ""
+  )
+
+  .replace(
+    /&/g,
+    "&amp;"
+  )
+
+  .replace(
+    /</g,
+    "&lt;"
+  )
+
+  .replace(
+    />/g,
+    "&gt;"
+  )
+
+  .replace(
+    /"/g,
+    "&quot;"
+  )
+
+  .replace(
+    /'/g,
+    "&#039;"
+  );
 
 }
+
+
+/* =====================================================
+   ESC KEY
+===================================================== */
+
+document.addEventListener(
+
+  "keydown",
+
+  function(event){
+
+    if(
+      event.key ===
+      "Escape"
+    ){
+
+      closeModal();
+
+    }
+
+  }
+
+);
 
 </script>
 

@@ -5,14 +5,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>HISTORY</title>
+<title>HISTORY | LINK4 COMMUNICATION</title>
 
 <link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 >
 
 <style>
+
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
   margin:0;
@@ -20,8 +24,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   box-sizing:border-box;
 }
 
-body{
 
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
   font-family:
   Arial,
   Helvetica,
@@ -40,7 +48,6 @@ body{
   padding:16px 24px;
 
   color:#14201d;
-
 }
 
 
@@ -49,13 +56,9 @@ body{
 ===================================================== */
 
 .container{
-
   width:100%;
-
   max-width:1500px;
-
   margin:auto;
-
 }
 
 
@@ -64,7 +67,6 @@ body{
 ===================================================== */
 
 .header{
-
   background:#f7fbfa;
 
   border-radius:26px;
@@ -84,25 +86,20 @@ body{
   box-shadow:
   0 10px 30px
   rgba(0,0,0,.08);
-
 }
 
 
 .header-left{
-
   display:flex;
 
   align-items:center;
 
   gap:20px;
-
 }
 
 
 .header-icon{
-
   width:74px;
-
   height:74px;
 
   border-radius:20px;
@@ -122,41 +119,33 @@ body{
   box-shadow:
   0 10px 20px
   rgba(0,120,90,.25);
-
 }
 
 
 .header-title h1{
-
   font-size:32px;
 
   color:#00765b;
 
   margin-bottom:5px;
-
 }
 
 
 .header-title p{
-
   font-size:16px;
 
   color:#66736f;
-
 }
 
 
 .header-buttons{
-
   display:flex;
 
   gap:12px;
-
 }
 
 
 .btn{
-
   border:none;
 
   border-radius:15px;
@@ -176,32 +165,25 @@ body{
   align-items:center;
 
   gap:9px;
-
 }
 
 
 .btn:hover{
-
   transform:translateY(-2px);
-
 }
 
 
 .btn-refresh{
-
   background:#e5f6f1;
 
   color:#007c60;
-
 }
 
 
 .btn-dashboard{
-
   background:#00785b;
 
   color:white;
-
 }
 
 
@@ -210,7 +192,6 @@ body{
 ===================================================== */
 
 .user-bar{
-
   margin-top:24px;
 
   background:
@@ -235,21 +216,16 @@ body{
   color:white;
 
   font-size:16px;
-
 }
 
 
 .user-name{
-
   font-weight:bold;
-
 }
 
 
 .page-label{
-
   font-weight:bold;
-
 }
 
 
@@ -258,7 +234,6 @@ body{
 ===================================================== */
 
 .filter-area{
-
   background:#f7fbfa;
 
   margin-top:24px;
@@ -270,25 +245,21 @@ body{
   box-shadow:
   0 10px 30px
   rgba(0,0,0,.06);
-
 }
 
 
 /* =====================================================
-   SEARCH
+   SEARCH BOX
 ===================================================== */
 
 .search-box{
-
   width:100%;
 
   position:relative;
-
 }
 
 
 .search-box i{
-
   position:absolute;
 
   left:18px;
@@ -301,12 +272,10 @@ body{
   color:#009875;
 
   font-size:19px;
-
 }
 
 
 .search-box input{
-
   width:100%;
 
   height:56px;
@@ -327,18 +296,15 @@ body{
   color:#26332f;
 
   transition:.2s;
-
 }
 
 
 .search-box input:focus{
-
   border-color:#00a27a;
 
   box-shadow:
   0 0 0 4px
   rgba(0,162,122,.08);
-
 }
 
 
@@ -347,7 +313,6 @@ body{
 ===================================================== */
 
 .filter-row{
-
   margin-top:15px;
 
   display:flex;
@@ -359,41 +324,37 @@ body{
   gap:10px;
 
   flex-wrap:wrap;
-
 }
 
 
 .filter-label{
-
   font-weight:bold;
 
   color:#53625d;
 
   white-space:nowrap;
-
 }
 
 
-.last-days-box{
+/* =====================================================
+   LAST DAYS
+===================================================== */
 
+.last-days-box{
   display:flex;
 
   align-items:center;
 
   gap:7px;
-
 }
 
 
 .last-days-box i{
-
   color:#007e60;
-
 }
 
 
 .last-days-input{
-
   width:75px;
 
   height:42px;
@@ -413,45 +374,37 @@ body{
   font-weight:bold;
 
   color:#007b5d;
-
 }
 
 
 .last-days-input:focus{
-
   border-color:#009b73;
-
 }
 
 
 /* =====================================================
-   DATE BOX
+   FROM TO DATE
 ===================================================== */
 
 .date-box{
-
   display:flex;
 
   align-items:center;
 
   gap:6px;
-
 }
 
 
 .date-box label{
-
   font-size:13px;
 
   font-weight:bold;
 
   color:#68756f;
-
 }
 
 
 .date-box input{
-
   width:125px;
 
   height:42px;
@@ -469,14 +422,11 @@ body{
   font-size:13px;
 
   color:#40504b;
-
 }
 
 
 .date-box input:focus{
-
   border-color:#009b73;
-
 }
 
 
@@ -485,7 +435,6 @@ body{
 ===================================================== */
 
 .filter-select{
-
   height:42px;
 
   min-width:105px;
@@ -509,16 +458,14 @@ body{
   outline:none;
 
   cursor:pointer;
-
 }
 
 
 /* =====================================================
-   CLEAR
+   CLEAR BUTTON
 ===================================================== */
 
 .clear-btn{
-
   height:42px;
 
   padding:0 15px;
@@ -535,6 +482,14 @@ body{
 
   cursor:pointer;
 
+  transition:.2s;
+}
+
+
+.clear-btn:hover{
+  background:#d5eee7;
+
+  transform:translateY(-1px);
 }
 
 
@@ -543,7 +498,6 @@ body{
 ===================================================== */
 
 .content-card{
-
   background:#f7fbfa;
 
   margin-top:24px;
@@ -557,12 +511,10 @@ body{
   box-shadow:
   0 10px 30px
   rgba(0,0,0,.06);
-
 }
 
 
 .content-header{
-
   padding:
   25px 32px;
 
@@ -575,19 +527,17 @@ body{
   border-bottom:
   1px solid
   #e6eeeb;
-
 }
 
 
 .content-header h2{
-
   font-size:25px;
 
+  color:#26332f;
 }
 
 
-.history-count{
-
+.pending-count{
   background:#008f6b;
 
   color:white;
@@ -598,7 +548,6 @@ body{
   border-radius:20px;
 
   font-weight:bold;
-
 }
 
 
@@ -607,47 +556,40 @@ body{
 ===================================================== */
 
 .table-wrapper{
-
   width:100%;
 
   overflow-x:auto;
-
 }
 
 
 table{
-
   width:100%;
 
   border-collapse:collapse;
 
   min-width:850px;
-
 }
 
 
 thead{
-
   background:#00886a;
 
   color:white;
-
 }
 
 
 th{
-
   padding:16px;
 
   text-align:left;
 
   font-size:14px;
 
+  white-space:nowrap;
 }
 
 
 td{
-
   padding:17px 16px;
 
   border-bottom:
@@ -656,18 +598,25 @@ td{
 
   font-size:14px;
 
+  vertical-align:middle;
+}
+
+
+tbody tr{
+  transition:.15s;
 }
 
 
 tbody tr:hover{
-
   background:#f0f8f5;
-
 }
 
 
-.customer-badge{
+/* =====================================================
+   CUSTOMER BADGE
+===================================================== */
 
+.customer-badge{
   display:inline-flex;
 
   align-items:center;
@@ -684,12 +633,14 @@ tbody tr:hover{
   border-radius:9px;
 
   font-weight:bold;
-
 }
 
 
-.ref-badge{
+/* =====================================================
+   REF BADGE
+===================================================== */
 
+.ref-badge{
   background:#f1f3f5;
 
   color:#5d6663;
@@ -700,12 +651,14 @@ tbody tr:hover{
   border-radius:8px;
 
   display:inline-block;
-
 }
 
 
-.view-btn{
+/* =====================================================
+   VIEW BUTTON
+===================================================== */
 
+.view-btn{
   border:none;
 
   background:#008f6b;
@@ -727,13 +680,14 @@ tbody tr:hover{
 
   gap:7px;
 
+  transition:.2s;
 }
 
 
 .view-btn:hover{
-
   background:#007657;
 
+  transform:translateY(-1px);
 }
 
 
@@ -742,7 +696,6 @@ tbody tr:hover{
 ===================================================== */
 
 .empty{
-
   min-height:350px;
 
   display:flex;
@@ -757,11 +710,11 @@ tbody tr:hover{
 
   color:#65736e;
 
+  padding:30px;
 }
 
 
 .empty-icon{
-
   width:90px;
 
   height:90px;
@@ -781,18 +734,15 @@ tbody tr:hover{
   font-size:38px;
 
   margin-bottom:20px;
-
 }
 
 
 .empty h3{
-
   color:#26322f;
 
   font-size:24px;
 
   margin-bottom:8px;
-
 }
 
 
@@ -801,7 +751,6 @@ tbody tr:hover{
 ===================================================== */
 
 .loading{
-
   min-height:300px;
 
   display:flex;
@@ -815,12 +764,10 @@ tbody tr:hover{
   font-size:18px;
 
   font-weight:bold;
-
 }
 
 
 .spinner{
-
   width:28px;
 
   height:28px;
@@ -837,16 +784,13 @@ tbody tr:hover{
   spin 1s linear infinite;
 
   margin-right:12px;
-
 }
 
 
 @keyframes spin{
 
   to{
-
     transform:rotate(360deg);
-
   }
 
 }
@@ -857,7 +801,6 @@ tbody tr:hover{
 ===================================================== */
 
 .modal{
-
   display:none;
 
   position:fixed;
@@ -874,19 +817,15 @@ tbody tr:hover{
   align-items:center;
 
   justify-content:center;
-
 }
 
 
 .modal.show{
-
   display:flex;
-
 }
 
 
 .modal-box{
-
   width:100%;
 
   max-width:720px;
@@ -895,7 +834,7 @@ tbody tr:hover{
 
   overflow-y:auto;
 
-  background:#f7fbfa;
+  background:#f5faf8;
 
   border-radius:24px;
 
@@ -905,33 +844,31 @@ tbody tr:hover{
 
   animation:
   modalIn .2s ease;
-
 }
 
 
 @keyframes modalIn{
 
   from{
-
     transform:scale(.95);
 
     opacity:0;
-
   }
 
   to{
-
     transform:scale(1);
 
     opacity:1;
-
   }
 
 }
 
 
-.modal-header{
+/* =====================================================
+   MODAL HEADER
+===================================================== */
 
+.modal-header{
   background:#008f6b;
 
   color:white;
@@ -943,19 +880,15 @@ tbody tr:hover{
   justify-content:space-between;
 
   align-items:center;
-
 }
 
 
 .modal-header h3{
-
   font-size:21px;
-
 }
 
 
 .close-btn{
-
   width:38px;
 
   height:38px;
@@ -973,60 +906,110 @@ tbody tr:hover{
 
   cursor:pointer;
 
+  transition:.2s;
+}
+
+
+.close-btn:hover{
+  background:
+  rgba(255,255,255,.35);
+
+  transform:rotate(90deg);
 }
 
 
 /* =====================================================
-   DETAILS
+   COLORFUL VIEW DETAILS
 ===================================================== */
 
 .details{
-
   padding:24px;
 
+  background:#f5faf8;
 }
 
 
 .detail-grid{
-
   display:grid;
 
   grid-template-columns:
   repeat(2,1fr);
 
   gap:15px;
-
 }
 
 
-.detail-item{
+/* =====================================================
+   DETAIL ITEM
+===================================================== */
 
-  background:white;
+.detail-item{
+  position:relative;
+
+  background:
+  linear-gradient(
+    135deg,
+    #ffffff,
+    #f1faf7
+  );
 
   border:
   1px solid
-  #e2eeea;
+  #d7ebe4;
 
-  border-radius:13px;
+  border-left:
+  5px solid
+  #009b73;
 
-  padding:14px;
+  border-radius:14px;
 
+  padding:15px 16px;
+
+  box-shadow:
+  0 4px 12px
+  rgba(0,120,90,.06);
+
+  transition:.2s;
 }
 
 
-.detail-item.full{
+.detail-item:hover{
+  transform:translateY(-2px);
 
+  box-shadow:
+  0 7px 18px
+  rgba(0,120,90,.10);
+}
+
+
+/* =====================================================
+   FULL WIDTH DETAIL
+===================================================== */
+
+.detail-item.full{
   grid-column:
   1 / -1;
 
+  background:
+  linear-gradient(
+    135deg,
+    #f4fbf9,
+    #eaf7f3
+  );
+
+  border-left-color:
+  #008f6b;
 }
 
 
+/* =====================================================
+   DETAIL LABEL
+===================================================== */
+
 .detail-label{
+  font-size:11px;
 
-  font-size:12px;
-
-  color:#788681;
+  color:#00866a;
 
   font-weight:bold;
 
@@ -1034,88 +1017,252 @@ tbody tr:hover{
 
   text-transform:uppercase;
 
-}
-
-
-.detail-value{
-
-  font-size:15px;
-
-  color:#24332e;
-
-  line-height:1.5;
-
-  word-break:break-word;
-
+  letter-spacing:.5px;
 }
 
 
 /* =====================================================
-   SUPPORT WORK / CALL WORK
+   DETAIL VALUE
 ===================================================== */
 
-.work-box{
+.detail-value{
+  font-size:15px;
 
-  margin-top:20px;
+  color:#263a34;
 
+  line-height:1.6;
+
+  word-break:break-word;
+
+  font-weight:500;
 }
 
 
-.work-box label{
+/* =====================================================
+   CUSTOMER ID
+===================================================== */
 
+#callModal #mCustomer{
+  color:#007b5e;
+
+  font-weight:bold;
+}
+
+
+/* =====================================================
+   DATE
+===================================================== */
+
+#callModal #mDate{
+  color:#586b65;
+
+  font-weight:600;
+}
+
+
+/* =====================================================
+   PROBLEM
+===================================================== */
+
+#callModal #mProblem{
+  color:#394b45;
+
+  font-weight:500;
+}
+
+
+/* =====================================================
+   REFERENCE
+===================================================== */
+
+#callModal #mReference{
+  display:inline-block;
+
+  background:#eef3f1;
+
+  color:#596963;
+
+  padding:5px 10px;
+
+  border-radius:7px;
+
+  font-weight:bold;
+
+  font-size:13px;
+}
+
+
+/* =====================================================
+   SUPPORT
+===================================================== */
+
+#callModal #mSupport{
+  display:inline-block;
+
+  background:#e4f7f1;
+
+  color:#007b5e;
+
+  padding:6px 11px;
+
+  border-radius:8px;
+
+  font-weight:bold;
+}
+
+
+/* =====================================================
+   SUPPORT WORK
+===================================================== */
+
+#callModal #mSupportWork{
+  background:#f0f8ff;
+
+  border-radius:8px;
+
+  padding:10px;
+
+  color:#34566d;
+}
+
+
+/* =====================================================
+   CALL PERSON
+===================================================== */
+
+#callModal #mCallPerson{
+  display:inline-block;
+
+  background:#fff3df;
+
+  color:#a56500;
+
+  padding:6px 11px;
+
+  border-radius:8px;
+
+  font-weight:bold;
+}
+
+
+/* =====================================================
+   CALL WORK BOX
+===================================================== */
+
+.call-work-box{
+  margin-top:20px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #fff8ec,
+    #fffdf8
+  );
+
+  border:
+  1px solid
+  #f1dfbd;
+
+  border-left:
+  5px solid
+  #e5a12b;
+
+  border-radius:14px;
+
+  padding:16px;
+}
+
+
+.call-work-box label{
   display:block;
 
   font-weight:bold;
 
-  color:#263a34;
+  color:#9a650d;
 
-  margin-bottom:8px;
-
+  margin-bottom:9px;
 }
 
 
-.work-content{
+.call-work-box textarea{
+  width:100%;
 
-  background:white;
+  min-height:110px;
+
+  resize:vertical;
+
+  background:#ffffff;
 
   border:
-  1px solid
-  #e2eeea;
+  2px solid
+  #eadfc9;
 
-  border-radius:13px;
+  border-radius:11px;
 
-  padding:15px;
+  padding:14px;
 
-  min-height:70px;
+  outline:none;
 
-  color:#24332e;
+  font-size:15px;
 
-  line-height:1.6;
+  font-family:inherit;
 
-  white-space:pre-wrap;
+  color:#3b403d;
 
-  word-break:break-word;
+  transition:.2s;
+}
 
+
+.call-work-box textarea:focus{
+  border-color:#e3a02a;
+
+  box-shadow:
+  0 0 0 4px
+  rgba(227,160,42,.10);
 }
 
 
 /* =====================================================
-   MODAL ACTION
+   MODAL ACTIONS
 ===================================================== */
 
 .modal-actions{
-
   margin-top:20px;
 
   display:flex;
 
   justify-content:flex-end;
 
+  gap:10px;
 }
 
 
-.close-modal-btn{
+.cancel-btn{
+  border:none;
 
+  padding:
+  12px 20px;
+
+  border-radius:11px;
+
+  background:#e9efed;
+
+  color:#52615c;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:.2s;
+}
+
+
+.cancel-btn:hover{
+  background:#dce6e2;
+}
+
+
+.submit-btn{
   border:none;
 
   padding:
@@ -1131,6 +1278,19 @@ tbody tr:hover{
 
   cursor:pointer;
 
+  transition:.2s;
+}
+
+
+.submit-btn:hover{
+  background:#007657;
+}
+
+
+.submit-btn:disabled{
+  opacity:.6;
+
+  cursor:not-allowed;
 }
 
 
@@ -1139,7 +1299,6 @@ tbody tr:hover{
 ===================================================== */
 
 .toast{
-
   position:fixed;
 
   right:25px;
@@ -1162,14 +1321,11 @@ tbody tr:hover{
   box-shadow:
   0 10px 30px
   rgba(0,0,0,.2);
-
 }
 
 
 .toast.show{
-
   display:block;
-
 }
 
 
@@ -1180,39 +1336,30 @@ tbody tr:hover{
 @media(max-width:900px){
 
   body{
-
     padding:12px;
-
   }
 
 
   .header{
-
     flex-direction:column;
 
     align-items:flex-start;
-
   }
 
 
   .header-buttons{
-
     width:100%;
-
   }
 
 
   .header-buttons .btn{
-
     flex:1;
 
     justify-content:center;
-
   }
 
 
   .user-bar{
-
     flex-direction:column;
 
     align-items:flex-start;
@@ -1220,14 +1367,11 @@ tbody tr:hover{
     gap:10px;
 
     padding:15px 18px;
-
   }
 
 
   .filter-row{
-
     justify-content:flex-start;
-
   }
 
 }
@@ -1236,79 +1380,80 @@ tbody tr:hover{
 @media(max-width:600px){
 
   .header{
-
     padding:20px;
 
     border-radius:20px;
-
   }
 
 
   .header-left{
-
     align-items:flex-start;
-
   }
 
 
   .header-icon{
-
     width:58px;
 
     height:58px;
 
     font-size:25px;
-
   }
 
 
   .header-title h1{
-
     font-size:25px;
-
   }
 
 
   .header-title p{
-
     font-size:13px;
-
   }
 
 
   .content-header{
-
     padding:
     20px;
-
   }
 
 
   .content-header h2{
-
     font-size:20px;
-
   }
 
 
   .detail-grid{
-
     grid-template-columns:1fr;
-
   }
 
 
   .detail-item.full{
-
     grid-column:auto;
-
   }
 
 
   .date-box input{
-
     width:110px;
+  }
 
+
+  .filter-row{
+    flex-direction:column;
+
+    align-items:stretch;
+  }
+
+
+  .last-days-box,
+  .date-box{
+    width:100%;
+  }
+
+
+  .last-days-input,
+  .date-box input,
+  .filter-select,
+  .clear-btn{
+    flex:1;
   }
 
 }
@@ -1330,13 +1475,11 @@ tbody tr:hover{
 
 <div class="header">
 
-
   <div class="header-left">
-
 
     <div class="header-icon">
 
-      <i class="fa-solid fa-clock-rotate-left"></i>
+      <i class="fa-solid fa-phone-volume"></i>
 
     </div>
 
@@ -1346,21 +1489,19 @@ tbody tr:hover{
       <h1>HISTORY</h1>
 
       <p>
-        View and manage all completed Support Log records
+        View and manage all Support Log call requests
       </p>
 
     </div>
-
 
   </div>
 
 
   <div class="header-buttons">
 
-
     <button
       class="btn btn-refresh"
-      onclick="loadHistory()"
+      onclick="loadData()"
     >
 
       <i class="fa-solid fa-rotate"></i>
@@ -1381,9 +1522,7 @@ tbody tr:hover{
 
     </button>
 
-
   </div>
-
 
 </div>
 
@@ -1393,7 +1532,6 @@ tbody tr:hover{
 =================================================== -->
 
 <div class="user-bar">
-
 
   <div>
 
@@ -1413,12 +1551,11 @@ tbody tr:hover{
 
   <div class="page-label">
 
-    <i class="fa-solid fa-clock-rotate-left"></i>
+    <i class="fa-solid fa-phone"></i>
 
-    Support Log History
+    Support Log Management
 
   </div>
-
 
 </div>
 
@@ -1434,9 +1571,7 @@ tbody tr:hover{
 
   <div class="search-box">
 
-
     <i class="fa-solid fa-magnifying-glass"></i>
-
 
     <input
       type="text"
@@ -1444,7 +1579,6 @@ tbody tr:hover{
       placeholder="Search Customer ID, Problem, Reference, Support, Call..."
       oninput="applyFilters()"
     >
-
 
   </div>
 
@@ -1458,16 +1592,11 @@ tbody tr:hover{
 
     <div class="last-days-box">
 
-
       <i class="fa-regular fa-calendar"></i>
 
-
       <span class="filter-label">
-
         Last Days
-
       </span>
-
 
       <input
         type="number"
@@ -1478,7 +1607,6 @@ tbody tr:hover{
         oninput="applyFilters()"
       >
 
-
     </div>
 
 
@@ -1486,20 +1614,15 @@ tbody tr:hover{
 
     <div class="date-box">
 
-
       <label>
-
         From
-
       </label>
-
 
       <input
         type="date"
         id="fromDate"
         onchange="applyFilters()"
       >
-
 
     </div>
 
@@ -1508,13 +1631,9 @@ tbody tr:hover{
 
     <div class="date-box">
 
-
       <label>
-
         To
-
       </label>
-
 
       <input
         type="date"
@@ -1522,11 +1641,10 @@ tbody tr:hover{
         onchange="applyFilters()"
       >
 
-
     </div>
 
 
-    <!-- FILTER -->
+    <!-- STATUS -->
 
     <select
       id="statusFilter"
@@ -1534,27 +1652,13 @@ tbody tr:hover{
       onchange="applyFilters()"
     >
 
-
       <option value="all">
-
-        All History
-
+        All
       </option>
 
-
-      <option value="call">
-
-        Call Completed
-
+      <option value="completed">
+        Completed
       </option>
-
-
-      <option value="support">
-
-        Support Completed
-
-      </option>
-
 
     </select>
 
@@ -1566,17 +1670,13 @@ tbody tr:hover{
       onclick="clearFilters()"
     >
 
-
       <i class="fa-solid fa-filter-circle-xmark"></i>
 
       Clear
 
-
     </button>
 
-
   </div>
-
 
 </div>
 
@@ -1590,23 +1690,17 @@ tbody tr:hover{
 
   <div class="content-header">
 
-
     <h2>
-
-      Support Log History
-
+      Support Log
     </h2>
 
 
     <div
-      class="history-count"
-      id="historyCount"
+      class="pending-count"
+      id="pendingCount"
     >
-
       0 Records
-
     </div>
-
 
   </div>
 
@@ -1616,15 +1710,11 @@ tbody tr:hover{
     class="loading"
   >
 
-
     <div class="spinner"></div>
-
 
     Loading History...
 
-
   </div>
-
 
 </div>
 
@@ -1633,242 +1723,206 @@ tbody tr:hover{
 
 
 <!-- ===================================================
-     MODAL
+     VIEW MODAL
 =================================================== -->
 
 <div
   class="modal"
-  id="historyModal"
+  id="callModal"
   onclick="outsideModal(event)"
 >
 
 
-  <div class="modal-box">
+<div class="modal-box">
 
 
-    <div class="modal-header">
+  <div class="modal-header">
+
+    <h3>
+
+      <i class="fa-solid fa-file-circle-check"></i>
+
+      Support Details
+
+    </h3>
 
 
-      <h3>
+    <button
+      class="close-btn"
+      onclick="closeModal()"
+    >
+
+      ×
+
+    </button>
+
+  </div>
 
 
-        <i class="fa-solid fa-file-lines"></i>
+  <div class="details">
 
 
-        History Details
+    <div class="detail-grid">
 
 
-      </h3>
+      <!-- CUSTOMER -->
 
+      <div class="detail-item">
 
-      <button
-        class="close-btn"
-        onclick="closeModal()"
-      >
+        <div class="detail-label">
 
-        ×
+          <i class="fa-solid fa-user"></i>
 
-      </button>
-
-
-    </div>
-
-
-    <div class="details">
-
-
-      <div class="detail-grid">
-
-
-        <!-- CUSTOMER -->
-
-        <div class="detail-item">
-
-
-          <div class="detail-label">
-
-            Customer ID
-
-          </div>
-
-
-          <div
-            class="detail-value"
-            id="mCustomer"
-          ></div>
-
+          Customer ID
 
         </div>
 
+        <div
+          class="detail-value"
+          id="mCustomer"
+        ></div>
 
-        <!-- DATE -->
-
-        <div class="detail-item">
-
-
-          <div class="detail-label">
-
-            Date
-
-          </div>
+      </div>
 
 
-          <div
-            class="detail-value"
-            id="mDate"
-          ></div>
+      <!-- DATE -->
 
+      <div class="detail-item">
 
-        </div>
+        <div class="detail-label">
 
+          <i class="fa-regular fa-calendar"></i>
 
-        <!-- PROBLEM -->
-
-        <div class="detail-item full">
-
-
-          <div class="detail-label">
-
-            Problem
-
-          </div>
-
-
-          <div
-            class="detail-value"
-            id="mProblem"
-          ></div>
-
+          Date
 
         </div>
 
+        <div
+          class="detail-value"
+          id="mDate"
+        ></div>
 
-        <!-- REFERENCE -->
-
-        <div class="detail-item">
-
-
-          <div class="detail-label">
-
-            Reference
-
-          </div>
+      </div>
 
 
-          <div
-            class="detail-value"
-            id="mReference"
-          ></div>
+      <!-- PROBLEM -->
 
+      <div class="detail-item full">
 
-        </div>
+        <div class="detail-label">
 
+          <i class="fa-solid fa-circle-exclamation"></i>
 
-        <!-- SUPPORT -->
-
-        <div class="detail-item">
-
-
-          <div class="detail-label">
-
-            Support Person
-
-          </div>
-
-
-          <div
-            class="detail-value"
-            id="mSupport"
-          ></div>
-
+          Problem
 
         </div>
 
+        <div
+          class="detail-value"
+          id="mProblem"
+        ></div>
 
-        <!-- CALL PERSON -->
-
-        <div class="detail-item">
-
-
-          <div class="detail-label">
-
-            Call Person
-
-          </div>
+      </div>
 
 
-          <div
-            class="detail-value"
-            id="mCall"
-          ></div>
+      <!-- REFERENCE -->
 
+      <div class="detail-item">
+
+        <div class="detail-label">
+
+          <i class="fa-solid fa-link"></i>
+
+          Reference
 
         </div>
 
+        <div
+          class="detail-value"
+          id="mReference"
+        ></div>
+
+      </div>
+
+
+      <!-- SUPPORT -->
+
+      <div class="detail-item">
+
+        <div class="detail-label">
+
+          <i class="fa-solid fa-headset"></i>
+
+          Support
+
+        </div>
+
+        <div
+          class="detail-value"
+          id="mSupport"
+        ></div>
 
       </div>
 
 
       <!-- SUPPORT WORK -->
 
-      <div class="work-box">
+      <div class="detail-item full">
 
-
-        <label>
+        <div class="detail-label">
 
           <i class="fa-solid fa-screwdriver-wrench"></i>
 
           Support Work
 
-        </label>
-
+        </div>
 
         <div
-          class="work-content"
+          class="detail-value"
           id="mSupportWork"
         ></div>
 
+      </div>
+
+
+      <!-- CALL PERSON -->
+
+      <div class="detail-item full">
+
+        <div class="detail-label">
+
+          <i class="fa-solid fa-phone"></i>
+
+          Call Person
+
+        </div>
+
+        <div
+          class="detail-value"
+          id="mCallPerson"
+        >
+          -
+        </div>
 
       </div>
 
 
       <!-- CALL WORK -->
 
-      <div class="work-box">
+      <div class="detail-item full">
 
+        <div class="detail-label">
 
-        <label>
-
-          <i class="fa-solid fa-phone"></i>
+          <i class="fa-solid fa-phone-volume"></i>
 
           Call Work
 
-        </label>
-
+        </div>
 
         <div
-          class="work-content"
+          class="detail-value"
           id="mCallWork"
         ></div>
-
-
-      </div>
-
-
-      <div class="modal-actions">
-
-
-        <button
-          class="close-modal-btn"
-          onclick="closeModal()"
-        >
-
-          <i class="fa-solid fa-xmark"></i>
-
-          Close
-
-        </button>
-
 
       </div>
 
@@ -1878,6 +1932,8 @@ tbody tr:hover{
 
   </div>
 
+
+</div>
 
 </div>
 
@@ -1900,7 +1956,6 @@ tbody tr:hover{
 ===================================================== */
 
 const API_URL =
-
 "https://script.google.com/macros/s/AKfycbw1NiYF5qNEFGVXdIWZ3I3lpJXEX57uBM0M06oqVVJcRUiuCTAf8NkKycGWtyIhhxWh4g/exec";
 
 
@@ -1908,9 +1963,11 @@ const API_URL =
    VARIABLES
 ===================================================== */
 
-let allHistory = [];
+let allData = [];
 
-let filteredHistory = [];
+let selectedItem = null;
+
+let filteredData = [];
 
 
 /* =====================================================
@@ -1925,7 +1982,7 @@ document.addEventListener(
 
     loadUser();
 
-    loadHistory();
+    loadData();
 
   }
 
@@ -1938,229 +1995,137 @@ document.addEventListener(
 
 function loadUser(){
 
-
   const username =
-
 
     localStorage.getItem("username") ||
 
-
     localStorage.getItem("userName") ||
-
 
     localStorage.getItem("name") ||
 
-
     sessionStorage.getItem("username") ||
-
 
     "User";
 
 
   document.getElementById(
-
     "loggedUser"
+  ).textContent =
 
-  ).textContent = username;
-
+    username;
 
 }
 
 
 /* =====================================================
-   LOAD HISTORY
+   LOAD HISTORY DATA
 ===================================================== */
 
-async function loadHistory(){
-
+async function loadData(){
 
   const content =
-
     document.getElementById(
-
       "content"
-
     );
 
 
   content.className =
-
     "loading";
 
 
   content.innerHTML =
 
-
     '<div class="spinner"></div>' +
-
 
     'Loading History...';
 
 
   try{
 
-
     const response =
-
 
       await fetch(
 
-
         API_URL +
-
 
         "?action=history&_=" +
 
-
         Date.now(),
-
 
         {
 
-
           method:"GET",
-
 
           cache:"no-store"
 
-
         }
 
-
       );
-
-
-    if(
-
-
-      !response.ok
-
-
-    ){
-
-
-      throw new Error(
-
-
-        "HTTP Error: " +
-
-
-        response.status
-
-
-      );
-
-
-    }
 
 
     const result =
-
 
       await response.json();
 
 
     if(
-
-
       !result.success
-
-
     ){
-
 
       throw new Error(
 
-
         result.message ||
-
 
         "Failed to load History."
 
-
       );
-
 
     }
 
 
-    allHistory =
-
+    allData =
 
       Array.isArray(
-
-
         result.data
-
-
       )
 
+      ?
 
-      ? result.data
+      result.data
 
+      :
 
-      : [];
+      [];
 
 
     applyFilters();
 
 
-  }
-
-
-  catch(error){
-
+  }catch(error){
 
     content.className =
-
-
       "empty";
 
 
     content.innerHTML =
 
-
       '<div class="empty-icon">' +
-
 
       '<i class="fa-solid fa-triangle-exclamation"></i>' +
 
-
       '</div>' +
 
-
-      '<h3>Failed to Load History</h3>' +
-
+      '<h3>Failed to Load</h3>' +
 
       '<p>' +
 
-
       escapeHtml(
-
-
         error.message
-
-
       ) +
-
 
       '</p>';
 
-
-    document.getElementById(
-
-
-      "historyCount"
-
-
-    ).textContent =
-
-
-      "0 Records";
-
-
   }
-
 
 }
 
@@ -2171,579 +2136,331 @@ async function loadHistory(){
 
 function applyFilters(){
 
-
   const search =
 
-
     document.getElementById(
-
-
       "searchInput"
-
-
     )
-
-
     .value
-
-
     .toLowerCase()
-
-
     .trim();
 
 
   const lastDaysValue =
 
-
     document.getElementById(
-
-
       "lastDays"
-
-
     ).value;
 
 
   const lastDays =
 
-
     lastDaysValue
 
+    ?
 
-    ? parseInt(
+    parseInt(
+      lastDaysValue,
+      10
+    )
 
+    :
 
-        lastDaysValue,
-
-
-        10
-
-
-      )
-
-
-    : null;
+    null;
 
 
   const fromDate =
 
-
     document.getElementById(
-
-
       "fromDate"
-
-
     ).value;
 
 
   const toDate =
 
-
     document.getElementById(
-
-
       "toDate"
-
-
     ).value;
 
 
   const status =
 
-
     document.getElementById(
-
-
       "statusFilter"
-
-
     ).value;
 
 
-  filteredHistory =
+  filteredData =
 
-
-    allHistory.filter(
-
+    allData.filter(
 
       function(item){
 
 
         /* SEARCH */
 
-
         const searchable =
 
-
           (
-
 
             item.customerId ||
 
-
             item.customerNumber ||
-
 
             item.ip ||
 
-
             ""
-
 
           ) +
 
-
           " " +
 
-
           (
-
-
-            item.date ||
-
-
-            ""
-
-
-          ) +
-
-
-          " " +
-
-
-          (
-
 
             item.problem ||
 
-
             ""
-
 
           ) +
 
-
           " " +
 
-
           (
-
 
             item.reference ||
 
-
             item.ref ||
-
 
             ""
 
-
           ) +
-
 
           " " +
 
-
           (
-
 
             item.support ||
 
-
             ""
-
 
           ) +
 
-
           " " +
 
-
           (
-
 
             item.supportWork ||
 
-
             ""
-
 
           ) +
 
-
           " " +
 
-
           (
-
 
             item.call ||
 
-
             item.callPerson ||
 
-
             ""
-
 
           ) +
 
-
           " " +
-
 
           (
 
-
             item.callWork ||
 
-
             ""
-
 
           );
 
 
         if(
 
-
           search &&
 
-
           !searchable
-
-
-            .toLowerCase()
-
-
-            .includes(
-
-
-              search
-
-
-            )
-
+          .toLowerCase()
+          .includes(search)
 
         ){
 
-
           return false;
-
 
         }
 
 
-        /* LAST DAYS */
-
+        /* DATE */
 
         const itemDate =
 
-
           parseDate(
-
-
             item.date
-
-
           );
 
 
-        if(
+        /* LAST DAYS */
 
+        if(
 
           lastDays !== null &&
 
-
-          !isNaN(lastDays) &&
-
-
-          lastDays >= 0
-
+          !isNaN(lastDays)
 
         ){
 
-
           if(
-
-
             !itemDate
-
-
           ){
 
-
             return false;
-
 
           }
 
 
-          const now =
-
+          const today =
 
             new Date();
 
 
-          now.setHours(
-
-
+          today.setHours(
             23,
-
-
             59,
-
-
             59,
-
-
             999
-
-
           );
 
 
           const start =
 
-
             new Date(
-
-
-              now
-
-
+              today
             );
 
 
           start.setDate(
 
-
             start.getDate() -
 
-
-            lastDays +
-
-
-            1
-
-
-          );
-
-
-          start.setHours(
-
-
-            0,
-
-
-            0,
-
-
-            0,
-
-
-            0
-
+            lastDays
 
           );
 
 
           if(
 
-
             itemDate < start ||
 
-
-            itemDate > now
-
+            itemDate > today
 
           ){
 
-
             return false;
 
-
           }
-
 
         }
 
 
         /* FROM DATE */
 
-
         if(
-
-
           fromDate
-
-
         ){
-
 
           const from =
 
-
             new Date(
-
 
               fromDate +
 
-
               "T00:00:00"
-
 
             );
 
 
           if(
 
-
             !itemDate ||
-
 
             itemDate < from
 
-
           ){
-
 
             return false;
 
-
           }
-
 
         }
 
 
         /* TO DATE */
 
-
         if(
-
-
           toDate
-
-
         ){
-
 
           const to =
 
-
             new Date(
-
 
               toDate +
 
-
               "T23:59:59"
-
 
             );
 
 
           if(
 
-
             !itemDate ||
-
 
             itemDate > to
 
-
           ){
-
 
             return false;
 
-
           }
-
 
         }
 
 
         /* STATUS */
 
-
         if(
 
-
-          status === "call"
-
+          status ===
+          "completed"
 
         ){
 
-
           if(
 
-
-            !item.call &&
-
-
-            !item.callPerson
-
+            !item.callWork
 
           ){
 
-
             return false;
 
-
           }
-
-
-        }
-
-
-        if(
-
-
-          status === "support"
-
-
-        ){
-
-
-          if(
-
-
-            !item.support
-
-
-          ){
-
-
-            return false;
-
-
-          }
-
 
         }
 
 
         return true;
 
-
       }
-
 
     );
 
 
-  renderHistory(
-
-
-    filteredHistory
-
-
+  renderData(
+    filteredData
   );
-
 
 }
 
@@ -2752,516 +2469,371 @@ function applyFilters(){
    RENDER HISTORY
 ===================================================== */
 
-function renderHistory(data){
-
+function renderData(data){
 
   const content =
 
-
     document.getElementById(
-
-
       "content"
-
-
     );
 
 
   document.getElementById(
-
-
-    "historyCount"
-
-
+    "pendingCount"
   ).textContent =
 
-
     data.length +
-
 
     " Records";
 
 
   if(
-
-
     data.length === 0
-
-
   ){
 
-
     content.className =
-
-
       "empty";
 
 
     content.innerHTML =
 
-
       '<div class="empty-icon">' +
-
 
       '<i class="fa-solid fa-clock-rotate-left"></i>' +
 
-
       '</div>' +
-
 
       '<h3>No History Found</h3>' +
 
-
-      '<p>No completed support records match your filters.</p>';
+      '<p>No matching Support Log history was found.</p>';
 
 
     return;
-
 
   }
 
 
   content.className =
-
-
     "table-wrapper";
 
 
   let html =
 
-
     '<table>' +
-
 
     '<thead>' +
 
-
     '<tr>' +
-
 
     '<th>Customer ID</th>' +
 
-
     '<th>Date</th>' +
-
 
     '<th>Problem</th>' +
 
-
     '<th>Reference</th>' +
-
 
     '<th>Support</th>' +
 
-
-    '<th>Call Person</th>' +
-
+    '<th>Call</th>' +
 
     '<th>Action</th>' +
 
-
     '</tr>' +
 
-
     '</thead>' +
-
 
     '<tbody>';
 
 
   data.forEach(
 
-
     function(item,index){
-
-
-      const customer =
-
-
-        item.customerId ||
-
-
-        item.customerNumber ||
-
-
-        item.ip ||
-
-
-        "";
-
-
-      const reference =
-
-
-        item.reference ||
-
-
-        item.ref ||
-
-
-        "-";
-
-
-      const callPerson =
-
-
-        item.call ||
-
-
-        item.callPerson ||
-
-
-        "-";
 
 
       html +=
 
-
         '<tr>' +
 
 
-        '<td>' +
+        /* CUSTOMER */
 
+        '<td>' +
 
         '<span class="customer-badge">' +
 
-
         '<i class="fa-solid fa-user"></i>' +
-
 
         escapeHtml(
 
+          item.customerId ||
 
-          customer
+          item.customerNumber ||
 
+          item.ip ||
+
+          ""
 
         ) +
 
-
         '</span>' +
-
 
         '</td>' +
 
 
+        /* DATE */
+
         '<td>' +
 
-
         escapeHtml(
-
 
           item.date ||
 
-
           ""
 
-
         ) +
-
 
         '</td>' +
 
 
+        /* PROBLEM */
+
         '<td>' +
 
-
         escapeHtml(
-
 
           item.problem ||
 
-
           ""
 
-
         ) +
-
 
         '</td>' +
 
 
-        '<td>' +
+        /* REFERENCE */
 
+        '<td>' +
 
         '<span class="ref-badge">' +
 
-
         escapeHtml(
 
+          item.reference ||
 
-          reference
-
-
-        ) +
-
-
-        '</span>' +
-
-
-        '</td>' +
-
-
-        '<td>' +
-
-
-        escapeHtml(
-
-
-          item.support ||
-
+          item.ref ||
 
           "-"
 
-
         ) +
 
+        '</span>' +
 
         '</td>' +
 
 
-        '<td>' +
+        /* SUPPORT */
 
+        '<td>' +
 
         escapeHtml(
 
+          item.support ||
 
-          callPerson
-
+          ""
 
         ) +
-
 
         '</td>' +
 
 
+        /* CALL */
+
         '<td>' +
 
+        escapeHtml(
 
-        '<button class="view-btn" ' +
+          item.call ||
 
+          item.callPerson ||
+
+          ""
+
+        ) +
+
+        '</td>' +
+
+
+        /* VIEW */
+
+        '<td>' +
+
+        '<button ' +
+
+        'class="view-btn" ' +
 
         'onclick="openModal(' +
 
-
         index +
 
+        ')"' +
 
-        ')">' +
-
+        '>' +
 
         '<i class="fa-solid fa-eye"></i>' +
 
-
         'View' +
 
-
         '</button>' +
-
 
         '</td>' +
 
 
         '</tr>';
 
-
     }
-
 
   );
 
 
   html +=
 
-
     '</tbody>' +
-
 
     '</table>';
 
 
   content.innerHTML =
-
-
     html;
-
 
 }
 
 
 /* =====================================================
-   OPEN MODAL
+   OPEN VIEW MODAL
 ===================================================== */
 
 function openModal(index){
 
+  const data =
 
-  const item =
-
-
-    filteredHistory[index];
+    filteredData[index];
 
 
   if(
-
-
-    !item
-
-
+    !data
   ){
 
-
     return;
-
 
   }
 
 
+  selectedItem =
+    data;
+
+
+  /* CUSTOMER */
+
   document.getElementById(
-
-
     "mCustomer"
-
-
   ).textContent =
 
+    data.customerId ||
 
-    item.customerId ||
+    data.customerNumber ||
 
-
-    item.customerNumber ||
-
-
-    item.ip ||
-
+    data.ip ||
 
     "-";
 
 
+  /* DATE */
+
   document.getElementById(
-
-
     "mDate"
-
-
   ).textContent =
 
-
-    item.date ||
-
+    data.date ||
 
     "-";
 
 
+  /* PROBLEM */
+
   document.getElementById(
-
-
     "mProblem"
-
-
   ).textContent =
 
-
-    item.problem ||
-
+    data.problem ||
 
     "-";
 
 
+  /* REFERENCE */
+
   document.getElementById(
-
-
     "mReference"
-
-
   ).textContent =
 
+    data.reference ||
 
-    item.reference ||
-
-
-    item.ref ||
-
+    data.ref ||
 
     "-";
 
 
+  /* SUPPORT */
+
   document.getElementById(
-
-
     "mSupport"
-
-
   ).textContent =
 
-
-    item.support ||
-
+    data.support ||
 
     "-";
 
 
-  document.getElementById(
-
-
-    "mCall"
-
-
-  ).textContent =
-
-
-    item.call ||
-
-
-    item.callPerson ||
-
-
-    "-";
-
+  /* SUPPORT WORK */
 
   document.getElementById(
-
-
     "mSupportWork"
-
-
   ).textContent =
 
-
-    item.supportWork ||
-
+    data.supportWork ||
 
     "-";
 
 
+  /* CALL PERSON */
+
   document.getElementById(
+    "mCallPerson"
+  ).textContent =
+
+    data.call ||
+
+    data.callPerson ||
+
+    "-";
 
 
+  /* CALL WORK */
+
+  document.getElementById(
     "mCallWork"
-
-
   ).textContent =
 
-
-    item.callWork ||
-
+    data.callWork ||
 
     "-";
 
 
   document.getElementById(
-
-
-    "historyModal"
-
-
+    "callModal"
   ).classList.add(
-
-
     "show"
-
-
   );
-
 
 }
 
@@ -3272,21 +2844,15 @@ function openModal(index){
 
 function closeModal(){
 
-
   document.getElementById(
-
-
-    "historyModal"
-
-
+    "callModal"
   ).classList.remove(
-
-
     "show"
-
-
   );
 
+
+  selectedItem =
+    null;
 
 }
 
@@ -3297,24 +2863,16 @@ function closeModal(){
 
 function outsideModal(event){
 
-
   if(
 
-
     event.target.id ===
-
-
-    "historyModal"
-
+    "callModal"
 
   ){
 
-
     closeModal();
 
-
   }
-
 
 }
 
@@ -3325,183 +2883,95 @@ function outsideModal(event){
 
 function parseDate(value){
 
-
   if(
-
-
     !value
-
-
   ){
 
-
     return null;
-
 
   }
 
 
   const text =
 
-
-    String(
-
-
-      value
-
-
-    )
-
-
+    String(value)
     .trim();
 
 
-  /* DD-MM-YYYY */
-
+  /* DD-MM-YYYY HH:mm */
 
   let match =
 
-
     text.match(
 
-
       /^(\d{1,2})-(\d{1,2})-(\d{4})/
-
 
     );
 
 
   if(
-
-
     match
-
-
   ){
-
 
     return new Date(
 
+      Number(match[3]),
 
-      Number(
+      Number(match[2]) - 1,
 
-
-        match[3]
-
-
-      ),
-
-
-      Number(
-
-
-        match[2]
-
-
-      ) - 1,
-
-
-      Number(
-
-
-        match[1]
-
-
-      )
-
+      Number(match[1])
 
     );
-
 
   }
 
 
   /* DD/MM/YYYY */
 
-
   match =
-
 
     text.match(
 
-
       /^(\d{1,2})\/(\d{1,2})\/(\d{4})/
-
 
     );
 
 
   if(
-
-
     match
-
-
   ){
-
 
     return new Date(
 
+      Number(match[3]),
 
-      Number(
+      Number(match[2]) - 1,
 
-
-        match[3]
-
-
-      ),
-
-
-      Number(
-
-
-        match[2]
-
-
-      ) - 1,
-
-
-      Number(
-
-
-        match[1]
-
-
-      )
-
+      Number(match[1])
 
     );
-
 
   }
 
 
   const date =
 
-
     new Date(
-
-
       text
-
-
     );
 
 
   return isNaN(
-
-
     date.getTime()
-
-
   )
 
+  ?
 
-  ? null
+  null
 
+  :
 
-  : date;
-
+  date;
 
 }
 
@@ -3512,57 +2982,33 @@ function parseDate(value){
 
 function clearFilters(){
 
-
   document.getElementById(
-
-
     "searchInput"
-
-
   ).value = "";
 
 
   document.getElementById(
-
-
     "lastDays"
-
-
   ).value = "";
 
 
   document.getElementById(
-
-
     "fromDate"
-
-
   ).value = "";
 
 
   document.getElementById(
-
-
     "toDate"
-
-
   ).value = "";
 
 
   document.getElementById(
-
-
     "statusFilter"
-
-
   ).value =
-
-
     "all";
 
 
   applyFilters();
-
 
 }
 
@@ -3573,30 +3019,18 @@ function clearFilters(){
 
 function goDashboard(){
 
-
   if(
-
-
     document.referrer
-
-
   ){
-
 
     history.back();
 
-
   }else{
 
-
     window.location.href =
-
-
       "dashboard.html";
 
-
   }
-
 
 }
 
@@ -3607,57 +3041,35 @@ function goDashboard(){
 
 function showToast(message){
 
-
   const toast =
 
-
     document.getElementById(
-
-
       "toast"
-
-
     );
 
 
   toast.textContent =
-
-
     message;
 
 
   toast.classList.add(
-
-
     "show"
-
-
   );
 
 
   setTimeout(
 
-
     function(){
 
-
       toast.classList.remove(
-
-
         "show"
-
-
       );
-
 
     },
 
-
     3000
 
-
   );
-
 
 }
 
@@ -3668,75 +3080,34 @@ function showToast(message){
 
 function escapeHtml(value){
 
-
   return String(
-
-
     value || ""
-
-
   )
 
-
   .replace(
-
-
     /&/g,
-
-
     "&amp;"
-
-
   )
 
-
   .replace(
-
-
     /</g,
-
-
     "&lt;"
-
-
   )
 
-
   .replace(
-
-
     />/g,
-
-
     "&gt;"
-
-
   )
 
-
   .replace(
-
-
     /"/g,
-
-
     "&quot;"
-
-
   )
 
-
   .replace(
-
-
     /'/g,
-
-
     "&#039;"
-
-
   );
-
 
 }
 
@@ -3747,38 +3118,26 @@ function escapeHtml(value){
 
 document.addEventListener(
 
-
   "keydown",
-
 
   function(event){
 
-
     if(
 
-
       event.key ===
-
-
       "Escape"
-
 
     ){
 
-
       closeModal();
-
 
     }
 
-
   }
-
 
 );
 
 </script>
 
 </body>
-
 </html>

@@ -5,29 +5,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Support Log History</title>
+<title>HISTORY</title>
 
 <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 >
 
 <style>
-
-/* =====================================================
-   RESET
-===================================================== */
 
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
-
-
-/* =====================================================
-   BODY
-===================================================== */
 
 body{
 
@@ -54,7 +45,7 @@ body{
 
 
 /* =====================================================
-   CONTAINER
+   MAIN CONTAINER
 ===================================================== */
 
 .container{
@@ -365,16 +356,23 @@ body{
 
   justify-content:flex-end;
 
-  gap:9px;
+  gap:10px;
 
   flex-wrap:wrap;
 
 }
 
 
-/* =====================================================
-   LAST DAYS
-===================================================== */
+.filter-label{
+
+  font-weight:bold;
+
+  color:#53625d;
+
+  white-space:nowrap;
+
+}
+
 
 .last-days-box{
 
@@ -394,36 +392,23 @@ body{
 }
 
 
-.filter-label{
-
-  font-size:13px;
-
-  font-weight:bold;
-
-  color:#53625d;
-
-  white-space:nowrap;
-
-}
-
-
 .last-days-input{
 
-  width:65px;
+  width:75px;
 
-  height:38px;
+  height:42px;
 
   border:
   2px solid
   #dcebe7;
 
-  border-radius:9px;
+  border-radius:10px;
 
   outline:none;
 
   text-align:center;
 
-  font-size:14px;
+  font-size:15px;
 
   font-weight:bold;
 
@@ -449,14 +434,14 @@ body{
 
   align-items:center;
 
-  gap:5px;
+  gap:6px;
 
 }
 
 
 .date-box label{
 
-  font-size:12px;
+  font-size:13px;
 
   font-weight:bold;
 
@@ -467,21 +452,21 @@ body{
 
 .date-box input{
 
-  width:110px;
+  width:125px;
 
-  height:38px;
+  height:42px;
 
   border:
   2px solid
   #dcebe7;
 
-  border-radius:9px;
+  border-radius:10px;
 
-  padding:0 7px;
+  padding:0 8px;
 
   outline:none;
 
-  font-size:12px;
+  font-size:13px;
 
   color:#40504b;
 
@@ -501,23 +486,23 @@ body{
 
 .filter-select{
 
-  height:38px;
+  height:42px;
 
-  min-width:90px;
+  min-width:105px;
 
   border:
   2px solid
   #dcebe7;
 
-  border-radius:9px;
+  border-radius:10px;
 
-  padding:0 10px;
+  padding:0 12px;
 
   background:white;
 
   color:#56635f;
 
-  font-size:13px;
+  font-size:14px;
 
   font-weight:bold;
 
@@ -529,18 +514,18 @@ body{
 
 
 /* =====================================================
-   CLEAR BUTTON
+   CLEAR
 ===================================================== */
 
 .clear-btn{
 
-  height:38px;
+  height:42px;
 
-  padding:0 13px;
+  padding:0 15px;
 
   border:none;
 
-  border-radius:9px;
+  border-radius:10px;
 
   background:#e8f6f2;
 
@@ -549,13 +534,6 @@ body{
   font-weight:bold;
 
   cursor:pointer;
-
-}
-
-
-.clear-btn:hover{
-
-  background:#d9f0e9;
 
 }
 
@@ -688,10 +666,6 @@ tbody tr:hover{
 }
 
 
-/* =====================================================
-   CUSTOMER BADGE
-===================================================== */
-
 .customer-badge{
 
   display:inline-flex;
@@ -714,10 +688,6 @@ tbody tr:hover{
 }
 
 
-/* =====================================================
-   REFERENCE
-===================================================== */
-
 .ref-badge{
 
   background:#f1f3f5;
@@ -733,10 +703,6 @@ tbody tr:hover{
 
 }
 
-
-/* =====================================================
-   VIEW BUTTON
-===================================================== */
 
 .view-btn{
 
@@ -790,8 +756,6 @@ tbody tr:hover{
   text-align:center;
 
   color:#65736e;
-
-  padding:30px;
 
 }
 
@@ -881,8 +845,7 @@ tbody tr:hover{
 
   to{
 
-    transform:
-    rotate(360deg);
+    transform:rotate(360deg);
 
   }
 
@@ -950,8 +913,7 @@ tbody tr:hover{
 
   from{
 
-    transform:
-    scale(.95);
+    transform:scale(.95);
 
     opacity:0;
 
@@ -959,8 +921,7 @@ tbody tr:hover{
 
   to{
 
-    transform:
-    scale(1);
+    transform:scale(1);
 
     opacity:1;
 
@@ -968,10 +929,6 @@ tbody tr:hover{
 
 }
 
-
-/* =====================================================
-   MODAL HEADER
-===================================================== */
 
 .modal-header{
 
@@ -1094,31 +1051,25 @@ tbody tr:hover{
 
 
 /* =====================================================
-   WORK BOX
+   SUPPORT WORK / CALL WORK
 ===================================================== */
 
-.work-section{
+.work-box{
 
   margin-top:20px;
 
 }
 
 
-.work-title{
+.work-box label{
 
-  font-size:16px;
+  display:block;
 
   font-weight:bold;
 
   color:#263a34;
 
   margin-bottom:8px;
-
-  display:flex;
-
-  align-items:center;
-
-  gap:8px;
 
 }
 
@@ -1135,7 +1086,7 @@ tbody tr:hover{
 
   padding:15px;
 
-  min-height:80px;
+  min-height:70px;
 
   color:#24332e;
 
@@ -1144,6 +1095,41 @@ tbody tr:hover{
   white-space:pre-wrap;
 
   word-break:break-word;
+
+}
+
+
+/* =====================================================
+   MODAL ACTION
+===================================================== */
+
+.modal-actions{
+
+  margin-top:20px;
+
+  display:flex;
+
+  justify-content:flex-end;
+
+}
+
+
+.close-modal-btn{
+
+  border:none;
+
+  padding:
+  12px 22px;
+
+  border-radius:11px;
+
+  background:#008f6b;
+
+  color:white;
+
+  font-weight:bold;
+
+  cursor:pointer;
 
 }
 
@@ -1172,6 +1158,10 @@ tbody tr:hover{
   display:none;
 
   z-index:10000;
+
+  box-shadow:
+  0 10px 30px
+  rgba(0,0,0,.2);
 
 }
 
@@ -1317,7 +1307,7 @@ tbody tr:hover{
 
   .date-box input{
 
-    width:105px;
+    width:110px;
 
   }
 
@@ -1370,7 +1360,7 @@ tbody tr:hover{
 
     <button
       class="btn btn-refresh"
-      onclick="loadData()"
+      onclick="loadHistory()"
     >
 
       <i class="fa-solid fa-rotate"></i>
@@ -1444,6 +1434,7 @@ tbody tr:hover{
 
   <div class="search-box">
 
+
     <i class="fa-solid fa-magnifying-glass"></i>
 
 
@@ -1472,7 +1463,9 @@ tbody tr:hover{
 
 
       <span class="filter-label">
+
         Last Days
+
       </span>
 
 
@@ -1495,7 +1488,9 @@ tbody tr:hover{
 
 
       <label>
+
         From
+
       </label>
 
 
@@ -1515,7 +1510,9 @@ tbody tr:hover{
 
 
       <label>
+
         To
+
       </label>
 
 
@@ -1539,12 +1536,23 @@ tbody tr:hover{
 
 
       <option value="all">
-        All
+
+        All History
+
       </option>
 
 
-      <option value="recent">
-        Recent
+      <option value="call">
+
+        Call Completed
+
+      </option>
+
+
+      <option value="support">
+
+        Support Completed
+
       </option>
 
 
@@ -1558,9 +1566,11 @@ tbody tr:hover{
       onclick="clearFilters()"
     >
 
+
       <i class="fa-solid fa-filter-circle-xmark"></i>
 
       Clear
+
 
     </button>
 
@@ -1572,7 +1582,7 @@ tbody tr:hover{
 
 
 <!-- ===================================================
-     CONTENT CARD
+     CONTENT
 =================================================== -->
 
 <div class="content-card">
@@ -1606,9 +1616,12 @@ tbody tr:hover{
     class="loading"
   >
 
+
     <div class="spinner"></div>
 
+
     Loading History...
+
 
   </div>
 
@@ -1638,9 +1651,12 @@ tbody tr:hover{
 
       <h3>
 
+
         <i class="fa-solid fa-file-lines"></i>
 
-        Complete Support Details
+
+        History Details
+
 
       </h3>
 
@@ -1771,7 +1787,7 @@ tbody tr:hover{
 
         <!-- CALL PERSON -->
 
-        <div class="detail-item full">
+        <div class="detail-item">
 
 
           <div class="detail-label">
@@ -1795,16 +1811,16 @@ tbody tr:hover{
 
       <!-- SUPPORT WORK -->
 
-      <div class="work-section">
+      <div class="work-box">
 
 
-        <div class="work-title">
+        <label>
 
           <i class="fa-solid fa-screwdriver-wrench"></i>
 
           Support Work
 
-        </div>
+        </label>
 
 
         <div
@@ -1818,22 +1834,40 @@ tbody tr:hover{
 
       <!-- CALL WORK -->
 
-      <div class="work-section">
+      <div class="work-box">
 
 
-        <div class="work-title">
+        <label>
 
           <i class="fa-solid fa-phone"></i>
 
           Call Work
 
-        </div>
+        </label>
 
 
         <div
           class="work-content"
           id="mCallWork"
         ></div>
+
+
+      </div>
+
+
+      <div class="modal-actions">
+
+
+        <button
+          class="close-modal-btn"
+          onclick="closeModal()"
+        >
+
+          <i class="fa-solid fa-xmark"></i>
+
+          Close
+
+        </button>
 
 
       </div>
@@ -1866,6 +1900,7 @@ tbody tr:hover{
 ===================================================== */
 
 const API_URL =
+
 "https://script.google.com/macros/s/AKfycbw1NiYF5qNEFGVXdIWZ3I3lpJXEX57uBM0M06oqVVJcRUiuCTAf8NkKycGWtyIhhxWh4g/exec";
 
 
@@ -1873,11 +1908,9 @@ const API_URL =
    VARIABLES
 ===================================================== */
 
-let allData = [];
+let allHistory = [];
 
-let filteredData = [];
-
-let selectedItem = null;
+let filteredHistory = [];
 
 
 /* =====================================================
@@ -1892,7 +1925,7 @@ document.addEventListener(
 
     loadUser();
 
-    loadData();
+    loadHistory();
 
   }
 
@@ -1905,15 +1938,21 @@ document.addEventListener(
 
 function loadUser(){
 
+
   const username =
+
 
     localStorage.getItem("username") ||
 
+
     localStorage.getItem("userName") ||
+
 
     localStorage.getItem("name") ||
 
+
     sessionStorage.getItem("username") ||
+
 
     "User";
 
@@ -1924,14 +1963,16 @@ function loadUser(){
 
   ).textContent = username;
 
+
 }
 
 
 /* =====================================================
-   LOAD HISTORY DATA
+   LOAD HISTORY
 ===================================================== */
 
-async function loadData(){
+async function loadHistory(){
+
 
   const content =
 
@@ -1949,7 +1990,9 @@ async function loadData(){
 
   content.innerHTML =
 
+
     '<div class="spinner"></div>' +
+
 
     'Loading History...';
 
@@ -1959,56 +2002,102 @@ async function loadData(){
 
     const response =
 
+
       await fetch(
+
 
         API_URL +
 
+
         "?action=history&_=" +
+
 
         Date.now(),
 
+
         {
+
 
           method:"GET",
 
+
           cache:"no-store"
 
+
         }
+
 
       );
 
 
+    if(
+
+
+      !response.ok
+
+
+    ){
+
+
+      throw new Error(
+
+
+        "HTTP Error: " +
+
+
+        response.status
+
+
+      );
+
+
+    }
+
+
     const result =
+
 
       await response.json();
 
 
     if(
 
+
       !result.success
+
 
     ){
 
+
       throw new Error(
+
 
         result.message ||
 
+
         "Failed to load History."
 
+
       );
+
 
     }
 
 
-    allData =
+    allHistory =
+
 
       Array.isArray(
 
+
         result.data
+
 
       )
 
+
       ? result.data
+
 
       : [];
 
@@ -2016,10 +2105,14 @@ async function loadData(){
     applyFilters();
 
 
-  }catch(error){
+  }
+
+
+  catch(error){
 
 
     content.className =
+
 
       "empty";
 
@@ -2029,7 +2122,9 @@ async function loadData(){
 
       '<div class="empty-icon">' +
 
+
       '<i class="fa-solid fa-triangle-exclamation"></i>' +
+
 
       '</div>' +
 
@@ -2039,16 +2134,33 @@ async function loadData(){
 
       '<p>' +
 
+
       escapeHtml(
+
 
         error.message
 
+
       ) +
+
 
       '</p>';
 
 
+    document.getElementById(
+
+
+      "historyCount"
+
+
+    ).textContent =
+
+
+      "0 Records";
+
+
   }
+
 
 }
 
@@ -2062,93 +2174,123 @@ function applyFilters(){
 
   const search =
 
+
     document.getElementById(
+
 
       "searchInput"
 
+
     )
+
 
     .value
 
+
     .toLowerCase()
+
 
     .trim();
 
 
   const lastDaysValue =
 
+
     document.getElementById(
 
+
       "lastDays"
+
 
     ).value;
 
 
   const lastDays =
 
+
     lastDaysValue
+
 
     ? parseInt(
 
+
         lastDaysValue,
+
 
         10
 
+
       )
+
 
     : null;
 
 
   const fromDate =
 
+
     document.getElementById(
 
+
       "fromDate"
+
 
     ).value;
 
 
   const toDate =
 
+
     document.getElementById(
+
 
       "toDate"
 
+
     ).value;
 
 
-  const statusFilter =
+  const status =
+
 
     document.getElementById(
 
+
       "statusFilter"
+
 
     ).value;
 
 
-  filteredData =
+  filteredHistory =
 
-    allData.filter(
+
+    allHistory.filter(
+
 
       function(item){
 
 
-        /* ==========================================
-           SEARCH
-        ========================================== */
+        /* SEARCH */
+
 
         const searchable =
 
 
           (
 
+
             item.customerId ||
+
 
             item.customerNumber ||
 
+
             item.ip ||
 
+
             ""
+
 
           ) +
 
@@ -2157,10 +2299,28 @@ function applyFilters(){
 
 
           (
+
+
+            item.date ||
+
+
+            ""
+
+
+          ) +
+
+
+          " " +
+
+
+          (
+
 
             item.problem ||
 
+
             ""
+
 
           ) +
 
@@ -2169,12 +2329,16 @@ function applyFilters(){
 
 
           (
+
 
             item.reference ||
 
+
             item.ref ||
 
+
             ""
+
 
           ) +
 
@@ -2183,10 +2347,13 @@ function applyFilters(){
 
 
           (
+
 
             item.support ||
 
+
             ""
+
 
           ) +
 
@@ -2195,10 +2362,13 @@ function applyFilters(){
 
 
           (
+
 
             item.supportWork ||
 
+
             ""
+
 
           ) +
 
@@ -2207,10 +2377,16 @@ function applyFilters(){
 
 
           (
+
 
             item.call ||
 
+
+            item.callPerson ||
+
+
             ""
+
 
           ) +
 
@@ -2220,262 +2396,354 @@ function applyFilters(){
 
           (
 
+
             item.callWork ||
+
 
             ""
 
+
           );
 
 
         if(
+
 
           search &&
 
+
           !searchable
 
-          .toLowerCase()
 
-          .includes(search)
+            .toLowerCase()
+
+
+            .includes(
+
+
+              search
+
+
+            )
+
 
         ){
+
 
           return false;
 
+
         }
 
 
-        /* ==========================================
-           DATE
-        ========================================== */
+        /* LAST DAYS */
+
 
         const itemDate =
 
+
           parseDate(
+
 
             item.date
 
+
           );
 
 
-        /* ==========================================
-           LAST DAYS
-        ========================================== */
-
         if(
+
 
           lastDays !== null &&
 
-          !isNaN(lastDays)
+
+          !isNaN(lastDays) &&
+
+
+          lastDays >= 0
+
 
         ){
 
 
           if(
+
 
             !itemDate
 
-          ){
-
-            return false;
-
-          }
-
-
-          const today =
-
-            new Date();
-
-
-          today.setHours(
-
-            23,
-
-            59,
-
-            59,
-
-            999
-
-          );
-
-
-          const start =
-
-            new Date(
-
-              today
-
-            );
-
-
-          start.setDate(
-
-            start.getDate() -
-
-            lastDays
-
-          );
-
-
-          if(
-
-            itemDate < start ||
-
-            itemDate > today
 
           ){
 
-            return false;
-
-          }
-
-        }
-
-
-        /* ==========================================
-           FROM DATE
-        ========================================== */
-
-        if(
-
-          fromDate
-
-        ){
-
-
-          const from =
-
-            new Date(
-
-              fromDate +
-
-              "T00:00:00"
-
-            );
-
-
-          if(
-
-            !itemDate ||
-
-            itemDate < from
-
-          ){
 
             return false;
 
-          }
-
-        }
-
-
-        /* ==========================================
-           TO DATE
-        ========================================== */
-
-        if(
-
-          toDate
-
-        ){
-
-
-          const to =
-
-            new Date(
-
-              toDate +
-
-              "T23:59:59"
-
-            );
-
-
-          if(
-
-            !itemDate ||
-
-            itemDate > to
-
-          ){
-
-            return false;
-
-          }
-
-        }
-
-
-        /* ==========================================
-           RECENT FILTER
-        ========================================== */
-
-        if(
-
-          statusFilter ===
-
-          "recent"
-
-        ){
-
-
-          if(
-
-            !itemDate
-
-          ){
-
-            return false;
 
           }
 
 
           const now =
 
-            new Date();
-
-
-          const recentDate =
 
             new Date();
 
 
-          recentDate.setDate(
+          now.setHours(
 
-            recentDate.getDate() -
 
-            7
+            23,
+
+
+            59,
+
+
+            59,
+
+
+            999
+
+
+          );
+
+
+          const start =
+
+
+            new Date(
+
+
+              now
+
+
+            );
+
+
+          start.setDate(
+
+
+            start.getDate() -
+
+
+            lastDays +
+
+
+            1
+
+
+          );
+
+
+          start.setHours(
+
+
+            0,
+
+
+            0,
+
+
+            0,
+
+
+            0
+
 
           );
 
 
           if(
 
-            itemDate < recentDate ||
+
+            itemDate < start ||
+
 
             itemDate > now
 
+
           ){
+
 
             return false;
 
+
           }
+
+
+        }
+
+
+        /* FROM DATE */
+
+
+        if(
+
+
+          fromDate
+
+
+        ){
+
+
+          const from =
+
+
+            new Date(
+
+
+              fromDate +
+
+
+              "T00:00:00"
+
+
+            );
+
+
+          if(
+
+
+            !itemDate ||
+
+
+            itemDate < from
+
+
+          ){
+
+
+            return false;
+
+
+          }
+
+
+        }
+
+
+        /* TO DATE */
+
+
+        if(
+
+
+          toDate
+
+
+        ){
+
+
+          const to =
+
+
+            new Date(
+
+
+              toDate +
+
+
+              "T23:59:59"
+
+
+            );
+
+
+          if(
+
+
+            !itemDate ||
+
+
+            itemDate > to
+
+
+          ){
+
+
+            return false;
+
+
+          }
+
+
+        }
+
+
+        /* STATUS */
+
+
+        if(
+
+
+          status === "call"
+
+
+        ){
+
+
+          if(
+
+
+            !item.call &&
+
+
+            !item.callPerson
+
+
+          ){
+
+
+            return false;
+
+
+          }
+
+
+        }
+
+
+        if(
+
+
+          status === "support"
+
+
+        ){
+
+
+          if(
+
+
+            !item.support
+
+
+          ){
+
+
+            return false;
+
+
+          }
+
 
         }
 
 
         return true;
 
+
       }
+
 
     );
 
 
-  renderData(
+  renderHistory(
 
-    filteredData
+
+    filteredHistory
+
 
   );
+
 
 }
 
@@ -2484,38 +2752,47 @@ function applyFilters(){
    RENDER HISTORY
 ===================================================== */
 
-function renderData(data){
+function renderHistory(data){
 
 
   const content =
 
+
     document.getElementById(
 
+
       "content"
+
 
     );
 
 
   document.getElementById(
 
+
     "historyCount"
+
 
   ).textContent =
 
 
     data.length +
 
+
     " Records";
 
 
   if(
 
+
     data.length === 0
+
 
   ){
 
 
     content.className =
+
 
       "empty";
 
@@ -2525,7 +2802,9 @@ function renderData(data){
 
       '<div class="empty-icon">' +
 
+
       '<i class="fa-solid fa-clock-rotate-left"></i>' +
+
 
       '</div>' +
 
@@ -2533,15 +2812,17 @@ function renderData(data){
       '<h3>No History Found</h3>' +
 
 
-      '<p>No completed support records match your search or filter.</p>';
+      '<p>No completed support records match your filters.</p>';
 
 
     return;
+
 
   }
 
 
   content.className =
+
 
     "table-wrapper";
 
@@ -2590,7 +2871,47 @@ function renderData(data){
 
   data.forEach(
 
+
     function(item,index){
+
+
+      const customer =
+
+
+        item.customerId ||
+
+
+        item.customerNumber ||
+
+
+        item.ip ||
+
+
+        "";
+
+
+      const reference =
+
+
+        item.reference ||
+
+
+        item.ref ||
+
+
+        "-";
+
+
+      const callPerson =
+
+
+        item.call ||
+
+
+        item.callPerson ||
+
+
+        "-";
 
 
       html +=
@@ -2611,16 +2932,8 @@ function renderData(data){
         escapeHtml(
 
 
-          item.customerId ||
+          customer
 
-
-          item.customerNumber ||
-
-
-          item.ip ||
-
-
-          ""
 
         ) +
 
@@ -2642,6 +2955,7 @@ function renderData(data){
 
           ""
 
+
         ) +
 
 
@@ -2659,6 +2973,7 @@ function renderData(data){
 
           ""
 
+
         ) +
 
 
@@ -2674,13 +2989,8 @@ function renderData(data){
         escapeHtml(
 
 
-          item.reference ||
+          reference
 
-
-          item.ref ||
-
-
-          "-"
 
         ) +
 
@@ -2700,7 +3010,8 @@ function renderData(data){
           item.support ||
 
 
-          ""
+          "-"
+
 
         ) +
 
@@ -2714,10 +3025,8 @@ function renderData(data){
         escapeHtml(
 
 
-          item.call ||
+          callPerson
 
-
-          ""
 
         ) +
 
@@ -2728,10 +3037,7 @@ function renderData(data){
         '<td>' +
 
 
-        '<button ' +
-
-
-        'class="view-btn" ' +
+        '<button class="view-btn" ' +
 
 
         'onclick="openModal(' +
@@ -2760,6 +3066,7 @@ function renderData(data){
 
     }
 
+
   );
 
 
@@ -2774,7 +3081,9 @@ function renderData(data){
 
   content.innerHTML =
 
+
     html;
+
 
 }
 
@@ -2786,83 +3095,43 @@ function renderData(data){
 function openModal(index){
 
 
-  const data =
+  const item =
 
-    filteredData[index];
+
+    filteredHistory[index];
 
 
   if(
 
-    !data
+
+    !item
+
 
   ){
 
+
     return;
+
 
   }
 
 
-  selectedItem =
-
-    data;
-
-
   document.getElementById(
+
 
     "mCustomer"
 
-  ).textContent =
-
-
-    data.customerId ||
-
-
-    data.customerNumber ||
-
-
-    data.ip ||
-
-
-    "";
-
-
-  document.getElementById(
-
-    "mDate"
 
   ).textContent =
 
 
-    data.date ||
+    item.customerId ||
 
 
-    "";
+    item.customerNumber ||
 
 
-  document.getElementById(
-
-    "mProblem"
-
-  ).textContent =
-
-
-    data.problem ||
-
-
-    "";
-
-
-  document.getElementById(
-
-    "mReference"
-
-  ).textContent =
-
-
-    data.reference ||
-
-
-    data.ref ||
+    item.ip ||
 
 
     "-";
@@ -2870,65 +3139,129 @@ function openModal(index){
 
   document.getElementById(
 
-    "mSupport"
+
+    "mDate"
+
 
   ).textContent =
 
 
-    data.support ||
+    item.date ||
 
 
-    "";
+    "-";
 
 
   document.getElementById(
+
+
+    "mProblem"
+
+
+  ).textContent =
+
+
+    item.problem ||
+
+
+    "-";
+
+
+  document.getElementById(
+
+
+    "mReference"
+
+
+  ).textContent =
+
+
+    item.reference ||
+
+
+    item.ref ||
+
+
+    "-";
+
+
+  document.getElementById(
+
+
+    "mSupport"
+
+
+  ).textContent =
+
+
+    item.support ||
+
+
+    "-";
+
+
+  document.getElementById(
+
 
     "mCall"
 
+
   ).textContent =
 
 
-    data.call ||
+    item.call ||
 
 
-    "";
+    item.callPerson ||
+
+
+    "-";
 
 
   document.getElementById(
+
 
     "mSupportWork"
 
+
   ).textContent =
 
 
-    data.supportWork ||
+    item.supportWork ||
 
 
-    "No Support Work recorded.";
+    "-";
 
 
   document.getElementById(
+
 
     "mCallWork"
 
+
   ).textContent =
 
 
-    data.callWork ||
+    item.callWork ||
 
 
-    "No Call Work recorded.";
+    "-";
 
 
   document.getElementById(
 
+
     "historyModal"
+
 
   ).classList.add(
 
+
     "show"
 
+
   );
+
 
 }
 
@@ -2942,18 +3275,18 @@ function closeModal(){
 
   document.getElementById(
 
+
     "historyModal"
+
 
   ).classList.remove(
 
+
     "show"
+
 
   );
 
-
-  selectedItem =
-
-    null;
 
 }
 
@@ -2967,15 +3300,21 @@ function outsideModal(event){
 
   if(
 
+
     event.target.id ===
+
 
     "historyModal"
 
+
   ){
+
 
     closeModal();
 
+
   }
+
 
 }
 
@@ -2989,39 +3328,54 @@ function parseDate(value){
 
   if(
 
+
     !value
+
 
   ){
 
+
     return null;
+
 
   }
 
 
   const text =
 
-    String(value)
+
+    String(
+
+
+      value
+
+
+    )
+
 
     .trim();
 
 
-  /* ================================================
-     DD-MM-YYYY
-  ================================================ */
+  /* DD-MM-YYYY */
+
 
   let match =
 
 
     text.match(
 
+
       /^(\d{1,2})-(\d{1,2})-(\d{4})/
+
 
     );
 
 
   if(
 
+
     match
+
 
   ){
 
@@ -3029,37 +3383,59 @@ function parseDate(value){
     return new Date(
 
 
-      Number(match[3]),
+      Number(
 
 
-      Number(match[2]) - 1,
+        match[3]
 
 
-      Number(match[1])
+      ),
+
+
+      Number(
+
+
+        match[2]
+
+
+      ) - 1,
+
+
+      Number(
+
+
+        match[1]
+
+
+      )
 
 
     );
 
+
   }
 
 
-  /* ================================================
-     DD/MM/YYYY
-  ================================================ */
+  /* DD/MM/YYYY */
+
 
   match =
 
 
     text.match(
 
+
       /^(\d{1,2})\/(\d{1,2})\/(\d{4})/
+
 
     );
 
 
   if(
 
+
     match
+
 
   ){
 
@@ -3067,42 +3443,65 @@ function parseDate(value){
     return new Date(
 
 
-      Number(match[3]),
+      Number(
 
 
-      Number(match[2]) - 1,
+        match[3]
 
 
-      Number(match[1])
+      ),
+
+
+      Number(
+
+
+        match[2]
+
+
+      ) - 1,
+
+
+      Number(
+
+
+        match[1]
+
+
+      )
 
 
     );
 
+
   }
 
 
-  /* ================================================
-     STANDARD DATE
-  ================================================ */
-
   const date =
+
 
     new Date(
 
+
       text
+
 
     );
 
 
   return isNaN(
 
+
     date.getTime()
+
 
   )
 
+
   ? null
 
+
   : date;
+
 
 }
 
@@ -3116,42 +3515,54 @@ function clearFilters(){
 
   document.getElementById(
 
+
     "searchInput"
+
 
   ).value = "";
 
 
   document.getElementById(
+
 
     "lastDays"
 
+
   ).value = "";
 
 
   document.getElementById(
+
 
     "fromDate"
 
+
   ).value = "";
 
 
   document.getElementById(
+
 
     "toDate"
 
+
   ).value = "";
 
 
   document.getElementById(
 
+
     "statusFilter"
 
+
   ).value =
+
 
     "all";
 
 
   applyFilters();
+
 
 }
 
@@ -3165,7 +3576,9 @@ function goDashboard(){
 
   if(
 
+
     document.referrer
+
 
   ){
 
@@ -3178,9 +3591,12 @@ function goDashboard(){
 
     window.location.href =
 
+
       "dashboard.html";
 
+
   }
+
 
 }
 
@@ -3194,21 +3610,27 @@ function showToast(message){
 
   const toast =
 
+
     document.getElementById(
 
+
       "toast"
+
 
     );
 
 
   toast.textContent =
 
+
     message;
 
 
   toast.classList.add(
 
+
     "show"
+
 
   );
 
@@ -3221,7 +3643,9 @@ function showToast(message){
 
       toast.classList.remove(
 
+
         "show"
+
 
       );
 
@@ -3233,6 +3657,7 @@ function showToast(message){
 
 
   );
+
 
 }
 
@@ -3246,54 +3671,72 @@ function escapeHtml(value){
 
   return String(
 
+
     value || ""
+
 
   )
 
 
   .replace(
+
 
     /&/g,
 
+
     "&amp;"
+
 
   )
 
 
   .replace(
+
 
     /</g,
 
+
     "&lt;"
+
 
   )
 
 
   .replace(
+
 
     />/g,
 
+
     "&gt;"
+
 
   )
 
 
   .replace(
+
 
     /"/g,
 
+
     "&quot;"
+
 
   )
 
 
   .replace(
 
+
     /'/g,
+
 
     "&#039;"
 
+
   );
+
 
 }
 
@@ -3304,29 +3747,37 @@ function escapeHtml(value){
 
 document.addEventListener(
 
+
   "keydown",
+
 
   function(event){
 
 
     if(
 
+
       event.key ===
+
 
       "Escape"
 
+
     ){
+
 
       closeModal();
 
+
     }
 
+
   }
+
 
 );
 
 </script>
-
 
 </body>
 

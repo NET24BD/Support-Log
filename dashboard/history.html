@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>HISTORY</title>
+<title>Support Log History</title>
 
 <link
   rel="stylesheet"
@@ -14,13 +14,23 @@
 
 <style>
 
+/* =====================================================
+   RESET
+===================================================== */
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
 
+
+/* =====================================================
+   BODY
+===================================================== */
+
 body{
+
   font-family:
   Arial,
   Helvetica,
@@ -39,17 +49,22 @@ body{
   padding:16px 24px;
 
   color:#14201d;
+
 }
 
 
 /* =====================================================
-   MAIN CONTAINER
+   CONTAINER
 ===================================================== */
 
 .container{
+
   width:100%;
+
   max-width:1500px;
+
   margin:auto;
+
 }
 
 
@@ -58,6 +73,7 @@ body{
 ===================================================== */
 
 .header{
+
   background:#f7fbfa;
 
   border-radius:26px;
@@ -77,20 +93,25 @@ body{
   box-shadow:
   0 10px 30px
   rgba(0,0,0,.08);
+
 }
 
 
 .header-left{
+
   display:flex;
 
   align-items:center;
 
   gap:20px;
+
 }
 
 
 .header-icon{
+
   width:74px;
+
   height:74px;
 
   border-radius:20px;
@@ -110,33 +131,41 @@ body{
   box-shadow:
   0 10px 20px
   rgba(0,120,90,.25);
+
 }
 
 
 .header-title h1{
+
   font-size:32px;
 
   color:#00765b;
 
   margin-bottom:5px;
+
 }
 
 
 .header-title p{
+
   font-size:16px;
 
   color:#66736f;
+
 }
 
 
 .header-buttons{
+
   display:flex;
 
   gap:12px;
+
 }
 
 
 .btn{
+
   border:none;
 
   border-radius:15px;
@@ -156,25 +185,32 @@ body{
   align-items:center;
 
   gap:9px;
+
 }
 
 
 .btn:hover{
+
   transform:translateY(-2px);
+
 }
 
 
 .btn-refresh{
+
   background:#e5f6f1;
 
   color:#007c60;
+
 }
 
 
 .btn-dashboard{
+
   background:#00785b;
 
   color:white;
+
 }
 
 
@@ -183,6 +219,7 @@ body{
 ===================================================== */
 
 .user-bar{
+
   margin-top:24px;
 
   background:
@@ -207,16 +244,21 @@ body{
   color:white;
 
   font-size:16px;
+
 }
 
 
 .user-name{
+
   font-weight:bold;
+
 }
 
 
 .page-label{
+
   font-weight:bold;
+
 }
 
 
@@ -225,6 +267,7 @@ body{
 ===================================================== */
 
 .filter-area{
+
   background:#f7fbfa;
 
   margin-top:24px;
@@ -236,19 +279,25 @@ body{
   box-shadow:
   0 10px 30px
   rgba(0,0,0,.06);
+
 }
 
 
-/* SEARCH ALADA */
+/* =====================================================
+   SEARCH
+===================================================== */
 
 .search-box{
+
   width:100%;
 
   position:relative;
+
 }
 
 
 .search-box i{
+
   position:absolute;
 
   left:18px;
@@ -261,10 +310,12 @@ body{
   color:#009875;
 
   font-size:19px;
+
 }
 
 
 .search-box input{
+
   width:100%;
 
   height:56px;
@@ -285,21 +336,27 @@ body{
   color:#26332f;
 
   transition:.2s;
+
 }
 
 
 .search-box input:focus{
+
   border-color:#00a27a;
 
   box-shadow:
   0 0 0 4px
   rgba(0,162,122,.08);
+
 }
 
 
-/* FILTER ROW */
+/* =====================================================
+   FILTER ROW
+===================================================== */
 
 .filter-row{
+
   margin-top:15px;
 
   display:flex;
@@ -308,152 +365,182 @@ body{
 
   justify-content:flex-end;
 
-  gap:10px;
+  gap:9px;
 
   flex-wrap:wrap;
+
 }
 
 
-/* DATE LABEL */
-
-.filter-label{
-  font-weight:bold;
-
-  color:#53625d;
-
-  white-space:nowrap;
-}
-
-
-/* LAST DAYS */
+/* =====================================================
+   LAST DAYS
+===================================================== */
 
 .last-days-box{
+
   display:flex;
 
   align-items:center;
 
   gap:7px;
+
 }
 
 
 .last-days-box i{
+
   color:#007e60;
+
+}
+
+
+.filter-label{
+
+  font-size:13px;
+
+  font-weight:bold;
+
+  color:#53625d;
+
+  white-space:nowrap;
+
 }
 
 
 .last-days-input{
-  width:75px;
 
-  height:42px;
+  width:65px;
+
+  height:38px;
 
   border:
   2px solid
   #dcebe7;
 
-  border-radius:10px;
+  border-radius:9px;
 
   outline:none;
 
   text-align:center;
 
-  font-size:15px;
+  font-size:14px;
 
   font-weight:bold;
 
   color:#007b5d;
+
 }
 
 
 .last-days-input:focus{
+
   border-color:#009b73;
+
 }
 
 
-/* FROM TO */
+/* =====================================================
+   DATE BOX
+===================================================== */
 
 .date-box{
+
   display:flex;
 
   align-items:center;
 
-  gap:6px;
+  gap:5px;
+
 }
 
 
 .date-box label{
-  font-size:13px;
+
+  font-size:12px;
 
   font-weight:bold;
 
   color:#68756f;
+
 }
 
 
 .date-box input{
-  width:125px;
 
-  height:42px;
+  width:110px;
+
+  height:38px;
 
   border:
   2px solid
   #dcebe7;
 
-  border-radius:10px;
+  border-radius:9px;
 
-  padding:0 8px;
+  padding:0 7px;
 
   outline:none;
 
-  font-size:13px;
+  font-size:12px;
 
   color:#40504b;
+
 }
 
 
 .date-box input:focus{
+
   border-color:#009b73;
+
 }
 
 
-/* FILTER BUTTON */
+/* =====================================================
+   FILTER SELECT
+===================================================== */
 
 .filter-select{
-  height:42px;
 
-  min-width:105px;
+  height:38px;
+
+  min-width:90px;
 
   border:
   2px solid
   #dcebe7;
 
-  border-radius:10px;
+  border-radius:9px;
 
-  padding:0 12px;
+  padding:0 10px;
 
   background:white;
 
   color:#56635f;
 
-  font-size:14px;
+  font-size:13px;
 
   font-weight:bold;
 
   outline:none;
 
   cursor:pointer;
+
 }
 
 
-/* CLEAR */
+/* =====================================================
+   CLEAR BUTTON
+===================================================== */
 
 .clear-btn{
-  height:42px;
 
-  padding:0 15px;
+  height:38px;
+
+  padding:0 13px;
 
   border:none;
 
-  border-radius:10px;
+  border-radius:9px;
 
   background:#e8f6f2;
 
@@ -462,6 +549,14 @@ body{
   font-weight:bold;
 
   cursor:pointer;
+
+}
+
+
+.clear-btn:hover{
+
+  background:#d9f0e9;
+
 }
 
 
@@ -470,6 +565,7 @@ body{
 ===================================================== */
 
 .content-card{
+
   background:#f7fbfa;
 
   margin-top:24px;
@@ -483,10 +579,12 @@ body{
   box-shadow:
   0 10px 30px
   rgba(0,0,0,.06);
+
 }
 
 
 .content-header{
+
   padding:
   25px 32px;
 
@@ -499,15 +597,19 @@ body{
   border-bottom:
   1px solid
   #e6eeeb;
+
 }
 
 
 .content-header h2{
+
   font-size:25px;
+
 }
 
 
-.pending-count{
+.history-count{
+
   background:#008f6b;
 
   color:white;
@@ -518,6 +620,7 @@ body{
   border-radius:20px;
 
   font-weight:bold;
+
 }
 
 
@@ -526,38 +629,47 @@ body{
 ===================================================== */
 
 .table-wrapper{
+
   width:100%;
 
   overflow-x:auto;
+
 }
 
 
 table{
+
   width:100%;
 
   border-collapse:collapse;
 
-  min-width:900px;
+  min-width:850px;
+
 }
 
 
 thead{
+
   background:#00886a;
 
   color:white;
+
 }
 
 
 th{
+
   padding:16px;
 
   text-align:left;
 
   font-size:14px;
+
 }
 
 
 td{
+
   padding:17px 16px;
 
   border-bottom:
@@ -565,15 +677,23 @@ td{
   #e6eeeb;
 
   font-size:14px;
+
 }
 
 
 tbody tr:hover{
+
   background:#f0f8f5;
+
 }
 
 
+/* =====================================================
+   CUSTOMER BADGE
+===================================================== */
+
 .customer-badge{
+
   display:inline-flex;
 
   align-items:center;
@@ -590,10 +710,16 @@ tbody tr:hover{
   border-radius:9px;
 
   font-weight:bold;
+
 }
 
 
+/* =====================================================
+   REFERENCE
+===================================================== */
+
 .ref-badge{
+
   background:#f1f3f5;
 
   color:#5d6663;
@@ -604,10 +730,16 @@ tbody tr:hover{
   border-radius:8px;
 
   display:inline-block;
+
 }
 
 
+/* =====================================================
+   VIEW BUTTON
+===================================================== */
+
 .view-btn{
+
   border:none;
 
   background:#008f6b;
@@ -628,11 +760,14 @@ tbody tr:hover{
   align-items:center;
 
   gap:7px;
+
 }
 
 
 .view-btn:hover{
+
   background:#007657;
+
 }
 
 
@@ -641,6 +776,7 @@ tbody tr:hover{
 ===================================================== */
 
 .empty{
+
   min-height:350px;
 
   display:flex;
@@ -654,10 +790,14 @@ tbody tr:hover{
   text-align:center;
 
   color:#65736e;
+
+  padding:30px;
+
 }
 
 
 .empty-icon{
+
   width:90px;
 
   height:90px;
@@ -677,15 +817,18 @@ tbody tr:hover{
   font-size:38px;
 
   margin-bottom:20px;
+
 }
 
 
 .empty h3{
+
   color:#26322f;
 
   font-size:24px;
 
   margin-bottom:8px;
+
 }
 
 
@@ -694,6 +837,7 @@ tbody tr:hover{
 ===================================================== */
 
 .loading{
+
   min-height:300px;
 
   display:flex;
@@ -707,10 +851,12 @@ tbody tr:hover{
   font-size:18px;
 
   font-weight:bold;
+
 }
 
 
 .spinner{
+
   width:28px;
 
   height:28px;
@@ -727,23 +873,28 @@ tbody tr:hover{
   spin 1s linear infinite;
 
   margin-right:12px;
+
 }
 
 
 @keyframes spin{
 
   to{
-    transform:rotate(360deg);
+
+    transform:
+    rotate(360deg);
+
   }
 
 }
 
 
 /* =====================================================
-   POPUP
+   MODAL
 ===================================================== */
 
 .modal{
+
   display:none;
 
   position:fixed;
@@ -760,15 +911,19 @@ tbody tr:hover{
   align-items:center;
 
   justify-content:center;
+
 }
 
 
 .modal.show{
+
   display:flex;
+
 }
 
 
 .modal-box{
+
   width:100%;
 
   max-width:720px;
@@ -787,27 +942,39 @@ tbody tr:hover{
 
   animation:
   modalIn .2s ease;
+
 }
 
 
 @keyframes modalIn{
 
   from{
-    transform:scale(.95);
+
+    transform:
+    scale(.95);
 
     opacity:0;
+
   }
 
   to{
-    transform:scale(1);
+
+    transform:
+    scale(1);
 
     opacity:1;
+
   }
 
 }
 
 
+/* =====================================================
+   MODAL HEADER
+===================================================== */
+
 .modal-header{
+
   background:#008f6b;
 
   color:white;
@@ -819,15 +986,19 @@ tbody tr:hover{
   justify-content:space-between;
 
   align-items:center;
+
 }
 
 
 .modal-header h3{
+
   font-size:21px;
+
 }
 
 
 .close-btn{
+
   width:38px;
 
   height:38px;
@@ -844,6 +1015,7 @@ tbody tr:hover{
   font-size:20px;
 
   cursor:pointer;
+
 }
 
 
@@ -852,21 +1024,26 @@ tbody tr:hover{
 ===================================================== */
 
 .details{
+
   padding:24px;
+
 }
 
 
 .detail-grid{
+
   display:grid;
 
   grid-template-columns:
   repeat(2,1fr);
 
   gap:15px;
+
 }
 
 
 .detail-item{
+
   background:white;
 
   border:
@@ -876,16 +1053,20 @@ tbody tr:hover{
   border-radius:13px;
 
   padding:14px;
+
 }
 
 
 .detail-item.full{
+
   grid-column:
   1 / -1;
+
 }
 
 
 .detail-label{
+
   font-size:12px;
 
   color:#788681;
@@ -895,10 +1076,12 @@ tbody tr:hover{
   margin-bottom:7px;
 
   text-transform:uppercase;
+
 }
 
 
 .detail-value{
+
   font-size:15px;
 
   color:#24332e;
@@ -906,110 +1089,62 @@ tbody tr:hover{
   line-height:1.5;
 
   word-break:break-word;
+
 }
 
 
-/* CALL WORK */
+/* =====================================================
+   WORK BOX
+===================================================== */
 
-.call-work-box{
+.work-section{
+
   margin-top:20px;
+
 }
 
 
-.call-work-box label{
-  display:block;
+.work-title{
+
+  font-size:16px;
 
   font-weight:bold;
 
   color:#263a34;
 
   margin-bottom:8px;
-}
-
-
-.call-work-box textarea{
-  width:100%;
-
-  min-height:110px;
-
-  resize:vertical;
-
-  border:
-  2px solid
-  #d7e9e4;
-
-  border-radius:13px;
-
-  padding:14px;
-
-  outline:none;
-
-  font-size:15px;
-
-  font-family:inherit;
-}
-
-
-.call-work-box textarea:focus{
-  border-color:#009b73;
-
-  box-shadow:
-  0 0 0 4px
-  rgba(0,155,115,.08);
-}
-
-
-.modal-actions{
-  margin-top:20px;
 
   display:flex;
 
-  justify-content:flex-end;
+  align-items:center;
 
-  gap:10px;
+  gap:8px;
+
 }
 
 
-.cancel-btn{
-  border:none;
+.work-content{
 
-  padding:
-  12px 20px;
+  background:white;
 
-  border-radius:11px;
+  border:
+  1px solid
+  #e2eeea;
 
-  background:#e9efed;
+  border-radius:13px;
 
-  color:#52615c;
+  padding:15px;
 
-  font-weight:bold;
+  min-height:80px;
 
-  cursor:pointer;
-}
+  color:#24332e;
 
+  line-height:1.6;
 
-.submit-btn{
-  border:none;
+  white-space:pre-wrap;
 
-  padding:
-  12px 22px;
+  word-break:break-word;
 
-  border-radius:11px;
-
-  background:#008f6b;
-
-  color:white;
-
-  font-weight:bold;
-
-  cursor:pointer;
-}
-
-
-.submit-btn:disabled{
-  opacity:.6;
-
-  cursor:not-allowed;
 }
 
 
@@ -1018,6 +1153,7 @@ tbody tr:hover{
 ===================================================== */
 
 .toast{
+
   position:fixed;
 
   right:25px;
@@ -1037,14 +1173,13 @@ tbody tr:hover{
 
   z-index:10000;
 
-  box-shadow:
-  0 10px 30px
-  rgba(0,0,0,.2);
 }
 
 
 .toast.show{
+
   display:block;
+
 }
 
 
@@ -1055,26 +1190,39 @@ tbody tr:hover{
 @media(max-width:900px){
 
   body{
+
     padding:12px;
+
   }
 
+
   .header{
+
     flex-direction:column;
 
     align-items:flex-start;
+
   }
+
 
   .header-buttons{
+
     width:100%;
+
   }
 
+
   .header-buttons .btn{
+
     flex:1;
 
     justify-content:center;
+
   }
 
+
   .user-bar{
+
     flex-direction:column;
 
     align-items:flex-start;
@@ -1082,10 +1230,14 @@ tbody tr:hover{
     gap:10px;
 
     padding:15px 18px;
+
   }
 
+
   .filter-row{
+
     justify-content:flex-start;
+
   }
 
 }
@@ -1094,50 +1246,79 @@ tbody tr:hover{
 @media(max-width:600px){
 
   .header{
+
     padding:20px;
 
     border-radius:20px;
+
   }
+
 
   .header-left{
+
     align-items:flex-start;
+
   }
 
+
   .header-icon{
+
     width:58px;
 
     height:58px;
 
     font-size:25px;
+
   }
+
 
   .header-title h1{
+
     font-size:25px;
+
   }
+
 
   .header-title p{
+
     font-size:13px;
+
   }
+
 
   .content-header{
+
     padding:
     20px;
+
   }
+
 
   .content-header h2{
+
     font-size:20px;
+
   }
+
 
   .detail-grid{
+
     grid-template-columns:1fr;
+
   }
+
 
   .detail-item.full{
+
     grid-column:auto;
+
   }
 
+
   .date-box input{
-    width:110px;
+
+    width:105px;
+
   }
 
 }
@@ -1159,33 +1340,43 @@ tbody tr:hover{
 
 <div class="header">
 
+
   <div class="header-left">
 
+
     <div class="header-icon">
-      <i class="fa-solid fa-phone-volume"></i>
+
+      <i class="fa-solid fa-clock-rotate-left"></i>
+
     </div>
+
 
     <div class="header-title">
 
       <h1>HISTORY</h1>
 
       <p>
-        View and manage all Support Log call requests
+        View and manage all completed Support Log records
       </p>
 
     </div>
+
 
   </div>
 
 
   <div class="header-buttons">
 
+
     <button
       class="btn btn-refresh"
       onclick="loadData()"
     >
+
       <i class="fa-solid fa-rotate"></i>
+
       Refresh
+
     </button>
 
 
@@ -1193,11 +1384,16 @@ tbody tr:hover{
       class="btn btn-dashboard"
       onclick="goDashboard()"
     >
+
       <i class="fa-solid fa-arrow-left"></i>
+
       Dashboard
+
     </button>
 
+
   </div>
+
 
 </div>
 
@@ -1208,25 +1404,31 @@ tbody tr:hover{
 
 <div class="user-bar">
 
+
   <div>
+
     <i class="fa-solid fa-user"></i>
+
     Logged in as:
+
     <span
       class="user-name"
       id="loggedUser"
     >
       User
     </span>
+
   </div>
 
 
   <div class="page-label">
 
-    <i class="fa-solid fa-phone"></i>
+    <i class="fa-solid fa-clock-rotate-left"></i>
 
-    Support Log Management
+    Support Log History
 
   </div>
+
 
 </div>
 
@@ -1238,18 +1440,20 @@ tbody tr:hover{
 <div class="filter-area">
 
 
-  <!-- SEARCH ALADA -->
+  <!-- SEARCH -->
 
   <div class="search-box">
 
     <i class="fa-solid fa-magnifying-glass"></i>
 
+
     <input
       type="text"
       id="searchInput"
-      placeholder="Search Customer ID, Problem, Reference, Support..."
+      placeholder="Search Customer ID, Problem, Reference, Support, Call..."
       oninput="applyFilters()"
     >
+
 
   </div>
 
@@ -1263,11 +1467,14 @@ tbody tr:hover{
 
     <div class="last-days-box">
 
+
       <i class="fa-regular fa-calendar"></i>
+
 
       <span class="filter-label">
         Last Days
       </span>
+
 
       <input
         type="number"
@@ -1278,6 +1485,7 @@ tbody tr:hover{
         oninput="applyFilters()"
       >
 
+
     </div>
 
 
@@ -1285,15 +1493,18 @@ tbody tr:hover{
 
     <div class="date-box">
 
+
       <label>
         From
       </label>
+
 
       <input
         type="date"
         id="fromDate"
         onchange="applyFilters()"
       >
+
 
     </div>
 
@@ -1302,15 +1513,18 @@ tbody tr:hover{
 
     <div class="date-box">
 
+
       <label>
         To
       </label>
+
 
       <input
         type="date"
         id="toDate"
         onchange="applyFilters()"
       >
+
 
     </div>
 
@@ -1323,13 +1537,16 @@ tbody tr:hover{
       onchange="applyFilters()"
     >
 
+
       <option value="all">
         All
       </option>
 
-      <option value="pending">
-        Pending
+
+      <option value="recent">
+        Recent
       </option>
+
 
     </select>
 
@@ -1347,13 +1564,15 @@ tbody tr:hover{
 
     </button>
 
+
   </div>
+
 
 </div>
 
 
 <!-- ===================================================
-     CONTENT
+     CONTENT CARD
 =================================================== -->
 
 <div class="content-card">
@@ -1361,17 +1580,23 @@ tbody tr:hover{
 
   <div class="content-header">
 
+
     <h2>
-      Support Log
+
+      Support Log History
+
     </h2>
 
 
     <div
-      class="pending-count"
-      id="pendingCount"
+      class="history-count"
+      id="historyCount"
     >
-      0 Pending
+
+      0 Records
+
     </div>
+
 
   </div>
 
@@ -1383,7 +1608,7 @@ tbody tr:hover{
 
     <div class="spinner"></div>
 
-    Loading pending calls...
+    Loading History...
 
   </div>
 
@@ -1400,185 +1625,225 @@ tbody tr:hover{
 
 <div
   class="modal"
-  id="callModal"
+  id="historyModal"
   onclick="outsideModal(event)"
 >
 
 
-<div class="modal-box">
+  <div class="modal-box">
 
 
-  <div class="modal-header">
-
-    <h3>
-      <i class="fa-solid fa-phone"></i>
-      Support Details
-    </h3>
+    <div class="modal-header">
 
 
-    <button
-      class="close-btn"
-      onclick="closeModal()"
-    >
-      ×
-    </button>
+      <h3>
 
-  </div>
+        <i class="fa-solid fa-file-lines"></i>
 
+        Complete Support Details
 
-  <div class="details">
+      </h3>
 
 
-    <div class="detail-grid">
+      <button
+        class="close-btn"
+        onclick="closeModal()"
+      >
+
+        ×
+
+      </button>
 
 
-      <div class="detail-item">
+    </div>
 
-        <div class="detail-label">
-          Customer ID
+
+    <div class="details">
+
+
+      <div class="detail-grid">
+
+
+        <!-- CUSTOMER -->
+
+        <div class="detail-item">
+
+
+          <div class="detail-label">
+
+            Customer ID
+
+          </div>
+
+
+          <div
+            class="detail-value"
+            id="mCustomer"
+          ></div>
+
+
         </div>
 
-        <div
-          class="detail-value"
-          id="mCustomer"
-        ></div>
+
+        <!-- DATE -->
+
+        <div class="detail-item">
+
+
+          <div class="detail-label">
+
+            Date
+
+          </div>
+
+
+          <div
+            class="detail-value"
+            id="mDate"
+          ></div>
+
+
+        </div>
+
+
+        <!-- PROBLEM -->
+
+        <div class="detail-item full">
+
+
+          <div class="detail-label">
+
+            Problem
+
+          </div>
+
+
+          <div
+            class="detail-value"
+            id="mProblem"
+          ></div>
+
+
+        </div>
+
+
+        <!-- REFERENCE -->
+
+        <div class="detail-item">
+
+
+          <div class="detail-label">
+
+            Reference
+
+          </div>
+
+
+          <div
+            class="detail-value"
+            id="mReference"
+          ></div>
+
+
+        </div>
+
+
+        <!-- SUPPORT -->
+
+        <div class="detail-item">
+
+
+          <div class="detail-label">
+
+            Support Person
+
+          </div>
+
+
+          <div
+            class="detail-value"
+            id="mSupport"
+          ></div>
+
+
+        </div>
+
+
+        <!-- CALL PERSON -->
+
+        <div class="detail-item full">
+
+
+          <div class="detail-label">
+
+            Call Person
+
+          </div>
+
+
+          <div
+            class="detail-value"
+            id="mCall"
+          ></div>
+
+
+        </div>
+
 
       </div>
 
 
-      <div class="detail-item">
+      <!-- SUPPORT WORK -->
 
-        <div class="detail-label">
-          Date
-        </div>
-
-        <div
-          class="detail-value"
-          id="mDate"
-        ></div>
-
-      </div>
+      <div class="work-section">
 
 
-      <div class="detail-item full">
+        <div class="work-title">
 
-        <div class="detail-label">
-          Problem
-        </div>
+          <i class="fa-solid fa-screwdriver-wrench"></i>
 
-        <div
-          class="detail-value"
-          id="mProblem"
-        ></div>
-
-      </div>
-
-
-      <div class="detail-item">
-
-        <div class="detail-label">
-          Reference
-        </div>
-
-        <div
-          class="detail-value"
-          id="mReference"
-        ></div>
-
-      </div>
-
-
-      <div class="detail-item">
-
-        <div class="detail-label">
-          Support
-        </div>
-
-        <div
-          class="detail-value"
-          id="mSupport"
-        ></div>
-
-      </div>
-
-
-      <div class="detail-item full">
-
-        <div class="detail-label">
           Support Work
+
         </div>
 
+
         <div
-          class="detail-value"
+          class="work-content"
           id="mSupportWork"
         ></div>
 
+
       </div>
 
 
-      <div class="detail-item">
+      <!-- CALL WORK -->
 
-        <div class="detail-label">
-          Call Person
+      <div class="work-section">
+
+
+        <div class="work-title">
+
+          <i class="fa-solid fa-phone"></i>
+
+          Call Work
+
         </div>
+
 
         <div
-          class="detail-value"
-          id="mCallPerson"
-        >
-          Auto
-        </div>
+          class="work-content"
+          id="mCallWork"
+        ></div>
+
 
       </div>
 
-
-    </div>
-
-
-    <!-- CALL WORK -->
-
-    <div class="call-work-box">
-
-      <label>
-        <i class="fa-solid fa-pen"></i>
-        Call Work
-      </label>
-
-
-      <textarea
-        id="callWorkInput"
-        placeholder="Write what happened during the call..."
-      ></textarea>
-
-    </div>
-
-
-    <div class="modal-actions">
-
-      <button
-        class="cancel-btn"
-        onclick="closeModal()"
-      >
-        Cancel
-      </button>
-
-
-      <button
-        class="submit-btn"
-        id="submitCallBtn"
-        onclick="submitCall()"
-      >
-        <i class="fa-solid fa-paper-plane"></i>
-        Submit
-      </button>
 
     </div>
 
 
   </div>
 
-
-</div>
 
 </div>
 
@@ -1610,6 +1875,8 @@ const API_URL =
 
 let allData = [];
 
+let filteredData = [];
+
 let selectedItem = null;
 
 
@@ -1618,7 +1885,9 @@ let selectedItem = null;
 ===================================================== */
 
 document.addEventListener(
+
   "DOMContentLoaded",
+
   function(){
 
     loadUser();
@@ -1626,6 +1895,7 @@ document.addEventListener(
     loadData();
 
   }
+
 );
 
 
@@ -1636,33 +1906,44 @@ document.addEventListener(
 function loadUser(){
 
   const username =
+
     localStorage.getItem("username") ||
+
     localStorage.getItem("userName") ||
+
     localStorage.getItem("name") ||
+
     sessionStorage.getItem("username") ||
+
     "User";
 
+
   document.getElementById(
+
     "loggedUser"
-  ).textContent =
-    username;
+
+  ).textContent = username;
 
 }
 
 
 /* =====================================================
-   LOAD DATA
+   LOAD HISTORY DATA
 ===================================================== */
 
 async function loadData(){
 
   const content =
+
     document.getElementById(
+
       "content"
+
     );
 
 
   content.className =
+
     "loading";
 
 
@@ -1670,49 +1951,65 @@ async function loadData(){
 
     '<div class="spinner"></div>' +
 
-    'Loading Support Log...';
+    'Loading History...';
 
 
   try{
 
 
     const response =
+
       await fetch(
 
         API_URL +
-        "?action=pendingCall&_=" +
+
+        "?action=history&_=" +
+
         Date.now(),
 
         {
+
           method:"GET",
 
           cache:"no-store"
+
         }
 
       );
 
 
     const result =
+
       await response.json();
 
 
     if(
+
       !result.success
+
     ){
 
       throw new Error(
+
         result.message ||
-        "Failed to load data."
+
+        "Failed to load History."
+
       );
 
     }
 
 
     allData =
+
       Array.isArray(
+
         result.data
+
       )
+
       ? result.data
+
       : [];
 
 
@@ -1721,11 +2018,14 @@ async function loadData(){
 
   }catch(error){
 
+
     content.className =
+
       "empty";
 
 
     content.innerHTML =
+
 
       '<div class="empty-icon">' +
 
@@ -1733,15 +2033,20 @@ async function loadData(){
 
       '</div>' +
 
-      '<h3>Failed to Load</h3>' +
+
+      '<h3>Failed to Load History</h3>' +
+
 
       '<p>' +
 
       escapeHtml(
+
         error.message
+
       ) +
 
       '</p>';
+
 
   }
 
@@ -1754,48 +2059,86 @@ async function loadData(){
 
 function applyFilters(){
 
+
   const search =
+
     document.getElementById(
+
       "searchInput"
+
     )
+
     .value
+
     .toLowerCase()
+
     .trim();
 
 
   const lastDaysValue =
+
     document.getElementById(
+
       "lastDays"
+
     ).value;
 
 
   const lastDays =
+
     lastDaysValue
+
     ? parseInt(
+
         lastDaysValue,
+
         10
+
       )
+
     : null;
 
 
   const fromDate =
+
     document.getElementById(
+
       "fromDate"
+
     ).value;
 
 
   const toDate =
+
     document.getElementById(
+
       "toDate"
+
     ).value;
 
 
-  let filtered =
+  const statusFilter =
+
+    document.getElementById(
+
+      "statusFilter"
+
+    ).value;
+
+
+  filteredData =
+
     allData.filter(
 
       function(item){
 
+
+        /* ==========================================
+           SEARCH
+        ========================================== */
+
         const searchable =
+
 
           (
 
@@ -1809,7 +2152,9 @@ function applyFilters(){
 
           ) +
 
+
           " " +
+
 
           (
 
@@ -1819,7 +2164,9 @@ function applyFilters(){
 
           ) +
 
+
           " " +
+
 
           (
 
@@ -1831,7 +2178,9 @@ function applyFilters(){
 
           ) +
 
+
           " " +
+
 
           (
 
@@ -1841,11 +2190,37 @@ function applyFilters(){
 
           ) +
 
+
           " " +
+
 
           (
 
             item.supportWork ||
+
+            ""
+
+          ) +
+
+
+          " " +
+
+
+          (
+
+            item.call ||
+
+            ""
+
+          ) +
+
+
+          " " +
+
+
+          (
+
+            item.callWork ||
 
             ""
 
@@ -1857,7 +2232,9 @@ function applyFilters(){
           search &&
 
           !searchable
+
           .toLowerCase()
+
           .includes(search)
 
         ){
@@ -1867,18 +2244,36 @@ function applyFilters(){
         }
 
 
+        /* ==========================================
+           DATE
+        ========================================== */
+
         const itemDate =
+
           parseDate(
+
             item.date
+
           );
 
 
+        /* ==========================================
+           LAST DAYS
+        ========================================== */
+
         if(
-          lastDays !== null
+
+          lastDays !== null &&
+
+          !isNaN(lastDays)
+
         ){
 
+
           if(
+
             !itemDate
+
           ){
 
             return false;
@@ -1887,35 +2282,47 @@ function applyFilters(){
 
 
           const today =
+
             new Date();
 
 
           today.setHours(
+
             23,
+
             59,
+
             59,
+
             999
+
           );
 
 
           const start =
+
             new Date(
+
               today
+
             );
 
 
           start.setDate(
 
-            start.getDate()
-            -
+            start.getDate() -
+
             lastDays
 
           );
 
 
           if(
+
             itemDate < start ||
+
             itemDate > today
+
           ){
 
             return false;
@@ -1925,20 +2332,34 @@ function applyFilters(){
         }
 
 
+        /* ==========================================
+           FROM DATE
+        ========================================== */
+
         if(
+
           fromDate
+
         ){
+
 
           const from =
+
             new Date(
+
               fromDate +
+
               "T00:00:00"
+
             );
 
 
           if(
+
             !itemDate ||
+
             itemDate < from
+
           ){
 
             return false;
@@ -1948,20 +2369,92 @@ function applyFilters(){
         }
 
 
+        /* ==========================================
+           TO DATE
+        ========================================== */
+
         if(
+
           toDate
+
         ){
 
+
           const to =
+
             new Date(
+
               toDate +
+
               "T23:59:59"
+
             );
 
 
           if(
+
             !itemDate ||
+
             itemDate > to
+
+          ){
+
+            return false;
+
+          }
+
+        }
+
+
+        /* ==========================================
+           RECENT FILTER
+        ========================================== */
+
+        if(
+
+          statusFilter ===
+
+          "recent"
+
+        ){
+
+
+          if(
+
+            !itemDate
+
+          ){
+
+            return false;
+
+          }
+
+
+          const now =
+
+            new Date();
+
+
+          const recentDate =
+
+            new Date();
+
+
+          recentDate.setDate(
+
+            recentDate.getDate() -
+
+            7
+
+          );
+
+
+          if(
+
+            itemDate < recentDate ||
+
+            itemDate > now
+
           ){
 
             return false;
@@ -1979,52 +2472,68 @@ function applyFilters(){
 
 
   renderData(
-    filtered
+
+    filteredData
+
   );
 
 }
 
 
 /* =====================================================
-   RENDER DATA
+   RENDER HISTORY
 ===================================================== */
 
 function renderData(data){
 
+
   const content =
+
     document.getElementById(
+
       "content"
+
     );
 
 
   document.getElementById(
-    "pendingCount"
+
+    "historyCount"
+
   ).textContent =
+
 
     data.length +
 
-    " Pending";
+    " Records";
 
 
   if(
+
     data.length === 0
+
   ){
 
+
     content.className =
+
       "empty";
 
 
     content.innerHTML =
 
+
       '<div class="empty-icon">' +
 
-      '<i class="fa-solid fa-check"></i>' +
+      '<i class="fa-solid fa-clock-rotate-left"></i>' +
 
       '</div>' +
 
-      '<h3>No Pending Call</h3>' +
 
-      '<p>There are currently no pending call requests.</p>';
+      '<h3>No History Found</h3>' +
+
+
+      '<p>No completed support records match your search or filter.</p>';
 
 
     return;
@@ -2033,34 +2542,48 @@ function renderData(data){
 
 
   content.className =
+
     "table-wrapper";
 
 
   let html =
 
+
     '<table>' +
+
 
     '<thead>' +
 
+
     '<tr>' +
+
 
     '<th>Customer ID</th>' +
 
+
     '<th>Date</th>' +
+
 
     '<th>Problem</th>' +
 
+
     '<th>Reference</th>' +
+
 
     '<th>Support</th>' +
 
-    '<th>Support Work</th>' +
+
+    '<th>Call Person</th>' +
+
 
     '<th>Action</th>' +
 
+
     '</tr>' +
 
+
     '</thead>' +
+
 
     '<tbody>';
 
@@ -2069,124 +2592,171 @@ function renderData(data){
 
     function(item,index){
 
+
       html +=
+
 
         '<tr>' +
 
+
         '<td>' +
+
 
         '<span class="customer-badge">' +
 
+
         '<i class="fa-solid fa-user"></i>' +
 
+
         escapeHtml(
+
 
           item.customerId ||
 
+
           item.customerNumber ||
+
 
           item.ip ||
 
+
           ""
 
         ) +
+
 
         '</span>' +
 
+
         '</td>' +
 
 
         '<td>' +
 
+
         escapeHtml(
+
 
           item.date ||
 
+
           ""
 
         ) +
+
 
         '</td>' +
 
 
         '<td>' +
 
+
         escapeHtml(
+
 
           item.problem ||
 
+
           ""
 
         ) +
+
 
         '</td>' +
 
 
         '<td>' +
 
+
         '<span class="ref-badge">' +
+
 
         escapeHtml(
 
+
           item.reference ||
 
+
           item.ref ||
+
 
           "-"
 
         ) +
 
+
         '</span>' +
+
 
         '</td>' +
 
 
         '<td>' +
 
+
         escapeHtml(
+
 
           item.support ||
 
+
           ""
 
         ) +
+
 
         '</td>' +
 
 
         '<td>' +
+
 
         escapeHtml(
 
-          item.supportWork ||
+
+          item.call ||
+
 
           ""
 
         ) +
+
 
         '</td>' +
 
 
         '<td>' +
 
-        '<button class="view-btn" ' +
+
+        '<button ' +
+
+
+        'class="view-btn" ' +
+
 
         'onclick="openModal(' +
 
+
         index +
+
 
         ')">' +
 
+
         '<i class="fa-solid fa-eye"></i>' +
+
 
         'View' +
 
+
         '</button>' +
+
 
         '</td>' +
 
 
         '</tr>';
+
 
     }
 
@@ -2195,17 +2765,16 @@ function renderData(data){
 
   html +=
 
+
     '</tbody>' +
+
 
     '</table>';
 
 
   content.innerHTML =
+
     html;
-
-
-  window.filteredData =
-    data;
 
 }
 
@@ -2216,12 +2785,16 @@ function renderData(data){
 
 function openModal(index){
 
+
   const data =
-    window.filteredData[index];
+
+    filteredData[index];
 
 
   if(
+
     !data
+
   ){
 
     return;
@@ -2230,100 +2803,131 @@ function openModal(index){
 
 
   selectedItem =
+
     data;
 
 
   document.getElementById(
+
     "mCustomer"
+
   ).textContent =
+
 
     data.customerId ||
 
+
     data.customerNumber ||
+
 
     data.ip ||
 
+
     "";
 
 
   document.getElementById(
+
     "mDate"
+
   ).textContent =
+
 
     data.date ||
 
+
     "";
 
 
   document.getElementById(
+
     "mProblem"
+
   ).textContent =
+
 
     data.problem ||
 
+
     "";
 
 
   document.getElementById(
+
     "mReference"
+
   ).textContent =
+
 
     data.reference ||
 
+
     data.ref ||
+
 
     "-";
 
 
   document.getElementById(
+
     "mSupport"
+
   ).textContent =
+
 
     data.support ||
 
+
     "";
 
 
   document.getElementById(
-    "mSupportWork"
+
+    "mCall"
+
   ).textContent =
+
+
+    data.call ||
+
+
+    "";
+
+
+  document.getElementById(
+
+    "mSupportWork"
+
+  ).textContent =
+
 
     data.supportWork ||
 
-    "";
 
-
-  /* AUTO USERNAME */
-
-  const username =
-
-    localStorage.getItem("username") ||
-
-    localStorage.getItem("userName") ||
-
-    localStorage.getItem("name") ||
-
-    sessionStorage.getItem("username") ||
-
-    "User";
+    "No Support Work recorded.";
 
 
   document.getElementById(
-    "mCallPerson"
+
+    "mCallWork"
+
   ).textContent =
 
-    username;
+
+    data.callWork ||
+
+
+    "No Call Work recorded.";
 
 
   document.getElementById(
-    "callWorkInput"
-  ).value = "";
 
+    "historyModal"
 
-  document.getElementById(
-    "callModal"
   ).classList.add(
+
     "show"
+
   );
 
 }
@@ -2335,13 +2939,20 @@ function openModal(index){
 
 function closeModal(){
 
+
   document.getElementById(
-    "callModal"
+
+    "historyModal"
+
   ).classList.remove(
+
     "show"
+
   );
 
+
   selectedItem =
+
     null;
 
 }
@@ -2353,201 +2964,16 @@ function closeModal(){
 
 function outsideModal(event){
 
+
   if(
+
     event.target.id ===
-    "callModal"
+
+    "historyModal"
+
   ){
 
     closeModal();
-
-  }
-
-}
-
-
-/* =====================================================
-   SUBMIT CALL
-===================================================== */
-
-async function submitCall(){
-
-  if(
-    !selectedItem
-  ){
-
-    return;
-
-  }
-
-
-  const callWork =
-    document.getElementById(
-      "callWorkInput"
-    )
-    .value
-    .trim();
-
-
-  if(
-    !callWork
-  ){
-
-    showToast(
-      "Please write Call Work."
-    );
-
-    return;
-
-  }
-
-
-  const username =
-
-    localStorage.getItem("username") ||
-
-    localStorage.getItem("userName") ||
-
-    localStorage.getItem("name") ||
-
-    sessionStorage.getItem("username") ||
-
-    "";
-
-
-  const customerId =
-
-    selectedItem.customerId ||
-
-    selectedItem.customerNumber ||
-
-    selectedItem.ip ||
-
-    "";
-
-
-  const button =
-    document.getElementById(
-      "submitCallBtn"
-    );
-
-
-  button.disabled =
-    true;
-
-
-  button.innerHTML =
-
-    '<i class="fa-solid fa-spinner fa-spin"></i>' +
-
-    ' Submitting...';
-
-
-  try{
-
-
-    const response =
-      await fetch(
-
-        API_URL,
-
-        {
-
-          method:"POST",
-
-          headers:{
-
-            "Content-Type":
-            "text/plain;charset=utf-8"
-
-          },
-
-          body:
-
-          JSON.stringify({
-
-            action:
-              "submitCall",
-
-            customerId:
-              customerId,
-
-            call:
-              username,
-
-            callWork:
-              callWork,
-
-            username:
-              username
-
-          })
-
-        }
-
-      );
-
-
-    const result =
-      await response.json();
-
-
-    if(
-      !result.success
-    ){
-
-      throw new Error(
-
-        result.message ||
-
-        "Submit failed."
-
-      );
-
-    }
-
-
-    closeModal();
-
-
-    showToast(
-
-      "Call completed successfully."
-
-    );
-
-
-    setTimeout(
-
-      function(){
-
-        loadData();
-
-      },
-
-      700
-
-    );
-
-
-  }catch(error){
-
-    showToast(
-
-      error.message
-
-    );
-
-  }finally{
-
-    button.disabled =
-      false;
-
-
-    button.innerHTML =
-
-      '<i class="fa-solid fa-paper-plane"></i>' +
-
-      ' Submit';
 
   }
 
@@ -2560,8 +2986,11 @@ async function submitCall(){
 
 function parseDate(value){
 
+
   if(
+
     !value
+
   ){
 
     return null;
@@ -2570,41 +2999,18 @@ function parseDate(value){
 
 
   const text =
+
     String(value)
+
     .trim();
 
 
-  /* Google Sheet Date Format */
+  /* ================================================
+     DD-MM-YYYY
+  ================================================ */
 
   let match =
 
-    text.match(
-
-      /^(\d{1,2})\/(\d{1,2})\/(\d{4})/
-
-    );
-
-
-  if(
-    match
-  ){
-
-    return new Date(
-
-      Number(match[3]),
-
-      Number(match[1]) - 1,
-
-      Number(match[2])
-
-    );
-
-  }
-
-
-  /* DD-MM-YYYY */
-
-  match =
 
     text.match(
 
@@ -2614,32 +3020,88 @@ function parseDate(value){
 
 
   if(
+
     match
+
   ){
+
 
     return new Date(
 
+
       Number(match[3]),
+
 
       Number(match[2]) - 1,
 
+
       Number(match[1])
+
 
     );
 
   }
 
 
+  /* ================================================
+     DD/MM/YYYY
+  ================================================ */
+
+  match =
+
+
+    text.match(
+
+      /^(\d{1,2})\/(\d{1,2})\/(\d{4})/
+
+    );
+
+
+  if(
+
+    match
+
+  ){
+
+
+    return new Date(
+
+
+      Number(match[3]),
+
+
+      Number(match[2]) - 1,
+
+
+      Number(match[1])
+
+
+    );
+
+  }
+
+
+  /* ================================================
+     STANDARD DATE
+  ================================================ */
+
   const date =
+
     new Date(
+
       text
+
     );
 
 
   return isNaN(
+
     date.getTime()
+
   )
+
   ? null
+
   : date;
 
 }
@@ -2651,29 +3113,41 @@ function parseDate(value){
 
 function clearFilters(){
 
+
   document.getElementById(
+
     "searchInput"
+
   ).value = "";
 
 
   document.getElementById(
+
     "lastDays"
+
   ).value = "";
 
 
   document.getElementById(
+
     "fromDate"
+
   ).value = "";
 
 
   document.getElementById(
+
     "toDate"
+
   ).value = "";
 
 
   document.getElementById(
+
     "statusFilter"
+
   ).value =
+
     "all";
 
 
@@ -2688,15 +3162,22 @@ function clearFilters(){
 
 function goDashboard(){
 
+
   if(
+
     document.referrer
+
   ){
+
 
     history.back();
 
+
   }else{
 
+
     window.location.href =
+
       "dashboard.html";
 
   }
@@ -2710,32 +3191,46 @@ function goDashboard(){
 
 function showToast(message){
 
+
   const toast =
+
     document.getElementById(
+
       "toast"
+
     );
 
 
   toast.textContent =
+
     message;
 
 
   toast.classList.add(
+
     "show"
+
   );
 
 
   setTimeout(
 
+
     function(){
 
+
       toast.classList.remove(
+
         "show"
+
       );
+
 
     },
 
+
     3000
+
 
   );
 
@@ -2748,33 +3243,56 @@ function showToast(message){
 
 function escapeHtml(value){
 
+
   return String(
+
     value || ""
+
   )
 
+
   .replace(
+
     /&/g,
+
     "&amp;"
+
   )
 
+
   .replace(
+
     /</g,
+
     "&lt;"
+
   )
 
+
   .replace(
+
     />/g,
+
     "&gt;"
+
   )
 
+
   .replace(
+
     /"/g,
+
     "&quot;"
+
   )
 
+
   .replace(
+
     /'/g,
+
     "&#039;"
+
   );
 
 }
@@ -2790,9 +3308,13 @@ document.addEventListener(
 
   function(event){
 
+
     if(
+
       event.key ===
+
       "Escape"
+
     ){
 
       closeModal();
@@ -2805,5 +3327,7 @@ document.addEventListener(
 
 </script>
 
+
 </body>
+
 </html>

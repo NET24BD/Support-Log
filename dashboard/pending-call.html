@@ -2552,6 +2552,15 @@ async function loadPendingCall(){
 
 /* =====================================================
    DATE CHECK
+   OLD DATA FILTER
+
+   Example:
+   Last Days = 7
+
+   আজ থেকে 7 দিন আগের এবং তার আগের
+   পুরোনো data দেখাবে।
+
+   গত 7 দিনের নতুন data দেখাবে না।
 ===================================================== */
 
 function isWithinDays(
@@ -2559,6 +2568,8 @@ function isWithinDays(
     days
 ){
 
+
+    // খালি বা 0 হলে সব data দেখাবে
 
     if(
         !days ||
@@ -2570,6 +2581,8 @@ function isWithinDays(
     }
 
 
+    // Date না থাকলে দেখাবে না
+
     if(!dateValue){
 
         return false;
@@ -2577,12 +2590,108 @@ function isWithinDays(
     }
 
 
-    const itemDate =
+    let itemDate;
 
-    new Date(
+
+    const value =
+
+    String(
         dateValue
-    );
+    ).trim();
 
+
+    // =================================================
+    // DD-MM-YYYY
+    // Example: 15-07-2026
+    // =================================================
+
+    if(
+        /^\d{2}-\d{2}-\d{4}$/.test(
+            value
+        )
+    ){
+
+        const parts =
+
+        value.split("-");
+
+
+        itemDate =
+
+        new Date(
+
+            Number(
+                parts[2]
+            ),
+
+            Number(
+                parts[1]
+            ) - 1,
+
+            Number(
+                parts[0]
+            )
+
+        );
+
+    }
+
+
+    // =================================================
+    // DD/MM/YYYY
+    // Example: 15/07/2026
+    // =================================================
+
+    else if(
+        /^\d{2}\/\d{2}\/\d{4}$/.test(
+            value
+        )
+    ){
+
+        const parts =
+
+        value.split("/");
+
+
+        itemDate =
+
+        new Date(
+
+            Number(
+                parts[2]
+            ),
+
+            Number(
+                parts[1]
+            ) - 1,
+
+            Number(
+                parts[0]
+            )
+
+        );
+
+    }
+
+
+    // =================================================
+    // অন্যান্য Date Format
+    // =================================================
+
+    else{
+
+        itemDate =
+
+        new Date(
+            value
+        );
+
+    }
+
+
+    // =================================================
+    // Invalid Date
+    // =================================================
 
     if(
         isNaN(
@@ -2590,39 +2699,84 @@ function isWithinDays(
         )
     ){
 
-        return true;
+        return false;
 
     }
 
 
-    const now =
-        new Date();
+    // Item Date-এর সময় 00:00 করা
 
-
-    const diff =
-
-    now.getTime() -
-
-    itemDate.getTime();
-
-
-    const diffDays =
-
-    diff /
-
-    (
-        1000 *
-        60 *
-        60 *
-        24
+    itemDate.setHours(
+        0,
+        0,
+        0,
+        0
     );
 
 
+    // =================================================
+    // আজকের তারিখ
+    // =================================================
+
+    const today =
+
+    new Date();
+
+
+    today.setHours(
+        0,
+        0,
+        0,
+        0
+    );
+
+
+    // =================================================
+    // আজ থেকে নির্দিষ্ট দিন আগে
+    // =================================================
+
+    const cutoffDate =
+
+    new Date(
+        today
+    );
+
+
+    cutoffDate.setDate(
+
+        cutoffDate.getDate()
+
+        -
+
+        Number(
+            days
+        )
+
+    );
+
+
+    cutoffDate.setHours(
+        0,
+        0,
+        0,
+        0
+    );
+
+
+    // =================================================
+    // RESULT
+    //
+    // 7 দিলে:
+    // আজ থেকে 7 দিন আগের এবং তার আগের data দেখাবে
+    //
+    // 7 দিনের ভেতরের নতুন data দেখাবে না
+    // =================================================
+
     return (
 
-        diffDays >= 0 &&
+        itemDate <=
 
-        diffDays <= days
+        cutoffDate
 
     );
 

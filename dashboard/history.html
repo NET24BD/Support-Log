@@ -1,585 +1,1296 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Support History</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<title>History | LINK4 Communication</title>
+
 
 <style>
+
+/* =====================================================
+   GLOBAL
+===================================================== */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
 }
+
 
 body{
+
     min-height:100vh;
-    background:linear-gradient(135deg,#eef2ff,#f8fafc);
-    padding:25px;
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    background:#eef2f7;
+
     color:#1e293b;
+
+    padding:25px;
+
 }
 
-/* MAIN CONTAINER */
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
 
 .container{
-    max-width:1250px;
+
+    width:100%;
+
+    max-width:1400px;
+
     margin:auto;
-    background:#ffffff;
-    border-radius:20px;
-    padding:25px;
-    box-shadow:0 15px 40px rgba(15,23,42,.12);
+
 }
 
-/* HEADER */
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 .header{
+
+    background:#ffffff;
+
+    border-radius:16px;
+
+    padding:22px 25px;
+
+    margin-bottom:20px;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
     gap:15px;
-    flex-wrap:wrap;
-    margin-bottom:25px;
+
+    box-shadow:
+    0 5px 20px
+    rgba(15,23,42,0.08);
+
+    border:1px solid #e2e8f0;
+
 }
 
-.title{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
 
-.title-icon{
-    width:48px;
-    height:48px;
-    border-radius:14px;
-    background:linear-gradient(135deg,#4f46e5,#7c3aed);
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:22px;
-}
+.header-left h1{
 
-.title h1{
-    font-size:24px;
+    font-size:25px;
+
     color:#0f172a;
+
+    margin-bottom:5px;
+
 }
 
-.title p{
-    font-size:13px;
+
+.header-left p{
+
     color:#64748b;
-    margin-top:4px;
-}
 
-/* TOP CONTROLS */
-
-.controls{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-bottom:22px;
-}
-
-.search-box{
-    flex:1;
-    min-width:240px;
-    position:relative;
-}
-
-.search-box input{
-    width:100%;
-    padding:13px 16px 13px 44px;
-    border:1px solid #dbe3ef;
-    border-radius:12px;
-    outline:none;
     font-size:14px;
-    background:#f8fafc;
-    transition:.2s;
+
 }
 
-.search-box input:focus{
-    border-color:#6366f1;
-    background:white;
-    box-shadow:0 0 0 4px rgba(99,102,241,.1);
+
+.header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
 }
 
-.search-icon{
-    position:absolute;
-    left:15px;
-    top:50%;
-    transform:translateY(-50%);
-    color:#64748b;
-}
 
-select{
-    padding:13px 15px;
-    border:1px solid #dbe3ef;
-    border-radius:12px;
-    background:#f8fafc;
-    outline:none;
-    cursor:pointer;
-}
-
-button{
-    border:none;
-    cursor:pointer;
-    border-radius:12px;
-    padding:13px 18px;
-    font-weight:bold;
-    transition:.2s;
-}
+/* =====================================================
+   REFRESH BUTTON
+===================================================== */
 
 .refresh-btn{
-    background:#4f46e5;
+
+    border:none;
+
+    background:#2563eb;
+
     color:white;
+
+    padding:11px 18px;
+
+    border-radius:9px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:0.2s;
+
 }
+
 
 .refresh-btn:hover{
-    background:#4338ca;
+
+    background:#1d4ed8;
+
     transform:translateY(-1px);
+
 }
 
-/* TABLE */
+
+.refresh-btn:active{
+
+    transform:scale(0.97);
+
+}
+
+
+/* =====================================================
+   FILTER BOX
+===================================================== */
+
+.filter-box{
+
+    background:#ffffff;
+
+    padding:20px;
+
+    border-radius:16px;
+
+    margin-bottom:20px;
+
+    display:grid;
+
+    grid-template-columns:
+    1.5fr
+    1fr
+    1fr
+    auto;
+
+    gap:12px;
+
+    box-shadow:
+    0 5px 20px
+    rgba(15,23,42,0.06);
+
+    border:1px solid #e2e8f0;
+
+}
+
+
+.input-group{
+
+    position:relative;
+
+}
+
+
+.input-group input{
+
+    width:100%;
+
+    height:44px;
+
+    border:1px solid #cbd5e1;
+
+    border-radius:9px;
+
+    padding:0 14px;
+
+    outline:none;
+
+    font-size:14px;
+
+    background:#f8fafc;
+
+    color:#1e293b;
+
+    transition:0.2s;
+
+}
+
+
+.input-group input:focus{
+
+    border-color:#2563eb;
+
+    background:#ffffff;
+
+    box-shadow:
+    0 0 0 3px
+    rgba(37,99,235,0.10);
+
+}
+
+
+.clear-btn{
+
+    height:44px;
+
+    padding:0 18px;
+
+    border:none;
+
+    border-radius:9px;
+
+    background:#64748b;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:0.2s;
+
+}
+
+
+.clear-btn:hover{
+
+    background:#475569;
+
+}
+
+
+/* =====================================================
+   STATUS BAR
+===================================================== */
+
+.status-bar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#ffffff;
+
+    padding:14px 18px;
+
+    border-radius:12px;
+
+    margin-bottom:15px;
+
+    border:1px solid #e2e8f0;
+
+}
+
+
+.status-text{
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+
+
+.count-badge{
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+
+/* =====================================================
+   TABLE CARD
+===================================================== */
+
+.table-card{
+
+    background:#ffffff;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    border:1px solid #e2e8f0;
+
+    box-shadow:
+    0 5px 20px
+    rgba(15,23,42,0.06);
+
+}
+
 
 .table-wrapper{
+
     width:100%;
+
     overflow-x:auto;
-    border:1px solid #e2e8f0;
-    border-radius:15px;
+
 }
+
 
 table{
+
     width:100%;
+
     border-collapse:collapse;
-    min-width:850px;
+
+    min-width:800px;
+
 }
+
 
 thead{
-    background:linear-gradient(135deg,#4f46e5,#6366f1);
-    color:white;
+
+    background:#f1f5f9;
+
 }
 
-th{
+
+thead th{
+
     padding:15px 14px;
+
     text-align:left;
+
     font-size:13px;
+
+    color:#475569;
+
+    font-weight:700;
+
+    border-bottom:1px solid #e2e8f0;
+
     white-space:nowrap;
+
 }
 
-td{
-    padding:14px;
-    border-bottom:1px solid #eef2f7;
-    font-size:13px;
+
+tbody td{
+
+    padding:15px 14px;
+
+    font-size:14px;
+
+    color:#334155;
+
+    border-bottom:1px solid #f1f5f9;
+
     vertical-align:middle;
+
 }
+
 
 tbody tr{
-    transition:.2s;
+
+    transition:0.15s;
+
 }
+
 
 tbody tr:hover{
-    background:#f8faff;
+
+    background:#f8fafc;
+
 }
+
 
 tbody tr:last-child td{
+
     border-bottom:none;
+
 }
 
-/* BADGES */
 
-.customer-badge{
-    display:inline-block;
-    padding:6px 10px;
-    background:#eef2ff;
-    color:#4338ca;
-    border-radius:8px;
-    font-weight:bold;
+/* =====================================================
+   CUSTOMER ID
+===================================================== */
+
+.customer-id{
+
+    font-weight:700;
+
+    color:#2563eb;
+
 }
+
+
+/* =====================================================
+   SUPPORT BADGE
+===================================================== */
 
 .support-badge{
+
     display:inline-block;
-    padding:6px 10px;
+
     background:#ecfdf5;
+
     color:#047857;
-    border-radius:8px;
-}
 
-.call-badge{
-    display:inline-block;
     padding:6px 10px;
-    background:#fff7ed;
-    color:#c2410c;
-    border-radius:8px;
+
+    border-radius:7px;
+
+    font-size:12px;
+
+    font-weight:700;
+
 }
 
-/* VIEW BUTTON */
+
+/* =====================================================
+   VIEW BUTTON
+===================================================== */
 
 .view-btn{
-    background:linear-gradient(135deg,#0ea5e9,#2563eb);
+
+    border:none;
+
+    background:#0f766e;
+
     color:white;
-    padding:9px 15px;
-    font-size:12px;
+
+    padding:8px 14px;
+
+    border-radius:7px;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    transition:0.2s;
+
 }
+
 
 .view-btn:hover{
+
+    background:#115e59;
+
     transform:translateY(-1px);
-    box-shadow:0 5px 15px rgba(37,99,235,.25);
+
 }
 
-/* EMPTY */
 
-.empty{
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.empty-state{
+
     text-align:center;
-    padding:50px 20px;
+
+    padding:60px 20px;
+
     color:#64748b;
+
 }
+
 
 .empty-icon{
-    font-size:40px;
-    margin-bottom:10px;
+
+    font-size:42px;
+
+    margin-bottom:12px;
+
 }
 
-/* LOADING */
+
+.empty-state h3{
+
+    color:#334155;
+
+    margin-bottom:7px;
+
+}
+
+
+.empty-state p{
+
+    font-size:14px;
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
 
 .loading{
+
     text-align:center;
-    padding:50px;
+
+    padding:50px 20px;
+
     color:#64748b;
+
 }
+
 
 .spinner{
+
     width:35px;
+
     height:35px;
+
     border:4px solid #e2e8f0;
-    border-top-color:#4f46e5;
+
+    border-top-color:#2563eb;
+
     border-radius:50%;
-    animation:spin 1s linear infinite;
-    margin:0 auto 15px;
+
+    animation:
+    spin 0.8s linear infinite;
+
+    margin:
+    0 auto 15px;
+
 }
+
 
 @keyframes spin{
+
     to{
+
         transform:rotate(360deg);
+
     }
+
 }
 
-/* MODAL */
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.error-state{
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    color:#dc2626;
+
+}
+
+
+.error-state button{
+
+    margin-top:15px;
+
+    border:none;
+
+    background:#dc2626;
+
+    color:white;
+
+    padding:9px 16px;
+
+    border-radius:7px;
+
+    cursor:pointer;
+
+}
+
+
+/* =====================================================
+   MODAL OVERLAY
+===================================================== */
+
+.modal-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(15,23,42,0.55);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    z-index:9999;
+
+    backdrop-filter:
+    blur(4px);
+
+}
+
+
+.modal-overlay.active{
+
+    display:flex;
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
 
 .modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(15,23,42,.65);
-    backdrop-filter:blur(5px);
-    z-index:9999;
-    padding:20px;
-    overflow-y:auto;
-}
 
-.modal.show{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.modal-box{
     width:100%;
+
     max-width:650px;
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 25px 70px rgba(0,0,0,.3);
-    animation:popup .25s ease;
+
+    max-height:
+    90vh;
+
+    overflow-y:auto;
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 20px 60px
+    rgba(15,23,42,0.25);
+
+    animation:
+    modalOpen 0.2s ease;
+
 }
 
-@keyframes popup{
+
+@keyframes modalOpen{
+
     from{
+
         opacity:0;
-        transform:scale(.94) translateY(10px);
+
+        transform:
+        translateY(15px)
+        scale(0.98);
+
     }
+
     to{
+
         opacity:1;
-        transform:scale(1) translateY(0);
+
+        transform:
+        translateY(0)
+        scale(1);
+
     }
+
 }
+
+
+/* =====================================================
+   MODAL HEADER
+===================================================== */
 
 .modal-header{
+
     padding:20px 22px;
-    background:linear-gradient(135deg,#4f46e5,#7c3aed);
-    color:white;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
+    border-bottom:1px solid #e2e8f0;
+
+    position:sticky;
+
+    top:0;
+
+    background:#ffffff;
+
+    z-index:2;
+
 }
+
 
 .modal-header h2{
-    font-size:19px;
+
+    font-size:20px;
+
+    color:#0f172a;
+
 }
+
 
 .close-btn{
-    width:36px;
-    height:36px;
-    padding:0;
+
+    width:35px;
+
+    height:35px;
+
+    border:none;
+
     border-radius:50%;
-    background:rgba(255,255,255,.2);
-    color:white;
+
+    background:#f1f5f9;
+
+    color:#475569;
+
     font-size:20px;
+
+    cursor:pointer;
+
+    transition:0.2s;
+
 }
+
 
 .close-btn:hover{
-    background:rgba(255,255,255,.3);
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
 }
+
+
+/* =====================================================
+   MODAL BODY
+===================================================== */
 
 .modal-body{
+
     padding:22px;
+
 }
 
-.info-grid{
+
+.detail-grid{
+
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+    1fr
+    1fr;
+
     gap:14px;
+
 }
 
-.info-card{
+
+.detail-item{
+
     background:#f8fafc;
+
     border:1px solid #e2e8f0;
-    border-radius:12px;
-    padding:14px;
+
+    border-radius:10px;
+
+    padding:13px 14px;
+
 }
 
-.info-card.full{
-    grid-column:1 / -1;
+
+.detail-item.full{
+
+    grid-column:
+    1 / -1;
+
 }
 
-.info-label{
+
+.detail-label{
+
     display:block;
+
     font-size:11px;
+
     color:#64748b;
+
+    font-weight:700;
+
     text-transform:uppercase;
-    letter-spacing:.5px;
+
     margin-bottom:6px;
-    font-weight:bold;
+
+    letter-spacing:0.4px;
+
 }
 
-.info-value{
+
+.detail-value{
+
+    color:#1e293b;
+
     font-size:14px;
-    color:#0f172a;
+
     line-height:1.5;
-    white-space:pre-wrap;
+
     word-break:break-word;
+
 }
 
-/* FOOTER */
 
-.footer{
+/* =====================================================
+   WORK SECTION
+===================================================== */
+
+.work-section{
+
     margin-top:20px;
-    display:flex;
-    justify-content:space-between;
-    color:#64748b;
-    font-size:12px;
+
 }
 
-/* RESPONSIVE */
 
-@media(max-width:650px){
+.work-title{
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#0f172a;
+
+    margin-bottom:10px;
+
+}
+
+
+.work-box{
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    border-left:
+    4px solid #2563eb;
+
+    border-radius:9px;
+
+    padding:14px;
+
+    margin-bottom:10px;
+
+}
+
+
+.work-box.call-work{
+
+    border-left-color:#0f766e;
+
+}
+
+
+.work-box-title{
+
+    font-size:12px;
+
+    font-weight:700;
+
+    color:#64748b;
+
+    margin-bottom:6px;
+
+}
+
+
+.work-box-text{
+
+    font-size:14px;
+
+    color:#334155;
+
+    line-height:1.6;
+
+    white-space:pre-wrap;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px){
+
+    .filter-box{
+
+        grid-template-columns:
+        1fr
+        1fr;
+
+    }
+
+}
+
+
+@media(max-width:600px){
 
     body{
+
         padding:12px;
+
     }
 
-    .container{
-        padding:15px;
-        border-radius:15px;
-    }
 
-    .title h1{
-        font-size:20px;
-    }
+    .header{
 
-    .info-grid{
-        grid-template-columns:1fr;
-    }
+        padding:18px;
 
-    .info-card.full{
-        grid-column:auto;
-    }
-
-    .footer{
         flex-direction:column;
-        gap:5px;
+
+        align-items:flex-start;
+
+    }
+
+
+    .header-right{
+
+        width:100%;
+
+    }
+
+
+    .refresh-btn{
+
+        width:100%;
+
+    }
+
+
+    .filter-box{
+
+        grid-template-columns:
+        1fr;
+
+        padding:15px;
+
+    }
+
+
+    .status-bar{
+
+        padding:12px;
+
+    }
+
+
+    .detail-grid{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+
+    .detail-item.full{
+
+        grid-column:auto;
+
+    }
+
+
+    .modal{
+
+        max-height:
+        94vh;
+
     }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="container">
 
-    <!-- HEADER -->
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
 
     <div class="header">
 
-        <div class="title">
+        <div class="header-left">
 
-            <div class="title-icon">
-                📋
-            </div>
+            <h1>
+                History
+            </h1>
 
-            <div>
-                <h1>Support History</h1>
-                <p>Completed support and call records</p>
-            </div>
+            <p>
+                LINK4 Communication Support Management System
+            </p>
+
+        </div>
+
+
+        <div class="header-right">
+
+            <button
+                class="refresh-btn"
+                onclick="loadHistory()"
+            >
+                ↻ Refresh
+            </button>
 
         </div>
 
     </div>
 
 
-    <!-- CONTROLS -->
 
-    <div class="controls">
+    <!-- =================================================
+         FILTER
+    ================================================== -->
 
-        <div class="search-box">
+    <div class="filter-box">
 
-            <span class="search-icon">🔍</span>
+
+        <div class="input-group">
 
             <input
                 type="text"
                 id="searchInput"
                 placeholder="Search Customer ID, Problem, Reference..."
-                oninput="filterHistory()"
+                oninput="applyFilters()"
             >
 
         </div>
 
 
-        <select
-            id="dateFilter"
-            onchange="filterHistory()"
-        >
+        <div class="input-group">
 
-            <option value="">All Records</option>
+            <input
+                type="text"
+                id="supportInput"
+                placeholder="Search Support Name..."
+                oninput="applyFilters()"
+            >
 
-            <option value="today">
-                Today
-            </option>
+        </div>
 
-            <option value="7">
-                Last 7 Days
-            </option>
 
-            <option value="30">
-                Last 30 Days
-            </option>
+        <div class="input-group">
 
-        </select>
+            <input
+                type="date"
+                id="dateInput"
+                onchange="applyFilters()"
+            >
+
+        </div>
 
 
         <button
-            class="refresh-btn"
-            onclick="loadHistory()"
+            class="clear-btn"
+            onclick="clearFilters()"
         >
-            🔄 Refresh
+            Clear
         </button>
 
-    </div>
-
-
-    <!-- TABLE -->
-
-    <div class="table-wrapper">
-
-        <table>
-
-            <thead>
-
-                <tr>
-
-                    <th>Customer ID</th>
-
-                    <th>Date</th>
-
-                    <th>Problem</th>
-
-                    <th>Reference</th>
-
-                    <th>Support</th>
-
-                    <th>Call</th>
-
-                    <th>Action</th>
-
-                </tr>
-
-            </thead>
-
-
-            <tbody id="historyBody">
-
-                <tr>
-
-                    <td
-                        colspan="7"
-                        class="loading"
-                    >
-
-                        <div class="spinner"></div>
-
-                        Loading history...
-
-                    </td>
-
-                </tr>
-
-            </tbody>
-
-        </table>
 
     </div>
 
 
-    <!-- FOOTER -->
 
-    <div class="footer">
+    <!-- =================================================
+         STATUS
+    ================================================== -->
 
-        <span id="recordCount">
+    <div class="status-bar">
+
+        <div
+            class="status-text"
+            id="statusText"
+        >
+            Loading history...
+        </div>
+
+
+        <div
+            class="count-badge"
+            id="countBadge"
+        >
             0 Records
-        </span>
+        </div>
 
-        <span>
-            LINK4 Communication
-        </span>
+    </div>
+
+
+
+    <!-- =================================================
+         TABLE
+    ================================================== -->
+
+    <div class="table-card">
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Customer ID
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+
+                        <th>
+                            Problem
+                        </th>
+
+                        <th>
+                            Reference
+                        </th>
+
+                        <th>
+                            Support
+                        </th>
+
+                        <th>
+                            Call
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody
+                    id="historyBody"
+                >
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- EMPTY -->
+
+        <div
+            id="emptyState"
+            class="empty-state"
+            style="display:none;"
+        >
+
+            <div class="empty-icon">
+                📋
+            </div>
+
+            <h3>
+                No History Found
+            </h3>
+
+            <p>
+                No matching history records are available.
+            </p>
+
+        </div>
+
+
+        <!-- LOADING -->
+
+        <div
+            id="loadingState"
+            class="loading"
+        >
+
+            <div class="spinner"></div>
+
+            <div>
+                Loading history...
+            </div>
+
+        </div>
+
+
+        <!-- ERROR -->
+
+        <div
+            id="errorState"
+            class="error-state"
+            style="display:none;"
+        >
+
+            <div>
+                ⚠️ Failed to load history.
+            </div>
+
+            <button
+                onclick="loadHistory()"
+            >
+                Try Again
+            </button>
+
+        </div>
 
     </div>
 
 </div>
 
 
-<!-- =================================================
+
+<!-- =====================================================
      VIEW MODAL
-================================================= -->
+===================================================== -->
 
 <div
-    class="modal"
+    class="modal-overlay"
     id="viewModal"
     onclick="closeModalOutside(event)"
 >
 
+
     <div
-        class="modal-box"
+        class="modal"
         onclick="event.stopPropagation()"
     >
+
 
         <div class="modal-header">
 
             <h2>
-                📄 History Details
+                History Details
             </h2>
+
 
             <button
                 class="close-btn"
@@ -591,10 +1302,58 @@ tbody tr:last-child td{
         </div>
 
 
-        <div
-            class="modal-body"
-            id="modalBody"
-        >
+
+        <div class="modal-body">
+
+
+            <div
+                class="detail-grid"
+                id="detailGrid"
+            >
+
+            </div>
+
+
+            <div class="work-section">
+
+
+                <div class="work-title">
+                    Work Details
+                </div>
+
+
+                <div class="work-box">
+
+                    <div class="work-box-title">
+                        SUPPORT WORK
+                    </div>
+
+                    <div
+                        class="work-box-text"
+                        id="supportWorkDetail"
+                    >
+                    </div>
+
+                </div>
+
+
+                <div class="work-box call-work">
+
+                    <div class="work-box-title">
+                        CALL WORK
+                    </div>
+
+                    <div
+                        class="work-box-text"
+                        id="callWorkDetail"
+                    >
+                    </div>
+
+                </div>
+
+
+            </div>
+
 
         </div>
 
@@ -603,11 +1362,16 @@ tbody tr:last-child td{
 </div>
 
 
+
 <script>
 
 /* =====================================================
    CONFIGURATION
 ===================================================== */
+
+/*
+   আপনার Apps Script Web App URL এখানে দিন।
+*/
 
 const API_URL =
 "https://script.google.com/macros/s/AKfycbw1NiYF5qNEFGVXdIWZ3I3lpJXEX57uBM0M06oqVVJcRUiuCTAf8NkKycGWtyIhhxWh4g/exec";
@@ -619,6 +1383,22 @@ const API_URL =
 
 let historyData = [];
 
+let filteredData = [];
+
+
+/* =====================================================
+   PAGE LOAD
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        loadHistory();
+
+    }
+);
+
 
 /* =====================================================
    LOAD HISTORY
@@ -626,46 +1406,40 @@ let historyData = [];
 
 async function loadHistory(){
 
-    const body =
-        document.getElementById(
-            "historyBody"
-        );
-
-    body.innerHTML = `
-
-        <tr>
-
-            <td
-                colspan="7"
-                class="loading"
-            >
-
-                <div class="spinner"></div>
-
-                Loading history...
-
-            </td>
-
-        </tr>
-
-    `;
+    showLoading();
 
 
     try{
 
+
+        /*
+           IMPORTANT:
+
+           এই API action আপনার Apps Script
+           doGet-এ add করতে হবে:
+
+           action=history
+
+        */
+
+
         const response =
             await fetch(
-
                 API_URL +
-                "?action=history&_=" +
-                Date.now(),
-
-                {
-                    method:"GET",
-                    cache:"no-store"
-                }
-
+                "?action=history&t=" +
+                Date.now()
             );
+
+
+        if(
+            !response.ok
+        ){
+
+            throw new Error(
+                "HTTP Error"
+            );
+
+        }
 
 
         const result =
@@ -677,10 +1451,8 @@ async function loadHistory(){
         ){
 
             throw new Error(
-
                 result.message ||
-                "Failed to load history."
-
+                "History loading failed"
             );
 
         }
@@ -694,41 +1466,20 @@ async function loadHistory(){
             : [];
 
 
-        renderHistory(
-            historyData
-        );
+        filteredData =
+            [...historyData];
+
+
+        renderHistory();
 
 
     }catch(error){
 
-        body.innerHTML = `
+        console.error(
+            error
+        );
 
-            <tr>
-
-                <td
-                    colspan="7"
-                    class="empty"
-                >
-
-                    <div class="empty-icon">
-                        ⚠️
-                    </div>
-
-                    Failed to load history
-
-                    <br>
-
-                    <small>
-                        ${escapeHtml(
-                            error.message
-                        )}
-                    </small>
-
-                </td>
-
-            </tr>
-
-        `;
+        showError();
 
     }
 
@@ -739,142 +1490,152 @@ async function loadHistory(){
    RENDER HISTORY
 ===================================================== */
 
-function renderHistory(data){
+function renderHistory(){
 
-    const body =
+
+    const tbody =
         document.getElementById(
             "historyBody"
         );
 
 
-    document.getElementById(
-        "recordCount"
-    ).textContent =
-
-        data.length +
-
-        (
-            data.length === 1
-            ? " Record"
-            : " Records"
+    const loading =
+        document.getElementById(
+            "loadingState"
         );
 
 
+    const empty =
+        document.getElementById(
+            "emptyState"
+        );
+
+
+    const error =
+        document.getElementById(
+            "errorState"
+        );
+
+
+    loading.style.display =
+        "none";
+
+
+    error.style.display =
+        "none";
+
+
+    tbody.innerHTML =
+        "";
+
+
+    document.getElementById(
+        "countBadge"
+    ).textContent =
+        filteredData.length +
+        " Records";
+
+
+    document.getElementById(
+        "statusText"
+    ).textContent =
+
+        filteredData.length
+        +
+        " history record"
+        +
+        (
+            filteredData.length !== 1
+            ? "s"
+            : ""
+        )
+        +
+        " found";
+
+
     if(
-        !data.length
+        filteredData.length === 0
     ){
 
-        body.innerHTML = `
-
-            <tr>
-
-                <td
-                    colspan="7"
-                    class="empty"
-                >
-
-                    <div class="empty-icon">
-                        📭
-                    </div>
-
-                    No history records found.
-
-                </td>
-
-            </tr>
-
-        `;
+        empty.style.display =
+            "block";
 
         return;
 
     }
 
 
-    body.innerHTML = "";
+    empty.style.display =
+        "none";
 
 
-    data.forEach(
+    filteredData.forEach(
 
         function(item,index){
 
-            const row =
+
+            const tr =
                 document.createElement(
                     "tr"
                 );
 
 
-            row.innerHTML = `
+            tr.innerHTML = `
 
                 <td>
-
-                    <span class="customer-badge">
-
-                        ${escapeHtml(
+                    <span class="customer-id">
+                        ${escapeHTML(
                             item.customerId ||
                             item.customerNumber ||
                             item.ip ||
                             ""
                         )}
-
                     </span>
-
                 </td>
 
 
                 <td>
-
-                    ${escapeHtml(
-                        item.date || ""
+                    ${escapeHTML(
+                        item.date ||
+                        ""
                     )}
-
                 </td>
 
 
                 <td>
-
-                    ${escapeHtml(
-                        item.problem || ""
+                    ${escapeHTML(
+                        item.problem ||
+                        ""
                     )}
-
                 </td>
 
 
                 <td>
-
-                    ${escapeHtml(
+                    ${escapeHTML(
                         item.reference ||
                         item.ref ||
                         "-"
                     )}
-
                 </td>
 
 
                 <td>
-
                     <span class="support-badge">
-
-                        ${escapeHtml(
+                        ${escapeHTML(
                             item.support ||
                             "-"
                         )}
-
                     </span>
-
                 </td>
 
 
                 <td>
-
-                    <span class="call-badge">
-
-                        ${escapeHtml(
+                    <span class="support-badge">
+                        ${escapeHTML(
                             item.call ||
                             "-"
                         )}
-
                     </span>
-
                 </td>
 
 
@@ -882,11 +1643,9 @@ function renderHistory(data){
 
                     <button
                         class="view-btn"
-                        onclick="viewHistory(${index})"
+                        onclick="openModal(${index})"
                     >
-
-                        👁 View
-
+                        View
                     </button>
 
                 </td>
@@ -894,9 +1653,10 @@ function renderHistory(data){
             `;
 
 
-            body.appendChild(
-                row
+            tbody.appendChild(
+                tr
             );
+
 
         }
 
@@ -906,17 +1666,248 @@ function renderHistory(data){
 
 
 /* =====================================================
-   VIEW HISTORY
+   FILTER
 ===================================================== */
 
-function viewHistory(index){
+function applyFilters(){
+
+
+    const search =
+        document
+        .getElementById(
+            "searchInput"
+        )
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    const support =
+        document
+        .getElementById(
+            "supportInput"
+        )
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    const date =
+        document
+        .getElementById(
+            "dateInput"
+        )
+        .value;
+
+
+    filteredData =
+        historyData.filter(
+
+            function(item){
+
+
+                const customerId =
+                    String(
+                        item.customerId ||
+                        item.customerNumber ||
+                        item.ip ||
+                        ""
+                    )
+                    .toLowerCase();
+
+
+                const problem =
+                    String(
+                        item.problem ||
+                        ""
+                    )
+                    .toLowerCase();
+
+
+                const reference =
+                    String(
+                        item.reference ||
+                        item.ref ||
+                        ""
+                    )
+                    .toLowerCase();
+
+
+                const supportName =
+                    String(
+                        item.support ||
+                        ""
+                    )
+                    .toLowerCase();
+
+
+                const itemDate =
+                    String(
+                        item.date ||
+                        ""
+                    );
+
+
+                const searchMatch =
+
+                    !search ||
+
+                    customerId.includes(
+                        search
+                    ) ||
+
+                    problem.includes(
+                        search
+                    ) ||
+
+                    reference.includes(
+                        search
+                    );
+
+
+                const supportMatch =
+
+                    !support ||
+
+                    supportName.includes(
+                        support
+                    );
+
+
+                let dateMatch =
+                    true;
+
+
+                if(date){
+
+                    dateMatch =
+                        itemDate.includes(
+                            formatDateForSearch(
+                                date
+                            )
+                        );
+
+                }
+
+
+                return (
+
+                    searchMatch &&
+
+                    supportMatch &&
+
+                    dateMatch
+
+                );
+
+            }
+
+        );
+
+
+    renderHistory();
+
+}
+
+
+/* =====================================================
+   DATE FORMAT
+===================================================== */
+
+function formatDateForSearch(
+    date
+){
+
+    if(!date){
+
+        return "";
+
+    }
+
+
+    const parts =
+        date.split("-");
+
+
+    if(
+        parts.length !== 3
+    ){
+
+        return date;
+
+    }
+
+
+    return (
+
+        parts[2] +
+        "-" +
+        parts[1] +
+        "-" +
+        parts[0]
+
+    );
+
+}
+
+
+/* =====================================================
+   CLEAR FILTER
+===================================================== */
+
+function clearFilters(){
+
+
+    document
+    .getElementById(
+        "searchInput"
+    )
+    .value =
+        "";
+
+
+    document
+    .getElementById(
+        "supportInput"
+    )
+    .value =
+        "";
+
+
+    document
+    .getElementById(
+        "dateInput"
+    )
+    .value =
+        "";
+
+
+    filteredData =
+        [...historyData];
+
+
+    renderHistory();
+
+}
+
+
+/* =====================================================
+   OPEN MODAL
+===================================================== */
+
+function openModal(
+    index
+){
+
 
     const item =
-        historyData[index];
+        filteredData[index];
 
 
     if(!item){
+
         return;
+
     }
 
 
@@ -933,132 +1924,110 @@ function viewHistory(index){
         "-";
 
 
-    document.getElementById(
-        "modalBody"
-    ).innerHTML = `
+    const detailGrid =
+        document.getElementById(
+            "detailGrid"
+        );
 
-        <div class="info-grid">
+
+    detailGrid.innerHTML = `
 
 
-            <div class="info-card">
+        <div class="detail-item">
 
-                <span class="info-label">
-                    Customer ID
-                </span>
+            <span class="detail-label">
+                Customer ID
+            </span>
 
-                <div class="info-value">
-                    ${escapeHtml(
-                        customerId
-                    )}
-                </div>
-
+            <div class="detail-value">
+                ${escapeHTML(
+                    customerId
+                )}
             </div>
 
+        </div>
 
-            <div class="info-card">
 
-                <span class="info-label">
-                    Date
-                </span>
 
-                <div class="info-value">
-                    ${escapeHtml(
-                        item.date || ""
-                    )}
-                </div>
+        <div class="detail-item">
 
+            <span class="detail-label">
+                Date
+            </span>
+
+            <div class="detail-value">
+                ${escapeHTML(
+                    item.date ||
+                    ""
+                )}
             </div>
 
+        </div>
 
-            <div class="info-card full">
 
-                <span class="info-label">
-                    Problem
-                </span>
 
-                <div class="info-value">
-                    ${escapeHtml(
-                        item.problem || ""
-                    )}
-                </div>
+        <div class="detail-item full">
 
+            <span class="detail-label">
+                Problem
+            </span>
+
+            <div class="detail-value">
+                ${escapeHTML(
+                    item.problem ||
+                    ""
+                )}
             </div>
 
+        </div>
 
-            <div class="info-card full">
 
-                <span class="info-label">
-                    Reference
-                </span>
 
-                <div class="info-value">
-                    ${escapeHtml(
-                        reference
-                    )}
-                </div>
+        <div class="detail-item">
 
+            <span class="detail-label">
+                Reference
+            </span>
+
+            <div class="detail-value">
+                ${escapeHTML(
+                    reference
+                )}
             </div>
 
+        </div>
 
-            <div class="info-card">
 
-                <span class="info-label">
-                    Support Person
-                </span>
 
-                <div class="info-value">
-                    ${escapeHtml(
-                        item.support || "-"
-                    )}
-                </div>
+        <div class="detail-item">
 
+            <span class="detail-label">
+                Support
+            </span>
+
+            <div class="detail-value">
+                ${escapeHTML(
+                    item.support ||
+                    "-"
+                )}
             </div>
 
+        </div>
 
-            <div class="info-card">
 
-                <span class="info-label">
-                    Call Person
-                </span>
 
-                <div class="info-value">
-                    ${escapeHtml(
-                        item.call || "-"
-                    )}
-                </div>
+        <div class="detail-item">
 
+            <span class="detail-label">
+                Call
+            </span>
+
+            <div class="detail-value">
+                ${escapeHTML(
+                    item.call ||
+                    "-"
+                )}
             </div>
-
-
-            <div class="info-card full">
-
-                <span class="info-label">
-                    Support Work
-                </span>
-
-                <div class="info-value">
-                    ${escapeHtml(
-                        item.supportWork || "-"
-                    )}
-                </div>
-
-            </div>
-
-
-            <div class="info-card full">
-
-                <span class="info-label">
-                    Call Work
-                </span>
-
-                <div class="info-value">
-                    ${escapeHtml(
-                        item.callWork || "-"
-                    )}
-                </div>
-
-            </div>
-
 
         </div>
 
@@ -1066,10 +2035,33 @@ function viewHistory(index){
 
 
     document.getElementById(
+        "supportWorkDetail"
+    ).textContent =
+
+        item.supportWork ||
+        "No Support Work information.";
+
+
+    document.getElementById(
+        "callWorkDetail"
+    ).textContent =
+
+        item.callWork ||
+        "No Call Work information.";
+
+
+    document
+    .getElementById(
         "viewModal"
-    ).classList.add(
-        "show"
+    )
+    .classList
+    .add(
+        "active"
     );
+
+
+    document.body.style.overflow =
+        "hidden";
 
 }
 
@@ -1080,16 +2072,30 @@ function viewHistory(index){
 
 function closeModal(){
 
-    document.getElementById(
+
+    document
+    .getElementById(
         "viewModal"
-    ).classList.remove(
-        "show"
+    )
+    .classList
+    .remove(
+        "active"
     );
+
+
+    document.body.style.overflow =
+        "";
 
 }
 
 
-function closeModalOutside(event){
+/* =====================================================
+   CLOSE OUTSIDE
+===================================================== */
+
+function closeModalOutside(
+    event
+){
 
     if(
         event.target.id ===
@@ -1104,293 +2110,7 @@ function closeModalOutside(event){
 
 
 /* =====================================================
-   FILTER HISTORY
-===================================================== */
-
-function filterHistory(){
-
-    const search =
-        document
-            .getElementById(
-                "searchInput"
-            )
-            .value
-            .toLowerCase()
-            .trim();
-
-
-    const dateFilter =
-        document
-            .getElementById(
-                "dateFilter"
-            )
-            .value;
-
-
-    let filtered =
-        historyData.filter(
-
-            function(item){
-
-                const text = (
-
-                    item.customerId ||
-                    item.customerNumber ||
-                    item.ip ||
-                    ""
-
-                ) + " " + (
-
-                    item.date ||
-                    ""
-
-                ) + " " + (
-
-                    item.problem ||
-                    ""
-
-                ) + " " + (
-
-                    item.reference ||
-                    item.ref ||
-                    ""
-
-                ) + " " + (
-
-                    item.support ||
-                    ""
-
-                ) + " " + (
-
-                    item.call ||
-                    ""
-
-                );
-
-
-                const matchesSearch =
-
-                    !search ||
-
-                    text
-                        .toLowerCase()
-                        .includes(
-                            search
-                        );
-
-
-                const matchesDate =
-
-                    checkDateFilter(
-
-                        item.date,
-
-                        dateFilter
-
-                    );
-
-
-                return (
-
-                    matchesSearch &&
-
-                    matchesDate
-
-                );
-
-            }
-
-        );
-
-
-    renderHistory(
-        filtered
-    );
-
-}
-
-
-/* =====================================================
-   DATE FILTER
-===================================================== */
-
-function checkDateFilter(
-    dateString,
-    filter
-){
-
-    if(
-        !filter ||
-        !dateString
-    ){
-
-        return true;
-
-    }
-
-
-    const parts =
-        String(
-            dateString
-        ).split(
-            " "
-        )[0].split(
-            "-"
-        );
-
-
-    if(
-        parts.length !== 3
-    ){
-
-        return true;
-
-    }
-
-
-    const date =
-        new Date(
-
-            Number(
-                parts[2]
-            ),
-
-            Number(
-                parts[1]
-            ) - 1,
-
-            Number(
-                parts[0]
-            )
-
-        );
-
-
-    if(
-        isNaN(
-            date.getTime()
-        )
-    ){
-
-        return true;
-
-    }
-
-
-    const today =
-        new Date();
-
-
-    today.setHours(
-        0,0,0,0
-    );
-
-
-    date.setHours(
-        0,0,0,0
-    );
-
-
-    if(
-        filter === "today"
-    ){
-
-        return (
-
-            date.getTime() ===
-            today.getTime()
-
-        );
-
-    }
-
-
-    const days =
-        Number(
-            filter
-        );
-
-
-    const oldDate =
-        new Date(
-            today
-        );
-
-
-    oldDate.setDate(
-
-        today.getDate()
-        -
-        days
-
-    );
-
-
-    return (
-
-        date >= oldDate &&
-
-        date <= today
-
-    );
-
-}
-
-
-/* =====================================================
-   ESCAPE HTML
-===================================================== */
-
-function escapeHtml(
-    value
-){
-
-    return String(
-        value ?? ""
-    )
-    .replace(
-        /&/g,
-        "&amp;"
-    )
-    .replace(
-        /</g,
-        "&lt;"
-    )
-    .replace(
-        />/g,
-        "&gt;"
-    )
-    .replace(
-        /"/g,
-        "&quot;"
-    )
-    .replace(
-        /'/g,
-        "&#039;"
-    );
-
-}
-
-
-/* =====================================================
-   INITIAL LOAD
-===================================================== */
-
-document.addEventListener(
-
-    "DOMContentLoaded",
-
-    function(){
-
-        loadHistory();
-
-    }
-
-);
-
-
-/* =====================================================
-   ESC KEY CLOSE MODAL
+   ESC KEY
 ===================================================== */
 
 document.addEventListener(
@@ -1412,7 +2132,127 @@ document.addEventListener(
 
 );
 
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+function showLoading(){
+
+
+    document.getElementById(
+        "loadingState"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "emptyState"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "errorState"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "historyBody"
+    ).innerHTML =
+        "";
+
+
+    document.getElementById(
+        "statusText"
+    ).textContent =
+        "Loading history...";
+
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+function showError(){
+
+
+    document.getElementById(
+        "loadingState"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "emptyState"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "errorState"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "historyBody"
+    ).innerHTML =
+        "";
+
+
+    document.getElementById(
+        "statusText"
+    ).textContent =
+        "Unable to load history.";
+
+}
+
+
+/* =====================================================
+   HTML ESCAPE
+===================================================== */
+
+function escapeHTML(
+    value
+){
+
+    return String(
+        value || ""
+    )
+
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+
+    .replace(
+        /</g,
+        "&lt;"
+    )
+
+    .replace(
+        />/g,
+        "&gt;"
+    )
+
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+
+    .replace(
+        /'/g,
+        "&#039;"
+    );
+
+}
+
 </script>
 
+
 </body>
+
 </html>

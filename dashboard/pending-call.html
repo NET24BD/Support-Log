@@ -5,16 +5,25 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
 <title>Pending Call | LINK4 COMMUNICATION</title>
+
+
+<!-- =====================================================
+     LOGIN SECURITY
+===================================================== -->
 
 <script>
 
 (function(){
 
-    if(localStorage.getItem("loggedIn") !== "true"){
+    if(
+        localStorage.getItem("loggedIn") !== "true"
+    ){
 
         window.location.replace("../index.html");
 
@@ -24,38 +33,75 @@ content="width=device-width, initial-scale=1.0">
 
 </script>
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
 
-<link rel="preconnect"
+<!-- =====================================================
+     GOOGLE FONT
+===================================================== -->
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com"
+>
+
+<link
+rel="preconnect"
 href="https://fonts.gstatic.com"
-crossorigin>
+crossorigin
+>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;500;600;700;800&display=swap"
+rel="stylesheet"
+>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<!-- =====================================================
+     FONT AWESOME
+===================================================== -->
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
 
 
 <style>
 
+/* =====================================================
+   RESET
+===================================================== */
+
 *{
+
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
+
     font-family:'Poppins',sans-serif;
+
 }
+
+
+/* =====================================================
+   BODY
+===================================================== */
 
 body{
 
     min-height:100vh;
 
     background:
+
     linear-gradient(
+
         135deg,
+
         #005C3A,
-        #006A4E
+
+        #008f65
+
     );
 
     padding:20px;
@@ -63,6 +109,11 @@ body{
     color:#222;
 
 }
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
 
 .container{
 
@@ -75,13 +126,23 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 .header{
 
-    background:rgba(255,255,255,.98);
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #ffffff,
+
+        #f4fffa
+
+    );
 
     border-radius:22px;
 
@@ -96,12 +157,17 @@ body{
     gap:20px;
 
     box-shadow:
-    0 15px 40px
+
+    0 20px 50px
+
     rgba(0,0,0,.20);
 
-    margin-bottom:20px;
+    margin-bottom:22px;
 
 }
+
+
+/* HEADER LEFT */
 
 .header-left{
 
@@ -113,19 +179,27 @@ body{
 
 }
 
+
+/* LOGO */
+
 .logo{
 
     width:58px;
 
     height:58px;
 
-    border-radius:16px;
+    border-radius:17px;
 
     background:
+
     linear-gradient(
+
         135deg,
+
         #006A4E,
-        #009879
+
+        #00a875
+
     );
 
     color:white;
@@ -139,10 +213,15 @@ body{
     font-size:25px;
 
     box-shadow:
+
     0 8px 20px
+
     rgba(0,106,78,.25);
 
 }
+
+
+/* TITLE */
 
 .header-title h1{
 
@@ -154,6 +233,7 @@ body{
 
 }
 
+
 .header-title p{
 
     font-size:13px;
@@ -164,6 +244,9 @@ body{
 
 }
 
+
+/* HEADER RIGHT */
+
 .header-right{
 
     display:flex;
@@ -171,6 +254,9 @@ body{
     gap:10px;
 
 }
+
+
+/* BUTTON */
 
 .back-btn,
 .refresh-btn{
@@ -195,21 +281,23 @@ body{
 
 }
 
+
+/* BACK */
+
 .back-btn{
 
     background:#006A4E;
 
     color:white;
 
-}
+    box-shadow:
 
-.refresh-btn{
+    0 5px 15px
 
-    background:#e8f8f1;
-
-    color:#006A4E;
+    rgba(0,106,78,.2);
 
 }
+
 
 .back-btn:hover{
 
@@ -218,6 +306,18 @@ body{
     transform:translateY(-2px);
 
 }
+
+
+/* REFRESH */
+
+.refresh-btn{
+
+    background:#e5f8f0;
+
+    color:#006A4E;
+
+}
+
 
 .refresh-btn:hover{
 
@@ -230,16 +330,20 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    USER BAR
-========================= */
+===================================================== */
 
 .user-bar{
 
     background:
+
     rgba(255,255,255,.14);
 
-    border:1px solid
+    border:
+
+    1px solid
+
     rgba(255,255,255,.15);
 
     color:white;
@@ -258,7 +362,10 @@ body{
 
     font-size:14px;
 
+    backdrop-filter:blur(8px);
+
 }
+
 
 .user-name{
 
@@ -269,9 +376,9 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    STATUS
-========================= */
+===================================================== */
 
 .status{
 
@@ -289,11 +396,13 @@ body{
 
 }
 
+
 .status.show{
 
     display:block;
 
 }
+
 
 .status.loading{
 
@@ -303,6 +412,7 @@ body{
 
 }
 
+
 .status.success{
 
     background:#e8f8f1;
@@ -310,6 +420,7 @@ body{
     color:#006A4E;
 
 }
+
 
 .status.error{
 
@@ -320,9 +431,9 @@ body{
 }
 
 
-/* =========================
-   TABLE BOX
-========================= */
+/* =====================================================
+   TABLE CONTAINER
+===================================================== */
 
 .table-container{
 
@@ -331,7 +442,9 @@ body{
     border-radius:22px;
 
     box-shadow:
-    0 20px 50px
+
+    0 20px 55px
+
     rgba(0,0,0,.20);
 
     overflow:hidden;
@@ -339,9 +452,9 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    TABLE HEADER
-========================= */
+===================================================== */
 
 .table-header{
 
@@ -355,7 +468,44 @@ body{
 
     align-items:center;
 
+    gap:20px;
+
+    flex-wrap:wrap;
+
 }
+
+
+.table-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+.table-title-icon{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:12px;
+
+    background:#e8f8f1;
+
+    color:#006A4E;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
 
 .table-header h2{
 
@@ -365,18 +515,101 @@ body{
 
 }
 
+
+/* =====================================================
+   RIGHT HEADER
+===================================================== */
+
+.header-tools{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+/* SEARCH */
+
+.search-box{
+
+    position:relative;
+
+}
+
+
+.search-box i{
+
+    position:absolute;
+
+    left:13px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#777;
+
+}
+
+
+#searchInput{
+
+    width:260px;
+
+    padding:11px 15px 11px 40px;
+
+    border:
+
+    2px solid
+
+    #e5e5e5;
+
+    border-radius:11px;
+
+    outline:none;
+
+    font-size:13px;
+
+    transition:.3s;
+
+}
+
+
+#searchInput:focus{
+
+    border-color:#006A4E;
+
+    box-shadow:
+
+    0 0 0 4px
+
+    rgba(0,106,78,.08);
+
+}
+
+
+/* COUNT */
+
 .pending-count{
 
     background:
+
     linear-gradient(
+
         135deg,
+
         #2563eb,
-        #4f46e5
+
+        #3b82f6
+
     );
 
     color:white;
 
-    padding:7px 14px;
+    padding:8px 14px;
 
     border-radius:20px;
 
@@ -384,12 +617,14 @@ body{
 
     font-weight:600;
 
+    white-space:nowrap;
+
 }
 
 
-/* =========================
-   TABLE
-========================= */
+/* =====================================================
+   TABLE SCROLL
+===================================================== */
 
 .table-scroll{
 
@@ -398,6 +633,11 @@ body{
     overflow-x:auto;
 
 }
+
+
+/* =====================================================
+   TABLE
+===================================================== */
 
 table{
 
@@ -409,22 +649,31 @@ table{
 
 }
 
+
+/* TABLE HEAD */
+
 thead{
 
     background:
+
     linear-gradient(
+
         135deg,
+
         #006A4E,
-        #008f6a
+
+        #008f65
+
     );
 
     color:white;
 
 }
 
+
 th{
 
-    padding:15px 13px;
+    padding:16px 14px;
 
     font-size:13px;
 
@@ -436,11 +685,18 @@ th{
 
 }
 
+
+/* TABLE BODY */
+
 td{
 
-    padding:14px 13px;
+    padding:15px 14px;
 
-    border-bottom:1px solid #eee;
+    border-bottom:
+
+    1px solid
+
+    #edf1ef;
 
     font-size:13px;
 
@@ -448,28 +704,28 @@ td{
 
 }
 
+
+/* ROW */
+
 tbody tr{
 
-    transition:.2s;
+    transition:.25s;
 
 }
 
-tbody tr:nth-child(even){
-
-    background:#f8fffc;
-
-}
 
 tbody tr:hover{
 
-    background:#eaf8f2;
+    background:#f3fff9;
+
+    transform:scale(1.001);
 
 }
 
 
-/* =========================
-   READ ONLY BADGES
-========================= */
+/* =====================================================
+   READ ONLY DATA
+===================================================== */
 
 .readonly{
 
@@ -479,41 +735,82 @@ tbody tr:hover{
 
 }
 
-.info-box{
 
-    display:inline-block;
+/* =====================================================
+   BADGE
+===================================================== */
 
-    background:#f1f8f5;
+.support-badge{
 
-    border:1px solid #d7eee5;
+    display:inline-flex;
 
-    padding:7px 10px;
+    align-items:center;
+
+    gap:6px;
+
+    padding:6px 10px;
 
     border-radius:8px;
+
+    background:#eef8ff;
+
+    color:#2563eb;
+
+    font-size:12px;
+
+    font-weight:600;
 
 }
 
 
-/* =========================
+.work-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:6px 10px;
+
+    border-radius:8px;
+
+    background:#fff7e6;
+
+    color:#b76b00;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+
+/* =====================================================
    VIEW BUTTON
-========================= */
+===================================================== */
 
 .view-btn{
 
     border:none;
 
     background:
+
     linear-gradient(
+
         135deg,
+
         #006A4E,
-        #008f6a
+
+        #008f65
+
     );
 
     color:white;
 
     padding:10px 16px;
 
-    border-radius:9px;
+    border-radius:10px;
 
     cursor:pointer;
 
@@ -529,7 +826,14 @@ tbody tr:hover{
 
     transition:.3s;
 
+    box-shadow:
+
+    0 5px 14px
+
+    rgba(0,106,78,.18);
+
 }
+
 
 .view-btn:hover{
 
@@ -540,19 +844,20 @@ tbody tr:hover{
 }
 
 
-/* =========================
-   EMPTY
-========================= */
+/* =====================================================
+   EMPTY STATE
+===================================================== */
 
 .empty-state{
 
     display:none;
 
-    padding:70px 20px;
+    padding:75px 20px;
 
     text-align:center;
 
 }
+
 
 .empty-state.show{
 
@@ -560,11 +865,12 @@ tbody tr:hover{
 
 }
 
+
 .empty-icon{
 
-    width:80px;
+    width:85px;
 
-    height:80px;
+    height:85px;
 
     border-radius:50%;
 
@@ -578,19 +884,21 @@ tbody tr:hover{
 
     align-items:center;
 
-    font-size:35px;
+    font-size:38px;
 
     margin:0 auto 20px;
 
 }
 
+
 .empty-state h3{
 
-    font-size:20px;
+    font-size:21px;
 
     margin-bottom:8px;
 
 }
+
 
 .empty-state p{
 
@@ -601,21 +909,22 @@ tbody tr:hover{
 }
 
 
-/* =========================
+/* =====================================================
    LOADING
-========================= */
+===================================================== */
 
 .loading-state{
 
-    padding:70px 20px;
+    padding:75px 20px;
 
     text-align:center;
 
 }
 
+
 .spinner{
 
-    font-size:35px;
+    font-size:38px;
 
     color:#006A4E;
 
@@ -624,24 +933,27 @@ tbody tr:hover{
 }
 
 
-/* =========================
-   MODAL
-========================= */
+/* =====================================================
+   POPUP OVERLAY
+===================================================== */
 
-.modal{
+.modal-overlay{
 
     display:none;
 
     position:fixed;
 
-    z-index:9999;
-
     inset:0;
 
     background:
+
     rgba(0,0,0,.65);
 
-    backdrop-filter:blur(5px);
+    backdrop-filter:
+
+    blur(6px);
+
+    z-index:9999;
 
     padding:20px;
 
@@ -649,17 +961,23 @@ tbody tr:hover{
 
 }
 
-.modal.show{
+
+.modal-overlay.show{
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
+
+    justify-content:center;
 
 }
 
-.modal-box{
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal{
 
     width:100%;
 
@@ -669,24 +987,31 @@ tbody tr:hover{
 
     border-radius:22px;
 
-    box-shadow:
-    0 25px 80px
-    rgba(0,0,0,.35);
-
     overflow:hidden;
 
+    box-shadow:
+
+    0 30px 80px
+
+    rgba(0,0,0,.35);
+
     animation:
-    modalOpen .25s ease;
+
+    modalShow .25s ease;
 
 }
 
-@keyframes modalOpen{
+
+@keyframes modalShow{
 
     from{
 
         opacity:0;
 
-        transform:translateY(-20px)
+        transform:
+
+        translateY(25px)
+
         scale(.96);
 
     }
@@ -695,7 +1020,10 @@ tbody tr:hover{
 
         opacity:1;
 
-        transform:translateY(0)
+        transform:
+
+        translateY(0)
+
         scale(1);
 
     }
@@ -703,22 +1031,27 @@ tbody tr:hover{
 }
 
 
-/* =========================
+/* =====================================================
    MODAL HEADER
-========================= */
+===================================================== */
 
 .modal-header{
 
-    padding:20px 24px;
-
     background:
+
     linear-gradient(
+
         135deg,
+
         #006A4E,
-        #008f6a
+
+        #008f65
+
     );
 
     color:white;
+
+    padding:20px 24px;
 
     display:flex;
 
@@ -728,13 +1061,60 @@ tbody tr:hover{
 
 }
 
-.modal-header h2{
+
+.modal-header-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+.modal-header-icon{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:12px;
+
+    background:
+
+    rgba(255,255,255,.18);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
 
     font-size:20px;
 
 }
 
-.close-btn{
+
+.modal-header h3{
+
+    font-size:19px;
+
+}
+
+
+.modal-header p{
+
+    font-size:11px;
+
+    opacity:.85;
+
+    margin-top:2px;
+
+}
+
+
+.close-modal{
 
     width:38px;
 
@@ -742,185 +1122,271 @@ tbody tr:hover{
 
     border:none;
 
-    border-radius:50%;
+    border-radius:10px;
 
     background:
+
     rgba(255,255,255,.15);
 
     color:white;
 
+    cursor:pointer;
+
     font-size:18px;
 
-    cursor:pointer;
+    transition:.3s;
 
 }
 
-.close-btn:hover{
+
+.close-modal:hover{
 
     background:#E53935;
 
 }
 
 
-/* =========================
+/* =====================================================
    MODAL BODY
-========================= */
+===================================================== */
 
 .modal-body{
 
     padding:24px;
 
+    max-height:
+
+    calc(100vh - 180px);
+
+    overflow-y:auto;
+
 }
 
-.info-grid{
+
+/* =====================================================
+   INFORMATION LIST
+===================================================== */
+
+.info-section-title{
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:#006A4E;
+
+    margin-bottom:13px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+
+.info-list{
 
     display:grid;
 
     grid-template-columns:
+
     repeat(2,1fr);
 
-    gap:15px;
+    gap:12px;
 
-    margin-bottom:20px;
+    margin-bottom:24px;
 
 }
+
 
 .info-item{
 
     background:#f7faf9;
 
-    border:1px solid #e5eee9;
+    border:
+
+    1px solid
+
+    #e7efeb;
 
     border-radius:12px;
 
-    padding:12px;
+    padding:13px 14px;
 
 }
 
-.info-item label{
+
+.info-label{
 
     display:block;
 
     font-size:11px;
 
-    font-weight:600;
-
     color:#777;
 
     margin-bottom:5px;
 
-    text-transform:uppercase;
-
-}
-
-.info-item div{
-
-    color:#222;
-
-    font-size:13px;
-
     font-weight:500;
 
-    word-break:break-word;
-
-}
-
-.info-item.full{
-
-    grid-column:
-    1 / -1;
-
 }
 
 
-/* =========================
-   CALL FORM
-========================= */
-
-.form-title{
-
-    font-size:17px;
-
-    color:#006A4E;
-
-    font-weight:700;
-
-    margin-bottom:15px;
-
-    padding-bottom:10px;
-
-    border-bottom:2px solid #e8f8f1;
-
-}
-
-.form-group{
-
-    margin-bottom:16px;
-
-}
-
-.form-group label{
+.info-value{
 
     display:block;
 
     font-size:13px;
 
+    color:#333;
+
     font-weight:600;
 
-    color:#444;
+    word-break:break-word;
+
+}
+
+
+/* FULL WIDTH */
+
+.info-item.full{
+
+    grid-column:
+
+    1 / -1;
+
+}
+
+
+/* =====================================================
+   CALL SECTION
+===================================================== */
+
+.call-section{
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #f5fffb,
+
+        #eefaf5
+
+    );
+
+    border:
+
+    1px solid
+
+    #d8eee4;
+
+    border-radius:16px;
+
+    padding:18px;
+
+}
+
+
+.call-title{
+
+    color:#006A4E;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-bottom:16px;
+
+}
+
+
+/* =====================================================
+   INPUT GROUP
+===================================================== */
+
+.input-group{
+
+    margin-bottom:16px;
+
+}
+
+
+.input-group label{
+
+    display:block;
+
+    font-size:12px;
+
+    color:#555;
+
+    font-weight:600;
 
     margin-bottom:7px;
 
 }
 
-.form-group label span{
 
-    color:#E53935;
-
-}
-
-.call-input,
-.call-work-input,
-.username-input{
+.input-group input,
+.input-group textarea{
 
     width:100%;
 
-    border:2px solid #e1e6e3;
+    border:
 
-    border-radius:11px;
+    2px solid
 
-    padding:12px 13px;
+    #dfe8e4;
 
-    font-size:13px;
+    border-radius:10px;
+
+    padding:11px 13px;
 
     outline:none;
+
+    font-size:13px;
 
     transition:.3s;
 
 }
 
-.call-input:focus,
-.call-work-input:focus{
+
+.input-group input:focus,
+.input-group textarea:focus{
 
     border-color:#006A4E;
 
     box-shadow:
-    0 0 0 3px
-    rgba(0,106,78,.10);
+
+    0 0 0 4px
+
+    rgba(0,106,78,.08);
 
 }
 
-.username-input{
 
-    background:#f1f5f3;
+.input-group input[readonly]{
 
-    color:#555;
+    background:#edf4f1;
+
+    color:#006A4E;
+
+    font-weight:600;
 
     cursor:not-allowed;
 
 }
 
-.call-work-input{
+
+.input-group textarea{
 
     min-height:110px;
 
@@ -929,11 +1395,19 @@ tbody tr:hover{
 }
 
 
-/* =========================
+/* =====================================================
    MODAL FOOTER
-========================= */
+===================================================== */
 
 .modal-footer{
+
+    padding:18px 24px;
+
+    border-top:
+
+    1px solid
+
+    #eee;
 
     display:flex;
 
@@ -941,16 +1415,60 @@ tbody tr:hover{
 
     gap:10px;
 
-    margin-top:20px;
-
 }
 
-.cancel-btn,
-.submit-btn{
+
+/* CANCEL */
+
+.cancel-btn{
 
     border:none;
 
+    background:#f1f3f3;
+
+    color:#555;
+
     padding:11px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.cancel-btn:hover{
+
+    background:#e2e5e4;
+
+}
+
+
+/* SUBMIT */
+
+.submit-call-btn{
+
+    border:none;
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #006A4E,
+
+        #008f65
+
+    );
+
+    color:white;
+
+    padding:11px 20px;
 
     border-radius:10px;
 
@@ -964,76 +1482,43 @@ tbody tr:hover{
 
     gap:8px;
 
-}
-
-.cancel-btn{
-
-    background:#f1f1f1;
-
-    color:#555;
+    transition:.3s;
 
 }
 
-.cancel-btn:hover{
 
-    background:#ddd;
-
-}
-
-.submit-btn{
-
-    background:#006A4E;
-
-    color:white;
-
-}
-
-.submit-btn:hover{
+.submit-call-btn:hover{
 
     background:#E53935;
 
+    transform:translateY(-2px);
+
 }
 
-.submit-btn:disabled{
+
+.submit-call-btn:disabled{
 
     opacity:.6;
 
     cursor:not-allowed;
 
+    transform:none;
+
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
-@media(max-width:768px){
-
-    body{
-
-        padding:12px;
-
-    }
+@media(max-width:850px){
 
     .header{
-
-        padding:18px;
 
         align-items:flex-start;
 
     }
 
-    .header-title h1{
-
-        font-size:19px;
-
-    }
-
-    .header-title p{
-
-        font-size:11px;
-
-    }
 
     .header-right{
 
@@ -1041,46 +1526,113 @@ tbody tr:hover{
 
     }
 
-    .back-btn,
-    .refresh-btn{
 
-        justify-content:center;
+    #searchInput{
 
-        padding:9px 12px;
-
-        font-size:12px;
+        width:220px;
 
     }
 
-    .user-bar{
+}
 
-        font-size:12px;
+
+@media(max-width:650px){
+
+    body{
+
+        padding:12px;
+
+    }
+
+
+    .header{
+
+        padding:17px;
+
+        flex-direction:column;
+
+    }
+
+
+    .header-left{
+
+        width:100%;
+
+    }
+
+
+    .header-right{
+
+        width:100%;
+
+        flex-direction:row;
+
+    }
+
+
+    .back-btn,
+    .refresh-btn{
+
+        flex:1;
+
+        justify-content:center;
+
+    }
+
+
+    .user-bar{
 
         flex-direction:column;
 
         align-items:flex-start;
 
-        gap:7px;
+        gap:8px;
+
+        font-size:12px;
 
     }
+
 
     .table-header{
 
-        padding:15px;
+        padding:16px;
+
+        flex-direction:column;
+
+        align-items:stretch;
 
     }
 
-    .table-header h2{
 
-        font-size:17px;
+    .header-tools{
+
+        flex-direction:column;
+
+        align-items:stretch;
 
     }
 
-    .info-grid{
+
+    #searchInput{
+
+        width:100%;
+
+    }
+
+
+    .pending-count{
+
+        text-align:center;
+
+    }
+
+
+    .info-list{
 
         grid-template-columns:1fr;
 
     }
+
 
     .info-item.full{
 
@@ -1088,15 +1640,29 @@ tbody tr:hover{
 
     }
 
-    .modal{
-
-        padding:10px;
-
-    }
 
     .modal-body{
 
         padding:18px;
+
+    }
+
+
+    .modal-footer{
+
+        padding:15px 18px;
+
+        flex-direction:column-reverse;
+
+    }
+
+
+    .cancel-btn,
+    .submit-call-btn{
+
+        width:100%;
+
+        justify-content:center;
 
     }
 
@@ -1113,13 +1679,15 @@ tbody tr:hover{
 <div class="container">
 
 
-<!-- =========================
+<!-- =====================================================
      HEADER
-========================= -->
+===================================================== -->
 
 <div class="header">
 
+
 <div class="header-left">
+
 
 <div class="logo">
 
@@ -1127,25 +1695,35 @@ tbody tr:hover{
 
 </div>
 
+
 <div class="header-title">
 
-<h1>Pending Call</h1>
+<h1>
+
+Pending Call
+
+</h1>
 
 <p>
-Manage pending customer calls
+
+Manage customer call requests
+
 </p>
 
 </div>
+
 
 </div>
 
 
 <div class="header-right">
 
+
 <button
 class="refresh-btn"
 id="refreshBtn"
-type="button">
+type="button"
+>
 
 <i class="fa-solid fa-rotate"></i>
 
@@ -1157,7 +1735,8 @@ Refresh
 <button
 class="back-btn"
 id="backBtn"
-type="button">
+type="button"
+>
 
 <i class="fa-solid fa-arrow-left"></i>
 
@@ -1165,14 +1744,16 @@ Dashboard
 
 </button>
 
-</div>
 
 </div>
 
 
-<!-- =========================
+</div>
+
+
+<!-- =====================================================
      USER BAR
-========================= -->
+===================================================== -->
 
 <div class="user-bar">
 
@@ -1180,45 +1761,64 @@ Dashboard
 
 <i class="fa-solid fa-user"></i>
 
+&nbsp;
+
 Logged in as:
 
-<span
+<strong
 class="user-name"
-id="userName">
+id="userName"
+>
 User
-</span>
+</strong>
 
 </div>
+
 
 <div>
 
 <i class="fa-solid fa-lock"></i>
 
-Customer & Support information are read-only
+&nbsp;
+
+Customer information is read-only
 
 </div>
 
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      STATUS
-========================= -->
+===================================================== -->
 
 <div
 class="status"
-id="status">
-</div>
+id="status"
+></div>
 
 
-<!-- =========================
+<!-- =====================================================
      TABLE
-========================= -->
+===================================================== -->
 
 <div class="table-container">
 
 
 <div class="table-header">
+
+
+<div class="table-title">
+
+
+<div class="table-title-icon">
+
+<i class="fa-solid fa-phone"></i>
+
+</div>
+
+
+<div>
 
 <h2>
 
@@ -1226,20 +1826,53 @@ Pending Call Requests
 
 </h2>
 
+</div>
+
+
+</div>
+
+
+<div class="header-tools">
+
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search Customer ID, Problem..."
+autocomplete="off"
+>
+
+</div>
+
+
 <div
 class="pending-count"
-id="pendingCount">
+id="pendingCount"
+>
 
 0 Pending
 
 </div>
 
+
 </div>
 
 
+</div>
+
+
+<!-- =====================================================
+     LOADING
+===================================================== -->
+
 <div
 class="loading-state"
-id="loadingState">
+id="loadingState"
+>
 
 <div class="spinner">
 
@@ -1256,9 +1889,14 @@ Loading pending call requests...
 </div>
 
 
+<!-- =====================================================
+     EMPTY
+===================================================== -->
+
 <div
 class="empty-state"
-id="emptyState">
+id="emptyState"
+>
 
 <div class="empty-icon">
 
@@ -1266,11 +1904,13 @@ id="emptyState">
 
 </div>
 
+
 <h3>
 
 No Pending Call
 
 </h3>
+
 
 <p>
 
@@ -1281,30 +1921,64 @@ There are currently no pending call requests.
 </div>
 
 
+<!-- =====================================================
+     TABLE
+===================================================== -->
+
 <div
 class="table-scroll"
 id="tableWrapper"
-style="display:none;">
+style="display:none;"
+>
 
 <table>
+
 
 <thead>
 
 <tr>
 
-<th>Customer ID</th>
+<th>
 
-<th>Date</th>
+Customer ID
 
-<th>Problem</th>
+</th>
 
-<th>Reference</th>
+<th>
 
-<th>Support</th>
+Date
 
-<th>Support Work</th>
+</th>
 
-<th>Action</th>
+<th>
+
+Problem
+
+</th>
+
+<th>
+
+Reference
+
+</th>
+
+<th>
+
+Support
+
+</th>
+
+<th>
+
+Support Work
+
+</th>
+
+<th>
+
+Action
+
+</th>
 
 </tr>
 
@@ -1312,8 +1986,11 @@ style="display:none;">
 
 
 <tbody
-id="callTableBody">
+id="callTableBody"
+>
+
 </tbody>
+
 
 </table>
 
@@ -1322,191 +1999,295 @@ id="callTableBody">
 
 </div>
 
+
 </div>
 
 
-<!-- =========================
-     VIEW / CALL MODAL
-========================= -->
+
+<!-- =====================================================
+     VIEW MODAL
+===================================================== -->
 
 <div
-class="modal"
-id="callModal">
+class="modal-overlay"
+id="modalOverlay"
+>
 
 
-<div class="modal-box">
+<div class="modal">
 
+
+<!-- MODAL HEADER -->
 
 <div class="modal-header">
 
-<h2>
 
-<i class="fa-solid fa-phone"></i>
+<div class="modal-header-left">
 
-Call Information
 
-</h2>
+<div class="modal-header-icon">
+
+<i class="fa-solid fa-file-lines"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+
+Call Request Details
+
+</h3>
+
+<p>
+
+Review information and complete the call
+
+</p>
+
+</div>
+
+
+</div>
 
 
 <button
-class="close-btn"
+class="close-modal"
 id="closeModal"
-type="button">
+type="button"
+>
 
 <i class="fa-solid fa-xmark"></i>
 
 </button>
 
+
 </div>
 
+
+
+<!-- MODAL BODY -->
 
 <div class="modal-body">
 
 
-<div class="info-grid">
+<div class="info-section-title">
+
+<i class="fa-solid fa-circle-info"></i>
+
+Customer Information
+
+</div>
+
+
+<div class="info-list">
 
 
 <div class="info-item">
 
-<label>Customer ID</label>
+<span class="info-label">
 
-<div id="modalCustomerId">
+Customer ID
+
+</span>
+
+<span
+class="info-value"
+id="modalCustomerId"
+>
+
 -
-</div>
 
-</div>
-
-
-<div class="info-item">
-
-<label>Date</label>
-
-<div id="modalDate">
--
-</div>
-
-</div>
-
-
-<div class="info-item">
-
-<label>Reference</label>
-
-<div id="modalReference">
--
-</div>
+</span>
 
 </div>
 
 
 <div class="info-item">
 
-<label>Support</label>
+<span class="info-label">
 
-<div id="modalSupport">
+Date
+
+</span>
+
+<span
+class="info-value"
+id="modalDate"
+>
+
 -
-</div>
+
+</span>
 
 </div>
 
 
 <div class="info-item full">
 
-<label>Problem</label>
+<span class="info-label">
 
-<div id="modalProblem">
+Problem
+
+</span>
+
+<span
+class="info-value"
+id="modalProblem"
+>
+
 -
+
+</span>
+
 </div>
+
+
+<div class="info-item">
+
+<span class="info-label">
+
+Reference
+
+</span>
+
+<span
+class="info-value"
+id="modalReference"
+>
+
+-
+
+</span>
+
+</div>
+
+
+<div class="info-item">
+
+<span class="info-label">
+
+Support
+
+</span>
+
+<span
+class="info-value"
+id="modalSupport"
+>
+
+-
+
+</span>
 
 </div>
 
 
 <div class="info-item full">
 
-<label>Support Work</label>
+<span class="info-label">
 
-<div id="modalSupportWork">
+Support Work
+
+</span>
+
+<span
+class="info-value"
+id="modalSupportWork"
+>
+
 -
-</div>
+
+</span>
 
 </div>
 
+
 </div>
 
 
-<div class="form-title">
+
+<!-- =================================================
+     CALL SECTION
+================================================= -->
+
+<div class="call-section">
+
+
+<div class="call-title">
 
 <i class="fa-solid fa-phone-volume"></i>
 
-Complete Call Information
+Call Information
 
 </div>
 
 
-<div class="form-group">
+<!-- CALL -->
 
-<label>
-
-Call Person Name
-
-<span>*</span>
-
-</label>
-
-<input
-type="text"
-id="callPerson"
-class="username-input"
-readonly>
-
-</div>
-
-
-<div class="form-group">
+<div class="input-group">
 
 <label>
 
 Call
 
-<span>*</span>
-
 </label>
+
 
 <input
 type="text"
 id="callInput"
-class="call-input"
-placeholder="Enter call person name">
+readonly
+>
+
 
 </div>
 
 
-<div class="form-group">
+<!-- CALL WORK -->
+
+<div class="input-group">
 
 <label>
 
 Call Work
 
-<span>*</span>
-
 </label>
+
 
 <textarea
 id="callWorkInput"
-class="call-work-input"
-placeholder="Write what was discussed during the call..."></textarea>
+placeholder="Write what was discussed or what work was done during the call..."
+></textarea>
+
 
 </div>
 
 
+</div>
+
+
+</div>
+
+
+
+<!-- =================================================
+     MODAL FOOTER
+================================================= -->
+
 <div class="modal-footer">
+
 
 <button
 class="cancel-btn"
-id="cancelBtn"
-type="button">
+id="cancelModal"
+type="button"
+>
 
 <i class="fa-solid fa-xmark"></i>
+
+&nbsp;
 
 Cancel
 
@@ -1514,9 +2295,10 @@ Cancel
 
 
 <button
-class="submit-btn"
+class="submit-call-btn"
 id="submitCallBtn"
-type="button">
+type="button"
+>
 
 <i class="fa-solid fa-paper-plane"></i>
 
@@ -1524,14 +2306,15 @@ Submit Call
 
 </button>
 
+
+</div>
+
+
 </div>
 
 
 </div>
 
-</div>
-
-</div>
 
 
 <script>
@@ -1553,158 +2336,211 @@ const API_URL =
 const tableBody =
 
 document.getElementById(
+
 "callTableBody"
+
 );
 
 
 const loadingState =
 
 document.getElementById(
+
 "loadingState"
+
 );
 
 
 const emptyState =
 
 document.getElementById(
+
 "emptyState"
+
 );
 
 
 const tableWrapper =
 
 document.getElementById(
+
 "tableWrapper"
+
 );
 
 
 const pendingCount =
 
 document.getElementById(
+
 "pendingCount"
+
 );
 
 
 const statusBox =
 
 document.getElementById(
+
 "status"
+
 );
 
 
-const modal =
+const refreshBtn =
 
 document.getElementById(
-"callModal"
+
+"refreshBtn"
+
 );
 
 
-const modalCustomerId =
+const backBtn =
 
 document.getElementById(
-"modalCustomerId"
+
+"backBtn"
+
 );
 
 
-const modalDate =
+const searchInput =
 
 document.getElementById(
-"modalDate"
+
+"searchInput"
+
 );
 
 
-const modalReference =
+const userName =
 
 document.getElementById(
-"modalReference"
+
+"userName"
+
 );
 
 
-const modalProblem =
+/* MODAL */
+
+const modalOverlay =
 
 document.getElementById(
-"modalProblem"
+
+"modalOverlay"
+
 );
 
 
-const modalSupport =
+const closeModal =
 
 document.getElementById(
-"modalSupport"
+
+"closeModal"
+
 );
 
 
-const modalSupportWork =
+const cancelModal =
 
 document.getElementById(
-"modalSupportWork"
-);
 
+"cancelModal"
 
-const callPerson =
-
-document.getElementById(
-"callPerson"
-);
-
-
-const callInput =
-
-document.getElementById(
-"callInput"
-);
-
-
-const callWorkInput =
-
-document.getElementById(
-"callWorkInput"
 );
 
 
 const submitCallBtn =
 
 document.getElementById(
+
 "submitCallBtn"
+
 );
 
 
-/* =====================================================
-   CURRENT ROW
-===================================================== */
-
-let selectedCall = null;
-
-
-/* =====================================================
-   USER NAME
-===================================================== */
-
-const savedName =
-
-localStorage.getItem("name");
-
-
-const savedUsername =
-
-localStorage.getItem("username");
-
-
-const loggedUser =
-
-savedName ||
-
-savedUsername ||
-
-"User";
-
+const modalCustomerId =
 
 document.getElementById(
-"userName"
-).textContent = loggedUser;
+
+"modalCustomerId"
+
+);
 
 
-callPerson.value = loggedUser;
+const modalDate =
+
+document.getElementById(
+
+"modalDate"
+
+);
+
+
+const modalProblem =
+
+document.getElementById(
+
+"modalProblem"
+
+);
+
+
+const modalReference =
+
+document.getElementById(
+
+"modalReference"
+
+);
+
+
+const modalSupport =
+
+document.getElementById(
+
+"modalSupport"
+
+);
+
+
+const modalSupportWork =
+
+document.getElementById(
+
+"modalSupportWork"
+
+);
+
+
+const callInput =
+
+document.getElementById(
+
+"callInput"
+
+);
+
+
+const callWorkInput =
+
+document.getElementById(
+
+"callWorkInput"
+
+);
+
+
+/* CURRENT ITEM */
+
+let currentItem = null;
+
+
+/* ALL DATA */
+
+let allData = [];
 
 
 /* =====================================================
@@ -1714,13 +2550,19 @@ callPerson.value = loggedUser;
 function checkLogin(){
 
     if(
-        localStorage.getItem("loggedIn")
-        !==
-        "true"
+
+        localStorage.getItem(
+
+            "loggedIn"
+
+        ) !== "true"
+
     ){
 
         window.location.replace(
+
             "../index.html"
+
         );
 
         return false;
@@ -1733,20 +2575,72 @@ function checkLogin(){
 
 
 /* =====================================================
+   GET LOGIN USER NAME
+===================================================== */
+
+function getLoggedInName(){
+
+    const name =
+
+        localStorage.getItem(
+
+            "name"
+
+        );
+
+
+    const username =
+
+        localStorage.getItem(
+
+            "username"
+
+        );
+
+
+    return (
+
+        name ||
+
+        username ||
+
+        "Unknown User"
+
+    );
+
+}
+
+
+/* =====================================================
+   SHOW USER
+===================================================== */
+
+userName.textContent =
+
+getLoggedInName();
+
+
+/* =====================================================
    STATUS
 ===================================================== */
 
 function showStatus(
-message,
-type
+
+    message,
+
+    type
+
 ){
 
     statusBox.textContent =
-    message;
+
+        message;
 
     statusBox.className =
-    "status show " +
-    type;
+
+        "status show " +
+
+        type;
 
 }
 
@@ -1754,7 +2648,35 @@ type
 function hideStatus(){
 
     statusBox.className =
-    "status";
+
+        "status";
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value){
+
+    const div =
+
+        document.createElement(
+
+            "div"
+
+        );
+
+    div.textContent =
+
+        value == null
+
+        ? ""
+
+        : String(value);
+
+    return div.innerHTML;
 
 }
 
@@ -1766,7 +2688,11 @@ function hideStatus(){
 async function loadPendingCall(){
 
 
-    if(!checkLogin()){
+    if(
+
+        !checkLogin()
+
+    ){
 
         return;
 
@@ -1774,61 +2700,84 @@ async function loadPendingCall(){
 
 
     loadingState.style.display =
-    "block";
+
+        "block";
 
 
     emptyState.classList.remove(
-    "show"
+
+        "show"
+
     );
 
 
     tableWrapper.style.display =
-    "none";
+
+        "none";
 
 
     tableBody.innerHTML =
-    "";
+
+        "";
 
 
     pendingCount.textContent =
-    "Loading...";
+
+        "Loading...";
 
 
     showStatus(
-    "Loading pending call requests...",
-    "loading"
+
+        "Loading pending call requests...",
+
+        "loading"
+
     );
 
 
     try{
 
 
-        const response =
-
-        await fetch(
+        const url =
 
             API_URL +
-            "?action=pendingCall&nocache=" +
-            Date.now(),
 
-            {
+            "?action=pendingCall&t=" +
 
-                method:"GET",
-
-                cache:"no-store",
-
-                redirect:"follow"
-
-            }
-
-        );
+            Date.now();
 
 
-        if(!response.ok){
+        const response =
+
+            await fetch(
+
+                url,
+
+                {
+
+                    method:"GET",
+
+                    cache:"no-store",
+
+                    redirect:"follow"
+
+                }
+
+            );
+
+
+        if(
+
+            !response.ok
+
+        ){
 
             throw new Error(
-            "Server Error: " +
-            response.status
+
+                "Server Error: " +
+
+                response.status
+
             );
 
         }
@@ -1836,231 +2785,47 @@ async function loadPendingCall(){
 
         const result =
 
-        await response.json();
-
-
-        loadingState.style.display =
-        "none";
+            await response.json();
 
 
         if(
+
             result.success !== true
+
         ){
 
             throw new Error(
 
                 result.message ||
 
-                "Unable to load pending call."
+                "Unable to load data."
 
             );
 
         }
 
 
-        const data =
+        allData =
 
-        Array.isArray(result.data)
+            Array.isArray(
 
-        ? result.data
+                result.data
 
-        : [];
+            )
 
+            ? result.data
 
-        if(data.length === 0){
+            : [];
 
-            emptyState.classList.add(
-            "show"
-            );
 
-            pendingCount.textContent =
-            "0 Pending";
+        loadingState.style.display =
 
-            hideStatus();
+            "none";
 
-            return;
 
-        }
+        renderTable(
 
-
-        tableWrapper.style.display =
-        "block";
-
-
-        pendingCount.textContent =
-
-        data.length +
-
-        " Pending";
-
-
-        data.forEach(
-
-        function(item){
-
-
-            const tr =
-            document.createElement("tr");
-
-
-            /* CUSTOMER ID */
-
-            const tdCustomer =
-            document.createElement("td");
-
-            tdCustomer.innerHTML =
-
-            `<span class="info-box">
-            ${escapeHtml(
-                item.customerNumber ||
-                item.ip ||
-                ""
-            )}
-            </span>`;
-
-
-            /* DATE */
-
-            const tdDate =
-            document.createElement("td");
-
-            tdDate.className =
-            "readonly";
-
-            tdDate.textContent =
-
-            item.date || "";
-
-
-            /* PROBLEM */
-
-            const tdProblem =
-            document.createElement("td");
-
-            tdProblem.className =
-            "readonly";
-
-            tdProblem.textContent =
-
-            item.problem || "";
-
-
-            /* REFERENCE */
-
-            const tdReference =
-            document.createElement("td");
-
-            tdReference.className =
-            "readonly";
-
-            tdReference.textContent =
-
-            item.reference ||
-            item.ref ||
-            "";
-
-
-            /* SUPPORT */
-
-            const tdSupport =
-            document.createElement("td");
-
-            tdSupport.className =
-            "readonly";
-
-            tdSupport.textContent =
-
-            item.support || "";
-
-
-            /* SUPPORT WORK */
-
-            const tdSupportWork =
-            document.createElement("td");
-
-            tdSupportWork.className =
-            "readonly";
-
-            tdSupportWork.textContent =
-
-            item.supportWork || "";
-
-
-            /* VIEW BUTTON */
-
-            const tdAction =
-            document.createElement("td");
-
-
-            const viewBtn =
-            document.createElement("button");
-
-            viewBtn.className =
-            "view-btn";
-
-            viewBtn.type =
-            "button";
-
-            viewBtn.innerHTML =
-
-            '<i class="fa-solid fa-eye"></i> View';
-
-
-            viewBtn.addEventListener(
-
-            "click",
-
-            function(){
-
-                selectedCall = item;
-
-                openCallModal(item);
-
-            }
-
-            );
-
-
-            tdAction.appendChild(
-            viewBtn
-            );
-
-
-            tr.appendChild(
-            tdCustomer
-            );
-
-            tr.appendChild(
-            tdDate
-            );
-
-            tr.appendChild(
-            tdProblem
-            );
-
-            tr.appendChild(
-            tdReference
-            );
-
-            tr.appendChild(
-            tdSupport
-            );
-
-            tr.appendChild(
-            tdSupportWork
-            );
-
-            tr.appendChild(
-            tdAction
-            );
-
-
-            tableBody.appendChild(
-            tr
-            );
-
-
-        }
+            allData
 
         );
 
@@ -2068,21 +2833,33 @@ async function loadPendingCall(){
         hideStatus();
 
 
-    }catch(error){
+    }
+
+    catch(error){
 
 
         console.error(
-        "Load Error:",
-        error
+
+            "Load Error:",
+
+            error
+
         );
 
 
         loadingState.style.display =
-        "none";
+
+            "none";
+
+
+        tableWrapper.style.display =
+
+            "none";
 
 
         pendingCount.textContent =
-        "0 Pending";
+
+            "0 Pending";
 
 
         showStatus(
@@ -2101,69 +2878,464 @@ async function loadPendingCall(){
 
 
 /* =====================================================
+   RENDER TABLE
+===================================================== */
+
+function renderTable(
+
+    data
+
+){
+
+
+    tableBody.innerHTML =
+
+        "";
+
+
+    pendingCount.textContent =
+
+        data.length +
+
+        " Pending";
+
+
+    if(
+
+        data.length === 0
+
+    ){
+
+        tableWrapper.style.display =
+
+            "none";
+
+
+        emptyState.classList.add(
+
+            "show"
+
+        );
+
+
+        return;
+
+    }
+
+
+    emptyState.classList.remove(
+
+        "show"
+
+    );
+
+
+    tableWrapper.style.display =
+
+        "block";
+
+
+    data.forEach(
+
+        function(item){
+
+
+            const tr =
+
+                document.createElement(
+
+                    "tr"
+
+                );
+
+
+            /* CUSTOMER ID */
+
+            const tdCustomer =
+
+                document.createElement(
+
+                    "td"
+
+                );
+
+
+            tdCustomer.className =
+
+                "readonly";
+
+
+            tdCustomer.innerHTML =
+
+                "<strong>" +
+
+                escapeHTML(
+
+                    item.customerNumber ||
+
+                    item.ip ||
+
+                    item.customerId ||
+
+                    ""
+
+                ) +
+
+                "</strong>";
+
+
+            /* DATE */
+
+            const tdDate =
+
+                document.createElement(
+
+                    "td"
+
+                );
+
+
+            tdDate.className =
+
+                "readonly";
+
+
+            tdDate.textContent =
+
+                item.date ||
+
+                "";
+
+
+            /* PROBLEM */
+
+            const tdProblem =
+
+                document.createElement(
+
+                    "td"
+
+                );
+
+
+            tdProblem.className =
+
+                "readonly";
+
+
+            tdProblem.textContent =
+
+                item.problem ||
+
+                "";
+
+
+            /* REFERENCE */
+
+            const tdReference =
+
+                document.createElement(
+
+                    "td"
+
+                );
+
+
+            tdReference.className =
+
+                "readonly";
+
+
+            tdReference.textContent =
+
+                item.reference ||
+
+                item.ref ||
+
+                "";
+
+
+            /* SUPPORT */
+
+            const tdSupport =
+
+                document.createElement(
+
+                    "td"
+
+                );
+
+
+            tdSupport.innerHTML =
+
+                '<span class="support-badge">' +
+
+                '<i class="fa-solid fa-user-gear"></i>' +
+
+                escapeHTML(
+
+                    item.support ||
+
+                    "-"
+
+                ) +
+
+                "</span>";
+
+
+            /* SUPPORT WORK */
+
+            const tdSupportWork =
+
+                document.createElement(
+
+                    "td"
+
+                );
+
+
+            tdSupportWork.innerHTML =
+
+                '<span class="work-badge">' +
+
+                '<i class="fa-solid fa-screwdriver-wrench"></i>' +
+
+                escapeHTML(
+
+                    item.supportWork ||
+
+                    "-"
+
+                ) +
+
+                "</span>";
+
+
+            /* ACTION */
+
+            const tdAction =
+
+                document.createElement(
+
+                    "td"
+
+                );
+
+
+            const viewBtn =
+
+                document.createElement(
+
+                    "button"
+
+                );
+
+
+            viewBtn.className =
+
+                "view-btn";
+
+
+            viewBtn.type =
+
+                "button";
+
+
+            viewBtn.innerHTML =
+
+                '<i class="fa-solid fa-eye"></i> View';
+
+
+            viewBtn.addEventListener(
+
+                "click",
+
+                function(){
+
+                    openModal(
+
+                        item
+
+                    );
+
+                }
+
+            );
+
+
+            tdAction.appendChild(
+
+                viewBtn
+
+            );
+
+
+            /* ADD */
+
+            tr.appendChild(
+
+                tdCustomer
+
+            );
+
+
+            tr.appendChild(
+
+                tdDate
+
+            );
+
+
+            tr.appendChild(
+
+                tdProblem
+
+            );
+
+
+            tr.appendChild(
+
+                tdReference
+
+            );
+
+
+            tr.appendChild(
+
+                tdSupport
+
+            );
+
+
+            tr.appendChild(
+
+                tdSupportWork
+
+            );
+
+
+            tr.appendChild(
+
+                tdAction
+
+            );
+
+
+            tableBody.appendChild(
+
+                tr
+
+            );
+
+
+        }
+
+    );
+
+}
+
+
+/* =====================================================
    OPEN MODAL
 ===================================================== */
 
-function openCallModal(item){
+function openModal(
+
+    item
+
+){
+
+
+    currentItem =
+
+        item;
 
 
     modalCustomerId.textContent =
 
-    item.customerNumber ||
-    item.ip ||
-    "-";
+        item.customerNumber ||
+
+        item.ip ||
+
+        item.customerId ||
+
+        "-";
 
 
     modalDate.textContent =
 
-    item.date ||
-    "-";
+        item.date ||
 
-
-    modalReference.textContent =
-
-    item.reference ||
-    item.ref ||
-    "-";
+        "-";
 
 
     modalProblem.textContent =
 
-    item.problem ||
-    "-";
+        item.problem ||
+
+        "-";
+
+
+    modalReference.textContent =
+
+        item.reference ||
+
+        item.ref ||
+
+        "-";
 
 
     modalSupport.textContent =
 
-    item.support ||
-    "-";
+        item.support ||
+
+        "-";
 
 
     modalSupportWork.textContent =
 
-    item.supportWork ||
-    "-";
+        item.supportWork ||
+
+        "-";
 
 
-    callPerson.value =
-
-    loggedUser;
-
+    /* =================================================
+       CALL = LOGIN USER NAME
+    ================================================= */
 
     callInput.value =
 
-    "";
+        getLoggedInName();
 
 
     callWorkInput.value =
 
-    "";
+        "";
 
 
-    modal.classList.add(
-    "show"
+    modalOverlay.classList.add(
+
+        "show"
+
     );
 
+
+    document.body.style.overflow =
+
+        "hidden";
+
+
+    setTimeout(
+
+        function(){
+
+            callWorkInput.focus();
+
+        },
+
+        250
+
+    );
 
 }
 
@@ -2172,54 +3344,31 @@ function openCallModal(item){
    CLOSE MODAL
 ===================================================== */
 
-function closeModal(){
+function closeModalBox(){
 
-    modal.classList.remove(
-    "show"
+
+    modalOverlay.classList.remove(
+
+        "show"
+
     );
 
-    selectedCall = null;
+
+    document.body.style.overflow =
+
+        "";
+
+
+    currentItem =
+
+        null;
+
+
+    callWorkInput.value =
+
+        "";
 
 }
-
-
-document.getElementById(
-"closeModal"
-).addEventListener(
-
-"click",
-
-closeModal
-
-);
-
-
-document.getElementById(
-"cancelBtn"
-).addEventListener(
-
-"click",
-
-closeModal
-
-);
-
-
-modal.addEventListener(
-
-"click",
-
-function(e){
-
-    if(e.target === modal){
-
-        closeModal();
-
-    }
-
-}
-
-);
 
 
 /* =====================================================
@@ -2228,246 +3377,419 @@ function(e){
 
 submitCallBtn.addEventListener(
 
-"click",
+    "click",
 
-async function(){
-
-
-    if(!selectedCall){
-
-        showStatus(
-        "Please select a pending call.",
-        "error"
-        );
-
-        return;
-
-    }
-
-
-    const call =
-
-    callInput.value.trim();
-
-
-    const callWork =
-
-    callWorkInput.value.trim();
-
-
-    if(!call){
-
-        alert(
-        "Please enter Call information."
-        );
-
-        callInput.focus();
-
-        return;
-
-    }
-
-
-    if(!callWork){
-
-        alert(
-        "Please enter Call Work."
-        );
-
-        callWorkInput.focus();
-
-        return;
-
-    }
-
-
-    submitCallBtn.disabled =
-    true;
-
-
-    submitCallBtn.innerHTML =
-
-    '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
-
-
-    try{
-
-
-        const payload = {
-
-            action:
-            "submitCall",
-
-            customerId:
-
-            selectedCall.customerNumber ||
-            selectedCall.ip ||
-            "",
-
-            date:
-
-            selectedCall.date ||
-            "",
-
-            problem:
-
-            selectedCall.problem ||
-            "",
-
-            reference:
-
-            selectedCall.reference ||
-            selectedCall.ref ||
-            "",
-
-            support:
-
-            selectedCall.support ||
-            "",
-
-            supportWork:
-
-            selectedCall.supportWork ||
-            "",
-
-            call:
-
-            call,
-
-            callWork:
-
-            callWork,
-
-            username:
-
-            localStorage.getItem(
-            "username"
-            ) || loggedUser,
-
-            name:
-
-            localStorage.getItem(
-            "name"
-            ) || loggedUser
-
-        };
-
-
-        const response =
-
-        await fetch(
-
-            API_URL,
-
-            {
-
-                method:"POST",
-
-                headers:{
-
-                    "Content-Type":
-                    "text/plain;charset=utf-8"
-
-                },
-
-                body:
-
-                JSON.stringify(
-                payload
-                )
-
-            }
-
-        );
-
-
-        const result =
-
-        await response.json();
+    async function(){
 
 
         if(
-            result.success !== true
+
+            !checkLogin()
+
         ){
 
-            throw new Error(
+            return;
 
-                result.message ||
+        }
 
-                "Failed to submit call."
+
+        if(
+
+            !currentItem
+
+        ){
+
+            return;
+
+        }
+
+
+        const callWork =
+
+            callWorkInput.value.trim();
+
+
+        if(
+
+            !callWork
+
+        ){
+
+            showStatus(
+
+                "Please enter Call Work information.",
+
+                "error"
+
+            );
+
+
+            callWorkInput.focus();
+
+
+            return;
+
+        }
+
+
+        const customerId =
+
+            currentItem.customerNumber ||
+
+            currentItem.ip ||
+
+            currentItem.customerId ||
+
+            "";
+
+
+        const date =
+
+            currentItem.date ||
+
+            "";
+
+
+        const problem =
+
+            currentItem.problem ||
+
+            "";
+
+
+        const reference =
+
+            currentItem.reference ||
+
+            currentItem.ref ||
+
+            "";
+
+
+        const support =
+
+            currentItem.support ||
+
+            "";
+
+
+        const supportWork =
+
+            currentItem.supportWork ||
+
+            "";
+
+
+        const call =
+
+            getLoggedInName();
+
+
+        submitCallBtn.disabled =
+
+            true;
+
+
+        submitCallBtn.innerHTML =
+
+            '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
+
+
+        try{
+
+
+            const payload = {
+
+                action:
+
+                    "submitCall",
+
+
+                customerId:
+
+                    customerId,
+
+
+                date:
+
+                    date,
+
+
+                problem:
+
+                    problem,
+
+
+                reference:
+
+                    reference,
+
+
+                support:
+
+                    support,
+
+
+                supportWork:
+
+                    supportWork,
+
+
+                call:
+
+                    call,
+
+
+                callWork:
+
+                    callWork,
+
+
+                username:
+
+                    localStorage.getItem(
+
+                        "username"
+
+                    ) || "",
+
+
+                name:
+
+                    localStorage.getItem(
+
+                        "name"
+
+                    ) || call
+
+            };
+
+
+            const response =
+
+                await fetch(
+
+                    API_URL,
+
+                    {
+
+                        method:"POST",
+
+                        headers:{
+
+                            "Content-Type":
+
+                                "text/plain;charset=utf-8"
+
+                        },
+
+                        body:
+
+                            JSON.stringify(
+
+                                payload
+
+                            )
+
+                    }
+
+                );
+
+
+            const result =
+
+                await response.json();
+
+
+            if(
+
+                result.success !== true
+
+            ){
+
+                throw new Error(
+
+                    result.message ||
+
+                    "Failed to submit call."
+
+                );
+
+            }
+
+
+            closeModalBox();
+
+
+            showStatus(
+
+                "Call completed successfully and moved to History.",
+
+                "success"
+
+            );
+
+
+            /* RELOAD */
+
+            await loadPendingCall();
+
+
+        }
+
+        catch(error){
+
+
+            console.error(
+
+                "Submit Call Error:",
+
+                error
+
+            );
+
+
+            showStatus(
+
+                error.message ||
+
+                "Unable to submit call.",
+
+                "error"
 
             );
 
         }
 
 
-        closeModal();
+        finally{
 
 
-        showStatus(
+            submitCallBtn.disabled =
 
-            "Call completed successfully and moved to History.",
-
-            "success"
-
-        );
+                false;
 
 
-        await loadPendingCall();
+            submitCallBtn.innerHTML =
+
+                '<i class="fa-solid fa-paper-plane"></i> Submit Call';
 
 
-    }catch(error){
-
-
-        console.error(
-        "Submit Call Error:",
-        error
-        );
-
-
-        showStatus(
-
-            error.message ||
-
-            "Unable to submit call.",
-
-            "error"
-
-        );
-
-
-    }finally{
-
-
-        submitCallBtn.disabled =
-        false;
-
-
-        submitCallBtn.innerHTML =
-
-        '<i class="fa-solid fa-paper-plane"></i> Submit Call';
-
+        }
 
     }
 
-});
+);
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+searchInput.addEventListener(
+
+    "input",
+
+    function(){
+
+
+        const search =
+
+            this.value
+
+                .toLowerCase()
+
+                .trim();
+
+
+        if(
+
+            !search
+
+        ){
+
+            renderTable(
+
+                allData
+
+            );
+
+            return;
+
+        }
+
+
+        const filtered =
+
+            allData.filter(
+
+                function(item){
+
+
+                    const text =
+
+                        [
+
+                            item.customerNumber,
+
+                            item.ip,
+
+                            item.customerId,
+
+                            item.date,
+
+                            item.problem,
+
+                            item.reference,
+
+                            item.ref,
+
+                            item.support,
+
+                            item.supportWork
+
+                        ]
+
+                        .join(" ")
+
+                        .toLowerCase();
+
+
+                    return text.includes(
+
+                        search
+
+                    );
+
+                }
+
+            );
+
+
+        renderTable(
+
+            filtered
+
+        );
+
+    }
+
+);
 
 
 /* =====================================================
    REFRESH
 ===================================================== */
 
-document.getElementById(
-"refreshBtn"
-).addEventListener(
+refreshBtn.addEventListener(
 
-"click",
+    "click",
 
-function(){
+    function(){
 
-    loadPendingCall();
+        loadPendingCall();
 
-}
+    }
 
 );
 
@@ -2476,76 +3798,156 @@ function(){
    DASHBOARD
 ===================================================== */
 
-document.getElementById(
-"backBtn"
-).addEventListener(
+backBtn.addEventListener(
 
-"click",
+    "click",
 
-function(){
+    function(){
 
-    if(!checkLogin()){
 
-        return;
+        if(
+
+            !checkLogin()
+
+        ){
+
+            return;
+
+        }
+
+
+        window.location.href =
+
+            "index.html";
 
     }
-
-    window.location.href =
-    "index.html";
-
-}
 
 );
 
 
 /* =====================================================
-   ESCAPE HTML
+   CLOSE BUTTONS
 ===================================================== */
 
-function escapeHtml(value){
+closeModal.addEventListener(
 
-    const div =
-    document.createElement("div");
+    "click",
 
-    div.textContent =
-    value || "";
+    closeModalBox
 
-    return div.innerHTML;
+);
 
-}
+
+cancelModal.addEventListener(
+
+    "click",
+
+    closeModalBox
+
+);
 
 
 /* =====================================================
-   SECURITY
+   CLICK OUTSIDE MODAL
+===================================================== */
+
+modalOverlay.addEventListener(
+
+    "click",
+
+    function(e){
+
+
+        if(
+
+            e.target ===
+
+            modalOverlay
+
+        ){
+
+            closeModalBox();
+
+        }
+
+    }
+
+);
+
+
+/* =====================================================
+   ESC KEY
 ===================================================== */
 
 document.addEventListener(
 
-"visibilitychange",
+    "keydown",
 
-function(){
+    function(e){
 
-    if(
-        document.visibilityState ===
-        "visible"
-    ){
+
+        if(
+
+            e.key === "Escape"
+
+            &&
+
+            modalOverlay.classList.contains(
+
+                "show"
+
+            )
+
+        ){
+
+            closeModalBox();
+
+        }
+
+    }
+
+);
+
+
+/* =====================================================
+   PAGE SECURITY
+===================================================== */
+
+document.addEventListener(
+
+    "visibilitychange",
+
+    function(){
+
+
+        if(
+
+            document.visibilityState ===
+
+            "visible"
+
+        ){
+
+            checkLogin();
+
+        }
+
+    }
+
+);
+
+
+window.addEventListener(
+
+    "pageshow",
+
+    function(){
 
         checkLogin();
 
     }
 
-});
-
-
-window.addEventListener(
-
-"pageshow",
-
-function(){
-
-    checkLogin();
-
-});
+);
 
 
 /* =====================================================

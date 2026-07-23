@@ -15,8 +15,6 @@ content="width=device-width, initial-scale=1.0"
 
 <!-- =====================================================
      LOGIN SECURITY
-     dashboard/new-entry.html
-     Login ছাড়া এই Page খোলা যাবে না
 ===================================================== -->
 
 <script>
@@ -62,7 +60,7 @@ crossorigin
 >
 
 <link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
 rel="stylesheet"
 >
 
@@ -85,13 +83,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 *{
 
-margin:0;
+    margin:0;
 
-padding:0;
+    padding:0;
 
-box-sizing:border-box;
+    box-sizing:border-box;
 
-font-family:'Poppins',sans-serif;
+    font-family:'Poppins',sans-serif;
 
 }
 
@@ -102,79 +100,600 @@ font-family:'Poppins',sans-serif;
 
 body{
 
-background:#005C3A;
+    min-height:100vh;
 
-min-height:100vh;
+    background:
 
-display:flex;
+    linear-gradient(
+        135deg,
+        #004d35,
+        #007a55,
+        #00a878
+    );
 
-justify-content:center;
+    color:#222;
 
-align-items:center;
-
-padding:30px;
-
-position:relative;
-
-overflow-x:hidden;
+    overflow-x:hidden;
 
 }
 
 
 /* =====================================================
-   BACKGROUND EFFECT
+   SIDEBAR
 ===================================================== */
 
-body::before{
+.sidebar{
 
-content:"";
+    position:fixed;
 
-position:fixed;
+    top:0;
 
-left:-200px;
+    left:0;
 
-top:-200px;
+    width:260px;
 
-width:500px;
+    height:100vh;
 
-height:500px;
+    background:
 
-background:#E53935;
+    linear-gradient(
+        180deg,
+        #004d35,
+        #006a4e
+    );
 
-border-radius:50%;
+    color:white;
 
-filter:blur(140px);
+    z-index:10000;
 
-opacity:.35;
+    transition:
 
-pointer-events:none;
+    width .3s ease,
+
+    transform .3s ease;
+
+    box-shadow:
+
+    5px 0 25px
+
+    rgba(0,0,0,.20);
+
+    display:flex;
+
+    flex-direction:column;
 
 }
 
 
-body::after{
+/* =====================================================
+   SIDEBAR COLLAPSED
+===================================================== */
 
-content:"";
+.sidebar.collapsed{
 
-position:fixed;
+    width:78px;
 
-right:-180px;
+}
 
-bottom:-180px;
 
-width:450px;
+/* =====================================================
+   SIDEBAR HEADER
+===================================================== */
 
-height:450px;
+.sidebar-header{
 
-background:#0D8F5A;
+    height:80px;
 
-border-radius:50%;
+    display:flex;
 
-filter:blur(120px);
+    align-items:center;
 
-opacity:.35;
+    padding:0 18px;
 
-pointer-events:none;
+    gap:13px;
+
+    border-bottom:1px solid
+
+    rgba(255,255,255,.12);
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+}
+
+
+.sidebar-logo{
+
+    min-width:44px;
+
+    width:44px;
+
+    height:44px;
+
+    border-radius:13px;
+
+    background:
+
+    rgba(255,255,255,.15);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:20px;
+
+}
+
+
+.sidebar-brand{
+
+    font-size:16px;
+
+    font-weight:700;
+
+    transition:.2s;
+
+}
+
+
+.sidebar.collapsed .sidebar-brand{
+
+    opacity:0;
+
+    width:0;
+
+    visibility:hidden;
+
+}
+
+
+/* =====================================================
+   SIDEBAR MENU
+===================================================== */
+
+.sidebar-menu{
+
+    padding:20px 12px;
+
+    flex:1;
+
+    overflow-y:auto;
+
+}
+
+
+.menu-title{
+
+    font-size:10px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    color:
+
+    rgba(255,255,255,.55);
+
+    padding:0 12px 10px;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+}
+
+
+.sidebar.collapsed .menu-title{
+
+    opacity:0;
+
+    height:0;
+
+    padding:0;
+
+}
+
+
+.menu-item{
+
+    width:100%;
+
+    min-height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:12px 14px;
+
+    margin-bottom:7px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:transparent;
+
+    color:
+
+    rgba(255,255,255,.82);
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+    font-weight:500;
+
+    transition:.25s;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+}
+
+
+.menu-item i{
+
+    min-width:22px;
+
+    width:22px;
+
+    text-align:center;
+
+    font-size:17px;
+
+}
+
+
+.menu-item span{
+
+    transition:.2s;
+
+}
+
+
+.menu-item:hover{
+
+    background:
+
+    rgba(255,255,255,.12);
+
+    color:white;
+
+    transform:translateX(3px);
+
+}
+
+
+.menu-item.active{
+
+    background:white;
+
+    color:#006a4e;
+
+    font-weight:700;
+
+    box-shadow:
+
+    0 7px 18px
+
+    rgba(0,0,0,.12);
+
+}
+
+
+.sidebar.collapsed .menu-item{
+
+    justify-content:center;
+
+    padding:12px;
+
+}
+
+
+.sidebar.collapsed .menu-item span{
+
+    opacity:0;
+
+    width:0;
+
+    display:none;
+
+}
+
+
+.sidebar.collapsed .menu-item:hover{
+
+    transform:none;
+
+}
+
+
+/* =====================================================
+   SIDEBAR FOOTER
+===================================================== */
+
+.sidebar-footer{
+
+    padding:15px 12px;
+
+    border-top:1px solid
+
+    rgba(255,255,255,.12);
+
+}
+
+
+.user-mini{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:10px;
+
+    border-radius:12px;
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+}
+
+
+.user-avatar{
+
+    min-width:38px;
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#006a4e;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:16px;
+
+}
+
+
+.user-info{
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+}
+
+
+.user-info strong{
+
+    display:block;
+
+    font-size:12px;
+
+}
+
+
+.user-info small{
+
+    display:block;
+
+    font-size:10px;
+
+    opacity:.7;
+
+    margin-top:2px;
+
+}
+
+
+.sidebar.collapsed .user-mini{
+
+    justify-content:center;
+
+    padding:8px;
+
+}
+
+
+.sidebar.collapsed .user-info{
+
+    display:none;
+
+}
+
+
+/* =====================================================
+   MAIN AREA
+===================================================== */
+
+.main{
+
+    margin-left:260px;
+
+    min-height:100vh;
+
+    transition:
+
+    margin-left .3s ease;
+
+    padding:20px;
+
+}
+
+
+.sidebar.collapsed ~ .main{
+
+    margin-left:78px;
+
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.topbar{
+
+    width:100%;
+
+    min-height:64px;
+
+    background:
+
+    rgba(255,255,255,.96);
+
+    border-radius:18px;
+
+    padding:10px 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    box-shadow:
+
+    0 12px 35px
+
+    rgba(0,0,0,.15);
+
+    margin-bottom:25px;
+
+}
+
+
+.topbar-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+.menu-toggle{
+
+    width:44px;
+
+    height:44px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#e8f8f1;
+
+    color:#006a4e;
+
+    cursor:pointer;
+
+    font-size:19px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.3s;
+
+}
+
+
+.menu-toggle:hover{
+
+    background:#006a4e;
+
+    color:white;
+
+    transform:scale(1.05);
+
+}
+
+
+.page-title{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#006a4e;
+
+}
+
+
+.page-subtitle{
+
+    font-size:11px;
+
+    color:#777;
+
+    margin-top:2px;
+
+}
+
+
+.topbar-user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    color:#555;
+
+    font-size:13px;
+
+}
+
+
+.topbar-user i{
+
+    color:#006a4e;
+
+}
+
+
+/* =====================================================
+   CONTENT AREA
+===================================================== */
+
+.content{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
 
 }
 
@@ -185,25 +704,23 @@ pointer-events:none;
 
 .card{
 
-width:100%;
+    width:100%;
 
-max-width:650px;
+    max-width:650px;
 
-background:white;
+    background:white;
 
-border-radius:25px;
+    border-radius:25px;
 
-padding:40px;
+    padding:40px;
 
-box-shadow:
+    box-shadow:
 
-0 25px 60px
+    0 25px 60px
 
-rgba(0,0,0,.25);
+    rgba(0,0,0,.25);
 
-position:relative;
-
-z-index:1;
+    position:relative;
 
 }
 
@@ -214,42 +731,42 @@ z-index:1;
 
 .back-btn{
 
-display:inline-flex;
+    display:inline-flex;
 
-align-items:center;
+    align-items:center;
 
-gap:8px;
+    gap:8px;
 
-width:auto;
+    width:auto;
 
-padding:10px 16px;
+    padding:10px 16px;
 
-margin-bottom:25px;
+    margin-bottom:25px;
 
-border:none;
+    border:none;
 
-border-radius:10px;
+    border-radius:10px;
 
-background:#f1f5f3;
+    background:#f1f5f3;
 
-color:#006A4E;
+    color:#006A4E;
 
-font-size:14px;
+    font-size:14px;
 
-font-weight:600;
+    font-weight:600;
 
-cursor:pointer;
+    cursor:pointer;
 
-transition:.3s;
+    transition:.3s;
 
 }
 
 
 .back-btn:hover{
 
-background:#006A4E;
+    background:#006A4E;
 
-color:white;
+    color:white;
 
 }
 
@@ -260,25 +777,25 @@ color:white;
 
 .logo{
 
-width:80px;
+    width:80px;
 
-height:80px;
+    height:80px;
 
-margin:0 auto 20px;
+    margin:0 auto 20px;
 
-background:#006A4E;
+    background:#006A4E;
 
-border-radius:20px;
+    border-radius:20px;
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-align-items:center;
+    align-items:center;
 
-font-size:35px;
+    font-size:35px;
 
-color:white;
+    color:white;
 
 }
 
@@ -289,11 +806,11 @@ color:white;
 
 h2{
 
-text-align:center;
+    text-align:center;
 
-color:#006A4E;
+    color:#006A4E;
 
-margin-bottom:8px;
+    margin-bottom:8px;
 
 }
 
@@ -304,11 +821,11 @@ margin-bottom:8px;
 
 .subtitle{
 
-text-align:center;
+    text-align:center;
 
-color:#777;
+    color:#777;
 
-margin-bottom:35px;
+    margin-bottom:35px;
 
 }
 
@@ -319,20 +836,20 @@ margin-bottom:35px;
 
 .group{
 
-margin-bottom:22px;
+    margin-bottom:22px;
 
 }
 
 
 .group label{
 
-display:block;
+    display:block;
 
-font-weight:600;
+    font-weight:600;
 
-margin-bottom:8px;
+    margin-bottom:8px;
 
-color:#333;
+    color:#333;
 
 }
 
@@ -343,7 +860,7 @@ color:#333;
 
 .input{
 
-position:relative;
+    position:relative;
 
 }
 
@@ -354,17 +871,17 @@ position:relative;
 
 .input i{
 
-position:absolute;
+    position:absolute;
 
-left:16px;
+    left:16px;
 
-top:16px;
+    top:16px;
 
-color:#006A4E;
+    color:#006A4E;
 
-font-size:18px;
+    font-size:18px;
 
-z-index:2;
+    z-index:2;
 
 }
 
@@ -377,21 +894,21 @@ z-index:2;
 
 .input textarea{
 
-width:100%;
+    width:100%;
 
-padding:15px 18px 15px 50px;
+    padding:15px 18px 15px 50px;
 
-border:2px solid #ddd;
+    border:2px solid #ddd;
 
-border-radius:12px;
+    border-radius:12px;
 
-font-size:15px;
+    font-size:15px;
 
-outline:none;
+    outline:none;
 
-transition:.3s;
+    transition:.3s;
 
-background:white;
+    background:white;
 
 }
 
@@ -400,13 +917,13 @@ background:white;
 
 .input textarea:focus{
 
-border-color:#006A4E;
+    border-color:#006A4E;
 
-box-shadow:
+    box-shadow:
 
-0 0 15px
+    0 0 15px
 
-rgba(0,106,78,.2);
+    rgba(0,106,78,.2);
 
 }
 
@@ -417,9 +934,9 @@ rgba(0,106,78,.2);
 
 textarea{
 
-resize:none;
+    resize:none;
 
-height:120px;
+    height:120px;
 
 }
 
@@ -430,11 +947,11 @@ height:120px;
 
 #reference{
 
-background:#f5f7f6;
+    background:#f5f7f6;
 
-color:#555;
+    color:#555;
 
-cursor:not-allowed;
+    cursor:not-allowed;
 
 }
 
@@ -445,41 +962,41 @@ cursor:not-allowed;
 
 .submit-btn{
 
-width:100%;
+    width:100%;
 
-padding:16px;
+    padding:16px;
 
-border:none;
+    border:none;
 
-border-radius:12px;
+    border-radius:12px;
 
-background:#006A4E;
+    background:#006A4E;
 
-color:white;
+    color:white;
 
-font-size:17px;
+    font-size:17px;
 
-font-weight:600;
+    font-weight:600;
 
-cursor:pointer;
+    cursor:pointer;
 
-transition:.3s;
+    transition:.3s;
 
 }
 
 
 .submit-btn:hover{
 
-background:#E53935;
+    background:#E53935;
 
 }
 
 
 .submit-btn:disabled{
 
-opacity:.7;
+    opacity:.7;
 
-cursor:not-allowed;
+    cursor:not-allowed;
 
 }
 
@@ -490,13 +1007,13 @@ cursor:not-allowed;
 
 .footer{
 
-margin-top:20px;
+    margin-top:20px;
 
-text-align:center;
+    text-align:center;
 
-font-size:13px;
+    font-size:13px;
 
-color:#777;
+    color:#777;
 
 }
 
@@ -507,40 +1024,40 @@ color:#777;
 
 .popup-overlay{
 
-position:fixed;
+    position:fixed;
 
-top:0;
+    top:0;
 
-left:0;
+    left:0;
 
-width:100%;
+    width:100%;
 
-height:100%;
+    height:100%;
 
-background:rgba(0,0,0,.55);
+    background:rgba(0,0,0,.55);
 
-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);
 
--webkit-backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
 
-display:none;
+    display:none;
 
-justify-content:center;
+    justify-content:center;
 
-align-items:center;
+    align-items:center;
 
-padding:20px;
+    padding:20px;
 
-z-index:99999;
+    z-index:99999;
 
 }
 
 
 .popup-overlay.active{
 
-display:flex;
+    display:flex;
 
-animation:popupFadeIn .25s ease;
+    animation:popupFadeIn .25s ease;
 
 }
 
@@ -551,25 +1068,25 @@ animation:popupFadeIn .25s ease;
 
 .popup-box{
 
-width:100%;
+    width:100%;
 
-max-width:420px;
+    max-width:420px;
 
-background:white;
+    background:white;
 
-border-radius:25px;
+    border-radius:25px;
 
-padding:35px 30px 30px;
+    padding:35px 30px 30px;
 
-text-align:center;
+    text-align:center;
 
-box-shadow:
+    box-shadow:
 
-0 25px 80px
+    0 25px 80px
 
-rgba(0,0,0,.35);
+    rgba(0,0,0,.35);
 
-animation:popupZoomIn .3s ease;
+    animation:popupZoomIn .3s ease;
 
 }
 
@@ -580,21 +1097,21 @@ animation:popupZoomIn .3s ease;
 
 .popup-icon{
 
-width:80px;
+    width:80px;
 
-height:80px;
+    height:80px;
 
-margin:0 auto 20px;
+    margin:0 auto 20px;
 
-border-radius:50%;
+    border-radius:50%;
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-align-items:center;
+    align-items:center;
 
-font-size:38px;
+    font-size:38px;
 
 }
 
@@ -605,9 +1122,9 @@ font-size:38px;
 
 .popup-box.success .popup-icon{
 
-background:#E8F8F1;
+    background:#E8F8F1;
 
-color:#006A4E;
+    color:#006A4E;
 
 }
 
@@ -618,9 +1135,9 @@ color:#006A4E;
 
 .popup-box.error .popup-icon{
 
-background:#FDECEC;
+    background:#FDECEC;
 
-color:#E53935;
+    color:#E53935;
 
 }
 
@@ -631,9 +1148,9 @@ color:#E53935;
 
 .popup-box.warning .popup-icon{
 
-background:#FFF6DD;
+    background:#FFF6DD;
 
-color:#E5A400;
+    color:#E5A400;
 
 }
 
@@ -644,9 +1161,9 @@ color:#E5A400;
 
 .popup-box.loading .popup-icon{
 
-background:#E8F8F1;
+    background:#E8F8F1;
 
-color:#006A4E;
+    color:#006A4E;
 
 }
 
@@ -657,13 +1174,13 @@ color:#006A4E;
 
 .popup-title{
 
-font-size:23px;
+    font-size:23px;
 
-font-weight:700;
+    font-weight:700;
 
-color:#222;
+    color:#222;
 
-margin-bottom:10px;
+    margin-bottom:10px;
 
 }
 
@@ -674,13 +1191,13 @@ margin-bottom:10px;
 
 .popup-message{
 
-font-size:14px;
+    font-size:14px;
 
-line-height:1.7;
+    line-height:1.7;
 
-color:#777;
+    color:#777;
 
-margin-bottom:25px;
+    margin-bottom:25px;
 
 }
 
@@ -691,30 +1208,30 @@ margin-bottom:25px;
 
 .popup-ok{
 
-width:100%;
+    width:100%;
 
-padding:13px;
+    padding:13px;
 
-border:none;
+    border:none;
 
-border-radius:12px;
+    border-radius:12px;
 
-background:#006A4E;
+    background:#006A4E;
 
-color:white;
+    color:white;
 
-font-size:16px;
+    font-size:16px;
 
-font-weight:600;
+    font-weight:600;
 
-cursor:pointer;
+    cursor:pointer;
 
 }
 
 
 .popup-ok:hover{
 
-background:#E53935;
+    background:#E53935;
 
 }
 
@@ -725,7 +1242,26 @@ background:#E53935;
 
 .loading-spinner{
 
-animation:popupSpin 1s linear infinite;
+    animation:popupSpin 1s linear infinite;
+
+}
+
+
+/* =====================================================
+   MOBILE OVERLAY
+===================================================== */
+
+.sidebar-overlay{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    z-index:9998;
 
 }
 
@@ -736,55 +1272,55 @@ animation:popupSpin 1s linear infinite;
 
 @keyframes popupFadeIn{
 
-from{
+    from{
 
-opacity:0;
+        opacity:0;
 
-}
+    }
 
-to{
+    to{
 
-opacity:1;
+        opacity:1;
 
-}
+    }
 
 }
 
 
 @keyframes popupZoomIn{
 
-from{
+    from{
 
-transform:scale(.8);
+        transform:scale(.8);
 
-opacity:0;
+        opacity:0;
 
-}
+    }
 
-to{
+    to{
 
-transform:scale(1);
+        transform:scale(1);
 
-opacity:1;
+        opacity:1;
 
-}
+    }
 
 }
 
 
 @keyframes popupSpin{
 
-from{
+    from{
 
-transform:rotate(0deg);
+        transform:rotate(0deg);
 
-}
+    }
 
-to{
+    to{
 
-transform:rotate(360deg);
+        transform:rotate(360deg);
 
-}
+    }
 
 }
 
@@ -793,38 +1329,203 @@ transform:rotate(360deg);
    MOBILE
 ===================================================== */
 
-@media(max-width:600px){
+@media(max-width:768px){
 
-.card{
+    body{
 
-padding:25px;
+        overflow-x:hidden;
+
+    }
+
+
+    .sidebar{
+
+        width:260px;
+
+        transform:translateX(-100%);
+
+    }
+
+
+    .sidebar.mobile-open{
+
+        transform:translateX(0);
+
+    }
+
+
+    .sidebar.collapsed{
+
+        width:260px;
+
+    }
+
+
+    .sidebar.collapsed .sidebar-brand,
+
+    .sidebar.collapsed .menu-title,
+
+    .sidebar.collapsed .menu-item span,
+
+    .sidebar.collapsed .user-info{
+
+        opacity:1;
+
+        width:auto;
+
+        display:block;
+
+        visibility:visible;
+
+    }
+
+
+    .sidebar.collapsed .menu-item{
+
+        justify-content:flex-start;
+
+        padding:12px 14px;
+
+    }
+
+
+    .sidebar.collapsed .user-mini{
+
+        justify-content:flex-start;
+
+        padding:10px;
+
+    }
+
+
+    .sidebar-overlay.active{
+
+        display:block;
+
+    }
+
+
+    .main,
+
+    .sidebar.collapsed ~ .main{
+
+        margin-left:0;
+
+        padding:12px;
+
+    }
+
+
+    .topbar{
+
+        padding:10px 12px;
+
+        margin-bottom:18px;
+
+    }
+
+
+    .page-title{
+
+        font-size:15px;
+
+    }
+
+
+    .page-subtitle{
+
+        display:none;
+
+    }
+
+
+    .topbar-user{
+
+        display:none;
+
+    }
+
+
+    .card{
+
+        padding:25px;
+
+        border-radius:20px;
+
+    }
+
 
 }
 
 
-.popup-box{
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 
-padding:30px 22px 25px;
+@media(max-width:450px){
 
-}
+    .card{
 
+        padding:20px;
 
-.popup-icon{
-
-width:70px;
-
-height:70px;
-
-font-size:32px;
-
-}
+    }
 
 
-.popup-title{
+    .back-btn{
 
-font-size:20px;
+        margin-bottom:20px;
 
-}
+    }
+
+
+    .logo{
+
+        width:70px;
+
+        height:70px;
+
+        font-size:30px;
+
+    }
+
+
+    h2{
+
+        font-size:21px;
+
+    }
+
+
+    .subtitle{
+
+        margin-bottom:25px;
+
+    }
+
+
+    .popup-box{
+
+        padding:30px 22px 25px;
+
+    }
+
+
+    .popup-icon{
+
+        width:70px;
+
+        height:70px;
+
+        font-size:32px;
+
+    }
+
+
+    .popup-title{
+
+        font-size:20px;
+
+    }
 
 }
 
@@ -837,15 +1538,296 @@ font-size:20px;
 
 
 <!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside
+class="sidebar"
+id="sidebar"
+>
+
+
+<!-- SIDEBAR HEADER -->
+
+<div class="sidebar-header">
+
+
+<div class="sidebar-logo">
+
+<i class="fa-solid fa-headset"></i>
+
+</div>
+
+
+<div class="sidebar-brand">
+
+LINK4 COMMUNICATION
+
+</div>
+
+
+</div>
+
+
+<!-- SIDEBAR MENU -->
+
+<nav class="sidebar-menu">
+
+
+<div class="menu-title">
+
+MAIN MENU
+
+</div>
+
+
+<!-- DASHBOARD -->
+
+<a
+href="index.html"
+class="menu-item"
+title="Dashboard"
+>
+
+<i class="fa-solid fa-gauge-high"></i>
+
+<span>
+
+Dashboard
+
+</span>
+
+</a>
+
+
+<!-- NEW ENTRY -->
+
+<a
+href="new-entry.html"
+class="menu-item active"
+title="New Support Entry"
+>
+
+<i class="fa-solid fa-plus-circle"></i>
+
+<span>
+
+New Support Entry
+
+</span>
+
+</a>
+
+
+<!-- PENDING SUPPORT -->
+
+<a
+href="pending-support.html"
+class="menu-item"
+title="Pending Support"
+>
+
+<i class="fa-solid fa-clock"></i>
+
+<span>
+
+Pending Support
+
+</span>
+
+</a>
+
+
+<!-- SUPPORT HISTORY -->
+
+<a
+href="support-history.html"
+class="menu-item"
+title="Support History"
+>
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+<span>
+
+Support History
+
+</span>
+
+</a>
+
+
+<!-- LOGOUT -->
+
+<button
+type="button"
+class="menu-item"
+id="logoutBtn"
+title="Logout"
+>
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>
+
+Logout
+
+</span>
+
+</button>
+
+
+</nav>
+
+
+<!-- SIDEBAR FOOTER -->
+
+<div class="sidebar-footer">
+
+
+<div class="user-mini">
+
+
+<div class="user-avatar">
+
+<i class="fa-solid fa-user"></i>
+
+</div>
+
+
+<div class="user-info">
+
+
+<strong id="sidebarUserName">
+
+User
+
+</strong>
+
+
+<small>
+
+Logged In
+
+</small>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</aside>
+
+
+<!-- =====================================================
+     MOBILE SIDEBAR OVERLAY
+===================================================== -->
+
+<div
+class="sidebar-overlay"
+id="sidebarOverlay"
+></div>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="topbar">
+
+
+<div class="topbar-left">
+
+
+<!-- MENU TOGGLE -->
+
+<button
+type="button"
+class="menu-toggle"
+id="menuToggle"
+title="Minimize / Expand Sidebar"
+>
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+
+<div>
+
+
+<div class="page-title">
+
+New Support Entry
+
+</div>
+
+
+<div class="page-subtitle">
+
+LINK4 COMMUNICATION Support Management
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<div class="topbar-user">
+
+
+<i class="fa-solid fa-user-circle"></i>
+
+
+<span>
+
+Logged in as:
+
+<strong id="topUserName">
+
+User
+
+</strong>
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     CONTENT
+===================================================== -->
+
+<div class="content">
+
+
+<!-- =====================================================
      MAIN CARD
 ===================================================== -->
 
 <div class="card">
 
 
-<!-- =====================================================
-     BACK TO DASHBOARD
-===================================================== -->
+<!-- BACK TO DASHBOARD -->
 
 <button
 type="button"
@@ -860,9 +1842,7 @@ Back to Dashboard
 </button>
 
 
-<!-- =====================================================
-     LOGO
-===================================================== -->
+<!-- LOGO -->
 
 <div class="logo">
 
@@ -871,9 +1851,7 @@ Back to Dashboard
 </div>
 
 
-<!-- =====================================================
-     TITLE
-===================================================== -->
+<!-- TITLE -->
 
 <h2>
 
@@ -896,11 +1874,10 @@ LINK4 COMMUNICATION
 <form id="entryForm">
 
 
-<!-- =====================================================
-     CUSTOMER ID
-===================================================== -->
+<!-- CUSTOMER ID -->
 
 <div class="group">
+
 
 <label>
 
@@ -910,6 +1887,7 @@ Customer ID
 
 
 <div class="input">
+
 
 <i class="fa-solid fa-network-wired"></i>
 
@@ -922,16 +1900,17 @@ required
 autocomplete="off"
 >
 
-</div>
 
 </div>
 
 
-<!-- =====================================================
-     PROBLEM
-===================================================== -->
+</div>
+
+
+<!-- PROBLEM -->
 
 <div class="group">
+
 
 <label>
 
@@ -942,6 +1921,7 @@ Problem
 
 <div class="input">
 
+
 <i class="fa-solid fa-triangle-exclamation"></i>
 
 
@@ -951,16 +1931,17 @@ placeholder="Write Customer Problem"
 required
 ></textarea>
 
-</div>
 
 </div>
 
 
-<!-- =====================================================
-     REFERENCE / LOGGED IN USER
-===================================================== -->
+</div>
+
+
+<!-- REFERENCE -->
 
 <div class="group">
+
 
 <label>
 
@@ -970,6 +1951,7 @@ Reference
 
 
 <div class="input">
+
 
 <i class="fa-solid fa-user-check"></i>
 
@@ -981,14 +1963,14 @@ placeholder="Logged in Username"
 readonly
 >
 
-</div>
 
 </div>
 
 
-<!-- =====================================================
-     SUBMIT
-===================================================== -->
+</div>
+
+
+<!-- SUBMIT -->
 
 <button
 type="submit"
@@ -1006,9 +1988,7 @@ Submit Support
 </form>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- FOOTER -->
 
 <div class="footer">
 
@@ -1018,6 +1998,12 @@ Submit Support
 
 
 </div>
+
+
+</div>
+
+
+</main>
 
 
 <!-- =====================================================
@@ -1095,6 +2081,174 @@ const API_URL =
 
 
 /* =====================================================
+   ELEMENTS
+===================================================== */
+
+const sidebar =
+
+document.getElementById(
+
+"sidebar"
+
+);
+
+
+const menuToggle =
+
+document.getElementById(
+
+"menuToggle"
+
+);
+
+
+const sidebarOverlay =
+
+document.getElementById(
+
+"sidebarOverlay"
+
+);
+
+
+const logoutBtn =
+
+document.getElementById(
+
+"logoutBtn"
+
+);
+
+
+/* =====================================================
+   SIDEBAR TOGGLE
+   DESKTOP:
+   Sidebar Minimize / Expand
+
+   MOBILE:
+   Sidebar Open / Close
+===================================================== */
+
+menuToggle.addEventListener(
+
+    "click",
+
+    function(){
+
+        if(
+
+            window.innerWidth <= 768
+
+        ){
+
+            sidebar.classList.toggle(
+
+                "mobile-open"
+
+            );
+
+            sidebarOverlay.classList.toggle(
+
+                "active"
+
+            );
+
+        }
+
+        else{
+
+            sidebar.classList.toggle(
+
+                "collapsed"
+
+            );
+
+        }
+
+    }
+
+);
+
+
+/* =====================================================
+   MOBILE OVERLAY CLICK
+===================================================== */
+
+sidebarOverlay.addEventListener(
+
+    "click",
+
+    function(){
+
+        sidebar.classList.remove(
+
+            "mobile-open"
+
+        );
+
+        sidebarOverlay.classList.remove(
+
+            "active"
+
+        );
+
+    }
+
+);
+
+
+/* =====================================================
+   MENU LINK CLICK
+===================================================== */
+
+document
+
+.querySelectorAll(
+
+    ".menu-item"
+
+)
+
+.forEach(
+
+    function(item){
+
+        item.addEventListener(
+
+            "click",
+
+            function(){
+
+                if(
+
+                    window.innerWidth <= 768
+
+                ){
+
+                    sidebar.classList.remove(
+
+                        "mobile-open"
+
+                    );
+
+                    sidebarOverlay.classList.remove(
+
+                        "active"
+
+                    );
+
+                }
+
+            }
+
+        );
+
+    }
+
+);
+
+
+/* =====================================================
    LOGIN CHECK
 ===================================================== */
 
@@ -1138,18 +2292,124 @@ localStorage.getItem("username")
 "";
 
 
-/* =====================================================
-   GET ELEMENTS
-===================================================== */
+const savedName =
 
-const referenceInput =
+localStorage.getItem("name")
+
+||
+
+username
+
+||
+
+"User";
+
+
+/* =====================================================
+   USERNAME DISPLAY
+===================================================== */
 
 document.getElementById(
 
-"reference"
+    "reference"
+
+).value =
+
+username;
+
+
+document.getElementById(
+
+    "topUserName"
+
+).textContent =
+
+savedName;
+
+
+document.getElementById(
+
+    "sidebarUserName"
+
+).textContent =
+
+savedName;
+
+
+/* =====================================================
+   BACK TO DASHBOARD
+===================================================== */
+
+function goBack(){
+
+    if(!checkLogin()){
+
+        return;
+
+    }
+
+
+    window.location.replace(
+
+        "index.html"
+
+    );
+
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+logoutBtn.addEventListener(
+
+    "click",
+
+    function(){
+
+        localStorage.removeItem(
+
+            "loggedIn"
+
+        );
+
+
+        localStorage.removeItem(
+
+            "username"
+
+        );
+
+
+        localStorage.removeItem(
+
+            "name"
+
+        );
+
+
+        localStorage.removeItem(
+
+            "token"
+
+        );
+
+
+        window.location.replace(
+
+            "../index.html"
+
+        );
+
+    }
 
 );
 
+
+/* =====================================================
+   POPUP ELEMENTS
+===================================================== */
 
 const entryForm =
 
@@ -1223,34 +2483,13 @@ document.getElementById(
 );
 
 
-/* =====================================================
-   SHOW USERNAME
-===================================================== */
+const referenceInput =
 
-referenceInput.value =
+document.getElementById(
 
-username;
+"reference"
 
-
-/* =====================================================
-   BACK TO DASHBOARD
-===================================================== */
-
-function goBack(){
-
-    if(!checkLogin()){
-
-        return;
-
-    }
-
-    window.location.replace(
-
-        "index.html"
-
-    );
-
-}
+);
 
 
 /* =====================================================
@@ -1299,7 +2538,11 @@ function showPopup(
     "none";
 
 
-    if(type === "success"){
+    if(
+
+        type === "success"
+
+    ){
 
         popupIcon.innerHTML =
 
@@ -1307,7 +2550,12 @@ function showPopup(
 
     }
 
-    else if(type === "error"){
+
+    else if(
+
+        type === "error"
+
+    ){
 
         popupIcon.innerHTML =
 
@@ -1315,7 +2563,12 @@ function showPopup(
 
     }
 
-    else if(type === "warning"){
+
+    else if(
+
+        type === "warning"
+
+    ){
 
         popupIcon.innerHTML =
 
@@ -1323,7 +2576,12 @@ function showPopup(
 
     }
 
-    else if(type === "loading"){
+
+    else if(
+
+        type === "loading"
+
+    ){
 
         popupIcon.innerHTML =
 
@@ -1366,7 +2624,7 @@ popupOk.addEventListener(
 
 
 /* =====================================================
-   CLOSE POPUP BY OUTSIDE CLICK
+   CLOSE POPUP OUTSIDE CLICK
 ===================================================== */
 
 popupOverlay.addEventListener(
@@ -1405,9 +2663,7 @@ entryForm.addEventListener(
         e.preventDefault();
 
 
-        /* =============================================
-           SECURITY CHECK
-        ============================================= */
+        /* SECURITY CHECK */
 
         if(!checkLogin()){
 
@@ -1416,15 +2672,17 @@ entryForm.addEventListener(
         }
 
 
-        /* =============================================
-           GET DATA
-        ============================================= */
+        /* GET DATA */
 
         const customerId =
 
         document
 
-        .getElementById("ip")
+        .getElementById(
+
+            "ip"
+
+        )
 
         .value
 
@@ -1435,7 +2693,11 @@ entryForm.addEventListener(
 
         document
 
-        .getElementById("problem")
+        .getElementById(
+
+            "problem"
+
+        )
 
         .value
 
@@ -1446,16 +2708,18 @@ entryForm.addEventListener(
 
         localStorage
 
-        .getItem("username")
+        .getItem(
+
+            "username"
+
+        )
 
         ||
 
         "";
 
 
-        /* =============================================
-           VALIDATION
-        ============================================= */
+        /* VALIDATION */
 
         if(!customerId){
 
@@ -1508,18 +2772,14 @@ entryForm.addEventListener(
         }
 
 
-        /* =============================================
-           SAVE OLD BUTTON
-        ============================================= */
+        /* OLD BUTTON */
 
         const oldButtonText =
 
         submitBtn.innerHTML;
 
 
-        /* =============================================
-           DISABLE BUTTON
-        ============================================= */
+        /* DISABLE */
 
         submitBtn.disabled =
 
@@ -1531,9 +2791,7 @@ entryForm.addEventListener(
         '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
 
 
-        /* =============================================
-           SHOW LOADING
-        ============================================= */
+        /* LOADING POPUP */
 
         showPopup(
 
@@ -1548,9 +2806,7 @@ entryForm.addEventListener(
         );
 
 
-        /* =============================================
-           FORM DATA
-        ============================================= */
+        /* FORM DATA */
 
         const formData =
 
@@ -1593,9 +2849,7 @@ entryForm.addEventListener(
         );
 
 
-        /* =============================================
-           SEND DATA
-        ============================================= */
+        /* SEND */
 
         try{
 
@@ -1627,9 +2881,7 @@ entryForm.addEventListener(
             );
 
 
-            /* =========================================
-               SUCCESS
-            ========================================= */
+            /* SUCCESS */
 
             showPopup(
 
@@ -1642,23 +2894,33 @@ entryForm.addEventListener(
             );
 
 
-            /* =========================================
-               CLEAR FORM
-            ========================================= */
+            /* CLEAR CUSTOMER ID */
 
             document
 
-            .getElementById("ip")
+            .getElementById(
+
+                "ip"
+
+            )
 
             .value = "";
 
 
+            /* CLEAR PROBLEM */
+
             document
 
-            .getElementById("problem")
+            .getElementById(
+
+                "problem"
+
+            )
 
             .value = "";
 
+
+            /* KEEP USERNAME */
 
             referenceInput.value =
 
@@ -1698,13 +2960,10 @@ entryForm.addEventListener(
 
             );
 
-
         }
 
 
-        /* =============================================
-           RESTORE BUTTON
-        ============================================= */
+        /* RESTORE BUTTON */
 
         submitBtn.disabled =
 
@@ -1714,7 +2973,6 @@ entryForm.addEventListener(
         submitBtn.innerHTML =
 
         oldButtonText;
-
 
     }
 
@@ -1788,9 +3046,79 @@ window.addEventListener(
         "";
 
 
+        const currentName =
+
+        localStorage.getItem(
+
+            "name"
+
+        )
+
+        ||
+
+        currentUsername
+
+        ||
+
+        "User";
+
+
         referenceInput.value =
 
         currentUsername;
+
+
+        document.getElementById(
+
+            "topUserName"
+
+        ).textContent =
+
+        currentName;
+
+
+        document.getElementById(
+
+            "sidebarUserName"
+
+        ).textContent =
+
+        currentName;
+
+    }
+
+);
+
+
+/* =====================================================
+   WINDOW RESIZE
+===================================================== */
+
+window.addEventListener(
+
+    "resize",
+
+    function(){
+
+        if(
+
+            window.innerWidth > 768
+
+        ){
+
+            sidebar.classList.remove(
+
+                "mobile-open"
+
+            );
+
+            sidebarOverlay.classList.remove(
+
+                "active"
+
+            );
+
+        }
 
     }
 

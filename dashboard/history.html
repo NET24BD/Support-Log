@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>History | Support Log System</title>
+<title>Support Log History</title>
 
 <link
 rel="stylesheet"
@@ -48,24 +48,330 @@ body{
         #008f6d
     );
 
-    padding:16px 24px;
-
     color:#14201d;
+
+    padding:16px 24px;
 
 }
 
 
 /* =====================================================
-   MAIN CONTAINER
+   SIDEBAR
 ===================================================== */
 
-.container{
+.sidebar{
+
+    position:fixed;
+
+    left:16px;
+
+    top:16px;
+
+    bottom:16px;
+
+    width:255px;
+
+    background:#f7fbfa;
+
+    border-radius:26px;
+
+    box-shadow:
+    0 15px 40px
+    rgba(0,0,0,.15);
+
+    z-index:1000;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:20px 15px;
+
+    transition:.3s;
+
+}
+
+
+.sidebar-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:
+    8px 10px 22px;
+
+    border-bottom:
+    1px solid
+    #e2ebe8;
+
+    margin-bottom:18px;
+
+}
+
+
+.sidebar-brand-icon{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:14px;
+
+    background:#008f6b;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:22px;
+
+}
+
+
+.sidebar-brand-text{
+
+    min-width:0;
+
+}
+
+
+.sidebar-brand-text h2{
+
+    color:#00765b;
+
+    font-size:18px;
+
+    white-space:nowrap;
+
+}
+
+
+.sidebar-brand-text p{
+
+    color:#74807c;
+
+    font-size:11px;
+
+    margin-top:3px;
+
+}
+
+
+.sidebar-menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:7px;
+
+    flex:1;
+
+}
+
+
+.sidebar-link{
+
+    text-decoration:none;
+
+    color:#53615d;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    padding:
+    13px 14px;
+
+    border-radius:13px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    transition:.2s;
+
+}
+
+
+.sidebar-link i{
+
+    width:22px;
+
+    text-align:center;
+
+    font-size:17px;
+
+}
+
+
+.sidebar-link:hover{
+
+    background:#e8f6f2;
+
+    color:#007b5e;
+
+    transform:translateX(2px);
+
+}
+
+
+.sidebar-link.active{
+
+    background:
+    linear-gradient(
+        135deg,
+        #007e60,
+        #00a17b
+    );
+
+    color:white;
+
+    box-shadow:
+    0 7px 18px
+    rgba(0,130,95,.22);
+
+}
+
+
+.sidebar-bottom{
+
+    border-top:
+    1px solid
+    #e2ebe8;
+
+    padding-top:15px;
+
+}
+
+
+.sidebar-logout{
 
     width:100%;
 
+    border:none;
+
+    background:#fff0f0;
+
+    color:#d14d4d;
+
+    padding:13px 14px;
+
+    border-radius:13px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    transition:.2s;
+
+}
+
+
+.sidebar-logout:hover{
+
+    background:#ffe1e1;
+
+}
+
+
+/* =====================================================
+   MOBILE SIDEBAR BUTTON
+===================================================== */
+
+.mobile-menu-btn{
+
+    display:none;
+
+    position:fixed;
+
+    top:18px;
+
+    left:18px;
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#008f6b;
+
+    color:white;
+
+    font-size:21px;
+
+    z-index:3000;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 8px 20px
+    rgba(0,0,0,.2);
+
+}
+
+
+/* =====================================================
+   SIDEBAR OVERLAY
+===================================================== */
+
+.sidebar-overlay{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,30,23,.55);
+
+    z-index:900;
+
+}
+
+
+.sidebar-overlay.show{
+
+    display:block;
+
+}
+
+
+/* =====================================================
+   MAIN AREA
+===================================================== */
+
+.main-area{
+
+    margin-left:285px;
+
+    width:
+    calc(100% - 285px);
+
     max-width:1500px;
 
-    margin:auto;
+    margin-right:auto;
 
 }
 
@@ -285,10 +591,6 @@ body{
 }
 
 
-/* =====================================================
-   SEARCH
-===================================================== */
-
 .search-box{
 
     width:100%;
@@ -353,10 +655,6 @@ body{
 }
 
 
-/* =====================================================
-   FILTER ROW
-===================================================== */
-
 .filter-row{
 
     margin-top:15px;
@@ -384,10 +682,6 @@ body{
 
 }
 
-
-/* =====================================================
-   LAST DAYS
-===================================================== */
 
 .last-days-box{
 
@@ -438,10 +732,6 @@ body{
 
 }
 
-
-/* =====================================================
-   FROM TO DATE
-===================================================== */
 
 .date-box{
 
@@ -495,10 +785,6 @@ body{
 }
 
 
-/* =====================================================
-   FILTER SELECT
-===================================================== */
-
 .filter-select{
 
     height:42px;
@@ -527,10 +813,6 @@ body{
 
 }
 
-
-/* =====================================================
-   CLEAR
-===================================================== */
 
 .clear-btn{
 
@@ -1432,6 +1714,26 @@ tbody tr:hover{
    RESPONSIVE
 ===================================================== */
 
+@media(max-width:1100px){
+
+    .sidebar{
+
+        width:230px;
+
+    }
+
+    .main-area{
+
+        margin-left:250px;
+
+        width:
+        calc(100% - 250px);
+
+    }
+
+}
+
+
 @media(max-width:900px){
 
     body{
@@ -1441,7 +1743,49 @@ tbody tr:hover{
     }
 
 
+    .mobile-menu-btn{
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+    }
+
+
+    .sidebar{
+
+        left:-280px;
+
+        top:12px;
+
+        bottom:12px;
+
+        width:255px;
+
+    }
+
+
+    .sidebar.open{
+
+        left:12px;
+
+    }
+
+
+    .main-area{
+
+        margin-left:0;
+
+        width:100%;
+
+    }
+
+
     .header{
+
+        padding-left:80px;
 
         flex-direction:column;
 
@@ -1490,9 +1834,17 @@ tbody tr:hover{
 
 @media(max-width:600px){
 
+    body{
+
+        padding:10px;
+
+    }
+
+
     .header{
 
-        padding:20px;
+        padding:
+        75px 20px 20px;
 
         border-radius:20px;
 
@@ -1617,16 +1969,188 @@ tbody tr:hover{
 <body>
 
 
-<div class="container">
+<!-- =====================================================
+     MOBILE MENU BUTTON
+===================================================== -->
+
+<button
+class="mobile-menu-btn"
+onclick="toggleSidebar()"
+>
+
+    <i class="fa-solid fa-bars"></i>
+
+</button>
 
 
-<!-- ===================================================
+<!-- =====================================================
+     SIDEBAR OVERLAY
+===================================================== -->
+
+<div
+class="sidebar-overlay"
+id="sidebarOverlay"
+onclick="closeSidebar()"
+></div>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside
+class="sidebar"
+id="sidebar"
+>
+
+
+    <div class="sidebar-brand">
+
+        <div class="sidebar-brand-icon">
+
+            <i class="fa-solid fa-headset"></i>
+
+        </div>
+
+
+        <div class="sidebar-brand-text">
+
+            <h2>SUPPORT LOG</h2>
+
+            <p>Management System</p>
+
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-menu">
+
+
+        <!-- DASHBOARD -->
+
+        <a
+        href="dashboard.html"
+        class="sidebar-link"
+        >
+
+            <i class="fa-solid fa-gauge-high"></i>
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <!-- NEW ENTRY -->
+
+        <a
+        href="dashboard/new-entry.html"
+        class="sidebar-link"
+        >
+
+            <i class="fa-solid fa-plus-circle"></i>
+
+            <span>New Entry</span>
+
+        </a>
+
+
+        <!-- PENDING SUPPORT -->
+
+        <a
+        href="dashboard/pending-support.html"
+        class="sidebar-link"
+        >
+
+            <i class="fa-solid fa-headset"></i>
+
+            <span>Pending Support</span>
+
+        </a>
+
+
+        <!-- PENDING CALL -->
+
+        <a
+        href="dashboard/pending-call.html"
+        class="sidebar-link"
+        >
+
+            <i class="fa-solid fa-phone"></i>
+
+            <span>Pending Call</span>
+
+        </a>
+
+
+        <!-- HISTORY -->
+
+        <a
+        href="dashboard/history.html"
+        class="sidebar-link active"
+        >
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            <span>Support Log History</span>
+
+        </a>
+
+
+        <!-- USER ACCOUNT -->
+
+        <a
+        href="dashboard/user-account.html"
+        class="sidebar-link"
+        >
+
+            <i class="fa-solid fa-user-gear"></i>
+
+            <span>User Account</span>
+
+        </a>
+
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+
+        <button
+        class="sidebar-logout"
+        onclick="logoutUser()"
+        >
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>Logout</span>
+
+        </button>
+
+
+    </div>
+
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN AREA
+===================================================== -->
+
+<main class="main-area">
+
+
+<!-- =====================================================
      HEADER
-=================================================== -->
+===================================================== -->
 
 <div class="header">
 
+
     <div class="header-left">
+
 
         <div class="header-icon">
 
@@ -1634,9 +2158,10 @@ tbody tr:hover{
 
         </div>
 
+
         <div class="header-title">
 
-            <h1>HISTORY</h1>
+            <h1>SUPPORT LOG HISTORY</h1>
 
             <p>
                 View completed support requests
@@ -1644,10 +2169,12 @@ tbody tr:hover{
 
         </div>
 
+
     </div>
 
 
     <div class="header-buttons">
+
 
         <button
         class="btn btn-refresh"
@@ -1672,16 +2199,19 @@ tbody tr:hover{
 
         </button>
 
+
     </div>
+
 
 </div>
 
 
-<!-- ===================================================
+<!-- =====================================================
      USER BAR
-=================================================== -->
+===================================================== -->
 
 <div class="user-bar">
+
 
     <div>
 
@@ -1703,23 +2233,26 @@ tbody tr:hover{
 
         <i class="fa-solid fa-clock-rotate-left"></i>
 
-        History
+        Support Log History
 
     </div>
+
 
 </div>
 
 
-<!-- ===================================================
+<!-- =====================================================
      FILTER AREA
-=================================================== -->
+===================================================== -->
 
 <div class="filter-area">
 
 
     <div class="search-box">
 
+
         <i class="fa-solid fa-magnifying-glass"></i>
+
 
         <input
         type="text"
@@ -1727,6 +2260,7 @@ tbody tr:hover{
         placeholder="Search Customer ID, Problem, Reference, Support..."
         oninput="applyFilters()"
         >
+
 
     </div>
 
@@ -1812,19 +2346,22 @@ tbody tr:hover{
 
         </button>
 
+
     </div>
+
 
 </div>
 
 
-<!-- ===================================================
+<!-- =====================================================
      CONTENT
-=================================================== -->
+===================================================== -->
 
 <div class="content-card">
 
 
     <div class="content-header">
+
 
         <h2>
 
@@ -1844,6 +2381,7 @@ tbody tr:hover{
 
         </div>
 
+
     </div>
 
 
@@ -1858,15 +2396,16 @@ tbody tr:hover{
 
     </div>
 
-</div>
-
 
 </div>
 
 
-<!-- ===================================================
+</main>
+
+
+<!-- =====================================================
      VIEW MODAL
-=================================================== -->
+===================================================== -->
 
 <div
 class="modal"
@@ -1880,11 +2419,12 @@ onclick="outsideModal(event)"
 
         <div class="modal-header">
 
+
             <h3>
 
                 <i class="fa-solid fa-circle-info"></i>
 
-                History Details
+                Support Details
 
             </h3>
 
@@ -1897,6 +2437,7 @@ onclick="outsideModal(event)"
                 ×
 
             </button>
+
 
         </div>
 
@@ -2029,6 +2570,7 @@ onclick="outsideModal(event)"
 
                 <div class="readonly-box">
 
+
                     <label class="readonly-label">
 
                         <i class="fa-solid fa-phone"></i>
@@ -2043,10 +2585,12 @@ onclick="outsideModal(event)"
                     id="mCallPerson"
                     ></div>
 
+
                 </div>
 
 
                 <div class="readonly-box">
+
 
                     <label class="readonly-label">
 
@@ -2062,10 +2606,12 @@ onclick="outsideModal(event)"
                     id="mCallWork"
                     ></div>
 
+
                 </div>
 
 
                 <div class="modal-actions">
+
 
                     <button
                     class="cancel-btn"
@@ -2077,6 +2623,7 @@ onclick="outsideModal(event)"
                         Close
 
                     </button>
+
 
                 </div>
 
@@ -2093,9 +2640,9 @@ onclick="outsideModal(event)"
 </div>
 
 
-<!-- ===================================================
+<!-- =====================================================
      TOAST
-=================================================== -->
+===================================================== -->
 
 <div
 class="toast"
@@ -2130,7 +2677,9 @@ let filteredData = [];
 ===================================================== */
 
 document.addEventListener(
+
 "DOMContentLoaded",
+
 function(){
 
     loadUser();
@@ -2138,7 +2687,62 @@ function(){
     loadData();
 
 }
+
 );
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+function toggleSidebar(){
+
+    document
+    .getElementById("sidebar")
+    .classList.toggle("open");
+
+    document
+    .getElementById("sidebarOverlay")
+    .classList.toggle("show");
+
+}
+
+
+function closeSidebar(){
+
+    document
+    .getElementById("sidebar")
+    .classList.remove("open");
+
+    document
+    .getElementById("sidebarOverlay")
+    .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+function logoutUser(){
+
+    localStorage.removeItem("username");
+
+    localStorage.removeItem("userName");
+
+    localStorage.removeItem("name");
+
+    localStorage.removeItem("token");
+
+    localStorage.removeItem("deviceToken");
+
+    sessionStorage.clear();
+
+    window.location.href =
+        "../index.html";
+
+}
 
 
 /* =====================================================
@@ -2161,58 +2765,82 @@ function loadUser(){
 
 
     document.getElementById(
+
         "loggedUser"
+
     ).textContent = username;
 
 }
 
 
 /* =====================================================
-   LOAD HISTORY DATA
+   LOAD DATA
 ===================================================== */
 
 async function loadData(){
 
     const content =
-        document.getElementById("content");
+
+        document.getElementById(
+
+            "content"
+
+        );
 
 
     content.className =
+
         "loading";
 
 
     content.innerHTML =
+
         '<div class="spinner"></div>' +
+
         'Loading History...';
 
 
     try{
+
 
         const response =
 
             await fetch(
 
                 API_URL +
+
                 "?action=history&_=" +
+
                 Date.now(),
 
                 {
+
                     method:"GET",
+
                     cache:"no-store"
+
                 }
 
             );
 
 
         const result =
+
             await response.json();
 
 
-        if(!result.success){
+        if(
+
+            !result.success
+
+        ){
 
             throw new Error(
+
                 result.message ||
+
                 "Failed to load History."
+
             );
 
         }
@@ -2220,7 +2848,11 @@ async function loadData(){
 
         allData =
 
-            Array.isArray(result.data)
+            Array.isArray(
+
+                result.data
+
+            )
 
             ?
 
@@ -2238,7 +2870,9 @@ async function loadData(){
 
     catch(error){
 
+
         content.className =
+
             "empty";
 
 
@@ -2254,9 +2888,14 @@ async function loadData(){
 
             '<p>' +
 
-            escapeHtml(error.message) +
+            escapeHtml(
+
+                error.message
+
+            ) +
 
             '</p>';
+
 
     }
 
@@ -2273,17 +2912,24 @@ function applyFilters(){
     const search =
 
         document.getElementById(
+
             "searchInput"
+
         )
+
         .value
+
         .toLowerCase()
+
         .trim();
 
 
     const lastDaysValue =
 
         document.getElementById(
+
             "lastDays"
+
         ).value;
 
 
@@ -2294,8 +2940,11 @@ function applyFilters(){
         ?
 
         parseInt(
+
             lastDaysValue,
+
             10
+
         )
 
         :
@@ -2306,21 +2955,18 @@ function applyFilters(){
     const fromDate =
 
         document.getElementById(
+
             "fromDate"
+
         ).value;
 
 
     const toDate =
 
         document.getElementById(
+
             "toDate"
-        ).value;
 
-
-    const statusFilter =
-
-        document.getElementById(
-            "statusFilter"
         ).value;
 
 
@@ -2330,10 +2976,6 @@ function applyFilters(){
 
             function(item){
 
-
-                /* =========================
-                   SEARCH
-                ========================= */
 
                 const searchable =
 
@@ -2419,7 +3061,9 @@ function applyFilters(){
                     search &&
 
                     !searchable
+
                     .toLowerCase()
+
                     .includes(search)
 
                 ){
@@ -2429,65 +3073,14 @@ function applyFilters(){
                 }
 
 
-                /* =========================
-                   STATUS
-                ========================= */
-
-                if(
-
-                    statusFilter ===
-                    "completed"
-
-                ){
-
-                    const status =
-
-                        String(
-
-                            item.status ||
-
-                            item.Status ||
-
-                            "completed"
-
-                        )
-                        .toLowerCase()
-                        .trim();
-
-
-                    if(
-
-                        status !==
-                        "completed"
-
-                        &&
-
-                        status !==
-                        "complete"
-
-                    ){
-
-                        return false;
-
-                    }
-
-                }
-
-
-                /* =========================
-                   DATE
-                ========================= */
-
                 const itemDate =
 
                     parseDate(
+
                         item.date
+
                     );
 
-
-                /* =========================
-                   LAST DAYS
-                ========================= */
 
                 if(
 
@@ -2497,7 +3090,12 @@ function applyFilters(){
 
                 ){
 
-                    if(!itemDate){
+
+                    if(
+
+                        !itemDate
+
+                    ){
 
                         return false;
 
@@ -2505,19 +3103,30 @@ function applyFilters(){
 
 
                     const today =
+
                         new Date();
 
 
                     today.setHours(
+
                         23,
+
                         59,
+
                         59,
+
                         999
+
                     );
 
 
                     const start =
-                        new Date(today);
+
+                        new Date(
+
+                            today
+
+                        );
 
 
                     start.setDate(
@@ -2532,10 +3141,15 @@ function applyFilters(){
 
 
                     start.setHours(
+
                         0,
+
                         0,
+
                         0,
+
                         0
+
                     );
 
 
@@ -2554,17 +3168,21 @@ function applyFilters(){
                 }
 
 
-                /* =========================
-                   FROM DATE
-                ========================= */
+                if(
 
-                if(fromDate){
+                    fromDate
+
+                ){
+
 
                     const from =
 
                         new Date(
+
                             fromDate +
+
                             "T00:00:00"
+
                         );
 
 
@@ -2583,17 +3201,21 @@ function applyFilters(){
                 }
 
 
-                /* =========================
-                   TO DATE
-                ========================= */
+                if(
 
-                if(toDate){
+                    toDate
+
+                ){
+
 
                     const to =
 
                         new Date(
+
                             toDate +
+
                             "T23:59:59"
+
                         );
 
 
@@ -2614,13 +3236,16 @@ function applyFilters(){
 
                 return true;
 
+
             }
 
         );
 
 
     renderData(
+
         filteredData
+
     );
 
 }
@@ -2636,12 +3261,16 @@ function renderData(data){
     const content =
 
         document.getElementById(
+
             "content"
+
         );
 
 
     document.getElementById(
+
         "pendingCount"
+
     ).textContent =
 
         data.length +
@@ -2649,9 +3278,15 @@ function renderData(data){
         " Records";
 
 
-    if(data.length === 0){
+    if(
+
+        data.length === 0
+
+    ){
+
 
         content.className =
+
             "empty";
 
 
@@ -2674,6 +3309,7 @@ function renderData(data){
 
 
     content.className =
+
         "table-wrapper";
 
 
@@ -2850,6 +3486,7 @@ function renderData(data){
 
 
     content.innerHTML =
+
         html;
 
 }
@@ -2863,10 +3500,15 @@ function openModal(index){
 
 
     const data =
+
         filteredData[index];
 
 
-    if(!data){
+    if(
+
+        !data
+
+    ){
 
         return;
 
@@ -2874,11 +3516,14 @@ function openModal(index){
 
 
     selectedItem =
+
         data;
 
 
     document.getElementById(
+
         "mCustomer"
+
     ).textContent =
 
         data.customerId ||
@@ -2891,23 +3536,35 @@ function openModal(index){
 
 
     document.getElementById(
+
         "mDate"
+
     ).textContent =
 
         formatDateDMY(
-            data.date || ""
+
+            data.date ||
+
+            ""
+
         );
 
 
     document.getElementById(
+
         "mProblem"
+
     ).textContent =
 
-        data.problem || "";
+        data.problem ||
+
+        "";
 
 
     document.getElementById(
+
         "mReference"
+
     ).textContent =
 
         data.reference ||
@@ -2918,21 +3575,31 @@ function openModal(index){
 
 
     document.getElementById(
+
         "mSupport"
+
     ).textContent =
 
-        data.support || "";
+        data.support ||
+
+        "";
 
 
     document.getElementById(
+
         "mSupportWork"
+
     ).textContent =
 
-        data.supportWork || "";
+        data.supportWork ||
+
+        "";
 
 
     document.getElementById(
+
         "mCallPerson"
+
     ).textContent =
 
         data.call ||
@@ -2943,7 +3610,9 @@ function openModal(index){
 
 
     document.getElementById(
+
         "mCallWork"
+
     ).textContent =
 
         data.callWork ||
@@ -2952,9 +3621,13 @@ function openModal(index){
 
 
     document.getElementById(
+
         "callModal"
+
     ).classList.add(
+
         "show"
+
     );
 
 }
@@ -2966,14 +3639,20 @@ function openModal(index){
 
 function closeModal(){
 
+
     document.getElementById(
+
         "callModal"
+
     ).classList.remove(
+
         "show"
+
     );
 
 
     selectedItem =
+
         null;
 
 }
@@ -2985,9 +3664,11 @@ function closeModal(){
 
 function outsideModal(event){
 
+
     if(
 
         event.target.id ===
+
         "callModal"
 
     ){
@@ -3000,13 +3681,17 @@ function outsideModal(event){
 
 
 /* =====================================================
-   FORMAT DATE
-   DD-MM-YYYY
+   DATE FORMAT
 ===================================================== */
 
 function formatDateDMY(value){
 
-    if(!value){
+
+    if(
+
+        !value
+
+    ){
 
         return "";
 
@@ -3014,27 +3699,56 @@ function formatDateDMY(value){
 
 
     const text =
-        String(value).trim();
+
+        String(
+
+            value
+
+        ).trim();
 
 
     let match =
 
         text.match(
+
             /^(\d{1,2})-(\d{1,2})-(\d{4})(.*)$/
+
         );
 
 
-    if(match){
+    if(
+
+        match
+
+    ){
 
         return (
 
-            String(match[1])
-            .padStart(2,"0") +
+            String(
+
+                match[1]
+
+            ).padStart(
+
+                2,
+
+                "0"
+
+            ) +
 
             "-" +
 
-            String(match[2])
-            .padStart(2,"0") +
+            String(
+
+                match[2]
+
+            ).padStart(
+
+                2,
+
+                "0"
+
+            ) +
 
             "-" +
 
@@ -3050,21 +3764,45 @@ function formatDateDMY(value){
     match =
 
         text.match(
+
             /^(\d{1,2})\/(\d{1,2})\/(\d{4})(.*)$/
+
         );
 
 
-    if(match){
+    if(
+
+        match
+
+    ){
 
         return (
 
-            String(match[2])
-            .padStart(2,"0") +
+            String(
+
+                match[2]
+
+            ).padStart(
+
+                2,
+
+                "0"
+
+            ) +
 
             "-" +
 
-            String(match[1])
-            .padStart(2,"0") +
+            String(
+
+                match[1]
+
+            ).padStart(
+
+                2,
+
+                "0"
+
+            ) +
 
             "-" +
 
@@ -3080,21 +3818,45 @@ function formatDateDMY(value){
     match =
 
         text.match(
+
             /^(\d{4})-(\d{1,2})-(\d{1,2})(.*)$/
+
         );
 
 
-    if(match){
+    if(
+
+        match
+
+    ){
 
         return (
 
-            String(match[3])
-            .padStart(2,"0") +
+            String(
+
+                match[3]
+
+            ).padStart(
+
+                2,
+
+                "0"
+
+            ) +
 
             "-" +
 
-            String(match[2])
-            .padStart(2,"0") +
+            String(
+
+                match[2]
+
+            ).padStart(
+
+                2,
+
+                "0"
+
+            ) +
 
             "-" +
 
@@ -3118,7 +3880,12 @@ function formatDateDMY(value){
 
 function parseDate(value){
 
-    if(!value){
+
+    if(
+
+        !value
+
+    ){
 
         return null;
 
@@ -3126,17 +3893,28 @@ function parseDate(value){
 
 
     const text =
-        String(value).trim();
+
+        String(
+
+            value
+
+        ).trim();
 
 
     let match =
 
         text.match(
+
             /^(\d{1,2})-(\d{1,2})-(\d{4})/
+
         );
 
 
-    if(match){
+    if(
+
+        match
+
+    ){
 
         const date =
 
@@ -3152,7 +3930,9 @@ function parseDate(value){
 
 
         return isNaN(
+
             date.getTime()
+
         )
 
         ?
@@ -3169,11 +3949,17 @@ function parseDate(value){
     match =
 
         text.match(
+
             /^(\d{1,2})\/(\d{1,2})\/(\d{4})/
+
         );
 
 
-    if(match){
+    if(
+
+        match
+
+    ){
 
         const date =
 
@@ -3189,7 +3975,9 @@ function parseDate(value){
 
 
         return isNaN(
+
             date.getTime()
+
         )
 
         ?
@@ -3206,11 +3994,17 @@ function parseDate(value){
     match =
 
         text.match(
+
             /^(\d{4})-(\d{1,2})-(\d{1,2})/
+
         );
 
 
-    if(match){
+    if(
+
+        match
+
+    ){
 
         const date =
 
@@ -3226,7 +4020,9 @@ function parseDate(value){
 
 
         return isNaN(
+
             date.getTime()
+
         )
 
         ?
@@ -3241,11 +4037,18 @@ function parseDate(value){
 
 
     const date =
-        new Date(text);
+
+        new Date(
+
+            text
+
+        );
 
 
     return isNaN(
+
         date.getTime()
+
     )
 
     ?
@@ -3265,29 +4068,42 @@ function parseDate(value){
 
 function clearFilters(){
 
+
     document.getElementById(
+
         "searchInput"
+
     ).value = "";
 
 
     document.getElementById(
+
         "lastDays"
+
     ).value = "";
 
 
     document.getElementById(
+
         "fromDate"
+
     ).value = "";
 
 
     document.getElementById(
+
         "toDate"
+
     ).value = "";
 
 
     document.getElementById(
+
         "statusFilter"
-    ).value = "all";
+
+    ).value =
+
+        "all";
 
 
     applyFilters();
@@ -3301,18 +4117,10 @@ function clearFilters(){
 
 function goDashboard(){
 
-    if(document.referrer){
 
-        history.back();
+    window.location.href =
 
-    }
-
-    else{
-
-        window.location.href =
-            "dashboard.html";
-
-    }
+        "dashboard.html";
 
 }
 
@@ -3323,18 +4131,25 @@ function goDashboard(){
 
 function showToast(message){
 
+
     const toast =
+
         document.getElementById(
+
             "toast"
+
         );
 
 
     toast.textContent =
+
         message;
 
 
     toast.classList.add(
+
         "show"
+
     );
 
 
@@ -3343,7 +4158,9 @@ function showToast(message){
         function(){
 
             toast.classList.remove(
+
                 "show"
+
             );
 
         },
@@ -3361,33 +4178,53 @@ function showToast(message){
 
 function escapeHtml(value){
 
+
     return String(
-        value || ""
+
+        value ||
+
+        ""
+
     )
 
     .replace(
+
         /&/g,
+
         "&amp;"
+
     )
 
     .replace(
+
         /</g,
+
         "&lt;"
+
     )
 
     .replace(
+
         />/g,
+
         "&gt;"
+
     )
 
     .replace(
+
         /"/g,
+
         "&quot;"
+
     )
 
     .replace(
+
         /'/g,
+
         "&#039;"
+
     );
 
 }
@@ -3399,22 +4236,26 @@ function escapeHtml(value){
 
 document.addEventListener(
 
-    "keydown",
+"keydown",
 
-    function(event){
+function(event){
 
-        if(
 
-            event.key ===
-            "Escape"
+    if(
 
-        ){
+        event.key ===
 
-            closeModal();
+        "Escape"
 
-        }
+    ){
+
+        closeModal();
+
+        closeSidebar();
 
     }
+
+}
 
 );
 

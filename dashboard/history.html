@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Support Log History</title>
+<title>History | Support Log System</title>
 
 <link
 rel="stylesheet"
@@ -890,7 +890,7 @@ tbody tr:hover{
 
 
 /* =====================================================
-   MODAL BACKGROUND
+   MODAL
 ===================================================== */
 
 .modal{
@@ -924,10 +924,6 @@ tbody tr:hover{
 
 }
 
-
-/* =====================================================
-   MODAL BOX
-===================================================== */
 
 .modal-box{
 
@@ -977,10 +973,6 @@ tbody tr:hover{
 
 }
 
-
-/* =====================================================
-   MODAL HEADER
-===================================================== */
 
 .modal-header{
 
@@ -1045,10 +1037,6 @@ tbody tr:hover{
 }
 
 
-/* =====================================================
-   DETAILS
-===================================================== */
-
 .details{
 
     padding:24px;
@@ -1067,10 +1055,6 @@ tbody tr:hover{
 
 }
 
-
-/* =====================================================
-   READ ONLY DETAIL CARDS
-===================================================== */
 
 .detail-item{
 
@@ -1112,10 +1096,6 @@ tbody tr:hover{
 }
 
 
-/* =====================================================
-   CUSTOMER ID
-===================================================== */
-
 .detail-item:nth-child(1){
 
     background:
@@ -1134,10 +1114,6 @@ tbody tr:hover{
 
 }
 
-
-/* =====================================================
-   DATE
-===================================================== */
 
 .detail-item:nth-child(2){
 
@@ -1158,10 +1134,6 @@ tbody tr:hover{
 }
 
 
-/* =====================================================
-   PROBLEM
-===================================================== */
-
 .detail-item:nth-child(3){
 
     background:
@@ -1180,10 +1152,6 @@ tbody tr:hover{
 
 }
 
-
-/* =====================================================
-   REFERENCE
-===================================================== */
 
 .detail-item:nth-child(4){
 
@@ -1204,10 +1172,6 @@ tbody tr:hover{
 }
 
 
-/* =====================================================
-   SUPPORT
-===================================================== */
-
 .detail-item:nth-child(5){
 
     background:
@@ -1226,10 +1190,6 @@ tbody tr:hover{
 
 }
 
-
-/* =====================================================
-   SUPPORT WORK
-===================================================== */
 
 .detail-item:nth-child(6){
 
@@ -1250,10 +1210,6 @@ tbody tr:hover{
 }
 
 
-/* =====================================================
-   FULL WIDTH
-===================================================== */
-
 .detail-item.full{
 
     grid-column:
@@ -1261,10 +1217,6 @@ tbody tr:hover{
 
 }
 
-
-/* =====================================================
-   LABEL
-===================================================== */
 
 .detail-label{
 
@@ -1283,10 +1235,6 @@ tbody tr:hover{
 }
 
 
-/* =====================================================
-   VALUE
-===================================================== */
-
 .detail-value{
 
     font-size:15px;
@@ -1301,10 +1249,6 @@ tbody tr:hover{
 
 }
 
-
-/* =====================================================
-   CALL PERSON / CALL WORK READ ONLY
-===================================================== */
 
 .readonly-section{
 
@@ -1374,10 +1318,6 @@ tbody tr:hover{
 }
 
 
-/* =====================================================
-   CALL WORK VALUE
-===================================================== */
-
 .call-work-value{
 
     width:100%;
@@ -1410,10 +1350,6 @@ tbody tr:hover{
 
 }
 
-
-/* =====================================================
-   MODAL CLOSE AREA
-===================================================== */
 
 .modal-actions{
 
@@ -1690,9 +1626,7 @@ tbody tr:hover{
 
 <div class="header">
 
-
     <div class="header-left">
-
 
         <div class="header-icon">
 
@@ -1700,10 +1634,9 @@ tbody tr:hover{
 
         </div>
 
-
         <div class="header-title">
 
-            <h1>SUPPORT LOG HISTORY</h1>
+            <h1>HISTORY</h1>
 
             <p>
                 View completed support requests
@@ -1711,12 +1644,10 @@ tbody tr:hover{
 
         </div>
 
-
     </div>
 
 
     <div class="header-buttons">
-
 
         <button
         class="btn btn-refresh"
@@ -1741,9 +1672,7 @@ tbody tr:hover{
 
         </button>
 
-
     </div>
-
 
 </div>
 
@@ -1753,7 +1682,6 @@ tbody tr:hover{
 =================================================== -->
 
 <div class="user-bar">
-
 
     <div>
 
@@ -1775,10 +1703,9 @@ tbody tr:hover{
 
         <i class="fa-solid fa-clock-rotate-left"></i>
 
-        Support Log History
+        History
 
     </div>
-
 
 </div>
 
@@ -1792,9 +1719,7 @@ tbody tr:hover{
 
     <div class="search-box">
 
-
         <i class="fa-solid fa-magnifying-glass"></i>
-
 
         <input
         type="text"
@@ -1802,7 +1727,6 @@ tbody tr:hover{
         placeholder="Search Customer ID, Problem, Reference, Support..."
         oninput="applyFilters()"
         >
-
 
     </div>
 
@@ -1888,9 +1812,7 @@ tbody tr:hover{
 
         </button>
 
-
     </div>
-
 
 </div>
 
@@ -1903,7 +1825,6 @@ tbody tr:hover{
 
 
     <div class="content-header">
-
 
         <h2>
 
@@ -1923,7 +1844,6 @@ tbody tr:hover{
 
         </div>
 
-
     </div>
 
 
@@ -1938,7 +1858,6 @@ tbody tr:hover{
 
     </div>
 
-
 </div>
 
 
@@ -1947,7 +1866,6 @@ tbody tr:hover{
 
 <!-- ===================================================
      VIEW MODAL
-     READ ONLY
 =================================================== -->
 
 <div
@@ -1962,12 +1880,11 @@ onclick="outsideModal(event)"
 
         <div class="modal-header">
 
-
             <h3>
 
                 <i class="fa-solid fa-circle-info"></i>
 
-                Support Details
+                History Details
 
             </h3>
 
@@ -1981,7 +1898,6 @@ onclick="outsideModal(event)"
 
             </button>
 
-
         </div>
 
 
@@ -1990,8 +1906,6 @@ onclick="outsideModal(event)"
 
             <div class="detail-grid">
 
-
-                <!-- CUSTOMER -->
 
                 <div class="detail-item">
 
@@ -2012,8 +1926,6 @@ onclick="outsideModal(event)"
                 </div>
 
 
-                <!-- DATE -->
-
                 <div class="detail-item">
 
                     <div class="detail-label">
@@ -2032,8 +1944,6 @@ onclick="outsideModal(event)"
 
                 </div>
 
-
-                <!-- PROBLEM -->
 
                 <div class="detail-item full">
 
@@ -2054,8 +1964,6 @@ onclick="outsideModal(event)"
                 </div>
 
 
-                <!-- REFERENCE -->
-
                 <div class="detail-item">
 
                     <div class="detail-label">
@@ -2075,8 +1983,6 @@ onclick="outsideModal(event)"
                 </div>
 
 
-                <!-- SUPPORT -->
-
                 <div class="detail-item">
 
                     <div class="detail-label">
@@ -2095,8 +2001,6 @@ onclick="outsideModal(event)"
 
                 </div>
 
-
-                <!-- SUPPORT WORK -->
 
                 <div class="detail-item full">
 
@@ -2120,18 +2024,10 @@ onclick="outsideModal(event)"
             </div>
 
 
-            <!-- =================================================
-                 CALL PERSON + CALL WORK
-                 READ ONLY
-            ================================================== -->
-
             <div class="readonly-section">
 
 
-                <!-- CALL PERSON -->
-
                 <div class="readonly-box">
-
 
                     <label class="readonly-label">
 
@@ -2147,14 +2043,10 @@ onclick="outsideModal(event)"
                     id="mCallPerson"
                     ></div>
 
-
                 </div>
 
 
-                <!-- CALL WORK -->
-
                 <div class="readonly-box">
-
 
                     <label class="readonly-label">
 
@@ -2170,14 +2062,10 @@ onclick="outsideModal(event)"
                     id="mCallWork"
                     ></div>
 
-
                 </div>
 
 
-                <!-- CLOSE ONLY -->
-
                 <div class="modal-actions">
-
 
                     <button
                     class="cancel-btn"
@@ -2189,7 +2077,6 @@ onclick="outsideModal(event)"
                         Close
 
                     </button>
-
 
                 </div>
 
@@ -2243,9 +2130,7 @@ let filteredData = [];
 ===================================================== */
 
 document.addEventListener(
-
 "DOMContentLoaded",
-
 function(){
 
     loadUser();
@@ -2253,7 +2138,6 @@ function(){
     loadData();
 
 }
-
 );
 
 
@@ -2277,82 +2161,58 @@ function loadUser(){
 
 
     document.getElementById(
-
         "loggedUser"
-
     ).textContent = username;
 
 }
 
 
 /* =====================================================
-   LOAD DATA
+   LOAD HISTORY DATA
 ===================================================== */
 
 async function loadData(){
 
     const content =
-
-        document.getElementById(
-
-            "content"
-
-        );
+        document.getElementById("content");
 
 
     content.className =
-
         "loading";
 
 
     content.innerHTML =
-
         '<div class="spinner"></div>' +
-
         'Loading History...';
 
 
     try{
-
 
         const response =
 
             await fetch(
 
                 API_URL +
-
                 "?action=history&_=" +
-
                 Date.now(),
 
                 {
-
                     method:"GET",
-
                     cache:"no-store"
-
                 }
 
             );
 
 
         const result =
-
             await response.json();
 
 
-        if(
-
-            !result.success
-
-        ){
+        if(!result.success){
 
             throw new Error(
-
                 result.message ||
-
                 "Failed to load History."
-
             );
 
         }
@@ -2360,11 +2220,7 @@ async function loadData(){
 
         allData =
 
-            Array.isArray(
-
-                result.data
-
-            )
+            Array.isArray(result.data)
 
             ?
 
@@ -2382,9 +2238,7 @@ async function loadData(){
 
     catch(error){
 
-
         content.className =
-
             "empty";
 
 
@@ -2400,14 +2254,9 @@ async function loadData(){
 
             '<p>' +
 
-            escapeHtml(
-
-                error.message
-
-            ) +
+            escapeHtml(error.message) +
 
             '</p>';
-
 
     }
 
@@ -2424,24 +2273,17 @@ function applyFilters(){
     const search =
 
         document.getElementById(
-
             "searchInput"
-
         )
-
         .value
-
         .toLowerCase()
-
         .trim();
 
 
     const lastDaysValue =
 
         document.getElementById(
-
             "lastDays"
-
         ).value;
 
 
@@ -2452,11 +2294,8 @@ function applyFilters(){
         ?
 
         parseInt(
-
             lastDaysValue,
-
             10
-
         )
 
         :
@@ -2467,18 +2306,21 @@ function applyFilters(){
     const fromDate =
 
         document.getElementById(
-
             "fromDate"
-
         ).value;
 
 
     const toDate =
 
         document.getElementById(
-
             "toDate"
+        ).value;
 
+
+    const statusFilter =
+
+        document.getElementById(
+            "statusFilter"
         ).value;
 
 
@@ -2488,6 +2330,10 @@ function applyFilters(){
 
             function(item){
 
+
+                /* =========================
+                   SEARCH
+                ========================= */
 
                 const searchable =
 
@@ -2573,9 +2419,7 @@ function applyFilters(){
                     search &&
 
                     !searchable
-
                     .toLowerCase()
-
                     .includes(search)
 
                 ){
@@ -2585,16 +2429,65 @@ function applyFilters(){
                 }
 
 
+                /* =========================
+                   STATUS
+                ========================= */
+
+                if(
+
+                    statusFilter ===
+                    "completed"
+
+                ){
+
+                    const status =
+
+                        String(
+
+                            item.status ||
+
+                            item.Status ||
+
+                            "completed"
+
+                        )
+                        .toLowerCase()
+                        .trim();
+
+
+                    if(
+
+                        status !==
+                        "completed"
+
+                        &&
+
+                        status !==
+                        "complete"
+
+                    ){
+
+                        return false;
+
+                    }
+
+                }
+
+
+                /* =========================
+                   DATE
+                ========================= */
+
                 const itemDate =
 
                     parseDate(
-
                         item.date
-
                     );
 
 
-                /* LAST DAYS */
+                /* =========================
+                   LAST DAYS
+                ========================= */
 
                 if(
 
@@ -2604,12 +2497,7 @@ function applyFilters(){
 
                 ){
 
-
-                    if(
-
-                        !itemDate
-
-                    ){
+                    if(!itemDate){
 
                         return false;
 
@@ -2617,30 +2505,19 @@ function applyFilters(){
 
 
                     const today =
-
                         new Date();
 
 
                     today.setHours(
-
                         23,
-
                         59,
-
                         59,
-
                         999
-
                     );
 
 
                     const start =
-
-                        new Date(
-
-                            today
-
-                        );
+                        new Date(today);
 
 
                     start.setDate(
@@ -2655,15 +2532,10 @@ function applyFilters(){
 
 
                     start.setHours(
-
                         0,
-
                         0,
-
                         0,
-
                         0
-
                     );
 
 
@@ -2682,23 +2554,17 @@ function applyFilters(){
                 }
 
 
-                /* FROM */
+                /* =========================
+                   FROM DATE
+                ========================= */
 
-                if(
-
-                    fromDate
-
-                ){
-
+                if(fromDate){
 
                     const from =
 
                         new Date(
-
                             fromDate +
-
                             "T00:00:00"
-
                         );
 
 
@@ -2717,23 +2583,17 @@ function applyFilters(){
                 }
 
 
-                /* TO */
+                /* =========================
+                   TO DATE
+                ========================= */
 
-                if(
-
-                    toDate
-
-                ){
-
+                if(toDate){
 
                     const to =
 
                         new Date(
-
                             toDate +
-
                             "T23:59:59"
-
                         );
 
 
@@ -2754,16 +2614,13 @@ function applyFilters(){
 
                 return true;
 
-
             }
 
         );
 
 
     renderData(
-
         filteredData
-
     );
 
 }
@@ -2779,16 +2636,12 @@ function renderData(data){
     const content =
 
         document.getElementById(
-
             "content"
-
         );
 
 
     document.getElementById(
-
         "pendingCount"
-
     ).textContent =
 
         data.length +
@@ -2796,15 +2649,9 @@ function renderData(data){
         " Records";
 
 
-    if(
-
-        data.length === 0
-
-    ){
-
+    if(data.length === 0){
 
         content.className =
-
             "empty";
 
 
@@ -2827,7 +2674,6 @@ function renderData(data){
 
 
     content.className =
-
         "table-wrapper";
 
 
@@ -3004,7 +2850,6 @@ function renderData(data){
 
 
     content.innerHTML =
-
         html;
 
 }
@@ -3012,22 +2857,16 @@ function renderData(data){
 
 /* =====================================================
    OPEN MODAL
-   READ ONLY
 ===================================================== */
 
 function openModal(index){
 
 
     const data =
-
         filteredData[index];
 
 
-    if(
-
-        !data
-
-    ){
+    if(!data){
 
         return;
 
@@ -3035,16 +2874,11 @@ function openModal(index){
 
 
     selectedItem =
-
         data;
 
 
-    /* CUSTOMER */
-
     document.getElementById(
-
         "mCustomer"
-
     ).textContent =
 
         data.customerId ||
@@ -3056,42 +2890,24 @@ function openModal(index){
         "";
 
 
-    /* DATE */
-
     document.getElementById(
-
         "mDate"
-
     ).textContent =
 
         formatDateDMY(
-
-            data.date ||
-
-            ""
-
+            data.date || ""
         );
 
 
-    /* PROBLEM */
-
     document.getElementById(
-
         "mProblem"
-
     ).textContent =
 
-        data.problem ||
+        data.problem || "";
 
-        "";
-
-
-    /* REFERENCE */
 
     document.getElementById(
-
         "mReference"
-
     ).textContent =
 
         data.reference ||
@@ -3101,38 +2917,22 @@ function openModal(index){
         "-";
 
 
-    /* SUPPORT */
-
     document.getElementById(
-
         "mSupport"
-
     ).textContent =
 
-        data.support ||
+        data.support || "";
 
-        "";
-
-
-    /* SUPPORT WORK */
 
     document.getElementById(
-
         "mSupportWork"
-
     ).textContent =
 
-        data.supportWork ||
+        data.supportWork || "";
 
-        "";
-
-
-    /* CALL PERSON */
 
     document.getElementById(
-
         "mCallPerson"
-
     ).textContent =
 
         data.call ||
@@ -3142,12 +2942,8 @@ function openModal(index){
         "Unknown";
 
 
-    /* CALL WORK */
-
     document.getElementById(
-
         "mCallWork"
-
     ).textContent =
 
         data.callWork ||
@@ -3155,16 +2951,10 @@ function openModal(index){
         "No Call Work Available";
 
 
-    /* SHOW MODAL */
-
     document.getElementById(
-
         "callModal"
-
     ).classList.add(
-
         "show"
-
     );
 
 }
@@ -3176,20 +2966,14 @@ function openModal(index){
 
 function closeModal(){
 
-
     document.getElementById(
-
         "callModal"
-
     ).classList.remove(
-
         "show"
-
     );
 
 
     selectedItem =
-
         null;
 
 }
@@ -3201,11 +2985,9 @@ function closeModal(){
 
 function outsideModal(event){
 
-
     if(
 
         event.target.id ===
-
         "callModal"
 
     ){
@@ -3218,18 +3000,13 @@ function outsideModal(event){
 
 
 /* =====================================================
-   DATE FORMAT
-   OUTPUT: DD-MM-YYYY
+   FORMAT DATE
+   DD-MM-YYYY
 ===================================================== */
 
 function formatDateDMY(value){
 
-
-    if(
-
-        !value
-
-    ){
+    if(!value){
 
         return "";
 
@@ -3237,58 +3014,27 @@ function formatDateDMY(value){
 
 
     const text =
+        String(value).trim();
 
-        String(
-
-            value
-
-        ).trim();
-
-
-    /* DD-MM-YYYY */
 
     let match =
 
         text.match(
-
             /^(\d{1,2})-(\d{1,2})-(\d{4})(.*)$/
-
         );
 
 
-    if(
-
-        match
-
-    ){
+    if(match){
 
         return (
 
-            String(
-
-                match[1]
-
-            ).padStart(
-
-                2,
-
-                "0"
-
-            ) +
+            String(match[1])
+            .padStart(2,"0") +
 
             "-" +
 
-            String(
-
-                match[2]
-
-            ).padStart(
-
-                2,
-
-                "0"
-
-            ) +
+            String(match[2])
+            .padStart(2,"0") +
 
             "-" +
 
@@ -3301,50 +3047,24 @@ function formatDateDMY(value){
     }
 
 
-    /* MM/DD/YYYY */
-
     match =
 
         text.match(
-
             /^(\d{1,2})\/(\d{1,2})\/(\d{4})(.*)$/
-
         );
 
 
-    if(
-
-        match
-
-    ){
+    if(match){
 
         return (
 
-            String(
-
-                match[2]
-
-            ).padStart(
-
-                2,
-
-                "0"
-
-            ) +
+            String(match[2])
+            .padStart(2,"0") +
 
             "-" +
 
-            String(
-
-                match[1]
-
-            ).padStart(
-
-                2,
-
-                "0"
-
-            ) +
+            String(match[1])
+            .padStart(2,"0") +
 
             "-" +
 
@@ -3357,50 +3077,24 @@ function formatDateDMY(value){
     }
 
 
-    /* YYYY-MM-DD */
-
     match =
 
         text.match(
-
             /^(\d{4})-(\d{1,2})-(\d{1,2})(.*)$/
-
         );
 
 
-    if(
-
-        match
-
-    ){
+    if(match){
 
         return (
 
-            String(
-
-                match[3]
-
-            ).padStart(
-
-                2,
-
-                "0"
-
-            ) +
+            String(match[3])
+            .padStart(2,"0") +
 
             "-" +
 
-            String(
-
-                match[2]
-
-            ).padStart(
-
-                2,
-
-                "0"
-
-            ) +
+            String(match[2])
+            .padStart(2,"0") +
 
             "-" +
 
@@ -3419,17 +3113,12 @@ function formatDateDMY(value){
 
 
 /* =====================================================
-   PARSE DATE FOR FILTER
+   PARSE DATE
 ===================================================== */
 
 function parseDate(value){
 
-
-    if(
-
-        !value
-
-    ){
+    if(!value){
 
         return null;
 
@@ -3437,60 +3126,33 @@ function parseDate(value){
 
 
     const text =
+        String(value).trim();
 
-        String(
-
-            value
-
-        ).trim();
-
-
-    /* DD-MM-YYYY */
 
     let match =
 
         text.match(
-
             /^(\d{1,2})-(\d{1,2})-(\d{4})/
-
         );
 
 
-    if(
-
-        match
-
-    ){
+    if(match){
 
         const date =
 
             new Date(
 
-                Number(
+                Number(match[3]),
 
-                    match[3]
+                Number(match[2]) - 1,
 
-                ),
-
-                Number(
-
-                    match[2]
-
-                ) - 1,
-
-                Number(
-
-                    match[1]
-
-                )
+                Number(match[1])
 
             );
 
 
         return isNaN(
-
             date.getTime()
-
         )
 
         ?
@@ -3504,52 +3166,30 @@ function parseDate(value){
     }
 
 
-    /* MM/DD/YYYY */
-
     match =
 
         text.match(
-
             /^(\d{1,2})\/(\d{1,2})\/(\d{4})/
-
         );
 
 
-    if(
-
-        match
-
-    ){
+    if(match){
 
         const date =
 
             new Date(
 
-                Number(
+                Number(match[3]),
 
-                    match[3]
+                Number(match[1]) - 1,
 
-                ),
-
-                Number(
-
-                    match[1]
-
-                ) - 1,
-
-                Number(
-
-                    match[2]
-
-                )
+                Number(match[2])
 
             );
 
 
         return isNaN(
-
             date.getTime()
-
         )
 
         ?
@@ -3563,52 +3203,30 @@ function parseDate(value){
     }
 
 
-    /* YYYY-MM-DD */
-
     match =
 
         text.match(
-
             /^(\d{4})-(\d{1,2})-(\d{1,2})/
-
         );
 
 
-    if(
-
-        match
-
-    ){
+    if(match){
 
         const date =
 
             new Date(
 
-                Number(
+                Number(match[1]),
 
-                    match[1]
+                Number(match[2]) - 1,
 
-                ),
-
-                Number(
-
-                    match[2]
-
-                ) - 1,
-
-                Number(
-
-                    match[3]
-
-                )
+                Number(match[3])
 
             );
 
 
         return isNaN(
-
             date.getTime()
-
         )
 
         ?
@@ -3623,18 +3241,11 @@ function parseDate(value){
 
 
     const date =
-
-        new Date(
-
-            text
-
-        );
+        new Date(text);
 
 
     return isNaN(
-
         date.getTime()
-
     )
 
     ?
@@ -3654,42 +3265,29 @@ function parseDate(value){
 
 function clearFilters(){
 
-
     document.getElementById(
-
         "searchInput"
-
     ).value = "";
 
 
     document.getElementById(
-
         "lastDays"
-
     ).value = "";
 
 
     document.getElementById(
-
         "fromDate"
-
     ).value = "";
 
 
     document.getElementById(
-
         "toDate"
-
     ).value = "";
 
 
     document.getElementById(
-
         "statusFilter"
-
-    ).value =
-
-        "all";
+    ).value = "all";
 
 
     applyFilters();
@@ -3703,12 +3301,7 @@ function clearFilters(){
 
 function goDashboard(){
 
-
-    if(
-
-        document.referrer
-
-    ){
+    if(document.referrer){
 
         history.back();
 
@@ -3717,7 +3310,6 @@ function goDashboard(){
     else{
 
         window.location.href =
-
             "dashboard.html";
 
     }
@@ -3731,25 +3323,18 @@ function goDashboard(){
 
 function showToast(message){
 
-
     const toast =
-
         document.getElementById(
-
             "toast"
-
         );
 
 
     toast.textContent =
-
         message;
 
 
     toast.classList.add(
-
         "show"
-
     );
 
 
@@ -3758,9 +3343,7 @@ function showToast(message){
         function(){
 
             toast.classList.remove(
-
                 "show"
-
             );
 
         },
@@ -3778,53 +3361,33 @@ function showToast(message){
 
 function escapeHtml(value){
 
-
     return String(
-
-        value ||
-
-        ""
-
+        value || ""
     )
 
     .replace(
-
         /&/g,
-
         "&amp;"
-
     )
 
     .replace(
-
         /</g,
-
         "&lt;"
-
     )
 
     .replace(
-
         />/g,
-
         "&gt;"
-
     )
 
     .replace(
-
         /"/g,
-
         "&quot;"
-
     )
 
     .replace(
-
         /'/g,
-
         "&#039;"
-
     );
 
 }
@@ -3836,24 +3399,22 @@ function escapeHtml(value){
 
 document.addEventListener(
 
-"keydown",
+    "keydown",
 
-function(event){
+    function(event){
 
+        if(
 
-    if(
+            event.key ===
+            "Escape"
 
-        event.key ===
+        ){
 
-        "Escape"
+            closeModal();
 
-    ){
-
-        closeModal();
+        }
 
     }
-
-}
 
 );
 

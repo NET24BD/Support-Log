@@ -5,8 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Pending Call | LINK4 COMMUNICATION</title>
 
@@ -14,9 +13,7 @@ content="width=device-width, initial-scale=1.0">
 
 (function(){
 
-    if(
-        localStorage.getItem("loggedIn") !== "true"
-    ){
+    if(localStorage.getItem("loggedIn") !== "true"){
 
         window.location.replace("../index.html");
 
@@ -26,16 +23,9 @@ content="width=device-width, initial-scale=1.0">
 
 </script>
 
-<link
-rel="preconnect"
-href="https://fonts.googleapis.com"
->
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link
-rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin
->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
@@ -122,6 +112,10 @@ body{
 }
 
 
+/* =====================================================
+   COLLAPSED SIDEBAR
+===================================================== */
+
 body.sidebar-collapsed .sidebar{
 
     width:78px;
@@ -153,6 +147,10 @@ body.sidebar-collapsed .sidebar{
 
 }
 
+
+/* =====================================================
+   SIDEBAR LOGO - PHONE ICON
+===================================================== */
 
 .sidebar-logo{
 
@@ -569,19 +567,19 @@ body.sidebar-collapsed
 
     background:white;
 
-    padding:14px 18px;
+    padding:14px 16px;
 
-    border-radius:16px;
+    border-radius:18px;
 
     margin-bottom:20px;
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
 
-    gap:15px;
+    gap:12px;
+
+    flex-wrap:wrap;
 
     box-shadow:
     0 12px 35px
@@ -591,16 +589,16 @@ body.sidebar-collapsed
 
 
 /* =====================================================
-   SEARCH
+   SEARCH - THIN
 ===================================================== */
 
 .search-box{
 
-    width:340px;
+    flex:1;
+
+    min-width:220px;
 
     position:relative;
-
-    flex-shrink:0;
 
 }
 
@@ -626,21 +624,19 @@ body.sidebar-collapsed
 
     width:100%;
 
-    height:40px;
+    height:42px;
 
-    padding:8px 12px 8px 38px;
+    padding:9px 12px 9px 38px;
 
     border:
-    2px solid
-    #e3eee9;
+    1px solid
+    #dce9e4;
 
     border-radius:10px;
 
     outline:none;
 
     font-size:12px;
-
-    transition:.25s;
 
 }
 
@@ -653,16 +649,14 @@ body.sidebar-collapsed
 
 
 /* =====================================================
-   FILTER RIGHT SIDE
+   DATE FILTER AREA
 ===================================================== */
 
-.filters-right{
+.filter-group{
 
     display:flex;
 
     align-items:center;
-
-    justify-content:flex-end;
 
     gap:8px;
 
@@ -671,18 +665,61 @@ body.sidebar-collapsed
 }
 
 
-.filter-item{
+.filter-label{
+
+    font-size:11px;
+
+    font-weight:700;
+
+    color:#555;
+
+}
+
+
+.date-input{
+
+    height:42px;
+
+    padding:8px 10px;
+
+    border:
+    1px solid
+    #dce9e4;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:12px;
+
+    color:#444;
+
+}
+
+
+.date-input:focus{
+
+    border-color:#00a878;
+
+}
+
+
+/* =====================================================
+   LAST DAYS
+===================================================== */
+
+.day-filter{
 
     display:flex;
 
     align-items:center;
 
-    gap:6px;
+    gap:7px;
 
 }
 
 
-.filter-item label{
+.day-filter label{
 
     font-size:11px;
 
@@ -695,41 +732,34 @@ body.sidebar-collapsed
 }
 
 
-.filter-item input{
+.day-filter input{
 
-    height:40px;
+    width:75px;
 
-    padding:7px 9px;
+    height:42px;
+
+    padding:8px;
 
     border:
-    2px solid
-    #e3eee9;
+    1px solid
+    #dce9e4;
 
-    border-radius:9px;
+    border-radius:10px;
 
     outline:none;
 
-    font-size:11px;
+    text-align:center;
 
     font-weight:600;
 
-    color:#444;
+    font-size:12px;
 
 }
 
 
-.filter-item input:focus{
+.day-filter input:focus{
 
     border-color:#00a878;
-
-}
-
-
-#daysInput{
-
-    width:78px;
-
-    text-align:center;
 
 }
 
@@ -740,34 +770,23 @@ body.sidebar-collapsed
 
 .all-btn{
 
-    height:40px;
+    height:42px;
 
     border:none;
 
     padding:0 15px;
 
-    border-radius:9px;
+    border-radius:10px;
 
-    background:
-    linear-gradient(
-        135deg,
-        #006a4e,
-        #00a878
-    );
+    background:#e7f8f2;
 
-    color:white;
+    color:#006a4e;
 
     cursor:pointer;
 
     font-size:12px;
 
     font-weight:700;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:7px;
 
     transition:.25s;
 
@@ -776,9 +795,9 @@ body.sidebar-collapsed
 
 .all-btn:hover{
 
-    background:#e53935;
+    background:#006a4e;
 
-    transform:translateY(-1px);
+    color:white;
 
 }
 
@@ -822,7 +841,7 @@ body.sidebar-collapsed
 
 .table-header h2{
 
-    font-size:19px;
+    font-size:18px;
 
     color:#333;
 
@@ -889,9 +908,9 @@ thead{
 
 th{
 
-    padding:15px 13px;
+    padding:14px 13px;
 
-    font-size:13px;
+    font-size:12px;
 
     text-align:left;
 
@@ -902,13 +921,13 @@ th{
 
 td{
 
-    padding:12px;
+    padding:11px;
 
     border-bottom:
     1px solid
     #edf2f0;
 
-    font-size:13px;
+    font-size:12px;
 
     vertical-align:middle;
 
@@ -928,18 +947,18 @@ tbody tr:hover{
 
     align-items:center;
 
-    gap:9px;
+    gap:8px;
 
 }
 
 
 .cell-icon{
 
-    width:32px;
+    width:30px;
 
-    height:32px;
+    height:30px;
 
-    border-radius:9px;
+    border-radius:8px;
 
     display:flex;
 
@@ -962,7 +981,7 @@ tbody tr:hover{
 
     font-weight:700;
 
-    border-radius:10px;
+    border-radius:9px;
 
 }
 
@@ -973,7 +992,7 @@ tbody tr:hover{
 
     color:#1769aa;
 
-    border-radius:10px;
+    border-radius:9px;
 
 }
 
@@ -984,7 +1003,7 @@ tbody tr:hover{
 
     color:#795500;
 
-    border-radius:10px;
+    border-radius:9px;
 
     max-width:300px;
 
@@ -997,7 +1016,7 @@ tbody tr:hover{
 
     color:#7432a8;
 
-    border-radius:10px;
+    border-radius:9px;
 
 }
 
@@ -1008,7 +1027,7 @@ tbody tr:hover{
 
     color:#00796b;
 
-    border-radius:10px;
+    border-radius:9px;
 
     font-weight:600;
 
@@ -1021,12 +1040,16 @@ tbody tr:hover{
 
     color:#b85c00;
 
-    border-radius:10px;
+    border-radius:9px;
 
     font-weight:600;
 
 }
 
+
+/* =====================================================
+   VIEW BUTTON
+===================================================== */
 
 .view-btn{
 
@@ -1041,13 +1064,13 @@ tbody tr:hover{
 
     color:white;
 
-    padding:10px 16px;
+    padding:9px 15px;
 
-    border-radius:10px;
+    border-radius:9px;
 
     cursor:pointer;
 
-    font-size:13px;
+    font-size:12px;
 
     font-weight:700;
 
@@ -1062,7 +1085,7 @@ tbody tr:hover{
 
 
 /* =====================================================
-   LOADING / EMPTY
+   LOADING
 ===================================================== */
 
 .loading-state{
@@ -1091,6 +1114,10 @@ tbody tr:hover{
 
 }
 
+
+/* =====================================================
+   EMPTY
+===================================================== */
 
 .empty-state{
 
@@ -1519,33 +1546,6 @@ tbody tr:hover{
    MOBILE
 ===================================================== */
 
-@media(max-width:900px){
-
-    .control-bar{
-
-        flex-direction:column;
-
-        align-items:stretch;
-
-    }
-
-
-    .search-box{
-
-        width:100%;
-
-    }
-
-
-    .filters-right{
-
-        justify-content:flex-start;
-
-    }
-
-}
-
-
 @media(max-width:768px){
 
     .sidebar{
@@ -1600,41 +1600,62 @@ tbody tr:hover{
     }
 
 
-    .topbar-user{
+    .topbar-title p{
 
-        display:none;
+        font-size:9px;
 
     }
 
 
-    .filters-right{
+    .topbar-user{
+
+        font-size:11px;
+
+    }
+
+
+    .control-bar{
+
+        align-items:stretch;
+
+    }
+
+
+    .search-box{
+
+        min-width:100%;
+
+    }
+
+
+    .filter-group{
 
         width:100%;
 
-        justify-content:flex-start;
-
     }
 
 
-    .filter-item{
+    .date-input{
 
         flex:1;
 
-        min-width:120px;
+        min-width:130px;
 
     }
 
 
-    .filter-item input{
+    .day-filter{
 
-        width:100%;
+        flex:1;
 
     }
 
 
-    #daysInput{
+    .day-filter input{
 
-        width:100%;
+        flex:1;
+
+        width:auto;
 
     }
 
@@ -1642,8 +1663,6 @@ tbody tr:hover{
     .all-btn{
 
         flex:1;
-
-        justify-content:center;
 
     }
 
@@ -1682,7 +1701,9 @@ tbody tr:hover{
 
 
 <div class="sidebar-logo">
-    <i class="fa-solid fa-phone-volume"></i>
+
+<i class="fa-solid fa-phone"></i>
+
 </div>
 
 
@@ -1741,7 +1762,7 @@ href="pending-call.html"
 class="active"
 >
 
-<i class="fa-solid fa-phone"></i>
+<i class="fa-solid fa-phone-volume"></i>
 
 <span class="menu-text">
 Pending Call
@@ -1749,12 +1770,24 @@ Pending Call
 
 </a>
 
+
 <a href="history.html">
 
 <i class="fa-solid fa-clock-rotate-left"></i>
 
 <span class="menu-text">
 Support History
+</span>
+
+</a>
+
+
+<a href="user-account.html">
+
+<i class="fa-solid fa-user-gear"></i>
+
+<span class="menu-text">
+User Account
 </span>
 
 </a>
@@ -1863,13 +1896,11 @@ id="status"
 <div class="control-bar">
 
 
-<!-- SEARCH LEFT -->
+<!-- SEARCH -->
 
 <div class="search-box">
 
-
 <i class="fa-solid fa-magnifying-glass"></i>
-
 
 <input
 type="text"
@@ -1877,65 +1908,46 @@ id="searchInput"
 placeholder="Search Customer ID, Problem, Reference, Support..."
 >
 
-
 </div>
 
 
-<!-- FILTERS RIGHT -->
+<!-- FROM / TO DATE -->
 
-<div class="filters-right">
+<div class="filter-group">
 
-
-<div class="filter-item">
-
-
-<label>
-
-<i class="fa-solid fa-calendar-days"></i>
-
+<span class="filter-label">
 From
-
-</label>
-
+</span>
 
 <input
 type="date"
 id="fromDate"
+class="date-input"
 title="From Date"
 >
 
 
-</div>
-
-
-<div class="filter-item">
-
-
-<label>
-
-<i class="fa-solid fa-calendar-days"></i>
-
+<span class="filter-label">
 To
-
-</label>
-
+</span>
 
 <input
 type="date"
 id="toDate"
+class="date-input"
 title="To Date"
 >
-
 
 </div>
 
 
-<div class="filter-item">
+<!-- LAST DAYS -->
 
+<div class="day-filter">
 
 <label>
 
-<i class="fa-solid fa-clock"></i>
+<i class="fa-solid fa-calendar-days"></i>
 
 Last Days
 
@@ -1945,21 +1957,20 @@ Last Days
 <input
 type="number"
 id="daysInput"
-min="0"
+min="1"
 step="1"
-placeholder="All"
-title="Last Days"
+placeholder="7"
 >
-
 
 </div>
 
+
+<!-- ALL -->
 
 <button
 class="all-btn"
 id="allBtn"
 type="button"
-title="Show All Pending Calls"
 >
 
 <i class="fa-solid fa-list"></i>
@@ -1967,9 +1978,6 @@ title="Show All Pending Calls"
 All
 
 </button>
-
-
-</div>
 
 
 </div>
@@ -1986,11 +1994,7 @@ All
 
 
 <h2>
-
-<i class="fa-solid fa-phone-volume"></i>
-
 Pending Call Requests
-
 </h2>
 
 
@@ -2376,7 +2380,7 @@ const API_URL =
 
 
 /* =====================================================
-   SIDEBAR
+   SIDEBAR TOGGLE
 ===================================================== */
 
 const menuToggle =
@@ -2387,9 +2391,7 @@ menuToggle.addEventListener(
 "click",
 function(){
 
-    if(
-        window.innerWidth <= 768
-    ){
+    if(window.innerWidth <= 768){
 
         document.body.classList.toggle(
             "sidebar-mobile-open"
@@ -2408,13 +2410,15 @@ function(){
 });
 
 
+/* =====================================================
+   CLOSE MOBILE SIDEBAR
+===================================================== */
+
 document.addEventListener(
 "click",
 function(e){
 
-    if(
-        window.innerWidth <= 768
-    ){
+    if(window.innerWidth <= 768){
 
         const sidebar =
         document.getElementById("sidebar");
@@ -2479,14 +2483,14 @@ document.getElementById("status");
 const searchInput =
 document.getElementById("searchInput");
 
-const fromDate =
-document.getElementById("fromDate");
-
-const toDate =
-document.getElementById("toDate");
-
 const daysInput =
 document.getElementById("daysInput");
+
+const fromDateInput =
+document.getElementById("fromDate");
+
+const toDateInput =
+document.getElementById("toDate");
 
 const allBtn =
 document.getElementById("allBtn");
@@ -2588,7 +2592,7 @@ function showStatus(
 
 
 /* =====================================================
-   LOAD DATA
+   LOAD PENDING CALL
 ===================================================== */
 
 async function loadPendingCall(){
@@ -2733,6 +2737,23 @@ function parseSheetDate(
     }
 
 
+    if(
+        dateValue instanceof Date
+    ){
+
+        if(
+            !isNaN(
+                dateValue.getTime()
+            )
+        ){
+
+            return dateValue;
+
+        }
+
+    }
+
+
     const value =
     String(
         dateValue
@@ -2757,44 +2778,74 @@ function parseSheetDate(
     if(match){
 
         const day =
-        parseInt(match[1],10);
+        parseInt(
+            match[1],
+            10
+        );
+
 
         const month =
-        parseInt(match[2],10)-1;
+        parseInt(
+            match[2],
+            10
+        ) - 1;
+
 
         const year =
-        parseInt(match[3],10);
+        parseInt(
+            match[3],
+            10
+        );
+
 
         const hour =
         match[4]
         ?
-        parseInt(match[4],10)
+        parseInt(
+            match[4],
+            10
+        )
         :
         0;
+
 
         const minute =
         match[5]
         ?
-        parseInt(match[5],10)
+        parseInt(
+            match[5],
+            10
+        )
         :
         0;
+
 
         const second =
         match[6]
         ?
-        parseInt(match[6],10)
+        parseInt(
+            match[6],
+            10
+        )
         :
         0;
 
 
         const result =
         new Date(
+
             year,
+
             month,
+
             day,
+
             hour,
+
             minute,
+
             second
+
         );
 
 
@@ -2822,20 +2873,35 @@ function parseSheetDate(
     if(match){
 
         const year =
-        parseInt(match[1],10);
+        parseInt(
+            match[1],
+            10
+        );
+
 
         const month =
-        parseInt(match[2],10)-1;
+        parseInt(
+            match[2],
+            10
+        ) - 1;
+
 
         const day =
-        parseInt(match[3],10);
+        parseInt(
+            match[3],
+            10
+        );
 
 
         const result =
         new Date(
+
             year,
+
             month,
+
             day
+
         );
 
 
@@ -2853,7 +2919,9 @@ function parseSheetDate(
 
 
     const fallback =
-    new Date(value);
+    new Date(
+        value
+    );
 
 
     if(
@@ -2873,21 +2941,41 @@ function parseSheetDate(
 
 
 /* =====================================================
-   DATE ONLY
+   LOCAL DATE STRING
 ===================================================== */
 
-function getDateOnly(
+function getLocalDateString(
     date
 ){
 
-    return new Date(
+    const year =
+    date.getFullYear();
 
-        date.getFullYear(),
 
-        date.getMonth(),
+    const month =
+    String(
+        date.getMonth() + 1
+    ).padStart(
+        2,
+        "0"
+    );
 
+
+    const day =
+    String(
         date.getDate()
+    ).padStart(
+        2,
+        "0"
+    );
 
+
+    return (
+        year +
+        "-" +
+        month +
+        "-" +
+        day
     );
 
 }
@@ -2895,6 +2983,17 @@ function getDateOnly(
 
 /* =====================================================
    LAST DAYS FILTER
+
+   Example:
+
+   Today = 23
+   Last Days = 7
+
+   Cutoff = 16
+
+   Shows:
+   16 and older dates
+
 ===================================================== */
 
 function isWithinDays(
@@ -2906,6 +3005,7 @@ function isWithinDays(
     Number(days);
 
 
+    // Empty / 0 = no Last Days filter
     if(
         !Number.isFinite(
             numberOfDays
@@ -2932,14 +3032,26 @@ function isWithinDays(
     }
 
 
+    const now =
+    new Date();
+
+
     const today =
-    getDateOnly(
-        new Date()
+    new Date(
+
+        now.getFullYear(),
+
+        now.getMonth(),
+
+        now.getDate()
+
     );
 
 
     const cutoffDate =
-    new Date(today);
+    new Date(
+        today
+    );
 
 
     cutoffDate.setDate(
@@ -2952,22 +3064,26 @@ function isWithinDays(
 
 
     const itemDay =
-    getDateOnly(
-        itemDate
+    new Date(
+
+        itemDate.getFullYear(),
+
+        itemDate.getMonth(),
+
+        itemDate.getDate()
+
     );
 
+
+    // Example:
+    // Today 23 - 7 = 16
+    // Shows 16 and all dates before 16
 
     return (
 
         itemDay.getTime()
-        >=
-        cutoffDate.getTime()
-
-        &&
-
-        itemDay.getTime()
         <=
-        today.getTime()
+        cutoffDate.getTime()
 
     );
 
@@ -2975,7 +3091,7 @@ function isWithinDays(
 
 
 /* =====================================================
-   DATE RANGE FILTER
+   FROM / TO DATE FILTER
 ===================================================== */
 
 function isWithinDateRange(
@@ -2996,65 +3112,73 @@ function isWithinDateRange(
 
 
     const itemDay =
-    getDateOnly(
-        itemDate
+    new Date(
+
+        itemDate.getFullYear(),
+
+        itemDate.getMonth(),
+
+        itemDate.getDate()
+
     );
 
 
-    let startDate =
-    null;
+    /* =================================================
+       FROM DATE
+    ================================================= */
+
+    const fromValue =
+    fromDateInput.value;
 
 
-    let endDate =
-    null;
+    if(fromValue){
 
-
-    if(
-        fromDate.value
-    ){
-
-        startDate =
-        getDateOnly(
-            new Date(
-                fromDate.value +
-                "T00:00:00"
-            )
+        const fromDate =
+        new Date(
+            fromValue +
+            "T00:00:00"
         );
 
+
+        if(
+            itemDay.getTime()
+            <
+            fromDate.getTime()
+        ){
+
+            return false;
+
+        }
+
     }
 
 
-    if(
-        toDate.value
-    ){
+    /* =================================================
+       TO DATE
+    ================================================= */
 
-        endDate =
-        getDateOnly(
-            new Date(
-                toDate.value +
-                "T00:00:00"
-            )
+    const toValue =
+    toDateInput.value;
+
+
+    if(toValue){
+
+        const toDate =
+        new Date(
+            toValue +
+            "T00:00:00"
         );
 
-    }
 
+        if(
+            itemDay.getTime()
+            >
+            toDate.getTime()
+        ){
 
-    if(
-        startDate &&
-        itemDay < startDate
-    ){
+            return false;
 
-        return false;
-
-    }
-
-
-    if(
-        endDate &&
-        itemDay > endDate
-    ){
-
-        return false;
+        }
 
     }
 
@@ -3080,11 +3204,6 @@ function renderTable(){
     Number(
         daysInput.value
     ) || 0;
-
-
-    const hasDateRange =
-    fromDate.value ||
-    toDate.value;
 
 
     const filtered =
@@ -3164,34 +3283,33 @@ function renderTable(){
             .includes(search);
 
 
-            let matchesDate = true;
+            const matchesDays =
+
+            isWithinDays(
+
+                item.date,
+
+                days
+
+            );
 
 
-            if(hasDateRange){
+            const matchesDateRange =
 
-                matchesDate =
-                isWithinDateRange(
-                    item.date
-                );
+            isWithinDateRange(
 
-            }
+                item.date
 
-            else if(days > 0){
-
-                matchesDate =
-                isWithinDays(
-                    item.date,
-                    days
-                );
-
-            }
+            );
 
 
             return (
 
                 matchesSearch &&
 
-                matchesDate
+                matchesDays &&
+
+                matchesDateRange
 
             );
 
@@ -3828,30 +3946,52 @@ searchInput.addEventListener(
 
 
 /* =====================================================
+   LAST DAYS
+===================================================== */
+
+daysInput.addEventListener(
+
+    "input",
+
+    function(){
+
+        // Last Days ব্যবহার করলে From/To Date clear হবে
+
+        if(daysInput.value){
+
+            fromDateInput.value =
+                "";
+
+            toDateInput.value =
+                "";
+
+        }
+
+        renderTable();
+
+    }
+
+);
+
+
+/* =====================================================
    FROM DATE
 ===================================================== */
 
-fromDate.addEventListener(
+fromDateInput.addEventListener(
 
     "change",
 
     function(){
 
-        if(
-            fromDate.value &&
-            toDate.value &&
-            fromDate.value > toDate.value
-        ){
+        // Date Filter ব্যবহার করলে Last Days clear হবে
 
-            toDate.value =
-                fromDate.value;
+        if(fromDateInput.value){
+
+            daysInput.value =
+                "";
 
         }
-
-
-        daysInput.value =
-            "";
-
 
         renderTable();
 
@@ -3864,59 +4004,20 @@ fromDate.addEventListener(
    TO DATE
 ===================================================== */
 
-toDate.addEventListener(
+toDateInput.addEventListener(
 
     "change",
 
     function(){
 
-        if(
-            fromDate.value &&
-            toDate.value &&
-            toDate.value < fromDate.value
-        ){
+        // Date Filter ব্যবহার করলে Last Days clear হবে
 
-            fromDate.value =
-                toDate.value;
+        if(toDateInput.value){
 
-        }
-
-
-        daysInput.value =
-            "";
-
-
-        renderTable();
-
-    }
-
-);
-
-
-/* =====================================================
-   LAST DAYS
-===================================================== */
-
-daysInput.addEventListener(
-
-    "input",
-
-    function(){
-
-        if(
-            Number(
-                daysInput.value
-            ) > 0
-        ){
-
-            fromDate.value =
-                "";
-
-            toDate.value =
+            daysInput.value =
                 "";
 
         }
-
 
         renderTable();
 
@@ -3938,13 +4039,13 @@ allBtn.addEventListener(
         searchInput.value =
             "";
 
-        fromDate.value =
-            "";
-
-        toDate.value =
-            "";
-
         daysInput.value =
+            "";
+
+        fromDateInput.value =
+            "";
+
+        toDateInput.value =
             "";
 
         renderTable();

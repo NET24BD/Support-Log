@@ -46,7 +46,6 @@ href="https://fonts.googleapis.com"
 <link
 rel="preconnect"
 href="https://fonts.gstatic.com"
-crossorigin
 >
 
 <link
@@ -148,11 +147,28 @@ body{
 
     z-index:1000;
 
-    transition:.35s;
+    transition:
+    width .35s ease,
+    transform .35s ease;
 
     box-shadow:
     8px 0 30px
     rgba(0,0,0,.12);
+
+}
+
+
+/* =====================================================
+   SIDEBAR MINIMIZE
+===================================================== */
+
+.sidebar.minimized{
+
+    width:82px;
+
+    padding-left:12px;
+
+    padding-right:12px;
 
 }
 
@@ -182,6 +198,8 @@ body{
     width:48px;
 
     height:48px;
+
+    min-width:48px;
 
     border-radius:14px;
 
@@ -214,6 +232,8 @@ body{
 
     letter-spacing:.3px;
 
+    white-space:nowrap;
+
 }
 
 
@@ -228,6 +248,28 @@ body{
     margin-top:2px;
 
     font-weight:500;
+
+}
+
+
+/* =====================================================
+   SIDEBAR MINIMIZED BRAND
+===================================================== */
+
+.sidebar.minimized .brand{
+
+    justify-content:center;
+
+    padding-left:0;
+
+    padding-right:0;
+
+}
+
+
+.sidebar.minimized .brand-text{
+
+    display:none;
 
 }
 
@@ -296,6 +338,8 @@ body{
 
     width:22px;
 
+    min-width:22px;
+
     text-align:center;
 
     font-size:16px;
@@ -325,6 +369,41 @@ body{
     box-shadow:
     0 8px 20px
     rgba(0,0,0,.15);
+
+}
+
+
+/* =====================================================
+   MINIMIZED NAV
+===================================================== */
+
+.sidebar.minimized .nav-title{
+
+    display:none;
+
+}
+
+
+.sidebar.minimized .nav a{
+
+    justify-content:center;
+
+    padding-left:10px;
+
+    padding-right:10px;
+
+    font-size:0;
+
+}
+
+
+.sidebar.minimized .nav a i{
+
+    width:auto;
+
+    min-width:auto;
+
+    font-size:17px;
 
 }
 
@@ -414,6 +493,85 @@ body{
 
 
 /* =====================================================
+   MINIMIZED LOGOUT
+===================================================== */
+
+.sidebar.minimized .logout-btn span{
+
+    display:none;
+
+}
+
+
+.sidebar.minimized .logout-btn{
+
+    padding-left:0;
+
+    padding-right:0;
+
+}
+
+
+/* =====================================================
+   SIDEBAR TOGGLE BUTTON
+===================================================== */
+
+.sidebar-toggle{
+
+    position:absolute;
+
+    right:-15px;
+
+    top:28px;
+
+    width:30px;
+
+    height:30px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:var(--green);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    z-index:1100;
+
+    box-shadow:
+    0 5px 18px
+    rgba(0,0,0,.18);
+
+    transition:.3s;
+
+}
+
+
+.sidebar-toggle:hover{
+
+    background:var(--green);
+
+    color:white;
+
+}
+
+
+.sidebar.minimized .sidebar-toggle{
+
+    transform:rotate(180deg);
+
+}
+
+
+/* =====================================================
    MAIN
 ===================================================== */
 
@@ -424,6 +582,20 @@ body{
     min-height:100vh;
 
     padding:28px 35px;
+
+    transition:
+    margin-left .35s ease;
+
+}
+
+
+/* =====================================================
+   MAIN WHEN SIDEBAR MINIMIZED
+===================================================== */
+
+.main.sidebar-minimized{
+
+    margin-left:82px;
 
 }
 
@@ -1686,6 +1858,10 @@ tbody tr:hover{
         transform:
         translateX(-100%);
 
+        width:250px;
+
+        padding:25px 18px;
+
     }
 
 
@@ -1697,11 +1873,88 @@ tbody tr:hover{
     }
 
 
+    .sidebar.minimized{
+
+        width:250px;
+
+        padding:25px 18px;
+
+    }
+
+
+    .sidebar.minimized .brand{
+
+        justify-content:flex-start;
+
+        padding:
+        5px 10px 30px;
+
+    }
+
+
+    .sidebar.minimized .brand-text{
+
+        display:block;
+
+    }
+
+
+    .sidebar.minimized .nav-title{
+
+        display:block;
+
+    }
+
+
+    .sidebar.minimized .nav a{
+
+        justify-content:flex-start;
+
+        padding:
+        13px 15px;
+
+        font-size:13px;
+
+    }
+
+
+    .sidebar.minimized .nav a i{
+
+        width:22px;
+
+        min-width:22px;
+
+        font-size:16px;
+
+    }
+
+
+    .sidebar.minimized .logout-btn span{
+
+        display:inline;
+
+    }
+
+
+    .sidebar-toggle{
+
+        display:none;
+
+    }
+
+
     .main{
 
         margin-left:0;
 
         padding:22px;
+
+    }
+
+
+    .main.sidebar-minimized{
+
+        margin-left:0;
 
     }
 
@@ -1839,6 +2092,22 @@ tbody tr:hover{
 ===================================================== -->
 
 <aside class="sidebar" id="sidebar">
+
+
+<!-- =====================================================
+     SIDEBAR MINIMIZE BUTTON
+===================================================== -->
+
+<button
+type="button"
+class="sidebar-toggle"
+id="sidebarToggle"
+title="Minimize Sidebar"
+>
+
+<i class="fa-solid fa-chevron-left"></i>
+
+</button>
 
 
 <div class="brand">
@@ -2504,7 +2773,6 @@ if(!checkLogin()){
 
 /* =====================================================
    LOGGED USER PROFILE
-   Username will show in profile
 ===================================================== */
 
 const loggedUsername =
@@ -2553,7 +2821,6 @@ document.getElementById(
 
 /* =====================================================
    DIRECT LOGOUT
-   NO CHROME POPUP
 ===================================================== */
 
 function logout(){
@@ -3481,13 +3748,6 @@ function openEditModal(row){
     "";
 
 
-    /*
-      OLD PASSWORD SUPPORT
-
-      API থেকে password এলে
-      existing password এখানে দেখা যাবে
-    */
-
     passwordInput.value =
 
     user.password
@@ -3871,7 +4131,6 @@ document.getElementById(
 
 /* =====================================================
    TOGGLE STATUS
-   NO CHROME CONFIRM POPUP
 ===================================================== */
 
 async function toggleStatus(row){
@@ -3988,7 +4247,6 @@ async function toggleStatus(row){
 
 /* =====================================================
    DELETE USER
-   NO CHROME CONFIRM POPUP
 ===================================================== */
 
 async function deleteUser(row){
@@ -4184,6 +4442,54 @@ overlay.addEventListener(
 
         overlay.classList.remove(
             "show"
+        );
+
+    }
+
+);
+
+
+/* =====================================================
+   SIDEBAR MINIMIZE / EXPAND
+   ONLY ADDED FEATURE
+===================================================== */
+
+const sidebarToggle =
+
+document.getElementById(
+    "sidebarToggle"
+);
+
+
+const mainContent =
+
+document.querySelector(
+    ".main"
+);
+
+
+sidebarToggle.addEventListener(
+
+    "click",
+
+    function(){
+
+        if(
+            window.innerWidth <= 900
+        ){
+
+            return;
+
+        }
+
+
+        sidebar.classList.toggle(
+            "minimized"
+        );
+
+
+        mainContent.classList.toggle(
+            "sidebar-minimized"
         );
 
     }

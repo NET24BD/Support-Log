@@ -967,7 +967,7 @@ header{
 
 
 /* =====================================================
-   CARD COLOR 1
+   NEW ENTRY
 ===================================================== */
 
 .card.green{
@@ -983,7 +983,7 @@ header{
 
 
 /* =====================================================
-   CARD COLOR 2
+   PENDING SUPPORT
 ===================================================== */
 
 .card.blue{
@@ -999,7 +999,7 @@ header{
 
 
 /* =====================================================
-   CARD COLOR 3
+   PENDING CALL
 ===================================================== */
 
 .card.orange{
@@ -1015,7 +1015,7 @@ header{
 
 
 /* =====================================================
-   CARD COLOR 4
+   HISTORY
 ===================================================== */
 
 .card.red{
@@ -1026,6 +1026,22 @@ header{
 
     --card-shadow:
     rgba(239,68,68,.25);
+
+}
+
+
+/* =====================================================
+   USER ACCOUNT
+===================================================== */
+
+.card.purple{
+
+    --card-color:#8b5cf6;
+
+    --card-color-dark:#6d28d9;
+
+    --card-shadow:
+    rgba(139,92,246,.25);
 
 }
 
@@ -1161,6 +1177,13 @@ header{
 .card:nth-child(4){
 
     animation-delay:.24s;
+
+}
+
+
+.card:nth-child(5){
+
+    animation-delay:.32s;
 
 }
 
@@ -1726,6 +1749,68 @@ onclick="goToPage('history.html')"
         <p>
 
             Browse completed support activities, previous updates and complete service history.
+
+        </p>
+
+    </div>
+
+
+    <div class="card-bottom">
+
+        <span class="open-text">
+
+            Open Module
+
+        </span>
+
+        <div class="arrow">
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     USER ACCOUNT
+===================================================== -->
+
+<div
+class="card purple"
+onclick="goToPage('user-account.html')"
+>
+
+    <div class="card-top">
+
+        <div class="icon">
+
+            <i class="fa-solid fa-users"></i>
+
+        </div>
+
+        <div class="card-number">
+
+            05
+
+        </div>
+
+    </div>
+
+
+    <div class="card-content">
+
+        <h2>
+
+            User Account
+
+        </h2>
+
+        <p>
+
+            Manage user accounts, access permissions and account information securely.
 
         </p>
 

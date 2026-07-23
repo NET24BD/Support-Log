@@ -5,7 +5,8 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Pending Call | LINK4 COMMUNICATION</title>
 
@@ -13,7 +14,9 @@
 
 (function(){
 
-    if(localStorage.getItem("loggedIn") !== "true"){
+    if(
+        localStorage.getItem("loggedIn") !== "true"
+    ){
 
         window.location.replace("../index.html");
 
@@ -23,9 +26,16 @@
 
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com"
+>
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+>
 
 <link
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
@@ -112,10 +122,6 @@ body{
 }
 
 
-/* =====================================================
-   COLLAPSED SIDEBAR
-===================================================== */
-
 body.sidebar-collapsed .sidebar{
 
     width:78px;
@@ -149,7 +155,7 @@ body.sidebar-collapsed .sidebar{
 
 
 /* =====================================================
-   SIDEBAR LOGO - PHONE ICON
+   SIDEBAR LOGO - CALL ICON
 ===================================================== */
 
 .sidebar-logo{
@@ -569,15 +575,17 @@ body.sidebar-collapsed
 
     padding:14px 16px;
 
-    border-radius:18px;
+    border-radius:16px;
 
     margin-bottom:20px;
 
     display:flex;
 
+    justify-content:space-between;
+
     align-items:center;
 
-    gap:12px;
+    gap:14px;
 
     flex-wrap:wrap;
 
@@ -589,7 +597,7 @@ body.sidebar-collapsed
 
 
 /* =====================================================
-   SEARCH - THIN
+   SEARCH BAR - THIN
 ===================================================== */
 
 .search-box{
@@ -597,6 +605,8 @@ body.sidebar-collapsed
     flex:1;
 
     min-width:220px;
+
+    max-width:520px;
 
     position:relative;
 
@@ -624,13 +634,13 @@ body.sidebar-collapsed
 
     width:100%;
 
-    height:42px;
+    height:40px;
 
-    padding:9px 12px 9px 38px;
+    padding:8px 12px 8px 38px;
 
     border:
-    1px solid
-    #dce9e4;
+    1.5px solid
+    #e3eee9;
 
     border-radius:10px;
 
@@ -645,18 +655,24 @@ body.sidebar-collapsed
 
     border-color:#00a878;
 
+    box-shadow:
+    0 0 0 3px
+    rgba(0,168,120,.08);
+
 }
 
 
 /* =====================================================
-   DATE FILTER AREA
+   RIGHT FILTER AREA
 ===================================================== */
 
-.filter-group{
+.filter-area{
 
     display:flex;
 
     align-items:center;
+
+    justify-content:flex-end;
 
     gap:8px;
 
@@ -665,61 +681,18 @@ body.sidebar-collapsed
 }
 
 
-.filter-label{
-
-    font-size:11px;
-
-    font-weight:700;
-
-    color:#555;
-
-}
-
-
-.date-input{
-
-    height:42px;
-
-    padding:8px 10px;
-
-    border:
-    1px solid
-    #dce9e4;
-
-    border-radius:10px;
-
-    outline:none;
-
-    font-size:12px;
-
-    color:#444;
-
-}
-
-
-.date-input:focus{
-
-    border-color:#00a878;
-
-}
-
-
-/* =====================================================
-   LAST DAYS
-===================================================== */
-
-.day-filter{
+.filter-item{
 
     display:flex;
 
     align-items:center;
 
-    gap:7px;
+    gap:6px;
 
 }
 
 
-.day-filter label{
+.filter-item label{
 
     font-size:11px;
 
@@ -732,72 +705,54 @@ body.sidebar-collapsed
 }
 
 
-.day-filter input{
+.filter-item label i{
 
-    width:75px;
-
-    height:42px;
-
-    padding:8px;
-
-    border:
-    1px solid
-    #dce9e4;
-
-    border-radius:10px;
-
-    outline:none;
-
-    text-align:center;
-
-    font-weight:600;
-
-    font-size:12px;
+    color:#008f6b;
 
 }
 
 
-.day-filter input:focus{
+.filter-item input{
+
+    height:38px;
+
+    padding:7px 9px;
+
+    border:
+    1.5px solid
+    #e3eee9;
+
+    border-radius:9px;
+
+    outline:none;
+
+    font-size:11px;
+
+    font-weight:600;
+
+}
+
+
+.filter-item input:focus{
 
     border-color:#00a878;
 
 }
 
 
-/* =====================================================
-   ALL BUTTON
-===================================================== */
+#daysInput{
 
-.all-btn{
+    width:72px;
 
-    height:42px;
-
-    border:none;
-
-    padding:0 15px;
-
-    border-radius:10px;
-
-    background:#e7f8f2;
-
-    color:#006a4e;
-
-    cursor:pointer;
-
-    font-size:12px;
-
-    font-weight:700;
-
-    transition:.25s;
+    text-align:center;
 
 }
 
 
-.all-btn:hover{
+#dateFrom,
+#dateTo{
 
-    background:#006a4e;
-
-    color:white;
+    width:130px;
 
 }
 
@@ -824,7 +779,7 @@ body.sidebar-collapsed
 
 .table-header{
 
-    padding:18px 22px;
+    padding:18px 25px;
 
     display:flex;
 
@@ -841,9 +796,7 @@ body.sidebar-collapsed
 
 .table-header h2{
 
-    font-size:18px;
-
-    color:#333;
+    font-size:20px;
 
 }
 
@@ -863,7 +816,7 @@ body.sidebar-collapsed
 
     border-radius:20px;
 
-    font-size:12px;
+    font-size:13px;
 
     font-weight:700;
 
@@ -908,9 +861,9 @@ thead{
 
 th{
 
-    padding:14px 13px;
+    padding:15px 13px;
 
-    font-size:12px;
+    font-size:13px;
 
     text-align:left;
 
@@ -921,13 +874,13 @@ th{
 
 td{
 
-    padding:11px;
+    padding:12px;
 
     border-bottom:
     1px solid
     #edf2f0;
 
-    font-size:12px;
+    font-size:13px;
 
     vertical-align:middle;
 
@@ -947,18 +900,18 @@ tbody tr:hover{
 
     align-items:center;
 
-    gap:8px;
+    gap:9px;
 
 }
 
 
 .cell-icon{
 
-    width:30px;
+    width:32px;
 
-    height:30px;
+    height:32px;
 
-    border-radius:8px;
+    border-radius:9px;
 
     display:flex;
 
@@ -981,7 +934,7 @@ tbody tr:hover{
 
     font-weight:700;
 
-    border-radius:9px;
+    border-radius:10px;
 
 }
 
@@ -992,7 +945,7 @@ tbody tr:hover{
 
     color:#1769aa;
 
-    border-radius:9px;
+    border-radius:10px;
 
 }
 
@@ -1003,7 +956,7 @@ tbody tr:hover{
 
     color:#795500;
 
-    border-radius:9px;
+    border-radius:10px;
 
     max-width:300px;
 
@@ -1016,7 +969,7 @@ tbody tr:hover{
 
     color:#7432a8;
 
-    border-radius:9px;
+    border-radius:10px;
 
 }
 
@@ -1027,7 +980,7 @@ tbody tr:hover{
 
     color:#00796b;
 
-    border-radius:9px;
+    border-radius:10px;
 
     font-weight:600;
 
@@ -1040,16 +993,12 @@ tbody tr:hover{
 
     color:#b85c00;
 
-    border-radius:9px;
+    border-radius:10px;
 
     font-weight:600;
 
 }
 
-
-/* =====================================================
-   VIEW BUTTON
-===================================================== */
 
 .view-btn{
 
@@ -1064,13 +1013,13 @@ tbody tr:hover{
 
     color:white;
 
-    padding:9px 15px;
+    padding:10px 16px;
 
-    border-radius:9px;
+    border-radius:10px;
 
     cursor:pointer;
 
-    font-size:12px;
+    font-size:13px;
 
     font-weight:700;
 
@@ -1085,7 +1034,7 @@ tbody tr:hover{
 
 
 /* =====================================================
-   LOADING
+   LOADING / EMPTY
 ===================================================== */
 
 .loading-state{
@@ -1114,10 +1063,6 @@ tbody tr:hover{
 
 }
 
-
-/* =====================================================
-   EMPTY
-===================================================== */
 
 .empty-state{
 
@@ -1546,6 +1491,35 @@ tbody tr:hover{
    MOBILE
 ===================================================== */
 
+@media(max-width:1000px){
+
+    .control-bar{
+
+        align-items:stretch;
+
+    }
+
+
+    .search-box{
+
+        max-width:none;
+
+        width:100%;
+
+    }
+
+
+    .filter-area{
+
+        width:100%;
+
+        justify-content:flex-start;
+
+    }
+
+}
+
+
 @media(max-width:768px){
 
     .sidebar{
@@ -1609,60 +1583,37 @@ tbody tr:hover{
 
     .topbar-user{
 
-        font-size:11px;
+        display:none;
 
     }
 
 
-    .control-bar{
+    .filter-area{
 
-        align-items:stretch;
+        display:grid;
 
-    }
-
-
-    .search-box{
-
-        min-width:100%;
-
-    }
-
-
-    .filter-group{
+        grid-template-columns:
+        repeat(2,1fr);
 
         width:100%;
 
     }
 
 
-    .date-input{
+    .filter-item{
 
-        flex:1;
+        width:100%;
 
-        min-width:130px;
-
-    }
-
-
-    .day-filter{
-
-        flex:1;
+        justify-content:space-between;
 
     }
 
 
-    .day-filter input{
+    .filter-item input{
 
         flex:1;
 
-        width:auto;
-
-    }
-
-
-    .all-btn{
-
-        flex:1;
+        width:auto !important;
 
     }
 
@@ -1702,7 +1653,9 @@ tbody tr:hover{
 
 <div class="sidebar-logo">
 
-<i class="fa-solid fa-phone"></i>
+<!-- CALL ICON -->
+
+<i class="fa-solid fa-phone-volume"></i>
 
 </div>
 
@@ -1820,15 +1773,13 @@ Logout
 
 
 <!-- =====================================================
-     MAIN CONTENT
+     MAIN
 ===================================================== -->
 
 <main class="main-content">
 
 
-<!-- =====================================================
-     TOP BAR
-===================================================== -->
+<!-- TOP BAR -->
 
 <div class="topbar">
 
@@ -1911,39 +1862,14 @@ placeholder="Search Customer ID, Problem, Reference, Support..."
 </div>
 
 
-<!-- FROM / TO DATE -->
+<!-- RIGHT SIDE FILTER -->
 
-<div class="filter-group">
-
-<span class="filter-label">
-From
-</span>
-
-<input
-type="date"
-id="fromDate"
-class="date-input"
-title="From Date"
->
-
-
-<span class="filter-label">
-To
-</span>
-
-<input
-type="date"
-id="toDate"
-class="date-input"
-title="To Date"
->
-
-</div>
+<div class="filter-area">
 
 
 <!-- LAST DAYS -->
 
-<div class="day-filter">
+<div class="filter-item">
 
 <label>
 
@@ -1953,31 +1879,58 @@ Last Days
 
 </label>
 
-
 <input
 type="number"
 id="daysInput"
 min="1"
 step="1"
-placeholder="7"
+placeholder="Days"
 >
 
 </div>
 
 
-<!-- ALL -->
+<!-- FROM DATE -->
 
-<button
-class="all-btn"
-id="allBtn"
-type="button"
+<div class="filter-item">
+
+<label>
+
+<i class="fa-solid fa-calendar"></i>
+
+From
+
+</label>
+
+<input
+type="date"
+id="dateFrom"
 >
 
-<i class="fa-solid fa-list"></i>
+</div>
 
-All
 
-</button>
+<!-- TO DATE -->
+
+<div class="filter-item">
+
+<label>
+
+<i class="fa-solid fa-calendar-check"></i>
+
+To
+
+</label>
+
+<input
+type="date"
+id="dateTo"
+>
+
+</div>
+
+
+</div>
 
 
 </div>
@@ -2380,7 +2333,7 @@ const API_URL =
 
 
 /* =====================================================
-   SIDEBAR TOGGLE
+   SIDEBAR
 ===================================================== */
 
 const menuToggle =
@@ -2391,7 +2344,9 @@ menuToggle.addEventListener(
 "click",
 function(){
 
-    if(window.innerWidth <= 768){
+    if(
+        window.innerWidth <= 768
+    ){
 
         document.body.classList.toggle(
             "sidebar-mobile-open"
@@ -2410,15 +2365,13 @@ function(){
 });
 
 
-/* =====================================================
-   CLOSE MOBILE SIDEBAR
-===================================================== */
-
 document.addEventListener(
 "click",
 function(e){
 
-    if(window.innerWidth <= 768){
+    if(
+        window.innerWidth <= 768
+    ){
 
         const sidebar =
         document.getElementById("sidebar");
@@ -2445,11 +2398,17 @@ function(e){
 
 function logout(){
 
-    localStorage.removeItem("loggedIn");
+    localStorage.removeItem(
+        "loggedIn"
+    );
 
-    localStorage.removeItem("username");
+    localStorage.removeItem(
+        "username"
+    );
 
-    localStorage.removeItem("name");
+    localStorage.removeItem(
+        "name"
+    );
 
     window.location.replace(
         "../index.html"
@@ -2486,14 +2445,11 @@ document.getElementById("searchInput");
 const daysInput =
 document.getElementById("daysInput");
 
-const fromDateInput =
-document.getElementById("fromDate");
+const dateFrom =
+document.getElementById("dateFrom");
 
-const toDateInput =
-document.getElementById("toDate");
-
-const allBtn =
-document.getElementById("allBtn");
+const dateTo =
+document.getElementById("dateTo");
 
 const viewModal =
 document.getElementById("viewModal");
@@ -2531,6 +2487,12 @@ savedUsername ||
 
 
 document.getElementById(
+"userName"
+)?.textContent =
+currentUser;
+
+
+document.getElementById(
 "topUser"
 ).textContent =
 currentUser;
@@ -2550,7 +2512,7 @@ let selectedCall = null;
 
 
 /* =====================================================
-   LOGIN CHECK
+   LOGIN
 ===================================================== */
 
 function checkLogin(){
@@ -2592,7 +2554,7 @@ function showStatus(
 
 
 /* =====================================================
-   LOAD PENDING CALL
+   LOAD DATA
 ===================================================== */
 
 async function loadPendingCall(){
@@ -2688,8 +2650,8 @@ async function loadPendingCall(){
 
         renderTable();
 
-
     }
+
 
     catch(error){
 
@@ -2737,23 +2699,6 @@ function parseSheetDate(
     }
 
 
-    if(
-        dateValue instanceof Date
-    ){
-
-        if(
-            !isNaN(
-                dateValue.getTime()
-            )
-        ){
-
-            return dateValue;
-
-        }
-
-    }
-
-
     const value =
     String(
         dateValue
@@ -2778,74 +2723,44 @@ function parseSheetDate(
     if(match){
 
         const day =
-        parseInt(
-            match[1],
-            10
-        );
-
+        parseInt(match[1],10);
 
         const month =
-        parseInt(
-            match[2],
-            10
-        ) - 1;
-
+        parseInt(match[2],10)-1;
 
         const year =
-        parseInt(
-            match[3],
-            10
-        );
-
+        parseInt(match[3],10);
 
         const hour =
         match[4]
         ?
-        parseInt(
-            match[4],
-            10
-        )
+        parseInt(match[4],10)
         :
         0;
-
 
         const minute =
         match[5]
         ?
-        parseInt(
-            match[5],
-            10
-        )
+        parseInt(match[5],10)
         :
         0;
-
 
         const second =
         match[6]
         ?
-        parseInt(
-            match[6],
-            10
-        )
+        parseInt(match[6],10)
         :
         0;
 
 
         const result =
         new Date(
-
             year,
-
             month,
-
             day,
-
             hour,
-
             minute,
-
             second
-
         );
 
 
@@ -2873,35 +2788,20 @@ function parseSheetDate(
     if(match){
 
         const year =
-        parseInt(
-            match[1],
-            10
-        );
-
+        parseInt(match[1],10);
 
         const month =
-        parseInt(
-            match[2],
-            10
-        ) - 1;
-
+        parseInt(match[2],10)-1;
 
         const day =
-        parseInt(
-            match[3],
-            10
-        );
+        parseInt(match[3],10);
 
 
         const result =
         new Date(
-
             year,
-
             month,
-
             day
-
         );
 
 
@@ -2919,9 +2819,7 @@ function parseSheetDate(
 
 
     const fallback =
-    new Date(
-        value
-    );
+    new Date(value);
 
 
     if(
@@ -2941,41 +2839,19 @@ function parseSheetDate(
 
 
 /* =====================================================
-   LOCAL DATE STRING
+   MAKE DAY ONLY
 ===================================================== */
 
-function getLocalDateString(
-    date
-){
+function dayOnly(date){
 
-    const year =
-    date.getFullYear();
+    return new Date(
 
+        date.getFullYear(),
 
-    const month =
-    String(
-        date.getMonth() + 1
-    ).padStart(
-        2,
-        "0"
-    );
+        date.getMonth(),
 
-
-    const day =
-    String(
         date.getDate()
-    ).padStart(
-        2,
-        "0"
-    );
 
-
-    return (
-        year +
-        "-" +
-        month +
-        "-" +
-        day
     );
 
 }
@@ -2983,20 +2859,13 @@ function getLocalDateString(
 
 /* =====================================================
    LAST DAYS FILTER
-
-   Example:
-
-   Today = 23
-   Last Days = 7
-
-   Cutoff = 16
-
-   Shows:
-   16 and older dates
-
+   EXAMPLE:
+   TODAY = 23
+   DAYS = 7
+   SHOW = 16 AND BEFORE
 ===================================================== */
 
-function isWithinDays(
+function isWithinLastDaysFilter(
     dateValue,
     days
 ){
@@ -3005,7 +2874,6 @@ function isWithinDays(
     Number(days);
 
 
-    // Empty / 0 = no Last Days filter
     if(
         !Number.isFinite(
             numberOfDays
@@ -3032,19 +2900,9 @@ function isWithinDays(
     }
 
 
-    const now =
-    new Date();
-
-
     const today =
-    new Date(
-
-        now.getFullYear(),
-
-        now.getMonth(),
-
-        now.getDate()
-
+    dayOnly(
+        new Date()
     );
 
 
@@ -3064,20 +2922,10 @@ function isWithinDays(
 
 
     const itemDay =
-    new Date(
-
-        itemDate.getFullYear(),
-
-        itemDate.getMonth(),
-
-        itemDate.getDate()
-
+    dayOnly(
+        itemDate
     );
 
-
-    // Example:
-    // Today 23 - 7 = 16
-    // Shows 16 and all dates before 16
 
     return (
 
@@ -3091,12 +2939,20 @@ function isWithinDays(
 
 
 /* =====================================================
-   FROM / TO DATE FILTER
+   FROM DATE FILTER
 ===================================================== */
 
-function isWithinDateRange(
-    dateValue
+function isFromDate(
+    dateValue,
+    fromValue
 ){
+
+    if(!fromValue){
+
+        return true;
+
+    }
+
 
     const itemDate =
     parseSheetDate(
@@ -3111,79 +2967,67 @@ function isWithinDateRange(
     }
 
 
-    const itemDay =
+    const fromDate =
     new Date(
-
-        itemDate.getFullYear(),
-
-        itemDate.getMonth(),
-
-        itemDate.getDate()
-
+        fromValue +
+        "T00:00:00"
     );
 
 
-    /* =================================================
-       FROM DATE
-    ================================================= */
+    return (
 
-    const fromValue =
-    fromDateInput.value;
+        dayOnly(itemDate).getTime()
+        >=
+        dayOnly(fromDate).getTime()
 
+    );
 
-    if(fromValue){
-
-        const fromDate =
-        new Date(
-            fromValue +
-            "T00:00:00"
-        );
+}
 
 
-        if(
-            itemDay.getTime()
-            <
-            fromDate.getTime()
-        ){
+/* =====================================================
+   TO DATE FILTER
+===================================================== */
 
-            return false;
+function isToDate(
+    dateValue,
+    toValue
+){
 
-        }
+    if(!toValue){
+
+        return true;
 
     }
 
 
-    /* =================================================
-       TO DATE
-    ================================================= */
-
-    const toValue =
-    toDateInput.value;
+    const itemDate =
+    parseSheetDate(
+        dateValue
+    );
 
 
-    if(toValue){
+    if(!itemDate){
 
-        const toDate =
-        new Date(
-            toValue +
-            "T00:00:00"
-        );
-
-
-        if(
-            itemDay.getTime()
-            >
-            toDate.getTime()
-        ){
-
-            return false;
-
-        }
+        return false;
 
     }
 
 
-    return true;
+    const toDate =
+    new Date(
+        toValue +
+        "T00:00:00"
+    );
+
+
+    return (
+
+        dayOnly(itemDate).getTime()
+        <=
+        dayOnly(toDate).getTime()
+
+    );
 
 }
 
@@ -3201,9 +3045,15 @@ function renderTable(){
 
 
     const days =
-    Number(
-        daysInput.value
-    ) || 0;
+    daysInput.value.trim();
+
+
+    const fromValue =
+    dateFrom.value;
+
+
+    const toValue =
+    dateTo.value;
 
 
     const filtered =
@@ -3285,7 +3135,7 @@ function renderTable(){
 
             const matchesDays =
 
-            isWithinDays(
+            isWithinLastDaysFilter(
 
                 item.date,
 
@@ -3294,11 +3144,24 @@ function renderTable(){
             );
 
 
-            const matchesDateRange =
+            const matchesFrom =
 
-            isWithinDateRange(
+            isFromDate(
 
-                item.date
+                item.date,
+
+                fromValue
+
+            );
+
+
+            const matchesTo =
+
+            isToDate(
+
+                item.date,
+
+                toValue
 
             );
 
@@ -3309,7 +3172,9 @@ function renderTable(){
 
                 matchesDays &&
 
-                matchesDateRange
+                matchesFrom &&
+
+                matchesTo
 
             );
 
@@ -3355,6 +3220,12 @@ function renderTable(){
     tableWrapper.style.display =
         "block";
 
+
+    /*
+       IMPORTANT:
+       OLD DATA = TOP
+       NEW DATA = BOTTOM
+    */
 
     filtered.forEach(
 
@@ -3933,7 +3804,7 @@ submitCallBtn.addEventListener(
 
 
 /* =====================================================
-   SEARCH
+   ALL FILTER EVENTS
 ===================================================== */
 
 searchInput.addEventListener(
@@ -3945,112 +3816,29 @@ searchInput.addEventListener(
 );
 
 
-/* =====================================================
-   LAST DAYS
-===================================================== */
-
 daysInput.addEventListener(
 
     "input",
 
-    function(){
-
-        // Last Days ব্যবহার করলে From/To Date clear হবে
-
-        if(daysInput.value){
-
-            fromDateInput.value =
-                "";
-
-            toDateInput.value =
-                "";
-
-        }
-
-        renderTable();
-
-    }
+    renderTable
 
 );
 
 
-/* =====================================================
-   FROM DATE
-===================================================== */
-
-fromDateInput.addEventListener(
+dateFrom.addEventListener(
 
     "change",
 
-    function(){
-
-        // Date Filter ব্যবহার করলে Last Days clear হবে
-
-        if(fromDateInput.value){
-
-            daysInput.value =
-                "";
-
-        }
-
-        renderTable();
-
-    }
+    renderTable
 
 );
 
 
-/* =====================================================
-   TO DATE
-===================================================== */
-
-toDateInput.addEventListener(
+dateTo.addEventListener(
 
     "change",
 
-    function(){
-
-        // Date Filter ব্যবহার করলে Last Days clear হবে
-
-        if(toDateInput.value){
-
-            daysInput.value =
-                "";
-
-        }
-
-        renderTable();
-
-    }
-
-);
-
-
-/* =====================================================
-   ALL BUTTON
-===================================================== */
-
-allBtn.addEventListener(
-
-    "click",
-
-    function(){
-
-        searchInput.value =
-            "";
-
-        daysInput.value =
-            "";
-
-        fromDateInput.value =
-            "";
-
-        toDateInput.value =
-            "";
-
-        renderTable();
-
-    }
+    renderTable
 
 );
 

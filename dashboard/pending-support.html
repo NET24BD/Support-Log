@@ -23,7 +23,6 @@ rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 >
 
-
 <style>
 
 /* =====================================================
@@ -46,15 +45,7 @@ body{
 
     min-height:100vh;
 
-    background:
-    linear-gradient(
-        135deg,
-        #004d35,
-        #007a55,
-        #00a878
-    );
-
-    padding:20px;
+    background:#f4f7f8;
 
     color:#222;
 
@@ -62,31 +53,295 @@ body{
 
 
 /* =====================================================
-   CONTAINER
+   SIDEBAR
 ===================================================== */
 
-.container{
+.sidebar{
 
-    width:100%;
+    position:fixed;
 
-    max-width:1450px;
+    left:0;
 
-    margin:auto;
+    top:0;
+
+    width:275px;
+
+    height:100vh;
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #032c25 0%,
+        #004d3b 45%,
+        #006b50 100%
+    );
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    z-index:1000;
+
+    padding:25px 20px 18px;
 
 }
 
 
 /* =====================================================
-   HEADER
+   SIDEBAR LOGO
+===================================================== */
+
+.sidebar-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:5px 10px 30px;
+
+}
+
+
+.sidebar-logo-icon{
+
+    width:52px;
+
+    height:52px;
+
+    background:white;
+
+    color:#007a5a;
+
+    border-radius:15px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:25px;
+
+    flex-shrink:0;
+
+}
+
+
+.sidebar-brand{
+
+    line-height:1.1;
+
+}
+
+
+.sidebar-brand h2{
+
+    font-size:17px;
+
+    font-weight:800;
+
+    letter-spacing:.2px;
+
+}
+
+
+.sidebar-brand p{
+
+    font-size:10px;
+
+    font-weight:600;
+
+    color:rgba(255,255,255,.65);
+
+    margin-top:6px;
+
+}
+
+
+/* =====================================================
+   SIDEBAR SECTION TITLE
+===================================================== */
+
+.sidebar-section-title{
+
+    color:rgba(255,255,255,.45);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    padding:20px 15px 10px;
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.sidebar-nav{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:5px;
+
+}
+
+
+.sidebar-nav a{
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:0 17px;
+
+    color:rgba(255,255,255,.72);
+
+    text-decoration:none;
+
+    border-radius:13px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.25s ease;
+
+}
+
+
+.sidebar-nav a i{
+
+    width:22px;
+
+    text-align:center;
+
+    font-size:17px;
+
+}
+
+
+.sidebar-nav a:hover{
+
+    background:rgba(255,255,255,.10);
+
+    color:white;
+
+    transform:translateX(3px);
+
+}
+
+
+.sidebar-nav a.active{
+
+    background:white;
+
+    color:#007a5a;
+
+    box-shadow:
+
+    0 7px 20px
+
+    rgba(0,0,0,.12);
+
+}
+
+
+/* =====================================================
+   SIDEBAR BOTTOM
+===================================================== */
+
+.sidebar-bottom{
+
+    margin-top:auto;
+
+}
+
+
+.logout-btn{
+
+    width:100%;
+
+    height:49px;
+
+    border-radius:13px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    transition:.25s;
+
+}
+
+
+.logout-btn:hover{
+
+    background:#e53935;
+
+    border-color:#e53935;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content{
+
+    margin-left:275px;
+
+    min-height:100vh;
+
+    padding:28px 38px;
+
+}
+
+
+/* =====================================================
+   TOP HEADER
 ===================================================== */
 
 .header{
 
-    background:rgba(255,255,255,.96);
+    background:white;
 
-    border-radius:22px;
+    border-radius:20px;
 
-    padding:20px 25px;
+    padding:18px 24px;
 
     display:flex;
 
@@ -98,9 +353,9 @@ body{
 
     box-shadow:
 
-    0 15px 45px
+    0 8px 30px
 
-    rgba(0,0,0,.20);
+    rgba(0,0,0,.07);
 
     margin-bottom:20px;
 
@@ -120,11 +375,11 @@ body{
 
 .logo{
 
-    width:58px;
+    width:55px;
 
-    height:58px;
+    height:55px;
 
-    border-radius:17px;
+    border-radius:16px;
 
     background:
 
@@ -142,13 +397,7 @@ body{
 
     align-items:center;
 
-    font-size:25px;
-
-    box-shadow:
-
-    0 8px 20px
-
-    rgba(0,106,78,.25);
+    font-size:24px;
 
 }
 
@@ -157,7 +406,7 @@ body{
 
     font-size:24px;
 
-    color:#006a4e;
+    color:#082d43;
 
     font-weight:700;
 
@@ -168,7 +417,7 @@ body{
 
     font-size:13px;
 
-    color:#777;
+    color:#718096;
 
     margin-top:3px;
 
@@ -252,19 +501,13 @@ body{
 
 .user-bar{
 
-    background:
+    background:white;
 
-    rgba(255,255,255,.15);
+    border-radius:15px;
 
-    border:1px solid
+    color:#555;
 
-    rgba(255,255,255,.20);
-
-    color:white;
-
-    padding:12px 18px;
-
-    border-radius:13px;
+    padding:13px 18px;
 
     margin-bottom:20px;
 
@@ -274,9 +517,13 @@ body{
 
     align-items:center;
 
-    font-size:14px;
+    font-size:13px;
 
-    backdrop-filter:blur(10px);
+    box-shadow:
+
+    0 6px 20px
+
+    rgba(0,0,0,.05);
 
 }
 
@@ -284,6 +531,8 @@ body{
 .user-name{
 
     font-weight:700;
+
+    color:#006a4e;
 
 }
 
@@ -349,17 +598,15 @@ body{
 
 .table-container{
 
-    background:
-
-    rgba(255,255,255,.97);
+    background:white;
 
     border-radius:22px;
 
     box-shadow:
 
-    0 20px 60px
+    0 12px 40px
 
-    rgba(0,0,0,.22);
+    rgba(0,0,0,.08);
 
     overflow:hidden;
 
@@ -416,12 +663,6 @@ body{
 
     font-weight:700;
 
-    box-shadow:
-
-    0 5px 15px
-
-    rgba(37,99,235,.20);
-
 }
 
 
@@ -433,13 +674,7 @@ body{
 
     padding:18px 25px;
 
-    background:
-
-    linear-gradient(
-        135deg,
-        #f7fffc,
-        #f0faf7
-    );
+    background:#f7fffc;
 
     border-bottom:1px solid #e8eeee;
 
@@ -508,13 +743,6 @@ body{
 }
 
 
-#searchInput::placeholder{
-
-    color:#999;
-
-}
-
-
 /* =====================================================
    TABLE SCROLL
 ===================================================== */
@@ -544,10 +772,6 @@ table{
 
 }
 
-
-/* =====================================================
-   TABLE HEAD
-===================================================== */
 
 thead{
 
@@ -592,10 +816,6 @@ th i{
 
 }
 
-
-/* =====================================================
-   TABLE BODY
-===================================================== */
 
 td{
 
@@ -747,7 +967,7 @@ tbody tr:last-child td{
 
 
 /* =====================================================
-   SUPPORT NAME BOX
+   SUPPORT NAME
 ===================================================== */
 
 .support-name-box{
@@ -792,8 +1012,6 @@ tbody tr:last-child td{
 
     font-weight:500;
 
-    transition:.3s;
-
 }
 
 
@@ -812,15 +1030,8 @@ tbody tr:last-child td{
 }
 
 
-.support-name-input::placeholder{
-
-    color:#77ad9d;
-
-}
-
-
 /* =====================================================
-   SUPPORT WORK BOX
+   SUPPORT WORK
 ===================================================== */
 
 .support-work-box{
@@ -869,8 +1080,6 @@ tbody tr:last-child td{
 
     line-height:1.5;
 
-    transition:.3s;
-
 }
 
 
@@ -879,19 +1088,6 @@ tbody tr:last-child td{
     border-color:#4b86ed;
 
     background:white;
-
-    box-shadow:
-
-    0 0 0 4px
-
-    rgba(75,134,237,.10);
-
-}
-
-
-.support-work-input::placeholder{
-
-    color:#7e9fce;
 
 }
 
@@ -945,12 +1141,6 @@ tbody tr:last-child td{
 
     transition:.3s;
 
-    box-shadow:
-
-    0 6px 15px
-
-    rgba(0,143,101,.20);
-
 }
 
 
@@ -965,12 +1155,6 @@ tbody tr:last-child td{
     );
 
     transform:translateY(-2px);
-
-    box-shadow:
-
-    0 8px 18px
-
-    rgba(229,57,53,.20);
 
 }
 
@@ -1054,7 +1238,7 @@ tbody tr:last-child td{
 
 
 /* =====================================================
-   NO SEARCH RESULT
+   NO RESULT
 ===================================================== */
 
 .no-result{
@@ -1140,14 +1324,111 @@ tbody tr:last-child td{
 
 
 /* =====================================================
-   MOBILE
+   MOBILE SIDEBAR BUTTON
 ===================================================== */
+
+.mobile-menu-btn{
+
+    display:none;
+
+    position:fixed;
+
+    top:15px;
+
+    left:15px;
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#006a4e;
+
+    color:white;
+
+    z-index:1100;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+
+/* =====================================================
+   MOBILE OVERLAY
+===================================================== */
+
+.sidebar-overlay{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    z-index:900;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1100px){
+
+    .main-content{
+
+        padding:20px;
+
+    }
+
+}
+
 
 @media(max-width:768px){
 
-    body{
+    .sidebar{
 
-        padding:12px;
+        left:-280px;
+
+        transition:.3s ease;
+
+    }
+
+
+    .sidebar.open{
+
+        left:0;
+
+    }
+
+
+    .sidebar-overlay.show{
+
+        display:block;
+
+    }
+
+
+    .mobile-menu-btn{
+
+        display:block;
+
+    }
+
+
+    .main-content{
+
+        margin-left:0;
+
+        padding:75px 12px 20px;
 
     }
 
@@ -1241,7 +1522,163 @@ tbody tr:last-child td{
 <body>
 
 
-<div class="container">
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<button
+class="mobile-menu-btn"
+id="mobileMenuBtn"
+type="button"
+>
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+
+<div
+class="sidebar-overlay"
+id="sidebarOverlay"
+></div>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar" id="sidebar">
+
+
+<div class="sidebar-logo">
+
+
+<div class="sidebar-logo-icon">
+
+<i class="fa-solid fa-headset"></i>
+
+</div>
+
+
+<div class="sidebar-brand">
+
+<h2>LINK4<br>COMMUNICATION</h2>
+
+<p>USER MANAGEMENT</p>
+
+</div>
+
+
+</div>
+
+
+<div class="sidebar-section-title">
+
+MANAGEMENT
+
+</div>
+
+
+<nav class="sidebar-nav">
+
+
+<a
+href="index.html"
+>
+
+<i class="fa-solid fa-gauge-high"></i>
+
+<span>Dashboard</span>
+
+</a>
+
+
+<a
+href="new-entry.html"
+>
+
+<i class="fa-solid fa-user-plus"></i>
+
+<span>New Entry</span>
+
+</a>
+
+
+<a
+href="pending-support.html"
+class="active"
+>
+
+<i class="fa-solid fa-headset"></i>
+
+<span>Pending Support</span>
+
+</a>
+
+
+<a
+href="pending-call.html"
+>
+
+<i class="fa-solid fa-phone-volume"></i>
+
+<span>Pending Call</span>
+
+</a>
+
+
+<a
+href="history.html"
+>
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+<span>History</span>
+
+</a>
+
+
+<a
+href="user-account.html"
+>
+
+<i class="fa-solid fa-users"></i>
+
+<span>User Account</span>
+
+</a>
+
+
+</nav>
+
+
+<div class="sidebar-bottom">
+
+
+<button
+class="logout-btn"
+id="logoutBtn"
+type="button"
+>
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</button>
+
+
+</div>
+
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="main-content">
 
 
 <!-- =====================================================
@@ -1263,17 +1700,9 @@ tbody tr:last-child td{
 
 <div class="header-title">
 
-<h1>
+<h1>Pending Support</h1>
 
-Pending Support
-
-</h1>
-
-<p>
-
-Manage pending customer support requests
-
-</p>
+<p>Manage pending customer support requests</p>
 
 </div>
 
@@ -1322,6 +1751,7 @@ Dashboard
 
 <div class="user-bar">
 
+
 <div>
 
 <i class="fa-solid fa-user"></i>
@@ -1346,6 +1776,7 @@ Customer information is read-only
 
 </div>
 
+
 </div>
 
 
@@ -1365,10 +1796,6 @@ id="status"
 
 <div class="table-container">
 
-
-<!-- =====================================================
-     TABLE HEADER
-===================================================== -->
 
 <div class="table-header">
 
@@ -1398,9 +1825,7 @@ id="pendingCount"
 </div>
 
 
-<!-- =====================================================
-     SEARCH
-===================================================== -->
+<!-- SEARCH -->
 
 <div class="search-area">
 
@@ -1425,9 +1850,7 @@ autocomplete="off"
 </div>
 
 
-<!-- =====================================================
-     LOADING
-===================================================== -->
+<!-- LOADING -->
 
 <div
 class="loading-state"
@@ -1452,9 +1875,7 @@ Loading pending support requests...
 </div>
 
 
-<!-- =====================================================
-     EMPTY
-===================================================== -->
+<!-- EMPTY -->
 
 <div
 class="empty-state"
@@ -1486,9 +1907,7 @@ There are currently no pending support requests.
 </div>
 
 
-<!-- =====================================================
-     NO SEARCH RESULT
-===================================================== -->
+<!-- NO SEARCH RESULT -->
 
 <div
 class="no-result"
@@ -1516,9 +1935,7 @@ Try searching with another Customer Number, Problem or REF.
 </div>
 
 
-<!-- =====================================================
-     TABLE
-===================================================== -->
+<!-- TABLE -->
 
 <div
 class="table-scroll"
@@ -1609,7 +2026,6 @@ Action
 id="supportTableBody"
 >
 
-
 </tbody>
 
 
@@ -1622,11 +2038,10 @@ id="supportTableBody"
 </div>
 
 
-</div>
+</main>
 
 
 <script>
-
 
 /* =====================================================
    API URL
@@ -1642,80 +2057,49 @@ const PENDING_SUPPORT_API_URL =
 ===================================================== */
 
 const tableBody =
-
-document.getElementById(
-    "supportTableBody"
-);
-
+document.getElementById("supportTableBody");
 
 const loadingState =
-
-document.getElementById(
-    "loadingState"
-);
-
+document.getElementById("loadingState");
 
 const emptyState =
-
-document.getElementById(
-    "emptyState"
-);
-
+document.getElementById("emptyState");
 
 const noResult =
-
-document.getElementById(
-    "noResult"
-);
-
+document.getElementById("noResult");
 
 const tableWrapper =
-
-document.getElementById(
-    "tableWrapper"
-);
-
+document.getElementById("tableWrapper");
 
 const pendingCount =
-
-document.getElementById(
-    "pendingCount"
-);
-
+document.getElementById("pendingCount");
 
 const statusBox =
-
-document.getElementById(
-    "status"
-);
-
+document.getElementById("status");
 
 const refreshBtn =
-
-document.getElementById(
-    "refreshBtn"
-);
-
+document.getElementById("refreshBtn");
 
 const backBtn =
-
-document.getElementById(
-    "backBtn"
-);
-
+document.getElementById("backBtn");
 
 const userName =
-
-document.getElementById(
-    "userName"
-);
-
+document.getElementById("userName");
 
 const searchInput =
+document.getElementById("searchInput");
 
-document.getElementById(
-    "searchInput"
-);
+const logoutBtn =
+document.getElementById("logoutBtn");
+
+const sidebar =
+document.getElementById("sidebar");
+
+const sidebarOverlay =
+document.getElementById("sidebarOverlay");
+
+const mobileMenuBtn =
+document.getElementById("mobileMenuBtn");
 
 
 /* =====================================================
@@ -1723,17 +2107,10 @@ document.getElementById(
 ===================================================== */
 
 const savedName =
-
-localStorage.getItem(
-    "name"
-);
-
+localStorage.getItem("name");
 
 const savedUsername =
-
-localStorage.getItem(
-    "username"
-);
+localStorage.getItem("username");
 
 
 if(savedName){
@@ -1757,9 +2134,7 @@ function checkLogin(){
 
     if(
 
-        localStorage.getItem(
-            "loggedIn"
-        )
+        localStorage.getItem("loggedIn")
 
         !==
 
@@ -1767,9 +2142,7 @@ function checkLogin(){
 
     ){
 
-        window.location.replace(
-            "../index.html"
-        );
+        window.location.replace("../index.html");
 
         return false;
 
@@ -1778,6 +2151,96 @@ function checkLogin(){
     return true;
 
 }
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+logoutBtn.addEventListener(
+
+    "click",
+
+    function(){
+
+        localStorage.removeItem("loggedIn");
+
+        localStorage.removeItem("username");
+
+        localStorage.removeItem("name");
+
+        localStorage.removeItem("token");
+
+        window.location.replace("../index.html");
+
+    }
+
+);
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+mobileMenuBtn.addEventListener(
+
+    "click",
+
+    function(){
+
+        sidebar.classList.toggle("open");
+
+        sidebarOverlay.classList.toggle("show");
+
+    }
+
+);
+
+
+sidebarOverlay.addEventListener(
+
+    "click",
+
+    function(){
+
+        sidebar.classList.remove("open");
+
+        sidebarOverlay.classList.remove("show");
+
+    }
+
+);
+
+
+/* =====================================================
+   CLOSE MOBILE MENU AFTER CLICK
+===================================================== */
+
+document.querySelectorAll(
+
+    ".sidebar-nav a"
+
+).forEach(
+
+    function(link){
+
+        link.addEventListener(
+
+            "click",
+
+            function(){
+
+                sidebar.classList.remove("open");
+
+                sidebarOverlay.classList.remove("show");
+
+            }
+
+        );
+
+    }
+
+);
 
 
 /* =====================================================
@@ -1820,9 +2283,7 @@ function escapeHTML(value){
 
     const div =
 
-    document.createElement(
-        "div"
-    );
+    document.createElement("div");
 
     div.textContent =
 
@@ -1854,9 +2315,7 @@ searchInput.addEventListener(
 
         const rows =
 
-        tableBody.querySelectorAll(
-            "tr"
-        );
+        tableBody.querySelectorAll("tr");
 
 
         let visibleCount = 0;
@@ -1868,22 +2327,16 @@ searchInput.addEventListener(
 
                 const text =
 
-                row.textContent
-
-                .toLowerCase();
+                row.textContent.toLowerCase();
 
 
                 if(
 
-                    text.includes(
-                        keyword
-                    )
+                    text.includes(keyword)
 
                 ){
 
-                    row.style.display =
-
-                    "";
+                    row.style.display = "";
 
                     visibleCount++;
 
@@ -1891,9 +2344,7 @@ searchInput.addEventListener(
 
                 else{
 
-                    row.style.display =
-
-                    "none";
+                    row.style.display = "none";
 
                 }
 
@@ -1910,17 +2361,13 @@ searchInput.addEventListener(
 
         ){
 
-            noResult.classList.add(
-                "show"
-            );
+            noResult.classList.add("show");
 
         }
 
         else{
 
-            noResult.classList.remove(
-                "show"
-            );
+            noResult.classList.remove("show");
 
         }
 
@@ -1943,39 +2390,25 @@ async function loadPendingSupport(){
     }
 
 
-    loadingState.style.display =
-
-    "block";
+    loadingState.style.display = "block";
 
 
-    emptyState.classList.remove(
-        "show"
-    );
+    emptyState.classList.remove("show");
 
 
-    noResult.classList.remove(
-        "show"
-    );
+    noResult.classList.remove("show");
 
 
-    tableWrapper.style.display =
-
-    "none";
+    tableWrapper.style.display = "none";
 
 
-    tableBody.innerHTML =
-
-    "";
+    tableBody.innerHTML = "";
 
 
-    searchInput.value =
-
-    "";
+    searchInput.value = "";
 
 
-    pendingCount.textContent =
-
-    "Loading...";
+    pendingCount.textContent = "Loading...";
 
 
     showStatus(
@@ -2036,9 +2469,7 @@ async function loadPendingSupport(){
         await response.json();
 
 
-        loadingState.style.display =
-
-        "none";
+        loadingState.style.display = "none";
 
 
         if(
@@ -2060,9 +2491,7 @@ async function loadPendingSupport(){
 
         const data =
 
-        Array.isArray(
-            result.data
-        )
+        Array.isArray(result.data)
 
         ?
 
@@ -2073,9 +2502,7 @@ async function loadPendingSupport(){
         [];
 
 
-        /* =========================================
-           EMPTY
-        ========================================= */
+        /* EMPTY */
 
         if(
 
@@ -2083,31 +2510,20 @@ async function loadPendingSupport(){
 
         ){
 
-            emptyState.classList.add(
-                "show"
-            );
+            emptyState.classList.add("show");
 
-
-            pendingCount.textContent =
-
-            "0 Pending";
-
+            pendingCount.textContent = "0 Pending";
 
             hideStatus();
-
 
             return;
 
         }
 
 
-        /* =========================================
-           SHOW TABLE
-        ========================================= */
+        /* SHOW TABLE */
 
-        tableWrapper.style.display =
-
-        "block";
+        tableWrapper.style.display = "block";
 
 
         pendingCount.textContent =
@@ -2117,9 +2533,7 @@ async function loadPendingSupport(){
         " Pending";
 
 
-        /* =========================================
-           CREATE ROWS
-        ========================================= */
+        /* CREATE ROWS */
 
         data.forEach(
 
@@ -2128,9 +2542,7 @@ async function loadPendingSupport(){
 
                 const tr =
 
-                document.createElement(
-                    "tr"
-                );
+                document.createElement("tr");
 
 
                 /* CUSTOMER NUMBER */
@@ -2150,14 +2562,10 @@ async function loadPendingSupport(){
 
                 const tdIP =
 
-                document.createElement(
-                    "td"
-                );
+                document.createElement("td");
 
 
-                tdIP.className =
-
-                "readonly";
+                tdIP.className = "readonly";
 
 
                 tdIP.innerHTML =
@@ -2166,9 +2574,7 @@ async function loadPendingSupport(){
 
                 '<i class="fa-solid fa-user"></i>' +
 
-                escapeHTML(
-                    customerId
-                ) +
+                escapeHTML(customerId) +
 
                 '</span>';
 
@@ -2186,14 +2592,10 @@ async function loadPendingSupport(){
 
                 const tdDate =
 
-                document.createElement(
-                    "td"
-                );
+                document.createElement("td");
 
 
-                tdDate.className =
-
-                "readonly";
+                tdDate.className = "readonly";
 
 
                 tdDate.innerHTML =
@@ -2202,9 +2604,7 @@ async function loadPendingSupport(){
 
                 '<i class="fa-solid fa-calendar-day"></i>' +
 
-                escapeHTML(
-                    date
-                ) +
+                escapeHTML(date) +
 
                 '</span>';
 
@@ -2222,23 +2622,17 @@ async function loadPendingSupport(){
 
                 const tdProblem =
 
-                document.createElement(
-                    "td"
-                );
+                document.createElement("td");
 
 
-                tdProblem.className =
-
-                "readonly";
+                tdProblem.className = "readonly";
 
 
                 tdProblem.innerHTML =
 
                 '<div class="problem-box">' +
 
-                escapeHTML(
-                    problem
-                ) +
+                escapeHTML(problem) +
 
                 '</div>';
 
@@ -2258,14 +2652,10 @@ async function loadPendingSupport(){
 
                 const tdRef =
 
-                document.createElement(
-                    "td"
-                );
+                document.createElement("td");
 
 
-                tdRef.className =
-
-                "readonly";
+                tdRef.className = "readonly";
 
 
                 tdRef.innerHTML =
@@ -2274,29 +2664,21 @@ async function loadPendingSupport(){
 
                 '<i class="fa-solid fa-link"></i>' +
 
-                escapeHTML(
-                    ref
-                ) +
+                escapeHTML(ref) +
 
                 '</span>';
 
 
-                /* =================================
-                   SUPPORT NAME
-                ================================= */
+                /* SUPPORT NAME */
 
                 const tdSupportName =
 
-                document.createElement(
-                    "td"
-                );
+                document.createElement("td");
 
 
                 const supportNameBox =
 
-                document.createElement(
-                    "div"
-                );
+                document.createElement("div");
 
 
                 supportNameBox.className =
@@ -2306,9 +2688,7 @@ async function loadPendingSupport(){
 
                 const supportNameLabel =
 
-                document.createElement(
-                    "span"
-                );
+                document.createElement("span");
 
 
                 supportNameLabel.className =
@@ -2323,14 +2703,10 @@ async function loadPendingSupport(){
 
                 const supportNameInput =
 
-                document.createElement(
-                    "input"
-                );
+                document.createElement("input");
 
 
-                supportNameInput.type =
-
-                "text";
+                supportNameInput.type = "text";
 
 
                 supportNameInput.className =
@@ -2364,22 +2740,16 @@ async function loadPendingSupport(){
                 );
 
 
-                /* =================================
-                   SUPPORT WORK
-                ================================= */
+                /* SUPPORT WORK */
 
                 const tdWork =
 
-                document.createElement(
-                    "td"
-                );
+                document.createElement("td");
 
 
                 const supportWorkBox =
 
-                document.createElement(
-                    "div"
-                );
+                document.createElement("div");
 
 
                 supportWorkBox.className =
@@ -2389,9 +2759,7 @@ async function loadPendingSupport(){
 
                 const supportWorkLabel =
 
-                document.createElement(
-                    "span"
-                );
+                document.createElement("span");
 
 
                 supportWorkLabel.className =
@@ -2406,9 +2774,7 @@ async function loadPendingSupport(){
 
                 const workInput =
 
-                document.createElement(
-                    "textarea"
-                );
+                document.createElement("textarea");
 
 
                 workInput.className =
@@ -2442,15 +2808,11 @@ async function loadPendingSupport(){
                 );
 
 
-                /* =================================
-                   ACTION
-                ================================= */
+                /* ACTION */
 
                 const tdAction =
 
-                document.createElement(
-                    "td"
-                );
+                document.createElement("td");
 
 
                 tdAction.className =
@@ -2460,9 +2822,7 @@ async function loadPendingSupport(){
 
                 const submitBtn =
 
-                document.createElement(
-                    "button"
-                );
+                document.createElement("button");
 
 
                 submitBtn.className =
@@ -2470,9 +2830,7 @@ async function loadPendingSupport(){
                 "submit-btn";
 
 
-                submitBtn.type =
-
-                "button";
+                submitBtn.type = "button";
 
 
                 submitBtn.innerHTML =
@@ -2480,9 +2838,7 @@ async function loadPendingSupport(){
                 '<i class="fa-solid fa-paper-plane"></i> Submit';
 
 
-                /* =================================
-                   SUBMIT
-                ================================= */
+                /* SUBMIT */
 
                 submitBtn.addEventListener(
 
@@ -2508,8 +2864,6 @@ async function loadPendingSupport(){
                         workInput.value.trim();
 
 
-                        /* SUPPORT NAME REQUIRED */
-
                         if(!supportName){
 
                             showStatus(
@@ -2523,13 +2877,10 @@ async function loadPendingSupport(){
 
                             supportNameInput.focus();
 
-
                             return;
 
                         }
 
-
-                        /* SUPPORT WORK REQUIRED */
 
                         if(!supportWork){
 
@@ -2544,15 +2895,12 @@ async function loadPendingSupport(){
 
                             workInput.focus();
 
-
                             return;
 
                         }
 
 
-                        submitBtn.disabled =
-
-                        true;
+                        submitBtn.disabled = true;
 
 
                         submitBtn.innerHTML =
@@ -2591,14 +2939,10 @@ async function loadPendingSupport(){
                                 ref,
 
 
-                                /* SUPPORT COLUMN */
-
                                 support:
 
                                 supportName,
 
-
-                                /* SUPPORT WORK COLUMN */
 
                                 supportWork:
 
@@ -2608,14 +2952,18 @@ async function loadPendingSupport(){
                                 username:
 
                                 localStorage.getItem(
+
                                     "username"
+
                                 ) || "",
 
 
                                 name:
 
                                 localStorage.getItem(
+
                                     "name"
+
                                 ) || ""
 
                             };
@@ -2641,9 +2989,7 @@ async function loadPendingSupport(){
 
                                     body:
 
-                                    JSON.stringify(
-                                        payload
-                                    )
+                                    JSON.stringify(payload)
 
                                 }
 
@@ -2681,17 +3027,15 @@ async function loadPendingSupport(){
                             );
 
 
-                            /* REMOVE ROW */
-
                             tr.remove();
 
-
-                            /* UPDATE COUNT */
 
                             const remaining =
 
                             tableBody.querySelectorAll(
+
                                 "tr"
+
                             ).length;
 
 
@@ -2714,7 +3058,9 @@ async function loadPendingSupport(){
 
 
                                 emptyState.classList.add(
+
                                     "show"
+
                                 );
 
 
@@ -2751,9 +3097,7 @@ async function loadPendingSupport(){
                             );
 
 
-                            submitBtn.disabled =
-
-                            false;
+                            submitBtn.disabled = false;
 
 
                             submitBtn.innerHTML =
@@ -2768,10 +3112,6 @@ async function loadPendingSupport(){
                 );
 
 
-                /* =================================
-                   APPEND
-                ================================= */
-
                 tdAction.appendChild(
 
                     submitBtn
@@ -2779,61 +3119,22 @@ async function loadPendingSupport(){
                 );
 
 
-                tr.appendChild(
+                tr.appendChild(tdIP);
 
-                    tdIP
+                tr.appendChild(tdDate);
 
-                );
+                tr.appendChild(tdProblem);
 
+                tr.appendChild(tdRef);
 
-                tr.appendChild(
+                tr.appendChild(tdSupportName);
 
-                    tdDate
+                tr.appendChild(tdWork);
 
-                );
-
-
-                tr.appendChild(
-
-                    tdProblem
-
-                );
+                tr.appendChild(tdAction);
 
 
-                tr.appendChild(
-
-                    tdRef
-
-                );
-
-
-                tr.appendChild(
-
-                    tdSupportName
-
-                );
-
-
-                tr.appendChild(
-
-                    tdWork
-
-                );
-
-
-                tr.appendChild(
-
-                    tdAction
-
-                );
-
-
-                tableBody.appendChild(
-
-                    tr
-
-                );
-
+                tableBody.appendChild(tr);
 
             }
 
@@ -2841,7 +3142,6 @@ async function loadPendingSupport(){
 
 
         hideStatus();
-
 
     }
 
@@ -2901,7 +3201,7 @@ refreshBtn.addEventListener(
 
 
 /* =====================================================
-   BACK
+   DASHBOARD
 ===================================================== */
 
 backBtn.addEventListener(
@@ -2938,9 +3238,7 @@ document.addEventListener(
 
         if(
 
-            document.visibilityState ===
-
-            "visible"
+            document.visibilityState === "visible"
 
         ){
 

@@ -5,8 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Pending Call | LINK4 COMMUNICATION</title>
 
@@ -14,9 +13,7 @@ content="width=device-width, initial-scale=1.0">
 
 (function(){
 
-    if(
-        localStorage.getItem("loggedIn") !== "true"
-    ){
+    if(localStorage.getItem("loggedIn") !== "true"){
 
         window.location.replace("../index.html");
 
@@ -26,16 +23,9 @@ content="width=device-width, initial-scale=1.0">
 
 </script>
 
-<link
-rel="preconnect"
-href="https://fonts.googleapis.com"
->
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link
-rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin
->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
@@ -1775,6 +1765,8 @@ COMMUNICATION
 <nav class="sidebar-menu">
 
 
+<!-- Dashboard -->
+
 <a href="index.html">
 
 <i class="fa-solid fa-house"></i>
@@ -1785,6 +1777,8 @@ Dashboard
 
 </a>
 
+
+<!-- New Entry -->
 
 <a href="new-entry.html">
 
@@ -1797,6 +1791,8 @@ New Support Entry
 </a>
 
 
+<!-- Pending Support -->
+
 <a href="pending-support.html">
 
 <i class="fa-solid fa-headset"></i>
@@ -1807,6 +1803,8 @@ Pending Support
 
 </a>
 
+
+<!-- Pending Call -->
 
 <a
 href="pending-call.html"
@@ -1822,12 +1820,27 @@ Pending Call
 </a>
 
 
-<a href="support-log.html">
+<!-- History -->
+
+<a href="history.html">
 
 <i class="fa-solid fa-clock-rotate-left"></i>
 
 <span class="menu-text">
 Support History
+</span>
+
+</a>
+
+
+<!-- User Account -->
+
+<a href="user-account.html">
+
+<i class="fa-solid fa-user-gear"></i>
+
+<span class="menu-text">
+User Account
 </span>
 
 </a>
@@ -1866,9 +1879,7 @@ Logout
 <main class="main-content">
 
 
-<!-- =====================================================
-     TOP BAR
-===================================================== -->
+<!-- TOP BAR -->
 
 <div class="topbar">
 
@@ -1919,9 +1930,7 @@ User
 <div class="container">
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- HEADER -->
 
 <div class="header">
 
@@ -1987,9 +1996,7 @@ Dashboard
 </div>
 
 
-<!-- =====================================================
-     USER BAR
-===================================================== -->
+<!-- USER BAR -->
 
 <div class="user-bar">
 
@@ -2022,9 +2029,7 @@ Pending Call Management
 </div>
 
 
-<!-- =====================================================
-     STATUS
-===================================================== -->
+<!-- STATUS -->
 
 <div
 class="status"
@@ -2032,9 +2037,7 @@ id="status"
 ></div>
 
 
-<!-- =====================================================
-     CONTROL
-===================================================== -->
+<!-- CONTROL -->
 
 <div class="control-bar">
 
@@ -2082,9 +2085,7 @@ placeholder="All"
 </div>
 
 
-<!-- =====================================================
-     TABLE
-===================================================== -->
+<!-- TABLE -->
 
 <div class="table-container">
 
@@ -2490,9 +2491,7 @@ menuToggle.addEventListener(
 "click",
 function(){
 
-    if(
-        window.innerWidth <= 768
-    ){
+    if(window.innerWidth <= 768){
 
         document.body.classList.toggle(
             "sidebar-mobile-open"
@@ -2519,9 +2518,7 @@ document.addEventListener(
 "click",
 function(e){
 
-    if(
-        window.innerWidth <= 768
-    ){
+    if(window.innerWidth <= 768){
 
         const sidebar =
         document.getElementById("sidebar");
@@ -2548,17 +2545,11 @@ function(e){
 
 function logout(){
 
-    localStorage.removeItem(
-        "loggedIn"
-    );
+    localStorage.removeItem("loggedIn");
 
-    localStorage.removeItem(
-        "username"
-    );
+    localStorage.removeItem("username");
 
-    localStorage.removeItem(
-        "name"
-    );
+    localStorage.removeItem("name");
 
     window.location.replace(
         "../index.html"

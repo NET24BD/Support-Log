@@ -13,6 +13,10 @@ content="width=device-width, initial-scale=1.0"
 <title>User Account | LINK4 COMMUNICATION</title>
 
 
+<!-- =====================================================
+     LOGIN SECURITY
+===================================================== -->
+
 <script>
 
 (function(){
@@ -30,6 +34,10 @@ content="width=device-width, initial-scale=1.0"
 </script>
 
 
+<!-- =====================================================
+     GOOGLE FONT
+===================================================== -->
+
 <link
 rel="preconnect"
 href="https://fonts.googleapis.com"
@@ -46,6 +54,10 @@ href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&fa
 rel="stylesheet"
 >
 
+
+<!-- =====================================================
+     FONT AWESOME
+===================================================== -->
 
 <link
 rel="stylesheet"
@@ -73,23 +85,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 :root{
 
     --green:#006A4E;
-
     --green2:#00875F;
-
     --red:#E53935;
-
     --dark:#0b1720;
-
     --dark2:#10232c;
-
     --white:#ffffff;
-
     --light:#f4f7f8;
-
     --text:#17212b;
-
     --muted:#71808b;
-
     --border:#e5eaed;
 
     --shadow:
@@ -343,7 +346,28 @@ body{
 }
 
 
-.back-dashboard{
+/* =====================================================
+   LOGOUT BUTTON
+===================================================== */
+
+.logout-btn{
+
+    width:100%;
+
+    height:44px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:
+    rgba(255,255,255,.10);
+
+    border:
+    1px solid
+    rgba(255,255,255,.20);
+
+    color:white;
 
     display:flex;
 
@@ -351,35 +375,40 @@ body{
 
     justify-content:center;
 
-    gap:8px;
+    gap:10px;
 
-    width:100%;
-
-    padding:12px;
-
-    border:
-    1px solid
-    rgba(255,255,255,.18);
-
-    border-radius:11px;
-
-    color:white;
-
-    text-decoration:none;
+    cursor:pointer;
 
     font-size:12px;
 
-    font-weight:600;
+    font-weight:700;
 
     transition:.25s;
 
 }
 
 
-.back-dashboard:hover{
+.logout-btn i{
+
+    font-size:15px;
+
+}
+
+
+.logout-btn:hover{
 
     background:
-    rgba(255,255,255,.10);
+    #e53935;
+
+    border-color:
+    #e53935;
+
+    transform:
+    translateY(-2px);
+
+    box-shadow:
+    0 8px 20px
+    rgba(229,57,53,.25);
 
 }
 
@@ -416,6 +445,17 @@ body{
 }
 
 
+.topbar-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
 .page-title h1{
 
     font-size:27px;
@@ -439,19 +479,6 @@ body{
 
 
 .user-area{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:8px;
-
-}
-
-
-.user-profile-top{
 
     display:flex;
 
@@ -489,9 +516,9 @@ body{
 
 .avatar{
 
-    width:48px;
+    width:44px;
 
-    height:48px;
+    height:44px;
 
     border-radius:50%;
 
@@ -510,81 +537,11 @@ body{
 
     justify-content:center;
 
-    font-size:18px;
-
-    font-weight:800;
+    font-size:17px;
 
     box-shadow:
     0 7px 20px
     rgba(0,106,78,.25);
-
-}
-
-
-/* =====================================================
-   LOGOUT BUTTON
-===================================================== */
-
-.logout-btn{
-
-    width:100%;
-
-    min-width:125px;
-
-    height:36px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #e53935,
-        #c62828
-    );
-
-    color:white;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:8px;
-
-    font-size:11px;
-
-    font-weight:700;
-
-    cursor:pointer;
-
-    box-shadow:
-    0 6px 18px
-    rgba(229,57,53,.22);
-
-    transition:.25s;
-
-}
-
-
-.logout-btn:hover{
-
-    transform:
-    translateY(-2px);
-
-    box-shadow:
-    0 9px 22px
-    rgba(229,57,53,.30);
-
-}
-
-
-.logout-btn:active{
-
-    transform:
-    translateY(0);
 
 }
 
@@ -675,8 +632,7 @@ body{
 
 .stat-total .stat-icon{
 
-    background:
-    #e8f5f0;
+    background:#e8f5f0;
 
     color:var(--green);
 
@@ -685,8 +641,7 @@ body{
 
 .stat-active .stat-icon{
 
-    background:
-    #e9f8ef;
+    background:#e9f8ef;
 
     color:#16a34a;
 
@@ -695,8 +650,7 @@ body{
 
 .stat-blocked .stat-icon{
 
-    background:
-    #fff0f0;
+    background:#fff0f0;
 
     color:var(--red);
 
@@ -806,8 +760,7 @@ body{
 
     top:50%;
 
-    transform:
-    translateY(-50%);
+    transform:translateY(-50%);
 
     color:#9aa6ad;
 
@@ -842,8 +795,7 @@ body{
 
 .search-box input:focus{
 
-    border-color:
-    var(--green);
+    border-color:var(--green);
 
     box-shadow:
     0 0 0 3px
@@ -863,8 +815,7 @@ body{
     padding:
     0 16px;
 
-    background:
-    var(--green);
+    background:var(--green);
 
     color:white;
 
@@ -887,11 +838,9 @@ body{
 
 .add-btn:hover{
 
-    background:
-    #004d39;
+    background:#004d39;
 
-    transform:
-    translateY(-1px);
+    transform:translateY(-1px);
 
 }
 
@@ -915,7 +864,7 @@ table{
 
     border-collapse:collapse;
 
-    min-width:850px;
+    min-width:800px;
 
 }
 
@@ -972,8 +921,7 @@ tbody tr{
 
 tbody tr:hover{
 
-    background:
-    #fafdfc;
+    background:#fafdfc;
 
 }
 
@@ -1001,8 +949,7 @@ tbody tr:hover{
 
     border-radius:10px;
 
-    background:
-    #e8f5f0;
+    background:#e8f5f0;
 
     color:var(--green);
 
@@ -1061,71 +1008,6 @@ tbody tr:hover{
     font-weight:700;
 
     color:#65727a;
-
-}
-
-
-/* =====================================================
-   PASSWORD CELL
-===================================================== */
-
-.password-cell{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-}
-
-
-.password-text{
-
-    min-width:75px;
-
-    font-family:
-    monospace;
-
-    font-size:12px;
-
-    letter-spacing:.5px;
-
-}
-
-
-.password-toggle{
-
-    width:29px;
-
-    height:29px;
-
-    border:none;
-
-    border-radius:7px;
-
-    background:#edf7f3;
-
-    color:var(--green);
-
-    cursor:pointer;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    transition:.2s;
-
-}
-
-
-.password-toggle:hover{
-
-    background:var(--green);
-
-    color:white;
 
 }
 
@@ -1341,13 +1223,6 @@ tbody tr:hover{
 }
 
 
-.loading i{
-
-    margin-right:7px;
-
-}
-
-
 /* =====================================================
    MODAL
 ===================================================== */
@@ -1361,8 +1236,7 @@ tbody tr:hover{
     background:
     rgba(5,20,25,.58);
 
-    backdrop-filter:
-    blur(5px);
+    backdrop-filter:blur(5px);
 
     display:none;
 
@@ -1504,57 +1378,6 @@ tbody tr:hover{
 }
 
 
-.input-password{
-
-    position:relative;
-
-}
-
-
-.input-password input{
-
-    padding-right:45px;
-
-}
-
-
-.show-password-btn{
-
-    position:absolute;
-
-    right:8px;
-
-    top:50%;
-
-    transform:
-    translateY(-50%);
-
-    width:32px;
-
-    height:32px;
-
-    border:none;
-
-    background:transparent;
-
-    color:#71808b;
-
-    cursor:pointer;
-
-    border-radius:7px;
-
-}
-
-
-.show-password-btn:hover{
-
-    background:#edf7f3;
-
-    color:var(--green);
-
-}
-
-
 .form-group input,
 
 .form-group select{
@@ -1587,8 +1410,7 @@ tbody tr:hover{
 
 .form-group select:focus{
 
-    border-color:
-    var(--green);
+    border-color:var(--green);
 
     box-shadow:
     0 0 0 3px
@@ -1608,6 +1430,60 @@ tbody tr:hover{
 
 }
 
+
+/* =====================================================
+   PASSWORD FIELD
+===================================================== */
+
+.password-field{
+
+    position:relative;
+
+}
+
+
+.password-field input{
+
+    padding-right:45px;
+
+}
+
+
+.password-toggle{
+
+    position:absolute;
+
+    right:10px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:30px;
+
+    height:30px;
+
+    border:none;
+
+    background:transparent;
+
+    color:#7b8992;
+
+    cursor:pointer;
+
+}
+
+
+.password-toggle:hover{
+
+    color:var(--green);
+
+}
+
+
+/* =====================================================
+   MODAL FOOTER
+===================================================== */
 
 .modal-footer{
 
@@ -1841,24 +1717,6 @@ tbody tr:hover{
     }
 
 
-    .topbar{
-
-        gap:15px;
-
-    }
-
-
-    .topbar-left{
-
-        display:flex;
-
-        align-items:center;
-
-        gap:12px;
-
-    }
-
-
     .stats{
 
         grid-template-columns:
@@ -2005,54 +1863,37 @@ LINK4 COMMUNICATION
 <nav class="nav">
 
 <div class="nav-title">
-
 Management
-
 </div>
 
 
 <a href="index.html">
-
 <i class="fa-solid fa-gauge-high"></i>
-
 Dashboard
-
 </a>
 
 
 <a href="new-entry.html">
-
 <i class="fa-solid fa-user-plus"></i>
-
 New Entry
-
 </a>
 
 
 <a href="pending-support.html">
-
 <i class="fa-solid fa-headset"></i>
-
 Pending Support
-
 </a>
 
 
 <a href="pending-call.html">
-
 <i class="fa-solid fa-phone-volume"></i>
-
 Pending Call
-
 </a>
 
 
 <a href="history.html">
-
 <i class="fa-solid fa-clock-rotate-left"></i>
-
 History
-
 </a>
 
 
@@ -2070,18 +1911,23 @@ User Account
 </nav>
 
 
+<!-- =====================================================
+     LOGOUT
+===================================================== -->
+
 <div class="sidebar-bottom">
 
-<a
-href="index.html"
-class="back-dashboard"
+<button
+type="button"
+class="logout-btn"
+id="logoutBtn"
 >
 
-<i class="fa-solid fa-arrow-left"></i>
+<i class="fa-solid fa-right-from-bracket"></i>
 
-Back to Dashboard
+<span>Logout</span>
 
-</a>
+</button>
 
 </div>
 
@@ -2089,11 +1935,19 @@ Back to Dashboard
 </aside>
 
 
+<!-- =====================================================
+     OVERLAY
+===================================================== -->
+
 <div
 class="overlay"
 id="overlay"
 ></div>
 
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <main class="main">
 
@@ -2135,9 +1989,6 @@ Manage LINK4 COMMUNICATION system users and access.
 <div class="user-area">
 
 
-<div class="user-profile-top">
-
-
 <div class="user-info">
 
 <strong id="loggedUserName">
@@ -2156,23 +2007,9 @@ class="avatar"
 id="profileAvatar"
 >
 
-U
+<i class="fa-solid fa-user"></i>
 
 </div>
-
-</div>
-
-
-<button
-class="logout-btn"
-id="logoutBtn"
->
-
-<i class="fa-solid fa-right-from-bracket"></i>
-
-Logout
-
-</button>
 
 
 </div>
@@ -2255,7 +2092,7 @@ Logout
 
 
 <!-- =====================================================
-     CONTENT
+     USER CONTENT
 ===================================================== -->
 
 <section class="content-box">
@@ -2319,6 +2156,10 @@ Add User
 </div>
 
 
+<!-- =====================================================
+     TABLE
+===================================================== -->
+
 <div class="table-wrapper">
 
 
@@ -2330,8 +2171,6 @@ Add User
 <tr>
 
 <th>User</th>
-
-<th>Password</th>
 
 <th>Role</th>
 
@@ -2346,10 +2185,9 @@ Add User
 
 <tbody id="userTableBody">
 
-
 <tr>
 
-<td colspan="5">
+<td colspan="4">
 
 <div class="loading">
 
@@ -2469,7 +2307,7 @@ placeholder="Enter username"
 Password
 </label>
 
-<div class="input-password">
+<div class="password-field">
 
 <input
 type="password"
@@ -2479,12 +2317,14 @@ placeholder="Enter password"
 
 <button
 type="button"
-class="show-password-btn"
-id="passwordToggleBtn"
+class="password-toggle"
+id="passwordToggle"
 title="Show Password"
 >
 
-<i class="fa-solid fa-eye"></i>
+<i
+class="fa-solid fa-eye"
+></i>
 
 </button>
 
@@ -2624,7 +2464,7 @@ const API_URL =
 
 
 /* =====================================================
-   GLOBAL
+   GLOBAL DATA
 ===================================================== */
 
 let allUsers = [];
@@ -2639,14 +2479,10 @@ let editMode = false;
 function checkLogin(){
 
     if(
-        localStorage.getItem("loggedIn")
-        !==
-        "true"
+        localStorage.getItem("loggedIn") !== "true"
     ){
 
-        window.location.replace(
-            "../index.html"
-        );
+        window.location.replace("../index.html");
 
         return false;
 
@@ -2657,9 +2493,7 @@ function checkLogin(){
 }
 
 
-if(
-    !checkLogin()
-){
+if(!checkLogin()){
 
     throw new Error(
         "User not logged in"
@@ -2669,8 +2503,8 @@ if(
 
 
 /* =====================================================
-   PROFILE USERNAME
-   Login করা USERNAME দেখাবে
+   LOGGED USER PROFILE
+   Username will show in profile
 ===================================================== */
 
 const loggedUsername =
@@ -2678,25 +2512,16 @@ const loggedUsername =
 localStorage.getItem("username");
 
 
-const loggedName =
-
-localStorage.getItem("name");
-
-
 const loggedRole =
 
 localStorage.getItem("role");
 
 
-const profileUsername =
+const profileName =
 
 loggedUsername
 ?
 loggedUsername
-:
-loggedName
-?
-loggedName
 :
 "User";
 
@@ -2705,7 +2530,7 @@ document.getElementById(
     "loggedUserName"
 ).textContent =
 
-profileUsername;
+profileName;
 
 
 document.getElementById(
@@ -2721,51 +2546,40 @@ loggedRole
 
 document.getElementById(
     "profileAvatar"
-).textContent =
+).innerHTML =
 
-profileUsername
-.charAt(0)
-.toUpperCase();
+'<i class="fa-solid fa-user"></i>';
 
 
 /* =====================================================
    DIRECT LOGOUT
-   কোনো popup / confirm নেই
+   NO CHROME POPUP
 ===================================================== */
+
+function logout(){
+
+    localStorage.removeItem("loggedIn");
+
+    localStorage.removeItem("username");
+
+    localStorage.removeItem("name");
+
+    localStorage.removeItem("role");
+
+    sessionStorage.clear();
+
+    window.location.replace(
+        "../index.html"
+    );
+
+}
+
 
 document.getElementById(
     "logoutBtn"
 ).addEventListener(
-
     "click",
-
-    function(){
-
-        localStorage.removeItem(
-            "loggedIn"
-        );
-
-        localStorage.removeItem(
-            "username"
-        );
-
-        localStorage.removeItem(
-            "name"
-        );
-
-        localStorage.removeItem(
-            "role"
-        );
-
-        sessionStorage.clear();
-
-
-        window.location.replace(
-            "../index.html"
-        );
-
-    }
-
+    logout
 );
 
 
@@ -2782,24 +2596,13 @@ function showToast(
 ){
 
     const toast =
-
-    document.getElementById(
-        "toast"
-    );
-
+    document.getElementById("toast");
 
     const icon =
-
-    document.getElementById(
-        "toastIcon"
-    );
-
+    document.getElementById("toastIcon");
 
     const text =
-
-    document.getElementById(
-        "toastMessage"
-    );
+    document.getElementById("toastMessage");
 
 
     text.textContent =
@@ -2807,8 +2610,7 @@ function showToast(
 
 
     toast.className =
-    "toast show " +
-    type;
+    "toast show " + type;
 
 
     if(
@@ -2859,7 +2661,6 @@ function showToast(
 async function loadUsers(){
 
     const tbody =
-
     document.getElementById(
         "userTableBody"
     );
@@ -2869,7 +2670,7 @@ async function loadUsers(){
 
         <tr>
 
-        <td colspan="5">
+        <td colspan="4">
 
         <div class="loading">
 
@@ -2898,11 +2699,8 @@ async function loadUsers(){
             Date.now(),
 
             {
-
                 method:"GET",
-
                 cache:"no-store"
-
             }
 
         );
@@ -2948,16 +2746,14 @@ async function loadUsers(){
 
     catch(error){
 
-        console.error(
-            error
-        );
+        console.error(error);
 
 
         tbody.innerHTML = `
 
             <tr>
 
-            <td colspan="5">
+            <td colspan="4">
 
             <div class="empty-state">
 
@@ -2977,11 +2773,8 @@ async function loadUsers(){
 
 
         showToast(
-
             "Failed to load users",
-
             "error"
-
         );
 
     }
@@ -2990,18 +2783,14 @@ async function loadUsers(){
 
 
 /* =====================================================
-   STATISTICS
+   UPDATE STATISTICS
 ===================================================== */
 
-function updateStatistics(
-    data
-){
+function updateStatistics(data){
 
     const total =
 
-    data.totalUsers
-    !==
-    undefined
+    data.totalUsers !== undefined
 
     ?
 
@@ -3014,9 +2803,7 @@ function updateStatistics(
 
     const active =
 
-    data.activeUsers
-    !==
-    undefined
+    data.activeUsers !== undefined
 
     ?
 
@@ -3039,9 +2826,7 @@ function updateStatistics(
 
     const blocked =
 
-    data.blockedUsers
-    !==
-    undefined
+    data.blockedUsers !== undefined
 
     ?
 
@@ -3049,30 +2834,22 @@ function updateStatistics(
 
     :
 
-    allUsers.length
-    -
-    active;
+    allUsers.length - active;
 
 
     document.getElementById(
         "totalUsers"
-    ).textContent =
-
-    total;
+    ).textContent = total;
 
 
     document.getElementById(
         "activeUsers"
-    ).textContent =
-
-    active;
+    ).textContent = active;
 
 
     document.getElementById(
         "blockedUsers"
-    ).textContent =
-
-    blocked;
+    ).textContent = blocked;
 
 
     document.getElementById(
@@ -3082,13 +2859,11 @@ function updateStatistics(
     total +
 
     (
-
         total === 1
         ?
         " User"
         :
         " Users"
-
     );
 
 }
@@ -3098,9 +2873,7 @@ function updateStatistics(
    RENDER USERS
 ===================================================== */
 
-function renderUsers(
-    users
-){
+function renderUsers(users){
 
     const tbody =
 
@@ -3109,15 +2882,13 @@ function renderUsers(
     );
 
 
-    if(
-        !users.length
-    ){
+    if(!users.length){
 
         tbody.innerHTML = `
 
             <tr>
 
-            <td colspan="5">
+            <td colspan="4">
 
             <div class="empty-state">
 
@@ -3164,15 +2935,6 @@ function renderUsers(
             );
 
 
-            const password =
-
-            escapeHTML(
-                user.password
-                ||
-                ""
-            );
-
-
             const role =
 
             escapeHTML(
@@ -3202,9 +2964,9 @@ function renderUsers(
 
             (
 
-                user.username
-                ||
                 user.name
+                ||
+                user.username
                 ||
                 "U"
 
@@ -3220,15 +2982,6 @@ function renderUsers(
             status.toLowerCase()
             ===
             "active";
-
-
-            const passwordValue =
-
-            password
-            ?
-            password
-            :
-            "Not Available";
 
 
             return `
@@ -3268,46 +3021,6 @@ function renderUsers(
                             </div>
 
                         </div>
-
-                    </div>
-
-                </td>
-
-
-                <td>
-
-                    <div class="password-cell">
-
-                        <span
-                        class="password-text"
-                        id="password-${row}"
-                        data-password="${passwordValue}"
-                        >
-
-                        ••••••••
-
-                        </span>
-
-
-                        <button
-
-                        type="button"
-
-                        class="password-toggle"
-
-                        title="Show Password"
-
-                        onclick=
-                        "toggleTablePassword(${row})"
-
-                        >
-
-                        <i
-                        class="fa-solid fa-eye"
-                        id="password-icon-${row}"
-                        ></i>
-
-                        </button>
 
                     </div>
 
@@ -3436,81 +3149,10 @@ function renderUsers(
 
 
 /* =====================================================
-   TABLE PASSWORD SHOW / HIDE
-===================================================== */
-
-function toggleTablePassword(
-    row
-){
-
-    const passwordElement =
-
-    document.getElementById(
-        "password-" + row
-    );
-
-
-    const icon =
-
-    document.getElementById(
-        "password-icon-" + row
-    );
-
-
-    if(
-        !passwordElement
-        ||
-        !icon
-    ){
-
-        return;
-
-    }
-
-
-    const password =
-
-    passwordElement.dataset.password;
-
-
-    if(
-        passwordElement.textContent
-        ===
-        "••••••••"
-    ){
-
-        passwordElement.textContent =
-
-        password;
-
-        icon.className =
-
-        "fa-solid fa-eye-slash";
-
-    }
-
-    else{
-
-        passwordElement.textContent =
-
-        "••••••••";
-
-        icon.className =
-
-        "fa-solid fa-eye";
-
-    }
-
-}
-
-
-/* =====================================================
    SEARCH
 ===================================================== */
 
-document
-
-.getElementById(
+document.getElementById(
     "searchInput"
 )
 
@@ -3523,15 +3165,11 @@ document
         const query =
 
         this.value
-
         .toLowerCase()
-
         .trim();
 
 
-        if(
-            !query
-        ){
+        if(!query){
 
             renderUsers(
                 allUsers
@@ -3555,9 +3193,7 @@ document
                         ||
                         ""
                     )
-
                     .toLowerCase()
-
                     .includes(query)
 
                     ||
@@ -3567,9 +3203,7 @@ document
                         ||
                         ""
                     )
-
                     .toLowerCase()
-
                     .includes(query)
 
                     ||
@@ -3579,9 +3213,7 @@ document
                         ||
                         ""
                     )
-
                     .toLowerCase()
-
                     .includes(query)
 
                     ||
@@ -3591,9 +3223,7 @@ document
                         ||
                         ""
                     )
-
                     .toLowerCase()
-
                     .includes(query)
 
                 );
@@ -3672,10 +3302,10 @@ document.getElementById(
 );
 
 
-const passwordToggleBtn =
+const passwordToggle =
 
 document.getElementById(
-    "passwordToggleBtn"
+    "passwordToggle"
 );
 
 
@@ -3683,7 +3313,7 @@ document.getElementById(
    PASSWORD SHOW / HIDE
 ===================================================== */
 
-passwordToggleBtn.addEventListener(
+passwordToggle.addEventListener(
 
     "click",
 
@@ -3699,12 +3329,9 @@ passwordToggleBtn.addEventListener(
             "text";
 
 
-            this.innerHTML =
+            passwordToggle.innerHTML =
 
             '<i class="fa-solid fa-eye-slash"></i>';
-
-            this.title =
-            "Hide Password";
 
         }
 
@@ -3714,12 +3341,9 @@ passwordToggleBtn.addEventListener(
             "password";
 
 
-            this.innerHTML =
+            passwordToggle.innerHTML =
 
             '<i class="fa-solid fa-eye"></i>';
-
-            this.title =
-            "Show Password";
 
         }
 
@@ -3732,9 +3356,7 @@ passwordToggleBtn.addEventListener(
    OPEN ADD MODAL
 ===================================================== */
 
-document
-
-.getElementById(
+document.getElementById(
     "addUserBtn"
 )
 
@@ -3749,7 +3371,6 @@ document
 
 
         modalTitle.textContent =
-
         "Add New User";
 
 
@@ -3773,9 +3394,8 @@ document
         "password";
 
 
-        passwordToggleBtn.innerHTML =
-
-        '<i class="fa-solid fa-eye"></i>';
+        passwordInput.placeholder =
+        "Enter password";
 
 
         roleInput.value =
@@ -3786,9 +3406,9 @@ document
         "Active";
 
 
-        passwordInput.placeholder =
+        passwordToggle.innerHTML =
 
-        "Enter password";
+        '<i class="fa-solid fa-eye"></i>';
 
 
         modal.classList.add(
@@ -3804,9 +3424,7 @@ document
    OPEN EDIT MODAL
 ===================================================== */
 
-function openEditModal(
-    row
-){
+function openEditModal(row){
 
     const user =
 
@@ -3825,16 +3443,11 @@ function openEditModal(
     );
 
 
-    if(
-        !user
-    ){
+    if(!user){
 
         showToast(
-
             "User not found",
-
             "error"
-
         );
 
         return;
@@ -3847,7 +3460,6 @@ function openEditModal(
 
 
     modalTitle.textContent =
-
     "Edit User";
 
 
@@ -3870,9 +3482,10 @@ function openEditModal(
 
 
     /*
-       পুরোনো password এখানে দেখাবে
-       যদি Apps Script getUsers থেকে
-       password ফেরত দেয়
+      OLD PASSWORD SUPPORT
+
+      API থেকে password এলে
+      existing password এখানে দেখা যাবে
     */
 
     passwordInput.value =
@@ -3886,14 +3499,13 @@ function openEditModal(
     "password";
 
 
-    passwordToggleBtn.innerHTML =
-
-    '<i class="fa-solid fa-eye"></i>';
-
-
     passwordInput.placeholder =
 
-    "Enter password";
+    user.password
+    ?
+    "Old password"
+    :
+    "Password not available";
 
 
     roleInput.value =
@@ -3908,6 +3520,11 @@ function openEditModal(
     user.status
     ||
     "Active";
+
+
+    passwordToggle.innerHTML =
+
+    '<i class="fa-solid fa-eye"></i>';
 
 
     modal.classList.add(
@@ -3930,33 +3547,23 @@ function closeModal(){
 }
 
 
-document
-
-.getElementById(
+document.getElementById(
     "closeModalBtn"
 )
 
 .addEventListener(
-
     "click",
-
     closeModal
-
 );
 
 
-document
-
-.getElementById(
+document.getElementById(
     "cancelBtn"
 )
 
 .addEventListener(
-
     "click",
-
     closeModal
-
 );
 
 
@@ -3983,9 +3590,7 @@ modal.addEventListener(
    SAVE USER
 ===================================================== */
 
-document
-
-.getElementById(
+document.getElementById(
     "saveUserBtn"
 )
 
@@ -4020,16 +3625,11 @@ document
         statusInput.value.trim();
 
 
-        if(
-            !name
-        ){
+        if(!name){
 
             showToast(
-
                 "Please enter name",
-
                 "error"
-
             );
 
             return;
@@ -4037,16 +3637,11 @@ document
         }
 
 
-        if(
-            !username
-        ){
+        if(!username){
 
             showToast(
-
                 "Please enter username",
-
                 "error"
-
             );
 
             return;
@@ -4055,15 +3650,14 @@ document
 
 
         if(
+            !editMode
+            &&
             !password
         ){
 
             showToast(
-
                 "Please enter password",
-
                 "error"
-
             );
 
             return;
@@ -4071,16 +3665,11 @@ document
         }
 
 
-        if(
-            !role
-        ){
+        if(!role){
 
             showToast(
-
                 "Please select role",
-
                 "error"
-
             );
 
             return;
@@ -4109,9 +3698,7 @@ document
             let url;
 
 
-            if(
-                editMode
-            ){
+            if(editMode){
 
                 url =
 
@@ -4205,13 +3792,8 @@ document
                 url,
 
                 {
-
-                    method:
-                    "GET",
-
-                    cache:
-                    "no-store"
-
+                    method:"GET",
+                    cache:"no-store"
                 }
 
             );
@@ -4255,9 +3837,7 @@ document
 
         catch(error){
 
-            console.error(
-                error
-            );
+            console.error(error);
 
 
             showToast(
@@ -4291,11 +3871,10 @@ document
 
 /* =====================================================
    TOGGLE STATUS
+   NO CHROME CONFIRM POPUP
 ===================================================== */
 
-async function toggleStatus(
-    row
-){
+async function toggleStatus(row){
 
     const user =
 
@@ -4314,61 +3893,12 @@ async function toggleStatus(
     );
 
 
-    if(
-        !user
-    ){
+    if(!user){
 
         showToast(
-
             "User not found",
-
             "error"
-
         );
-
-        return;
-
-    }
-
-
-    const isActive =
-
-    String(
-        user.status
-        ||
-        ""
-    )
-
-    .toLowerCase()
-    ===
-    "active";
-
-
-    const actionText =
-
-    isActive
-    ?
-    "block"
-    :
-    "activate";
-
-
-    const confirmed =
-
-    confirm(
-
-        "Are you sure you want to " +
-
-        actionText +
-
-        " this user?"
-
-    );
-
-
-    if(
-        !confirmed
-    ){
 
         return;
 
@@ -4396,13 +3926,8 @@ async function toggleStatus(
             Date.now(),
 
             {
-
-                method:
-                "GET",
-
-                cache:
-                "no-store"
-
+                method:"GET",
+                cache:"no-store"
             }
 
         );
@@ -4443,9 +3968,7 @@ async function toggleStatus(
 
     catch(error){
 
-        console.error(
-            error
-        );
+        console.error(error);
 
 
         showToast(
@@ -4465,11 +3988,10 @@ async function toggleStatus(
 
 /* =====================================================
    DELETE USER
+   NO CHROME CONFIRM POPUP
 ===================================================== */
 
-async function deleteUser(
-    row
-){
+async function deleteUser(row){
 
     const user =
 
@@ -4488,45 +4010,12 @@ async function deleteUser(
     );
 
 
-    if(
-        !user
-    ){
+    if(!user){
 
         showToast(
-
             "User not found",
-
             "error"
-
         );
-
-        return;
-
-    }
-
-
-    const confirmed =
-
-    confirm(
-
-        "Are you sure you want to delete " +
-
-        (
-
-            user.name
-            ||
-            user.username
-
-        ) +
-
-        "?\n\nThis action cannot be undone."
-
-    );
-
-
-    if(
-        !confirmed
-    ){
 
         return;
 
@@ -4554,13 +4043,8 @@ async function deleteUser(
             Date.now(),
 
             {
-
-                method:
-                "GET",
-
-                cache:
-                "no-store"
-
+                method:"GET",
+                cache:"no-store"
             }
 
         );
@@ -4601,9 +4085,7 @@ async function deleteUser(
 
     catch(error){
 
-        console.error(
-            error
-        );
+        console.error(error);
 
 
         showToast(
@@ -4625,9 +4107,7 @@ async function deleteUser(
    ESCAPE HTML
 ===================================================== */
 
-function escapeHTML(
-    value
-){
+function escapeHTML(value){
 
     const div =
 
@@ -4725,34 +4205,12 @@ let inactivityTimer;
 
 function autoLogout(){
 
-    localStorage.removeItem(
-        "loggedIn"
+    clearTimeout(
+        inactivityTimer
     );
 
 
-    localStorage.removeItem(
-        "username"
-    );
-
-
-    localStorage.removeItem(
-        "name"
-    );
-
-
-    localStorage.removeItem(
-        "role"
-    );
-
-
-    sessionStorage.clear();
-
-
-    window.location.replace(
-
-        "../index.html"
-
-    );
+    logout();
 
 }
 
@@ -4880,7 +4338,6 @@ resetInactivityTimer();
 loadUsers();
 
 </script>
-
 
 </body>
 

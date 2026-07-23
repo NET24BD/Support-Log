@@ -85,17 +85,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 /* =====================================================
-   HTML
-===================================================== */
-
-html{
-
-    scroll-behavior:smooth;
-
-}
-
-
-/* =====================================================
    BODY
 ===================================================== */
 
@@ -127,64 +116,6 @@ body{
 
 
 /* =====================================================
-   BACKGROUND
-===================================================== */
-
-body::before{
-
-    content:"";
-
-    position:fixed;
-
-    width:500px;
-
-    height:500px;
-
-    border-radius:50%;
-
-    background:#006a4e;
-
-    filter:blur(150px);
-
-    opacity:.25;
-
-    top:-200px;
-
-    left:-150px;
-
-    z-index:-1;
-
-}
-
-
-body::after{
-
-    content:"";
-
-    position:fixed;
-
-    width:450px;
-
-    height:450px;
-
-    border-radius:50%;
-
-    background:#e53935;
-
-    filter:blur(170px);
-
-    opacity:.12;
-
-    right:-150px;
-
-    bottom:-150px;
-
-    z-index:-1;
-
-}
-
-
-/* =====================================================
    HEADER
 ===================================================== */
 
@@ -194,9 +125,7 @@ header{
 
     height:75px;
 
-    padding:
-
-    0 50px;
+    padding:0 50px;
 
     display:flex;
 
@@ -212,15 +141,9 @@ header{
 
     background:
 
-    rgba(3,20,15,.78);
+    rgba(3,20,15,.75);
 
-    backdrop-filter:blur(18px);
-
-    position:sticky;
-
-    top:0;
-
-    z-index:100;
+    backdrop-filter:blur(15px);
 
 }
 
@@ -308,10 +231,6 @@ header{
 }
 
 
-/* =====================================================
-   HEADER USER
-===================================================== */
-
 .header-user{
 
     display:flex;
@@ -354,14 +273,6 @@ header{
 
     font-weight:600;
 
-    max-width:150px;
-
-    overflow:hidden;
-
-    white-space:nowrap;
-
-    text-overflow:ellipsis;
-
 }
 
 
@@ -388,8 +299,6 @@ header{
     display:flex;
 
     align-items:center;
-
-    justify-content:center;
 
     gap:8px;
 
@@ -421,13 +330,6 @@ header{
 }
 
 
-.logout-btn:active{
-
-    transform:scale(.96);
-
-}
-
-
 /* =====================================================
    MAIN
 ===================================================== */
@@ -440,7 +342,9 @@ header{
 
     padding:
 
-    55px 25px;
+    55px
+
+    25px;
 
 }
 
@@ -477,7 +381,7 @@ header{
 
 
 /* =====================================================
-   PROFILE CONTAINER
+   PROFILE AREA
 ===================================================== */
 
 .profile-container{
@@ -513,9 +417,7 @@ header{
 
     border-radius:24px;
 
-    padding:
-
-    35px 25px;
+    padding:35px 25px;
 
     text-align:center;
 
@@ -526,39 +428,6 @@ header{
     0 25px 60px
 
     rgba(0,0,0,.25);
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-
-.profile-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    height:4px;
-
-    background:
-
-    linear-gradient(
-
-        90deg,
-
-        #00a86b,
-
-        #e53935
-
-    );
 
 }
 
@@ -628,8 +497,6 @@ header{
 
     margin-bottom:8px;
 
-    word-break:break-word;
-
 }
 
 
@@ -644,8 +511,6 @@ header{
     font-size:14px;
 
     margin-bottom:20px;
-
-    word-break:break-word;
 
 }
 
@@ -664,7 +529,9 @@ header{
 
     padding:
 
-    7px 14px;
+    7px
+
+    14px;
 
     border-radius:30px;
 
@@ -730,10 +597,6 @@ header{
 
 }
 
-
-/* =====================================================
-   INFORMATION TITLE
-===================================================== */
 
 .info-title{
 
@@ -815,21 +678,12 @@ header{
 
     rgba(255,255,255,.06);
 
-    transition:.3s;
-
 }
 
 
-.info-item:hover{
-
-    background:
-
-    rgba(255,255,255,.06);
-
-    transform:translateY(-3px);
-
-}
-
+/* =====================================================
+   INFO LABEL
+===================================================== */
 
 .info-label{
 
@@ -843,6 +697,10 @@ header{
 
 }
 
+
+/* =====================================================
+   INFO VALUE
+===================================================== */
 
 .info-value{
 
@@ -867,7 +725,9 @@ header{
 
     padding:
 
-    6px 12px;
+    6px
+
+    12px;
 
     border-radius:8px;
 
@@ -892,9 +752,7 @@ header{
 
     text-align:center;
 
-    padding:
-
-    30px 20px;
+    padding:30px;
 
     color:#668278;
 
@@ -913,7 +771,9 @@ header{
 
         padding:
 
-        0 20px;
+        0
+
+        20px;
 
     }
 
@@ -936,7 +796,9 @@ header{
 
         padding:
 
-        9px 12px;
+        9px
+
+        12px;
 
     }
 
@@ -945,7 +807,9 @@ header{
 
         padding:
 
-        35px 18px;
+        35px
+
+        18px;
 
     }
 
@@ -966,18 +830,14 @@ header{
 
     .profile-card{
 
-        padding:
-
-        30px 20px;
+        padding:30px 20px;
 
     }
 
 
     .info-card{
 
-        padding:
-
-        25px 20px;
+        padding:25px 20px;
 
     }
 
@@ -1021,6 +881,8 @@ header{
 
         padding:0;
 
+        justify-content:center;
+
     }
 
 
@@ -1034,17 +896,6 @@ header{
     .info-grid{
 
         grid-template-columns:1fr;
-
-    }
-
-
-    .avatar{
-
-        width:95px;
-
-        height:95px;
-
-        font-size:36px;
 
     }
 
@@ -1090,8 +941,6 @@ header{
 
     <div class="header-right">
 
-
-        <!-- USER NAME -->
 
         <div class="header-user">
 
@@ -1161,7 +1010,7 @@ header{
 
         <p>
 
-            View your account information and profile details.
+            Manage and view your account information.
 
         </p>
 
@@ -1169,21 +1018,15 @@ header{
 
 
 
-    <!-- =================================================
-         PROFILE CONTAINER
-    ================================================= -->
+    <!-- PROFILE CONTAINER -->
 
     <div class="profile-container">
 
 
-        <!-- =================================================
-             PROFILE CARD
-        ================================================= -->
+        <!-- PROFILE CARD -->
 
         <div class="profile-card">
 
-
-            <!-- AVATAR -->
 
             <div
 
@@ -1198,8 +1041,6 @@ header{
             </div>
 
 
-            <!-- PROFILE NAME -->
-
             <h2 id="profileName">
 
                 User
@@ -1207,16 +1048,12 @@ header{
             </h2>
 
 
-            <!-- USERNAME -->
-
             <p id="profileUsername">
 
                 @username
 
             </p>
 
-
-            <!-- STATUS -->
 
             <div class="status">
 
@@ -1235,14 +1072,10 @@ header{
 
 
 
-        <!-- =================================================
-             ACCOUNT INFORMATION
-        ================================================= -->
+        <!-- ACCOUNT INFORMATION -->
 
         <div class="info-card">
 
-
-            <!-- TITLE -->
 
             <div class="info-title">
 
@@ -1264,8 +1097,6 @@ header{
             </div>
 
 
-
-            <!-- INFO GRID -->
 
             <div class="info-grid">
 
@@ -1406,133 +1237,66 @@ header{
 
 
 /* =====================================================
-   LOGIN CHECK
-===================================================== */
-
-function checkLogin(){
-
-    const loggedIn =
-
-        localStorage.getItem(
-
-            "loggedIn"
-
-        );
-
-
-    if(
-
-        loggedIn !== "true"
-
-    ){
-
-        window.location.replace(
-
-            "../index.html"
-
-        );
-
-        return false;
-
-    }
-
-
-    return true;
-
-}
-
-
-/* =====================================================
-   GET USER DATA
+   GET USER DATA FROM LOCAL STORAGE
 ===================================================== */
 
 const userName =
 
-    localStorage.getItem(
+    localStorage.getItem("name") ||
 
-        "name"
-
-    ) ||
-
-    localStorage.getItem(
-
-        "username"
-
-    ) ||
+    localStorage.getItem("username") ||
 
     "User";
 
 
 const username =
 
-    localStorage.getItem(
-
-        "username"
-
-    ) ||
+    localStorage.getItem("username") ||
 
     "username";
 
 
 const userRole =
 
-    localStorage.getItem(
-
-        "role"
-
-    ) ||
+    localStorage.getItem("role") ||
 
     "User";
 
 
 const userStatus =
 
-    localStorage.getItem(
-
-        "status"
-
-    ) ||
+    localStorage.getItem("status") ||
 
     "Active";
 
 
+
 /* =====================================================
-   SHOW HEADER USER NAME
+   SHOW USER NAME
 ===================================================== */
 
 document.getElementById(
 
     "headerUserName"
 
-).textContent =
-
-    userName;
+).textContent = userName;
 
 
-/* =====================================================
-   SHOW PROFILE NAME
-===================================================== */
 
 document.getElementById(
 
     "profileName"
 
-).textContent =
-
-    userName;
+).textContent = userName;
 
 
-/* =====================================================
-   SHOW FULL NAME
-===================================================== */
 
 document.getElementById(
 
     "infoName"
 
-).textContent =
+).textContent = userName;
 
-    userName;
 
 
 /* =====================================================
@@ -1548,13 +1312,13 @@ document.getElementById(
     "@" + username;
 
 
+
 document.getElementById(
 
     "infoUsername"
 
-).textContent =
+).textContent = username;
 
-    username;
 
 
 /* =====================================================
@@ -1565,9 +1329,8 @@ document.getElementById(
 
     "infoRole"
 
-).textContent =
+).textContent = userRole;
 
-    userRole;
 
 
 /* =====================================================
@@ -1578,46 +1341,32 @@ document.getElementById(
 
     "profileStatus"
 
-).textContent =
+).textContent = userStatus;
 
-    userStatus;
 
 
 document.getElementById(
 
     "infoStatus"
 
-).textContent =
+).textContent = userStatus;
 
-    userStatus;
 
 
 /* =====================================================
-   AVATAR FIRST LETTER
+   CREATE AVATAR LETTER
 ===================================================== */
 
 const avatar =
 
-    document.getElementById(
-
-        "avatar"
-
-    );
+    document.getElementById("avatar");
 
 
-if(
-
-    userName &&
-
-    userName.trim() !== ""
-
-){
+if(userName){
 
     avatar.textContent =
 
         userName
-
-        .trim()
 
         .charAt(0)
 
@@ -1626,17 +1375,14 @@ if(
 }
 
 
+
 /* =====================================================
    DIRECT LOGOUT
 ===================================================== */
 
 document
 
-.getElementById(
-
-    "logoutBtn"
-
-)
+.getElementById("logoutBtn")
 
 .addEventListener(
 
@@ -1645,9 +1391,7 @@ document
     function(){
 
 
-        /* =============================================
-           REMOVE LOGIN DATA
-        ============================================= */
+        /* CLEAR LOGIN DATA */
 
         localStorage.removeItem(
 
@@ -1684,16 +1428,12 @@ document
         );
 
 
-        /* =============================================
-           CLEAR SESSION
-        ============================================= */
+        /* CLEAR SESSION */
 
         sessionStorage.clear();
 
 
-        /* =============================================
-           REDIRECT TO LOGIN
-        ============================================= */
+        /* GO TO LOGIN */
 
         window.location.replace(
 
@@ -1707,8 +1447,9 @@ document
 );
 
 
+
 /* =====================================================
-   BROWSER BACK / CACHE SECURITY
+   BACK / CACHE SECURITY
 ===================================================== */
 
 window.addEventListener(
@@ -1741,7 +1482,7 @@ window.addEventListener(
 
 
 /* =====================================================
-   PAGE VISIBILITY SECURITY
+   VISIBILITY SECURITY
 ===================================================== */
 
 document.addEventListener(
@@ -1758,7 +1499,23 @@ document.addEventListener(
 
         ){
 
-            checkLogin();
+            if(
+
+                localStorage.getItem(
+
+                    "loggedIn"
+
+                ) !== "true"
+
+            ){
+
+                window.location.replace(
+
+                    "../index.html"
+
+                );
+
+            }
 
         }
 

@@ -4,7 +4,11 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
 <title>Support Log History</title>
 
@@ -33,6 +37,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 body{
 
     width:100%;
+
     min-height:100vh;
 
     font-family:
@@ -50,7 +55,7 @@ body{
 
     color:#14201d;
 
-    padding:16px 24px;
+    overflow-x:hidden;
 
 }
 
@@ -63,21 +68,23 @@ body{
 
     position:fixed;
 
-    left:16px;
+    top:0;
 
-    top:16px;
+    left:0;
 
-    bottom:16px;
+    width:260px;
 
-    width:255px;
+    height:100vh;
 
-    background:#f7fbfa;
+    background:
+    linear-gradient(
+        180deg,
+        #063f32,
+        #075744,
+        #063f32
+    );
 
-    border-radius:26px;
-
-    box-shadow:
-    0 15px 40px
-    rgba(0,0,0,.15);
+    color:white;
 
     z-index:1000;
 
@@ -85,44 +92,76 @@ body{
 
     flex-direction:column;
 
-    padding:20px 15px;
+    transition:
+    width .25s ease,
+    transform .25s ease;
 
-    transition:.3s;
+    box-shadow:
+    5px 0 25px
+    rgba(0,0,0,.18);
 
 }
 
 
-.sidebar-brand{
+/* =====================================================
+   SIDEBAR COLLAPSED
+===================================================== */
+
+.sidebar.collapsed{
+
+    width:82px;
+
+}
+
+
+/* =====================================================
+   SIDEBAR HEADER
+===================================================== */
+
+.sidebar-header{
+
+    height:90px;
+
+    padding:
+    0 18px;
 
     display:flex;
 
     align-items:center;
 
-    gap:12px;
-
-    padding:
-    8px 10px 22px;
+    justify-content:space-between;
 
     border-bottom:
     1px solid
-    #e2ebe8;
-
-    margin-bottom:18px;
+    rgba(255,255,255,.12);
 
 }
 
 
-.sidebar-brand-icon{
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    min-width:0;
+
+}
+
+
+.brand-icon{
 
     width:48px;
 
     height:48px;
 
+    min-width:48px;
+
     border-radius:14px;
 
-    background:#008f6b;
-
-    color:white;
+    background:#00a47c;
 
     display:flex;
 
@@ -130,248 +169,449 @@ body{
 
     justify-content:center;
 
-    font-size:22px;
+    font-size:23px;
+
+    box-shadow:
+    0 8px 20px
+    rgba(0,0,0,.18);
 
 }
 
 
-.sidebar-brand-text{
+.brand-text{
 
-    min-width:0;
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    transition:
+    opacity .2s ease;
 
 }
 
 
-.sidebar-brand-text h2{
+.brand-text h2{
 
-    color:#00765b;
+    font-size:17px;
 
-    font-size:18px;
+    margin-bottom:3px;
+
+}
+
+
+.brand-text span{
+
+    font-size:11px;
+
+    color:
+    rgba(255,255,255,.65);
+
+}
+
+
+.sidebar.collapsed
+.brand-text{
+
+    opacity:0;
+
+    width:0;
+
+}
+
+
+/* =====================================================
+   MINIMIZE BUTTON
+===================================================== */
+
+.sidebar-toggle{
+
+    width:38px;
+
+    height:38px;
+
+    min-width:38px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:
+    rgba(255,255,255,.10);
+
+    color:white;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.2s;
+
+}
+
+
+.sidebar-toggle:hover{
+
+    background:
+    rgba(255,255,255,.20);
+
+}
+
+
+.sidebar.collapsed
+.sidebar-header{
+
+    justify-content:center;
+
+    padding:0;
+
+}
+
+
+.sidebar.collapsed
+.sidebar-toggle{
+
+    position:absolute;
+
+    top:26px;
+
+    right:-19px;
+
+    background:#008f6b;
+
+    box-shadow:
+    0 5px 15px
+    rgba(0,0,0,.25);
+
+}
+
+
+.sidebar.collapsed
+.sidebar-toggle i{
+
+    transform:
+    rotate(180deg);
+
+}
+
+
+/* =====================================================
+   SIDEBAR MENU
+===================================================== */
+
+.sidebar-menu{
+
+    flex:1;
+
+    padding:
+    22px 12px;
+
+    overflow-y:auto;
+
+}
+
+
+.menu-title{
+
+    color:
+    rgba(255,255,255,.45);
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    padding:
+    0 12px 10px;
 
     white-space:nowrap;
 
 }
 
 
-.sidebar-brand-text p{
+.sidebar.collapsed
+.menu-title{
 
-    color:#74807c;
+    text-align:center;
 
-    font-size:11px;
-
-    margin-top:3px;
-
-}
-
-
-.sidebar-menu{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:7px;
-
-    flex:1;
+    font-size:0;
 
 }
 
 
-.sidebar-link{
+.sidebar.collapsed
+.menu-title::after{
 
-    text-decoration:none;
+    content:"•••";
 
-    color:#53615d;
+    font-size:12px;
+
+}
+
+
+.menu-link{
+
+    width:100%;
+
+    height:52px;
+
+    margin-bottom:8px;
+
+    padding:
+    0 14px;
+
+    border-radius:13px;
 
     display:flex;
 
     align-items:center;
 
-    gap:13px;
+    gap:14px;
 
-    padding:
-    13px 14px;
+    color:
+    rgba(255,255,255,.78);
 
-    border-radius:13px;
+    text-decoration:none;
+
+    transition:.2s;
+
+    white-space:nowrap;
+
+}
+
+
+.menu-link i{
+
+    width:24px;
+
+    min-width:24px;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+
+
+.menu-link span{
 
     font-size:14px;
 
     font-weight:bold;
 
-    transition:.2s;
+    transition:
+    opacity .2s ease;
 
 }
 
 
-.sidebar-link i{
+.menu-link:hover{
 
-    width:22px;
+    background:
+    rgba(255,255,255,.10);
 
-    text-align:center;
+    color:white;
 
-    font-size:17px;
-
-}
-
-
-.sidebar-link:hover{
-
-    background:#e8f6f2;
-
-    color:#007b5e;
-
-    transform:translateX(2px);
+    transform:
+    translateX(2px);
 
 }
 
 
-.sidebar-link.active{
+.menu-link.active{
 
     background:
     linear-gradient(
         135deg,
-        #007e60,
-        #00a17b
+        #00a47c,
+        #008f6b
     );
 
     color:white;
 
     box-shadow:
-    0 7px 18px
-    rgba(0,130,95,.22);
+    0 8px 20px
+    rgba(0,0,0,.15);
 
 }
 
 
-.sidebar-bottom{
+.sidebar.collapsed
+.menu-link{
+
+    justify-content:center;
+
+    padding:0;
+
+}
+
+
+.sidebar.collapsed
+.menu-link span{
+
+    opacity:0;
+
+    width:0;
+
+    overflow:hidden;
+
+}
+
+
+/* =====================================================
+   SIDEBAR FOOTER
+===================================================== */
+
+.sidebar-footer{
+
+    padding:
+    15px 12px 20px;
 
     border-top:
     1px solid
-    #e2ebe8;
-
-    padding-top:15px;
+    rgba(255,255,255,.10);
 
 }
 
 
-.sidebar-logout{
+.user-mini{
 
-    width:100%;
+    height:52px;
 
-    border:none;
-
-    background:#fff0f0;
-
-    color:#d14d4d;
-
-    padding:13px 14px;
+    padding:
+    0 12px;
 
     border-radius:13px;
 
-    font-size:14px;
-
-    font-weight:bold;
-
-    cursor:pointer;
+    background:
+    rgba(255,255,255,.07);
 
     display:flex;
 
     align-items:center;
 
-    gap:13px;
+    gap:11px;
 
-    transition:.2s;
-
-}
-
-
-.sidebar-logout:hover{
-
-    background:#ffe1e1;
+    overflow:hidden;
 
 }
 
 
-/* =====================================================
-   MOBILE SIDEBAR BUTTON
-===================================================== */
+.user-mini-icon{
 
-.mobile-menu-btn{
+    width:34px;
 
-    display:none;
+    height:34px;
 
-    position:fixed;
+    min-width:34px;
 
-    top:18px;
+    border-radius:50%;
 
-    left:18px;
+    background:#00a47c;
 
-    width:48px;
+    display:flex;
 
-    height:48px;
+    align-items:center;
 
-    border:none;
-
-    border-radius:14px;
-
-    background:#008f6b;
-
-    color:white;
-
-    font-size:21px;
-
-    z-index:3000;
-
-    cursor:pointer;
-
-    box-shadow:
-    0 8px 20px
-    rgba(0,0,0,.2);
+    justify-content:center;
 
 }
 
 
-/* =====================================================
-   SIDEBAR OVERLAY
-===================================================== */
+.user-mini-info{
 
-.sidebar-overlay{
+    white-space:nowrap;
 
-    display:none;
-
-    position:fixed;
-
-    inset:0;
-
-    background:
-    rgba(0,30,23,.55);
-
-    z-index:900;
+    overflow:hidden;
 
 }
 
 
-.sidebar-overlay.show{
+.user-mini-info strong{
 
     display:block;
 
+    font-size:12px;
+
+}
+
+
+.user-mini-info small{
+
+    display:block;
+
+    font-size:10px;
+
+    color:
+    rgba(255,255,255,.55);
+
+    margin-top:2px;
+
+}
+
+
+.sidebar.collapsed
+.user-mini{
+
+    justify-content:center;
+
+    padding:0;
+
+}
+
+
+.sidebar.collapsed
+.user-mini-info{
+
+    display:none;
+
 }
 
 
 /* =====================================================
-   MAIN AREA
+   MAIN CONTENT
 ===================================================== */
 
-.main-area{
+.main-content{
 
-    margin-left:285px;
+    margin-left:260px;
 
-    width:
-    calc(100% - 285px);
+    min-height:100vh;
+
+    padding:
+    16px 24px;
+
+    transition:
+    margin-left .25s ease;
+
+}
+
+
+.sidebar.collapsed
+~ .main-content{
+
+    margin-left:82px;
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+
+    width:100%;
 
     max-width:1500px;
 
-    margin-right:auto;
+    margin:auto;
 
 }
 
@@ -388,7 +628,8 @@ body{
 
     min-height:122px;
 
-    padding:24px 30px;
+    padding:
+    24px 30px;
 
     display:flex;
 
@@ -478,7 +719,8 @@ body{
 
     border-radius:15px;
 
-    padding:14px 22px;
+    padding:
+    14px 22px;
 
     font-size:16px;
 
@@ -499,7 +741,8 @@ body{
 
 .btn:hover{
 
-    transform:translateY(-2px);
+    transform:
+    translateY(-2px);
 
 }
 
@@ -541,7 +784,8 @@ body{
 
     min-height:55px;
 
-    padding:0 22px;
+    padding:
+    0 22px;
 
     display:flex;
 
@@ -767,7 +1011,8 @@ body{
 
     border-radius:10px;
 
-    padding:0 8px;
+    padding:
+    0 8px;
 
     outline:none;
 
@@ -797,7 +1042,8 @@ body{
 
     border-radius:10px;
 
-    padding:0 12px;
+    padding:
+    0 12px;
 
     background:white;
 
@@ -818,7 +1064,8 @@ body{
 
     height:42px;
 
-    padding:0 15px;
+    padding:
+    0 15px;
 
     border:none;
 
@@ -954,7 +1201,8 @@ th{
 
 td{
 
-    padding:17px 16px;
+    padding:
+    17px 16px;
 
     border-bottom:
     1px solid
@@ -1049,7 +1297,8 @@ tbody tr:hover{
 
     background:#007657;
 
-    transform:translateY(-1px);
+    transform:
+    translateY(-1px);
 
 }
 
@@ -1164,7 +1413,8 @@ tbody tr:hover{
 
     to{
 
-        transform:rotate(360deg);
+        transform:
+        rotate(360deg);
 
     }
 
@@ -1267,7 +1517,8 @@ tbody tr:hover{
 
     color:white;
 
-    padding:20px 24px;
+    padding:
+    20px 24px;
 
     display:flex;
 
@@ -1314,7 +1565,8 @@ tbody tr:hover{
     background:
     rgba(255,255,255,.3);
 
-    transform:rotate(90deg);
+    transform:
+    rotate(90deg);
 
 }
 
@@ -1584,8 +1836,7 @@ tbody tr:hover{
 
     border-radius:12px;
 
-    background:
-    #f1f6f4;
+    background:#f1f6f4;
 
     color:#007b62;
 
@@ -1615,8 +1866,7 @@ tbody tr:hover{
 
     border-radius:12px;
 
-    background:
-    #fff8ed;
+    background:#fff8ed;
 
     color:#7a521d;
 
@@ -1711,81 +1961,192 @@ tbody tr:hover{
 
 
 /* =====================================================
-   RESPONSIVE
+   MOBILE SIDEBAR OVERLAY
+===================================================== */
+
+.sidebar-overlay{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.45);
+
+    z-index:999;
+
+}
+
+
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
+
+.mobile-menu-btn{
+
+    display:none;
+
+    position:fixed;
+
+    top:15px;
+
+    left:15px;
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:13px;
+
+    background:#007d61;
+
+    color:white;
+
+    font-size:20px;
+
+    z-index:1100;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 6px 20px
+    rgba(0,0,0,.2);
+
+}
+
+
+/* =====================================================
+   RESPONSIVE 1100
 ===================================================== */
 
 @media(max-width:1100px){
 
     .sidebar{
 
-        width:230px;
+        width:82px;
 
     }
 
-    .main-area{
 
-        margin-left:250px;
+    .sidebar
+    .brand-text,
+    .sidebar
+    .menu-link span,
+    .sidebar
+    .user-mini-info{
 
-        width:
-        calc(100% - 250px);
+        opacity:0;
+
+        width:0;
+
+        overflow:hidden;
+
+    }
+
+
+    .sidebar
+    .sidebar-header{
+
+        justify-content:center;
+
+        padding:0;
+
+    }
+
+
+    .sidebar
+    .menu-link{
+
+        justify-content:center;
+
+        padding:0;
+
+    }
+
+
+    .sidebar
+    .user-mini{
+
+        justify-content:center;
+
+        padding:0;
+
+    }
+
+
+    .sidebar
+    .menu-title{
+
+        text-align:center;
+
+        font-size:0;
+
+    }
+
+
+    .sidebar
+    .menu-title::after{
+
+        content:"•••";
+
+        font-size:12px;
+
+    }
+
+
+    .sidebar-toggle{
+
+        position:absolute;
+
+        top:26px;
+
+        right:-19px;
+
+        background:#008f6b;
+
+        box-shadow:
+        0 5px 15px
+        rgba(0,0,0,.25);
+
+    }
+
+
+    .sidebar-toggle i{
+
+        transform:
+        rotate(180deg);
+
+    }
+
+
+    .main-content{
+
+        margin-left:82px;
 
     }
 
 }
 
 
+/* =====================================================
+   RESPONSIVE 900
+===================================================== */
+
 @media(max-width:900px){
 
-    body{
+    .main-content{
 
-        padding:12px;
-
-    }
-
-
-    .mobile-menu-btn{
-
-        display:flex;
-
-        align-items:center;
-
-        justify-content:center;
-
-    }
-
-
-    .sidebar{
-
-        left:-280px;
-
-        top:12px;
-
-        bottom:12px;
-
-        width:255px;
-
-    }
-
-
-    .sidebar.open{
-
-        left:12px;
-
-    }
-
-
-    .main-area{
-
-        margin-left:0;
-
-        width:100%;
+        padding:
+        12px;
 
     }
 
 
     .header{
-
-        padding-left:80px;
 
         flex-direction:column;
 
@@ -1818,7 +2179,8 @@ tbody tr:hover{
 
         gap:10px;
 
-        padding:15px 18px;
+        padding:
+        15px 18px;
 
     }
 
@@ -1832,19 +2194,133 @@ tbody tr:hover{
 }
 
 
-@media(max-width:600px){
+/* =====================================================
+   RESPONSIVE 700
+===================================================== */
 
-    body{
+@media(max-width:700px){
 
-        padding:10px;
+    .sidebar{
+
+        width:260px;
+
+        transform:
+        translateX(-100%);
 
     }
 
 
-    .header{
+    .sidebar.mobile-open{
+
+        transform:
+        translateX(0);
+
+    }
+
+
+    .sidebar
+    .brand-text,
+    .sidebar
+    .menu-link span,
+    .sidebar
+    .user-mini-info{
+
+        opacity:1;
+
+        width:auto;
+
+    }
+
+
+    .sidebar
+    .menu-link{
+
+        justify-content:flex-start;
 
         padding:
-        75px 20px 20px;
+        0 14px;
+
+    }
+
+
+    .sidebar
+    .user-mini{
+
+        justify-content:flex-start;
+
+        padding:
+        0 12px;
+
+    }
+
+
+    .sidebar
+    .menu-title{
+
+        text-align:left;
+
+        font-size:11px;
+
+    }
+
+
+    .sidebar
+    .menu-title::after{
+
+        display:none;
+
+    }
+
+
+    .sidebar-toggle{
+
+        display:none;
+
+    }
+
+
+    .main-content{
+
+        margin-left:0;
+
+        padding:
+        12px;
+
+        padding-top:75px;
+
+    }
+
+
+    .mobile-menu-btn{
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+    }
+
+
+    .sidebar-overlay.show{
+
+        display:block;
+
+    }
+
+
+}
+
+
+/* =====================================================
+   RESPONSIVE 600
+===================================================== */
+
+@media(max-width:600px){
+
+    .header{
+
+        padding:20px;
 
         border-radius:20px;
 
@@ -1975,7 +2451,8 @@ tbody tr:hover{
 
 <button
 class="mobile-menu-btn"
-onclick="toggleSidebar()"
+id="mobileMenuBtn"
+onclick="toggleMobileSidebar()"
 >
 
     <i class="fa-solid fa-bars"></i>
@@ -1990,7 +2467,7 @@ onclick="toggleSidebar()"
 <div
 class="sidebar-overlay"
 id="sidebarOverlay"
-onclick="closeSidebar()"
+onclick="closeMobileSidebar()"
 ></div>
 
 
@@ -2004,37 +2481,70 @@ id="sidebar"
 >
 
 
-    <div class="sidebar-brand">
+    <!-- SIDEBAR HEADER -->
 
-        <div class="sidebar-brand-icon">
+    <div class="sidebar-header">
 
-            <i class="fa-solid fa-headset"></i>
+
+        <div class="brand">
+
+
+            <div class="brand-icon">
+
+                <i class="fa-solid fa-headset"></i>
+
+            </div>
+
+
+            <div class="brand-text">
+
+                <h2>Support System</h2>
+
+                <span>Management Panel</span>
+
+            </div>
+
 
         </div>
 
 
-        <div class="sidebar-brand-text">
+        <!-- MINIMIZE -->
 
-            <h2>SUPPORT LOG</h2>
+        <button
+        class="sidebar-toggle"
+        id="sidebarToggle"
+        onclick="toggleSidebar()"
+        title="Minimize Sidebar"
+        >
 
-            <p>Management System</p>
+            <i class="fa-solid fa-chevron-left"></i>
 
-        </div>
+        </button>
+
 
     </div>
 
 
+    <!-- SIDEBAR MENU -->
+
     <nav class="sidebar-menu">
+
+
+        <div class="menu-title">
+
+            Main Menu
+
+        </div>
 
 
         <!-- DASHBOARD -->
 
         <a
-        href="dashboard.html"
-        class="sidebar-link"
+        href="/dashboard.html"
+        class="menu-link"
         >
 
-            <i class="fa-solid fa-gauge-high"></i>
+            <i class="fa-solid fa-house"></i>
 
             <span>Dashboard</span>
 
@@ -2044,8 +2554,8 @@ id="sidebar"
         <!-- NEW ENTRY -->
 
         <a
-        href="dashboard/new-entry.html"
-        class="sidebar-link"
+        href="/dashboard/new-entry.html"
+        class="menu-link"
         >
 
             <i class="fa-solid fa-plus-circle"></i>
@@ -2058,8 +2568,8 @@ id="sidebar"
         <!-- PENDING SUPPORT -->
 
         <a
-        href="dashboard/pending-support.html"
-        class="sidebar-link"
+        href="/dashboard/pending-support.html"
+        class="menu-link"
         >
 
             <i class="fa-solid fa-headset"></i>
@@ -2072,22 +2582,22 @@ id="sidebar"
         <!-- PENDING CALL -->
 
         <a
-        href="dashboard/pending-call.html"
-        class="sidebar-link"
+        href="/dashboard/pending-call.html"
+        class="menu-link"
         >
 
-            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-phone-volume"></i>
 
             <span>Pending Call</span>
 
         </a>
 
 
-        <!-- HISTORY -->
+        <!-- HISTORY ACTIVE -->
 
         <a
-        href="dashboard/history.html"
-        class="sidebar-link active"
+        href="/dashboard/history.html"
+        class="menu-link active"
         >
 
             <i class="fa-solid fa-clock-rotate-left"></i>
@@ -2100,8 +2610,8 @@ id="sidebar"
         <!-- USER ACCOUNT -->
 
         <a
-        href="dashboard/user-account.html"
-        class="sidebar-link"
+        href="/dashboard/user-account.html"
+        class="menu-link"
         >
 
             <i class="fa-solid fa-user-gear"></i>
@@ -2114,19 +2624,39 @@ id="sidebar"
     </nav>
 
 
-    <div class="sidebar-bottom">
+    <!-- SIDEBAR FOOTER -->
+
+    <div class="sidebar-footer">
 
 
-        <button
-        class="sidebar-logout"
-        onclick="logoutUser()"
-        >
+        <div class="user-mini">
 
-            <i class="fa-solid fa-right-from-bracket"></i>
 
-            <span>Logout</span>
+            <div class="user-mini-icon">
 
-        </button>
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+
+            <div class="user-mini-info">
+
+                <strong id="sidebarUser">
+
+                    User
+
+                </strong>
+
+                <small>
+
+                    Logged In
+
+                </small>
+
+            </div>
+
+
+        </div>
 
 
     </div>
@@ -2136,15 +2666,20 @@ id="sidebar"
 
 
 <!-- =====================================================
-     MAIN AREA
+     MAIN CONTENT
 ===================================================== -->
 
-<main class="main-area">
+<main
+class="main-content"
+>
 
 
-<!-- =====================================================
+<div class="container">
+
+
+<!-- ===================================================
      HEADER
-===================================================== -->
+=================================================== -->
 
 <div class="header">
 
@@ -2206,9 +2741,9 @@ id="sidebar"
 </div>
 
 
-<!-- =====================================================
+<!-- ===================================================
      USER BAR
-===================================================== -->
+=================================================== -->
 
 <div class="user-bar">
 
@@ -2223,7 +2758,9 @@ id="sidebar"
         class="user-name"
         id="loggedUser"
         >
+
             User
+
         </span>
 
     </div>
@@ -2241,9 +2778,9 @@ id="sidebar"
 </div>
 
 
-<!-- =====================================================
+<!-- ===================================================
      FILTER AREA
-===================================================== -->
+=================================================== -->
 
 <div class="filter-area">
 
@@ -2273,7 +2810,9 @@ id="sidebar"
             <i class="fa-regular fa-calendar"></i>
 
             <span class="filter-label">
+
                 Last Days
+
             </span>
 
             <input
@@ -2290,9 +2829,7 @@ id="sidebar"
 
         <div class="date-box">
 
-            <label>
-                From
-            </label>
+            <label>From</label>
 
             <input
             type="date"
@@ -2305,9 +2842,7 @@ id="sidebar"
 
         <div class="date-box">
 
-            <label>
-                To
-            </label>
+            <label>To</label>
 
             <input
             type="date"
@@ -2325,11 +2860,15 @@ id="sidebar"
         >
 
             <option value="all">
+
                 All
+
             </option>
 
             <option value="completed">
+
                 Completed
+
             </option>
 
         </select>
@@ -2353,9 +2892,9 @@ id="sidebar"
 </div>
 
 
-<!-- =====================================================
+<!-- ===================================================
      CONTENT
-===================================================== -->
+=================================================== -->
 
 <div class="content-card">
 
@@ -2400,12 +2939,15 @@ id="sidebar"
 </div>
 
 
+</div>
+
+
 </main>
 
 
-<!-- =====================================================
+<!-- ===================================================
      VIEW MODAL
-===================================================== -->
+=================================================== -->
 
 <div
 class="modal"
@@ -2640,9 +3182,9 @@ onclick="outsideModal(event)"
 </div>
 
 
-<!-- =====================================================
+<!-- ===================================================
      TOAST
-===================================================== -->
+=================================================== -->
 
 <div
 class="toast"
@@ -2684,6 +3226,8 @@ function(){
 
     loadUser();
 
+    loadSidebarState();
+
     loadData();
 
 }
@@ -2692,55 +3236,134 @@ function(){
 
 
 /* =====================================================
-   SIDEBAR
+   SIDEBAR TOGGLE
 ===================================================== */
 
 function toggleSidebar(){
 
-    document
-    .getElementById("sidebar")
-    .classList.toggle("open");
+    const sidebar =
 
-    document
-    .getElementById("sidebarOverlay")
-    .classList.toggle("show");
-
-}
+        document.getElementById(
+            "sidebar"
+        );
 
 
-function closeSidebar(){
+    sidebar.classList.toggle(
+        "collapsed"
+    );
 
-    document
-    .getElementById("sidebar")
-    .classList.remove("open");
 
-    document
-    .getElementById("sidebarOverlay")
-    .classList.remove("show");
+    const isCollapsed =
+
+        sidebar.classList.contains(
+            "collapsed"
+        );
+
+
+    localStorage.setItem(
+
+        "sidebarCollapsed",
+
+        isCollapsed
+        ? "true"
+        : "false"
+
+    );
 
 }
 
 
 /* =====================================================
-   LOGOUT
+   LOAD SIDEBAR STATE
 ===================================================== */
 
-function logoutUser(){
+function loadSidebarState(){
 
-    localStorage.removeItem("username");
+    const sidebar =
 
-    localStorage.removeItem("userName");
+        document.getElementById(
+            "sidebar"
+        );
 
-    localStorage.removeItem("name");
 
-    localStorage.removeItem("token");
+    const savedState =
 
-    localStorage.removeItem("deviceToken");
+        localStorage.getItem(
+            "sidebarCollapsed"
+        );
 
-    sessionStorage.clear();
 
-    window.location.href =
-        "../index.html";
+    if(
+
+        savedState === "true"
+
+    ){
+
+        sidebar.classList.add(
+            "collapsed"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE SIDEBAR
+===================================================== */
+
+function toggleMobileSidebar(){
+
+    const sidebar =
+
+        document.getElementById(
+            "sidebar"
+        );
+
+
+    const overlay =
+
+        document.getElementById(
+            "sidebarOverlay"
+        );
+
+
+    sidebar.classList.toggle(
+        "mobile-open"
+    );
+
+
+    overlay.classList.toggle(
+        "show"
+    );
+
+}
+
+
+function closeMobileSidebar(){
+
+    const sidebar =
+
+        document.getElementById(
+            "sidebar"
+        );
+
+
+    const overlay =
+
+        document.getElementById(
+            "sidebarOverlay"
+        );
+
+
+    sidebar.classList.remove(
+        "mobile-open"
+    );
+
+
+    overlay.classList.remove(
+        "show"
+    );
 
 }
 
@@ -2753,13 +3376,21 @@ function loadUser(){
 
     const username =
 
-        localStorage.getItem("username") ||
+        localStorage.getItem(
+            "username"
+        ) ||
 
-        localStorage.getItem("userName") ||
+        localStorage.getItem(
+            "userName"
+        ) ||
 
-        localStorage.getItem("name") ||
+        localStorage.getItem(
+            "name"
+        ) ||
 
-        sessionStorage.getItem("username") ||
+        sessionStorage.getItem(
+            "username"
+        ) ||
 
         "User";
 
@@ -2767,6 +3398,13 @@ function loadUser(){
     document.getElementById(
 
         "loggedUser"
+
+    ).textContent = username;
+
+
+    document.getElementById(
+
+        "sidebarUser"
 
     ).textContent = username;
 
@@ -2782,14 +3420,11 @@ async function loadData(){
     const content =
 
         document.getElementById(
-
             "content"
-
         );
 
 
     content.className =
-
         "loading";
 
 
@@ -2872,7 +3507,6 @@ async function loadData(){
 
 
         content.className =
-
             "empty";
 
 
@@ -2912,9 +3546,7 @@ function applyFilters(){
     const search =
 
         document.getElementById(
-
             "searchInput"
-
         )
 
         .value
@@ -2927,9 +3559,7 @@ function applyFilters(){
     const lastDaysValue =
 
         document.getElementById(
-
             "lastDays"
-
         ).value;
 
 
@@ -2940,11 +3570,8 @@ function applyFilters(){
         ?
 
         parseInt(
-
             lastDaysValue,
-
             10
-
         )
 
         :
@@ -2955,18 +3582,14 @@ function applyFilters(){
     const fromDate =
 
         document.getElementById(
-
             "fromDate"
-
         ).value;
 
 
     const toDate =
 
         document.getElementById(
-
             "toDate"
-
         ).value;
 
 
@@ -3082,6 +3705,8 @@ function applyFilters(){
                     );
 
 
+                /* LAST DAYS */
+
                 if(
 
                     lastDays !== null &&
@@ -3123,9 +3748,7 @@ function applyFilters(){
                     const start =
 
                         new Date(
-
                             today
-
                         );
 
 
@@ -3168,6 +3791,8 @@ function applyFilters(){
                 }
 
 
+                /* FROM */
+
                 if(
 
                     fromDate
@@ -3200,6 +3825,8 @@ function applyFilters(){
 
                 }
 
+
+                /* TO */
 
                 if(
 
@@ -3261,9 +3888,7 @@ function renderData(data){
     const content =
 
         document.getElementById(
-
             "content"
-
         );
 
 
@@ -3286,7 +3911,6 @@ function renderData(data){
 
 
         content.className =
-
             "empty";
 
 
@@ -3309,7 +3933,6 @@ function renderData(data){
 
 
     content.className =
-
         "table-wrapper";
 
 
@@ -3700,11 +4323,7 @@ function formatDateDMY(value){
 
     const text =
 
-        String(
-
-            value
-
-        ).trim();
+        String(value).trim();
 
 
     let match =
@@ -3724,31 +4343,11 @@ function formatDateDMY(value){
 
         return (
 
-            String(
-
-                match[1]
-
-            ).padStart(
-
-                2,
-
-                "0"
-
-            ) +
+            String(match[1]).padStart(2,"0") +
 
             "-" +
 
-            String(
-
-                match[2]
-
-            ).padStart(
-
-                2,
-
-                "0"
-
-            ) +
+            String(match[2]).padStart(2,"0") +
 
             "-" +
 
@@ -3778,31 +4377,11 @@ function formatDateDMY(value){
 
         return (
 
-            String(
-
-                match[2]
-
-            ).padStart(
-
-                2,
-
-                "0"
-
-            ) +
+            String(match[2]).padStart(2,"0") +
 
             "-" +
 
-            String(
-
-                match[1]
-
-            ).padStart(
-
-                2,
-
-                "0"
-
-            ) +
+            String(match[1]).padStart(2,"0") +
 
             "-" +
 
@@ -3832,31 +4411,11 @@ function formatDateDMY(value){
 
         return (
 
-            String(
-
-                match[3]
-
-            ).padStart(
-
-                2,
-
-                "0"
-
-            ) +
+            String(match[3]).padStart(2,"0") +
 
             "-" +
 
-            String(
-
-                match[2]
-
-            ).padStart(
-
-                2,
-
-                "0"
-
-            ) +
+            String(match[2]).padStart(2,"0") +
 
             "-" +
 
@@ -3894,11 +4453,7 @@ function parseDate(value){
 
     const text =
 
-        String(
-
-            value
-
-        ).trim();
+        String(value).trim();
 
 
     let match =
@@ -3922,7 +4477,7 @@ function parseDate(value){
 
                 Number(match[3]),
 
-                Number(match[2]) - 1,
+                Number(match[2])-1,
 
                 Number(match[1])
 
@@ -3967,7 +4522,7 @@ function parseDate(value){
 
                 Number(match[3]),
 
-                Number(match[1]) - 1,
+                Number(match[1])-1,
 
                 Number(match[2])
 
@@ -4012,7 +4567,7 @@ function parseDate(value){
 
                 Number(match[1]),
 
-                Number(match[2]) - 1,
+                Number(match[2])-1,
 
                 Number(match[3])
 
@@ -4038,11 +4593,7 @@ function parseDate(value){
 
     const date =
 
-        new Date(
-
-            text
-
-        );
+        new Date(text);
 
 
     return isNaN(
@@ -4101,9 +4652,7 @@ function clearFilters(){
 
         "statusFilter"
 
-    ).value =
-
-        "all";
+    ).value = "all";
 
 
     applyFilters();
@@ -4117,10 +4666,8 @@ function clearFilters(){
 
 function goDashboard(){
 
-
     window.location.href =
-
-        "dashboard.html";
+        "/dashboard.html";
 
 }
 
@@ -4135,9 +4682,7 @@ function showToast(message){
     const toast =
 
         document.getElementById(
-
             "toast"
-
         );
 
 
@@ -4147,9 +4692,7 @@ function showToast(message){
 
 
     toast.classList.add(
-
         "show"
-
     );
 
 
@@ -4158,9 +4701,7 @@ function showToast(message){
         function(){
 
             toast.classList.remove(
-
                 "show"
-
             );
 
         },
@@ -4188,43 +4729,28 @@ function escapeHtml(value){
     )
 
     .replace(
-
         /&/g,
-
         "&amp;"
-
     )
 
     .replace(
-
         /</g,
-
         "&lt;"
-
     )
 
     .replace(
-
         />/g,
-
         "&gt;"
-
     )
 
     .replace(
-
         /"/g,
-
         "&quot;"
-
     )
 
     .replace(
-
         /'/g,
-
         "&#039;"
-
     );
 
 }
@@ -4251,11 +4777,46 @@ function(event){
 
         closeModal();
 
-        closeSidebar();
-
     }
 
 }
+
+);
+
+
+/* =====================================================
+   CLOSE MOBILE SIDEBAR WHEN CLICKING LINK
+===================================================== */
+
+document.querySelectorAll(
+
+    ".menu-link"
+
+).forEach(
+
+    function(link){
+
+        link.addEventListener(
+
+            "click",
+
+            function(){
+
+                if(
+
+                    window.innerWidth <= 700
+
+                ){
+
+                    closeMobileSidebar();
+
+                }
+
+            }
+
+        );
+
+    }
 
 );
 

@@ -10,32 +10,26 @@
 <title>Pending Call | LINK4 COMMUNICATION</title>
 
 <script>
-
 (function(){
 
     if(localStorage.getItem("loggedIn") !== "true"){
-
         window.location.replace("../index.html");
-
     }
 
 })();
-
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-<link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet"
->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
 
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
 
@@ -56,11 +50,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 ===================================================== */
 
 body{
-
     min-height:100vh;
-
     color:#222;
-
     background:
     linear-gradient(
         135deg,
@@ -68,7 +59,6 @@ body{
         #006a4e,
         #008f6b
     );
-
 }
 
 
@@ -77,47 +67,30 @@ body{
 ===================================================== */
 
 .sidebar{
-
     position:fixed;
-
     left:0;
     top:0;
-
     width:250px;
     height:100vh;
-
     background:
     linear-gradient(
         180deg,
         #003d2d,
         #005c43
     );
-
     color:white;
-
     z-index:9999;
-
     transition:
     width .35s ease,
     transform .35s ease;
-
     box-shadow:
     5px 0 25px
     rgba(0,0,0,.20);
-
     overflow:hidden;
-
 }
 
-
-/* =====================================================
-   COLLAPSED SIDEBAR
-===================================================== */
-
 body.sidebar-collapsed .sidebar{
-
     width:78px;
-
 }
 
 
@@ -126,101 +99,57 @@ body.sidebar-collapsed .sidebar{
 ===================================================== */
 
 .sidebar-header{
-
     height:80px;
-
     display:flex;
-
     align-items:center;
-
     padding:0 18px;
-
     gap:13px;
-
     border-bottom:
     1px solid
     rgba(255,255,255,.12);
-
     white-space:nowrap;
-
 }
 
-
-/* =====================================================
-   SIDEBAR LOGO
-===================================================== */
-
 .sidebar-logo{
-
     min-width:44px;
-
     width:44px;
     height:44px;
-
     border-radius:13px;
-
     background:
     linear-gradient(
         135deg,
         #00a878,
         #006a4e
     );
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     font-size:21px;
-
     box-shadow:
     0 7px 18px
     rgba(0,0,0,.20);
-
 }
-
-
-/* =====================================================
-   SIDEBAR BRAND
-===================================================== */
 
 .sidebar-brand{
-
     font-size:15px;
-
     font-weight:700;
-
     transition:
     opacity .2s ease;
-
 }
-
 
 .sidebar-brand small{
-
     display:block;
-
     font-size:9px;
-
     font-weight:400;
-
     opacity:.7;
-
     margin-top:2px;
-
 }
-
 
 body.sidebar-collapsed
 .sidebar-brand{
-
     opacity:0;
-
     width:0;
-
     overflow:hidden;
-
 }
 
 
@@ -229,95 +158,56 @@ body.sidebar-collapsed
 ===================================================== */
 
 .sidebar-menu{
-
     padding:20px 12px;
-
 }
-
 
 .sidebar-menu a{
-
     height:48px;
-
     display:flex;
-
     align-items:center;
-
     gap:15px;
-
     padding:0 14px;
-
     margin-bottom:8px;
-
     border-radius:12px;
-
     color:
     rgba(255,255,255,.80);
-
     text-decoration:none;
-
     white-space:nowrap;
-
     transition:.25s;
-
 }
-
 
 .sidebar-menu a:hover{
-
     background:
     rgba(255,255,255,.12);
-
     color:white;
-
     transform:translateX(3px);
-
 }
 
-
 .sidebar-menu a.active{
-
     background:white;
-
     color:#006a4e;
-
     box-shadow:
     0 7px 20px
     rgba(0,0,0,.15);
-
 }
-
 
 .sidebar-menu a i{
-
     min-width:22px;
-
     width:22px;
-
     text-align:center;
-
     font-size:17px;
-
 }
-
 
 .menu-text{
-
     transition:
     opacity .2s ease;
-
 }
-
 
 body.sidebar-collapsed
 .menu-text{
-
     opacity:0;
-
     width:0;
-
     overflow:hidden;
-
 }
 
 
@@ -326,64 +216,37 @@ body.sidebar-collapsed
 ===================================================== */
 
 .sidebar-bottom{
-
     position:absolute;
-
     bottom:20px;
-
     left:12px;
     right:12px;
-
 }
-
 
 .sidebar-bottom button{
-
     width:100%;
-
     height:46px;
-
     border:none;
-
     border-radius:12px;
-
     background:
     rgba(229,57,53,.15);
-
     color:#ffb5b3;
-
     cursor:pointer;
-
     display:flex;
-
     align-items:center;
-
     gap:15px;
-
     padding:0 14px;
-
     font-weight:600;
-
     white-space:nowrap;
-
 }
-
 
 .sidebar-bottom button:hover{
-
     background:#e53935;
-
     color:white;
-
 }
 
-
 .sidebar-bottom button i{
-
     min-width:22px;
-
     text-align:center;
-
 }
 
 
@@ -392,24 +255,16 @@ body.sidebar-collapsed
 ===================================================== */
 
 .main-content{
-
     margin-left:250px;
-
     min-height:100vh;
-
     padding:20px;
-
     transition:
     margin-left .35s ease;
-
 }
-
 
 body.sidebar-collapsed
 .main-content{
-
     margin-left:78px;
-
 }
 
 
@@ -418,127 +273,72 @@ body.sidebar-collapsed
 ===================================================== */
 
 .topbar{
-
     background:
     rgba(255,255,255,.97);
-
     border-radius:18px;
-
-    padding:12px 16px;
-
+    padding:14px 18px;
     display:flex;
-
+    justify-content:space-between;
     align-items:center;
-
     gap:15px;
-
-    margin-bottom:18px;
-
+    margin-bottom:20px;
     box-shadow:
     0 12px 35px
     rgba(0,0,0,.18);
-
 }
-
 
 .menu-toggle{
-
-    width:43px;
-    height:43px;
-
+    width:45px;
+    height:45px;
     border:none;
-
     border-radius:12px;
-
     background:#e7f8f2;
-
     color:#006a4e;
-
     cursor:pointer;
-
-    font-size:18px;
-
+    font-size:19px;
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     transition:.3s;
-
 }
-
 
 .menu-toggle:hover{
-
     background:#006a4e;
-
     color:white;
-
+    transform:scale(1.05);
 }
-
 
 .topbar-title{
-
     flex:1;
-
 }
-
 
 .topbar-title h2{
-
-    font-size:17px;
-
+    font-size:18px;
     color:#006a4e;
-
 }
-
 
 .topbar-title p{
-
-    font-size:10px;
-
+    font-size:11px;
     color:#777;
-
 }
-
-
-/* =====================================================
-   USER
-===================================================== */
 
 .topbar-user{
-
     display:flex;
-
     align-items:center;
-
-    gap:9px;
-
-    font-size:12px;
-
+    gap:10px;
+    font-size:13px;
     font-weight:600;
-
 }
 
-
 .topbar-user-icon{
-
-    width:35px;
-    height:35px;
-
+    width:38px;
+    height:38px;
     border-radius:50%;
-
     background:#e7f8f2;
-
     color:#006a4e;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
 }
 
 
@@ -547,13 +347,9 @@ body.sidebar-collapsed
 ===================================================== */
 
 .container{
-
     width:100%;
-
     max-width:1600px;
-
     margin:auto;
-
 }
 
 
@@ -562,25 +358,18 @@ body.sidebar-collapsed
 ===================================================== */
 
 .control-bar{
-
     background:white;
-
-    padding:12px 15px;
-
-    border-radius:16px;
-
-    margin-bottom:18px;
-
+    padding:15px;
+    border-radius:18px;
+    margin-bottom:20px;
     display:flex;
-
+    justify-content:space-between;
     align-items:center;
-
-    gap:10px;
-
+    gap:12px;
+    flex-wrap:wrap;
     box-shadow:
     0 12px 35px
     rgba(0,0,0,.14);
-
 }
 
 
@@ -589,210 +378,81 @@ body.sidebar-collapsed
 ===================================================== */
 
 .search-box{
-
     flex:1;
-
-    min-width:180px;
-
+    min-width:250px;
     position:relative;
-
 }
-
 
 .search-box i{
-
     position:absolute;
-
-    left:13px;
-
+    left:14px;
     top:50%;
-
     transform:translateY(-50%);
-
     color:#008f6b;
-
-    font-size:13px;
-
 }
-
 
 .search-box input{
-
     width:100%;
-
-    height:40px;
-
-    padding:8px 12px 8px 38px;
-
+    padding:10px 12px 10px 42px;
     border:
-    1px solid
-    #dce9e4;
-
-    border-radius:9px;
-
+    2px solid
+    #e3eee9;
+    border-radius:10px;
     outline:none;
-
     font-size:12px;
-
+    height:42px;
 }
-
 
 .search-box input:focus{
-
     border-color:#00a878;
-
 }
 
 
 /* =====================================================
-   DATE FILTER
+   FILTER AREA
 ===================================================== */
 
-.date-filter{
-
+.filter-area{
     display:flex;
-
     align-items:center;
-
-    gap:7px;
-
+    justify-content:flex-end;
+    gap:8px;
     flex-wrap:wrap;
-
 }
 
-
-.date-filter input{
-
-    width:125px;
-
-    height:40px;
-
-    padding:8px 10px;
-
-    border:
-    1px solid
-    #dce9e4;
-
-    border-radius:9px;
-
-    outline:none;
-
-    font-size:11px;
-
-}
-
-
-.date-filter input:focus{
-
-    border-color:#00a878;
-
-}
-
-
-.date-filter label{
-
-    font-size:11px;
-
-    font-weight:600;
-
-    color:#555;
-
-}
-
-
-/* =====================================================
-   LAST DAYS
-===================================================== */
-
-.day-filter{
-
+.filter-group{
     display:flex;
-
     align-items:center;
-
-    gap:7px;
-
+    gap:6px;
 }
 
-
-.day-filter label{
-
+.filter-group label{
     font-size:11px;
-
-    font-weight:600;
-
-    color:#555;
-
-    white-space:nowrap;
-
-}
-
-
-.day-filter input{
-
-    width:80px;
-
-    height:40px;
-
-    padding:8px;
-
-    border:
-    1px solid
-    #dce9e4;
-
-    border-radius:9px;
-
-    outline:none;
-
-    text-align:center;
-
-    font-size:12px;
-
-    font-weight:600;
-
-}
-
-
-.day-filter input:focus{
-
-    border-color:#00a878;
-
-}
-
-
-/* =====================================================
-   ALL BUTTON
-===================================================== */
-
-.all-btn{
-
-    height:40px;
-
-    padding:0 14px;
-
-    border:none;
-
-    border-radius:9px;
-
-    background:#e7f8f2;
-
-    color:#006a4e;
-
-    cursor:pointer;
-
-    font-size:12px;
-
     font-weight:700;
-
+    color:#555;
+    white-space:nowrap;
 }
 
+.filter-group input{
+    width:120px;
+    height:40px;
+    padding:8px 10px;
+    border:
+    2px solid
+    #e3eee9;
+    border-radius:9px;
+    outline:none;
+    font-size:11px;
+    font-weight:600;
+}
 
-.all-btn:hover{
+.filter-group input:focus{
+    border-color:#00a878;
+}
 
-    background:#006a4e;
-
-    color:white;
-
+.last-days-input{
+    width:75px !important;
+    text-align:center;
 }
 
 
@@ -801,366 +461,203 @@ body.sidebar-collapsed
 ===================================================== */
 
 .table-container{
-
     background:
     rgba(255,255,255,.97);
-
-    border-radius:20px;
-
+    border-radius:22px;
     overflow:hidden;
-
     box-shadow:
     0 20px 50px
     rgba(0,0,0,.20);
-
 }
 
-
 .table-header{
-
-    padding:15px 20px;
-
+    padding:20px 25px;
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     border-bottom:
     1px solid
     #e9f1ee;
-
 }
-
 
 .table-header h2{
-
-    font-size:17px;
-
-    color:#333;
-
+    font-size:20px;
 }
 
-
 .pending-count{
-
     background:
     linear-gradient(
         135deg,
         #006a4e,
         #00a878
     );
-
     color:white;
-
-    padding:6px 12px;
-
+    padding:7px 14px;
     border-radius:20px;
-
-    font-size:11px;
-
+    font-size:13px;
     font-weight:700;
-
 }
-
-
-/* =====================================================
-   TABLE SCROLL
-===================================================== */
 
 .table-scroll{
-
     width:100%;
-
     overflow-x:auto;
-
 }
-
 
 table{
-
     width:100%;
-
     border-collapse:separate;
-
     border-spacing:0;
-
     min-width:1100px;
-
 }
 
-
 thead{
-
     background:
     linear-gradient(
         135deg,
         #007a59,
         #009b70
     );
-
     color:white;
-
 }
-
 
 th{
-
-    padding:13px 12px;
-
-    font-size:12px;
-
+    padding:15px 13px;
+    font-size:13px;
     text-align:left;
-
     white-space:nowrap;
-
 }
 
-
 td{
-
-    padding:10px 12px;
-
+    padding:12px;
     border-bottom:
     1px solid
     #edf2f0;
-
-    font-size:12px;
-
+    font-size:13px;
     vertical-align:middle;
-
 }
-
 
 tbody tr:hover{
-
     background:#f7fffb;
-
 }
-
-
-/* =====================================================
-   CELLS
-===================================================== */
 
 .cell-content{
-
     display:flex;
-
     align-items:center;
-
-    gap:8px;
-
+    gap:9px;
 }
-
 
 .cell-icon{
-
-    width:29px;
-    height:29px;
-
-    border-radius:8px;
-
+    width:32px;
+    height:32px;
+    border-radius:9px;
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     background:rgba(255,255,255,.75);
-
     flex-shrink:0;
-
 }
-
 
 .customer-cell{
-
     background:#e5f8f1;
-
     color:#006a4e;
-
     font-weight:700;
-
-    border-radius:9px;
-
+    border-radius:10px;
 }
-
 
 .date-cell{
-
     background:#edf5ff;
-
     color:#1769aa;
-
-    border-radius:9px;
-
+    border-radius:10px;
 }
-
 
 .problem-cell{
-
     background:#fff8e4;
-
     color:#795500;
-
-    border-radius:9px;
-
+    border-radius:10px;
     max-width:300px;
-
 }
-
 
 .reference-cell{
-
     background:#f5eaff;
-
     color:#7432a8;
-
-    border-radius:9px;
-
+    border-radius:10px;
 }
-
 
 .support-cell{
-
     background:#e4f9f6;
-
     color:#00796b;
-
-    border-radius:9px;
-
+    border-radius:10px;
     font-weight:600;
-
 }
-
 
 .support-work-cell{
-
     background:#fff0e5;
-
     color:#b85c00;
-
-    border-radius:9px;
-
+    border-radius:10px;
     font-weight:600;
-
 }
 
-
-/* =====================================================
-   VIEW BUTTON
-===================================================== */
-
 .view-btn{
-
     border:none;
-
     background:
     linear-gradient(
         135deg,
         #006a4e,
         #00a878
     );
-
     color:white;
-
-    padding:8px 13px;
-
-    border-radius:9px;
-
+    padding:10px 16px;
+    border-radius:10px;
     cursor:pointer;
-
-    font-size:11px;
-
+    font-size:13px;
     font-weight:700;
-
 }
 
-
 .view-btn:hover{
-
     background:#e53935;
-
 }
 
 
 /* =====================================================
-   LOADING
+   LOADING / EMPTY
 ===================================================== */
 
 .loading-state{
-
-    padding:60px 20px;
-
+    padding:70px 20px;
     text-align:center;
-
 }
-
 
 .spinner{
-
-    font-size:35px;
-
+    font-size:38px;
     color:#008f6b;
-
-    margin-bottom:12px;
-
+    margin-bottom:15px;
 }
-
 
 .loading-state p{
-
     color:#777;
-
-    font-size:13px;
-
 }
-
-
-/* =====================================================
-   EMPTY
-===================================================== */
 
 .empty-state{
-
     display:none;
-
-    padding:60px 20px;
-
+    padding:70px 20px;
     text-align:center;
-
 }
-
 
 .empty-state.show{
-
     display:block;
-
 }
 
-
 .empty-icon{
-
-    width:80px;
-    height:80px;
-
+    width:85px;
+    height:85px;
     border-radius:50%;
-
     background:#e7f8f2;
-
     color:#008f6b;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
-    font-size:35px;
-
-    margin:0 auto 18px;
-
+    font-size:38px;
+    margin:0 auto 20px;
 }
 
 
@@ -1169,44 +666,166 @@ tbody tr:hover{
 ===================================================== */
 
 .status{
-
     display:none;
-
-    padding:11px 15px;
-
-    border-radius:10px;
-
-    margin-bottom:15px;
-
-    font-size:12px;
-
+    padding:13px 18px;
+    border-radius:12px;
+    margin-bottom:20px;
+    font-size:13px;
     font-weight:600;
-
 }
-
 
 .status.show{
-
     display:block;
-
 }
-
 
 .status.error{
-
     background:#fdecec;
-
     color:#c62828;
+}
 
+.status.success{
+    background:#e7f8f2;
+    color:#006a4e;
 }
 
 
-.status.success{
+/* =====================================================
+   CUSTOM POPUP
+===================================================== */
 
-    background:#e7f8f2;
+.custom-popup{
+    position:fixed;
+    inset:0;
+    z-index:999999;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:rgba(0,35,25,.65);
+    backdrop-filter:blur(6px);
+}
 
-    color:#006a4e;
+.custom-popup.show{
+    display:flex;
+}
 
+.custom-popup-box{
+    width:100%;
+    max-width:430px;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:
+    0 25px 80px
+    rgba(0,0,0,.30);
+    animation:
+    popupIn .25s ease;
+}
+
+@keyframes popupIn{
+
+    from{
+        opacity:0;
+        transform:scale(.88)
+        translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1)
+        translateY(0);
+    }
+
+}
+
+.custom-popup-header{
+    padding:18px 20px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:white;
+    background:
+    linear-gradient(
+        135deg,
+        #006a4e,
+        #00a878
+    );
+}
+
+.custom-popup-header.error{
+    background:
+    linear-gradient(
+        135deg,
+        #c62828,
+        #e53935
+    );
+}
+
+.custom-popup-header.warning{
+    background:
+    linear-gradient(
+        135deg,
+        #d88900,
+        #f0a500
+    );
+}
+
+.custom-popup-icon{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:rgba(255,255,255,.18);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:19px;
+}
+
+.custom-popup-header h3{
+    font-size:16px;
+}
+
+.custom-popup-body{
+    padding:25px 20px 10px;
+    text-align:center;
+}
+
+.custom-popup-message{
+    color:#555;
+    font-size:14px;
+    line-height:1.7;
+    word-break:break-word;
+}
+
+.custom-popup-footer{
+    padding:15px 20px 20px;
+    display:flex;
+    justify-content:center;
+}
+
+.custom-popup-ok{
+    border:none;
+    min-width:110px;
+    padding:11px 22px;
+    border-radius:10px;
+    background:
+    linear-gradient(
+        135deg,
+        #006a4e,
+        #00a878
+    );
+    color:white;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.custom-popup-ok:hover{
+    transform:translateY(-2px);
+    box-shadow:
+    0 7px 18px
+    rgba(0,106,78,.25);
 }
 
 
@@ -1215,333 +834,191 @@ tbody tr:hover{
 ===================================================== */
 
 .modal{
-
     display:none;
-
     position:fixed;
-
     inset:0;
-
     z-index:99999;
-
     background:
     rgba(0,40,30,.72);
-
     backdrop-filter:blur(7px);
-
     padding:20px;
-
     align-items:center;
-
     justify-content:center;
-
 }
-
 
 .modal.show{
-
     display:flex;
-
 }
-
 
 .modal-box{
-
     width:100%;
-
     max-width:720px;
-
     max-height:90vh;
-
     overflow-y:auto;
-
     background:white;
-
     border-radius:22px;
-
 }
 
-
 .modal-header{
-
-    padding:18px 20px;
-
+    padding:20px 22px;
     color:white;
-
     background:
     linear-gradient(
         135deg,
         #006a4e,
         #00a878
     );
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
 }
-
 
 .close-modal{
-
-    width:36px;
-    height:36px;
-
+    width:38px;
+    height:38px;
     border:none;
-
-    border-radius:9px;
-
+    border-radius:10px;
     background:
     rgba(255,255,255,.18);
-
     color:white;
-
     cursor:pointer;
-
-    font-size:17px;
-
+    font-size:18px;
 }
-
 
 .modal-body{
-
-    padding:20px;
-
+    padding:22px;
 }
-
 
 .info-grid{
-
     display:grid;
-
     grid-template-columns:
     repeat(2,1fr);
-
-    gap:12px;
-
+    gap:14px;
 }
-
 
 .info-card{
-
-    padding:13px;
-
-    border-radius:12px;
-
+    padding:15px;
+    border-radius:13px;
 }
-
 
 .info-card small{
-
     display:block;
-
-    font-size:10px;
-
+    font-size:11px;
     font-weight:700;
-
-    margin-bottom:5px;
-
+    margin-bottom:6px;
 }
-
 
 .info-card strong{
-
-    font-size:13px;
-
+    font-size:14px;
     word-break:break-word;
-
 }
-
 
 .info-customer{
-
     background:#e5f8f1;
-
     color:#006a4e;
-
 }
-
 
 .info-date{
-
     background:#edf5ff;
-
     color:#1769aa;
-
 }
-
 
 .info-problem{
-
     background:#fff8e4;
-
     color:#795500;
-
 }
-
 
 .info-reference{
-
     background:#f5eaff;
-
     color:#7432a8;
-
 }
-
 
 .info-support{
-
     background:#e4f9f6;
-
     color:#00796b;
-
 }
-
 
 .info-support-work{
-
     background:#fff0e5;
-
     color:#b85c00;
-
 }
 
-
 .call-form{
-
-    margin-top:18px;
-
-    padding-top:18px;
-
+    margin-top:20px;
+    padding-top:20px;
     border-top:
     1px solid
     #e9efed;
-
 }
-
 
 .form-group{
-
-    margin-bottom:14px;
-
+    margin-bottom:15px;
 }
-
 
 .form-group label{
-
     display:block;
-
-    font-size:12px;
-
+    font-size:13px;
     font-weight:700;
-
     color:#444;
-
-    margin-bottom:6px;
-
+    margin-bottom:7px;
 }
-
 
 .form-group input,
 .form-group textarea{
-
     width:100%;
-
     border:
-    1px solid
+    2px solid
     #e0ebe7;
-
-    border-radius:10px;
-
-    padding:11px;
-
+    border-radius:11px;
+    padding:12px;
     outline:none;
-
-    font-size:12px;
-
+    font-size:13px;
 }
-
 
 .form-group textarea{
-
-    min-height:100px;
-
+    min-height:110px;
     resize:vertical;
-
 }
-
 
 .call-person{
-
     background:#f3f7f5 !important;
-
     color:#006a4e;
-
     font-weight:700;
-
 }
-
 
 .modal-footer{
-
     display:flex;
-
     justify-content:flex-end;
-
     gap:10px;
-
-    margin-top:18px;
-
+    margin-top:20px;
 }
-
 
 .cancel-btn,
 .submit-call-btn{
-
     border:none;
-
-    padding:10px 16px;
-
-    border-radius:9px;
-
+    padding:12px 18px;
+    border-radius:10px;
     cursor:pointer;
-
     font-weight:700;
-
-    font-size:12px;
-
 }
-
 
 .cancel-btn{
-
     background:#f0f2f1;
-
     color:#555;
-
 }
 
-
 .submit-call-btn{
-
     background:
     linear-gradient(
         135deg,
         #006a4e,
         #00a878
     );
-
     color:white;
-
 }
 
-
 .submit-call-btn:disabled{
-
     opacity:.6;
-
 }
 
 
@@ -1549,138 +1026,64 @@ tbody tr:hover{
    MOBILE
 ===================================================== */
 
-@media(max-width:900px){
-
-    .control-bar{
-
-        flex-wrap:wrap;
-
-    }
-
-    .search-box{
-
-        flex-basis:100%;
-
-    }
-
-}
-
-
 @media(max-width:768px){
 
     .sidebar{
-
         width:250px;
-
         transform:
         translateX(-100%);
-
     }
-
 
     body.sidebar-mobile-open
     .sidebar{
-
         transform:
         translateX(0);
-
     }
-
 
     body.sidebar-collapsed
     .sidebar{
-
         width:250px;
-
     }
-
 
     .main-content,
     body.sidebar-collapsed
     .main-content{
-
         margin-left:0;
-
-        padding:10px;
-
+        padding:12px;
     }
-
 
     .topbar{
-
-        padding:10px;
-
+        padding:12px;
     }
-
 
     .topbar-title h2{
-
-        font-size:14px;
-
+        font-size:15px;
     }
 
-
-    .topbar-title p{
-
-        display:none;
-
-    }
-
-
-    .topbar-user{
-
-        font-size:10px;
-
-    }
-
-
-    .control-bar{
-
-        align-items:stretch;
-
-    }
-
-
-    .search-box{
-
-        min-width:100%;
-
-    }
-
-
-    .date-filter,
-    .day-filter{
-
-        flex:1;
-
-    }
-
-
-    .date-filter input{
-
+    .filter-area{
         width:100%;
-
+        justify-content:flex-start;
     }
 
-
-    .day-filter input{
-
-        width:70px;
-
+    .filter-group{
+        flex:1;
     }
 
+    .filter-group input{
+        width:100%;
+    }
+
+    .last-days-input{
+        width:80px !important;
+        flex:none !important;
+    }
 
     .info-grid{
-
         grid-template-columns:1fr;
-
     }
 
-
     .modal{
-
         padding:10px;
-
     }
 
 }
@@ -1755,10 +1158,7 @@ Pending Support
 </a>
 
 
-<a
-href="pending-call.html"
-class="active"
->
+<a href="pending-call.html" class="active">
 
 <i class="fa-solid fa-phone-volume"></i>
 
@@ -1780,25 +1180,12 @@ Support History
 </a>
 
 
-<a href="user-account.html">
-
-<i class="fa-solid fa-user-gear"></i>
-
-<span class="menu-text">
-User Account
-</span>
-
-</a>
-
 </nav>
 
 
 <div class="sidebar-bottom">
 
-<button
-type="button"
-onclick="logout()"
->
+<button type="button" onclick="logout()">
 
 <i class="fa-solid fa-right-from-bracket"></i>
 
@@ -1814,7 +1201,7 @@ Logout
 
 
 <!-- =====================================================
-     MAIN
+     MAIN CONTENT
 ===================================================== -->
 
 <main class="main-content">
@@ -1869,22 +1256,12 @@ User
 <div class="container">
 
 
-<!-- STATUS -->
-
-<div
-class="status"
-id="status"
-></div>
-
-
 <!-- =====================================================
      CONTROL BAR
 ===================================================== -->
 
 <div class="control-bar">
 
-
-<!-- SEARCH -->
 
 <div class="search-box">
 
@@ -1899,9 +1276,10 @@ placeholder="Search Customer ID, Problem, Reference, Support..."
 </div>
 
 
-<!-- FROM DATE -->
+<div class="filter-area">
 
-<div class="date-filter">
+
+<div class="filter-group">
 
 <label>
 From
@@ -1915,9 +1293,7 @@ id="fromDate"
 </div>
 
 
-<!-- TO DATE -->
-
-<div class="date-filter">
+<div class="filter-group">
 
 <label>
 To
@@ -1931,41 +1307,25 @@ id="toDate"
 </div>
 
 
-<!-- ALL -->
-
-<button
-class="all-btn"
-id="allBtn"
-type="button"
->
-
-All
-
-</button>
-
-
-<!-- LAST DAYS -->
-
-<div class="day-filter">
+<div class="filter-group">
 
 <label>
-
-<i class="fa-solid fa-calendar-days"></i>
-
 Last Days
-
 </label>
 
 <input
 type="number"
 id="daysInput"
-min="1"
+class="last-days-input"
+min="0"
 step="1"
 placeholder="All"
 >
 
 </div>
 
+
+</div>
 
 </div>
 
@@ -1982,7 +1342,6 @@ placeholder="All"
 <h2>
 Pending Call Requests
 </h2>
-
 
 <div
 class="pending-count"
@@ -2085,10 +1444,7 @@ Action
 
 </thead>
 
-
-<tbody
-id="callTableBody"
-></tbody>
+<tbody id="callTableBody"></tbody>
 
 </table>
 
@@ -2102,7 +1458,7 @@ id="callTableBody"
 
 
 <!-- =====================================================
-     MODAL
+     CALL MODAL
 ===================================================== -->
 
 <div
@@ -2149,9 +1505,7 @@ type="button"
 CUSTOMER ID
 </small>
 
-<strong
-id="modalCustomer"
->
+<strong id="modalCustomer">
 -
 </strong>
 
@@ -2164,9 +1518,7 @@ id="modalCustomer"
 DATE
 </small>
 
-<strong
-id="modalDate"
->
+<strong id="modalDate">
 -
 </strong>
 
@@ -2179,9 +1531,7 @@ id="modalDate"
 PROBLEM
 </small>
 
-<strong
-id="modalProblem"
->
+<strong id="modalProblem">
 -
 </strong>
 
@@ -2194,9 +1544,7 @@ id="modalProblem"
 REFERENCE
 </small>
 
-<strong
-id="modalReference"
->
+<strong id="modalReference">
 -
 </strong>
 
@@ -2209,9 +1557,7 @@ id="modalReference"
 SUPPORT
 </small>
 
-<strong
-id="modalSupport"
->
+<strong id="modalSupport">
 -
 </strong>
 
@@ -2224,9 +1570,7 @@ id="modalSupport"
 SUPPORT WORK
 </small>
 
-<strong
-id="modalSupportWork"
->
+<strong id="modalSupportWork">
 -
 </strong>
 
@@ -2249,7 +1593,6 @@ Call Person
 
 </label>
 
-
 <input
 type="text"
 id="callPerson"
@@ -2269,7 +1612,6 @@ readonly
 Call Work
 
 </label>
-
 
 <textarea
 id="callWork"
@@ -2310,9 +1652,74 @@ Submit Call
 
 </div>
 
+
 </div>
 
 </div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     CUSTOM POPUP
+===================================================== -->
+
+<div
+class="custom-popup"
+id="customPopup"
+>
+
+<div class="custom-popup-box">
+
+
+<div
+class="custom-popup-header"
+id="customPopupHeader"
+>
+
+<div class="custom-popup-icon">
+
+<i
+class="fa-solid fa-circle-exclamation"
+id="customPopupIcon"
+></i>
+
+</div>
+
+
+<h3 id="customPopupTitle">
+Message
+</h3>
+
+</div>
+
+
+<div class="custom-popup-body">
+
+<p
+class="custom-popup-message"
+id="customPopupMessage"
+>
+-
+</p>
+
+</div>
+
+
+<div class="custom-popup-footer">
+
+<button
+class="custom-popup-ok"
+id="customPopupOk"
+type="button"
+>
+OK
+</button>
+
+</div>
+
 
 </div>
 
@@ -2320,6 +1727,7 @@ Submit Call
 
 
 <script>
+
 
 /* =====================================================
    API URL
@@ -2330,12 +1738,170 @@ const API_URL =
 
 
 /* =====================================================
-   SIDEBAR
+   ELEMENTS
 ===================================================== */
 
 const menuToggle =
 document.getElementById("menuToggle");
 
+const tableBody =
+document.getElementById("callTableBody");
+
+const loadingState =
+document.getElementById("loadingState");
+
+const emptyState =
+document.getElementById("emptyState");
+
+const tableWrapper =
+document.getElementById("tableWrapper");
+
+const pendingCount =
+document.getElementById("pendingCount");
+
+const searchInput =
+document.getElementById("searchInput");
+
+const fromDate =
+document.getElementById("fromDate");
+
+const toDate =
+document.getElementById("toDate");
+
+const daysInput =
+document.getElementById("daysInput");
+
+const viewModal =
+document.getElementById("viewModal");
+
+const closeModal =
+document.getElementById("closeModal");
+
+const cancelBtn =
+document.getElementById("cancelBtn");
+
+const submitCallBtn =
+document.getElementById("submitCallBtn");
+
+const callPerson =
+document.getElementById("callPerson");
+
+const callWork =
+document.getElementById("callWork");
+
+
+/* =====================================================
+   CUSTOM POPUP ELEMENTS
+===================================================== */
+
+const customPopup =
+document.getElementById("customPopup");
+
+const customPopupHeader =
+document.getElementById("customPopupHeader");
+
+const customPopupIcon =
+document.getElementById("customPopupIcon");
+
+const customPopupTitle =
+document.getElementById("customPopupTitle");
+
+const customPopupMessage =
+document.getElementById("customPopupMessage");
+
+const customPopupOk =
+document.getElementById("customPopupOk");
+
+
+/* =====================================================
+   CUSTOM POPUP FUNCTION
+===================================================== */
+
+function showCustomPopup(
+    message,
+    type = "warning",
+    title = "Message"
+){
+
+    customPopupTitle.textContent =
+        title;
+
+    customPopupMessage.textContent =
+        message;
+
+
+    customPopupHeader.className =
+        "custom-popup-header " +
+        type;
+
+
+    if(type === "error"){
+
+        customPopupIcon.className =
+            "fa-solid fa-circle-xmark";
+
+    }
+
+    else if(type === "success"){
+
+        customPopupIcon.className =
+            "fa-solid fa-circle-check";
+
+    }
+
+    else{
+
+        customPopupIcon.className =
+            "fa-solid fa-circle-exclamation";
+
+    }
+
+
+    customPopup.classList.add(
+        "show"
+    );
+
+}
+
+
+function closeCustomPopup(){
+
+    customPopup.classList.remove(
+        "show"
+    );
+
+}
+
+
+customPopupOk.addEventListener(
+    "click",
+    closeCustomPopup
+);
+
+
+customPopup.addEventListener(
+
+    "click",
+
+    function(e){
+
+        if(
+            e.target ===
+            customPopup
+        ){
+
+            closeCustomPopup();
+
+        }
+
+    }
+
+);
+
+
+/* =====================================================
+   SIDEBAR TOGGLE
+===================================================== */
 
 menuToggle.addEventListener(
 "click",
@@ -2359,6 +1925,10 @@ function(){
 
 });
 
+
+/* =====================================================
+   CLOSE MOBILE SIDEBAR
+===================================================== */
 
 document.addEventListener(
 "click",
@@ -2391,81 +1961,51 @@ function(e){
 
 function logout(){
 
-    localStorage.removeItem("loggedIn");
+    localStorage.removeItem(
+        "loggedIn"
+    );
 
-    localStorage.removeItem("username");
+    localStorage.removeItem(
+        "username"
+    );
 
-    localStorage.removeItem("name");
+    localStorage.removeItem(
+        "name"
+    );
 
-    window.location.replace("../index.html");
+    window.location.replace(
+        "../index.html"
+    );
 
 }
 
 
 /* =====================================================
-   ELEMENTS
+   USER
 ===================================================== */
 
-const tableBody =
-document.getElementById("callTableBody");
+const savedName =
+localStorage.getItem("name");
 
-const loadingState =
-document.getElementById("loadingState");
-
-const emptyState =
-document.getElementById("emptyState");
-
-const tableWrapper =
-document.getElementById("tableWrapper");
-
-const pendingCount =
-document.getElementById("pendingCount");
-
-const statusBox =
-document.getElementById("status");
-
-const searchInput =
-document.getElementById("searchInput");
-
-const fromDateInput =
-document.getElementById("fromDate");
-
-const toDateInput =
-document.getElementById("toDate");
-
-const daysInput =
-document.getElementById("daysInput");
-
-const allBtn =
-document.getElementById("allBtn");
-
-const viewModal =
-document.getElementById("viewModal");
-
-const closeModal =
-document.getElementById("closeModal");
-
-const cancelBtn =
-document.getElementById("cancelBtn");
-
-const submitCallBtn =
-document.getElementById("submitCallBtn");
-
-const callPerson =
-document.getElementById("callPerson");
-
-const callWork =
-document.getElementById("callWork");
+const savedUsername =
+localStorage.getItem("username");
 
 
-/* =====================================================
-   USERNAME
-   Login করা USERNAME-ই ব্যবহার হবে
-===================================================== */
+/*
+   Username দিয়ে login হলে
+   username-ই দেখাবে।
+   Name থাকলে Name দেখাবে।
+*/
 
 const currentUser =
-localStorage.getItem("username") ||
+savedUsername ||
+savedName ||
 "User";
+
+
+document.getElementById(
+"userName"
+);
 
 
 document.getElementById(
@@ -2511,26 +2051,7 @@ function checkLogin(){
 
 
 /* =====================================================
-   STATUS
-===================================================== */
-
-function showStatus(
-    message,
-    type
-){
-
-    statusBox.textContent =
-        message;
-
-    statusBox.className =
-        "status show " +
-        type;
-
-}
-
-
-/* =====================================================
-   LOAD DATA
+   LOAD PENDING CALL
 ===================================================== */
 
 async function loadPendingCall(){
@@ -2545,19 +2066,15 @@ async function loadPendingCall(){
     loadingState.style.display =
         "block";
 
-
     emptyState.classList.remove(
         "show"
     );
 
-
     tableWrapper.style.display =
         "none";
 
-
     tableBody.innerHTML =
         "";
-
 
     pendingCount.textContent =
         "Loading...";
@@ -2574,11 +2091,8 @@ async function loadPendingCall(){
             Date.now(),
 
             {
-
                 method:"GET",
-
                 cache:"no-store"
-
             }
 
         );
@@ -2626,6 +2140,7 @@ async function loadPendingCall(){
 
         renderTable();
 
+
     }
 
     catch(error){
@@ -2641,13 +2156,11 @@ async function loadPendingCall(){
             "0 Pending";
 
 
-        showStatus(
-
+        showCustomPopup(
             error.message ||
             "Unable to load pending calls.",
-
-            "error"
-
+            "error",
+            "Loading Error"
         );
 
     }
@@ -2698,37 +2211,50 @@ function parseSheetDate(
     if(match){
 
         const day =
-        parseInt(match[1],10);
-
+        parseInt(
+            match[1],
+            10
+        );
 
         const month =
-        parseInt(match[2],10) - 1;
-
+        parseInt(
+            match[2],
+            10
+        ) - 1;
 
         const year =
-        parseInt(match[3],10);
-
+        parseInt(
+            match[3],
+            10
+        );
 
         const hour =
         match[4]
         ?
-        parseInt(match[4],10)
+        parseInt(
+            match[4],
+            10
+        )
         :
         0;
-
 
         const minute =
         match[5]
         ?
-        parseInt(match[5],10)
+        parseInt(
+            match[5],
+            10
+        )
         :
         0;
-
 
         const second =
         match[6]
         ?
-        parseInt(match[6],10)
+        parseInt(
+            match[6],
+            10
+        )
         :
         0;
 
@@ -2744,7 +2270,11 @@ function parseSheetDate(
         );
 
 
-        if(!isNaN(result.getTime())){
+        if(
+            !isNaN(
+                result.getTime()
+            )
+        ){
 
             return result;
 
@@ -2762,15 +2292,22 @@ function parseSheetDate(
     if(match){
 
         const year =
-        parseInt(match[1],10);
-
+        parseInt(
+            match[1],
+            10
+        );
 
         const month =
-        parseInt(match[2],10) - 1;
-
+        parseInt(
+            match[2],
+            10
+        ) - 1;
 
         const day =
-        parseInt(match[3],10);
+        parseInt(
+            match[3],
+            10
+        );
 
 
         const result =
@@ -2781,7 +2318,11 @@ function parseSheetDate(
         );
 
 
-        if(!isNaN(result.getTime())){
+        if(
+            !isNaN(
+                result.getTime()
+            )
+        ){
 
             return result;
 
@@ -2791,10 +2332,16 @@ function parseSheetDate(
 
 
     const fallback =
-    new Date(value);
+    new Date(
+        value
+    );
 
 
-    if(!isNaN(fallback.getTime())){
+    if(
+        !isNaN(
+            fallback.getTime()
+        )
+    ){
 
         return fallback;
 
@@ -2810,16 +2357,14 @@ function parseSheetDate(
    DATE ONLY
 ===================================================== */
 
-function dateOnly(date){
+function getDateOnly(
+    date
+){
 
     return new Date(
-
         date.getFullYear(),
-
         date.getMonth(),
-
         date.getDate()
-
     );
 
 }
@@ -2827,31 +2372,33 @@ function dateOnly(date){
 
 /* =====================================================
    LAST DAYS FILTER
-   7 দিলে আজ 23 হলে 16 তারিখ এবং আগের সব দেখাবে
+=====================================================
+
+   Example:
+
+   Today = 23
+
+   Last Days = 7
+
+   Shows:
+   16 and before
+
 ===================================================== */
 
-function matchesLastDays(
+function isWithinDays(
     dateValue,
     days
 ){
-
-    if(
-        days === "" ||
-        days === null ||
-        days === undefined
-    ){
-
-        return true;
-
-    }
-
 
     const numberOfDays =
     Number(days);
 
 
     if(
-        !Number.isFinite(numberOfDays) ||
+        !Number.isFinite(
+            numberOfDays
+        )
+        ||
         numberOfDays <= 0
     ){
 
@@ -2874,13 +2421,15 @@ function matchesLastDays(
 
 
     const today =
-    dateOnly(
+    getDateOnly(
         new Date()
     );
 
 
     const cutoffDate =
-    new Date(today);
+    new Date(
+        today
+    );
 
 
     cutoffDate.setDate(
@@ -2893,7 +2442,7 @@ function matchesLastDays(
 
 
     const itemDay =
-    dateOnly(
+    getDateOnly(
         itemDate
     );
 
@@ -2910,30 +2459,12 @@ function matchesLastDays(
 
 
 /* =====================================================
-   FROM / TO DATE FILTER
+   FROM TO DATE FILTER
 ===================================================== */
 
-function matchesDateRange(
+function isWithinDateRange(
     dateValue
 ){
-
-    const fromValue =
-    fromDateInput.value;
-
-
-    const toValue =
-    toDateInput.value;
-
-
-    if(
-        !fromValue &&
-        !toValue
-    ){
-
-        return true;
-
-    }
-
 
     const itemDate =
     parseSheetDate(
@@ -2949,23 +2480,24 @@ function matchesDateRange(
 
 
     const itemDay =
-    dateOnly(
+    getDateOnly(
         itemDate
     );
 
 
-    if(fromValue){
+    if(fromDate.value){
 
-        const fromDate =
+        const from =
         new Date(
-            fromValue + "T00:00:00"
+            fromDate.value +
+            "T00:00:00"
         );
 
 
         if(
             itemDay.getTime()
             <
-            fromDate.getTime()
+            from.getTime()
         ){
 
             return false;
@@ -2975,18 +2507,19 @@ function matchesDateRange(
     }
 
 
-    if(toValue){
+    if(toDate.value){
 
-        const toDate =
+        const to =
         new Date(
-            toValue + "T00:00:00"
+            toDate.value +
+            "T00:00:00"
         );
 
 
         if(
             itemDay.getTime()
             >
-            toDate.getTime()
+            to.getTime()
         ){
 
             return false;
@@ -3014,7 +2547,9 @@ function renderTable(){
 
 
     const days =
-    daysInput.value.trim();
+    Number(
+        daysInput.value
+    ) || 0;
 
 
     const filtered =
@@ -3034,7 +2569,9 @@ function renderTable(){
 
             )
 
-            + " " +
+            +
+
+            " " +
 
             (
 
@@ -3044,7 +2581,9 @@ function renderTable(){
 
             )
 
-            + " " +
+            +
+
+            " " +
 
             (
 
@@ -3056,7 +2595,9 @@ function renderTable(){
 
             )
 
-            + " " +
+            +
+
+            " " +
 
             (
 
@@ -3066,7 +2607,9 @@ function renderTable(){
 
             )
 
-            + " " +
+            +
+
+            " " +
 
             (
 
@@ -3088,7 +2631,7 @@ function renderTable(){
 
             const matchesDays =
 
-            matchesLastDays(
+            isWithinDays(
 
                 item.date,
 
@@ -3097,9 +2640,9 @@ function renderTable(){
             );
 
 
-            const matchesRange =
+            const matchesDateRange =
 
-            matchesDateRange(
+            isWithinDateRange(
 
                 item.date
 
@@ -3112,7 +2655,7 @@ function renderTable(){
 
                 matchesDays &&
 
-                matchesRange
+                matchesDateRange
 
             );
 
@@ -3120,6 +2663,11 @@ function renderTable(){
 
     );
 
+
+    /*
+       পুরাতন কাজ উপরে
+       নতুন কাজ নিচে
+    */
 
     tableBody.innerHTML =
         "";
@@ -3158,11 +2706,6 @@ function renderTable(){
     tableWrapper.style.display =
         "block";
 
-
-    /*
-       পুরোনো data উপরে
-       নতুন data নিচে
-    */
 
     filtered.forEach(
 
@@ -3437,10 +2980,6 @@ function openModal(
     "-";
 
 
-    /*
-       Login করা USERNAME
-    */
-
     callPerson.value =
         currentUser;
 
@@ -3543,10 +3082,21 @@ submitCallBtn.addEventListener(
         callWork.value.trim();
 
 
+        /*
+           Chrome alert বাদ।
+           Custom popup ব্যবহার।
+        */
+
         if(!work){
 
-            alert(
-                "Please enter Call Work."
+            showCustomPopup(
+
+                "Please enter Call Work.",
+
+                "warning",
+
+                "Call Work Required"
+
             );
 
 
@@ -3580,7 +3130,6 @@ submitCallBtn.addEventListener(
                 action:
                 "submitCall",
 
-
                 customerId:
 
                 selectedCall.customerNumber ||
@@ -3589,20 +3138,17 @@ submitCallBtn.addEventListener(
 
                 "",
 
-
                 date:
 
                 selectedCall.date ||
 
                 "",
 
-
                 problem:
 
                 selectedCall.problem ||
 
                 "",
-
 
                 reference:
 
@@ -3612,13 +3158,11 @@ submitCallBtn.addEventListener(
 
                 "",
 
-
                 support:
 
                 selectedCall.support ||
 
                 "",
-
 
                 supportWork:
 
@@ -3626,27 +3170,19 @@ submitCallBtn.addEventListener(
 
                 "",
 
-
-                /*
-                   USERNAME পাঠানো হচ্ছে
-                */
-
                 call:
 
                 currentUser,
 
-
                 callWork:
 
                 work,
-
 
                 username:
 
                 localStorage.getItem(
                     "username"
                 ) || "",
-
 
                 name:
 
@@ -3665,14 +3201,12 @@ submitCallBtn.addEventListener(
                     method:
                     "POST",
 
-
                     headers:{
 
                         "Content-Type":
                         "text/plain;charset=utf-8"
 
                     },
-
 
                     body:
 
@@ -3707,11 +3241,13 @@ submitCallBtn.addEventListener(
             closeViewModal();
 
 
-            showStatus(
+            showCustomPopup(
 
                 "Call completed successfully and moved to History.",
 
-                "success"
+                "success",
+
+                "Success"
 
             );
 
@@ -3728,13 +3264,15 @@ submitCallBtn.addEventListener(
             );
 
 
-            showStatus(
+            showCustomPopup(
 
                 error.message ||
 
                 "Unable to submit call.",
 
-                "error"
+                "error",
+
+                "Submission Error"
 
             );
 
@@ -3774,32 +3312,6 @@ searchInput.addEventListener(
 
 
 /* =====================================================
-   FROM DATE
-===================================================== */
-
-fromDateInput.addEventListener(
-
-    "change",
-
-    renderTable
-
-);
-
-
-/* =====================================================
-   TO DATE
-===================================================== */
-
-toDateInput.addEventListener(
-
-    "change",
-
-    renderTable
-
-);
-
-
-/* =====================================================
    LAST DAYS
 ===================================================== */
 
@@ -3813,32 +3325,40 @@ daysInput.addEventListener(
 
 
 /* =====================================================
-   ALL BUTTON
+   FROM DATE
 ===================================================== */
 
-allBtn.addEventListener(
+fromDate.addEventListener(
 
-    "click",
+    "change",
 
-    function(){
-
-        searchInput.value =
-            "";
-
-        fromDateInput.value =
-            "";
-
-        toDateInput.value =
-            "";
-
-        daysInput.value =
-            "";
-
-        renderTable();
-
-    }
+    renderTable
 
 );
+
+
+/* =====================================================
+   TO DATE
+===================================================== */
+
+toDate.addEventListener(
+
+    "change",
+
+    renderTable
+
+);
+
+
+/* =====================================================
+   REFRESH
+===================================================== */
+
+const refreshFunction = function(){
+
+    loadPendingCall();
+
+};
 
 
 /* =====================================================

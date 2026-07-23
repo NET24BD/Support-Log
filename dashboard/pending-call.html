@@ -5,8 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Pending Call | LINK4 COMMUNICATION</title>
 
@@ -438,7 +437,7 @@ body.sidebar-collapsed
 
     border-radius:18px;
 
-    padding:14px 18px;
+    padding:12px 16px;
 
     display:flex;
 
@@ -463,13 +462,13 @@ body.sidebar-collapsed
 
 .menu-toggle{
 
-    width:45px;
+    width:42px;
 
-    height:45px;
+    height:42px;
 
     border:none;
 
-    border-radius:12px;
+    border-radius:11px;
 
     background:#e7f8f2;
 
@@ -477,7 +476,7 @@ body.sidebar-collapsed
 
     cursor:pointer;
 
-    font-size:19px;
+    font-size:18px;
 
     display:flex;
 
@@ -501,6 +500,10 @@ body.sidebar-collapsed
 }
 
 
+/* =====================================================
+   TOPBAR TITLE
+===================================================== */
+
 .topbar-title{
 
     flex:1;
@@ -510,7 +513,7 @@ body.sidebar-collapsed
 
 .topbar-title h2{
 
-    font-size:18px;
+    font-size:17px;
 
     color:#006a4e;
 
@@ -519,12 +522,16 @@ body.sidebar-collapsed
 
 .topbar-title p{
 
-    font-size:11px;
+    font-size:10px;
 
     color:#777;
 
 }
 
+
+/* =====================================================
+   TOP USER
+===================================================== */
 
 .topbar-user{
 
@@ -543,9 +550,9 @@ body.sidebar-collapsed
 
 .topbar-user-icon{
 
-    width:38px;
+    width:36px;
 
-    height:38px;
+    height:36px;
 
     border-radius:50%;
 
@@ -579,45 +586,44 @@ body.sidebar-collapsed
 
 /* =====================================================
    CONTROL BAR
-   THIN / SLIM VERSION
 ===================================================== */
 
 .control-bar{
 
     background:white;
 
-    padding:10px 18px;
+    padding:13px 15px;
 
-    border-radius:15px;
+    border-radius:16px;
 
-    margin-bottom:18px;
+    margin-bottom:20px;
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
 
-    gap:15px;
+    gap:10px;
 
     flex-wrap:wrap;
 
     box-shadow:
-    0 10px 30px
+    0 12px 35px
     rgba(0,0,0,.14);
 
 }
 
 
 /* =====================================================
-   SEARCH BOX
+   SEARCH
 ===================================================== */
 
 .search-box{
 
     flex:1;
 
-    min-width:250px;
+    min-width:220px;
+
+    max-width:500px;
 
     position:relative;
 
@@ -628,7 +634,7 @@ body.sidebar-collapsed
 
     position:absolute;
 
-    left:14px;
+    left:13px;
 
     top:50%;
 
@@ -636,7 +642,7 @@ body.sidebar-collapsed
 
     color:#008f6b;
 
-    font-size:15px;
+    font-size:13px;
 
 }
 
@@ -645,15 +651,15 @@ body.sidebar-collapsed
 
     width:100%;
 
-    height:40px;
+    height:38px;
 
-    padding:8px 15px 8px 42px;
+    padding:8px 12px 8px 38px;
 
     border:
     2px solid
     #e3eee9;
 
-    border-radius:10px;
+    border-radius:9px;
 
     outline:none;
 
@@ -670,7 +676,65 @@ body.sidebar-collapsed
 
 
 /* =====================================================
-   DAY FILTER
+   DATE FILTERS
+===================================================== */
+
+.date-filter{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+}
+
+
+.date-filter label{
+
+    font-size:11px;
+
+    font-weight:700;
+
+    color:#555;
+
+    white-space:nowrap;
+
+}
+
+
+.date-filter input{
+
+    width:145px;
+
+    height:38px;
+
+    padding:7px 9px;
+
+    border:
+    2px solid
+    #e3eee9;
+
+    border-radius:9px;
+
+    outline:none;
+
+    font-size:11px;
+
+    font-weight:600;
+
+}
+
+
+.date-filter input:focus{
+
+    border-color:#00a878;
+
+}
+
+
+/* =====================================================
+   LAST DAYS
 ===================================================== */
 
 .day-filter{
@@ -679,16 +743,16 @@ body.sidebar-collapsed
 
     align-items:center;
 
-    gap:8px;
+    gap:7px;
 
 }
 
 
 .day-filter label{
 
-    font-size:12px;
+    font-size:11px;
 
-    font-weight:600;
+    font-weight:700;
 
     color:#555;
 
@@ -699,25 +763,32 @@ body.sidebar-collapsed
 
 .day-filter input{
 
-    width:100px;
+    width:85px;
 
-    height:40px;
+    height:38px;
 
-    padding:8px;
+    padding:7px 9px;
 
     border:
     2px solid
     #e3eee9;
 
-    border-radius:10px;
+    border-radius:9px;
 
     outline:none;
 
     text-align:center;
 
+    font-size:11px;
+
     font-weight:600;
 
-    font-size:12px;
+}
+
+
+.day-filter input:focus{
+
+    border-color:#00a878;
 
 }
 
@@ -744,7 +815,7 @@ body.sidebar-collapsed
 
 .table-header{
 
-    padding:18px 25px;
+    padding:18px 22px;
 
     display:flex;
 
@@ -762,6 +833,8 @@ body.sidebar-collapsed
 .table-header h2{
 
     font-size:19px;
+
+    color:#333;
 
 }
 
@@ -781,7 +854,7 @@ body.sidebar-collapsed
 
     border-radius:20px;
 
-    font-size:13px;
+    font-size:12px;
 
     font-weight:700;
 
@@ -999,7 +1072,7 @@ tbody tr:hover{
 
 
 /* =====================================================
-   LOADING / EMPTY
+   LOADING
 ===================================================== */
 
 .loading-state{
@@ -1028,6 +1101,10 @@ tbody tr:hover{
 
 }
 
+
+/* =====================================================
+   EMPTY
+===================================================== */
 
 .empty-state{
 
@@ -1456,6 +1533,44 @@ tbody tr:hover{
    MOBILE
 ===================================================== */
 
+@media(max-width:900px){
+
+    .control-bar{
+
+        align-items:stretch;
+
+    }
+
+
+    .search-box{
+
+        max-width:none;
+
+        width:100%;
+
+        flex-basis:100%;
+
+    }
+
+
+    .date-filter,
+    .day-filter{
+
+        flex:1;
+
+    }
+
+
+    .date-filter input,
+    .day-filter input{
+
+        width:100%;
+
+    }
+
+}
+
+
 @media(max-width:768px){
 
     .sidebar{
@@ -1498,46 +1613,53 @@ tbody tr:hover{
 
     .topbar{
 
-        padding:12px;
+        padding:11px;
+
+    }
+
+
+    .topbar-title h2{
+
+        font-size:14px;
+
+    }
+
+
+    .topbar-title p{
+
+        font-size:9px;
+
+    }
+
+
+    .topbar-user{
+
+        font-size:11px;
 
     }
 
 
     .control-bar{
 
-        padding:10px;
-
-        gap:10px;
+        padding:11px;
 
     }
 
 
-    .search-box{
-
-        min-width:100%;
-
-    }
-
-
-    .search-box input{
-
-        height:38px;
-
-    }
-
-
+    .date-filter,
     .day-filter{
 
         width:100%;
 
-        justify-content:flex-end;
+        flex:none;
 
     }
 
 
-    .day-filter input{
+    .date-filter label,
+    .day-filter label{
 
-        height:38px;
+        min-width:75px;
 
     }
 
@@ -1657,17 +1779,6 @@ Support History
 </a>
 
 
-<a href="user-account.html">
-
-<i class="fa-solid fa-user-gear"></i>
-
-<span class="menu-text">
-User Account
-</span>
-
-</a>
-
-
 </nav>
 
 
@@ -1765,11 +1876,13 @@ id="status"
 
 
 <!-- =====================================================
-     THIN CONTROL BAR
+     CONTROL BAR
 ===================================================== -->
 
 <div class="control-bar">
 
+
+<!-- SEARCH -->
 
 <div class="search-box">
 
@@ -1787,12 +1900,60 @@ placeholder="Search Customer ID, Problem, Reference, Support..."
 </div>
 
 
-<div class="day-filter">
+<!-- FROM DATE -->
+
+<div class="date-filter">
 
 
 <label>
 
 <i class="fa-solid fa-calendar-days"></i>
+
+From
+
+</label>
+
+
+<input
+type="date"
+id="fromDate"
+>
+
+
+</div>
+
+
+<!-- TO DATE -->
+
+<div class="date-filter">
+
+
+<label>
+
+<i class="fa-solid fa-calendar-days"></i>
+
+To
+
+</label>
+
+
+<input
+type="date"
+id="toDate"
+>
+
+
+</div>
+
+
+<!-- LAST DAYS -->
+
+<div class="day-filter">
+
+
+<label>
+
+<i class="fa-solid fa-clock"></i>
 
 Last Days
 
@@ -2324,6 +2485,12 @@ document.getElementById("status");
 const searchInput =
 document.getElementById("searchInput");
 
+const fromDateInput =
+document.getElementById("fromDate");
+
+const toDateInput =
+document.getElementById("toDate");
+
 const daysInput =
 document.getElementById("daysInput");
 
@@ -2773,10 +2940,31 @@ function parseSheetDate(
 
 
 /* =====================================================
+   DATE ONLY
+===================================================== */
+
+function dateOnly(
+    date
+){
+
+    return new Date(
+
+        date.getFullYear(),
+
+        date.getMonth(),
+
+        date.getDate()
+
+    );
+
+}
+
+
+/* =====================================================
    LAST DAYS FILTER
 ===================================================== */
 
-function isWithinDays(
+function isWithinLastDays(
     dateValue,
     days
 ){
@@ -2811,19 +2999,9 @@ function isWithinDays(
     }
 
 
-    const now =
-    new Date();
-
-
     const today =
-    new Date(
-
-        now.getFullYear(),
-
-        now.getMonth(),
-
-        now.getDate()
-
+    dateOnly(
+        new Date()
     );
 
 
@@ -2843,24 +3021,116 @@ function isWithinDays(
 
 
     const itemDay =
-    new Date(
-
-        itemDate.getFullYear(),
-
-        itemDate.getMonth(),
-
-        itemDate.getDate()
-
+    dateOnly(
+        itemDate
     );
 
 
     return (
 
         itemDay.getTime()
-        <=
+        >=
         cutoffDate.getTime()
 
+        &&
+
+        itemDay.getTime()
+        <=
+        today.getTime()
+
     );
+
+}
+
+
+/* =====================================================
+   FROM / TO DATE FILTER
+===================================================== */
+
+function isWithinDateRange(
+
+    dateValue,
+
+    fromDate,
+
+    toDate
+
+){
+
+    if(
+        !fromDate &&
+        !toDate
+    ){
+
+        return true;
+
+    }
+
+
+    const itemDate =
+    parseSheetDate(
+        dateValue
+    );
+
+
+    if(!itemDate){
+
+        return false;
+
+    }
+
+
+    const itemDay =
+    dateOnly(
+        itemDate
+    );
+
+
+    if(fromDate){
+
+        const from =
+        new Date(
+            fromDate +
+            "T00:00:00"
+        );
+
+
+        if(
+            itemDay.getTime()
+            <
+            from.getTime()
+        ){
+
+            return false;
+
+        }
+
+    }
+
+
+    if(toDate){
+
+        const to =
+        new Date(
+            toDate +
+            "T00:00:00"
+        );
+
+
+        if(
+            itemDay.getTime()
+            >
+            to.getTime()
+        ){
+
+            return false;
+
+        }
+
+    }
+
+
+    return true;
 
 }
 
@@ -2877,10 +3147,54 @@ function renderTable(){
     .toLowerCase();
 
 
+    const fromDate =
+    fromDateInput.value;
+
+
+    const toDate =
+    toDateInput.value;
+
+
     const days =
     Number(
         daysInput.value
     ) || 0;
+
+
+    if(
+        fromDate &&
+        toDate &&
+        fromDate > toDate
+    ){
+
+        pendingCount.textContent =
+            "0 Pending";
+
+
+        tableWrapper.style.display =
+            "none";
+
+
+        emptyState.classList.add(
+            "show"
+        );
+
+
+        emptyState.querySelector(
+            "h3"
+        ).textContent =
+            "Invalid Date Range";
+
+
+        emptyState.querySelector(
+            "p"
+        ).textContent =
+            "From Date cannot be later than To Date.";
+
+
+        return;
+
+    }
 
 
     const filtered =
@@ -2960,9 +3274,22 @@ function renderTable(){
             .includes(search);
 
 
-            const matchesDays =
+            const matchesDateRange =
 
-            isWithinDays(
+            isWithinDateRange(
+
+                item.date,
+
+                fromDate,
+
+                toDate
+
+            );
+
+
+            const matchesLastDays =
+
+            isWithinLastDays(
 
                 item.date,
 
@@ -2975,7 +3302,9 @@ function renderTable(){
 
                 matchesSearch &&
 
-                matchesDays
+                matchesDateRange &&
+
+                matchesLastDays
 
             );
 
@@ -3006,6 +3335,18 @@ function renderTable(){
         emptyState.classList.add(
             "show"
         );
+
+
+        emptyState.querySelector(
+            "h3"
+        ).textContent =
+            "No Pending Call";
+
+
+        emptyState.querySelector(
+            "p"
+        ).textContent =
+            "There are currently no pending call requests.";
 
 
         return;
@@ -3612,7 +3953,33 @@ searchInput.addEventListener(
 
 
 /* =====================================================
-   DAYS FILTER
+   FROM DATE
+===================================================== */
+
+fromDateInput.addEventListener(
+
+    "change",
+
+    renderTable
+
+);
+
+
+/* =====================================================
+   TO DATE
+===================================================== */
+
+toDateInput.addEventListener(
+
+    "change",
+
+    renderTable
+
+);
+
+
+/* =====================================================
+   LAST DAYS
 ===================================================== */
 
 daysInput.addEventListener(

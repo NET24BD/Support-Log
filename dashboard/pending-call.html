@@ -578,217 +578,19 @@ body.sidebar-collapsed
 
 
 /* =====================================================
-   HEADER
-===================================================== */
-
-.header{
-
-    background:
-    rgba(255,255,255,.97);
-
-    border-radius:22px;
-
-    padding:20px 25px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:20px;
-
-    box-shadow:
-    0 15px 40px
-    rgba(0,0,0,.20);
-
-    margin-bottom:20px;
-
-}
-
-
-.header-left{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-}
-
-
-.logo{
-
-    width:58px;
-
-    height:58px;
-
-    border-radius:17px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #006a4e,
-        #00a878
-    );
-
-    color:white;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:25px;
-
-}
-
-
-.header-title h1{
-
-    font-size:24px;
-
-    color:#006a4e;
-
-}
-
-
-.header-title p{
-
-    font-size:13px;
-
-    color:#777;
-
-    margin-top:3px;
-
-}
-
-
-.header-right{
-
-    display:flex;
-
-    gap:10px;
-
-    flex-wrap:wrap;
-
-}
-
-
-.back-btn,
-.refresh-btn{
-
-    border:none;
-
-    padding:11px 16px;
-
-    border-radius:11px;
-
-    cursor:pointer;
-
-    font-weight:600;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    transition:.3s;
-
-}
-
-
-.back-btn{
-
-    background:#006a4e;
-
-    color:white;
-
-}
-
-
-.refresh-btn{
-
-    background:#e7f8f2;
-
-    color:#006a4e;
-
-}
-
-
-.back-btn:hover{
-
-    background:#e53935;
-
-}
-
-
-.refresh-btn:hover{
-
-    background:#006a4e;
-
-    color:white;
-
-}
-
-
-/* =====================================================
-   USER BAR
-===================================================== */
-
-.user-bar{
-
-    background:
-    rgba(255,255,255,.14);
-
-    border:
-    1px solid
-    rgba(255,255,255,.18);
-
-    color:white;
-
-    padding:13px 18px;
-
-    border-radius:13px;
-
-    margin-bottom:20px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:15px;
-
-    font-size:14px;
-
-}
-
-
-.user-name{
-
-    font-weight:700;
-
-}
-
-
-/* =====================================================
    CONTROL BAR
+   THIN / SLIM VERSION
 ===================================================== */
 
 .control-bar{
 
     background:white;
 
-    padding:18px;
+    padding:10px 18px;
 
-    border-radius:18px;
+    border-radius:15px;
 
-    margin-bottom:20px;
+    margin-bottom:18px;
 
     display:flex;
 
@@ -801,11 +603,15 @@ body.sidebar-collapsed
     flex-wrap:wrap;
 
     box-shadow:
-    0 12px 35px
+    0 10px 30px
     rgba(0,0,0,.14);
 
 }
 
+
+/* =====================================================
+   SEARCH BOX
+===================================================== */
 
 .search-box{
 
@@ -822,13 +628,15 @@ body.sidebar-collapsed
 
     position:absolute;
 
-    left:15px;
+    left:14px;
 
     top:50%;
 
     transform:translateY(-50%);
 
     color:#008f6b;
+
+    font-size:15px;
 
 }
 
@@ -837,17 +645,19 @@ body.sidebar-collapsed
 
     width:100%;
 
-    padding:13px 15px 13px 45px;
+    height:40px;
+
+    padding:8px 15px 8px 42px;
 
     border:
     2px solid
     #e3eee9;
 
-    border-radius:12px;
+    border-radius:10px;
 
     outline:none;
 
-    font-size:13px;
+    font-size:12px;
 
 }
 
@@ -859,24 +669,30 @@ body.sidebar-collapsed
 }
 
 
+/* =====================================================
+   DAY FILTER
+===================================================== */
+
 .day-filter{
 
     display:flex;
 
     align-items:center;
 
-    gap:10px;
+    gap:8px;
 
 }
 
 
 .day-filter label{
 
-    font-size:13px;
+    font-size:12px;
 
     font-weight:600;
 
     color:#555;
+
+    white-space:nowrap;
 
 }
 
@@ -885,7 +701,9 @@ body.sidebar-collapsed
 
     width:100px;
 
-    padding:12px;
+    height:40px;
+
+    padding:8px;
 
     border:
     2px solid
@@ -898,6 +716,8 @@ body.sidebar-collapsed
     text-align:center;
 
     font-weight:600;
+
+    font-size:12px;
 
 }
 
@@ -924,7 +744,7 @@ body.sidebar-collapsed
 
 .table-header{
 
-    padding:20px 25px;
+    padding:18px 25px;
 
     display:flex;
 
@@ -941,7 +761,7 @@ body.sidebar-collapsed
 
 .table-header h2{
 
-    font-size:20px;
+    font-size:19px;
 
 }
 
@@ -1683,37 +1503,41 @@ tbody tr:hover{
     }
 
 
-    .header{
+    .control-bar{
 
-        flex-direction:column;
+        padding:10px;
 
-        align-items:flex-start;
+        gap:10px;
 
     }
 
 
-    .header-right{
+    .search-box{
+
+        min-width:100%;
+
+    }
+
+
+    .search-box input{
+
+        height:38px;
+
+    }
+
+
+    .day-filter{
 
         width:100%;
 
-    }
-
-
-    .back-btn,
-    .refresh-btn{
-
-        flex:1;
-
-        justify-content:center;
+        justify-content:flex-end;
 
     }
 
 
-    .user-bar{
+    .day-filter input{
 
-        flex-direction:column;
-
-        align-items:flex-start;
+        height:38px;
 
     }
 
@@ -1771,11 +1595,6 @@ COMMUNICATION
 
 </div>
 
-
-<!-- =====================================================
-     SIDEBAR MENU
-     ALL FILES ARE INSIDE dashboard FOLDER
-===================================================== -->
 
 <nav class="sidebar-menu">
 
@@ -1936,109 +1755,6 @@ User
 
 
 <!-- =====================================================
-     HEADER
-===================================================== -->
-
-<div class="header">
-
-
-<div class="header-left">
-
-
-<div class="logo">
-
-<i class="fa-solid fa-phone-volume"></i>
-
-</div>
-
-
-<div class="header-title">
-
-<h1>
-Pending Call
-</h1>
-
-<p>
-View and manage all pending customer call requests
-</p>
-
-</div>
-
-
-</div>
-
-
-<div class="header-right">
-
-
-<button
-class="refresh-btn"
-id="refreshBtn"
-type="button"
->
-
-<i class="fa-solid fa-rotate"></i>
-
-Refresh
-
-</button>
-
-
-<button
-class="back-btn"
-id="backBtn"
-type="button"
->
-
-<i class="fa-solid fa-arrow-left"></i>
-
-Dashboard
-
-</button>
-
-
-</div>
-
-
-</div>
-
-
-<!-- =====================================================
-     USER BAR
-===================================================== -->
-
-<div class="user-bar">
-
-
-<div>
-
-<i class="fa-solid fa-user"></i>
-
-Logged in as:
-
-<span
-class="user-name"
-id="userName"
->
-User
-</span>
-
-</div>
-
-
-<div>
-
-<i class="fa-solid fa-phone"></i>
-
-Pending Call Management
-
-</div>
-
-
-</div>
-
-
-<!-- =====================================================
      STATUS
 ===================================================== -->
 
@@ -2049,7 +1765,7 @@ id="status"
 
 
 <!-- =====================================================
-     CONTROL
+     THIN CONTROL BAR
 ===================================================== -->
 
 <div class="control-bar">
@@ -2605,12 +2321,6 @@ document.getElementById("pendingCount");
 const statusBox =
 document.getElementById("status");
 
-const refreshBtn =
-document.getElementById("refreshBtn");
-
-const backBtn =
-document.getElementById("backBtn");
-
 const searchInput =
 document.getElementById("searchInput");
 
@@ -2650,12 +2360,6 @@ const currentUser =
 savedName ||
 savedUsername ||
 "User";
-
-
-document.getElementById(
-"userName"
-).textContent =
-currentUser;
 
 
 document.getElementById(
@@ -3916,43 +3620,6 @@ daysInput.addEventListener(
     "input",
 
     renderTable
-
-);
-
-
-/* =====================================================
-   REFRESH
-===================================================== */
-
-refreshBtn.addEventListener(
-
-    "click",
-
-    loadPendingCall
-
-);
-
-
-/* =====================================================
-   DASHBOARD
-===================================================== */
-
-backBtn.addEventListener(
-
-    "click",
-
-    function(){
-
-        if(
-            checkLogin()
-        ){
-
-            window.location.href =
-                "index.html";
-
-        }
-
-    }
 
 );
 

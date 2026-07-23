@@ -50,7 +50,7 @@ crossorigin
 >
 
 <link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
 rel="stylesheet"
 >
 
@@ -79,37 +79,18 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
     box-sizing:border-box;
 
+    font-family:'Inter',sans-serif;
+
 }
 
 
 /* =====================================================
-   ROOT
+   HTML
 ===================================================== */
 
-:root{
+html{
 
-    --green:#006A4E;
-
-    --green2:#00875F;
-
-    --red:#E53935;
-
-    --dark:#0b1720;
-
-    --dark2:#10232c;
-
-    --white:#ffffff;
-
-    --light:#f4f7f8;
-
-    --text:#17212b;
-
-    --muted:#71808b;
-
-    --border:#e5eaed;
-
-    --shadow:
-    0 15px 45px rgba(8,30,40,.10);
+    scroll-behavior:smooth;
 
 }
 
@@ -122,11 +103,23 @@ body{
 
     min-height:100vh;
 
-    background:#f4f7f8;
+    background:
 
-    color:var(--text);
+    radial-gradient(
+        circle at 10% 10%,
+        rgba(0,255,170,.12),
+        transparent 30%
+    ),
 
-    font-family:'Inter','Poppins',sans-serif;
+    radial-gradient(
+        circle at 90% 90%,
+        rgba(229,57,53,.12),
+        transparent 30%
+    ),
+
+    #061b14;
+
+    color:white;
 
     overflow-x:hidden;
 
@@ -134,73 +127,126 @@ body{
 
 
 /* =====================================================
-   SIDEBAR
+   BACKGROUND
 ===================================================== */
 
-.sidebar{
+body::before{
+
+    content:"";
 
     position:fixed;
 
-    left:0;
+    width:500px;
 
-    top:0;
+    height:500px;
 
-    width:250px;
+    border-radius:50%;
 
-    height:100vh;
+    background:#006a4e;
 
-    background:
-    linear-gradient(
-        180deg,
-        #071b17 0%,
-        #063e2d 55%,
-        #006A4E 100%
-    );
+    filter:blur(150px);
 
-    padding:25px 18px;
+    opacity:.25;
 
-    z-index:1000;
+    top:-200px;
 
-    transition:.35s;
+    left:-150px;
 
-    box-shadow:
-    8px 0 30px
-    rgba(0,0,0,.12);
+    z-index:-1;
+
+}
+
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:450px;
+
+    height:450px;
+
+    border-radius:50%;
+
+    background:#e53935;
+
+    filter:blur(170px);
+
+    opacity:.12;
+
+    right:-150px;
+
+    bottom:-150px;
+
+    z-index:-1;
 
 }
 
 
 /* =====================================================
-   BRAND
+   HEADER
 ===================================================== */
 
-.brand{
+header{
+
+    width:100%;
+
+    height:75px;
+
+    padding:
+
+    0 50px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-bottom:
+
+    1px solid
+
+    rgba(255,255,255,.08);
+
+    background:
+
+    rgba(3,20,15,.78);
+
+    backdrop-filter:blur(18px);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo{
 
     display:flex;
 
     align-items:center;
 
-    gap:13px;
-
-    padding:
-    5px
-    10px
-    30px;
+    gap:12px;
 
 }
 
 
-.brand-icon{
+.logo-box{
 
-    width:48px;
+    width:45px;
 
-    height:48px;
+    height:45px;
 
-    border-radius:14px;
-
-    background:white;
-
-    color:var(--green);
+    border-radius:13px;
 
     display:flex;
 
@@ -208,158 +254,136 @@ body{
 
     justify-content:center;
 
-    font-size:21px;
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #00a86b,
+
+        #006a4e
+
+    );
 
     box-shadow:
+
     0 8px 25px
-    rgba(0,0,0,.2);
+
+    rgba(0,168,107,.25);
 
 }
 
 
-.brand-text{
+.logo-box i{
 
-    color:white;
-
-    font-size:16px;
-
-    font-weight:800;
-
-    letter-spacing:.3px;
+    font-size:20px;
 
 }
 
 
-.brand-text small{
+.logo h2{
 
-    display:block;
+    font-size:19px;
 
-    font-size:10px;
+    font-weight:700;
 
-    opacity:.65;
-
-    margin-top:2px;
-
-    font-weight:500;
+    letter-spacing:.5px;
 
 }
 
 
 /* =====================================================
-   NAV
+   HEADER RIGHT
 ===================================================== */
 
-.nav{
-
-    margin-top:20px;
-
-}
-
-
-.nav-title{
-
-    color:
-    rgba(255,255,255,.45);
-
-    font-size:10px;
-
-    font-weight:700;
-
-    text-transform:uppercase;
-
-    letter-spacing:1.5px;
-
-    padding:
-    0 14px
-    12px;
-
-}
-
-
-.nav a{
+.header-right{
 
     display:flex;
 
     align-items:center;
 
-    gap:13px;
-
-    color:
-    rgba(255,255,255,.72);
-
-    text-decoration:none;
-
-    padding:
-    13px 15px;
-
-    border-radius:12px;
-
-    margin-bottom:6px;
-
-    font-size:13px;
-
-    font-weight:600;
-
-    transition:.25s;
-
-}
-
-
-.nav a i{
-
-    width:22px;
-
-    text-align:center;
-
-    font-size:16px;
-
-}
-
-
-.nav a:hover{
-
-    background:
-    rgba(255,255,255,.10);
-
-    color:white;
-
-    transform:
-    translateX(3px);
-
-}
-
-
-.nav a.active{
-
-    background:white;
-
-    color:var(--green);
-
-    box-shadow:
-    0 8px 20px
-    rgba(0,0,0,.15);
+    gap:15px;
 
 }
 
 
 /* =====================================================
-   SIDEBAR BOTTOM
+   HEADER USER
 ===================================================== */
 
-.sidebar-bottom{
+.header-user{
 
-    position:absolute;
+    display:flex;
 
-    left:18px;
+    align-items:center;
 
-    right:18px;
-
-    bottom:25px;
+    gap:10px;
 
 }
 
 
-.back-dashboard{
+.header-user-icon{
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#006a4e;
+
+    border:
+
+    2px solid
+
+    rgba(255,255,255,.5);
+
+}
+
+
+#headerUserName{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    max-width:150px;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
+
+}
+
+
+/* =====================================================
+   LOGOUT BUTTON
+===================================================== */
+
+.logout-btn{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:
+
+    10px
+
+    16px;
+
+    border-radius:10px;
 
     display:flex;
 
@@ -369,33 +393,37 @@ body{
 
     gap:8px;
 
-    width:100%;
-
-    padding:12px;
-
-    border:
-    1px solid
-    rgba(255,255,255,.18);
-
-    border-radius:11px;
-
     color:white;
 
-    text-decoration:none;
+    background:#e53935;
 
-    font-size:12px;
+    font-size:13px;
 
     font-weight:600;
 
-    transition:.25s;
+    transition:.3s;
 
 }
 
 
-.back-dashboard:hover{
+.logout-btn:hover{
 
-    background:
-    rgba(255,255,255,.10);
+    background:#c62828;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+
+    0 8px 20px
+
+    rgba(229,57,53,.25);
+
+}
+
+
+.logout-btn:active{
+
+    transform:scale(.96);
 
 }
 
@@ -406,538 +434,150 @@ body{
 
 .main{
 
-    margin-left:250px;
+    max-width:1100px;
 
-    min-height:100vh;
+    margin:auto;
 
-    padding:28px 35px;
+    padding:
+
+    55px 25px;
 
 }
 
 
 /* =====================================================
-   TOPBAR
+   PAGE TITLE
 ===================================================== */
 
-.topbar{
+.page-title{
 
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:28px;
+    margin-bottom:35px;
 
 }
 
 
 .page-title h1{
 
-    font-size:27px;
+    font-size:38px;
 
     font-weight:800;
 
-    letter-spacing:-.5px;
+    margin-bottom:10px;
 
 }
 
 
 .page-title p{
 
-    color:var(--muted);
+    color:#9bb8ad;
 
-    font-size:13px;
-
-    margin-top:5px;
-
-}
-
-
-.user-area{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-}
-
-
-.user-info{
-
-    text-align:right;
-
-}
-
-
-.user-info strong{
-
-    display:block;
-
-    font-size:13px;
-
-}
-
-
-.user-info span{
-
-    font-size:10px;
-
-    color:var(--muted);
-
-}
-
-
-.avatar{
-
-    width:44px;
-
-    height:44px;
-
-    border-radius:50%;
-
-    background:
-    linear-gradient(
-        135deg,
-        var(--green),
-        #0aa675
-    );
-
-    color:white;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:17px;
-
-    box-shadow:
-    0 7px 20px
-    rgba(0,106,78,.25);
+    font-size:15px;
 
 }
 
 
 /* =====================================================
-   STAT CARDS
+   PROFILE CONTAINER
 ===================================================== */
 
-.stats{
+.profile-container{
 
     display:grid;
 
     grid-template-columns:
-    repeat(3,1fr);
 
-    gap:18px;
+    320px
 
-    margin-bottom:25px;
+    1fr;
 
-}
-
-
-.stat-card{
-
-    background:white;
-
-    border-radius:17px;
-
-    padding:20px;
-
-    box-shadow:var(--shadow);
-
-    border:
-    1px solid
-    rgba(0,0,0,.03);
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-}
-
-
-.stat-left small{
-
-    display:block;
-
-    color:var(--muted);
-
-    font-size:11px;
-
-    font-weight:600;
-
-    margin-bottom:7px;
-
-}
-
-
-.stat-left h2{
-
-    font-size:27px;
-
-    font-weight:800;
-
-}
-
-
-.stat-icon{
-
-    width:50px;
-
-    height:50px;
-
-    border-radius:14px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:19px;
-
-}
-
-
-.stat-total .stat-icon{
-
-    background:
-    #e8f5f0;
-
-    color:var(--green);
-
-}
-
-
-.stat-active .stat-icon{
-
-    background:
-    #e9f8ef;
-
-    color:#16a34a;
-
-}
-
-
-.stat-blocked .stat-icon{
-
-    background:
-    #fff0f0;
-
-    color:var(--red);
+    gap:25px;
 
 }
 
 
 /* =====================================================
-   CONTENT BOX
+   PROFILE CARD
 ===================================================== */
 
-.content-box{
+.profile-card{
 
-    background:white;
+    background:
 
-    border-radius:20px;
+    rgba(255,255,255,.055);
 
-    box-shadow:var(--shadow);
+    border:
+
+    1px solid
+
+    rgba(255,255,255,.09);
+
+    border-radius:24px;
+
+    padding:
+
+    35px 25px;
+
+    text-align:center;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+
+    0 25px 60px
+
+    rgba(0,0,0,.25);
+
+    position:relative;
 
     overflow:hidden;
 
 }
 
 
-/* =====================================================
-   TOOLBAR
-===================================================== */
+.profile-card::before{
 
-.toolbar{
-
-    padding:20px 22px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:15px;
-
-    border-bottom:
-    1px solid
-    var(--border);
-
-}
-
-
-.toolbar-left{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-}
-
-
-.toolbar-title{
-
-    font-size:16px;
-
-    font-weight:800;
-
-}
-
-
-.user-count{
-
-    background:#e9f5f1;
-
-    color:var(--green);
-
-    font-size:10px;
-
-    padding:5px 9px;
-
-    border-radius:20px;
-
-    font-weight:700;
-
-}
-
-
-.toolbar-right{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-}
-
-
-.search-box{
-
-    position:relative;
-
-}
-
-
-.search-box i{
+    content:"";
 
     position:absolute;
 
-    left:13px;
+    top:0;
 
-    top:50%;
+    left:0;
 
-    transform:
-    translateY(-50%);
+    width:100%;
 
-    color:#9aa6ad;
-
-    font-size:13px;
-
-}
-
-
-.search-box input{
-
-    width:220px;
-
-    height:40px;
-
-    border:
-    1px solid
-    var(--border);
-
-    border-radius:10px;
-
-    padding:
-    0 12px 0 37px;
-
-    outline:none;
-
-    font-size:12px;
-
-    transition:.2s;
-
-}
-
-
-.search-box input:focus{
-
-    border-color:
-    var(--green);
-
-    box-shadow:
-    0 0 0 3px
-    rgba(0,106,78,.08);
-
-}
-
-
-.add-btn{
-
-    height:40px;
-
-    border:none;
-
-    border-radius:10px;
-
-    padding:
-    0 16px;
+    height:4px;
 
     background:
-    var(--green);
 
-    color:white;
+    linear-gradient(
 
-    cursor:pointer;
+        90deg,
 
-    font-size:12px;
+        #00a86b,
 
-    font-weight:700;
+        #e53935
 
-    display:flex;
-
-    align-items:center;
-
-    gap:7px;
-
-    transition:.25s;
-
-}
-
-
-.add-btn:hover{
-
-    background:
-    #004d39;
-
-    transform:
-    translateY(-1px);
+    );
 
 }
 
 
 /* =====================================================
-   TABLE
+   PROFILE AVATAR
 ===================================================== */
 
-.table-wrapper{
+.avatar{
 
-    width:100%;
+    width:110px;
 
-    overflow-x:auto;
+    height:110px;
 
-}
+    margin:
 
+    0 auto 20px;
 
-table{
-
-    width:100%;
-
-    border-collapse:collapse;
-
-    min-width:750px;
-
-}
-
-
-thead{
-
-    background:#f8fafb;
-
-}
-
-
-th{
-
-    padding:
-    14px 20px;
-
-    text-align:left;
-
-    font-size:10px;
-
-    text-transform:uppercase;
-
-    letter-spacing:.7px;
-
-    color:#7b8992;
-
-    font-weight:700;
-
-}
-
-
-td{
-
-    padding:
-    16px 20px;
-
-    border-top:
-    1px solid
-    #f0f2f3;
-
-    font-size:12px;
-
-    color:#33414a;
-
-}
-
-
-tbody tr{
-
-    transition:.2s;
-
-}
-
-
-tbody tr:hover{
-
-    background:
-    #fafdfc;
-
-}
-
-
-/* =====================================================
-   USER CELL
-===================================================== */
-
-.user-cell{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:11px;
-
-}
-
-
-.user-mini-avatar{
-
-    width:36px;
-
-    height:36px;
-
-    border-radius:10px;
-
-    background:
-    #e8f5f0;
-
-    color:var(--green);
+    border-radius:50%;
 
     display:flex;
 
@@ -945,55 +585,67 @@ tbody tr:hover{
 
     justify-content:center;
 
-    font-size:13px;
-
-    font-weight:800;
-
-}
-
-
-.user-name{
+    font-size:42px;
 
     font-weight:700;
 
-    color:#202c33;
+    background:
 
-}
+    linear-gradient(
 
+        135deg,
 
-.user-username{
+        #00a86b,
 
-    font-size:10px;
+        #006a4e
 
-    color:#94a0a7;
+    );
 
-    margin-top:2px;
+    border:
+
+    5px solid
+
+    rgba(255,255,255,.15);
+
+    box-shadow:
+
+    0 15px 40px
+
+    rgba(0,168,107,.25);
 
 }
 
 
 /* =====================================================
-   ROLE
+   PROFILE NAME
 ===================================================== */
 
-.role-badge{
+#profileName{
 
-    display:inline-flex;
-
-    align-items:center;
-
-    padding:
-    5px 9px;
-
-    background:#f1f4f5;
-
-    border-radius:6px;
-
-    font-size:10px;
+    font-size:23px;
 
     font-weight:700;
 
-    color:#65727a;
+    margin-bottom:8px;
+
+    word-break:break-word;
+
+}
+
+
+/* =====================================================
+   PROFILE USERNAME
+===================================================== */
+
+#profileUsername{
+
+    color:#8ca99d;
+
+    font-size:14px;
+
+    margin-bottom:20px;
+
+    word-break:break-word;
 
 }
 
@@ -1002,616 +654,251 @@ tbody tr:hover{
    STATUS
 ===================================================== */
 
-.status-badge{
+.status{
 
     display:inline-flex;
 
     align-items:center;
 
-    gap:5px;
+    gap:7px;
 
     padding:
-    5px 9px;
 
-    border-radius:20px;
+    7px 14px;
 
-    font-size:10px;
-
-    font-weight:700;
-
-}
-
-
-.status-badge::before{
-
-    content:"";
-
-    width:6px;
-
-    height:6px;
-
-    border-radius:50%;
-
-}
-
-
-.status-active{
-
-    background:#eaf8ef;
-
-    color:#159447;
-
-}
-
-
-.status-active::before{
-
-    background:#18a957;
-
-}
-
-
-.status-blocked{
-
-    background:#fff0f0;
-
-    color:#d93636;
-
-}
-
-
-.status-blocked::before{
-
-    background:#e53935;
-
-}
-
-
-/* =====================================================
-   ACTION BUTTONS
-===================================================== */
-
-.actions{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:6px;
-
-}
-
-
-.action-btn{
-
-    width:32px;
-
-    height:32px;
-
-    border:none;
-
-    border-radius:8px;
-
-    cursor:pointer;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    transition:.2s;
-
-}
-
-
-.edit-btn{
-
-    background:#edf4ff;
-
-    color:#2563eb;
-
-}
-
-
-.edit-btn:hover{
-
-    background:#2563eb;
-
-    color:white;
-
-}
-
-
-.status-btn{
-
-    background:#fff7e8;
-
-    color:#e68a00;
-
-}
-
-
-.status-btn:hover{
-
-    background:#e68a00;
-
-    color:white;
-
-}
-
-
-.delete-btn{
-
-    background:#fff0f0;
-
-    color:#dc2626;
-
-}
-
-
-.delete-btn:hover{
-
-    background:#dc2626;
-
-    color:white;
-
-}
-
-
-/* =====================================================
-   EMPTY
-===================================================== */
-
-.empty-state{
-
-    text-align:center;
-
-    padding:60px 20px;
-
-    color:#98a4aa;
-
-}
-
-
-.empty-state i{
-
-    font-size:38px;
-
-    margin-bottom:12px;
-
-    opacity:.45;
-
-}
-
-
-.empty-state p{
-
-    font-size:13px;
-
-}
-
-
-/* =====================================================
-   LOADING
-===================================================== */
-
-.loading{
-
-    text-align:center;
-
-    padding:50px;
-
-    color:#829099;
-
-    font-size:13px;
-
-}
-
-
-.loading i{
-
-    margin-right:7px;
-
-}
-
-
-/* =====================================================
-   MODAL
-===================================================== */
-
-.modal{
-
-    position:fixed;
-
-    inset:0;
+    border-radius:30px;
 
     background:
-    rgba(5,20,25,.58);
 
-    backdrop-filter:
-    blur(5px);
+    rgba(34,197,94,.12);
 
-    display:none;
-
-    align-items:center;
-
-    justify-content:center;
-
-    z-index:2000;
-
-    padding:20px;
-
-}
-
-
-.modal.show{
-
-    display:flex;
-
-}
-
-
-.modal-box{
-
-    width:100%;
-
-    max-width:500px;
-
-    background:white;
-
-    border-radius:20px;
-
-    box-shadow:
-    0 30px 80px
-    rgba(0,0,0,.25);
-
-    animation:
-    modalIn .25s ease;
-
-}
-
-
-@keyframes modalIn{
-
-    from{
-
-        opacity:0;
-
-        transform:
-        translateY(20px)
-        scale(.97);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-        translateY(0)
-        scale(1);
-
-    }
-
-}
-
-
-.modal-header{
-
-    padding:
-    20px 22px;
-
-    border-bottom:
-    1px solid
-    var(--border);
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-}
-
-
-.modal-header h2{
-
-    font-size:17px;
-
-    font-weight:800;
-
-}
-
-
-.close-btn{
-
-    width:32px;
-
-    height:32px;
-
-    border:none;
-
-    border-radius:8px;
-
-    background:#f2f4f5;
-
-    color:#66747c;
-
-    cursor:pointer;
-
-}
-
-
-.modal-body{
-
-    padding:22px;
-
-}
-
-
-.form-group{
-
-    margin-bottom:16px;
-
-}
-
-
-.form-group label{
-
-    display:block;
-
-    font-size:11px;
-
-    font-weight:700;
-
-    color:#52616a;
-
-    margin-bottom:7px;
-
-}
-
-
-.form-group input,
-
-.form-group select{
-
-    width:100%;
-
-    height:43px;
-
-    border:
-    1px solid
-    var(--border);
-
-    border-radius:10px;
-
-    outline:none;
-
-    padding:
-    0 13px;
+    color:#4ade80;
 
     font-size:12px;
 
-    color:#26343c;
-
-    background:white;
+    font-weight:600;
 
 }
 
 
-.form-group input:focus,
+.status-dot{
 
-.form-group select:focus{
+    width:7px;
 
-    border-color:
-    var(--green);
+    height:7px;
+
+    border-radius:50%;
+
+    background:#4ade80;
 
     box-shadow:
-    0 0 0 3px
-    rgba(0,106,78,.08);
+
+    0 0 10px
+
+    #4ade80;
 
 }
 
 
-.form-row{
+/* =====================================================
+   INFORMATION CARD
+===================================================== */
+
+.info-card{
+
+    background:
+
+    rgba(255,255,255,.055);
+
+    border:
+
+    1px solid
+
+    rgba(255,255,255,.09);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+
+    0 25px 60px
+
+    rgba(0,0,0,.25);
+
+}
+
+
+/* =====================================================
+   INFORMATION TITLE
+===================================================== */
+
+.info-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:30px;
+
+}
+
+
+.info-title-icon{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+
+    rgba(0,168,107,.15);
+
+    color:#00d084;
+
+}
+
+
+.info-title h2{
+
+    font-size:20px;
+
+}
+
+
+/* =====================================================
+   INFO GRID
+===================================================== */
+
+.info-grid{
 
     display:grid;
 
     grid-template-columns:
-    1fr 1fr;
 
-    gap:12px;
+    repeat(2,1fr);
 
-}
-
-
-.modal-footer{
-
-    padding:
-    0 22px 22px;
-
-    display:flex;
-
-    justify-content:flex-end;
-
-    gap:9px;
-
-}
-
-
-.cancel-btn,
-
-.save-btn{
-
-    height:40px;
-
-    padding:
-    0 17px;
-
-    border:none;
-
-    border-radius:9px;
-
-    cursor:pointer;
-
-    font-size:12px;
-
-    font-weight:700;
-
-}
-
-
-.cancel-btn{
-
-    background:#f1f3f4;
-
-    color:#5f6b72;
-
-}
-
-
-.save-btn{
-
-    background:var(--green);
-
-    color:white;
-
-}
-
-
-.save-btn:hover{
-
-    background:#004d39;
+    gap:20px;
 
 }
 
 
 /* =====================================================
-   TOAST
+   INFO ITEM
 ===================================================== */
 
-.toast{
+.info-item{
 
-    position:fixed;
+    padding:20px;
 
-    right:25px;
-
-    bottom:25px;
-
-    min-width:280px;
-
-    max-width:400px;
-
-    background:#10232c;
-
-    color:white;
-
-    padding:
-    14px 17px;
-
-    border-radius:12px;
-
-    box-shadow:
-    0 15px 40px
-    rgba(0,0,0,.22);
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    transform:
-    translateY(100px);
-
-    opacity:0;
-
-    pointer-events:none;
-
-    transition:.35s;
-
-    z-index:5000;
-
-    font-size:12px;
-
-}
-
-
-.toast.show{
-
-    transform:
-    translateY(0);
-
-    opacity:1;
-
-}
-
-
-.toast.success i{
-
-    color:#32d583;
-
-}
-
-
-.toast.error i{
-
-    color:#ff6868;
-
-}
-
-
-/* =====================================================
-   MOBILE MENU
-===================================================== */
-
-.menu-btn{
-
-    display:none;
-
-    width:40px;
-
-    height:40px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:white;
-
-    color:var(--green);
-
-    box-shadow:var(--shadow);
-
-    cursor:pointer;
-
-}
-
-
-/* =====================================================
-   OVERLAY
-===================================================== */
-
-.overlay{
-
-    display:none;
-
-    position:fixed;
-
-    inset:0;
+    border-radius:15px;
 
     background:
-    rgba(0,0,0,.4);
 
-    z-index:900;
+    rgba(255,255,255,.035);
+
+    border:
+
+    1px solid
+
+    rgba(255,255,255,.06);
+
+    transition:.3s;
 
 }
 
 
-.overlay.show{
+.info-item:hover{
+
+    background:
+
+    rgba(255,255,255,.06);
+
+    transform:translateY(-3px);
+
+}
+
+
+.info-label{
 
     display:block;
+
+    color:#78958a;
+
+    font-size:12px;
+
+    margin-bottom:8px;
+
+}
+
+
+.info-value{
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#f2fff9;
+
+    word-break:break-word;
+
+}
+
+
+/* =====================================================
+   ROLE BADGE
+===================================================== */
+
+.role-badge{
+
+    display:inline-block;
+
+    padding:
+
+    6px 12px;
+
+    border-radius:8px;
+
+    background:
+
+    rgba(37,99,235,.15);
+
+    color:#60a5fa;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+
+    text-align:center;
+
+    padding:
+
+    30px 20px;
+
+    color:#668278;
+
+    font-size:13px;
 
 }
 
@@ -1620,166 +907,144 @@ tbody tr:hover{
    MOBILE
 ===================================================== */
 
-@media(max-width:900px){
+@media(max-width:768px){
 
-    .sidebar{
+    header{
 
-        transform:
-        translateX(-100%);
+        padding:
 
-    }
-
-
-    .sidebar.open{
-
-        transform:
-        translateX(0);
+        0 20px;
 
     }
 
 
-    .main{
+    .logo h2{
 
-        margin-left:0;
-
-        padding:22px;
+        font-size:15px;
 
     }
 
 
-    .menu-btn{
-
-        display:flex;
-
-        align-items:center;
-
-        justify-content:center;
-
-    }
-
-
-    .topbar{
-
-        gap:15px;
-
-    }
-
-
-    .topbar-left{
-
-        display:flex;
-
-        align-items:center;
-
-        gap:12px;
-
-    }
-
-
-    .stats{
-
-        grid-template-columns:
-        1fr;
-
-    }
-
-}
-
-
-@media(max-width:650px){
-
-    .main{
-
-        padding:16px;
-
-    }
-
-
-    .page-title h1{
-
-        font-size:22px;
-
-    }
-
-
-    .page-title p{
-
-        font-size:11px;
-
-    }
-
-
-    .user-info{
+    .header-user{
 
         display:none;
 
     }
 
 
-    .toolbar{
+    .logout-btn{
 
-        flex-direction:column;
+        padding:
 
-        align-items:stretch;
-
-    }
-
-
-    .toolbar-right{
-
-        width:100%;
+        9px 12px;
 
     }
 
 
-    .search-box{
+    .main{
 
-        flex:1;
+        padding:
 
-    }
-
-
-    .search-box input{
-
-        width:100%;
+        35px 18px;
 
     }
 
 
-    .add-btn{
+    .page-title h1{
 
-        justify-content:center;
-
-    }
-
-
-    .form-row{
-
-        grid-template-columns:
-        1fr;
+        font-size:30px;
 
     }
 
 
-    .modal-box{
+    .profile-container{
 
-        max-height:
-        90vh;
-
-        overflow-y:auto;
+        grid-template-columns:1fr;
 
     }
 
 
-    .toast{
+    .profile-card{
 
-        left:15px;
+        padding:
 
-        right:15px;
+        30px 20px;
 
-        bottom:15px;
+    }
 
-        min-width:0;
+
+    .info-card{
+
+        padding:
+
+        25px 20px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:450px){
+
+    .logo-box{
+
+        width:40px;
+
+        height:40px;
+
+    }
+
+
+    .logo h2{
+
+        font-size:13px;
+
+    }
+
+
+    .logout-btn span{
+
+        display:none;
+
+    }
+
+
+    .logout-btn{
+
+        width:40px;
+
+        height:40px;
+
+        padding:0;
+
+    }
+
+
+    .page-title h1{
+
+        font-size:27px;
+
+    }
+
+
+    .info-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .avatar{
+
+        width:95px;
+
+        height:95px;
+
+        font-size:36px;
 
     }
 
@@ -1794,136 +1059,86 @@ tbody tr:hover{
 
 
 <!-- =====================================================
-     SIDEBAR
+     HEADER
 ===================================================== -->
 
-<aside class="sidebar" id="sidebar">
+<header>
 
 
-<div class="brand">
+    <!-- LOGO -->
 
-<div class="brand-icon">
+    <div class="logo">
 
-<i class="fa-solid fa-headset"></i>
+        <div class="logo-box">
 
-</div>
+            <i class="fa-solid fa-headset"></i>
 
-<div class="brand-text">
-
-LINK4 COMMUNICATION
-
-<small>USER MANAGEMENT</small>
-
-</div>
-
-</div>
+        </div>
 
 
-<nav class="nav">
+        <h2>
 
-<div class="nav-title">
+            LINK4 COMMUNICATION
 
-Management
+        </h2>
 
-</div>
-
-
-<a
-href="index.html"
->
-
-<i class="fa-solid fa-gauge-high"></i>
-
-Dashboard
-
-</a>
+    </div>
 
 
-<a
-href="new-entry.html"
->
 
-<i class="fa-solid fa-user-plus"></i>
+    <!-- HEADER RIGHT -->
 
-New Entry
-
-</a>
+    <div class="header-right">
 
 
-<a
-href="pending-support.html"
->
+        <!-- USER NAME -->
 
-<i class="fa-solid fa-headset"></i>
+        <div class="header-user">
 
-Pending Support
+            <div class="header-user-icon">
 
-</a>
+                <i class="fa-solid fa-user"></i>
 
-
-<a
-href="pending-call.html"
->
-
-<i class="fa-solid fa-phone-volume"></i>
-
-Pending Call
-
-</a>
+            </div>
 
 
-<a
-href="history.html"
->
+            <span id="headerUserName">
 
-<i class="fa-solid fa-clock-rotate-left"></i>
+                User
 
-History
+            </span>
 
-</a>
+        </div>
 
 
-<a
-href="user-account.html"
-class="active"
->
 
-<i class="fa-solid fa-users"></i>
+        <!-- DIRECT LOGOUT -->
 
-User Account
+        <button
 
-</a>
+            class="logout-btn"
 
-</nav>
+            id="logoutBtn"
 
+            type="button"
 
-<div class="sidebar-bottom">
+        >
 
-<a
-href="index.html"
-class="back-dashboard"
->
+            <i class="fa-solid fa-right-from-bracket"></i>
 
-<i class="fa-solid fa-arrow-left"></i>
+            <span>
 
-Back to Dashboard
+                Logout
 
-</a>
+            </span>
 
-</div>
+        </button>
 
 
-</aside>
+    </div>
 
+</header>
 
-<!-- =====================================================
-     OVERLAY
-===================================================== -->
-
-<div
-class="overlay"
-id="overlay"
-></div>
 
 
 <!-- =====================================================
@@ -1933,507 +1148,261 @@ id="overlay"
 <main class="main">
 
 
-<!-- =====================================================
-     TOPBAR
-===================================================== -->
+    <!-- PAGE TITLE -->
 
-<div class="topbar">
+    <div class="page-title">
 
+        <h1>
 
-<div class="topbar-left">
+            My Account
 
+        </h1>
 
-<button
-class="menu-btn"
-id="menuBtn"
->
 
-<i class="fa-solid fa-bars"></i>
+        <p>
 
-</button>
+            View your account information and profile details.
 
+        </p>
 
-<div class="page-title">
+    </div>
 
-<h1>User Account</h1>
 
-<p>
-Manage LINK4 COMMUNICATION system users and access.
-</p>
 
-</div>
+    <!-- =================================================
+         PROFILE CONTAINER
+    ================================================= -->
 
+    <div class="profile-container">
 
-</div>
 
+        <!-- =================================================
+             PROFILE CARD
+        ================================================= -->
 
-<div class="user-area">
+        <div class="profile-card">
 
 
-<div class="user-info">
+            <!-- AVATAR -->
 
-<strong id="loggedUserName">
-Welcome
-</strong>
+            <div
 
-<span id="loggedUserRole">
-User
-</span>
+                class="avatar"
 
-</div>
+                id="avatar"
 
+            >
 
-<div class="avatar">
+                U
 
-<i class="fa-solid fa-user"></i>
+            </div>
 
-</div>
 
+            <!-- PROFILE NAME -->
 
-</div>
+            <h2 id="profileName">
 
+                User
 
-</div>
+            </h2>
 
 
-<!-- =====================================================
-     STATISTICS
-===================================================== -->
+            <!-- USERNAME -->
 
-<section class="stats">
+            <p id="profileUsername">
 
+                @username
 
-<div class="stat-card stat-total">
+            </p>
 
-<div class="stat-left">
 
-<small>Total Users</small>
+            <!-- STATUS -->
 
-<h2 id="totalUsers">
-0
-</h2>
+            <div class="status">
 
-</div>
+                <span class="status-dot"></span>
 
-<div class="stat-icon">
+                <span id="profileStatus">
 
-<i class="fa-solid fa-users"></i>
+                    Active
 
-</div>
+                </span>
 
-</div>
+            </div>
 
 
-<div class="stat-card stat-active">
+        </div>
 
-<div class="stat-left">
 
-<small>Active Users</small>
 
-<h2 id="activeUsers">
-0
-</h2>
+        <!-- =================================================
+             ACCOUNT INFORMATION
+        ================================================= -->
 
-</div>
+        <div class="info-card">
 
-<div class="stat-icon">
 
-<i class="fa-solid fa-user-check"></i>
+            <!-- TITLE -->
 
-</div>
+            <div class="info-title">
 
-</div>
 
+                <div class="info-title-icon">
 
-<div class="stat-card stat-blocked">
+                    <i class="fa-solid fa-id-card"></i>
 
-<div class="stat-left">
+                </div>
 
-<small>Blocked Users</small>
 
-<h2 id="blockedUsers">
-0
-</h2>
+                <h2>
 
-</div>
+                    Account Information
 
-<div class="stat-icon">
+                </h2>
 
-<i class="fa-solid fa-user-lock"></i>
 
-</div>
+            </div>
 
-</div>
 
 
-</section>
+            <!-- INFO GRID -->
 
+            <div class="info-grid">
 
-<!-- =====================================================
-     USER CONTENT
-===================================================== -->
 
-<section class="content-box">
+                <!-- NAME -->
 
+                <div class="info-item">
 
-<div class="toolbar">
+                    <span class="info-label">
 
+                        Full Name
 
-<div class="toolbar-left">
+                    </span>
 
-<div class="toolbar-title">
 
-All Users
+                    <span
 
-</div>
+                        class="info-value"
 
-<div
-class="user-count"
-id="userCount"
->
+                        id="infoName"
 
-0 Users
+                    >
 
-</div>
+                        -
 
-</div>
+                    </span>
 
+                </div>
 
-<div class="toolbar-right">
 
 
-<div class="search-box">
+                <!-- USERNAME -->
 
-<i class="fa-solid fa-search"></i>
+                <div class="info-item">
 
-<input
-type="text"
-id="searchInput"
-placeholder="Search user..."
-autocomplete="off"
->
+                    <span class="info-label">
 
-</div>
+                        Username
 
+                    </span>
 
-<button
-class="add-btn"
-id="addUserBtn"
->
 
-<i class="fa-solid fa-plus"></i>
+                    <span
 
-Add User
+                        class="info-value"
 
-</button>
+                        id="infoUsername"
 
+                    >
 
-</div>
+                        -
 
+                    </span>
 
-</div>
+                </div>
 
 
-<!-- =====================================================
-     TABLE
-===================================================== -->
 
-<div class="table-wrapper">
+                <!-- ROLE -->
 
+                <div class="info-item">
 
-<table>
+                    <span class="info-label">
 
+                        Account Role
 
-<thead>
+                    </span>
 
-<tr>
 
-<th>User</th>
+                    <span
 
-<th>Role</th>
+                        class="role-badge"
 
-<th>Status</th>
+                        id="infoRole"
 
-<th>Actions</th>
+                    >
 
-</tr>
+                        User
 
-</thead>
+                    </span>
 
+                </div>
 
-<tbody id="userTableBody">
 
 
-<tr>
+                <!-- STATUS -->
 
-<td
-colspan="4"
->
+                <div class="info-item">
 
-<div class="loading">
+                    <span class="info-label">
 
-<i class="fa-solid fa-spinner fa-spin"></i>
+                        Account Status
 
-Loading users...
+                    </span>
 
-</div>
 
-</td>
+                    <span
 
-</tr>
+                        class="info-value"
 
+                        id="infoStatus"
 
-</tbody>
+                    >
 
+                        Active
 
-</table>
+                    </span>
 
+                </div>
 
-</div>
 
+            </div>
 
-</section>
+
+        </div>
+
+
+    </div>
 
 
 </main>
 
 
-<!-- =====================================================
-     ADD / EDIT MODAL
-===================================================== -->
-
-<div
-class="modal"
-id="userModal"
->
-
-
-<div class="modal-box">
-
-
-<div class="modal-header">
-
-
-<h2 id="modalTitle">
-
-Add New User
-
-</h2>
-
-
-<button
-class="close-btn"
-id="closeModalBtn"
->
-
-<i class="fa-solid fa-xmark"></i>
-
-</button>
-
-
-</div>
-
-
-<div class="modal-body">
-
-
-<input
-type="hidden"
-id="editRow"
->
-
-
-<div class="form-row">
-
-
-<div class="form-group">
-
-<label>
-Name
-</label>
-
-<input
-type="text"
-id="nameInput"
-placeholder="Enter full name"
->
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-Username
-</label>
-
-<input
-type="text"
-id="usernameInput"
-placeholder="Enter username"
->
-
-</div>
-
-
-</div>
-
-
-<div class="form-row">
-
-
-<div class="form-group">
-
-<label>
-Password
-</label>
-
-<input
-type="password"
-id="passwordInput"
-placeholder="Enter password"
->
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-Role
-</label>
-
-<select
-id="roleInput"
->
-
-<option value="">
-Select Role
-</option>
-
-<option value="Admin">
-Admin
-</option>
-
-<option value="Support">
-Support
-</option>
-
-<option value="Call">
-Call
-</option>
-
-<option value="User">
-User
-</option>
-
-</select>
-
-</div>
-
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-Status
-</label>
-
-<select
-id="statusInput"
->
-
-<option value="Active">
-Active
-</option>
-
-<option value="Blocked">
-Blocked
-</option>
-
-</select>
-
-</div>
-
-
-</div>
-
-
-<div class="modal-footer">
-
-
-<button
-class="cancel-btn"
-id="cancelBtn"
->
-
-Cancel
-
-</button>
-
-
-<button
-class="save-btn"
-id="saveUserBtn"
->
-
-<i class="fa-solid fa-check"></i>
-
-Save User
-
-</button>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
 
 <!-- =====================================================
-     TOAST
+     FOOTER
 ===================================================== -->
 
-<div
-class="toast"
-id="toast"
->
+<div class="footer">
 
-<i
-class="fa-solid fa-circle-check"
-id="toastIcon"
-></i>
-
-<span id="toastMessage">
-Success
-</span>
+    © 2026 LINK4 COMMUNICATION | All Rights Reserved
 
 </div>
+
 
 
 <script>
-
-/* =====================================================
-   API CONFIGURATION
-===================================================== */
-
-const API_URL =
-
-"https://script.google.com/macros/s/AKfycbwu8quYg1YUhI-ZggQc3nfkEiKVpBuLKAxgex9E9Ab8Cjtsbele-mtAXlJ5xgw4_EZC/exec";
-
-
-/* =====================================================
-   GLOBAL DATA
-===================================================== */
-
-let allUsers = [];
-
-let editMode = false;
 
 
 /* =====================================================
@@ -2442,1932 +1411,296 @@ let editMode = false;
 
 function checkLogin(){
 
+    const loggedIn =
+
+        localStorage.getItem(
+
+            "loggedIn"
+
+        );
+
+
     if(
-        localStorage.getItem("loggedIn")
-        !==
-        "true"
+
+        loggedIn !== "true"
+
     ){
 
         window.location.replace(
+
             "../index.html"
+
         );
 
         return false;
 
     }
 
+
     return true;
 
 }
 
 
-if(
-    !checkLogin()
-){
-
-    throw new Error(
-        "User not logged in"
-    );
-
-}
-
-
 /* =====================================================
-   SHOW LOGGED USER
+   GET USER DATA
 ===================================================== */
 
-const loggedName =
+const userName =
 
-localStorage.getItem("name");
+    localStorage.getItem(
 
+        "name"
 
-const loggedUsername =
+    ) ||
 
-localStorage.getItem("username");
+    localStorage.getItem(
 
+        "username"
 
-const loggedRole =
+    ) ||
 
-localStorage.getItem("role");
-
-
-document.getElementById(
-    "loggedUserName"
-).textContent =
-
-loggedName
-?
-loggedName
-:
-loggedUsername
-?
-loggedUsername
-:
-"Welcome";
-
-
-document.getElementById(
-    "loggedUserRole"
-).textContent =
-
-loggedRole
-?
-loggedRole
-:
-"User";
-
-
-/* =====================================================
-   TOAST
-===================================================== */
-
-let toastTimer;
-
-
-function showToast(
-    message,
-    type = "success"
-){
-
-    const toast =
-
-    document.getElementById(
-        "toast"
-    );
-
-
-    const icon =
-
-    document.getElementById(
-        "toastIcon"
-    );
-
-
-    const text =
-
-    document.getElementById(
-        "toastMessage"
-    );
-
-
-    text.textContent =
-    message;
-
-
-    toast.className =
-    "toast show " +
-    type;
-
-
-    if(
-        type === "error"
-    ){
-
-        icon.className =
-        "fa-solid fa-circle-exclamation";
-
-    }
-
-    else{
-
-        icon.className =
-        "fa-solid fa-circle-check";
-
-    }
-
-
-    clearTimeout(
-        toastTimer
-    );
-
-
-    toastTimer =
-
-    setTimeout(
-
-        function(){
-
-            toast.classList.remove(
-                "show"
-            );
-
-        },
-
-        3000
-
-    );
-
-}
-
-
-/* =====================================================
-   LOAD USERS
-===================================================== */
-
-async function loadUsers(){
-
-    const tbody =
-
-    document.getElementById(
-        "userTableBody"
-    );
-
-
-    tbody.innerHTML = `
-
-        <tr>
-
-        <td colspan="4">
-
-        <div class="loading">
-
-        <i class="fa-solid fa-spinner fa-spin"></i>
-
-        Loading users...
-
-        </div>
-
-        </td>
-
-        </tr>
-
-    `;
-
-
-    try{
-
-        const response =
-
-        await fetch(
-
-            API_URL +
-            "?action=getUsers" +
-            "&_=" +
-            Date.now(),
-
-            {
-
-                method:"GET",
-
-                cache:"no-store"
-
-            }
-
-        );
-
-
-        const data =
-
-        await response.json();
-
-
-        if(
-            !data.success
-        ){
-
-            throw new Error(
-
-                data.message
-                ||
-                "Failed to load users"
-
-            );
-
-        }
-
-
-        allUsers =
-
-        data.users
-        ||
-        [];
-
-
-        updateStatistics(
-            data
-        );
-
-
-        renderUsers(
-            allUsers
-        );
-
-    }
-
-    catch(error){
-
-        console.error(
-            error
-        );
-
-
-        tbody.innerHTML = `
-
-            <tr>
-
-            <td colspan="4">
-
-            <div class="empty-state">
-
-            <i class="fa-solid fa-triangle-exclamation"></i>
-
-            <p>
-            Failed to load users.
-            </p>
-
-            </div>
-
-            </td>
-
-            </tr>
-
-        `;
-
-
-        showToast(
-
-            "Failed to load users",
-
-            "error"
-
-        );
-
-    }
-
-}
-
-
-/* =====================================================
-   UPDATE STATISTICS
-===================================================== */
-
-function updateStatistics(
-    data
-){
-
-    const total =
-
-    data.totalUsers
-    !==
-    undefined
-
-    ?
-
-    data.totalUsers
-
-    :
-
-    allUsers.length;
-
-
-    const active =
-
-    data.activeUsers
-    !==
-    undefined
-
-    ?
-
-    data.activeUsers
-
-    :
-
-    allUsers.filter(
-
-        user =>
-
-        String(
-            user.status
-        ).toLowerCase()
-        ===
-        "active"
-
-    ).length;
-
-
-    const blocked =
-
-    data.blockedUsers
-    !==
-    undefined
-
-    ?
-
-    data.blockedUsers
-
-    :
-
-    allUsers.length
-    -
-    active;
-
-
-    document.getElementById(
-        "totalUsers"
-    ).textContent =
-
-    total;
-
-
-    document.getElementById(
-        "activeUsers"
-    ).textContent =
-
-    active;
-
-
-    document.getElementById(
-        "blockedUsers"
-    ).textContent =
-
-    blocked;
-
-
-    document.getElementById(
-        "userCount"
-    ).textContent =
-
-    total +
-
-    (
-
-        total === 1
-        ?
-        " User"
-        :
-        " Users"
-
-    );
-
-}
-
-
-/* =====================================================
-   RENDER USERS
-===================================================== */
-
-function renderUsers(
-    users
-){
-
-    const tbody =
-
-    document.getElementById(
-        "userTableBody"
-    );
-
-
-    if(
-        !users.length
-    ){
-
-        tbody.innerHTML = `
-
-            <tr>
-
-            <td colspan="4">
-
-            <div class="empty-state">
-
-            <i class="fa-solid fa-users-slash"></i>
-
-            <p>
-            No users found.
-            </p>
-
-            </div>
-
-            </td>
-
-            </tr>
-
-        `;
-
-        return;
-
-    }
-
-
-    tbody.innerHTML =
-
-    users.map(
-
-        function(user){
-
-            const name =
-
-            escapeHTML(
-                user.name
-                ||
-                "Unknown"
-            );
-
-
-            const username =
-
-            escapeHTML(
-                user.username
-                ||
-                ""
-            );
-
-
-            const role =
-
-            escapeHTML(
-                user.role
-                ||
-                "User"
-            );
-
-
-            const status =
-
-            String(
-                user.status
-                ||
-                ""
-            );
-
-
-            const row =
-
-            Number(
-                user.row
-            );
-
-
-            const firstLetter =
-
-            (
-
-                user.name
-                ||
-                user.username
-                ||
-                "U"
-
-            )
-
-            .charAt(0)
-
-            .toUpperCase();
-
-
-            const isActive =
-
-            status.toLowerCase()
-            ===
-            "active";
-
-
-            return `
-
-            <tr>
-
-                <td>
-
-                    <div class="user-cell">
-
-                        <div
-                        class="user-mini-avatar"
-                        >
-
-                        ${firstLetter}
-
-                        </div>
-
-
-                        <div>
-
-                            <div
-                            class="user-name"
-                            >
-
-                            ${name}
-
-                            </div>
-
-
-                            <div
-                            class="user-username"
-                            >
-
-                            @${username}
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </td>
-
-
-                <td>
-
-                    <span
-                    class="role-badge"
-                    >
-
-                    ${role}
-
-                    </span>
-
-                </td>
-
-
-                <td>
-
-                    <span
-                    class="status-badge
-                    ${
-                        isActive
-                        ?
-                        "status-active"
-                        :
-                        "status-blocked"
-                    }"
-                    >
-
-                    ${escapeHTML(status)}
-
-                    </span>
-
-                </td>
-
-
-                <td>
-
-                    <div class="actions">
-
-
-                        <button
-
-                        class="action-btn edit-btn"
-
-                        title="Edit User"
-
-                        onclick=
-                        "openEditModal(${row})"
-
-                        >
-
-                        <i
-                        class="fa-solid fa-pen"
-                        ></i>
-
-                        </button>
-
-
-                        <button
-
-                        class="action-btn status-btn"
-
-                        title=
-                        "${isActive
-                        ?
-                        "Block User"
-                        :
-                        "Activate User"}"
-
-                        onclick=
-                        "toggleStatus(${row})"
-
-                        >
-
-                        <i
-
-                        class=
-                        "${isActive
-                        ?
-                        "fa-solid fa-lock"
-                        :
-                        "fa-solid fa-lock-open"}"
-
-                        ></i>
-
-                        </button>
-
-
-                        <button
-
-                        class="action-btn delete-btn"
-
-                        title="Delete User"
-
-                        onclick=
-                        "deleteUser(${row})"
-
-                        >
-
-                        <i
-                        class="fa-solid fa-trash"
-                        ></i>
-
-                        </button>
-
-
-                    </div>
-
-                </td>
-
-            </tr>
-
-            `;
-
-        }
-
-    )
-
-    .join("");
-
-}
-
-
-/* =====================================================
-   SEARCH
-===================================================== */
-
-document
-
-.getElementById(
-    "searchInput"
-)
-
-.addEventListener(
-
-    "input",
-
-    function(){
-
-        const query =
-
-        this.value
-
-        .toLowerCase()
-
-        .trim();
-
-
-        if(
-            !query
-        ){
-
-            renderUsers(
-                allUsers
-            );
-
-            return;
-
-        }
-
-
-        const filtered =
-
-        allUsers.filter(
-
-            function(user){
-
-                return (
-
-                    String(
-                        user.name
-                        ||
-                        ""
-                    )
-
-                    .toLowerCase()
-
-                    .includes(query)
-
-                    ||
-
-                    String(
-                        user.username
-                        ||
-                        ""
-                    )
-
-                    .toLowerCase()
-
-                    .includes(query)
-
-                    ||
-
-                    String(
-                        user.role
-                        ||
-                        ""
-                    )
-
-                    .toLowerCase()
-
-                    .includes(query)
-
-                    ||
-
-                    String(
-                        user.status
-                        ||
-                        ""
-                    )
-
-                    .toLowerCase()
-
-                    .includes(query)
-
-                );
-
-            }
-
-        );
-
-
-        renderUsers(
-            filtered
-        );
-
-    }
-
-);
-
-
-/* =====================================================
-   MODAL ELEMENTS
-===================================================== */
-
-const modal =
-
-document.getElementById(
-    "userModal"
-);
-
-
-const modalTitle =
-
-document.getElementById(
-    "modalTitle"
-);
-
-
-const editRow =
-
-document.getElementById(
-    "editRow"
-);
-
-
-const nameInput =
-
-document.getElementById(
-    "nameInput"
-);
-
-
-const usernameInput =
-
-document.getElementById(
-    "usernameInput"
-);
-
-
-const passwordInput =
-
-document.getElementById(
-    "passwordInput"
-);
-
-
-const roleInput =
-
-document.getElementById(
-    "roleInput"
-);
-
-
-const statusInput =
-
-document.getElementById(
-    "statusInput"
-);
-
-
-/* =====================================================
-   OPEN ADD MODAL
-===================================================== */
-
-document
-
-.getElementById(
-    "addUserBtn"
-)
-
-.addEventListener(
-
-    "click",
-
-    function(){
-
-        editMode =
-        false;
-
-
-        modalTitle.textContent =
-
-        "Add New User";
-
-
-        editRow.value =
-        "";
-
-
-        nameInput.value =
-        "";
-
-
-        usernameInput.value =
-        "";
-
-
-        passwordInput.value =
-        "";
-
-
-        roleInput.value =
-        "";
-
-
-        statusInput.value =
-        "Active";
-
-
-        passwordInput.placeholder =
-
-        "Enter password";
-
-
-        modal.classList.add(
-            "show"
-        );
-
-    }
-
-);
-
-
-/* =====================================================
-   OPEN EDIT MODAL
-===================================================== */
-
-function openEditModal(
-    row
-){
-
-    const user =
-
-    allUsers.find(
-
-        function(item){
-
-            return Number(
-                item.row
-            )
-            ===
-            Number(row);
-
-        }
-
-    );
-
-
-    if(
-        !user
-    ){
-
-        showToast(
-
-            "User not found",
-
-            "error"
-
-        );
-
-        return;
-
-    }
-
-
-    editMode =
-    true;
-
-
-    modalTitle.textContent =
-
-    "Edit User";
-
-
-    editRow.value =
-    user.row;
-
-
-    nameInput.value =
-
-    user.name
-    ||
-    "";
-
-
-    usernameInput.value =
-
-    user.username
-    ||
-    "";
-
-
-    passwordInput.value =
-    "";
-
-
-    passwordInput.placeholder =
-
-    "Leave blank to keep old password";
-
-
-    roleInput.value =
-
-    user.role
-    ||
     "User";
 
 
-    statusInput.value =
+const username =
 
-    user.status
-    ||
+    localStorage.getItem(
+
+        "username"
+
+    ) ||
+
+    "username";
+
+
+const userRole =
+
+    localStorage.getItem(
+
+        "role"
+
+    ) ||
+
+    "User";
+
+
+const userStatus =
+
+    localStorage.getItem(
+
+        "status"
+
+    ) ||
+
     "Active";
 
 
-    modal.classList.add(
-        "show"
+/* =====================================================
+   SHOW HEADER USER NAME
+===================================================== */
+
+document.getElementById(
+
+    "headerUserName"
+
+).textContent =
+
+    userName;
+
+
+/* =====================================================
+   SHOW PROFILE NAME
+===================================================== */
+
+document.getElementById(
+
+    "profileName"
+
+).textContent =
+
+    userName;
+
+
+/* =====================================================
+   SHOW FULL NAME
+===================================================== */
+
+document.getElementById(
+
+    "infoName"
+
+).textContent =
+
+    userName;
+
+
+/* =====================================================
+   SHOW USERNAME
+===================================================== */
+
+document.getElementById(
+
+    "profileUsername"
+
+).textContent =
+
+    "@" + username;
+
+
+document.getElementById(
+
+    "infoUsername"
+
+).textContent =
+
+    username;
+
+
+/* =====================================================
+   SHOW ROLE
+===================================================== */
+
+document.getElementById(
+
+    "infoRole"
+
+).textContent =
+
+    userRole;
+
+
+/* =====================================================
+   SHOW STATUS
+===================================================== */
+
+document.getElementById(
+
+    "profileStatus"
+
+).textContent =
+
+    userStatus;
+
+
+document.getElementById(
+
+    "infoStatus"
+
+).textContent =
+
+    userStatus;
+
+
+/* =====================================================
+   AVATAR FIRST LETTER
+===================================================== */
+
+const avatar =
+
+    document.getElementById(
+
+        "avatar"
+
     );
+
+
+if(
+
+    userName &&
+
+    userName.trim() !== ""
+
+){
+
+    avatar.textContent =
+
+        userName
+
+        .trim()
+
+        .charAt(0)
+
+        .toUpperCase();
 
 }
 
 
 /* =====================================================
-   CLOSE MODAL
+   DIRECT LOGOUT
 ===================================================== */
-
-function closeModal(){
-
-    modal.classList.remove(
-        "show"
-    );
-
-}
-
 
 document
 
 .getElementById(
-    "closeModalBtn"
+
+    "logoutBtn"
+
 )
 
 .addEventListener(
-
-    "click",
-
-    closeModal
-
-);
-
-
-document
-
-.getElementById(
-    "cancelBtn"
-)
-
-.addEventListener(
-
-    "click",
-
-    closeModal
-
-);
-
-
-modal.addEventListener(
-
-    "click",
-
-    function(e){
-
-        if(
-            e.target === modal
-        ){
-
-            closeModal();
-
-        }
-
-    }
-
-);
-
-
-/* =====================================================
-   SAVE USER
-===================================================== */
-
-document
-
-.getElementById(
-    "saveUserBtn"
-)
-
-.addEventListener(
-
-    "click",
-
-    async function(){
-
-        const name =
-
-        nameInput.value.trim();
-
-
-        const username =
-
-        usernameInput.value.trim();
-
-
-        const password =
-
-        passwordInput.value.trim();
-
-
-        const role =
-
-        roleInput.value.trim();
-
-
-        const status =
-
-        statusInput.value.trim();
-
-
-        if(
-            !name
-        ){
-
-            showToast(
-
-                "Please enter name",
-
-                "error"
-
-            );
-
-            return;
-
-        }
-
-
-        if(
-            !username
-        ){
-
-            showToast(
-
-                "Please enter username",
-
-                "error"
-
-            );
-
-            return;
-
-        }
-
-
-        if(
-            !editMode
-            &&
-            !password
-        ){
-
-            showToast(
-
-                "Please enter password",
-
-                "error"
-
-            );
-
-            return;
-
-        }
-
-
-        if(
-            !role
-        ){
-
-            showToast(
-
-                "Please select role",
-
-                "error"
-
-            );
-
-            return;
-
-        }
-
-
-        const button =
-
-        document.getElementById(
-            "saveUserBtn"
-        );
-
-
-        button.disabled =
-        true;
-
-
-        button.innerHTML =
-
-        '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
-
-
-        try{
-
-            let url;
-
-
-            if(
-                editMode
-            ){
-
-                url =
-
-                API_URL +
-
-                "?action=updateUser" +
-
-                "&row=" +
-
-                encodeURIComponent(
-                    editRow.value
-                ) +
-
-                "&username=" +
-
-                encodeURIComponent(
-                    username
-                ) +
-
-                "&password=" +
-
-                encodeURIComponent(
-                    password
-                ) +
-
-                "&name=" +
-
-                encodeURIComponent(
-                    name
-                ) +
-
-                "&role=" +
-
-                encodeURIComponent(
-                    role
-                ) +
-
-                "&status=" +
-
-                encodeURIComponent(
-                    status
-                );
-
-            }
-
-            else{
-
-                url =
-
-                API_URL +
-
-                "?action=addUser" +
-
-                "&username=" +
-
-                encodeURIComponent(
-                    username
-                ) +
-
-                "&password=" +
-
-                encodeURIComponent(
-                    password
-                ) +
-
-                "&name=" +
-
-                encodeURIComponent(
-                    name
-                ) +
-
-                "&role=" +
-
-                encodeURIComponent(
-                    role
-                ) +
-
-                "&status=" +
-
-                encodeURIComponent(
-                    status
-                );
-
-            }
-
-
-            const response =
-
-            await fetch(
-
-                url,
-
-                {
-
-                    method:
-                    "GET",
-
-                    cache:
-                    "no-store"
-
-                }
-
-            );
-
-
-            const data =
-
-            await response.json();
-
-
-            if(
-                !data.success
-            ){
-
-                throw new Error(
-
-                    data.message
-                    ||
-                    "Operation failed"
-
-                );
-
-            }
-
-
-            closeModal();
-
-
-            showToast(
-
-                data.message
-                ||
-                "User saved successfully"
-
-            );
-
-
-            await loadUsers();
-
-        }
-
-        catch(error){
-
-            console.error(
-                error
-            );
-
-
-            showToast(
-
-                error.message
-                ||
-                "Failed to save user",
-
-                "error"
-
-            );
-
-        }
-
-        finally{
-
-            button.disabled =
-            false;
-
-
-            button.innerHTML =
-
-            '<i class="fa-solid fa-check"></i> Save User';
-
-        }
-
-    }
-
-);
-
-
-/* =====================================================
-   TOGGLE STATUS
-===================================================== */
-
-async function toggleStatus(
-    row
-){
-
-    const user =
-
-    allUsers.find(
-
-        function(item){
-
-            return Number(
-                item.row
-            )
-            ===
-            Number(row);
-
-        }
-
-    );
-
-
-    if(
-        !user
-    ){
-
-        showToast(
-
-            "User not found",
-
-            "error"
-
-        );
-
-        return;
-
-    }
-
-
-    const isActive =
-
-    String(
-        user.status
-        ||
-        ""
-    )
-
-    .toLowerCase()
-    ===
-    "active";
-
-
-    const actionText =
-
-    isActive
-    ?
-    "block"
-    :
-    "activate";
-
-
-    const confirmed =
-
-    confirm(
-
-        "Are you sure you want to " +
-
-        actionText +
-
-        " this user?"
-
-    );
-
-
-    if(
-        !confirmed
-    ){
-
-        return;
-
-    }
-
-
-    try{
-
-        const response =
-
-        await fetch(
-
-            API_URL +
-
-            "?action=toggleStatus" +
-
-            "&row=" +
-
-            encodeURIComponent(
-                row
-            ) +
-
-            "&_=" +
-
-            Date.now(),
-
-            {
-
-                method:
-                "GET",
-
-                cache:
-                "no-store"
-
-            }
-
-        );
-
-
-        const data =
-
-        await response.json();
-
-
-        if(
-            !data.success
-        ){
-
-            throw new Error(
-
-                data.message
-                ||
-                "Status update failed"
-
-            );
-
-        }
-
-
-        showToast(
-
-            data.message
-            ||
-            "Status updated"
-
-        );
-
-
-        await loadUsers();
-
-    }
-
-    catch(error){
-
-        console.error(
-            error
-        );
-
-
-        showToast(
-
-            error.message
-            ||
-            "Failed to update status",
-
-            "error"
-
-        );
-
-    }
-
-}
-
-
-/* =====================================================
-   DELETE USER
-===================================================== */
-
-async function deleteUser(
-    row
-){
-
-    const user =
-
-    allUsers.find(
-
-        function(item){
-
-            return Number(
-                item.row
-            )
-            ===
-            Number(row);
-
-        }
-
-    );
-
-
-    if(
-        !user
-    ){
-
-        showToast(
-
-            "User not found",
-
-            "error"
-
-        );
-
-        return;
-
-    }
-
-
-    const confirmed =
-
-    confirm(
-
-        "Are you sure you want to delete " +
-
-        (
-
-            user.name
-            ||
-            user.username
-
-        ) +
-
-        "?\n\nThis action cannot be undone."
-
-    );
-
-
-    if(
-        !confirmed
-    ){
-
-        return;
-
-    }
-
-
-    try{
-
-        const response =
-
-        await fetch(
-
-            API_URL +
-
-            "?action=deleteUser" +
-
-            "&row=" +
-
-            encodeURIComponent(
-                row
-            ) +
-
-            "&_=" +
-
-            Date.now(),
-
-            {
-
-                method:
-                "GET",
-
-                cache:
-                "no-store"
-
-            }
-
-        );
-
-
-        const data =
-
-        await response.json();
-
-
-        if(
-            !data.success
-        ){
-
-            throw new Error(
-
-                data.message
-                ||
-                "Delete failed"
-
-            );
-
-        }
-
-
-        showToast(
-
-            data.message
-            ||
-            "User deleted successfully"
-
-        );
-
-
-        await loadUsers();
-
-    }
-
-    catch(error){
-
-        console.error(
-            error
-        );
-
-
-        showToast(
-
-            error.message
-            ||
-            "Failed to delete user",
-
-            "error"
-
-        );
-
-    }
-
-}
-
-
-/* =====================================================
-   ESCAPE HTML
-===================================================== */
-
-function escapeHTML(
-    value
-){
-
-    const div =
-
-    document.createElement(
-        "div"
-    );
-
-
-    div.textContent =
-
-    value
-    ||
-    "";
-
-
-    return div.innerHTML;
-
-}
-
-
-/* =====================================================
-   MOBILE SIDEBAR
-===================================================== */
-
-const sidebar =
-
-document.getElementById(
-    "sidebar"
-);
-
-
-const overlay =
-
-document.getElementById(
-    "overlay"
-);
-
-
-const menuBtn =
-
-document.getElementById(
-    "menuBtn"
-);
-
-
-menuBtn.addEventListener(
 
     "click",
 
     function(){
 
-        sidebar.classList.toggle(
-            "open"
-        );
 
-        overlay.classList.toggle(
-            "show"
-        );
+        /* =============================================
+           REMOVE LOGIN DATA
+        ============================================= */
 
-    }
+        localStorage.removeItem(
 
-);
-
-
-overlay.addEventListener(
-
-    "click",
-
-    function(){
-
-        sidebar.classList.remove(
-            "open"
-        );
-
-        overlay.classList.remove(
-            "show"
-        );
-
-    }
-
-);
-
-
-/* =====================================================
-   AUTO LOGOUT
-===================================================== */
-
-const AUTO_LOGOUT_TIME =
-
-3 * 60 * 1000;
-
-
-let inactivityTimer;
-
-
-function autoLogout(){
-
-    clearTimeout(
-        inactivityTimer
-    );
-
-
-    localStorage.removeItem(
-        "loggedIn"
-    );
-
-
-    localStorage.removeItem(
-        "username"
-    );
-
-
-    localStorage.removeItem(
-        "name"
-    );
-
-
-    localStorage.removeItem(
-        "role"
-    );
-
-
-    sessionStorage.clear();
-
-
-    window.location.replace(
-
-        "../index.html?session=expired"
-
-    );
-
-}
-
-
-function resetInactivityTimer(){
-
-    if(
-
-        localStorage.getItem(
             "loggedIn"
-        )
-        !==
-        "true"
-
-    ){
-
-        return;
-
-    }
-
-
-    clearTimeout(
-        inactivityTimer
-    );
-
-
-    inactivityTimer =
-
-    setTimeout(
-
-        autoLogout,
-
-        AUTO_LOGOUT_TIME
-
-    );
-
-}
-
-
-[
-
-    "mousemove",
-
-    "mousedown",
-
-    "click",
-
-    "keydown",
-
-    "scroll",
-
-    "touchstart",
-
-    "wheel"
-
-]
-
-.forEach(
-
-    function(eventName){
-
-        document.addEventListener(
-
-            eventName,
-
-            resetInactivityTimer,
-
-            true
 
         );
+
+
+        localStorage.removeItem(
+
+            "username"
+
+        );
+
+
+        localStorage.removeItem(
+
+            "name"
+
+        );
+
+
+        localStorage.removeItem(
+
+            "role"
+
+        );
+
+
+        localStorage.removeItem(
+
+            "status"
+
+        );
+
+
+        /* =============================================
+           CLEAR SESSION
+        ============================================= */
+
+        sessionStorage.clear();
+
+
+        /* =============================================
+           REDIRECT TO LOGIN
+        ============================================= */
+
+        window.location.replace(
+
+            "../index.html"
+
+        );
+
 
     }
 
@@ -4375,7 +1708,7 @@ function resetInactivityTimer(){
 
 
 /* =====================================================
-   PAGE SECURITY
+   BROWSER BACK / CACHE SECURITY
 ===================================================== */
 
 window.addEventListener(
@@ -4384,12 +1717,32 @@ window.addEventListener(
 
     function(){
 
-        checkLogin();
+        if(
+
+            localStorage.getItem(
+
+                "loggedIn"
+
+            ) !== "true"
+
+        ){
+
+            window.location.replace(
+
+                "../index.html"
+
+            );
+
+        }
 
     }
 
 );
 
+
+/* =====================================================
+   PAGE VISIBILITY SECURITY
+===================================================== */
 
 document.addEventListener(
 
@@ -4399,15 +1752,13 @@ document.addEventListener(
 
         if(
 
-            document.visibilityState
-            ===
+            document.visibilityState ===
+
             "visible"
 
         ){
 
             checkLogin();
-
-            loadUsers();
 
         }
 
@@ -4417,14 +1768,24 @@ document.addEventListener(
 
 
 /* =====================================================
-   START
+   CURRENT YEAR
 ===================================================== */
 
-resetInactivityTimer();
+document.querySelector(
 
-loadUsers();
+    ".footer"
+
+).innerHTML =
+
+    "© " +
+
+    new Date().getFullYear() +
+
+    " LINK4 COMMUNICATION | All Rights Reserved";
+
 
 </script>
+
 
 </body>
 

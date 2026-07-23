@@ -9,19 +9,23 @@
 
 <title>Pending Support | LINK4 COMMUNICATION</title>
 
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 
 <link
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
 rel="stylesheet"
 >
 
+
 <link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 >
+
 
 <style>
 
@@ -30,10 +34,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 ===================================================== */
 
 *{
+
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
+
     font-family:'Poppins',sans-serif;
+
 }
 
 
@@ -71,10 +80,15 @@ body{
     background:
 
     linear-gradient(
+
         180deg,
+
         #032c25 0%,
+
         #004d3b 45%,
+
         #006b50 100%
+
     );
 
     color:white;
@@ -83,9 +97,69 @@ body{
 
     flex-direction:column;
 
+    padding:25px 20px 18px;
+
     z-index:1000;
 
-    padding:25px 20px 18px;
+    transition:
+
+    width .3s ease,
+
+    left .3s ease,
+
+    padding .3s ease;
+
+}
+
+
+/* =====================================================
+   SIDEBAR TOGGLE BUTTON
+===================================================== */
+
+.sidebar-toggle{
+
+    position:absolute;
+
+    top:20px;
+
+    right:15px;
+
+    width:32px;
+
+    height:32px;
+
+    border:none;
+
+    border-radius:9px;
+
+    background:
+
+    rgba(255,255,255,.12);
+
+    color:white;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:14px;
+
+    transition:.3s;
+
+    z-index:20;
+
+}
+
+
+.sidebar-toggle:hover{
+
+    background:#00a878;
+
+    transform:scale(1.05);
 
 }
 
@@ -102,7 +176,15 @@ body{
 
     gap:14px;
 
-    padding:5px 10px 30px;
+    padding:
+
+    5px
+
+    45px
+
+    30px
+
+    10px;
 
 }
 
@@ -136,6 +218,8 @@ body{
 
     line-height:1.1;
 
+    white-space:nowrap;
+
 }
 
 
@@ -156,7 +240,9 @@ body{
 
     font-weight:600;
 
-    color:rgba(255,255,255,.65);
+    color:
+
+    rgba(255,255,255,.65);
 
     margin-top:6px;
 
@@ -164,12 +250,14 @@ body{
 
 
 /* =====================================================
-   SIDEBAR SECTION TITLE
+   SIDEBAR SECTION
 ===================================================== */
 
 .sidebar-section-title{
 
-    color:rgba(255,255,255,.45);
+    color:
+
+    rgba(255,255,255,.45);
 
     font-size:11px;
 
@@ -177,7 +265,15 @@ body{
 
     letter-spacing:1px;
 
-    padding:20px 15px 10px;
+    padding:
+
+    20px
+
+    15px
+
+    10px;
+
+    white-space:nowrap;
 
 }
 
@@ -209,7 +305,9 @@ body{
 
     padding:0 17px;
 
-    color:rgba(255,255,255,.72);
+    color:
+
+    rgba(255,255,255,.72);
 
     text-decoration:none;
 
@@ -220,6 +318,10 @@ body{
     font-weight:600;
 
     transition:.25s ease;
+
+    position:relative;
+
+    white-space:nowrap;
 
 }
 
@@ -232,12 +334,16 @@ body{
 
     font-size:17px;
 
+    flex-shrink:0;
+
 }
 
 
 .sidebar-nav a:hover{
 
-    background:rgba(255,255,255,.10);
+    background:
+
+    rgba(255,255,255,.10);
 
     color:white;
 
@@ -280,9 +386,15 @@ body{
 
     border-radius:13px;
 
-    border:1px solid rgba(255,255,255,.25);
+    border:
 
-    background:rgba(255,255,255,.08);
+    1px solid
+
+    rgba(255,255,255,.25);
+
+    background:
+
+    rgba(255,255,255,.08);
 
     color:white;
 
@@ -317,6 +429,193 @@ body{
 
 
 /* =====================================================
+   MINIMIZED SIDEBAR
+===================================================== */
+
+.sidebar.minimized{
+
+    width:70px;
+
+    padding-left:10px;
+
+    padding-right:10px;
+
+}
+
+
+/* =====================================================
+   MINIMIZED LOGO
+===================================================== */
+
+.sidebar.minimized .sidebar-logo{
+
+    justify-content:center;
+
+    padding:
+
+    5px
+
+    0
+
+    30px;
+
+}
+
+
+.sidebar.minimized .sidebar-brand{
+
+    display:none;
+
+}
+
+
+/* =====================================================
+   MINIMIZED SECTION
+===================================================== */
+
+.sidebar.minimized .sidebar-section-title{
+
+    font-size:0;
+
+    height:20px;
+
+    padding:0;
+
+    margin-bottom:10px;
+
+}
+
+
+/* =====================================================
+   MINIMIZED NAV
+===================================================== */
+
+.sidebar.minimized .sidebar-nav a{
+
+    justify-content:center;
+
+    padding:0;
+
+    gap:0;
+
+}
+
+
+.sidebar.minimized .sidebar-nav a span{
+
+    display:none;
+
+}
+
+
+.sidebar.minimized .sidebar-nav a i{
+
+    width:auto;
+
+    margin:0;
+
+    font-size:18px;
+
+}
+
+
+.sidebar.minimized .sidebar-nav a:hover{
+
+    transform:none;
+
+}
+
+
+/* =====================================================
+   MINIMIZED LOGOUT
+===================================================== */
+
+.sidebar.minimized .logout-btn{
+
+    padding:0;
+
+    gap:0;
+
+}
+
+
+.sidebar.minimized .logout-btn span{
+
+    display:none;
+
+}
+
+
+.sidebar.minimized .logout-btn i{
+
+    margin:0;
+
+}
+
+
+/* =====================================================
+   ROTATE TOGGLE
+===================================================== */
+
+.sidebar.minimized
+.sidebar-toggle i{
+
+    transform:
+
+    rotate(180deg);
+
+}
+
+
+/* =====================================================
+   TOOLTIP
+===================================================== */
+
+.sidebar.minimized
+.sidebar-nav a:hover::after{
+
+    content:
+
+    attr(data-title);
+
+    position:absolute;
+
+    left:58px;
+
+    top:50%;
+
+    transform:
+
+    translateY(-50%);
+
+    background:#032c25;
+
+    color:white;
+
+    padding:
+
+    8px
+
+    12px;
+
+    border-radius:7px;
+
+    white-space:nowrap;
+
+    font-size:12px;
+
+    z-index:2000;
+
+    box-shadow:
+
+    0 5px 15px
+
+    rgba(0,0,0,.2);
+
+}
+
+
+/* =====================================================
    MAIN CONTENT
 ===================================================== */
 
@@ -326,13 +625,29 @@ body{
 
     min-height:100vh;
 
-    padding:28px 38px;
+    padding:
+
+    28px
+
+    38px;
+
+    transition:
+
+    margin-left .3s ease;
+
+}
+
+
+.sidebar.minimized
+~ .main-content{
+
+    margin-left:70px;
 
 }
 
 
 /* =====================================================
-   TOP HEADER
+   HEADER
 ===================================================== */
 
 .header{
@@ -341,7 +656,11 @@ body{
 
     border-radius:20px;
 
-    padding:18px 24px;
+    padding:
+
+    18px
+
+    24px;
 
     display:flex;
 
@@ -384,9 +703,13 @@ body{
     background:
 
     linear-gradient(
+
         135deg,
+
         #006a4e,
+
         #00a878
+
     );
 
     color:white;
@@ -438,7 +761,11 @@ body{
 
     border:none;
 
-    padding:11px 17px;
+    padding:
+
+    11px
+
+    17px;
 
     border-radius:11px;
 
@@ -479,7 +806,9 @@ body{
 
     background:#e53935;
 
-    transform:translateY(-2px);
+    transform:
+
+    translateY(-2px);
 
 }
 
@@ -490,7 +819,9 @@ body{
 
     color:white;
 
-    transform:translateY(-2px);
+    transform:
+
+    translateY(-2px);
 
 }
 
@@ -507,7 +838,11 @@ body{
 
     color:#555;
 
-    padding:13px 18px;
+    padding:
+
+    13px
+
+    18px;
 
     margin-bottom:20px;
 
@@ -545,7 +880,11 @@ body{
 
     display:none;
 
-    padding:13px 18px;
+    padding:
+
+    13px
+
+    18px;
 
     border-radius:12px;
 
@@ -593,7 +932,7 @@ body{
 
 
 /* =====================================================
-   MAIN CARD
+   TABLE CONTAINER
 ===================================================== */
 
 .table-container{
@@ -619,9 +958,17 @@ body{
 
 .table-header{
 
-    padding:20px 25px;
+    padding:
 
-    border-bottom:1px solid #e8eeee;
+    20px
+
+    25px;
+
+    border-bottom:
+
+    1px solid
+
+    #e8eeee;
 
     display:flex;
 
@@ -648,14 +995,22 @@ body{
     background:
 
     linear-gradient(
+
         135deg,
+
         #2563eb,
+
         #3b82f6
+
     );
 
     color:white;
 
-    padding:7px 14px;
+    padding:
+
+    7px
+
+    14px;
 
     border-radius:20px;
 
@@ -667,16 +1022,24 @@ body{
 
 
 /* =====================================================
-   SEARCH AREA
+   SEARCH
 ===================================================== */
 
 .search-area{
 
-    padding:18px 25px;
+    padding:
+
+    18px
+
+    25px;
 
     background:#f7fffc;
 
-    border-bottom:1px solid #e8eeee;
+    border-bottom:
+
+    1px solid
+
+    #e8eeee;
 
 }
 
@@ -698,7 +1061,9 @@ body{
 
     top:50%;
 
-    transform:translateY(-50%);
+    transform:
+
+    translateY(-50%);
 
     color:#006a4e;
 
@@ -711,9 +1076,21 @@ body{
 
     width:100%;
 
-    padding:13px 18px 13px 48px;
+    padding:
 
-    border:2px solid #dcebe5;
+    13px
+
+    18px
+
+    13px
+
+    48px;
+
+    border:
+
+    2px solid
+
+    #dcebe5;
 
     border-radius:12px;
 
@@ -744,7 +1121,7 @@ body{
 
 
 /* =====================================================
-   TABLE SCROLL
+   TABLE
 ===================================================== */
 
 .table-scroll{
@@ -755,10 +1132,6 @@ body{
 
 }
 
-
-/* =====================================================
-   TABLE
-===================================================== */
 
 table{
 
@@ -778,9 +1151,13 @@ thead{
     background:
 
     linear-gradient(
+
         135deg,
+
         #007a55,
+
         #009f72
+
     );
 
     color:white;
@@ -790,7 +1167,11 @@ thead{
 
 th{
 
-    padding:16px 14px;
+    padding:
+
+    16px
+
+    14px;
 
     font-size:13px;
 
@@ -821,7 +1202,11 @@ td{
 
     padding:14px;
 
-    border-bottom:1px solid #edf2f0;
+    border-bottom:
+
+    1px solid
+
+    #edf2f0;
 
     font-size:13px;
 
@@ -878,7 +1263,11 @@ tbody tr:last-child td{
 
     color:#006a4e;
 
-    padding:8px 11px;
+    padding:
+
+    8px
+
+    11px;
 
     border-radius:9px;
 
@@ -903,7 +1292,11 @@ tbody tr:last-child td{
 
     color:#3867c7;
 
-    padding:8px 11px;
+    padding:
+
+    8px
+
+    11px;
 
     border-radius:9px;
 
@@ -924,11 +1317,19 @@ tbody tr:last-child td{
 
     background:#fff9ed;
 
-    border:1px solid #ffe3aa;
+    border:
+
+    1px solid
+
+    #ffe3aa;
 
     color:#805500;
 
-    padding:10px 12px;
+    padding:
+
+    10px
+
+    12px;
 
     border-radius:10px;
 
@@ -953,9 +1354,17 @@ tbody tr:last-child td{
 
     color:#c47700;
 
-    border:1px solid #ffd98c;
+    border:
 
-    padding:8px 12px;
+    1px solid
+
+    #ffd98c;
+
+    padding:
+
+    8px
+
+    12px;
 
     border-radius:9px;
 
@@ -996,9 +1405,17 @@ tbody tr:last-child td{
 
     width:100%;
 
-    padding:12px 13px;
+    padding:
 
-    border:2px solid #a9e4cf;
+    12px
+
+    13px;
+
+    border:
+
+    2px solid
+
+    #a9e4cf;
 
     background:#f2fffa;
 
@@ -1020,12 +1437,6 @@ tbody tr:last-child td{
     border-color:#00a878;
 
     background:white;
-
-    box-shadow:
-
-    0 0 0 4px
-
-    rgba(0,168,120,.10);
 
 }
 
@@ -1064,9 +1475,17 @@ tbody tr:last-child td{
 
     resize:vertical;
 
-    padding:11px 13px;
+    padding:
 
-    border:2px solid #b7d2ff;
+    11px
+
+    13px;
+
+    border:
+
+    2px solid
+
+    #b7d2ff;
 
     background:#f4f8ff;
 
@@ -1093,7 +1512,7 @@ tbody tr:last-child td{
 
 
 /* =====================================================
-   ACTION
+   SUBMIT
 ===================================================== */
 
 .action-cell{
@@ -1112,14 +1531,22 @@ tbody tr:last-child td{
     background:
 
     linear-gradient(
+
         135deg,
+
         #008f65,
+
         #00a878
+
     );
 
     color:white;
 
-    padding:12px 16px;
+    padding:
+
+    12px
+
+    16px;
 
     border-radius:10px;
 
@@ -1149,12 +1576,18 @@ tbody tr:last-child td{
     background:
 
     linear-gradient(
+
         135deg,
+
         #e53935,
+
         #f4514a
+
     );
 
-    transform:translateY(-2px);
+    transform:
+
+    translateY(-2px);
 
 }
 
@@ -1178,7 +1611,11 @@ tbody tr:last-child td{
 
     display:none;
 
-    padding:75px 20px;
+    padding:
+
+    75px
+
+    20px;
 
     text-align:center;
 
@@ -1212,7 +1649,13 @@ tbody tr:last-child td{
 
     font-size:36px;
 
-    margin:0 auto 20px;
+    margin:
+
+    0
+
+    auto
+
+    20px;
 
 }
 
@@ -1245,7 +1688,11 @@ tbody tr:last-child td{
 
     display:none;
 
-    padding:50px 20px;
+    padding:
+
+    50px
+
+    20px;
 
     text-align:center;
 
@@ -1296,7 +1743,11 @@ tbody tr:last-child td{
 
 .loading-state{
 
-    padding:70px 20px;
+    padding:
+
+    70px
+
+    20px;
 
     text-align:center;
 
@@ -1324,7 +1775,7 @@ tbody tr:last-child td{
 
 
 /* =====================================================
-   MOBILE SIDEBAR BUTTON
+   MOBILE BUTTON
 ===================================================== */
 
 .mobile-menu-btn{
@@ -1359,7 +1810,7 @@ tbody tr:last-child td{
 
 
 /* =====================================================
-   MOBILE OVERLAY
+   OVERLAY
 ===================================================== */
 
 .sidebar-overlay{
@@ -1370,7 +1821,9 @@ tbody tr:last-child td{
 
     inset:0;
 
-    background:rgba(0,0,0,.45);
+    background:
+
+    rgba(0,0,0,.45);
 
     z-index:900;
 
@@ -1378,19 +1831,8 @@ tbody tr:last-child td{
 
 
 /* =====================================================
-   RESPONSIVE
+   MOBILE
 ===================================================== */
-
-@media(max-width:1100px){
-
-    .main-content{
-
-        padding:20px;
-
-    }
-
-}
-
 
 @media(max-width:768px){
 
@@ -1398,7 +1840,7 @@ tbody tr:last-child td{
 
         left:-280px;
 
-        transition:.3s ease;
+        width:275px;
 
     }
 
@@ -1406,6 +1848,15 @@ tbody tr:last-child td{
     .sidebar.open{
 
         left:0;
+
+    }
+
+
+    .sidebar.minimized{
+
+        width:275px;
+
+        left:-280px;
 
     }
 
@@ -1426,9 +1877,15 @@ tbody tr:last-child td{
 
     .main-content{
 
-        margin-left:0;
+        margin-left:0 !important;
 
-        padding:75px 12px 20px;
+        padding:
+
+        75px
+
+        12px
+
+        20px;
 
     }
 
@@ -1458,7 +1915,11 @@ tbody tr:last-child td{
 
         justify-content:center;
 
-        padding:10px 12px;
+        padding:
+
+        10px
+
+        12px;
 
         font-size:12px;
 
@@ -1547,8 +2008,27 @@ id="sidebarOverlay"
      SIDEBAR
 ===================================================== -->
 
-<aside class="sidebar" id="sidebar">
+<aside
+class="sidebar"
+id="sidebar"
+>
 
+
+<!-- TOP TOGGLE -->
+
+<button
+class="sidebar-toggle"
+id="sidebarToggle"
+type="button"
+title="Minimize Sidebar"
+>
+
+<i class="fa-solid fa-chevron-left"></i>
+
+</button>
+
+
+<!-- LOGO -->
 
 <div class="sidebar-logo">
 
@@ -1562,15 +2042,28 @@ id="sidebarOverlay"
 
 <div class="sidebar-brand">
 
-<h2>LINK4<br>COMMUNICATION</h2>
+<h2>
 
-<p>USER MANAGEMENT</p>
+LINK4<br>
+
+COMMUNICATION
+
+</h2>
+
+
+<p>
+
+USER MANAGEMENT
+
+</p>
 
 </div>
 
 
 </div>
 
+
+<!-- SECTION -->
 
 <div class="sidebar-section-title">
 
@@ -1579,27 +2072,39 @@ MANAGEMENT
 </div>
 
 
+<!-- NAVIGATION -->
+
 <nav class="sidebar-nav">
 
 
 <a
 href="index.html"
+data-title="Dashboard"
 >
 
 <i class="fa-solid fa-gauge-high"></i>
 
-<span>Dashboard</span>
+<span>
+
+Dashboard
+
+</span>
 
 </a>
 
 
 <a
 href="new-entry.html"
+data-title="New Entry"
 >
 
 <i class="fa-solid fa-user-plus"></i>
 
-<span>New Entry</span>
+<span>
+
+New Entry
+
+</span>
 
 </a>
 
@@ -1607,50 +2112,72 @@ href="new-entry.html"
 <a
 href="pending-support.html"
 class="active"
+data-title="Pending Support"
 >
 
 <i class="fa-solid fa-headset"></i>
 
-<span>Pending Support</span>
+<span>
+
+Pending Support
+
+</span>
 
 </a>
 
 
 <a
 href="pending-call.html"
+data-title="Pending Call"
 >
 
 <i class="fa-solid fa-phone-volume"></i>
 
-<span>Pending Call</span>
+<span>
+
+Pending Call
+
+</span>
 
 </a>
 
 
 <a
 href="history.html"
+data-title="History"
 >
 
 <i class="fa-solid fa-clock-rotate-left"></i>
 
-<span>History</span>
+<span>
+
+History
+
+</span>
 
 </a>
 
 
 <a
 href="user-account.html"
+data-title="User Account"
 >
 
 <i class="fa-solid fa-users"></i>
 
-<span>User Account</span>
+<span>
+
+User Account
+
+</span>
 
 </a>
 
 
 </nav>
 
+
+<!-- LOGOUT -->
 
 <div class="sidebar-bottom">
 
@@ -1663,7 +2190,11 @@ type="button"
 
 <i class="fa-solid fa-right-from-bracket"></i>
 
+<span>
+
 Logout
+
+</span>
 
 </button>
 
@@ -1681,9 +2212,7 @@ Logout
 <main class="main-content">
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- HEADER -->
 
 <div class="header">
 
@@ -1700,9 +2229,19 @@ Logout
 
 <div class="header-title">
 
-<h1>Pending Support</h1>
+<h1>
 
-<p>Manage pending customer support requests</p>
+Pending Support
+
+</h1>
+
+
+<p>
+
+Manage pending customer support requests
+
+</p>
+
 
 </div>
 
@@ -1745,9 +2284,7 @@ Dashboard
 </div>
 
 
-<!-- =====================================================
-     USER BAR
-===================================================== -->
+<!-- USER BAR -->
 
 <div class="user-bar">
 
@@ -1762,7 +2299,9 @@ Logged in as:
 class="user-name"
 id="userName"
 >
+
 User
+
 </span>
 
 </div>
@@ -1780,9 +2319,7 @@ Customer information is read-only
 </div>
 
 
-<!-- =====================================================
-     STATUS
-===================================================== -->
+<!-- STATUS -->
 
 <div
 class="status"
@@ -1790,9 +2327,7 @@ id="status"
 ></div>
 
 
-<!-- =====================================================
-     TABLE CARD
-===================================================== -->
+<!-- TABLE -->
 
 <div class="table-container">
 
@@ -1907,7 +2442,7 @@ There are currently no pending support requests.
 </div>
 
 
-<!-- NO SEARCH RESULT -->
+<!-- NO RESULT -->
 
 <div
 class="no-result"
@@ -2057,49 +2592,115 @@ const PENDING_SUPPORT_API_URL =
 ===================================================== */
 
 const tableBody =
-document.getElementById("supportTableBody");
+
+document.getElementById(
+    "supportTableBody"
+);
+
 
 const loadingState =
-document.getElementById("loadingState");
+
+document.getElementById(
+    "loadingState"
+);
+
 
 const emptyState =
-document.getElementById("emptyState");
+
+document.getElementById(
+    "emptyState"
+);
+
 
 const noResult =
-document.getElementById("noResult");
+
+document.getElementById(
+    "noResult"
+);
+
 
 const tableWrapper =
-document.getElementById("tableWrapper");
+
+document.getElementById(
+    "tableWrapper"
+);
+
 
 const pendingCount =
-document.getElementById("pendingCount");
+
+document.getElementById(
+    "pendingCount"
+);
+
 
 const statusBox =
-document.getElementById("status");
+
+document.getElementById(
+    "status"
+);
+
 
 const refreshBtn =
-document.getElementById("refreshBtn");
+
+document.getElementById(
+    "refreshBtn"
+);
+
 
 const backBtn =
-document.getElementById("backBtn");
+
+document.getElementById(
+    "backBtn"
+);
+
 
 const userName =
-document.getElementById("userName");
+
+document.getElementById(
+    "userName"
+);
+
 
 const searchInput =
-document.getElementById("searchInput");
+
+document.getElementById(
+    "searchInput"
+);
+
 
 const logoutBtn =
-document.getElementById("logoutBtn");
+
+document.getElementById(
+    "logoutBtn"
+);
+
 
 const sidebar =
-document.getElementById("sidebar");
+
+document.getElementById(
+    "sidebar"
+);
+
+
+const sidebarToggle =
+
+document.getElementById(
+    "sidebarToggle"
+);
+
 
 const sidebarOverlay =
-document.getElementById("sidebarOverlay");
+
+document.getElementById(
+    "sidebarOverlay"
+);
+
 
 const mobileMenuBtn =
-document.getElementById("mobileMenuBtn");
+
+document.getElementById(
+    "mobileMenuBtn"
+);
 
 
 /* =====================================================
@@ -2107,21 +2708,32 @@ document.getElementById("mobileMenuBtn");
 ===================================================== */
 
 const savedName =
-localStorage.getItem("name");
+
+localStorage.getItem(
+    "name"
+);
+
 
 const savedUsername =
-localStorage.getItem("username");
+
+localStorage.getItem(
+    "username"
+);
 
 
 if(savedName){
 
-    userName.textContent = savedName;
+    userName.textContent =
+
+    savedName;
 
 }
 
 else if(savedUsername){
 
-    userName.textContent = savedUsername;
+    userName.textContent =
+
+    savedUsername;
 
 }
 
@@ -2134,7 +2746,9 @@ function checkLogin(){
 
     if(
 
-        localStorage.getItem("loggedIn")
+        localStorage.getItem(
+            "loggedIn"
+        )
 
         !==
 
@@ -2142,7 +2756,9 @@ function checkLogin(){
 
     ){
 
-        window.location.replace("../index.html");
+        window.location.replace(
+            "../index.html"
+        );
 
         return false;
 
@@ -2154,24 +2770,42 @@ function checkLogin(){
 
 
 /* =====================================================
-   LOGOUT
+   SIDEBAR MINIMIZE
 ===================================================== */
 
-logoutBtn.addEventListener(
+sidebarToggle.addEventListener(
 
     "click",
 
     function(){
 
-        localStorage.removeItem("loggedIn");
+        sidebar.classList.toggle(
+            "minimized"
+        );
 
-        localStorage.removeItem("username");
 
-        localStorage.removeItem("name");
+        const isMinimized =
 
-        localStorage.removeItem("token");
+        sidebar.classList.contains(
+            "minimized"
+        );
 
-        window.location.replace("../index.html");
+
+        localStorage.setItem(
+
+            "sidebarMinimized",
+
+            isMinimized
+
+            ?
+
+            "true"
+
+            :
+
+            "false"
+
+        );
 
     }
 
@@ -2179,7 +2813,30 @@ logoutBtn.addEventListener(
 
 
 /* =====================================================
-   MOBILE MENU
+   REMEMBER SIDEBAR STATE
+===================================================== */
+
+if(
+
+    localStorage.getItem(
+        "sidebarMinimized"
+    )
+
+    ===
+
+    "true"
+
+){
+
+    sidebar.classList.add(
+        "minimized"
+    );
+
+}
+
+
+/* =====================================================
+   MOBILE SIDEBAR
 ===================================================== */
 
 mobileMenuBtn.addEventListener(
@@ -2188,9 +2845,14 @@ mobileMenuBtn.addEventListener(
 
     function(){
 
-        sidebar.classList.toggle("open");
+        sidebar.classList.toggle(
+            "open"
+        );
 
-        sidebarOverlay.classList.toggle("show");
+
+        sidebarOverlay.classList.toggle(
+            "show"
+        );
 
     }
 
@@ -2203,9 +2865,14 @@ sidebarOverlay.addEventListener(
 
     function(){
 
-        sidebar.classList.remove("open");
+        sidebar.classList.remove(
+            "open"
+        );
 
-        sidebarOverlay.classList.remove("show");
+
+        sidebarOverlay.classList.remove(
+            "show"
+        );
 
     }
 
@@ -2213,29 +2880,34 @@ sidebarOverlay.addEventListener(
 
 
 /* =====================================================
-   CLOSE MOBILE MENU AFTER CLICK
+   LOGOUT
 ===================================================== */
 
-document.querySelectorAll(
+logoutBtn.addEventListener(
 
-    ".sidebar-nav a"
+    "click",
 
-).forEach(
+    function(){
 
-    function(link){
+        localStorage.removeItem(
+            "loggedIn"
+        );
 
-        link.addEventListener(
+        localStorage.removeItem(
+            "username"
+        );
 
-            "click",
+        localStorage.removeItem(
+            "name"
+        );
 
-            function(){
+        localStorage.removeItem(
+            "token"
+        );
 
-                sidebar.classList.remove("open");
 
-                sidebarOverlay.classList.remove("show");
-
-            }
-
+        window.location.replace(
+            "../index.html"
         );
 
     }
@@ -2255,7 +2927,10 @@ function showStatus(
 
 ){
 
-    statusBox.textContent = message;
+    statusBox.textContent =
+
+    message;
+
 
     statusBox.className =
 
@@ -2283,11 +2958,15 @@ function escapeHTML(value){
 
     const div =
 
-    document.createElement("div");
+    document.createElement(
+        "div"
+    );
+
 
     div.textContent =
 
     value || "";
+
 
     return div.innerHTML;
 
@@ -2315,7 +2994,9 @@ searchInput.addEventListener(
 
         const rows =
 
-        tableBody.querySelectorAll("tr");
+        tableBody.querySelectorAll(
+            "tr"
+        );
 
 
         let visibleCount = 0;
@@ -2327,16 +3008,22 @@ searchInput.addEventListener(
 
                 const text =
 
-                row.textContent.toLowerCase();
+                row.textContent
+
+                .toLowerCase();
 
 
                 if(
 
-                    text.includes(keyword)
+                    text.includes(
+                        keyword
+                    )
 
                 ){
 
-                    row.style.display = "";
+                    row.style.display =
+
+                    "";
 
                     visibleCount++;
 
@@ -2344,7 +3031,9 @@ searchInput.addEventListener(
 
                 else{
 
-                    row.style.display = "none";
+                    row.style.display =
+
+                    "none";
 
                 }
 
@@ -2361,13 +3050,17 @@ searchInput.addEventListener(
 
         ){
 
-            noResult.classList.add("show");
+            noResult.classList.add(
+                "show"
+            );
 
         }
 
         else{
 
-            noResult.classList.remove("show");
+            noResult.classList.remove(
+                "show"
+            );
 
         }
 
@@ -2390,25 +3083,39 @@ async function loadPendingSupport(){
     }
 
 
-    loadingState.style.display = "block";
+    loadingState.style.display =
+
+    "block";
 
 
-    emptyState.classList.remove("show");
+    emptyState.classList.remove(
+        "show"
+    );
 
 
-    noResult.classList.remove("show");
+    noResult.classList.remove(
+        "show"
+    );
 
 
-    tableWrapper.style.display = "none";
+    tableWrapper.style.display =
+
+    "none";
 
 
-    tableBody.innerHTML = "";
+    tableBody.innerHTML =
+
+    "";
 
 
-    searchInput.value = "";
+    searchInput.value =
+
+    "";
 
 
-    pendingCount.textContent = "Loading...";
+    pendingCount.textContent =
+
+    "Loading...";
 
 
     showStatus(
@@ -2469,7 +3176,9 @@ async function loadPendingSupport(){
         await response.json();
 
 
-        loadingState.style.display = "none";
+        loadingState.style.display =
+
+        "none";
 
 
         if(
@@ -2491,7 +3200,9 @@ async function loadPendingSupport(){
 
         const data =
 
-        Array.isArray(result.data)
+        Array.isArray(
+            result.data
+        )
 
         ?
 
@@ -2510,11 +3221,18 @@ async function loadPendingSupport(){
 
         ){
 
-            emptyState.classList.add("show");
+            emptyState.classList.add(
+                "show"
+            );
 
-            pendingCount.textContent = "0 Pending";
+
+            pendingCount.textContent =
+
+            "0 Pending";
+
 
             hideStatus();
+
 
             return;
 
@@ -2523,7 +3241,9 @@ async function loadPendingSupport(){
 
         /* SHOW TABLE */
 
-        tableWrapper.style.display = "block";
+        tableWrapper.style.display =
+
+        "block";
 
 
         pendingCount.textContent =
@@ -2542,7 +3262,9 @@ async function loadPendingSupport(){
 
                 const tr =
 
-                document.createElement("tr");
+                document.createElement(
+                    "tr"
+                );
 
 
                 /* CUSTOMER NUMBER */
@@ -2562,10 +3284,14 @@ async function loadPendingSupport(){
 
                 const tdIP =
 
-                document.createElement("td");
+                document.createElement(
+                    "td"
+                );
 
 
-                tdIP.className = "readonly";
+                tdIP.className =
+
+                "readonly";
 
 
                 tdIP.innerHTML =
@@ -2574,7 +3300,9 @@ async function loadPendingSupport(){
 
                 '<i class="fa-solid fa-user"></i>' +
 
-                escapeHTML(customerId) +
+                escapeHTML(
+                    customerId
+                ) +
 
                 '</span>';
 
@@ -2592,10 +3320,14 @@ async function loadPendingSupport(){
 
                 const tdDate =
 
-                document.createElement("td");
+                document.createElement(
+                    "td"
+                );
 
 
-                tdDate.className = "readonly";
+                tdDate.className =
+
+                "readonly";
 
 
                 tdDate.innerHTML =
@@ -2604,7 +3336,9 @@ async function loadPendingSupport(){
 
                 '<i class="fa-solid fa-calendar-day"></i>' +
 
-                escapeHTML(date) +
+                escapeHTML(
+                    date
+                ) +
 
                 '</span>';
 
@@ -2622,17 +3356,23 @@ async function loadPendingSupport(){
 
                 const tdProblem =
 
-                document.createElement("td");
+                document.createElement(
+                    "td"
+                );
 
 
-                tdProblem.className = "readonly";
+                tdProblem.className =
+
+                "readonly";
 
 
                 tdProblem.innerHTML =
 
                 '<div class="problem-box">' +
 
-                escapeHTML(problem) +
+                escapeHTML(
+                    problem
+                ) +
 
                 '</div>';
 
@@ -2652,10 +3392,14 @@ async function loadPendingSupport(){
 
                 const tdRef =
 
-                document.createElement("td");
+                document.createElement(
+                    "td"
+                );
 
 
-                tdRef.className = "readonly";
+                tdRef.className =
+
+                "readonly";
 
 
                 tdRef.innerHTML =
@@ -2664,7 +3408,9 @@ async function loadPendingSupport(){
 
                 '<i class="fa-solid fa-link"></i>' +
 
-                escapeHTML(ref) +
+                escapeHTML(
+                    ref
+                ) +
 
                 '</span>';
 
@@ -2673,12 +3419,16 @@ async function loadPendingSupport(){
 
                 const tdSupportName =
 
-                document.createElement("td");
+                document.createElement(
+                    "td"
+                );
 
 
                 const supportNameBox =
 
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
 
                 supportNameBox.className =
@@ -2688,7 +3438,9 @@ async function loadPendingSupport(){
 
                 const supportNameLabel =
 
-                document.createElement("span");
+                document.createElement(
+                    "span"
+                );
 
 
                 supportNameLabel.className =
@@ -2703,10 +3455,14 @@ async function loadPendingSupport(){
 
                 const supportNameInput =
 
-                document.createElement("input");
+                document.createElement(
+                    "input"
+                );
 
 
-                supportNameInput.type = "text";
+                supportNameInput.type =
+
+                "text";
 
 
                 supportNameInput.className =
@@ -2744,12 +3500,16 @@ async function loadPendingSupport(){
 
                 const tdWork =
 
-                document.createElement("td");
+                document.createElement(
+                    "td"
+                );
 
 
                 const supportWorkBox =
 
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
 
                 supportWorkBox.className =
@@ -2759,7 +3519,9 @@ async function loadPendingSupport(){
 
                 const supportWorkLabel =
 
-                document.createElement("span");
+                document.createElement(
+                    "span"
+                );
 
 
                 supportWorkLabel.className =
@@ -2774,7 +3536,9 @@ async function loadPendingSupport(){
 
                 const workInput =
 
-                document.createElement("textarea");
+                document.createElement(
+                    "textarea"
+                );
 
 
                 workInput.className =
@@ -2812,7 +3576,9 @@ async function loadPendingSupport(){
 
                 const tdAction =
 
-                document.createElement("td");
+                document.createElement(
+                    "td"
+                );
 
 
                 tdAction.className =
@@ -2822,7 +3588,9 @@ async function loadPendingSupport(){
 
                 const submitBtn =
 
-                document.createElement("button");
+                document.createElement(
+                    "button"
+                );
 
 
                 submitBtn.className =
@@ -2830,7 +3598,9 @@ async function loadPendingSupport(){
                 "submit-btn";
 
 
-                submitBtn.type = "button";
+                submitBtn.type =
+
+                "button";
 
 
                 submitBtn.innerHTML =
@@ -2877,6 +3647,7 @@ async function loadPendingSupport(){
 
                             supportNameInput.focus();
 
+
                             return;
 
                         }
@@ -2895,12 +3666,15 @@ async function loadPendingSupport(){
 
                             workInput.focus();
 
+
                             return;
 
                         }
 
 
-                        submitBtn.disabled = true;
+                        submitBtn.disabled =
+
+                        true;
 
 
                         submitBtn.innerHTML =
@@ -2989,7 +3763,9 @@ async function loadPendingSupport(){
 
                                     body:
 
-                                    JSON.stringify(payload)
+                                    JSON.stringify(
+                                        payload
+                                    )
 
                                 }
 
@@ -3097,7 +3873,9 @@ async function loadPendingSupport(){
                             );
 
 
-                            submitBtn.disabled = false;
+                            submitBtn.disabled =
+
+                            false;
 
 
                             submitBtn.innerHTML =
@@ -3119,22 +3897,60 @@ async function loadPendingSupport(){
                 );
 
 
-                tr.appendChild(tdIP);
+                tr.appendChild(
 
-                tr.appendChild(tdDate);
+                    tdIP
 
-                tr.appendChild(tdProblem);
-
-                tr.appendChild(tdRef);
-
-                tr.appendChild(tdSupportName);
-
-                tr.appendChild(tdWork);
-
-                tr.appendChild(tdAction);
+                );
 
 
-                tableBody.appendChild(tr);
+                tr.appendChild(
+
+                    tdDate
+
+                );
+
+
+                tr.appendChild(
+
+                    tdProblem
+
+                );
+
+
+                tr.appendChild(
+
+                    tdRef
+
+                );
+
+
+                tr.appendChild(
+
+                    tdSupportName
+
+                );
+
+
+                tr.appendChild(
+
+                    tdWork
+
+                );
+
+
+                tr.appendChild(
+
+                    tdAction
+
+                );
+
+
+                tableBody.appendChild(
+
+                    tr
+
+                );
 
             }
 
@@ -3238,7 +4054,9 @@ document.addEventListener(
 
         if(
 
-            document.visibilityState === "visible"
+            document.visibilityState ===
+
+            "visible"
 
         ){
 
@@ -3271,6 +4089,7 @@ window.addEventListener(
 loadPendingSupport();
 
 </script>
+
 
 </body>
 

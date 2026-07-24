@@ -1979,6 +1979,62 @@ tbody tr:hover{
 
 }
 
+
+/* =====================================================
+   PAGINATION - APP FRIENDLY
+===================================================== */
+.pagination{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    padding:22px 16px;
+    border-top:1px solid #e6eeeb;
+    background:#f7fbfa;
+    flex-wrap:wrap;
+}
+.page-btn,
+.page-number{
+    min-width:42px;
+    height:42px;
+    padding:0 12px;
+    border:1px solid #d8ebe5;
+    border-radius:10px;
+    background:#ffffff;
+    color:#007b5d;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all .2s ease;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+}
+.page-number{padding:0 14px;}
+.page-btn:hover:not(:disabled),
+.page-number:hover{
+    background:#e8f5f1;
+    transform:translateY(-1px);
+}
+.page-number.active{
+    background:#008f6b;
+    border-color:#008f6b;
+    color:#ffffff;
+    box-shadow:0 5px 15px rgba(0,143,107,.22);
+}
+.page-btn:disabled{
+    opacity:.45;
+    cursor:not-allowed;
+    transform:none;
+}
+@media(max-width:600px){
+    .pagination{padding:16px 8px;gap:6px;}
+    .page-btn,.page-number{min-width:38px;height:38px;font-size:13px;padding:0 9px;}
+    .page-btn span{display:none;}
+    .page-number{padding:0 10px;}
+}
 </style>
 
 </head>
@@ -2168,41 +2224,6 @@ id="sidebar"
 
         </button>
 
-
-    </div>
-
-
-</div>
-
-
-<!-- ===================================================
-     USER BAR
-=================================================== -->
-
-<div class="user-bar">
-
-
-    <div>
-
-        <i class="fa-solid fa-user"></i>
-
-        Logged in as:
-
-        <span
-        class="user-name"
-        id="loggedUser"
-        >
-            User
-        </span>
-
-    </div>
-
-
-    <div class="page-label">
-
-        <i class="fa-solid fa-clock-rotate-left"></i>
-
-        Support Log History
 
     </div>
 
@@ -2643,6 +2664,10 @@ let selectedItem = null;
 
 let filteredData = [];
 
+const ITEMS_PER_PAGE = 14;
+
+let currentPage = 1;
+
 
 /* =====================================================
    INIT
@@ -2820,30 +2845,6 @@ function restoreSidebarState(){
 /* =====================================================
    LOAD USER
 ===================================================== */
-
-function loadUser(){
-
-    const username =
-
-        localStorage.getItem("username") ||
-
-        localStorage.getItem("userName") ||
-
-        localStorage.getItem("name") ||
-
-        sessionStorage.getItem("username") ||
-
-        "User";
-
-
-    document.getElementById(
-
-        "loggedUser"
-
-    ).textContent = username;
-
-}
-
 
 /* =====================================================
    LOAD DATA
@@ -3349,240 +3350,109 @@ function applyFilters(){
 
 function renderData(data){
 
+    const content = document.getElementById("content");
 
-    const content =
+    document.getElementById("pendingCount").textContent =
+        data.length + " Records";
 
-        document.getElementById(
-
-            "content"
-
-        );
-
-
-    document.getElementById(
-
-        "pendingCount"
-
-    ).textContent =
-
-        data.length +
-
-        " Records";
-
-
-    if(
-
-        data.length === 0
-
-    ){
-
-
-        content.className =
-
-            "empty";
-
-
+    if(data.length === 0){
+        content.className = "empty";
         content.innerHTML =
-
-            '<div class="empty-icon">' +
-
-            '<i class="fa-solid fa-folder-open"></i>' +
-
-            '</div>' +
-
+            '<div class="empty-icon"><i class="fa-solid fa-folder-open"></i></div>' +
             '<h3>No History Found</h3>' +
-
             '<p>No completed support records found.</p>';
-
-
         return;
-
     }
 
+    const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
 
-    content.className =
+    if(currentPage < 1) currentPage = 1;
+    if(currentPage > totalPages) currentPage = totalPages;
 
-        "table-wrapper";
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+    const pageData = data.slice(startIndex, endIndex);
 
+    content.className = "table-wrapper";
 
     let html =
-
         '<table>' +
-
-        '<thead>' +
-
-        '<tr>' +
-
+        '<thead><tr>' +
         '<th>Customer ID</th>' +
-
         '<th>Date</th>' +
-
         '<th>Problem</th>' +
-
         '<th>Reference</th>' +
-
         '<th>Support</th>' +
-
         '<th>Call</th>' +
-
         '<th>Action</th>' +
-
-        '</tr>' +
-
-        '</thead>' +
-
-        '<tbody>';
-
-
-    data.forEach(
-
-        function(item,index){
-
-
-            html +=
-
-                '<tr>' +
-
-
-                '<td>' +
-
-                '<span class="customer-badge">' +
-
-                '<i class="fa-solid fa-user"></i>' +
-
-                escapeHtml(
-
-                    item.customerId ||
-
-                    item.customerNumber ||
-
-                    item.ip ||
-
-                    ""
-
-                ) +
-
-                '</span>' +
-
-                '</td>' +
-
-
-                '<td>' +
-
-                escapeHtml(
-
-                    formatDateDMY(
-
-                        item.date ||
-
-                        ""
-
-                    )
-
-                ) +
-
-                '</td>' +
-
-
-                '<td>' +
-
-                escapeHtml(
-
-                    item.problem ||
-
-                    ""
-
-                ) +
-
-                '</td>' +
-
-
-                '<td>' +
-
-                '<span class="ref-badge">' +
-
-                escapeHtml(
-
-                    item.reference ||
-
-                    item.ref ||
-
-                    "-"
-
-                ) +
-
-                '</span>' +
-
-                '</td>' +
-
-
-                '<td>' +
-
-                escapeHtml(
-
-                    item.support ||
-
-                    ""
-
-                ) +
-
-                '</td>' +
-
-
-                '<td>' +
-
-                escapeHtml(
-
-                    item.call ||
-
-                    item.callPerson ||
-
-                    ""
-
-                ) +
-
-                '</td>' +
-
-
-                '<td>' +
-
-                '<button class="view-btn" ' +
-
-                'onclick="openModal(' +
-
-                index +
-
-                ')">' +
-
-                '<i class="fa-solid fa-eye"></i>' +
-
-                'View' +
-
-                '</button>' +
-
-                '</td>' +
-
-
-                '</tr>';
-
+        '</tr></thead><tbody>';
+
+    pageData.forEach(function(item, index){
+
+        const realIndex = startIndex + index;
+
+        html +=
+            '<tr>' +
+            '<td><span class="customer-badge"><i class="fa-solid fa-user"></i>' +
+            escapeHtml(item.customerId || item.customerNumber || item.ip || "") +
+            '</span></td>' +
+            '<td>' + escapeHtml(formatDateDMY(item.date || "")) + '</td>' +
+            '<td>' + escapeHtml(item.problem || "") + '</td>' +
+            '<td><span class="ref-badge">' +
+            escapeHtml(item.reference || item.ref || "-") +
+            '</span></td>' +
+            '<td>' + escapeHtml(item.support || "") + '</td>' +
+            '<td>' + escapeHtml(item.call || item.callPerson || "") + '</td>' +
+            '<td><button class="view-btn" onclick="openModal(' + realIndex + ')">' +
+            '<i class="fa-solid fa-eye"></i>View</button></td>' +
+            '</tr>';
+    });
+
+    html += '</tbody></table>';
+
+    if(totalPages > 1){
+
+        html += '<div class="pagination">';
+
+        html += '<button class="page-btn" onclick="changePage(' + (currentPage - 1) + ')" ' +
+            (currentPage === 1 ? 'disabled' : '') + '>' +
+            '<i class="fa-solid fa-chevron-left"></i><span>Previous</span></button>';
+
+        let startPage = Math.max(1, currentPage - 2);
+        let endPage = Math.min(totalPages, startPage + 4);
+        if(endPage - startPage < 4){
+            startPage = Math.max(1, endPage - 4);
         }
 
-    );
+        for(let i = startPage; i <= endPage; i++){
+            html += '<button class="page-number ' + (i === currentPage ? 'active' : '') +
+                '" onclick="changePage(' + i + ')">' + i + '</button>';
+        }
 
+        html += '<button class="page-btn" onclick="changePage(' + (currentPage + 1) + ')" ' +
+            (currentPage === totalPages ? 'disabled' : '') + '>' +
+            '<span>Next</span><i class="fa-solid fa-chevron-right"></i></button>';
 
-    html +=
+        html += '</div>';
+    }
 
-        '</tbody>' +
-
-        '</table>';
-
-
-    content.innerHTML =
-
-        html;
-
+    content.innerHTML = html;
 }
 
+function changePage(page){
+
+    const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
+
+    if(page < 1 || page > totalPages) return;
+
+    currentPage = page;
+    renderData(filteredData);
+
+    const contentCard = document.querySelector('.content-card');
+    if(contentCard){
+        contentCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
 
 /* =====================================================
    OPEN MODAL

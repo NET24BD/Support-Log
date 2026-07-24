@@ -5,15 +5,22 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
 <title>Pending Call | LINK4 COMMUNICATION</title>
 
+
+<!-- LOGIN SECURITY -->
 <script>
 
 (function(){
 
-    if(localStorage.getItem("loggedIn") !== "true"){
+    if(
+        localStorage.getItem("loggedIn") !== "true"
+    ){
 
         window.location.replace("../index.html");
 
@@ -23,1736 +30,41 @@
 
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- GOOGLE FONT -->
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com"
+>
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+>
+
 
 <link
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
 rel="stylesheet"
 >
 
+
+<!-- FONT AWESOME -->
+
 <link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 >
 
-<style>
 
-/* =====================================================
-   RESET
-===================================================== */
+<!-- PENDING CALL CSS -->
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-
-/* =====================================================
-   BODY
-===================================================== */
-
-body{
-
-    min-height:100vh;
-
-    color:#222;
-
-    background:
-    linear-gradient(
-        135deg,
-        #004d3a,
-        #006a4e,
-        #008f6b
-    );
-
-}
-
-
-/* =====================================================
-   SIDEBAR
-===================================================== */
-
-.sidebar{
-
-    position:fixed;
-
-    left:0;
-
-    top:0;
-
-    width:250px;
-
-    height:100vh;
-
-    background:
-    linear-gradient(
-        180deg,
-        #003d2d,
-        #005c43
-    );
-
-    color:white;
-
-    z-index:9999;
-
-    transition:
-    width .35s ease,
-    transform .35s ease;
-
-    box-shadow:
-    5px 0 25px
-    rgba(0,0,0,.20);
-
-    overflow:hidden;
-
-}
-
-
-body.sidebar-collapsed .sidebar{
-
-    width:78px;
-
-}
-
-
-/* =====================================================
-   SIDEBAR HEADER
-===================================================== */
-
-.sidebar-header{
-
-    height:80px;
-
-    display:flex;
-
-    align-items:center;
-
-    padding:0 18px;
-
-    gap:13px;
-
-    border-bottom:
-    1px solid
-    rgba(255,255,255,.12);
-
-    white-space:nowrap;
-
-}
-
-
-.sidebar-logo{
-
-    min-width:44px;
-
-    width:44px;
-
-    height:44px;
-
-    border-radius:13px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #00a878,
-        #006a4e
-    );
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:21px;
-
-    box-shadow:
-    0 7px 18px
-    rgba(0,0,0,.20);
-
-}
-
-
-/* =====================================================
-   SIDEBAR BRAND
-===================================================== */
-
-.sidebar-brand{
-
-    font-size:15px;
-
-    font-weight:700;
-
-    transition:
-    opacity .2s ease;
-
-}
-
-
-.sidebar-brand small{
-
-    display:block;
-
-    font-size:9px;
-
-    font-weight:400;
-
-    opacity:.7;
-
-    margin-top:2px;
-
-}
-
-
-body.sidebar-collapsed
-.sidebar-brand{
-
-    opacity:0;
-
-    width:0;
-
-    overflow:hidden;
-
-}
-
-
-/* =====================================================
-   SIDEBAR MENU
-===================================================== */
-
-.sidebar-menu{
-
-    padding:20px 12px;
-
-}
-
-
-.sidebar-menu a{
-
-    height:48px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    padding:0 14px;
-
-    margin-bottom:8px;
-
-    border-radius:12px;
-
-    color:
-    rgba(255,255,255,.80);
-
-    text-decoration:none;
-
-    white-space:nowrap;
-
-    transition:.25s;
-
-}
-
-
-.sidebar-menu a:hover{
-
-    background:
-    rgba(255,255,255,.12);
-
-    color:white;
-
-    transform:translateX(3px);
-
-}
-
-
-.sidebar-menu a.active{
-
-    background:white;
-
-    color:#006a4e;
-
-    box-shadow:
-    0 7px 20px
-    rgba(0,0,0,.15);
-
-}
-
-
-.sidebar-menu a i{
-
-    min-width:22px;
-
-    width:22px;
-
-    text-align:center;
-
-    font-size:17px;
-
-}
-
-
-.menu-text{
-
-    transition:
-    opacity .2s ease;
-
-}
-
-
-body.sidebar-collapsed
-.menu-text{
-
-    opacity:0;
-
-    width:0;
-
-    overflow:hidden;
-
-}
-
-
-/* =====================================================
-   SIDEBAR BOTTOM
-===================================================== */
-
-.sidebar-bottom{
-
-    position:absolute;
-
-    bottom:20px;
-
-    left:12px;
-
-    right:12px;
-
-}
-
-
-.sidebar-bottom button{
-
-    width:100%;
-
-    height:46px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:
-    rgba(229,57,53,.15);
-
-    color:#ffb5b3;
-
-    cursor:pointer;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    padding:0 14px;
-
-    font-weight:600;
-
-    white-space:nowrap;
-
-}
-
-
-.sidebar-bottom button:hover{
-
-    background:#e53935;
-
-    color:white;
-
-}
-
-
-.sidebar-bottom button i{
-
-    min-width:22px;
-
-    text-align:center;
-
-}
-
-
-/* =====================================================
-   MAIN CONTENT
-===================================================== */
-
-.main-content{
-
-    margin-left:250px;
-
-    min-height:100vh;
-
-    padding:20px;
-
-    transition:
-    margin-left .35s ease;
-
-}
-
-
-body.sidebar-collapsed
-.main-content{
-
-    margin-left:78px;
-
-}
-
-
-/* =====================================================
-   TOP BAR
-===================================================== */
-
-.topbar{
-
-    background:
-    rgba(255,255,255,.97);
-
-    border-radius:18px;
-
-    padding:14px 18px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:15px;
-
-    margin-bottom:20px;
-
-    box-shadow:
-    0 12px 35px
-    rgba(0,0,0,.18);
-
-}
-
-
-.menu-toggle{
-
-    width:45px;
-
-    height:45px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#e7f8f2;
-
-    color:#006a4e;
-
-    cursor:pointer;
-
-    font-size:19px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    transition:.3s;
-
-}
-
-
-.menu-toggle:hover{
-
-    background:#006a4e;
-
-    color:white;
-
-    transform:scale(1.05);
-
-}
-
-
-.topbar-title{
-
-    flex:1;
-
-}
-
-
-.topbar-title h2{
-
-    font-size:18px;
-
-    color:#006a4e;
-
-}
-
-
-.topbar-title p{
-
-    font-size:11px;
-
-    color:#777;
-
-}
-
-
-.topbar-user{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    font-size:13px;
-
-    font-weight:600;
-
-}
-
-
-.topbar-user-icon{
-
-    width:38px;
-
-    height:38px;
-
-    border-radius:50%;
-
-    background:#e7f8f2;
-
-    color:#006a4e;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-
-/* =====================================================
-   CONTAINER
-===================================================== */
-
-.container{
-
-    width:100%;
-
-    max-width:1600px;
-
-    margin:auto;
-
-}
-
-
-/* =====================================================
-   CONTROL BAR
-===================================================== */
-
-.control-bar{
-
-    background:white;
-
-    padding:14px;
-
-    border-radius:18px;
-
-    margin-bottom:20px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-
-    box-shadow:
-    0 12px 35px
-    rgba(0,0,0,.14);
-
-}
-
-
-.search-box{
-
-    flex:1;
-
-    min-width:250px;
-
-    position:relative;
-
-}
-
-
-.search-box i{
-
-    position:absolute;
-
-    left:15px;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    color:#008f6b;
-
-}
-
-
-.search-box input{
-
-    width:100%;
-
-    padding:10px 15px 10px 45px;
-
-    border:
-    2px solid
-    #e3eee9;
-
-    border-radius:10px;
-
-    outline:none;
-
-    font-size:13px;
-
-    height:42px;
-
-}
-
-
-.search-box input:focus{
-
-    border-color:#00a878;
-
-}
-
-
-/* =====================================================
-   FILTER AREA
-===================================================== */
-
-.filter-area{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:flex-end;
-
-    gap:10px;
-
-    flex-wrap:wrap;
-
-}
-
-
-.filter-box{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:7px;
-
-}
-
-
-.filter-box label{
-
-    font-size:12px;
-
-    font-weight:600;
-
-    color:#555;
-
-}
-
-
-.filter-box input{
-
-    width:100px;
-
-    height:40px;
-
-    padding:8px;
-
-    border:
-    2px solid
-    #e3eee9;
-
-    border-radius:9px;
-
-    outline:none;
-
-    text-align:center;
-
-    font-size:12px;
-
-    font-weight:600;
-
-}
-
-
-.filter-box input:focus{
-
-    border-color:#00a878;
-
-}
-
-
-.all-filter-btn{
-
-    height:40px;
-
-    padding:0 14px;
-
-    border:none;
-
-    border-radius:9px;
-
-    background:#e7f8f2;
-
-    color:#006a4e;
-
-    cursor:pointer;
-
-    font-size:12px;
-
-    font-weight:700;
-
-}
-
-
-.all-filter-btn:hover{
-
-    background:#006a4e;
-
-    color:white;
-
-}
-
-
-/* =====================================================
-   TABLE
-===================================================== */
-
-.table-container{
-
-    background:
-    rgba(255,255,255,.97);
-
-    border-radius:22px;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 20px 50px
-    rgba(0,0,0,.20);
-
-}
-
-
-.table-header{
-
-    padding:20px 25px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    border-bottom:
-    1px solid
-    #e9f1ee;
-
-}
-
-
-.table-header h2{
-
-    font-size:20px;
-
-}
-
-
-.pending-count{
-
-    background:
-    linear-gradient(
-        135deg,
-        #006a4e,
-        #00a878
-    );
-
-    color:white;
-
-    padding:7px 14px;
-
-    border-radius:20px;
-
-    font-size:13px;
-
-    font-weight:700;
-
-}
-
-
-.table-scroll{
-
-    width:100%;
-
-    overflow-x:auto;
-
-}
-
-
-table{
-
-    width:100%;
-
-    border-collapse:separate;
-
-    border-spacing:0;
-
-    min-width:1100px;
-
-}
-
-
-thead{
-
-    background:
-    linear-gradient(
-        135deg,
-        #007a59,
-        #009b70
-    );
-
-    color:white;
-
-}
-
-
-th{
-
-    padding:15px 13px;
-
-    font-size:13px;
-
-    text-align:left;
-
-    white-space:nowrap;
-
-}
-
-
-td{
-
-    padding:12px;
-
-    border-bottom:
-    1px solid
-    #edf2f0;
-
-    font-size:13px;
-
-    vertical-align:middle;
-
-}
-
-
-tbody tr:hover{
-
-    background:#f7fffb;
-
-}
-
-
-.cell-content{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:9px;
-
-}
-
-
-.cell-icon{
-
-    width:32px;
-
-    height:32px;
-
-    border-radius:9px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:rgba(255,255,255,.75);
-
-    flex-shrink:0;
-
-}
-
-
-.customer-cell{
-
-    background:#e5f8f1;
-
-    color:#006a4e;
-
-    font-weight:700;
-
-    border-radius:10px;
-
-}
-
-
-.date-cell{
-
-    background:#edf5ff;
-
-    color:#1769aa;
-
-    border-radius:10px;
-
-}
-
-
-.problem-cell{
-
-    background:#fff8e4;
-
-    color:#795500;
-
-    border-radius:10px;
-
-    max-width:300px;
-
-}
-
-
-.reference-cell{
-
-    background:#f5eaff;
-
-    color:#7432a8;
-
-    border-radius:10px;
-
-}
-
-
-.support-cell{
-
-    background:#e4f9f6;
-
-    color:#00796b;
-
-    border-radius:10px;
-
-    font-weight:600;
-
-}
-
-
-.support-work-cell{
-
-    background:#fff0e5;
-
-    color:#b85c00;
-
-    border-radius:10px;
-
-    font-weight:600;
-
-}
-
-
-.view-btn{
-
-    border:none;
-
-    background:
-    linear-gradient(
-        135deg,
-        #006a4e,
-        #00a878
-    );
-
-    color:white;
-
-    padding:10px 16px;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    font-size:13px;
-
-    font-weight:700;
-
-}
-
-
-.view-btn:hover{
-
-    background:#e53935;
-
-}
-
-
-/* =====================================================
-   LOADING / EMPTY
-===================================================== */
-
-.loading-state{
-
-    padding:70px 20px;
-
-    text-align:center;
-
-}
-
-
-.spinner{
-
-    font-size:38px;
-
-    color:#008f6b;
-
-    margin-bottom:15px;
-
-}
-
-
-.loading-state p{
-
-    color:#777;
-
-}
-
-
-.empty-state{
-
-    display:none;
-
-    padding:70px 20px;
-
-    text-align:center;
-
-}
-
-
-.empty-state.show{
-
-    display:block;
-
-}
-
-
-.empty-icon{
-
-    width:85px;
-
-    height:85px;
-
-    border-radius:50%;
-
-    background:#e7f8f2;
-
-    color:#008f6b;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:38px;
-
-    margin:0 auto 20px;
-
-}
-
-
-/* =====================================================
-   STATUS
-===================================================== */
-
-.status{
-
-    display:none;
-
-    padding:13px 18px;
-
-    border-radius:12px;
-
-    margin-bottom:20px;
-
-    font-size:13px;
-
-    font-weight:600;
-
-}
-
-
-.status.show{
-
-    display:block;
-
-}
-
-
-.status.error{
-
-    background:#fdecec;
-
-    color:#c62828;
-
-}
-
-
-.status.success{
-
-    background:#e7f8f2;
-
-    color:#006a4e;
-
-}
-
-
-/* =====================================================
-   CUSTOM POPUP
-===================================================== */
-
-.custom-popup{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:999999;
-
-    background:rgba(0,40,30,.65);
-
-    backdrop-filter:blur(6px);
-
-    display:none;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:20px;
-
-}
-
-
-.custom-popup.show{
-
-    display:flex;
-
-}
-
-
-.popup-box{
-
-    width:100%;
-
-    max-width:420px;
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:25px;
-
-    text-align:center;
-
-    box-shadow:
-    0 25px 70px
-    rgba(0,0,0,.30);
-
-    animation:
-    popupIn .25s ease;
-
-}
-
-
-@keyframes popupIn{
-
-    from{
-
-        opacity:0;
-
-        transform:
-        scale(.90)
-        translateY(20px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-        scale(1)
-        translateY(0);
-
-    }
-
-}
-
-
-.popup-icon{
-
-    width:65px;
-
-    height:65px;
-
-    margin:0 auto 15px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:#e7f8f2;
-
-    color:#006a4e;
-
-    font-size:28px;
-
-}
-
-
-.popup-box h3{
-
-    color:#006a4e;
-
-    margin-bottom:8px;
-
-}
-
-
-.popup-box p{
-
-    color:#666;
-
-    font-size:13px;
-
-    line-height:1.6;
-
-}
-
-
-.popup-buttons{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:10px;
-
-    margin-top:20px;
-
-}
-
-
-.popup-btn{
-
-    border:none;
-
-    padding:11px 22px;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    font-weight:700;
-
-}
-
-
-.popup-ok{
-
-    background:#006a4e;
-
-    color:white;
-
-}
-
-
-.popup-cancel{
-
-    background:#edf2f0;
-
-    color:#555;
-
-}
-
-
-/* =====================================================
-   MODAL
-===================================================== */
-
-.modal{
-
-    display:none;
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:99999;
-
-    background:
-    rgba(0,40,30,.72);
-
-    backdrop-filter:blur(7px);
-
-    padding:20px;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-
-.modal.show{
-
-    display:flex;
-
-}
-
-
-.modal-box{
-
-    width:100%;
-
-    max-width:720px;
-
-    max-height:90vh;
-
-    overflow-y:auto;
-
-    background:white;
-
-    border-radius:22px;
-
-}
-
-
-.modal-header{
-
-    padding:20px 22px;
-
-    color:white;
-
-    background:
-    linear-gradient(
-        135deg,
-        #006a4e,
-        #00a878
-    );
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-}
-
-
-.close-modal{
-
-    width:38px;
-
-    height:38px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:
-    rgba(255,255,255,.18);
-
-    color:white;
-
-    cursor:pointer;
-
-    font-size:18px;
-
-}
-
-
-.modal-body{
-
-    padding:22px;
-
-}
-
-
-.info-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:14px;
-
-}
-
-
-.info-card{
-
-    padding:15px;
-
-    border-radius:13px;
-
-}
-
-
-.info-card small{
-
-    display:block;
-
-    font-size:11px;
-
-    font-weight:700;
-
-    margin-bottom:6px;
-
-}
-
-
-.info-card strong{
-
-    font-size:14px;
-
-    word-break:break-word;
-
-}
-
-
-.info-customer{
-
-    background:#e5f8f1;
-
-    color:#006a4e;
-
-}
-
-
-.info-date{
-
-    background:#edf5ff;
-
-    color:#1769aa;
-
-}
-
-
-.info-problem{
-
-    background:#fff8e4;
-
-    color:#795500;
-
-}
-
-
-.info-reference{
-
-    background:#f5eaff;
-
-    color:#7432a8;
-
-}
-
-
-.info-support{
-
-    background:#e4f9f6;
-
-    color:#00796b;
-
-}
-
-
-.info-support-work{
-
-    background:#fff0e5;
-
-    color:#b85c00;
-
-}
-
-
-.call-form{
-
-    margin-top:20px;
-
-    padding-top:20px;
-
-    border-top:
-    1px solid
-    #e9efed;
-
-}
-
-
-.form-group{
-
-    margin-bottom:15px;
-
-}
-
-
-.form-group label{
-
-    display:block;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    color:#444;
-
-    margin-bottom:7px;
-
-}
-
-
-.form-group input,
-.form-group textarea{
-
-    width:100%;
-
-    border:
-    2px solid
-    #e0ebe7;
-
-    border-radius:11px;
-
-    padding:12px;
-
-    outline:none;
-
-    font-size:13px;
-
-}
-
-
-.form-group textarea{
-
-    min-height:110px;
-
-    resize:vertical;
-
-}
-
-
-.call-person{
-
-    background:#f3f7f5 !important;
-
-    color:#006a4e;
-
-    font-weight:700;
-
-}
-
-
-.modal-footer{
-
-    display:flex;
-
-    justify-content:flex-end;
-
-    gap:10px;
-
-    margin-top:20px;
-
-}
-
-
-.cancel-btn,
-.submit-call-btn{
-
-    border:none;
-
-    padding:12px 18px;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    font-weight:700;
-
-}
-
-
-.cancel-btn{
-
-    background:#f0f2f1;
-
-    color:#555;
-
-}
-
-
-.submit-call-btn{
-
-    background:
-    linear-gradient(
-        135deg,
-        #006a4e,
-        #00a878
-    );
-
-    color:white;
-
-}
-
-
-.submit-call-btn:disabled{
-
-    opacity:.6;
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:768px){
-
-    .sidebar{
-
-        width:250px;
-
-        transform:
-        translateX(-100%);
-
-    }
-
-
-    body.sidebar-mobile-open
-    .sidebar{
-
-        transform:
-        translateX(0);
-
-    }
-
-
-    body.sidebar-collapsed
-    .sidebar{
-
-        width:250px;
-
-    }
-
-
-    .main-content,
-    body.sidebar-collapsed
-    .main-content{
-
-        margin-left:0;
-
-        padding:12px;
-
-    }
-
-
-    .topbar{
-
-        padding:12px;
-
-    }
-
-
-    .topbar-title h2{
-
-        font-size:14px;
-
-    }
-
-
-    .topbar-user{
-
-        font-size:11px;
-
-    }
-
-
-    .control-bar{
-
-        padding:12px;
-
-    }
-
-
-    .search-box{
-
-        min-width:100%;
-
-    }
-
-
-    .filter-area{
-
-        width:100%;
-
-        justify-content:space-between;
-
-    }
-
-
-    .info-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .modal{
-
-        padding:10px;
-
-    }
-
-}
-
-</style>
+<link
+rel="stylesheet"
+href="css/pending-call.css"
+>
 
 </head>
 
@@ -1764,7 +76,10 @@ tbody tr:hover{
      SIDEBAR
 ===================================================== -->
 
-<aside class="sidebar" id="sidebar">
+<aside
+class="sidebar"
+id="sidebar"
+>
 
 
 <div class="sidebar-header">
@@ -1794,7 +109,9 @@ COMMUNICATION
 <nav class="sidebar-menu">
 
 
-<a href="index.html">
+<a
+href="index.html"
+>
 
 <i class="fa-solid fa-house"></i>
 
@@ -1805,7 +122,9 @@ Dashboard
 </a>
 
 
-<a href="new-entry.html">
+<a
+href="new-entry.html"
+>
 
 <i class="fa-solid fa-plus"></i>
 
@@ -1816,7 +135,9 @@ New Support Entry
 </a>
 
 
-<a href="pending-support.html">
+<a
+href="pending-support.html"
+>
 
 <i class="fa-solid fa-headset"></i>
 
@@ -1841,7 +162,9 @@ Pending Call
 </a>
 
 
-<a href="support-log.html">
+<a
+href="support-log.html"
+>
 
 <i class="fa-solid fa-clock-rotate-left"></i>
 
@@ -1852,9 +175,9 @@ Support History
 </a>
 
 
-<!-- USER ACCOUNT ADDED -->
-
-<a href="user-account.html">
+<a
+href="user-account.html"
+>
 
 <i class="fa-solid fa-user-gear"></i>
 
@@ -1891,6 +214,7 @@ Logout
 </aside>
 
 
+
 <!-- =====================================================
      MAIN CONTENT
 ===================================================== -->
@@ -1898,9 +222,7 @@ Logout
 <main class="main-content">
 
 
-<!-- =====================================================
-     TOP BAR
-===================================================== -->
+<!-- TOPBAR -->
 
 <div class="topbar">
 
@@ -1932,28 +254,30 @@ Support Management System
 
 <div class="topbar-user">
 
+
 <div class="topbar-user-icon">
 
 <i class="fa-solid fa-user"></i>
 
 </div>
 
+
 <span id="topUser">
 User
 </span>
 
+
 </div>
 
 
 </div>
+
 
 
 <div class="container">
 
 
-<!-- =====================================================
-     STATUS
-===================================================== -->
+<!-- STATUS -->
 
 <div
 class="status"
@@ -1961,9 +285,8 @@ id="status"
 ></div>
 
 
-<!-- =====================================================
-     CONTROL BAR
-===================================================== -->
+
+<!-- CONTROL BAR -->
 
 <div class="control-bar">
 
@@ -1989,6 +312,7 @@ placeholder="Search Customer ID, Problem, Reference, Support..."
 
 <div class="filter-box">
 
+
 <label>
 
 <i class="fa-solid fa-calendar-days"></i>
@@ -2007,12 +331,12 @@ id="fromDate"
 </div>
 
 
+
 <div class="filter-box">
 
+
 <label>
-
 To
-
 </label>
 
 
@@ -2025,12 +349,12 @@ id="toDate"
 </div>
 
 
+
 <div class="filter-box">
 
+
 <label>
-
 Last Days
-
 </label>
 
 
@@ -2044,6 +368,7 @@ placeholder="All"
 
 
 </div>
+
 
 
 <button
@@ -2063,9 +388,8 @@ All
 </div>
 
 
-<!-- =====================================================
-     TABLE
-===================================================== -->
+
+<!-- TABLE -->
 
 <div class="table-container">
 
@@ -2082,12 +406,17 @@ Pending Call Requests
 class="pending-count"
 id="pendingCount"
 >
+
 0 Pending
-</div>
-
 
 </div>
 
+
+</div>
+
+
+
+<!-- LOADING -->
 
 <div
 class="loading-state"
@@ -2109,6 +438,9 @@ Loading pending call requests...
 
 </div>
 
+
+
+<!-- EMPTY -->
 
 <div
 class="empty-state"
@@ -2136,6 +468,9 @@ There are currently no pending call requests.
 </div>
 
 
+
+<!-- TABLE WRAPPER -->
+
 <div
 class="table-scroll"
 id="tableWrapper"
@@ -2153,44 +488,65 @@ style="display:none;"
 
 
 <th>
+
 <i class="fa-solid fa-user"></i>
+
 Customer ID
+
 </th>
 
 
 <th>
+
 <i class="fa-solid fa-calendar"></i>
+
 Date
+
 </th>
 
 
 <th>
+
 <i class="fa-solid fa-circle-exclamation"></i>
+
 Problem
+
 </th>
 
 
 <th>
+
 <i class="fa-solid fa-link"></i>
+
 Reference
+
 </th>
 
 
 <th>
+
 <i class="fa-solid fa-headset"></i>
+
 Support
+
 </th>
 
 
 <th>
+
 <i class="fa-solid fa-screwdriver-wrench"></i>
+
 Support Work
+
 </th>
 
 
 <th>
+
 <i class="fa-solid fa-eye"></i>
+
 Action
+
 </th>
 
 
@@ -2218,6 +574,7 @@ id="callTableBody"
 
 
 </main>
+
 
 
 <!-- =====================================================
@@ -2259,6 +616,7 @@ type="button"
 </div>
 
 
+
 <div class="modal-body">
 
 
@@ -2280,6 +638,7 @@ id="modalCustomer"
 </div>
 
 
+
 <div class="info-card info-date">
 
 <small>
@@ -2293,6 +652,7 @@ id="modalDate"
 </strong>
 
 </div>
+
 
 
 <div class="info-card info-problem">
@@ -2310,6 +670,7 @@ id="modalProblem"
 </div>
 
 
+
 <div class="info-card info-reference">
 
 <small>
@@ -2325,6 +686,7 @@ id="modalReference"
 </div>
 
 
+
 <div class="info-card info-support">
 
 <small>
@@ -2338,6 +700,7 @@ id="modalSupport"
 </strong>
 
 </div>
+
 
 
 <div class="info-card info-support-work">
@@ -2357,6 +720,9 @@ id="modalSupportWork"
 
 </div>
 
+
+
+<!-- CALL FORM -->
 
 <div class="call-form">
 
@@ -2384,6 +750,7 @@ readonly
 </div>
 
 
+
 <div class="form-group">
 
 
@@ -2403,6 +770,7 @@ placeholder="Write what was discussed or done during the call..."
 
 
 </div>
+
 
 
 <div class="modal-footer">
@@ -2447,6 +815,7 @@ Submit Call
 
 
 </div>
+
 
 
 <!-- =====================================================
@@ -2521,6 +890,11 @@ OK
 </div>
 
 
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script>
 
 /* =====================================================
@@ -2532,7 +906,30 @@ const API_URL =
 
 
 /* =====================================================
-   SIDEBAR TOGGLE
+   LOGIN CHECK
+===================================================== */
+
+function checkLogin(){
+
+    if(
+        localStorage.getItem("loggedIn") !== "true"
+    ){
+
+        window.location.replace(
+            "../index.html"
+        );
+
+        return false;
+
+    }
+
+    return true;
+
+}
+
+
+/* =====================================================
+   SIDEBAR
 ===================================================== */
 
 const menuToggle =
@@ -2543,7 +940,9 @@ menuToggle.addEventListener(
 "click",
 function(){
 
-    if(window.innerWidth <= 768){
+    if(
+        window.innerWidth <= 768
+    ){
 
         document.body.classList.toggle(
             "sidebar-mobile-open"
@@ -2562,18 +961,17 @@ function(){
 });
 
 
-/* =====================================================
-   CLOSE MOBILE SIDEBAR
-===================================================== */
-
 document.addEventListener(
 "click",
 function(e){
 
-    if(window.innerWidth <= 768){
+    if(
+        window.innerWidth <= 768
+    ){
 
         const sidebar =
         document.getElementById("sidebar");
+
 
         if(
             !sidebar.contains(e.target) &&
@@ -2591,6 +989,7 @@ function(e){
 });
 
 
+
 /* =====================================================
    LOGOUT
 ===================================================== */
@@ -2598,25 +997,38 @@ function(e){
 function logout(){
 
     showCustomPopup(
+
         "Logout",
+
         "Are you sure you want to logout?",
+
         true,
+
         function(){
 
-            localStorage.removeItem("loggedIn");
+            localStorage.removeItem(
+                "loggedIn"
+            );
 
-            localStorage.removeItem("username");
+            localStorage.removeItem(
+                "username"
+            );
 
-            localStorage.removeItem("name");
+            localStorage.removeItem(
+                "name"
+            );
+
 
             window.location.replace(
                 "../index.html"
             );
 
         }
+
     );
 
 }
+
 
 
 /* =====================================================
@@ -2624,52 +1036,83 @@ function logout(){
 ===================================================== */
 
 const customPopup =
-document.getElementById("customPopup");
+document.getElementById(
+    "customPopup"
+);
+
 
 const popupTitle =
-document.getElementById("popupTitle");
+document.getElementById(
+    "popupTitle"
+);
+
 
 const popupMessage =
-document.getElementById("popupMessage");
+document.getElementById(
+    "popupMessage"
+);
+
 
 const popupOk =
-document.getElementById("popupOk");
+document.getElementById(
+    "popupOk"
+);
+
 
 const popupCancel =
-document.getElementById("popupCancel");
+document.getElementById(
+    "popupCancel"
+);
+
 
 let popupAction =
 null;
 
 
+
 function showCustomPopup(
+
     title,
+
     message,
+
     confirmMode = false,
+
     action = null
+
 ){
 
     popupTitle.textContent =
         title;
 
+
     popupMessage.textContent =
         message;
+
 
     popupAction =
         action;
 
+
     popupCancel.style.display =
+
         confirmMode
+
         ?
+
         "inline-block"
+
         :
+
         "none";
+
 
     customPopup.classList.add(
         "show"
     );
 
 }
+
 
 
 popupOk.addEventListener(
@@ -2680,22 +1123,26 @@ function(){
         "show"
     );
 
+
     if(
         typeof popupAction ===
         "function"
     ){
 
         const action =
-        popupAction;
+            popupAction;
+
 
         popupAction =
-        null;
+            null;
+
 
         action();
 
     }
 
 });
+
 
 
 popupCancel.addEventListener(
@@ -2706,10 +1153,12 @@ function(){
         "show"
     );
 
+
     popupAction =
         null;
 
 });
+
 
 
 /* =====================================================
@@ -2717,55 +1166,106 @@ function(){
 ===================================================== */
 
 const tableBody =
-document.getElementById("callTableBody");
+document.getElementById(
+    "callTableBody"
+);
+
 
 const loadingState =
-document.getElementById("loadingState");
+document.getElementById(
+    "loadingState"
+);
+
 
 const emptyState =
-document.getElementById("emptyState");
+document.getElementById(
+    "emptyState"
+);
+
 
 const tableWrapper =
-document.getElementById("tableWrapper");
+document.getElementById(
+    "tableWrapper"
+);
+
 
 const pendingCount =
-document.getElementById("pendingCount");
+document.getElementById(
+    "pendingCount"
+);
+
 
 const statusBox =
-document.getElementById("status");
+document.getElementById(
+    "status"
+);
+
 
 const searchInput =
-document.getElementById("searchInput");
+document.getElementById(
+    "searchInput"
+);
+
 
 const fromDate =
-document.getElementById("fromDate");
+document.getElementById(
+    "fromDate"
+);
+
 
 const toDate =
-document.getElementById("toDate");
+document.getElementById(
+    "toDate"
+);
+
 
 const daysInput =
-document.getElementById("daysInput");
+document.getElementById(
+    "daysInput"
+);
+
 
 const allFilterBtn =
-document.getElementById("allFilterBtn");
+document.getElementById(
+    "allFilterBtn"
+);
+
 
 const viewModal =
-document.getElementById("viewModal");
+document.getElementById(
+    "viewModal"
+);
+
 
 const closeModal =
-document.getElementById("closeModal");
+document.getElementById(
+    "closeModal"
+);
+
 
 const cancelBtn =
-document.getElementById("cancelBtn");
+document.getElementById(
+    "cancelBtn"
+);
+
 
 const submitCallBtn =
-document.getElementById("submitCallBtn");
+document.getElementById(
+    "submitCallBtn"
+);
+
 
 const callPerson =
-document.getElementById("callPerson");
+document.getElementById(
+    "callPerson"
+);
+
 
 const callWork =
-document.getElementById("callWork");
+document.getElementById(
+    "callWork"
+);
+
 
 
 /* =====================================================
@@ -2773,26 +1273,36 @@ document.getElementById("callWork");
 ===================================================== */
 
 const savedUsername =
-localStorage.getItem("username");
+localStorage.getItem(
+    "username"
+);
+
 
 const savedName =
-localStorage.getItem("name");
+localStorage.getItem(
+    "name"
+);
 
 
 const currentUser =
-savedUsername ||
-savedName ||
-"User";
+
+    savedUsername ||
+
+    savedName ||
+
+    "User";
 
 
 document.getElementById(
-"topUser"
+    "topUser"
 ).textContent =
-currentUser;
+
+    currentUser;
 
 
 callPerson.value =
-currentUser;
+    currentUser;
+
 
 
 /* =====================================================
@@ -2804,47 +1314,31 @@ let allCallData = [];
 let selectedCall = null;
 
 
-/* =====================================================
-   LOGIN CHECK
-===================================================== */
-
-function checkLogin(){
-
-    if(
-        localStorage.getItem("loggedIn") !==
-        "true"
-    ){
-
-        window.location.replace(
-            "../index.html"
-        );
-
-        return false;
-
-    }
-
-    return true;
-
-}
-
 
 /* =====================================================
    STATUS
 ===================================================== */
 
 function showStatus(
+
     message,
+
     type
+
 ){
 
     statusBox.textContent =
         message;
 
+
     statusBox.className =
+
         "status show " +
+
         type;
 
 }
+
 
 
 /* =====================================================
@@ -2853,7 +1347,9 @@ function showStatus(
 
 async function loadPendingCall(){
 
-    if(!checkLogin()){
+    if(
+        !checkLogin()
+    ){
 
         return;
 
@@ -2883,37 +1379,49 @@ async function loadPendingCall(){
 
     try{
 
+
         const response =
+
         await fetch(
 
             API_URL +
+
             "?action=pendingCall" +
+
             "&t=" +
+
             Date.now(),
 
             {
 
-                method:"GET",
+                method:
+                "GET",
 
-                cache:"no-store"
+                cache:
+                "no-store"
 
             }
 
         );
 
 
-        if(!response.ok){
+        if(
+            !response.ok
+        ){
 
             throw new Error(
+
                 "Server Error: " +
+
                 response.status
+
             );
 
         }
 
 
         const result =
-        await response.json();
+            await response.json();
 
 
         if(
@@ -2921,21 +1429,29 @@ async function loadPendingCall(){
         ){
 
             throw new Error(
+
                 result.message ||
+
                 "Unable to load data."
+
             );
 
         }
 
 
         allCallData =
-        Array.isArray(
+
+            Array.isArray(
+                result.data
+            )
+
+            ?
+
             result.data
-        )
-        ?
-        result.data
-        :
-        [];
+
+            :
+
+            [];
 
 
         loadingState.style.display =
@@ -2947,9 +1463,13 @@ async function loadPendingCall(){
 
     }
 
+
     catch(error){
 
-        console.error(error);
+
+        console.error(
+            error
+        );
 
 
         loadingState.style.display =
@@ -2963,6 +1483,7 @@ async function loadPendingCall(){
         showStatus(
 
             error.message ||
+
             "Unable to load pending calls.",
 
             "error"
@@ -2974,6 +1495,7 @@ async function loadPendingCall(){
 }
 
 
+
 /* =====================================================
    DATE PARSER
 ===================================================== */
@@ -2983,9 +1505,13 @@ function parseSheetDate(
 ){
 
     if(
+
         dateValue === null ||
+
         dateValue === undefined ||
+
         dateValue === ""
+
     ){
 
         return null;
@@ -2994,12 +1520,15 @@ function parseSheetDate(
 
 
     const value =
-    String(
-        dateValue
-    ).trim();
+
+        String(
+            dateValue
+        ).trim();
 
 
-    if(!value){
+    if(
+        !value
+    ){
 
         return null;
 
@@ -3007,69 +1536,106 @@ function parseSheetDate(
 
 
     let match =
-    value.match(
 
-        /^(\d{1,2})[-\/.](\d{1,2})[-\/.](\d{4})(?:\s+(\d{1,2}):(\d{2})(?::(\d{2}))?)?/
+        value.match(
 
-    );
+            /^(\d{1,2})[-\/.](\d{1,2})[-\/.](\d{4})(?:\s+(\d{1,2}):(\d{2})(?::(\d{2}))?)?/
+
+        );
 
 
-    if(match){
+    if(
+        match
+    ){
 
         const day =
-        parseInt(
-            match[1],
-            10
-        );
+            parseInt(
+                match[1],
+                10
+            );
 
 
         const month =
-        parseInt(
-            match[2],
-            10
-        ) - 1;
+
+            parseInt(
+                match[2],
+                10
+            ) - 1;
 
 
         const year =
-        parseInt(
-            match[3],
-            10
-        );
+
+            parseInt(
+                match[3],
+                10
+            );
 
 
         const hour =
-        match[4]
-        ?
-        parseInt(match[4],10)
-        :
-        0;
+
+            match[4]
+
+            ?
+
+            parseInt(
+                match[4],
+                10
+            )
+
+            :
+
+            0;
 
 
         const minute =
-        match[5]
-        ?
-        parseInt(match[5],10)
-        :
-        0;
+
+            match[5]
+
+            ?
+
+            parseInt(
+                match[5],
+                10
+            )
+
+            :
+
+            0;
 
 
         const second =
-        match[6]
-        ?
-        parseInt(match[6],10)
-        :
-        0;
+
+            match[6]
+
+            ?
+
+            parseInt(
+                match[6],
+                10
+            )
+
+            :
+
+            0;
 
 
         const result =
-        new Date(
-            year,
-            month,
-            day,
-            hour,
-            minute,
-            second
-        );
+
+            new Date(
+
+                year,
+
+                month,
+
+                day,
+
+                hour,
+
+                minute,
+
+                second
+
+            );
 
 
         if(
@@ -3086,29 +1652,53 @@ function parseSheetDate(
 
 
     match =
-    value.match(
-        /^(\d{4})-(\d{1,2})-(\d{1,2})/
-    );
+
+        value.match(
+
+            /^(\d{4})-(\d{1,2})-(\d{1,2})/
+
+        );
 
 
-    if(match){
+    if(
+        match
+    ){
 
         const year =
-        parseInt(match[1],10);
+
+            parseInt(
+                match[1],
+                10
+            );
+
 
         const month =
-        parseInt(match[2],10) - 1;
+
+            parseInt(
+                match[2],
+                10
+            ) - 1;
+
 
         const day =
-        parseInt(match[3],10);
+
+            parseInt(
+                match[3],
+                10
+            );
 
 
         const result =
-        new Date(
-            year,
-            month,
-            day
-        );
+
+            new Date(
+
+                year,
+
+                month,
+
+                day
+
+            );
 
 
         if(
@@ -3125,7 +1715,10 @@ function parseSheetDate(
 
 
     const fallback =
-    new Date(value);
+
+        new Date(
+            value
+        );
 
 
     if(
@@ -3144,11 +1737,14 @@ function parseSheetDate(
 }
 
 
+
 /* =====================================================
    DATE ONLY
 ===================================================== */
 
-function getDateOnly(date){
+function getDateOnly(
+    date
+){
 
     return new Date(
 
@@ -3163,8 +1759,9 @@ function getDateOnly(date){
 }
 
 
+
 /* =====================================================
-   FILTER DATE
+   FILTER
 ===================================================== */
 
 function matchesDateFilter(
@@ -3172,12 +1769,15 @@ function matchesDateFilter(
 ){
 
     const itemDate =
-    parseSheetDate(
-        dateValue
-    );
+
+        parseSheetDate(
+            dateValue
+        );
 
 
-    if(!itemDate){
+    if(
+        !itemDate
+    ){
 
         return false;
 
@@ -3185,27 +1785,30 @@ function matchesDateFilter(
 
 
     const itemDay =
-    getDateOnly(
-        itemDate
-    );
+
+        getDateOnly(
+            itemDate
+        );
 
 
-    /* FROM DATE */
 
     if(
         fromDate.value
     ){
 
         const from =
-        new Date(
-            fromDate.value +
-            "T00:00:00"
-        );
+
+            new Date(
+
+                fromDate.value +
+
+                "T00:00:00"
+
+            );
 
 
         if(
-            itemDay <
-            from
+            itemDay < from
         ){
 
             return false;
@@ -3215,22 +1818,24 @@ function matchesDateFilter(
     }
 
 
-    /* TO DATE */
 
     if(
         toDate.value
     ){
 
         const to =
-        new Date(
-            toDate.value +
-            "T00:00:00"
-        );
+
+            new Date(
+
+                toDate.value +
+
+                "T00:00:00"
+
+            );
 
 
         if(
-            itemDay >
-            to
+            itemDay > to
         ){
 
             return false;
@@ -3240,50 +1845,47 @@ function matchesDateFilter(
     }
 
 
-    /* LAST DAYS */
 
     const days =
-    Number(
-        daysInput.value
-    );
+
+        Number(
+            daysInput.value
+        );
 
 
     if(
+
         Number.isFinite(days) &&
+
         days > 0
+
     ){
 
         const today =
-        getDateOnly(
-            new Date()
-        );
+
+            getDateOnly(
+                new Date()
+            );
 
 
         const cutoffDate =
-        new Date(
-            today
-        );
+
+            new Date(
+                today
+            );
 
 
         cutoffDate.setDate(
 
-            cutoffDate.getDate()
-            -
+            cutoffDate.getDate() -
+
             days
 
         );
 
 
-        /*
-          Example:
-          Today = 23
-          Last Days = 7
-          Show 16 and older
-        */
-
         if(
-            itemDay >
-            cutoffDate
+            itemDay > cutoffDate
         ){
 
             return false;
@@ -3298,6 +1900,7 @@ function matchesDateFilter(
 }
 
 
+
 /* =====================================================
    RENDER TABLE
 ===================================================== */
@@ -3305,106 +1908,149 @@ function matchesDateFilter(
 function renderTable(){
 
     const search =
-    searchInput.value
-    .trim()
-    .toLowerCase();
+
+        searchInput.value
+
+        .trim()
+
+        .toLowerCase();
+
 
 
     const filtered =
-    allCallData.filter(
 
-        function(item){
+        allCallData.filter(
 
-            const text =
-
-            (
-
-                item.customerNumber ||
-
-                item.ip ||
-
-                ""
-
-            )
-
-            +
-
-            " " +
-
-            (
-
-                item.problem ||
-
-                ""
-
-            )
-
-            +
-
-            " " +
-
-            (
-
-                item.reference ||
-
-                item.ref ||
-
-                ""
-
-            )
-
-            +
-
-            " " +
-
-            (
-
-                item.support ||
-
-                ""
-
-            )
-
-            +
-
-            " " +
-
-            (
-
-                item.supportWork ||
-
-                ""
-
-            );
+            function(item){
 
 
-            const matchesSearch =
-
-            !search ||
-
-            text
-            .toLowerCase()
-            .includes(search);
+                const text =
 
 
-            const matchesDate =
+                    (
 
-            matchesDateFilter(
-                item.date
-            );
+                        item.customerNumber ||
+
+                        item.ip ||
+
+                        ""
+
+                    )
 
 
-            return (
+                    +
 
-                matchesSearch &&
 
-                matchesDate
+                    " "
 
-            );
 
-        }
+                    +
 
-    );
+
+                    (
+
+                        item.problem ||
+
+                        ""
+
+                    )
+
+
+                    +
+
+
+                    " "
+
+
+                    +
+
+
+                    (
+
+                        item.reference ||
+
+                        item.ref ||
+
+                        ""
+
+                    )
+
+
+                    +
+
+
+                    " "
+
+
+                    +
+
+
+                    (
+
+                        item.support ||
+
+                        ""
+
+                    )
+
+
+                    +
+
+
+                    " "
+
+
+                    +
+
+
+                    (
+
+                        item.supportWork ||
+
+                        ""
+
+                    );
+
+
+
+                const matchesSearch =
+
+
+                    !search ||
+
+
+                    text
+
+                    .toLowerCase()
+
+                    .includes(
+                        search
+                    );
+
+
+
+                const matchesDate =
+
+                    matchesDateFilter(
+
+                        item.date
+
+                    );
+
+
+
+                return (
+
+                    matchesSearch &&
+
+                    matchesDate
+
+                );
+
+            }
+
+        );
+
 
 
     tableBody.innerHTML =
@@ -3413,9 +2059,10 @@ function renderTable(){
 
     pendingCount.textContent =
 
-    filtered.length +
+        filtered.length +
 
-    " Pending";
+        " Pending";
+
 
 
     if(
@@ -3445,10 +2092,6 @@ function renderTable(){
         "block";
 
 
-    /*
-      Old data first
-      New data last
-    */
 
     filtered.forEach(
 
@@ -3465,6 +2108,7 @@ function renderTable(){
 }
 
 
+
 /* =====================================================
    CREATE ROW
 ===================================================== */
@@ -3474,159 +2118,200 @@ function createRow(
 ){
 
     const tr =
-    document.createElement(
-        "tr"
-    );
+
+        document.createElement(
+            "tr"
+        );
 
 
     tr.innerHTML = `
 
-    <td>
+        <td>
 
-        <div class="cell-content customer-cell">
+            <div class="cell-content customer-cell">
 
-            <div class="cell-icon">
+                <div class="cell-icon">
 
-                <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-user"></i>
 
-            </div>
+                </div>
 
-            <span>
-                ${escapeHtml(
-                    item.customerNumber ||
-                    item.ip ||
-                    ""
-                )}
-            </span>
+                <span>
 
-        </div>
+                    ${escapeHtml(
 
-    </td>
+                        item.customerNumber ||
 
+                        item.ip ||
 
-    <td>
+                        ""
 
-        <div class="cell-content date-cell">
+                    )}
 
-            <div class="cell-icon">
-
-                <i class="fa-solid fa-calendar"></i>
+                </span>
 
             </div>
 
-            <span>
-                ${escapeHtml(
-                    item.date || ""
-                )}
-            </span>
-
-        </div>
-
-    </td>
+        </td>
 
 
-    <td>
+        <td>
 
-        <div class="cell-content problem-cell">
+            <div class="cell-content date-cell">
 
-            <div class="cell-icon">
+                <div class="cell-icon">
 
-                <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-solid fa-calendar"></i>
 
-            </div>
+                </div>
 
-            <span>
-                ${escapeHtml(
-                    item.problem || ""
-                )}
-            </span>
+                <span>
 
-        </div>
+                    ${escapeHtml(
 
-    </td>
+                        item.date ||
 
+                        ""
 
-    <td>
+                    )}
 
-        <div class="cell-content reference-cell">
-
-            <div class="cell-icon">
-
-                <i class="fa-solid fa-link"></i>
+                </span>
 
             </div>
 
-            <span>
-                ${escapeHtml(
-                    item.reference ||
-                    item.ref ||
-                    ""
-                )}
-            </span>
-
-        </div>
-
-    </td>
+        </td>
 
 
-    <td>
+        <td>
 
-        <div class="cell-content support-cell">
+            <div class="cell-content problem-cell">
 
-            <div class="cell-icon">
+                <div class="cell-icon">
 
-                <i class="fa-solid fa-headset"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
 
-            </div>
+                </div>
 
-            <span>
-                ${escapeHtml(
-                    item.support || ""
-                )}
-            </span>
+                <span>
 
-        </div>
+                    ${escapeHtml(
 
-    </td>
+                        item.problem ||
 
+                        ""
 
-    <td>
+                    )}
 
-        <div class="cell-content support-work-cell">
-
-            <div class="cell-icon">
-
-                <i class="fa-solid fa-screwdriver-wrench"></i>
+                </span>
 
             </div>
 
-            <span>
-                ${escapeHtml(
-                    item.supportWork || ""
-                )}
-            </span>
-
-        </div>
-
-    </td>
+        </td>
 
 
-    <td>
+        <td>
 
-        <button
-        class="view-btn"
-        type="button"
-        >
+            <div class="cell-content reference-cell">
 
-        <i class="fa-solid fa-eye"></i>
+                <div class="cell-icon">
 
-        View
+                    <i class="fa-solid fa-link"></i>
 
-        </button>
+                </div>
 
-    </td>
+                <span>
+
+                    ${escapeHtml(
+
+                        item.reference ||
+
+                        item.ref ||
+
+                        ""
+
+                    )}
+
+                </span>
+
+            </div>
+
+        </td>
+
+
+        <td>
+
+            <div class="cell-content support-cell">
+
+                <div class="cell-icon">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                </div>
+
+                <span>
+
+                    ${escapeHtml(
+
+                        item.support ||
+
+                        ""
+
+                    )}
+
+                </span>
+
+            </div>
+
+        </td>
+
+
+        <td>
+
+            <div class="cell-content support-work-cell">
+
+                <div class="cell-icon">
+
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                </div>
+
+                <span>
+
+                    ${escapeHtml(
+
+                        item.supportWork ||
+
+                        ""
+
+                    )}
+
+                </span>
+
+            </div>
+
+        </td>
+
+
+        <td>
+
+            <button
+
+                class="view-btn"
+
+                type="button"
+
+            >
+
+                <i class="fa-solid fa-eye"></i>
+
+                View
+
+            </button>
+
+        </td>
 
     `;
+
 
 
     tr.querySelector(
@@ -3646,11 +2331,13 @@ function createRow(
     );
 
 
+
     tableBody.appendChild(
         tr
     );
 
 }
+
 
 
 /* =====================================================
@@ -3669,58 +2356,58 @@ function openModal(
         "modalCustomer"
     ).textContent =
 
-    item.customerNumber ||
+        item.customerNumber ||
 
-    item.ip ||
+        item.ip ||
 
-    "-";
+        "-";
 
 
     document.getElementById(
         "modalDate"
     ).textContent =
 
-    item.date ||
+        item.date ||
 
-    "-";
+        "-";
 
 
     document.getElementById(
         "modalProblem"
     ).textContent =
 
-    item.problem ||
+        item.problem ||
 
-    "-";
+        "-";
 
 
     document.getElementById(
         "modalReference"
     ).textContent =
 
-    item.reference ||
+        item.reference ||
 
-    item.ref ||
+        item.ref ||
 
-    "-";
+        "-";
 
 
     document.getElementById(
         "modalSupport"
     ).textContent =
 
-    item.support ||
+        item.support ||
 
-    "-";
+        "-";
 
 
     document.getElementById(
         "modalSupportWork"
     ).textContent =
 
-    item.supportWork ||
+        item.supportWork ||
 
-    "-";
+        "-";
 
 
     callPerson.value =
@@ -3737,13 +2424,13 @@ function openModal(
 
     submitCallBtn.innerHTML =
 
-    `
+        `
 
-    <i class="fa-solid fa-paper-plane"></i>
+        <i class="fa-solid fa-paper-plane"></i>
 
-    Submit Call
+        Submit Call
 
-    `;
+        `;
 
 
     viewModal.classList.add(
@@ -3751,6 +2438,7 @@ function openModal(
     );
 
 }
+
 
 
 /* =====================================================
@@ -3802,6 +2490,7 @@ viewModal.addEventListener(
 );
 
 
+
 /* =====================================================
    SUBMIT CALL
 ===================================================== */
@@ -3811,6 +2500,7 @@ submitCallBtn.addEventListener(
     "click",
 
     async function(){
+
 
         if(
             !selectedCall
@@ -3822,10 +2512,14 @@ submitCallBtn.addEventListener(
 
 
         const work =
-        callWork.value.trim();
+
+            callWork.value.trim();
 
 
-        if(!work){
+
+        if(
+            !work
+        ){
 
             showCustomPopup(
 
@@ -3844,119 +2538,168 @@ submitCallBtn.addEventListener(
         }
 
 
+
         submitCallBtn.disabled =
             true;
 
 
         submitCallBtn.innerHTML =
 
-        `
+            `
 
-        <i class="fa-solid fa-spinner fa-spin"></i>
+            <i class="fa-solid fa-spinner fa-spin"></i>
 
-        Saving...
+            Saving...
 
-        `;
+            `;
+
 
 
         try{
 
+
             const payload = {
+
 
                 action:
                 "submitCall",
 
+
                 customerId:
 
-                selectedCall.customerNumber ||
 
-                selectedCall.ip ||
+                    selectedCall.customerNumber ||
 
-                "",
+
+                    selectedCall.ip ||
+
+
+                    "",
+
+
 
                 date:
 
-                selectedCall.date ||
 
-                "",
+                    selectedCall.date ||
+
+
+                    "",
+
+
 
                 problem:
 
-                selectedCall.problem ||
 
-                "",
+                    selectedCall.problem ||
+
+
+                    "",
+
+
 
                 reference:
 
-                selectedCall.reference ||
 
-                selectedCall.ref ||
+                    selectedCall.reference ||
 
-                "",
+
+                    selectedCall.ref ||
+
+
+                    "",
+
+
 
                 support:
 
-                selectedCall.support ||
 
-                "",
+                    selectedCall.support ||
+
+
+                    "",
+
+
 
                 supportWork:
 
-                selectedCall.supportWork ||
 
-                "",
+                    selectedCall.supportWork ||
+
+
+                    "",
+
+
 
                 call:
 
-                currentUser,
+
+                    currentUser,
+
+
 
                 callWork:
 
-                work,
+
+                    work,
+
+
 
                 username:
 
-                localStorage.getItem(
-                    "username"
-                ) || "",
+
+                    localStorage.getItem(
+                        "username"
+                    ) || "",
+
+
 
                 name:
 
-                currentUser
+
+                    currentUser
 
             };
 
 
+
             const response =
-            await fetch(
 
-                API_URL,
+                await fetch(
 
-                {
+                    API_URL,
 
-                    method:
-                    "POST",
+                    {
 
-                    headers:{
+                        method:
+                        "POST",
 
-                        "Content-Type":
-                        "text/plain;charset=utf-8"
 
-                    },
+                        headers:{
 
-                    body:
+                            "Content-Type":
 
-                    JSON.stringify(
-                        payload
-                    )
+                            "text/plain;charset=utf-8"
 
-                }
+                        },
 
-            );
+
+                        body:
+
+                            JSON.stringify(
+                                payload
+                            )
+
+                    }
+
+                );
+
 
 
             const result =
-            await response.json();
+
+                await response.json();
+
 
 
             if(
@@ -3974,7 +2717,9 @@ submitCallBtn.addEventListener(
             }
 
 
+
             closeViewModal();
+
 
 
             showCustomPopup(
@@ -3986,12 +2731,15 @@ submitCallBtn.addEventListener(
             );
 
 
+
             loadPendingCall();
+
 
         }
 
 
         catch(error){
+
 
             console.error(
                 error
@@ -4015,19 +2763,20 @@ submitCallBtn.addEventListener(
 
             submitCallBtn.innerHTML =
 
-            `
+                `
 
-            <i class="fa-solid fa-paper-plane"></i>
+                <i class="fa-solid fa-paper-plane"></i>
 
-            Submit Call
+                Submit Call
 
-            `;
+                `;
 
         }
 
     }
 
 );
+
 
 
 /* =====================================================
@@ -4043,8 +2792,9 @@ searchInput.addEventListener(
 );
 
 
+
 /* =====================================================
-   FROM DATE
+   FILTER EVENTS
 ===================================================== */
 
 fromDate.addEventListener(
@@ -4056,10 +2806,6 @@ fromDate.addEventListener(
 );
 
 
-/* =====================================================
-   TO DATE
-===================================================== */
-
 toDate.addEventListener(
 
     "change",
@@ -4069,10 +2815,6 @@ toDate.addEventListener(
 );
 
 
-/* =====================================================
-   LAST DAYS
-===================================================== */
-
 daysInput.addEventListener(
 
     "input",
@@ -4080,6 +2822,7 @@ daysInput.addEventListener(
     renderTable
 
 );
+
 
 
 /* =====================================================
@@ -4092,20 +2835,25 @@ allFilterBtn.addEventListener(
 
     function(){
 
+
         fromDate.value =
             "";
+
 
         toDate.value =
             "";
 
+
         daysInput.value =
             "";
+
 
         renderTable();
 
     }
 
 );
+
 
 
 /* =====================================================
@@ -4120,25 +2868,30 @@ function escapeHtml(
         value || ""
     )
 
+
     .replace(
         /&/g,
         "&amp;"
     )
+
 
     .replace(
         /</g,
         "&lt;"
     )
 
+
     .replace(
         />/g,
         "&gt;"
     )
 
+
     .replace(
         /"/g,
         "&quot;"
     )
+
 
     .replace(
         /'/g,
@@ -4146,6 +2899,7 @@ function escapeHtml(
     );
 
 }
+
 
 
 /* =====================================================
@@ -4175,6 +2929,7 @@ document.addEventListener(
 );
 
 
+
 /* =====================================================
    PAGE SHOW
 ===================================================== */
@@ -4192,6 +2947,7 @@ window.addEventListener(
 );
 
 
+
 /* =====================================================
    INITIAL LOAD
 ===================================================== */
@@ -4199,6 +2955,7 @@ window.addEventListener(
 loadPendingCall();
 
 </script>
+
 
 </body>
 

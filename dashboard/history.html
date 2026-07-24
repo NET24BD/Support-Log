@@ -48,17 +48,16 @@ body{
         #008f6d
     );
 
-    padding:16px 24px 16px 24px;
+    padding:16px 24px;
 
     color:#14201d;
-
-    transition:.3s;
 
 }
 
 
 /* =====================================================
    SIDEBAR
+   MINIMIZE BUTTON REMOVED
 ===================================================== */
 
 .sidebar{
@@ -86,25 +85,14 @@ body{
     5px 0 25px
     rgba(0,0,0,.18);
 
-    transition:
-    width .3s ease,
-    transform .3s ease;
-
     overflow:hidden;
 
 }
 
 
-/* SIDEBAR COLLAPSED */
-
-.sidebar.collapsed{
-
-    width:78px;
-
-}
-
-
-/* SIDEBAR HEADER */
+/* =====================================================
+   SIDEBAR HEADER
+===================================================== */
 
 .sidebar-header{
 
@@ -113,8 +101,6 @@ body{
     display:flex;
 
     align-items:center;
-
-    justify-content:space-between;
 
     padding:
     0 10px;
@@ -162,46 +148,6 @@ body{
     justify-content:center;
 
     font-size:20px;
-
-}
-
-
-.sidebar.collapsed
-.sidebar-logo span{
-
-    display:none;
-
-}
-
-
-.sidebar-toggle{
-
-    width:38px;
-
-    height:38px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:
-    rgba(255,255,255,.12);
-
-    color:white;
-
-    cursor:pointer;
-
-    font-size:17px;
-
-    transition:.2s;
-
-}
-
-
-.sidebar-toggle:hover{
-
-    background:
-    rgba(255,255,255,.22);
 
 }
 
@@ -293,58 +239,13 @@ body{
 }
 
 
-.sidebar.collapsed
-.sidebar-link span{
-
-    display:none;
-
-}
-
-
-.sidebar.collapsed
-.sidebar-link{
-
-    justify-content:center;
-
-    padding:0;
-
-}
-
-
-.sidebar.collapsed
-.sidebar-link i{
-
-    margin:0;
-
-}
-
-
 /* =====================================================
    MAIN AREA
 ===================================================== */
 
 .main-area{
 
-    margin-left:0;
-
-    transition:
-    margin-left .3s ease;
-
-}
-
-
-body.sidebar-open
-.main-area{
-
     margin-left:260px;
-
-}
-
-
-body.sidebar-collapsed
-.main-area{
-
-    margin-left:78px;
 
 }
 
@@ -511,49 +412,65 @@ body.sidebar-collapsed
 
 
 /* =====================================================
-   USER BAR
+   TOP MENU BUTTON
+   MOBILE SIDEBAR CONTROL
 ===================================================== */
 
-.user-bar{
+.top-menu-button{
 
-    margin-top:24px;
+    width:42px;
 
-    background:
-    rgba(255,255,255,.12);
+    height:42px;
 
-    border:
-    1px solid
-    rgba(255,255,255,.25);
+    border:0;
 
-    border-radius:18px;
+    border-radius:10px;
 
-    min-height:55px;
+    background:#e7f5f0;
 
-    padding:0 22px;
+    color:#00785b;
+
+    font-size:20px;
 
     display:flex;
 
     align-items:center;
 
-    justify-content:space-between;
+    justify-content:center;
 
-    color:white;
+    cursor:pointer;
 
-    font-size:16px;
-
-}
-
-
-.user-name{
-
-    font-weight:bold;
+    transition:.2s;
 
 }
 
 
-.page-label{
+.top-menu-button:hover{
 
-    font-weight:bold;
+    background:#d4eee6;
+
+    transform:translateY(-1px);
+
+}
+
+
+/* =====================================================
+   USER
+===================================================== */
+
+.logged-user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    color:#00785b;
+
+    font-size:11px;
+
+    font-weight:600;
 
 }
 
@@ -1184,7 +1101,7 @@ tbody tr:hover{
 
 
 /* =====================================================
-   MODAL BACKGROUND
+   MODAL
 ===================================================== */
 
 .modal{
@@ -1218,10 +1135,6 @@ tbody tr:hover{
 
 }
 
-
-/* =====================================================
-   MODAL BOX
-===================================================== */
 
 .modal-box{
 
@@ -1271,10 +1184,6 @@ tbody tr:hover{
 
 }
 
-
-/* =====================================================
-   MODAL HEADER
-===================================================== */
 
 .modal-header{
 
@@ -1339,10 +1248,6 @@ tbody tr:hover{
 }
 
 
-/* =====================================================
-   DETAILS
-===================================================== */
-
 .details{
 
     padding:24px;
@@ -1361,10 +1266,6 @@ tbody tr:hover{
 
 }
 
-
-/* =====================================================
-   READ ONLY DETAIL CARDS
-===================================================== */
 
 .detail-item{
 
@@ -1561,7 +1462,7 @@ tbody tr:hover{
 
 
 /* =====================================================
-   CALL PERSON / CALL WORK
+   CALL DETAILS
 ===================================================== */
 
 .readonly-section{
@@ -1704,6 +1605,116 @@ tbody tr:hover{
 
 
 /* =====================================================
+   PAGINATION
+===================================================== */
+
+.pagination{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:22px 16px;
+
+    border-top:
+    1px solid
+    #e6eeeb;
+
+    background:#f7fbfa;
+
+    flex-wrap:wrap;
+
+}
+
+
+.page-btn,
+.page-number{
+
+    min-width:42px;
+
+    height:42px;
+
+    padding:0 12px;
+
+    border:
+    1px solid
+    #d8ebe5;
+
+    border-radius:10px;
+
+    background:#ffffff;
+
+    color:#007b5d;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .2s ease;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+}
+
+
+.page-number{
+
+    padding:0 14px;
+
+}
+
+
+.page-btn:hover:not(:disabled),
+.page-number:hover{
+
+    background:#e8f5f1;
+
+    transform:translateY(-1px);
+
+}
+
+
+.page-number.active{
+
+    background:#008f6b;
+
+    border-color:#008f6b;
+
+    color:#ffffff;
+
+    box-shadow:
+    0 5px 15px
+    rgba(0,143,107,.22);
+
+}
+
+
+.page-btn:disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+
+/* =====================================================
    TOAST
 ===================================================== */
 
@@ -1743,7 +1754,7 @@ tbody tr:hover{
 
 
 /* =====================================================
-   MOBILE SIDEBAR
+   MOBILE
 ===================================================== */
 
 @media(max-width:900px){
@@ -1762,6 +1773,9 @@ tbody tr:hover{
         transform:
         translateX(-100%);
 
+        transition:
+        transform .3s ease;
+
     }
 
 
@@ -1773,37 +1787,6 @@ tbody tr:hover{
     }
 
 
-    .sidebar.collapsed{
-
-        width:260px;
-
-    }
-
-
-    .sidebar.collapsed
-    .sidebar-logo span,
-    .sidebar.collapsed
-    .sidebar-link span{
-
-        display:block;
-
-    }
-
-
-    .sidebar.collapsed
-    .sidebar-link{
-
-        justify-content:flex-start;
-
-        padding:
-        0 13px;
-
-    }
-
-
-    body.sidebar-open
-    .main-area,
-    body.sidebar-collapsed
     .main-area{
 
         margin-left:0;
@@ -1836,19 +1819,6 @@ tbody tr:hover{
     }
 
 
-    .user-bar{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        gap:10px;
-
-        padding:15px 18px;
-
-    }
-
-
     .filter-row{
 
         justify-content:flex-start;
@@ -1873,30 +1843,39 @@ tbody tr:hover{
 
         align-items:flex-start;
 
+        gap:12px;
+
     }
 
 
-    .header-icon{
+    .top-menu-button{
 
-        width:58px;
+        width:38px;
 
-        height:58px;
+        height:38px;
 
-        font-size:25px;
+        font-size:18px;
 
     }
 
 
     .header-title h1{
 
-        font-size:25px;
+        font-size:20px;
 
     }
 
 
     .header-title p{
 
-        font-size:13px;
+        font-size:12px;
+
+    }
+
+
+    .logged-user{
+
+        font-size:10px;
 
     }
 
@@ -1977,131 +1956,44 @@ tbody tr:hover{
 
     }
 
-}
 
+    .pagination{
 
-/* =====================================================
-   PAGINATION - APP FRIENDLY
-===================================================== */
-.pagination{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:8px;
-    padding:22px 16px;
-    border-top:1px solid #e6eeeb;
-    background:#f7fbfa;
-    flex-wrap:wrap;
-}
-.page-btn,
-.page-number{
-    min-width:42px;
-    height:42px;
-    padding:0 12px;
-    border:1px solid #d8ebe5;
-    border-radius:10px;
-    background:#ffffff;
-    color:#007b5d;
-    font-size:14px;
-    font-weight:600;
-    cursor:pointer;
-    transition:all .2s ease;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:7px;
-}
-.page-number{padding:0 14px;}
-.page-btn:hover:not(:disabled),
-.page-number:hover{
-    background:#e8f5f1;
-    transform:translateY(-1px);
-}
-.page-number.active{
-    background:#008f6b;
-    border-color:#008f6b;
-    color:#ffffff;
-    box-shadow:0 5px 15px rgba(0,143,107,.22);
-}
-.page-btn:disabled{
-    opacity:.45;
-    cursor:not-allowed;
-    transform:none;
-}
-@media(max-width:600px){
-    .pagination{padding:16px 8px;gap:6px;}
-    .page-btn,.page-number{min-width:38px;height:38px;font-size:13px;padding:0 9px;}
-    .page-btn span{display:none;}
-    .page-number{padding:0 10px;}
-}
+        padding:
+        16px 8px;
 
-/* =====================================================
-   LINK4 COMPACT HEADER
-===================================================== */
-.compact-header{
-    min-height:72px !important;
-    padding:12px 18px !important;
-    border-radius:16px !important;
-}
-.compact-header .header-left{
-    gap:12px !important;
-}
-.top-menu-button{
-    width:42px;
-    height:42px;
-    border:0;
-    border-radius:10px;
-    background:#e7f5f0;
-    color:#00785b;
-    font-size:20px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    cursor:pointer;
-    transition:.2s;
-}
-.top-menu-button:hover{
-    background:#d4eee6;
-    transform:translateY(-1px);
-}
-.compact-header .header-title h1{
-    font-size:20px !important;
-    line-height:1.15 !important;
-    margin:0 !important;
-    letter-spacing:.35px;
-}
-.compact-header .header-title p{
-    font-size:12px !important;
-    line-height:1.2 !important;
-    margin:3px 0 !important;
-}
-.logged-user{
-    display:flex;
-    align-items:center;
-    gap:6px;
-    color:#00785b;
-    font-size:11px;
-    font-weight:600;
-}
-@media(max-width:600px){
-    .compact-header{
-        min-height:62px !important;
-        padding:9px 12px !important;
-        border-radius:12px !important;
+        gap:6px;
+
     }
-    .top-menu-button{
-        width:38px;
+
+
+    .page-btn,
+    .page-number{
+
+        min-width:38px;
+
         height:38px;
-        font-size:18px;
+
+        font-size:13px;
+
+        padding:0 9px;
+
     }
-    .compact-header .header-title h1{
-        font-size:16px !important;
+
+
+    .page-btn span{
+
+        display:none;
+
     }
-    .compact-header .header-title p{
-        font-size:10px !important;
+
+
+    .page-number{
+
+        padding:0 10px;
+
     }
-    .logged-user{font-size:10px;}
+
 }
 
 </style>
@@ -2109,11 +2001,12 @@ tbody tr:hover{
 </head>
 
 
-<body class="sidebar-open">
+<body>
 
 
 <!-- =====================================================
      SIDEBAR
+     MINIMIZE BUTTON REMOVED
 ===================================================== -->
 
 <aside
@@ -2130,18 +2023,6 @@ id="sidebar"
             <span>Support Log</span>
 
         </div>
-
-
-        <button
-        class="sidebar-toggle"
-        id="sidebarToggle"
-        onclick="toggleSidebar()"
-        title="Minimize Sidebar"
-        >
-
-            <i class="fa-solid fa-angles-left"></i>
-
-        </button>
 
     </div>
 
@@ -2236,34 +2117,64 @@ id="sidebar"
 <div class="container">
 
 
-<!-- ===================================================
+<!-- =====================================================
      HEADER
-=================================================== -->
+===================================================== -->
+
 <div class="header compact-header">
-  <div class="header-left">
-    <button class="top-menu-button" id="topMenuButton" onclick="toggleSidebar()" title="Open / Close Sidebar" aria-label="Open / Close Sidebar">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-    <div class="header-title">
-      <h1>LINK4 COMMUNICATION</h1>
-      <p>Support Management System</p>
-      <div class="logged-user"><i class="fa-solid fa-user"></i><span id="loggedUser">shemanto</span></div>
+
+    <div class="header-left">
+
+        <button
+        class="top-menu-button"
+        id="topMenuButton"
+        onclick="toggleSidebar()"
+        title="Open / Close Sidebar"
+        aria-label="Open / Close Sidebar"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <div class="header-title">
+
+            <h1>
+                LINK4 COMMUNICATION
+            </h1>
+
+            <p>
+                Support Management System
+            </p>
+
+            <div class="logged-user">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span id="loggedUser">
+                    shemanto
+                </span>
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
+
 </div>
 
-<!-- ===================================================
+
+<!-- =====================================================
      FILTER AREA
-=================================================== -->
+===================================================== -->
 
 <div class="filter-area">
 
 
     <div class="search-box">
 
-
         <i class="fa-solid fa-magnifying-glass"></i>
-
 
         <input
         type="text"
@@ -2271,7 +2182,6 @@ id="sidebar"
         placeholder="Search Customer ID, Problem, Reference, Support..."
         oninput="applyFilters()"
         >
-
 
     </div>
 
@@ -2326,7 +2236,6 @@ id="sidebar"
             onchange="applyFilters()"
             >
 
-
         </div>
 
 
@@ -2365,9 +2274,9 @@ id="sidebar"
 </div>
 
 
-<!-- ===================================================
+<!-- =====================================================
      CONTENT
-=================================================== -->
+===================================================== -->
 
 <div class="content-card">
 
@@ -2417,9 +2326,9 @@ id="sidebar"
 </div>
 
 
-<!-- ===================================================
+<!-- =====================================================
      VIEW MODAL
-=================================================== -->
+===================================================== -->
 
 <div
 class="modal"
@@ -2654,9 +2563,9 @@ onclick="outsideModal(event)"
 </div>
 
 
-<!-- ===================================================
+<!-- =====================================================
      TOAST
-=================================================== -->
+===================================================== -->
 
 <div
 class="toast"
@@ -2665,7 +2574,6 @@ id="toast"
 
 
 <script>
-
 
 /* =====================================================
    API URL
@@ -2695,119 +2603,28 @@ let currentPage = 1;
 ===================================================== */
 
 document.addEventListener(
-
 "DOMContentLoaded",
-
 function(){
 
     loadUser();
 
     loadData();
 
-    restoreSidebarState();
-
 }
-
 );
 
 
 /* =====================================================
-   SIDEBAR TOGGLE
+   MOBILE SIDEBAR TOGGLE
 ===================================================== */
 
 function toggleSidebar(){
 
-    const sidebar =
-        document.getElementById("sidebar");
-
-    const icon =
-        document.querySelector(
-            "#sidebarToggle i"
-        );
-
-
-    if(window.innerWidth <= 900){
-
-        sidebar.classList.toggle(
-            "mobile-open"
-        );
+    if(window.innerWidth > 900){
 
         return;
 
     }
-
-
-    sidebar.classList.toggle(
-        "collapsed"
-    );
-
-
-    document.body.classList.toggle(
-        "sidebar-open"
-    );
-
-
-    document.body.classList.toggle(
-        "sidebar-collapsed"
-    );
-
-
-    const collapsed =
-        sidebar.classList.contains(
-            "collapsed"
-        );
-
-
-    localStorage.setItem(
-        "supportSidebarCollapsed",
-        collapsed
-            ? "true"
-            : "false"
-    );
-
-
-    if(collapsed){
-
-        icon.className =
-            "fa-solid fa-angles-right";
-
-    }
-
-    else{
-
-        icon.className =
-            "fa-solid fa-angles-left";
-
-    }
-
-}
-
-
-/* =====================================================
-   RESTORE SIDEBAR
-===================================================== */
-
-function restoreSidebarState(){
-
-    if(window.innerWidth <= 900){
-
-        document.body.classList.remove(
-            "sidebar-open"
-        );
-
-        document.body.classList.remove(
-            "sidebar-collapsed"
-        );
-
-        return;
-
-    }
-
-
-    const collapsed =
-        localStorage.getItem(
-            "supportSidebarCollapsed"
-        );
 
 
     const sidebar =
@@ -2816,49 +2633,9 @@ function restoreSidebarState(){
         );
 
 
-    const icon =
-        document.querySelector(
-            "#sidebarToggle i"
-        );
-
-
-    if(collapsed === "true"){
-
-        sidebar.classList.add(
-            "collapsed"
-        );
-
-        document.body.classList.remove(
-            "sidebar-open"
-        );
-
-        document.body.classList.add(
-            "sidebar-collapsed"
-        );
-
-        icon.className =
-            "fa-solid fa-angles-right";
-
-    }
-
-    else{
-
-        sidebar.classList.remove(
-            "collapsed"
-        );
-
-        document.body.classList.add(
-            "sidebar-open"
-        );
-
-        document.body.classList.remove(
-            "sidebar-collapsed"
-        );
-
-        icon.className =
-            "fa-solid fa-angles-left";
-
-    }
+    sidebar.classList.toggle(
+        "mobile-open"
+    );
 
 }
 
@@ -2867,6 +2644,56 @@ function restoreSidebarState(){
    LOAD USER
 ===================================================== */
 
+function loadUser(){
+
+    const loggedUser =
+        document.getElementById(
+            "loggedUser"
+        );
+
+
+    const savedUser =
+        localStorage.getItem(
+            "loggedUser"
+        );
+
+
+    const username =
+        localStorage.getItem(
+            "username"
+        );
+
+
+    const userName =
+        localStorage.getItem(
+            "userName"
+        );
+
+
+    if(savedUser){
+
+        loggedUser.textContent =
+            savedUser;
+
+    }
+
+    else if(userName){
+
+        loggedUser.textContent =
+            userName;
+
+    }
+
+    else if(username){
+
+        loggedUser.textContent =
+            username;
+
+    }
+
+}
+
+
 /* =====================================================
    LOAD DATA
 ===================================================== */
@@ -2874,65 +2701,48 @@ function restoreSidebarState(){
 async function loadData(){
 
     const content =
-
         document.getElementById(
-
             "content"
-
         );
 
 
     content.className =
-
         "loading";
 
 
     content.innerHTML =
-
         '<div class="spinner"></div>' +
-
         'Loading History...';
 
 
     try{
 
-
         const response =
-
             await fetch(
 
                 API_URL +
-
                 "?action=history&_=" +
-
                 Date.now(),
 
                 {
-
                     method:"GET",
-
                     cache:"no-store"
-
                 }
 
             );
 
 
         const result =
-
             await response.json();
 
 
         if(
-
             !result.success
-
         ){
 
             throw new Error(
 
                 result.message ||
-
                 "Failed to load History."
 
             );
@@ -2941,21 +2751,16 @@ async function loadData(){
 
 
         allData =
-
             Array.isArray(
-
                 result.data
-
             )
-
             ?
-
             result.data
-
             :
-
             [];
 
+
+        currentPage = 1;
 
         applyFilters();
 
@@ -2964,9 +2769,7 @@ async function loadData(){
 
     catch(error){
 
-
         content.className =
-
             "empty";
 
 
@@ -2983,13 +2786,10 @@ async function loadData(){
             '<p>' +
 
             escapeHtml(
-
                 error.message
-
             ) +
 
             '</p>';
-
 
     }
 
@@ -3002,152 +2802,114 @@ async function loadData(){
 
 function applyFilters(){
 
-
     const search =
-
         document.getElementById(
-
             "searchInput"
-
         )
-
         .value
-
         .toLowerCase()
-
         .trim();
 
 
     const lastDaysValue =
-
         document.getElementById(
-
             "lastDays"
-
         ).value;
 
 
     const lastDays =
-
         lastDaysValue
-
         ?
-
         parseInt(
-
             lastDaysValue,
-
             10
-
         )
-
         :
-
         null;
 
 
     const fromDate =
-
         document.getElementById(
-
             "fromDate"
-
         ).value;
 
 
     const toDate =
-
         document.getElementById(
-
             "toDate"
-
         ).value;
 
 
     filteredData =
-
         allData.filter(
-
             function(item){
-
 
                 const searchable =
 
-                (
+                    (
 
-                    item.customerId ||
+                        item.customerId ||
+                        item.customerNumber ||
+                        item.ip ||
+                        ""
 
-                    item.customerNumber ||
+                    ) +
 
-                    item.ip ||
+                    " " +
 
-                    ""
+                    (
 
-                ) +
+                        item.problem ||
+                        ""
 
-                " " +
+                    ) +
 
-                (
+                    " " +
 
-                    item.problem ||
+                    (
 
-                    ""
+                        item.reference ||
+                        item.ref ||
+                        ""
 
-                ) +
+                    ) +
 
-                " " +
+                    " " +
 
-                (
+                    (
 
-                    item.reference ||
+                        item.support ||
+                        ""
 
-                    item.ref ||
+                    ) +
 
-                    ""
+                    " " +
 
-                ) +
+                    (
 
-                " " +
+                        item.supportWork ||
+                        ""
 
-                (
+                    ) +
 
-                    item.support ||
+                    " " +
 
-                    ""
+                    (
 
-                ) +
+                        item.call ||
+                        item.callPerson ||
+                        ""
 
-                " " +
+                    ) +
 
-                (
+                    " " +
 
-                    item.supportWork ||
+                    (
 
-                    ""
+                        item.callWork ||
+                        ""
 
-                ) +
-
-                " " +
-
-                (
-
-                    item.call ||
-
-                    item.callPerson ||
-
-                    ""
-
-                ) +
-
-                " " +
-
-                (
-
-                    item.callWork ||
-
-                    ""
-
-                );
+                    );
 
 
                 if(
@@ -3155,9 +2917,7 @@ function applyFilters(){
                     search &&
 
                     !searchable
-
                     .toLowerCase()
-
                     .includes(search)
 
                 ){
@@ -3168,31 +2928,14 @@ function applyFilters(){
 
 
                 const itemDate =
-
                     parseDate(
-
                         item.date
-
                     );
 
 
                 /* =================================================
-                   LAST DAYS / OLDER THAN
-
-                   Example:
-                   Today = 23-07-2026
-
-                   Last Days = 7
-
-                   Show only records BEFORE
-                   the last 7 days.
-
-                   Therefore:
-                   23,22,21,20,19,18,17 July
-                   are excluded.
-
-                   16 July and older are shown.
-                ================================================== */
+                   OLDER THAN
+                ================================================= */
 
                 if(
 
@@ -3204,11 +2947,8 @@ function applyFilters(){
 
                 ){
 
-
                     if(
-
                         !itemDate
-
                     ){
 
                         return false;
@@ -3217,29 +2957,20 @@ function applyFilters(){
 
 
                     const today =
-
                         new Date();
 
 
                     today.setHours(
-
                         23,
-
                         59,
-
                         59,
-
                         999
-
                     );
 
 
                     const cutoff =
-
                         new Date(
-
                             today
-
                         );
 
 
@@ -3253,22 +2984,15 @@ function applyFilters(){
 
 
                     cutoff.setHours(
-
                         0,
-
                         0,
-
                         0,
-
                         0
-
                     );
 
 
                     if(
-
                         itemDate >= cutoff
-
                     ){
 
                         return false;
@@ -3278,23 +3002,16 @@ function applyFilters(){
                 }
 
 
-                /* FROM */
+                /* FROM DATE */
 
                 if(
-
                     fromDate
-
                 ){
 
-
                     const from =
-
                         new Date(
-
                             fromDate +
-
                             "T00:00:00"
-
                         );
 
 
@@ -3313,23 +3030,16 @@ function applyFilters(){
                 }
 
 
-                /* TO */
+                /* TO DATE */
 
                 if(
-
                     toDate
-
                 ){
 
-
                     const to =
-
                         new Date(
-
                             toDate +
-
                             "T23:59:59"
-
                         );
 
 
@@ -3350,16 +3060,15 @@ function applyFilters(){
 
                 return true;
 
-
             }
 
         );
 
 
+    currentPage = 1;
+
     renderData(
-
         filteredData
-
     );
 
 }
@@ -3371,125 +3080,460 @@ function applyFilters(){
 
 function renderData(data){
 
-    const content = document.getElementById("content");
+    const content =
+        document.getElementById(
+            "content"
+        );
 
-    document.getElementById("pendingCount").textContent =
-        data.length + " Records";
 
-    if(data.length === 0){
-        content.className = "empty";
+    document.getElementById(
+        "pendingCount"
+    ).textContent =
+
+        data.length +
+
+        " Records";
+
+
+    if(
+        data.length === 0
+    ){
+
+        content.className =
+            "empty";
+
+
         content.innerHTML =
-            '<div class="empty-icon"><i class="fa-solid fa-folder-open"></i></div>' +
+
+            '<div class="empty-icon">' +
+
+            '<i class="fa-solid fa-folder-open"></i>' +
+
+            '</div>' +
+
             '<h3>No History Found</h3>' +
+
             '<p>No completed support records found.</p>';
+
+
         return;
+
     }
 
-    const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
 
-    if(currentPage < 1) currentPage = 1;
-    if(currentPage > totalPages) currentPage = totalPages;
+    const totalPages =
+        Math.ceil(
 
-    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const endIndex = startIndex + ITEMS_PER_PAGE;
-    const pageData = data.slice(startIndex, endIndex);
+            data.length /
 
-    content.className = "table-wrapper";
+            ITEMS_PER_PAGE
+
+        );
+
+
+    if(
+        currentPage < 1
+    ){
+
+        currentPage = 1;
+
+    }
+
+
+    if(
+        currentPage > totalPages
+    ){
+
+        currentPage =
+            totalPages;
+
+    }
+
+
+    const startIndex =
+
+        (currentPage - 1) *
+
+        ITEMS_PER_PAGE;
+
+
+    const endIndex =
+
+        startIndex +
+
+        ITEMS_PER_PAGE;
+
+
+    const pageData =
+
+        data.slice(
+
+            startIndex,
+
+            endIndex
+
+        );
+
+
+    content.className =
+        "table-wrapper";
+
 
     let html =
+
         '<table>' +
+
         '<thead><tr>' +
+
         '<th>Customer ID</th>' +
+
         '<th>Date</th>' +
+
         '<th>Problem</th>' +
+
         '<th>Reference</th>' +
+
         '<th>Support</th>' +
+
         '<th>Call</th>' +
+
         '<th>Action</th>' +
+
         '</tr></thead><tbody>';
 
-    pageData.forEach(function(item, index){
 
-        const realIndex = startIndex + index;
+    pageData.forEach(
+
+        function(item,index){
+
+            const realIndex =
+
+                startIndex +
+
+                index;
+
+
+            html +=
+
+                '<tr>' +
+
+                '<td><span class="customer-badge">' +
+
+                '<i class="fa-solid fa-user"></i>' +
+
+                escapeHtml(
+
+                    item.customerId ||
+
+                    item.customerNumber ||
+
+                    item.ip ||
+
+                    ""
+
+                ) +
+
+                '</span></td>' +
+
+                '<td>' +
+
+                escapeHtml(
+
+                    formatDateDMY(
+
+                        item.date ||
+
+                        ""
+
+                    )
+
+                ) +
+
+                '</td>' +
+
+                '<td>' +
+
+                escapeHtml(
+
+                    item.problem ||
+
+                    ""
+
+                ) +
+
+                '</td>' +
+
+                '<td><span class="ref-badge">' +
+
+                escapeHtml(
+
+                    item.reference ||
+
+                    item.ref ||
+
+                    "-"
+
+                ) +
+
+                '</span></td>' +
+
+                '<td>' +
+
+                escapeHtml(
+
+                    item.support ||
+
+                    ""
+
+                ) +
+
+                '</td>' +
+
+                '<td>' +
+
+                escapeHtml(
+
+                    item.call ||
+
+                    item.callPerson ||
+
+                    ""
+
+                ) +
+
+                '</td>' +
+
+                '<td>' +
+
+                '<button class="view-btn" ' +
+
+                'onclick="openModal(' +
+
+                realIndex +
+
+                ')">' +
+
+                '<i class="fa-solid fa-eye"></i>' +
+
+                'View' +
+
+                '</button>' +
+
+                '</td>' +
+
+                '</tr>';
+
+        }
+
+    );
+
+
+    html +=
+        '</tbody></table>';
+
+
+    if(
+        totalPages > 1
+    ){
 
         html +=
-            '<tr>' +
-            '<td><span class="customer-badge"><i class="fa-solid fa-user"></i>' +
-            escapeHtml(item.customerId || item.customerNumber || item.ip || "") +
-            '</span></td>' +
-            '<td>' + escapeHtml(formatDateDMY(item.date || "")) + '</td>' +
-            '<td>' + escapeHtml(item.problem || "") + '</td>' +
-            '<td><span class="ref-badge">' +
-            escapeHtml(item.reference || item.ref || "-") +
-            '</span></td>' +
-            '<td>' + escapeHtml(item.support || "") + '</td>' +
-            '<td>' + escapeHtml(item.call || item.callPerson || "") + '</td>' +
-            '<td><button class="view-btn" onclick="openModal(' + realIndex + ')">' +
-            '<i class="fa-solid fa-eye"></i>View</button></td>' +
-            '</tr>';
-    });
+            '<div class="pagination">';
 
-    html += '</tbody></table>';
 
-    if(totalPages > 1){
+        html +=
 
-        html += '<div class="pagination">';
+            '<button ' +
 
-        html += '<button class="page-btn" onclick="changePage(' + (currentPage - 1) + ')" ' +
-            (currentPage === 1 ? 'disabled' : '') + '>' +
-            '<i class="fa-solid fa-chevron-left"></i><span>Previous</span></button>';
+            'class="page-btn" ' +
 
-        let startPage = Math.max(1, currentPage - 2);
-        let endPage = Math.min(totalPages, startPage + 4);
-        if(endPage - startPage < 4){
-            startPage = Math.max(1, endPage - 4);
+            'onclick="changePage(' +
+
+            (currentPage - 1) +
+
+            ')" ' +
+
+            (
+
+                currentPage === 1
+
+                ?
+
+                'disabled'
+
+                :
+
+                ''
+
+            ) +
+
+            '>' +
+
+            '<i class="fa-solid fa-chevron-left"></i>' +
+
+            '<span>Previous</span>' +
+
+            '</button>';
+
+
+        let startPage =
+
+            Math.max(
+
+                1,
+
+                currentPage - 2
+
+            );
+
+
+        let endPage =
+
+            Math.min(
+
+                totalPages,
+
+                startPage + 4
+
+            );
+
+
+        if(
+
+            endPage -
+
+            startPage <
+
+            4
+
+        ){
+
+            startPage =
+
+                Math.max(
+
+                    1,
+
+                    endPage - 4
+
+                );
+
         }
 
-        for(let i = startPage; i <= endPage; i++){
-            html += '<button class="page-number ' + (i === currentPage ? 'active' : '') +
-                '" onclick="changePage(' + i + ')">' + i + '</button>';
+
+        for(
+
+            let i = startPage;
+
+            i <= endPage;
+
+            i++
+
+        ){
+
+            html +=
+
+                '<button ' +
+
+                'class="page-number ' +
+
+                (
+
+                    i === currentPage
+
+                    ?
+
+                    'active'
+
+                    :
+
+                    ''
+
+                ) +
+
+                '" ' +
+
+                'onclick="changePage(' +
+
+                i +
+
+                ')">' +
+
+                i +
+
+                '</button>';
+
         }
 
-        html += '<button class="page-btn" onclick="changePage(' + (currentPage + 1) + ')" ' +
-            (currentPage === totalPages ? 'disabled' : '') + '>' +
-            '<span>Next</span><i class="fa-solid fa-chevron-right"></i></button>';
 
-        html += '</div>';
+        html +=
+
+            '<button ' +
+
+            'class="page-btn" ' +
+
+            'onclick="changePage(' +
+
+            (currentPage + 1) +
+
+            ')" ' +
+
+            (
+
+                currentPage === totalPages
+
+                ?
+
+                'disabled'
+
+                :
+
+                ''
+
+            ) +
+
+            '>' +
+
+            '<span>Next</span>' +
+
+            '<i class="fa-solid fa-chevron-right"></i>' +
+
+            '</button>';
+
+
+        html +=
+            '</div>';
+
     }
 
-    content.innerHTML = html;
+
+    content.innerHTML =
+        html;
+
 }
+
+
+/* =====================================================
+   CHANGE PAGE
+===================================================== */
 
 function changePage(page){
 
-    const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
+    const totalPages =
 
-    if(page < 1 || page > totalPages) return;
+        Math.ceil(
 
-    currentPage = page;
-    renderData(filteredData);
+            filteredData.length /
 
-    const contentCard = document.querySelector('.content-card');
-    if(contentCard){
-        contentCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-}
+            ITEMS_PER_PAGE
 
-/* =====================================================
-   OPEN MODAL
-===================================================== */
-
-function openModal(index){
-
-
-    const data =
-
-        filteredData[index];
+        );
 
 
     if(
 
-        !data
+        page < 1 ||
+
+        page > totalPages
 
     ){
 
@@ -3498,15 +3542,65 @@ function openModal(index){
     }
 
 
-    selectedItem =
+    currentPage =
+        page;
 
+
+    renderData(
+        filteredData
+    );
+
+
+    const contentCard =
+        document.querySelector(
+            ".content-card"
+        );
+
+
+    if(
+        contentCard
+    ){
+
+        contentCard.scrollIntoView({
+
+            behavior:
+            "smooth",
+
+            block:
+            "start"
+
+        });
+
+    }
+
+}
+
+
+/* =====================================================
+   OPEN MODAL
+===================================================== */
+
+function openModal(index){
+
+    const data =
+        filteredData[index];
+
+
+    if(
+        !data
+    ){
+
+        return;
+
+    }
+
+
+    selectedItem =
         data;
 
 
     document.getElementById(
-
         "mCustomer"
-
     ).textContent =
 
         data.customerId ||
@@ -3519,9 +3613,7 @@ function openModal(index){
 
 
     document.getElementById(
-
         "mDate"
-
     ).textContent =
 
         formatDateDMY(
@@ -3534,9 +3626,7 @@ function openModal(index){
 
 
     document.getElementById(
-
         "mProblem"
-
     ).textContent =
 
         data.problem ||
@@ -3545,9 +3635,7 @@ function openModal(index){
 
 
     document.getElementById(
-
         "mReference"
-
     ).textContent =
 
         data.reference ||
@@ -3558,9 +3646,7 @@ function openModal(index){
 
 
     document.getElementById(
-
         "mSupport"
-
     ).textContent =
 
         data.support ||
@@ -3569,9 +3655,7 @@ function openModal(index){
 
 
     document.getElementById(
-
         "mSupportWork"
-
     ).textContent =
 
         data.supportWork ||
@@ -3580,9 +3664,7 @@ function openModal(index){
 
 
     document.getElementById(
-
         "mCallPerson"
-
     ).textContent =
 
         data.call ||
@@ -3593,9 +3675,7 @@ function openModal(index){
 
 
     document.getElementById(
-
         "mCallWork"
-
     ).textContent =
 
         data.callWork ||
@@ -3604,13 +3684,9 @@ function openModal(index){
 
 
     document.getElementById(
-
         "callModal"
-
     ).classList.add(
-
         "show"
-
     );
 
 }
@@ -3622,20 +3698,14 @@ function openModal(index){
 
 function closeModal(){
 
-
     document.getElementById(
-
         "callModal"
-
     ).classList.remove(
-
         "show"
-
     );
 
 
     selectedItem =
-
         null;
 
 }
@@ -3646,7 +3716,6 @@ function closeModal(){
 ===================================================== */
 
 function outsideModal(event){
-
 
     if(
 
@@ -3669,11 +3738,8 @@ function outsideModal(event){
 
 function formatDateDMY(value){
 
-
     if(
-
         !value
-
     ){
 
         return "";
@@ -3684,9 +3750,7 @@ function formatDateDMY(value){
     const text =
 
         String(
-
             value
-
         ).trim();
 
 
@@ -3700,37 +3764,25 @@ function formatDateDMY(value){
 
 
     if(
-
         match
-
     ){
 
         return (
 
             String(
-
                 match[1]
-
             ).padStart(
-
                 2,
-
                 "0"
-
             ) +
 
             "-" +
 
             String(
-
                 match[2]
-
             ).padStart(
-
                 2,
-
                 "0"
-
             ) +
 
             "-" +
@@ -3754,37 +3806,25 @@ function formatDateDMY(value){
 
 
     if(
-
         match
-
     ){
 
         return (
 
             String(
-
                 match[2]
-
             ).padStart(
-
                 2,
-
                 "0"
-
             ) +
 
             "-" +
 
             String(
-
                 match[1]
-
             ).padStart(
-
                 2,
-
                 "0"
-
             ) +
 
             "-" +
@@ -3808,37 +3848,25 @@ function formatDateDMY(value){
 
 
     if(
-
         match
-
     ){
 
         return (
 
             String(
-
                 match[3]
-
             ).padStart(
-
                 2,
-
                 "0"
-
             ) +
 
             "-" +
 
             String(
-
                 match[2]
-
             ).padStart(
-
                 2,
-
                 "0"
-
             ) +
 
             "-" +
@@ -3863,11 +3891,8 @@ function formatDateDMY(value){
 
 function parseDate(value){
 
-
     if(
-
         !value
-
     ){
 
         return null;
@@ -3878,9 +3903,7 @@ function parseDate(value){
     const text =
 
         String(
-
             value
-
         ).trim();
 
 
@@ -3894,9 +3917,7 @@ function parseDate(value){
 
 
     if(
-
         match
-
     ){
 
         const date =
@@ -3904,21 +3925,15 @@ function parseDate(value){
             new Date(
 
                 Number(
-
                     match[3]
-
                 ),
 
                 Number(
-
                     match[2]
-
                 ) - 1,
 
                 Number(
-
                     match[1]
-
                 )
 
             );
@@ -3951,9 +3966,7 @@ function parseDate(value){
 
 
     if(
-
         match
-
     ){
 
         const date =
@@ -3961,21 +3974,15 @@ function parseDate(value){
             new Date(
 
                 Number(
-
                     match[3]
-
                 ),
 
                 Number(
-
                     match[1]
-
                 ) - 1,
 
                 Number(
-
                     match[2]
-
                 )
 
             );
@@ -4008,9 +4015,7 @@ function parseDate(value){
 
 
     if(
-
         match
-
     ){
 
         const date =
@@ -4018,21 +4023,15 @@ function parseDate(value){
             new Date(
 
                 Number(
-
                     match[1]
-
                 ),
 
                 Number(
-
                     match[2]
-
                 ) - 1,
 
                 Number(
-
                     match[3]
-
                 )
 
             );
@@ -4058,9 +4057,7 @@ function parseDate(value){
     const date =
 
         new Date(
-
             text
-
         );
 
 
@@ -4087,42 +4084,32 @@ function parseDate(value){
 
 function clearFilters(){
 
-
     document.getElementById(
-
         "searchInput"
-
     ).value = "";
 
 
     document.getElementById(
-
         "lastDays"
-
     ).value = "";
 
 
     document.getElementById(
-
         "fromDate"
-
     ).value = "";
 
 
     document.getElementById(
-
         "toDate"
-
     ).value = "";
 
 
     document.getElementById(
-
         "statusFilter"
+    ).value = "all";
 
-    ).value =
 
-        "all";
+    currentPage = 1;
 
 
     applyFilters();
@@ -4136,25 +4123,18 @@ function clearFilters(){
 
 function showToast(message){
 
-
     const toast =
-
         document.getElementById(
-
             "toast"
-
         );
 
 
     toast.textContent =
-
         message;
 
 
     toast.classList.add(
-
         "show"
-
     );
 
 
@@ -4163,9 +4143,7 @@ function showToast(message){
         function(){
 
             toast.classList.remove(
-
                 "show"
-
             );
 
         },
@@ -4183,7 +4161,6 @@ function showToast(message){
 
 function escapeHtml(value){
 
-
     return String(
 
         value ||
@@ -4193,43 +4170,28 @@ function escapeHtml(value){
     )
 
     .replace(
-
         /&/g,
-
         "&amp;"
-
     )
 
     .replace(
-
         /</g,
-
         "&lt;"
-
     )
 
     .replace(
-
         />/g,
-
         "&gt;"
-
     )
 
     .replace(
-
         /"/g,
-
         "&quot;"
-
     )
 
     .replace(
-
         /'/g,
-
         "&#039;"
-
     );
 
 }
@@ -4244,7 +4206,6 @@ document.addEventListener(
 "keydown",
 
 function(event){
-
 
     if(
 
@@ -4273,7 +4234,9 @@ document.addEventListener(
 
 function(event){
 
-    if(window.innerWidth > 900){
+    if(
+        window.innerWidth > 900
+    ){
 
         return;
 
@@ -4283,6 +4246,12 @@ function(event){
     const sidebar =
         document.getElementById(
             "sidebar"
+        );
+
+
+    const menuButton =
+        document.getElementById(
+            "topMenuButton"
         );
 
 
@@ -4298,6 +4267,12 @@ function(event){
             event.target
         )
 
+        &&
+
+        !menuButton.contains(
+            event.target
+        )
+
     ){
 
         sidebar.classList.remove(
@@ -4305,23 +4280,6 @@ function(event){
         );
 
     }
-
-}
-
-);
-
-
-/* =====================================================
-   RESIZE
-===================================================== */
-
-window.addEventListener(
-
-"resize",
-
-function(){
-
-    restoreSidebarState();
 
 }
 

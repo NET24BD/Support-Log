@@ -2035,6 +2035,75 @@ tbody tr:hover{
     .page-btn span{display:none;}
     .page-number{padding:0 10px;}
 }
+
+/* =====================================================
+   LINK4 COMPACT HEADER
+===================================================== */
+.compact-header{
+    min-height:72px !important;
+    padding:12px 18px !important;
+    border-radius:16px !important;
+}
+.compact-header .header-left{
+    gap:12px !important;
+}
+.top-menu-button{
+    width:42px;
+    height:42px;
+    border:0;
+    border-radius:10px;
+    background:#e7f5f0;
+    color:#00785b;
+    font-size:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:.2s;
+}
+.top-menu-button:hover{
+    background:#d4eee6;
+    transform:translateY(-1px);
+}
+.compact-header .header-title h1{
+    font-size:20px !important;
+    line-height:1.15 !important;
+    margin:0 !important;
+    letter-spacing:.35px;
+}
+.compact-header .header-title p{
+    font-size:12px !important;
+    line-height:1.2 !important;
+    margin:3px 0 !important;
+}
+.logged-user{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:#00785b;
+    font-size:11px;
+    font-weight:600;
+}
+@media(max-width:600px){
+    .compact-header{
+        min-height:62px !important;
+        padding:9px 12px !important;
+        border-radius:12px !important;
+    }
+    .top-menu-button{
+        width:38px;
+        height:38px;
+        font-size:18px;
+    }
+    .compact-header .header-title h1{
+        font-size:16px !important;
+    }
+    .compact-header .header-title p{
+        font-size:10px !important;
+    }
+    .logged-user{font-size:10px;}
+}
+
 </style>
 
 </head>
@@ -2170,66 +2239,18 @@ id="sidebar"
 <!-- ===================================================
      HEADER
 =================================================== -->
-
-<div class="header">
-
-
-    <div class="header-left">
-
-
-        <div class="header-icon">
-
-            <i class="fa-solid fa-clock-rotate-left"></i>
-
-        </div>
-
-
-        <div class="header-title">
-
-            <h1>SUPPORT LOG HISTORY</h1>
-
-            <p>
-                View completed support requests
-            </p>
-
-        </div>
-
-
+<div class="header compact-header">
+  <div class="header-left">
+    <button class="top-menu-button" id="topMenuButton" onclick="toggleSidebar()" title="Open / Close Sidebar" aria-label="Open / Close Sidebar">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="header-title">
+      <h1>LINK4 COMMUNICATION</h1>
+      <p>Support Management System</p>
+      <div class="logged-user"><i class="fa-solid fa-user"></i><span id="loggedUser">shemanto</span></div>
     </div>
-
-
-    <div class="header-buttons">
-
-
-        <button
-        class="btn btn-refresh"
-        onclick="loadData()"
-        >
-
-            <i class="fa-solid fa-rotate"></i>
-
-            Refresh
-
-        </button>
-
-
-        <button
-        class="btn btn-dashboard"
-        onclick="goDashboard()"
-        >
-
-            <i class="fa-solid fa-arrow-left"></i>
-
-            Dashboard
-
-        </button>
-
-
-    </div>
-
-
+  </div>
 </div>
-
 
 <!-- ===================================================
      FILTER AREA
@@ -4105,18 +4126,6 @@ function clearFilters(){
 
 
     applyFilters();
-
-}
-
-
-/* =====================================================
-   DASHBOARD
-===================================================== */
-
-function goDashboard(){
-
-    window.location.href =
-        "dashboard.html";
 
 }
 

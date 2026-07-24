@@ -9,1973 +9,21 @@
 
 <title>Pending Support | LINK4 COMMUNICATION</title>
 
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 
 <link
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
 rel="stylesheet"
 >
 
-
 <link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 >
 
-
-<style>
-
-/* =====================================================
-   RESET
-===================================================== */
-
-*{
-
-    margin:0;
-
-    padding:0;
-
-    box-sizing:border-box;
-
-    font-family:'Poppins',sans-serif;
-
-}
-
-
-/* =====================================================
-   BODY
-===================================================== */
-
-body{
-
-    min-height:100vh;
-
-    background:#f4f7f8;
-
-    color:#222;
-
-}
-
-
-/* =====================================================
-   SIDEBAR
-===================================================== */
-
-.sidebar{
-
-    position:fixed;
-
-    left:0;
-
-    top:0;
-
-    width:275px;
-
-    height:100vh;
-
-    background:
-
-    linear-gradient(
-
-        180deg,
-
-        #032c25 0%,
-
-        #004d3b 45%,
-
-        #006b50 100%
-
-    );
-
-    color:white;
-
-    display:flex;
-
-    flex-direction:column;
-
-    padding:25px 20px 18px;
-
-    z-index:1000;
-
-    transition:
-
-    width .3s ease,
-
-    left .3s ease,
-
-    padding .3s ease;
-
-}
-
-
-/* =====================================================
-   SIDEBAR TOGGLE BUTTON
-===================================================== */
-
-.sidebar-toggle{
-
-    position:absolute;
-
-    top:20px;
-
-    right:15px;
-
-    width:32px;
-
-    height:32px;
-
-    border:none;
-
-    border-radius:9px;
-
-    background:
-
-    rgba(255,255,255,.12);
-
-    color:white;
-
-    cursor:pointer;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:14px;
-
-    transition:.3s;
-
-    z-index:20;
-
-}
-
-
-.sidebar-toggle:hover{
-
-    background:#00a878;
-
-    transform:scale(1.05);
-
-}
-
-
-/* =====================================================
-   SIDEBAR LOGO
-===================================================== */
-
-.sidebar-logo{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
-    padding:
-
-    5px
-
-    45px
-
-    30px
-
-    10px;
-
-}
-
-
-.sidebar-logo-icon{
-
-    width:52px;
-
-    height:52px;
-
-    background:white;
-
-    color:#007a5a;
-
-    border-radius:15px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:25px;
-
-    flex-shrink:0;
-
-}
-
-
-.sidebar-brand{
-
-    line-height:1.1;
-
-    white-space:nowrap;
-
-}
-
-
-.sidebar-brand h2{
-
-    font-size:17px;
-
-    font-weight:800;
-
-    letter-spacing:.2px;
-
-}
-
-
-.sidebar-brand p{
-
-    font-size:10px;
-
-    font-weight:600;
-
-    color:
-
-    rgba(255,255,255,.65);
-
-    margin-top:6px;
-
-}
-
-
-/* =====================================================
-   SIDEBAR SECTION
-===================================================== */
-
-.sidebar-section-title{
-
-    color:
-
-    rgba(255,255,255,.45);
-
-    font-size:11px;
-
-    font-weight:700;
-
-    letter-spacing:1px;
-
-    padding:
-
-    20px
-
-    15px
-
-    10px;
-
-    white-space:nowrap;
-
-}
-
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-.sidebar-nav{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:5px;
-
-}
-
-
-.sidebar-nav a{
-
-    height:48px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    padding:0 17px;
-
-    color:
-
-    rgba(255,255,255,.72);
-
-    text-decoration:none;
-
-    border-radius:13px;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    transition:.25s ease;
-
-    position:relative;
-
-    white-space:nowrap;
-
-}
-
-
-.sidebar-nav a i{
-
-    width:22px;
-
-    text-align:center;
-
-    font-size:17px;
-
-    flex-shrink:0;
-
-}
-
-
-.sidebar-nav a:hover{
-
-    background:
-
-    rgba(255,255,255,.10);
-
-    color:white;
-
-    transform:translateX(3px);
-
-}
-
-
-.sidebar-nav a.active{
-
-    background:white;
-
-    color:#007a5a;
-
-    box-shadow:
-
-    0 7px 20px
-
-    rgba(0,0,0,.12);
-
-}
-
-
-/* =====================================================
-   SIDEBAR BOTTOM
-===================================================== */
-
-.sidebar-bottom{
-
-    margin-top:auto;
-
-}
-
-
-.logout-btn{
-
-    width:100%;
-
-    height:49px;
-
-    border-radius:13px;
-
-    border:
-
-    1px solid
-
-    rgba(255,255,255,.25);
-
-    background:
-
-    rgba(255,255,255,.08);
-
-    color:white;
-
-    cursor:pointer;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:10px;
-
-    transition:.25s;
-
-}
-
-
-.logout-btn:hover{
-
-    background:#e53935;
-
-    border-color:#e53935;
-
-    transform:translateY(-2px);
-
-}
-
-
-/* =====================================================
-   MINIMIZED SIDEBAR
-===================================================== */
-
-.sidebar.minimized{
-
-    width:70px;
-
-    padding-left:10px;
-
-    padding-right:10px;
-
-}
-
-
-/* =====================================================
-   MINIMIZED LOGO
-===================================================== */
-
-.sidebar.minimized .sidebar-logo{
-
-    justify-content:center;
-
-    padding:
-
-    5px
-
-    0
-
-    30px;
-
-}
-
-
-.sidebar.minimized .sidebar-brand{
-
-    display:none;
-
-}
-
-
-/* =====================================================
-   MINIMIZED SECTION
-===================================================== */
-
-.sidebar.minimized .sidebar-section-title{
-
-    font-size:0;
-
-    height:20px;
-
-    padding:0;
-
-    margin-bottom:10px;
-
-}
-
-
-/* =====================================================
-   MINIMIZED NAV
-===================================================== */
-
-.sidebar.minimized .sidebar-nav a{
-
-    justify-content:center;
-
-    padding:0;
-
-    gap:0;
-
-}
-
-
-.sidebar.minimized .sidebar-nav a span{
-
-    display:none;
-
-}
-
-
-.sidebar.minimized .sidebar-nav a i{
-
-    width:auto;
-
-    margin:0;
-
-    font-size:18px;
-
-}
-
-
-.sidebar.minimized .sidebar-nav a:hover{
-
-    transform:none;
-
-}
-
-
-/* =====================================================
-   MINIMIZED LOGOUT
-===================================================== */
-
-.sidebar.minimized .logout-btn{
-
-    padding:0;
-
-    gap:0;
-
-}
-
-
-.sidebar.minimized .logout-btn span{
-
-    display:none;
-
-}
-
-
-.sidebar.minimized .logout-btn i{
-
-    margin:0;
-
-}
-
-
-/* =====================================================
-   ROTATE TOGGLE
-===================================================== */
-
-.sidebar.minimized
-.sidebar-toggle i{
-
-    transform:
-
-    rotate(180deg);
-
-}
-
-
-/* =====================================================
-   TOOLTIP
-===================================================== */
-
-.sidebar.minimized
-.sidebar-nav a:hover::after{
-
-    content:
-
-    attr(data-title);
-
-    position:absolute;
-
-    left:58px;
-
-    top:50%;
-
-    transform:
-
-    translateY(-50%);
-
-    background:#032c25;
-
-    color:white;
-
-    padding:
-
-    8px
-
-    12px;
-
-    border-radius:7px;
-
-    white-space:nowrap;
-
-    font-size:12px;
-
-    z-index:2000;
-
-    box-shadow:
-
-    0 5px 15px
-
-    rgba(0,0,0,.2);
-
-}
-
-
-/* =====================================================
-   MAIN CONTENT
-===================================================== */
-
-.main-content{
-
-    margin-left:275px;
-
-    min-height:100vh;
-
-    padding:
-
-    28px
-
-    38px;
-
-    transition:
-
-    margin-left .3s ease;
-
-}
-
-
-.sidebar.minimized
-~ .main-content{
-
-    margin-left:70px;
-
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-.header{
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:
-
-    18px
-
-    24px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:20px;
-
-    box-shadow:
-
-    0 8px 30px
-
-    rgba(0,0,0,.07);
-
-    margin-bottom:20px;
-
-}
-
-
-.header-left{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-}
-
-
-.logo{
-
-    width:55px;
-
-    height:55px;
-
-    border-radius:16px;
-
-    background:
-
-    linear-gradient(
-
-        135deg,
-
-        #006a4e,
-
-        #00a878
-
-    );
-
-    color:white;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:24px;
-
-}
-
-
-.header-title h1{
-
-    font-size:24px;
-
-    color:#082d43;
-
-    font-weight:700;
-
-}
-
-
-.header-title p{
-
-    font-size:13px;
-
-    color:#718096;
-
-    margin-top:3px;
-
-}
-
-
-.header-right{
-
-    display:flex;
-
-    gap:10px;
-
-}
-
-
-.back-btn,
-.refresh-btn{
-
-    border:none;
-
-    padding:
-
-    11px
-
-    17px;
-
-    border-radius:11px;
-
-    cursor:pointer;
-
-    font-weight:600;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    transition:.3s;
-
-}
-
-
-.back-btn{
-
-    background:#006a4e;
-
-    color:white;
-
-}
-
-
-.refresh-btn{
-
-    background:#e8f8f1;
-
-    color:#006a4e;
-
-}
-
-
-.back-btn:hover{
-
-    background:#e53935;
-
-    transform:
-
-    translateY(-2px);
-
-}
-
-
-.refresh-btn:hover{
-
-    background:#006a4e;
-
-    color:white;
-
-    transform:
-
-    translateY(-2px);
-
-}
-
-
-/* =====================================================
-   USER BAR
-===================================================== */
-
-.user-bar{
-
-    background:white;
-
-    border-radius:15px;
-
-    color:#555;
-
-    padding:
-
-    13px
-
-    18px;
-
-    margin-bottom:20px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    font-size:13px;
-
-    box-shadow:
-
-    0 6px 20px
-
-    rgba(0,0,0,.05);
-
-}
-
-
-.user-name{
-
-    font-weight:700;
-
-    color:#006a4e;
-
-}
-
-
-/* =====================================================
-   STATUS
-===================================================== */
-
-.status{
-
-    display:none;
-
-    padding:
-
-    13px
-
-    18px;
-
-    border-radius:12px;
-
-    margin-bottom:20px;
-
-    font-size:14px;
-
-    font-weight:500;
-
-}
-
-
-.status.show{
-
-    display:block;
-
-}
-
-
-.status.loading{
-
-    background:#fff8e1;
-
-    color:#8a6500;
-
-}
-
-
-.status.success{
-
-    background:#e8f8f1;
-
-    color:#006a4e;
-
-}
-
-
-.status.error{
-
-    background:#fdecec;
-
-    color:#c62828;
-
-}
-
-
-/* =====================================================
-   TABLE CONTAINER
-===================================================== */
-
-.table-container{
-
-    background:white;
-
-    border-radius:22px;
-
-    box-shadow:
-
-    0 12px 40px
-
-    rgba(0,0,0,.08);
-
-    overflow:hidden;
-
-}
-
-
-/* =====================================================
-   TABLE HEADER
-===================================================== */
-
-.table-header{
-
-    padding:
-
-    20px
-
-    25px;
-
-    border-bottom:
-
-    1px solid
-
-    #e8eeee;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:20px;
-
-}
-
-
-.table-header h2{
-
-    font-size:20px;
-
-    color:#222;
-
-}
-
-
-.pending-count{
-
-    background:
-
-    linear-gradient(
-
-        135deg,
-
-        #2563eb,
-
-        #3b82f6
-
-    );
-
-    color:white;
-
-    padding:
-
-    7px
-
-    14px;
-
-    border-radius:20px;
-
-    font-size:13px;
-
-    font-weight:700;
-
-}
-
-
-/* =====================================================
-   SEARCH
-===================================================== */
-
-.search-area{
-
-    padding:
-
-    18px
-
-    25px;
-
-    background:#f7fffc;
-
-    border-bottom:
-
-    1px solid
-
-    #e8eeee;
-
-}
-
-
-.search-box{
-
-    position:relative;
-
-    width:100%;
-
-}
-
-
-.search-box i{
-
-    position:absolute;
-
-    left:17px;
-
-    top:50%;
-
-    transform:
-
-    translateY(-50%);
-
-    color:#006a4e;
-
-    font-size:16px;
-
-}
-
-
-#searchInput{
-
-    width:100%;
-
-    padding:
-
-    13px
-
-    18px
-
-    13px
-
-    48px;
-
-    border:
-
-    2px solid
-
-    #dcebe5;
-
-    border-radius:12px;
-
-    outline:none;
-
-    font-size:14px;
-
-    background:white;
-
-    color:#333;
-
-    transition:.3s;
-
-}
-
-
-#searchInput:focus{
-
-    border-color:#00a878;
-
-    box-shadow:
-
-    0 0 0 4px
-
-    rgba(0,168,120,.10);
-
-}
-
-
-/* =====================================================
-   TABLE
-===================================================== */
-
-.table-scroll{
-
-    width:100%;
-
-    overflow-x:auto;
-
-}
-
-
-table{
-
-    width:100%;
-
-    border-collapse:separate;
-
-    border-spacing:0;
-
-    min-width:1250px;
-
-}
-
-
-thead{
-
-    background:
-
-    linear-gradient(
-
-        135deg,
-
-        #007a55,
-
-        #009f72
-
-    );
-
-    color:white;
-
-}
-
-
-th{
-
-    padding:
-
-    16px
-
-    14px;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    text-align:left;
-
-    white-space:nowrap;
-
-}
-
-
-th:first-child{
-
-    padding-left:20px;
-
-}
-
-
-th i{
-
-    margin-right:5px;
-
-}
-
-
-td{
-
-    padding:14px;
-
-    border-bottom:
-
-    1px solid
-
-    #edf2f0;
-
-    font-size:13px;
-
-    vertical-align:middle;
-
-    background:white;
-
-}
-
-
-tbody tr{
-
-    transition:.25s;
-
-}
-
-
-tbody tr:hover td{
-
-    background:#f5fffb;
-
-}
-
-
-tbody tr:last-child td{
-
-    border-bottom:none;
-
-}
-
-
-.readonly{
-
-    color:#444;
-
-    font-weight:500;
-
-}
-
-
-/* =====================================================
-   CUSTOMER ID
-===================================================== */
-
-.customer-id{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:7px;
-
-    background:#eef8f4;
-
-    color:#006a4e;
-
-    padding:
-
-    8px
-
-    11px;
-
-    border-radius:9px;
-
-    font-weight:700;
-
-}
-
-
-/* =====================================================
-   DATE
-===================================================== */
-
-.date-badge{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:6px;
-
-    background:#f3f7ff;
-
-    color:#3867c7;
-
-    padding:
-
-    8px
-
-    11px;
-
-    border-radius:9px;
-
-    font-weight:600;
-
-}
-
-
-/* =====================================================
-   PROBLEM
-===================================================== */
-
-.problem-box{
-
-    max-width:260px;
-
-    min-width:200px;
-
-    background:#fff9ed;
-
-    border:
-
-    1px solid
-
-    #ffe3aa;
-
-    color:#805500;
-
-    padding:
-
-    10px
-
-    12px;
-
-    border-radius:10px;
-
-    line-height:1.5;
-
-}
-
-
-/* =====================================================
-   REF
-===================================================== */
-
-.ref-badge{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:7px;
-
-    background:#fff7e8;
-
-    color:#c47700;
-
-    border:
-
-    1px solid
-
-    #ffd98c;
-
-    padding:
-
-    8px
-
-    12px;
-
-    border-radius:9px;
-
-    font-weight:700;
-
-    white-space:nowrap;
-
-}
-
-
-/* =====================================================
-   SUPPORT NAME
-===================================================== */
-
-.support-name-box{
-
-    min-width:210px;
-
-}
-
-
-.support-name-label{
-
-    display:block;
-
-    font-size:11px;
-
-    color:#00835f;
-
-    font-weight:700;
-
-    margin-bottom:6px;
-
-}
-
-
-.support-name-input{
-
-    width:100%;
-
-    padding:
-
-    12px
-
-    13px;
-
-    border:
-
-    2px solid
-
-    #a9e4cf;
-
-    background:#f2fffa;
-
-    border-radius:11px;
-
-    outline:none;
-
-    font-size:13px;
-
-    color:#075d47;
-
-    font-weight:500;
-
-}
-
-
-.support-name-input:focus{
-
-    border-color:#00a878;
-
-    background:white;
-
-}
-
-
-/* =====================================================
-   SUPPORT WORK
-===================================================== */
-
-.support-work-box{
-
-    min-width:240px;
-
-}
-
-
-.support-work-label{
-
-    display:block;
-
-    font-size:11px;
-
-    color:#2866bd;
-
-    font-weight:700;
-
-    margin-bottom:6px;
-
-}
-
-
-.support-work-input{
-
-    width:100%;
-
-    min-height:75px;
-
-    resize:vertical;
-
-    padding:
-
-    11px
-
-    13px;
-
-    border:
-
-    2px solid
-
-    #b7d2ff;
-
-    background:#f4f8ff;
-
-    border-radius:11px;
-
-    outline:none;
-
-    font-size:13px;
-
-    color:#315c9e;
-
-    line-height:1.5;
-
-}
-
-
-.support-work-input:focus{
-
-    border-color:#4b86ed;
-
-    background:white;
-
-}
-
-
-/* =====================================================
-   SUBMIT
-===================================================== */
-
-.action-cell{
-
-    min-width:125px;
-
-}
-
-
-.submit-btn{
-
-    width:100%;
-
-    border:none;
-
-    background:
-
-    linear-gradient(
-
-        135deg,
-
-        #008f65,
-
-        #00a878
-
-    );
-
-    color:white;
-
-    padding:
-
-    12px
-
-    16px;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    font-weight:700;
-
-    font-size:13px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:7px;
-
-    white-space:nowrap;
-
-    transition:.3s;
-
-}
-
-
-.submit-btn:hover{
-
-    background:
-
-    linear-gradient(
-
-        135deg,
-
-        #e53935,
-
-        #f4514a
-
-    );
-
-    transform:
-
-    translateY(-2px);
-
-}
-
-
-.submit-btn:disabled{
-
-    opacity:.6;
-
-    cursor:not-allowed;
-
-    transform:none;
-
-}
-
-
-/* =====================================================
-   EMPTY
-===================================================== */
-
-.empty-state{
-
-    display:none;
-
-    padding:
-
-    75px
-
-    20px;
-
-    text-align:center;
-
-}
-
-
-.empty-state.show{
-
-    display:block;
-
-}
-
-
-.empty-icon{
-
-    width:85px;
-
-    height:85px;
-
-    border-radius:50%;
-
-    background:#e8f8f1;
-
-    color:#00a878;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:36px;
-
-    margin:
-
-    0
-
-    auto
-
-    20px;
-
-}
-
-
-.empty-state h3{
-
-    font-size:21px;
-
-    margin-bottom:8px;
-
-    color:#333;
-
-}
-
-
-.empty-state p{
-
-    color:#777;
-
-    font-size:14px;
-
-}
-
-
-/* =====================================================
-   NO RESULT
-===================================================== */
-
-.no-result{
-
-    display:none;
-
-    padding:
-
-    50px
-
-    20px;
-
-    text-align:center;
-
-}
-
-
-.no-result.show{
-
-    display:block;
-
-}
-
-
-.no-result i{
-
-    font-size:35px;
-
-    color:#aaa;
-
-    margin-bottom:15px;
-
-}
-
-
-.no-result h3{
-
-    font-size:18px;
-
-    color:#555;
-
-}
-
-
-.no-result p{
-
-    font-size:13px;
-
-    color:#888;
-
-    margin-top:5px;
-
-}
-
-
-/* =====================================================
-   LOADING
-===================================================== */
-
-.loading-state{
-
-    padding:
-
-    70px
-
-    20px;
-
-    text-align:center;
-
-}
-
-
-.spinner{
-
-    font-size:35px;
-
-    color:#00a878;
-
-    margin-bottom:15px;
-
-}
-
-
-.loading-state p{
-
-    color:#777;
-
-    font-size:14px;
-
-}
-
-
-/* =====================================================
-   MOBILE BUTTON
-===================================================== */
-
-.mobile-menu-btn{
-
-    display:none;
-
-    position:fixed;
-
-    top:15px;
-
-    left:15px;
-
-    width:45px;
-
-    height:45px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#006a4e;
-
-    color:white;
-
-    z-index:1100;
-
-    cursor:pointer;
-
-    font-size:18px;
-
-}
-
-
-/* =====================================================
-   OVERLAY
-===================================================== */
-
-.sidebar-overlay{
-
-    display:none;
-
-    position:fixed;
-
-    inset:0;
-
-    background:
-
-    rgba(0,0,0,.45);
-
-    z-index:900;
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:768px){
-
-    .sidebar{
-
-        left:-280px;
-
-        width:275px;
-
-    }
-
-
-    .sidebar.open{
-
-        left:0;
-
-    }
-
-
-    .sidebar.minimized{
-
-        width:275px;
-
-        left:-280px;
-
-    }
-
-
-    .sidebar-overlay.show{
-
-        display:block;
-
-    }
-
-
-    .mobile-menu-btn{
-
-        display:block;
-
-    }
-
-
-    .main-content{
-
-        margin-left:0 !important;
-
-        padding:
-
-        75px
-
-        12px
-
-        20px;
-
-    }
-
-
-    .header{
-
-        padding:18px;
-
-        align-items:flex-start;
-
-        flex-direction:column;
-
-    }
-
-
-    .header-right{
-
-        width:100%;
-
-    }
-
-
-    .back-btn,
-    .refresh-btn{
-
-        flex:1;
-
-        justify-content:center;
-
-        padding:
-
-        10px
-
-        12px;
-
-        font-size:12px;
-
-    }
-
-
-    .header-title h1{
-
-        font-size:19px;
-
-    }
-
-
-    .header-title p{
-
-        font-size:11px;
-
-    }
-
-
-    .user-bar{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        gap:8px;
-
-        font-size:12px;
-
-    }
-
-
-    .table-header{
-
-        padding:16px;
-
-    }
-
-
-    .table-header h2{
-
-        font-size:17px;
-
-    }
-
-
-    .search-area{
-
-        padding:15px;
-
-    }
-
-}
-
-</style>
+<!-- MASTER THEME -->
+<link rel="stylesheet" href="../assets/css/theme.css">
 
 </head>
 
@@ -1991,6 +39,7 @@ tbody tr:last-child td{
 class="mobile-menu-btn"
 id="mobileMenuBtn"
 type="button"
+aria-label="Open Menu"
 >
 
 <i class="fa-solid fa-bars"></i>
@@ -2013,9 +62,6 @@ class="sidebar"
 id="sidebar"
 >
 
-
-<!-- TOP TOGGLE -->
-
 <button
 class="sidebar-toggle"
 id="sidebarToggle"
@@ -2028,10 +74,7 @@ title="Minimize Sidebar"
 </button>
 
 
-<!-- LOGO -->
-
 <div class="sidebar-logo">
-
 
 <div class="sidebar-logo-icon">
 
@@ -2043,36 +86,23 @@ title="Minimize Sidebar"
 <div class="sidebar-brand">
 
 <h2>
-
 LINK4<br>
-
 COMMUNICATION
-
 </h2>
 
-
 <p>
-
-USER MANAGEMENT
-
+SUPPORT MANAGEMENT
 </p>
 
 </div>
 
-
 </div>
 
-
-<!-- SECTION -->
 
 <div class="sidebar-section-title">
-
 MANAGEMENT
-
 </div>
 
-
-<!-- NAVIGATION -->
 
 <nav class="sidebar-nav">
 
@@ -2085,9 +115,7 @@ data-title="Dashboard"
 <i class="fa-solid fa-gauge-high"></i>
 
 <span>
-
 Dashboard
-
 </span>
 
 </a>
@@ -2101,9 +129,7 @@ data-title="New Entry"
 <i class="fa-solid fa-user-plus"></i>
 
 <span>
-
 New Entry
-
 </span>
 
 </a>
@@ -2118,9 +144,7 @@ data-title="Pending Support"
 <i class="fa-solid fa-headset"></i>
 
 <span>
-
 Pending Support
-
 </span>
 
 </a>
@@ -2134,9 +158,7 @@ data-title="Pending Call"
 <i class="fa-solid fa-phone-volume"></i>
 
 <span>
-
 Pending Call
-
 </span>
 
 </a>
@@ -2150,9 +172,7 @@ data-title="History"
 <i class="fa-solid fa-clock-rotate-left"></i>
 
 <span>
-
 History
-
 </span>
 
 </a>
@@ -2166,9 +186,7 @@ data-title="User Account"
 <i class="fa-solid fa-users"></i>
 
 <span>
-
 User Account
-
 </span>
 
 </a>
@@ -2177,10 +195,7 @@ User Account
 </nav>
 
 
-<!-- LOGOUT -->
-
 <div class="sidebar-bottom">
-
 
 <button
 class="logout-btn"
@@ -2191,16 +206,12 @@ type="button"
 <i class="fa-solid fa-right-from-bracket"></i>
 
 <span>
-
 Logout
-
 </span>
 
 </button>
 
-
 </div>
-
 
 </aside>
 
@@ -2216,9 +227,7 @@ Logout
 
 <div class="header">
 
-
 <div class="header-left">
-
 
 <div class="logo">
 
@@ -2230,27 +239,19 @@ Logout
 <div class="header-title">
 
 <h1>
-
 Pending Support
-
 </h1>
 
-
 <p>
-
 Manage pending customer support requests
-
 </p>
 
-
 </div>
-
 
 </div>
 
 
 <div class="header-right">
-
 
 <button
 class="refresh-btn"
@@ -2277,9 +278,7 @@ Dashboard
 
 </button>
 
-
 </div>
-
 
 </div>
 
@@ -2287,7 +286,6 @@ Dashboard
 <!-- USER BAR -->
 
 <div class="user-bar">
-
 
 <div>
 
@@ -2299,9 +297,7 @@ Logged in as:
 class="user-name"
 id="userName"
 >
-
 User
-
 </span>
 
 </div>
@@ -2315,7 +311,6 @@ Customer information is read-only
 
 </div>
 
-
 </div>
 
 
@@ -2327,13 +322,12 @@ id="status"
 ></div>
 
 
-<!-- TABLE -->
+<!-- TABLE CONTAINER -->
 
 <div class="table-container">
 
 
 <div class="table-header">
-
 
 <h2>
 
@@ -2356,7 +350,6 @@ id="pendingCount"
 
 </div>
 
-
 </div>
 
 
@@ -2364,12 +357,9 @@ id="pendingCount"
 
 <div class="search-area">
 
-
 <div class="search-box">
 
-
 <i class="fa-solid fa-magnifying-glass"></i>
-
 
 <input
 type="text"
@@ -2378,9 +368,7 @@ placeholder="Search Customer Number, Problem, REF or Date..."
 autocomplete="off"
 >
 
-
 </div>
-
 
 </div>
 
@@ -2392,20 +380,15 @@ class="loading-state"
 id="loadingState"
 >
 
-
 <div class="spinner">
 
 <i class="fa-solid fa-spinner fa-spin"></i>
 
 </div>
 
-
 <p>
-
 Loading pending support requests...
-
 </p>
-
 
 </div>
 
@@ -2417,27 +400,19 @@ class="empty-state"
 id="emptyState"
 >
 
-
 <div class="empty-icon">
 
 <i class="fa-solid fa-circle-check"></i>
 
 </div>
 
-
 <h3>
-
 No Pending Support
-
 </h3>
 
-
 <p>
-
 There are currently no pending support requests.
-
 </p>
-
 
 </div>
 
@@ -2449,23 +424,15 @@ class="no-result"
 id="noResult"
 >
 
-
 <i class="fa-solid fa-magnifying-glass"></i>
 
-
 <h3>
-
 No Matching Request Found
-
 </h3>
 
-
 <p>
-
 Try searching with another Customer Number, Problem or REF.
-
 </p>
-
 
 </div>
 
@@ -2478,81 +445,48 @@ id="tableWrapper"
 style="display:none;"
 >
 
-
 <table>
-
 
 <thead>
 
-
 <tr>
 
-
 <th>
-
 <i class="fa-solid fa-network-wired"></i>
-
 Customer Number
-
 </th>
 
-
 <th>
-
 <i class="fa-solid fa-calendar"></i>
-
 Date
-
 </th>
 
-
 <th>
-
 <i class="fa-solid fa-triangle-exclamation"></i>
-
 Problem
-
 </th>
 
-
 <th>
-
 <i class="fa-solid fa-link"></i>
-
 REF
-
 </th>
 
-
 <th>
-
 <i class="fa-solid fa-user-check"></i>
-
 Support Name
-
 </th>
 
-
 <th>
-
 <i class="fa-solid fa-screwdriver-wrench"></i>
-
 Support Work
-
 </th>
-
 
 <th>
-
 <i class="fa-solid fa-paper-plane"></i>
-
 Action
-
 </th>
-
 
 </tr>
-
 
 </thead>
 
@@ -2560,18 +494,13 @@ Action
 <tbody
 id="supportTableBody"
 >
-
 </tbody>
-
 
 </table>
 
-
 </div>
 
-
 </div>
-
 
 </main>
 
@@ -2583,7 +512,6 @@ id="supportTableBody"
 ===================================================== */
 
 const PENDING_SUPPORT_API_URL =
-
 "https://script.google.com/macros/s/AKfycbw1NiYF5qNEFGVXdIWZ3I3lpJXEX57uBM0M06oqVVJcRUiuCTAf8NkKycGWtyIhhxWh4g/exec";
 
 
@@ -2592,115 +520,52 @@ const PENDING_SUPPORT_API_URL =
 ===================================================== */
 
 const tableBody =
-
-document.getElementById(
-    "supportTableBody"
-);
-
+document.getElementById("supportTableBody");
 
 const loadingState =
-
-document.getElementById(
-    "loadingState"
-);
-
+document.getElementById("loadingState");
 
 const emptyState =
-
-document.getElementById(
-    "emptyState"
-);
-
+document.getElementById("emptyState");
 
 const noResult =
-
-document.getElementById(
-    "noResult"
-);
-
+document.getElementById("noResult");
 
 const tableWrapper =
-
-document.getElementById(
-    "tableWrapper"
-);
-
+document.getElementById("tableWrapper");
 
 const pendingCount =
-
-document.getElementById(
-    "pendingCount"
-);
-
+document.getElementById("pendingCount");
 
 const statusBox =
-
-document.getElementById(
-    "status"
-);
-
+document.getElementById("status");
 
 const refreshBtn =
-
-document.getElementById(
-    "refreshBtn"
-);
-
+document.getElementById("refreshBtn");
 
 const backBtn =
-
-document.getElementById(
-    "backBtn"
-);
-
+document.getElementById("backBtn");
 
 const userName =
-
-document.getElementById(
-    "userName"
-);
-
+document.getElementById("userName");
 
 const searchInput =
-
-document.getElementById(
-    "searchInput"
-);
-
+document.getElementById("searchInput");
 
 const logoutBtn =
-
-document.getElementById(
-    "logoutBtn"
-);
-
+document.getElementById("logoutBtn");
 
 const sidebar =
-
-document.getElementById(
-    "sidebar"
-);
-
+document.getElementById("sidebar");
 
 const sidebarToggle =
-
-document.getElementById(
-    "sidebarToggle"
-);
-
+document.getElementById("sidebarToggle");
 
 const sidebarOverlay =
-
-document.getElementById(
-    "sidebarOverlay"
-);
-
+document.getElementById("sidebarOverlay");
 
 const mobileMenuBtn =
-
-document.getElementById(
-    "mobileMenuBtn"
-);
+document.getElementById("mobileMenuBtn");
 
 
 /* =====================================================
@@ -2708,52 +573,34 @@ document.getElementById(
 ===================================================== */
 
 const savedName =
-
-localStorage.getItem(
-    "name"
-);
-
+localStorage.getItem("name");
 
 const savedUsername =
-
-localStorage.getItem(
-    "username"
-);
+localStorage.getItem("username");
 
 
 if(savedName){
 
     userName.textContent =
-
     savedName;
 
 }
-
 else if(savedUsername){
 
     userName.textContent =
-
     savedUsername;
 
 }
 
 
 /* =====================================================
-   LOGIN CHECK
+   LOGIN SECURITY
 ===================================================== */
 
 function checkLogin(){
 
     if(
-
-        localStorage.getItem(
-            "loggedIn"
-        )
-
-        !==
-
-        "true"
-
+        localStorage.getItem("loggedIn") !== "true"
     ){
 
         window.location.replace(
@@ -2770,62 +617,35 @@ function checkLogin(){
 
 
 /* =====================================================
-   SIDEBAR MINIMIZE
+   SIDEBAR STATE
 ===================================================== */
 
 sidebarToggle.addEventListener(
+"click",
+function(){
 
-    "click",
+    sidebar.classList.toggle(
+        "minimized"
+    );
 
-    function(){
+    const isMinimized =
+    sidebar.classList.contains(
+        "minimized"
+    );
 
-        sidebar.classList.toggle(
-            "minimized"
-        );
+    localStorage.setItem(
+        "sidebarMinimized",
+        isMinimized ? "true" : "false"
+    );
 
-
-        const isMinimized =
-
-        sidebar.classList.contains(
-            "minimized"
-        );
-
-
-        localStorage.setItem(
-
-            "sidebarMinimized",
-
-            isMinimized
-
-            ?
-
-            "true"
-
-            :
-
-            "false"
-
-        );
-
-    }
-
+}
 );
 
 
-/* =====================================================
-   REMEMBER SIDEBAR STATE
-===================================================== */
-
 if(
-
     localStorage.getItem(
         "sidebarMinimized"
-    )
-
-    ===
-
-    "true"
-
+    ) === "true"
 ){
 
     sidebar.classList.add(
@@ -2840,42 +660,34 @@ if(
 ===================================================== */
 
 mobileMenuBtn.addEventListener(
+"click",
+function(){
 
-    "click",
+    sidebar.classList.toggle(
+        "open"
+    );
 
-    function(){
+    sidebarOverlay.classList.toggle(
+        "show"
+    );
 
-        sidebar.classList.toggle(
-            "open"
-        );
-
-
-        sidebarOverlay.classList.toggle(
-            "show"
-        );
-
-    }
-
+}
 );
 
 
 sidebarOverlay.addEventListener(
+"click",
+function(){
 
-    "click",
+    sidebar.classList.remove(
+        "open"
+    );
 
-    function(){
+    sidebarOverlay.classList.remove(
+        "show"
+    );
 
-        sidebar.classList.remove(
-            "open"
-        );
-
-
-        sidebarOverlay.classList.remove(
-            "show"
-        );
-
-    }
-
+}
 );
 
 
@@ -2884,34 +696,19 @@ sidebarOverlay.addEventListener(
 ===================================================== */
 
 logoutBtn.addEventListener(
+"click",
+function(){
 
-    "click",
+    localStorage.removeItem("loggedIn");
+    localStorage.removeItem("username");
+    localStorage.removeItem("name");
+    localStorage.removeItem("token");
 
-    function(){
+    window.location.replace(
+        "../index.html"
+    );
 
-        localStorage.removeItem(
-            "loggedIn"
-        );
-
-        localStorage.removeItem(
-            "username"
-        );
-
-        localStorage.removeItem(
-            "name"
-        );
-
-        localStorage.removeItem(
-            "token"
-        );
-
-
-        window.location.replace(
-            "../index.html"
-        );
-
-    }
-
+}
 );
 
 
@@ -2920,23 +717,15 @@ logoutBtn.addEventListener(
 ===================================================== */
 
 function showStatus(
-
     message,
-
     type
-
 ){
 
     statusBox.textContent =
-
     message;
 
-
     statusBox.className =
-
-    "status show " +
-
-    type;
+    "status show " + type;
 
 }
 
@@ -2944,7 +733,6 @@ function showStatus(
 function hideStatus(){
 
     statusBox.className =
-
     "status";
 
 }
@@ -2957,16 +745,10 @@ function hideStatus(){
 function escapeHTML(value){
 
     const div =
-
-    document.createElement(
-        "div"
-    );
-
+    document.createElement("div");
 
     div.textContent =
-
     value || "";
-
 
     return div.innerHTML;
 
@@ -2978,94 +760,67 @@ function escapeHTML(value){
 ===================================================== */
 
 searchInput.addEventListener(
+"input",
+function(){
 
-    "input",
+    const keyword =
+    this.value
+    .trim()
+    .toLowerCase();
 
-    function(){
+    const rows =
+    tableBody.querySelectorAll("tr");
 
-        const keyword =
-
-        this.value
-
-        .trim()
-
-        .toLowerCase();
-
-
-        const rows =
-
-        tableBody.querySelectorAll(
-            "tr"
-        );
+    let visibleCount = 0;
 
 
-        let visibleCount = 0;
+    rows.forEach(
+    function(row){
 
-
-        rows.forEach(
-
-            function(row){
-
-                const text =
-
-                row.textContent
-
-                .toLowerCase();
-
-
-                if(
-
-                    text.includes(
-                        keyword
-                    )
-
-                ){
-
-                    row.style.display =
-
-                    "";
-
-                    visibleCount++;
-
-                }
-
-                else{
-
-                    row.style.display =
-
-                    "none";
-
-                }
-
-            }
-
-        );
+        const text =
+        row.textContent.toLowerCase();
 
 
         if(
-
-            rows.length > 0 &&
-
-            visibleCount === 0
-
+            text.includes(keyword)
         ){
 
-            noResult.classList.add(
-                "show"
-            );
+            row.style.display =
+            "";
+
+            visibleCount++;
 
         }
-
         else{
 
-            noResult.classList.remove(
-                "show"
-            );
+            row.style.display =
+            "none";
 
         }
 
     }
+    );
 
+
+    if(
+        rows.length > 0 &&
+        visibleCount === 0
+    ){
+
+        noResult.classList.add(
+            "show"
+        );
+
+    }
+    else{
+
+        noResult.classList.remove(
+            "show"
+        );
+
+    }
+
+}
 );
 
 
@@ -3084,46 +839,32 @@ async function loadPendingSupport(){
 
 
     loadingState.style.display =
-
     "block";
-
 
     emptyState.classList.remove(
         "show"
     );
 
-
     noResult.classList.remove(
         "show"
     );
 
-
     tableWrapper.style.display =
-
     "none";
 
-
     tableBody.innerHTML =
-
     "";
-
 
     searchInput.value =
-
     "";
 
-
     pendingCount.textContent =
-
     "Loading...";
 
 
     showStatus(
-
         "Loading pending support requests...",
-
         "loading"
-
     );
 
 
@@ -3131,108 +872,74 @@ async function loadPendingSupport(){
 
 
         const url =
-
         PENDING_SUPPORT_API_URL +
-
         "?action=pendingSupport&time=" +
-
         Date.now();
 
 
         const response =
-
         await fetch(
-
             url,
-
             {
-
                 method:"GET",
-
                 cache:"no-store",
-
                 redirect:"follow"
-
             }
-
         );
 
 
         if(!response.ok){
 
             throw new Error(
-
                 "Server Error: " +
-
                 response.status
-
             );
 
         }
 
 
         const result =
-
         await response.json();
 
 
         loadingState.style.display =
-
         "none";
 
 
         if(
-
             result.success !== true
-
         ){
 
             throw new Error(
-
                 result.message ||
-
                 "Unable to load data."
-
             );
 
         }
 
 
         const data =
-
-        Array.isArray(
-            result.data
-        )
-
+        Array.isArray(result.data)
         ?
-
         result.data
-
         :
-
         [];
 
 
         /* EMPTY */
 
         if(
-
             data.length === 0
-
         ){
 
             emptyState.classList.add(
                 "show"
             );
 
-
             pendingCount.textContent =
-
             "0 Pending";
 
-
             hideStatus();
-
 
             return;
 
@@ -3242,718 +949,443 @@ async function loadPendingSupport(){
         /* SHOW TABLE */
 
         tableWrapper.style.display =
-
         "block";
 
-
         pendingCount.textContent =
-
         data.length +
-
         " Pending";
 
 
         /* CREATE ROWS */
 
         data.forEach(
+        function(item){
 
-            function(item){
 
+            const tr =
+            document.createElement("tr");
 
-                const tr =
 
-                document.createElement(
-                    "tr"
-                );
+            /* CUSTOMER NUMBER */
 
+            const customerId =
+            item.ip ||
+            item.IP ||
+            item.customerNumber ||
+            item.customerID ||
+            "";
 
-                /* CUSTOMER NUMBER */
 
-                const customerId =
+            const tdIP =
+            document.createElement("td");
 
-                item.ip ||
+            tdIP.className =
+            "readonly";
 
-                item.IP ||
+            tdIP.innerHTML =
+            '<span class="customer-id">' +
+            '<i class="fa-solid fa-user"></i>' +
+            escapeHTML(customerId) +
+            '</span>';
 
-                item.customerNumber ||
 
-                item.customerID ||
+            /* DATE */
 
-                "";
+            const date =
+            item.date ||
+            item.Date ||
+            "";
 
 
-                const tdIP =
+            const tdDate =
+            document.createElement("td");
 
-                document.createElement(
-                    "td"
-                );
+            tdDate.className =
+            "readonly";
 
+            tdDate.innerHTML =
+            '<span class="date-badge">' +
+            '<i class="fa-solid fa-calendar-day"></i>' +
+            escapeHTML(date) +
+            '</span>';
 
-                tdIP.className =
 
-                "readonly";
+            /* PROBLEM */
 
+            const problem =
+            item.problem ||
+            item.Problem ||
+            "";
 
-                tdIP.innerHTML =
 
-                '<span class="customer-id">' +
+            const tdProblem =
+            document.createElement("td");
 
-                '<i class="fa-solid fa-user"></i>' +
+            tdProblem.className =
+            "readonly";
 
-                escapeHTML(
-                    customerId
-                ) +
+            tdProblem.innerHTML =
+            '<div class="problem-box">' +
+            escapeHTML(problem) +
+            '</div>';
 
-                '</span>';
 
+            /* REF */
 
-                /* DATE */
+            const ref =
+            item.ref ||
+            item.REF ||
+            item.reference ||
+            "";
 
-                const date =
 
-                item.date ||
+            const tdRef =
+            document.createElement("td");
 
-                item.Date ||
+            tdRef.className =
+            "readonly";
 
-                "";
+            tdRef.innerHTML =
+            '<span class="ref-badge">' +
+            '<i class="fa-solid fa-link"></i>' +
+            escapeHTML(ref) +
+            '</span>';
 
 
-                const tdDate =
+            /* SUPPORT NAME */
 
-                document.createElement(
-                    "td"
-                );
+            const tdSupportName =
+            document.createElement("td");
 
 
-                tdDate.className =
+            const supportNameBox =
+            document.createElement("div");
 
-                "readonly";
+            supportNameBox.className =
+            "support-name-box";
 
 
-                tdDate.innerHTML =
+            const supportNameLabel =
+            document.createElement("span");
 
-                '<span class="date-badge">' +
+            supportNameLabel.className =
+            "support-name-label";
 
-                '<i class="fa-solid fa-calendar-day"></i>' +
+            supportNameLabel.innerHTML =
+            '<i class="fa-solid fa-user-check"></i> Support Person Name';
 
-                escapeHTML(
-                    date
-                ) +
 
-                '</span>';
+            const supportNameInput =
+            document.createElement("input");
 
+            supportNameInput.type =
+            "text";
 
-                /* PROBLEM */
+            supportNameInput.className =
+            "support-name-input";
 
-                const problem =
+            supportNameInput.placeholder =
+            "Enter Support Person Name";
 
-                item.problem ||
 
-                item.Problem ||
+            supportNameBox.appendChild(
+                supportNameLabel
+            );
 
-                "";
+            supportNameBox.appendChild(
+                supportNameInput
+            );
 
+            tdSupportName.appendChild(
+                supportNameBox
+            );
 
-                const tdProblem =
 
-                document.createElement(
-                    "td"
-                );
+            /* SUPPORT WORK */
 
+            const tdWork =
+            document.createElement("td");
 
-                tdProblem.className =
 
-                "readonly";
+            const supportWorkBox =
+            document.createElement("div");
 
+            supportWorkBox.className =
+            "support-work-box";
 
-                tdProblem.innerHTML =
 
-                '<div class="problem-box">' +
+            const supportWorkLabel =
+            document.createElement("span");
 
-                escapeHTML(
-                    problem
-                ) +
+            supportWorkLabel.className =
+            "support-work-label";
 
-                '</div>';
+            supportWorkLabel.innerHTML =
+            '<i class="fa-solid fa-screwdriver-wrench"></i> Work Details';
 
 
-                /* REF */
+            const workInput =
+            document.createElement("textarea");
 
-                const ref =
+            workInput.className =
+            "support-work-input";
 
-                item.ref ||
+            workInput.placeholder =
+            "Write what support work was done...";
 
-                item.REF ||
 
-                item.reference ||
+            supportWorkBox.appendChild(
+                supportWorkLabel
+            );
 
-                "";
+            supportWorkBox.appendChild(
+                workInput
+            );
 
+            tdWork.appendChild(
+                supportWorkBox
+            );
 
-                const tdRef =
 
-                document.createElement(
-                    "td"
-                );
+            /* ACTION */
 
+            const tdAction =
+            document.createElement("td");
 
-                tdRef.className =
+            tdAction.className =
+            "action-cell";
 
-                "readonly";
 
+            const submitBtn =
+            document.createElement("button");
 
-                tdRef.innerHTML =
+            submitBtn.className =
+            "submit-btn";
 
-                '<span class="ref-badge">' +
+            submitBtn.type =
+            "button";
 
-                '<i class="fa-solid fa-link"></i>' +
+            submitBtn.innerHTML =
+            '<i class="fa-solid fa-paper-plane"></i> Submit';
 
-                escapeHTML(
-                    ref
-                ) +
 
-                '</span>';
+            /* SUBMIT */
 
+            submitBtn.addEventListener(
+            "click",
+            async function(){
 
-                /* SUPPORT NAME */
 
-                const tdSupportName =
+                if(!checkLogin()){
 
-                document.createElement(
-                    "td"
-                );
+                    return;
 
+                }
 
-                const supportNameBox =
 
-                document.createElement(
-                    "div"
-                );
+                const supportName =
+                supportNameInput.value.trim();
 
 
-                supportNameBox.className =
+                const supportWork =
+                workInput.value.trim();
 
-                "support-name-box";
 
+                if(!supportName){
 
-                const supportNameLabel =
+                    showStatus(
+                        "Please enter the Support Person Name.",
+                        "error"
+                    );
 
-                document.createElement(
-                    "span"
-                );
+                    supportNameInput.focus();
 
+                    return;
 
-                supportNameLabel.className =
+                }
 
-                "support-name-label";
 
+                if(!supportWork){
 
-                supportNameLabel.innerHTML =
+                    showStatus(
+                        "Please enter what Support Work was done.",
+                        "error"
+                    );
 
-                '<i class="fa-solid fa-user-check"></i> Support Person Name';
+                    workInput.focus();
 
+                    return;
 
-                const supportNameInput =
+                }
 
-                document.createElement(
-                    "input"
-                );
 
-
-                supportNameInput.type =
-
-                "text";
-
-
-                supportNameInput.className =
-
-                "support-name-input";
-
-
-                supportNameInput.placeholder =
-
-                "Enter Support Person Name";
-
-
-                supportNameBox.appendChild(
-
-                    supportNameLabel
-
-                );
-
-
-                supportNameBox.appendChild(
-
-                    supportNameInput
-
-                );
-
-
-                tdSupportName.appendChild(
-
-                    supportNameBox
-
-                );
-
-
-                /* SUPPORT WORK */
-
-                const tdWork =
-
-                document.createElement(
-                    "td"
-                );
-
-
-                const supportWorkBox =
-
-                document.createElement(
-                    "div"
-                );
-
-
-                supportWorkBox.className =
-
-                "support-work-box";
-
-
-                const supportWorkLabel =
-
-                document.createElement(
-                    "span"
-                );
-
-
-                supportWorkLabel.className =
-
-                "support-work-label";
-
-
-                supportWorkLabel.innerHTML =
-
-                '<i class="fa-solid fa-screwdriver-wrench"></i> Work Details';
-
-
-                const workInput =
-
-                document.createElement(
-                    "textarea"
-                );
-
-
-                workInput.className =
-
-                "support-work-input";
-
-
-                workInput.placeholder =
-
-                "Write what support work was done...";
-
-
-                supportWorkBox.appendChild(
-
-                    supportWorkLabel
-
-                );
-
-
-                supportWorkBox.appendChild(
-
-                    workInput
-
-                );
-
-
-                tdWork.appendChild(
-
-                    supportWorkBox
-
-                );
-
-
-                /* ACTION */
-
-                const tdAction =
-
-                document.createElement(
-                    "td"
-                );
-
-
-                tdAction.className =
-
-                "action-cell";
-
-
-                const submitBtn =
-
-                document.createElement(
-                    "button"
-                );
-
-
-                submitBtn.className =
-
-                "submit-btn";
-
-
-                submitBtn.type =
-
-                "button";
-
+                submitBtn.disabled =
+                true;
 
                 submitBtn.innerHTML =
-
-                '<i class="fa-solid fa-paper-plane"></i> Submit';
-
-
-                /* SUBMIT */
-
-                submitBtn.addEventListener(
-
-                    "click",
-
-                    async function(){
+                '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
 
 
-                        if(!checkLogin()){
+                try{
 
-                            return;
 
+                    const payload = {
+
+                        action:
+                        "submitSupport",
+
+                        ip:
+                        customerId,
+
+                        date:
+                        date,
+
+                        problem:
+                        problem,
+
+                        ref:
+                        ref,
+
+                        support:
+                        supportName,
+
+                        supportWork:
+                        supportWork,
+
+                        username:
+                        localStorage.getItem(
+                            "username"
+                        ) || "",
+
+                        name:
+                        localStorage.getItem(
+                            "name"
+                        ) || ""
+
+                    };
+
+
+                    const response =
+                    await fetch(
+                        PENDING_SUPPORT_API_URL,
+                        {
+                            method:"POST",
+
+                            headers:{
+                                "Content-Type":
+                                "text/plain;charset=utf-8"
+                            },
+
+                            body:
+                            JSON.stringify(
+                                payload
+                            )
                         }
+                    );
 
 
-                        const supportName =
+                    const result =
+                    await response.json();
 
-                        supportNameInput.value.trim();
 
+                    if(
+                        result.success !== true
+                    ){
 
-                        const supportWork =
-
-                        workInput.value.trim();
-
-
-                        if(!supportName){
-
-                            showStatus(
-
-                                "Please enter the Support Person Name.",
-
-                                "error"
-
-                            );
-
-
-                            supportNameInput.focus();
-
-
-                            return;
-
-                        }
-
-
-                        if(!supportWork){
-
-                            showStatus(
-
-                                "Please enter what Support Work was done.",
-
-                                "error"
-
-                            );
-
-
-                            workInput.focus();
-
-
-                            return;
-
-                        }
-
-
-                        submitBtn.disabled =
-
-                        true;
-
-
-                        submitBtn.innerHTML =
-
-                        '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
-
-
-                        try{
-
-
-                            const payload = {
-
-
-                                action:
-
-                                "submitSupport",
-
-
-                                ip:
-
-                                customerId,
-
-
-                                date:
-
-                                date,
-
-
-                                problem:
-
-                                problem,
-
-
-                                ref:
-
-                                ref,
-
-
-                                support:
-
-                                supportName,
-
-
-                                supportWork:
-
-                                supportWork,
-
-
-                                username:
-
-                                localStorage.getItem(
-
-                                    "username"
-
-                                ) || "",
-
-
-                                name:
-
-                                localStorage.getItem(
-
-                                    "name"
-
-                                ) || ""
-
-                            };
-
-
-                            const response =
-
-                            await fetch(
-
-                                PENDING_SUPPORT_API_URL,
-
-                                {
-
-                                    method:"POST",
-
-                                    headers:{
-
-                                        "Content-Type":
-
-                                        "text/plain;charset=utf-8"
-
-                                    },
-
-                                    body:
-
-                                    JSON.stringify(
-                                        payload
-                                    )
-
-                                }
-
-                            );
-
-
-                            const result =
-
-                            await response.json();
-
-
-                            if(
-
-                                result.success !== true
-
-                            ){
-
-                                throw new Error(
-
-                                    result.message ||
-
-                                    "Failed to save support."
-
-                                );
-
-                            }
-
-
-                            showStatus(
-
-                                "Support information submitted successfully.",
-
-                                "success"
-
-                            );
-
-
-                            tr.remove();
-
-
-                            const remaining =
-
-                            tableBody.querySelectorAll(
-
-                                "tr"
-
-                            ).length;
-
-
-                            pendingCount.textContent =
-
-                            remaining +
-
-                            " Pending";
-
-
-                            if(
-
-                                remaining === 0
-
-                            ){
-
-                                tableWrapper.style.display =
-
-                                "none";
-
-
-                                emptyState.classList.add(
-
-                                    "show"
-
-                                );
-
-
-                                pendingCount.textContent =
-
-                                "0 Pending";
-
-                            }
-
-
-                        }
-
-
-                        catch(error){
-
-
-                            console.error(
-
-                                "Submit Error:",
-
-                                error
-
-                            );
-
-
-                            showStatus(
-
-                                error.message ||
-
-                                "Unable to save support information.",
-
-                                "error"
-
-                            );
-
-
-                            submitBtn.disabled =
-
-                            false;
-
-
-                            submitBtn.innerHTML =
-
-                            '<i class="fa-solid fa-paper-plane"></i> Submit';
-
-
-                        }
+                        throw new Error(
+                            result.message ||
+                            "Failed to save support."
+                        );
 
                     }
 
-                );
+
+                    showStatus(
+                        "Support information submitted successfully.",
+                        "success"
+                    );
 
 
-                tdAction.appendChild(
-
-                    submitBtn
-
-                );
+                    tr.remove();
 
 
-                tr.appendChild(
-
-                    tdIP
-
-                );
-
-
-                tr.appendChild(
-
-                    tdDate
-
-                );
+                    const remaining =
+                    tableBody.querySelectorAll(
+                        "tr"
+                    ).length;
 
 
-                tr.appendChild(
-
-                    tdProblem
-
-                );
+                    pendingCount.textContent =
+                    remaining +
+                    " Pending";
 
 
-                tr.appendChild(
+                    if(
+                        remaining === 0
+                    ){
 
-                    tdRef
+                        tableWrapper.style.display =
+                        "none";
 
-                );
+                        emptyState.classList.add(
+                            "show"
+                        );
 
+                        pendingCount.textContent =
+                        "0 Pending";
 
-                tr.appendChild(
-
-                    tdSupportName
-
-                );
-
-
-                tr.appendChild(
-
-                    tdWork
-
-                );
+                    }
 
 
-                tr.appendChild(
-
-                    tdAction
-
-                );
+                }
+                catch(error){
 
 
-                tableBody.appendChild(
+                    console.error(
+                        "Submit Error:",
+                        error
+                    );
 
-                    tr
 
-                );
+                    showStatus(
+                        error.message ||
+                        "Unable to save support information.",
+                        "error"
+                    );
+
+
+                    submitBtn.disabled =
+                    false;
+
+
+                    submitBtn.innerHTML =
+                    '<i class="fa-solid fa-paper-plane"></i> Submit';
+
+                }
 
             }
+            );
 
+
+            tdAction.appendChild(
+                submitBtn
+            );
+
+
+            tr.appendChild(tdIP);
+            tr.appendChild(tdDate);
+            tr.appendChild(tdProblem);
+            tr.appendChild(tdRef);
+            tr.appendChild(tdSupportName);
+            tr.appendChild(tdWork);
+            tr.appendChild(tdAction);
+
+
+            tableBody.appendChild(
+                tr
+            );
+
+        }
         );
 
 
@@ -3966,32 +1398,23 @@ async function loadPendingSupport(){
 
 
         console.error(
-
             "Load Error:",
-
             error
-
         );
 
 
         loadingState.style.display =
-
         "none";
 
 
         pendingCount.textContent =
-
         "0 Pending";
 
 
         showStatus(
-
             error.message ||
-
             "Unable to load pending support requests.",
-
             "error"
-
         );
 
     }
@@ -4004,15 +1427,12 @@ async function loadPendingSupport(){
 ===================================================== */
 
 refreshBtn.addEventListener(
+"click",
+function(){
 
-    "click",
+    loadPendingSupport();
 
-    function(){
-
-        loadPendingSupport();
-
-    }
-
+}
 );
 
 
@@ -4021,24 +1441,20 @@ refreshBtn.addEventListener(
 ===================================================== */
 
 backBtn.addEventListener(
+"click",
+function(){
 
-    "click",
+    if(!checkLogin()){
 
-    function(){
-
-        if(!checkLogin()){
-
-            return;
-
-        }
-
-
-        window.location.href =
-
-        "index.html";
+        return;
 
     }
 
+
+    window.location.href =
+    "index.html";
+
+}
 );
 
 
@@ -4047,38 +1463,29 @@ backBtn.addEventListener(
 ===================================================== */
 
 document.addEventListener(
+"visibilitychange",
+function(){
 
-    "visibilitychange",
-
-    function(){
-
-        if(
-
-            document.visibilityState ===
-
-            "visible"
-
-        ){
-
-            checkLogin();
-
-        }
-
-    }
-
-);
-
-
-window.addEventListener(
-
-    "pageshow",
-
-    function(){
+    if(
+        document.visibilityState ===
+        "visible"
+    ){
 
         checkLogin();
 
     }
 
+}
+);
+
+
+window.addEventListener(
+"pageshow",
+function(){
+
+    checkLogin();
+
+}
 );
 
 
@@ -4089,6 +1496,10 @@ window.addEventListener(
 loadPendingSupport();
 
 </script>
+
+
+<!-- SESSION TIMEOUT -->
+<script src="../session-timeout.js"></script>
 
 
 </body>

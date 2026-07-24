@@ -23,15 +23,18 @@ content="width=device-width, initial-scale=1.0"
 
     try{
 
-        if(
-            localStorage.getItem("loggedIn") !== "true"
-        ){
+        const loggedIn =
+        localStorage.getItem("loggedIn");
+
+        if(loggedIn !== "true"){
 
             window.location.replace("../index.html");
 
         }
 
-    }catch(error){
+    }
+
+    catch(error){
 
         console.error(error);
 
@@ -682,7 +685,7 @@ body{
 
 
 /* =====================================================
-   CONTENT AREA
+   CONTENT
 ===================================================== */
 
 .content{
@@ -797,6 +800,12 @@ body{
 
     color:white;
 
+    box-shadow:
+
+    0 12px 30px
+
+    rgba(0,106,78,.25);
+
 }
 
 
@@ -812,6 +821,8 @@ h2{
 
     margin-bottom:8px;
 
+    font-size:25px;
+
 }
 
 
@@ -826,6 +837,8 @@ h2{
     color:#777;
 
     margin-bottom:35px;
+
+    font-size:14px;
 
 }
 
@@ -850,6 +863,8 @@ h2{
     margin-bottom:8px;
 
     color:#333;
+
+    font-size:14px;
 
 }
 
@@ -913,6 +928,15 @@ h2{
 }
 
 
+.input input:hover,
+
+.input textarea:hover{
+
+    border-color:#a9cfc2;
+
+}
+
+
 .input input:focus,
 
 .input textarea:focus{
@@ -937,6 +961,8 @@ textarea{
     resize:none;
 
     height:120px;
+
+    line-height:1.6;
 
 }
 
@@ -982,12 +1008,33 @@ textarea{
 
     transition:.3s;
 
+    box-shadow:
+
+    0 10px 25px
+
+    rgba(0,106,78,.20);
+
 }
 
 
 .submit-btn:hover{
 
     background:#E53935;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+
+    0 12px 25px
+
+    rgba(229,57,53,.25);
+
+}
+
+
+.submit-btn:active{
+
+    transform:translateY(0);
 
 }
 
@@ -997,6 +1044,8 @@ textarea{
     opacity:.7;
 
     cursor:not-allowed;
+
+    transform:none;
 
 }
 
@@ -1026,9 +1075,7 @@ textarea{
 
     position:fixed;
 
-    top:0;
-
-    left:0;
+    inset:0;
 
     width:100%;
 
@@ -1036,9 +1083,9 @@ textarea{
 
     background:rgba(0,0,0,.55);
 
-    backdrop-filter:blur(6px);
+    backdrop-filter:blur(7px);
 
-    -webkit-backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(7px);
 
     display:none;
 
@@ -1225,6 +1272,8 @@ textarea{
     font-weight:600;
 
     cursor:pointer;
+
+    transition:.3s;
 
 }
 
@@ -1422,6 +1471,15 @@ textarea{
 
         margin-bottom:18px;
 
+        border-radius:15px;
+
+    }
+
+
+    .topbar-left{
+
+        gap:10px;
+
     }
 
 
@@ -1453,7 +1511,6 @@ textarea{
         border-radius:20px;
 
     }
-
 
 }
 
@@ -1507,6 +1564,8 @@ textarea{
 
         padding:30px 22px 25px;
 
+        border-radius:20px;
+
     }
 
 
@@ -1524,6 +1583,13 @@ textarea{
     .popup-title{
 
         font-size:20px;
+
+    }
+
+
+    .popup-message{
+
+        font-size:13px;
 
     }
 
@@ -1547,8 +1613,6 @@ id="sidebar"
 >
 
 
-<!-- SIDEBAR HEADER -->
-
 <div class="sidebar-header">
 
 
@@ -1569,8 +1633,6 @@ LINK4 COMMUNICATION
 </div>
 
 
-<!-- SIDEBAR MENU -->
-
 <nav class="sidebar-menu">
 
 
@@ -1580,8 +1642,6 @@ MAIN MENU
 
 </div>
 
-
-<!-- DASHBOARD -->
 
 <a
 href="index.html"
@@ -1600,8 +1660,6 @@ Dashboard
 </a>
 
 
-<!-- NEW ENTRY -->
-
 <a
 href="new-entry.html"
 class="menu-item active"
@@ -1618,8 +1676,6 @@ New Support Entry
 
 </a>
 
-
-<!-- PENDING SUPPORT -->
 
 <a
 href="pending-support.html"
@@ -1638,8 +1694,6 @@ Pending Support
 </a>
 
 
-<!-- SUPPORT HISTORY -->
-
 <a
 href="support-history.html"
 class="menu-item"
@@ -1656,8 +1710,6 @@ Support History
 
 </a>
 
-
-<!-- LOGOUT -->
 
 <button
 type="button"
@@ -1679,8 +1731,6 @@ Logout
 
 </nav>
 
-
-<!-- SIDEBAR FOOTER -->
 
 <div class="sidebar-footer">
 
@@ -1751,8 +1801,6 @@ id="sidebarOverlay"
 <div class="topbar-left">
 
 
-<!-- MENU TOGGLE -->
-
 <button
 type="button"
 class="menu-toggle"
@@ -1820,19 +1868,13 @@ User
 <div class="content">
 
 
-<!-- =====================================================
-     MAIN CARD
-===================================================== -->
-
 <div class="card">
 
-
-<!-- BACK TO DASHBOARD -->
 
 <button
 type="button"
 class="back-btn"
-onclick="goBack()"
+id="backBtn"
 >
 
 <i class="fa-solid fa-arrow-left"></i>
@@ -1842,16 +1884,12 @@ Back to Dashboard
 </button>
 
 
-<!-- LOGO -->
-
 <div class="logo">
 
 <i class="fa-solid fa-headset"></i>
 
 </div>
 
-
-<!-- TITLE -->
 
 <h2>
 
@@ -1871,7 +1909,10 @@ LINK4 COMMUNICATION
      FORM
 ===================================================== -->
 
-<form id="entryForm">
+<form
+id="entryForm"
+autocomplete="off"
+>
 
 
 <!-- CUSTOMER ID -->
@@ -1879,7 +1920,7 @@ LINK4 COMMUNICATION
 <div class="group">
 
 
-<label>
+<label for="ip">
 
 Customer ID
 
@@ -1898,6 +1939,7 @@ id="ip"
 placeholder="Enter Customer ID"
 required
 autocomplete="off"
+spellcheck="false"
 >
 
 
@@ -1912,7 +1954,7 @@ autocomplete="off"
 <div class="group">
 
 
-<label>
+<label for="problem">
 
 Problem
 
@@ -1929,6 +1971,7 @@ Problem
 id="problem"
 placeholder="Write Customer Problem"
 required
+spellcheck="true"
 ></textarea>
 
 
@@ -1943,7 +1986,7 @@ required
 <div class="group">
 
 
-<label>
+<label for="reference">
 
 Reference
 
@@ -1988,8 +2031,6 @@ Submit Support
 </form>
 
 
-<!-- FOOTER -->
-
 <div class="footer">
 
 © LINK4 COMMUNICATION
@@ -2007,7 +2048,7 @@ Submit Support
 
 
 <!-- =====================================================
-     POPUP
+     CUSTOM POPUP
 ===================================================== -->
 
 <div
@@ -2053,6 +2094,7 @@ Message
 
 
 <button
+type="button"
 class="popup-ok"
 id="popupOk"
 >
@@ -2070,7 +2112,6 @@ OK
 
 <script>
 
-
 /* =====================================================
    API URL
 ===================================================== */
@@ -2081,52 +2122,256 @@ const API_URL =
 
 
 /* =====================================================
-   ELEMENTS
+   GET ELEMENTS
 ===================================================== */
 
 const sidebar =
 
 document.getElementById(
-
-"sidebar"
-
+    "sidebar"
 );
 
 
 const menuToggle =
 
 document.getElementById(
-
-"menuToggle"
-
+    "menuToggle"
 );
 
 
 const sidebarOverlay =
 
 document.getElementById(
-
-"sidebarOverlay"
-
+    "sidebarOverlay"
 );
 
 
 const logoutBtn =
 
 document.getElementById(
+    "logoutBtn"
+);
 
-"logoutBtn"
 
+const backBtn =
+
+document.getElementById(
+    "backBtn"
+);
+
+
+const entryForm =
+
+document.getElementById(
+    "entryForm"
+);
+
+
+const submitBtn =
+
+document.getElementById(
+    "submitBtn"
+);
+
+
+const customerIdInput =
+
+document.getElementById(
+    "ip"
+);
+
+
+const problemInput =
+
+document.getElementById(
+    "problem"
+);
+
+
+const referenceInput =
+
+document.getElementById(
+    "reference"
+);
+
+
+const popupOverlay =
+
+document.getElementById(
+    "popupOverlay"
+);
+
+
+const popupBox =
+
+document.getElementById(
+    "popupBox"
+);
+
+
+const popupIcon =
+
+document.getElementById(
+    "popupIcon"
+);
+
+
+const popupTitle =
+
+document.getElementById(
+    "popupTitle"
+);
+
+
+const popupMessage =
+
+document.getElementById(
+    "popupMessage"
+);
+
+
+const popupOk =
+
+document.getElementById(
+    "popupOk"
+);
+
+
+const topUserName =
+
+document.getElementById(
+    "topUserName"
+);
+
+
+const sidebarUserName =
+
+document.getElementById(
+    "sidebarUserName"
 );
 
 
 /* =====================================================
-   SIDEBAR TOGGLE
-   DESKTOP:
-   Sidebar Minimize / Expand
+   LOGIN SECURITY
+===================================================== */
 
-   MOBILE:
-   Sidebar Open / Close
+function checkLogin(){
+
+    try{
+
+        if(
+
+            localStorage.getItem(
+                "loggedIn"
+            )
+
+            !==
+
+            "true"
+
+        ){
+
+            window.location.replace(
+                "../index.html"
+            );
+
+            return false;
+
+        }
+
+        return true;
+
+    }
+
+    catch(error){
+
+        console.error(
+            "Login Check Error:",
+            error
+        );
+
+        window.location.replace(
+            "../index.html"
+        );
+
+        return false;
+
+    }
+
+}
+
+
+/* =====================================================
+   USER INFORMATION
+===================================================== */
+
+function updateUserInformation(){
+
+    const username =
+
+    localStorage.getItem(
+        "username"
+    )
+
+    ||
+
+    "";
+
+
+    const name =
+
+    localStorage.getItem(
+        "name"
+    )
+
+    ||
+
+    username
+
+    ||
+
+    "User";
+
+
+    referenceInput.value =
+
+    username;
+
+
+    topUserName.textContent =
+
+    name;
+
+
+    sidebarUserName.textContent =
+
+    name;
+
+}
+
+
+/* =====================================================
+   INITIAL LOGIN CHECK
+===================================================== */
+
+if(
+
+    !checkLogin()
+
+){
+
+    throw new Error(
+        "User is not logged in."
+    );
+
+}
+
+
+updateUserInformation();
+
+
+/* =====================================================
+   SIDEBAR TOGGLE
 ===================================================== */
 
 menuToggle.addEventListener(
@@ -2142,15 +2387,11 @@ menuToggle.addEventListener(
         ){
 
             sidebar.classList.toggle(
-
                 "mobile-open"
-
             );
 
             sidebarOverlay.classList.toggle(
-
                 "active"
-
             );
 
         }
@@ -2158,9 +2399,7 @@ menuToggle.addEventListener(
         else{
 
             sidebar.classList.toggle(
-
                 "collapsed"
-
             );
 
         }
@@ -2171,7 +2410,7 @@ menuToggle.addEventListener(
 
 
 /* =====================================================
-   MOBILE OVERLAY CLICK
+   MOBILE SIDEBAR CLOSE
 ===================================================== */
 
 sidebarOverlay.addEventListener(
@@ -2181,15 +2420,11 @@ sidebarOverlay.addEventListener(
     function(){
 
         sidebar.classList.remove(
-
             "mobile-open"
-
         );
 
         sidebarOverlay.classList.remove(
-
             "active"
-
         );
 
     }
@@ -2198,15 +2433,13 @@ sidebarOverlay.addEventListener(
 
 
 /* =====================================================
-   MENU LINK CLICK
+   MOBILE MENU CLOSE
 ===================================================== */
 
 document
 
 .querySelectorAll(
-
     ".menu-item"
-
 )
 
 .forEach(
@@ -2226,15 +2459,11 @@ document
                 ){
 
                     sidebar.classList.remove(
-
                         "mobile-open"
-
                     );
 
                     sidebarOverlay.classList.remove(
-
                         "active"
-
                     );
 
                 }
@@ -2249,113 +2478,33 @@ document
 
 
 /* =====================================================
-   LOGIN CHECK
-===================================================== */
-
-function checkLogin(){
-
-    if(
-
-        localStorage.getItem("loggedIn")
-
-        !==
-
-        "true"
-
-    ){
-
-        window.location.replace(
-
-            "../index.html"
-
-        );
-
-        return false;
-
-    }
-
-    return true;
-
-}
-
-
-/* =====================================================
-   USER INFORMATION
-===================================================== */
-
-const username =
-
-localStorage.getItem("username")
-
-||
-
-"";
-
-
-const savedName =
-
-localStorage.getItem("name")
-
-||
-
-username
-
-||
-
-"User";
-
-
-/* =====================================================
-   USERNAME DISPLAY
-===================================================== */
-
-document.getElementById(
-
-    "reference"
-
-).value =
-
-username;
-
-
-document.getElementById(
-
-    "topUserName"
-
-).textContent =
-
-savedName;
-
-
-document.getElementById(
-
-    "sidebarUserName"
-
-).textContent =
-
-savedName;
-
-
-/* =====================================================
    BACK TO DASHBOARD
 ===================================================== */
 
-function goBack(){
+backBtn.addEventListener(
 
-    if(!checkLogin()){
+    "click",
 
-        return;
+    function(){
+
+        if(
+
+            !checkLogin()
+
+        ){
+
+            return;
+
+        }
+
+
+        window.location.replace(
+            "index.html"
+        );
 
     }
 
-
-    window.location.replace(
-
-        "index.html"
-
-    );
-
-}
+);
 
 
 /* =====================================================
@@ -2368,126 +2517,35 @@ logoutBtn.addEventListener(
 
     function(){
 
-        localStorage.removeItem(
+        /* REMOVE LOGIN DATA */
 
+        localStorage.removeItem(
             "loggedIn"
-
         );
 
 
         localStorage.removeItem(
-
             "username"
-
         );
 
 
         localStorage.removeItem(
-
             "name"
-
         );
 
 
         localStorage.removeItem(
-
             "token"
-
         );
 
+
+        /* REDIRECT */
 
         window.location.replace(
-
             "../index.html"
-
         );
 
     }
-
-);
-
-
-/* =====================================================
-   POPUP ELEMENTS
-===================================================== */
-
-const entryForm =
-
-document.getElementById(
-
-"entryForm"
-
-);
-
-
-const submitBtn =
-
-document.getElementById(
-
-"submitBtn"
-
-);
-
-
-const popupOverlay =
-
-document.getElementById(
-
-"popupOverlay"
-
-);
-
-
-const popupBox =
-
-document.getElementById(
-
-"popupBox"
-
-);
-
-
-const popupIcon =
-
-document.getElementById(
-
-"popupIcon"
-
-);
-
-
-const popupTitle =
-
-document.getElementById(
-
-"popupTitle"
-
-);
-
-
-const popupMessage =
-
-document.getElementById(
-
-"popupMessage"
-
-);
-
-
-const popupOk =
-
-document.getElementById(
-
-"popupOk"
-
-);
-
-
-const referenceInput =
-
-document.getElementById(
-
-"reference"
 
 );
 
@@ -2591,9 +2649,7 @@ function showPopup(
 
 
     popupOverlay.classList.add(
-
         "active"
-
     );
 
 }
@@ -2606,25 +2662,31 @@ function showPopup(
 function hidePopup(){
 
     popupOverlay.classList.remove(
-
         "active"
-
     );
 
 }
 
 
+/* =====================================================
+   POPUP OK BUTTON
+===================================================== */
+
 popupOk.addEventListener(
 
     "click",
 
-    hidePopup
+    function(){
+
+        hidePopup();
+
+    }
 
 );
 
 
 /* =====================================================
-   CLOSE POPUP OUTSIDE CLICK
+   OUTSIDE POPUP CLICK
 ===================================================== */
 
 popupOverlay.addEventListener(
@@ -2636,7 +2698,6 @@ popupOverlay.addEventListener(
         if(
 
             e.target ===
-
             popupOverlay
 
         ){
@@ -2663,55 +2724,35 @@ entryForm.addEventListener(
         e.preventDefault();
 
 
-        /* SECURITY CHECK */
+        /* LOGIN SECURITY */
 
-        if(!checkLogin()){
+        if(
+
+            !checkLogin()
+
+        ){
 
             return;
 
         }
 
 
-        /* GET DATA */
+        /* GET VALUES */
 
         const customerId =
 
-        document
-
-        .getElementById(
-
-            "ip"
-
-        )
-
-        .value
-
-        .trim();
+        customerIdInput.value.trim();
 
 
         const problem =
 
-        document
-
-        .getElementById(
-
-            "problem"
-
-        )
-
-        .value
-
-        .trim();
+        problemInput.value.trim();
 
 
         const reference =
 
-        localStorage
-
-        .getItem(
-
+        localStorage.getItem(
             "username"
-
         )
 
         ||
@@ -2719,9 +2760,16 @@ entryForm.addEventListener(
         "";
 
 
-        /* VALIDATION */
+        /* =================================================
+           VALIDATION
+        ================================================= */
 
-        if(!customerId){
+
+        if(
+
+            !customerId
+
+        ){
 
             showPopup(
 
@@ -2733,12 +2781,18 @@ entryForm.addEventListener(
 
             );
 
+            customerIdInput.focus();
+
             return;
 
         }
 
 
-        if(!problem){
+        if(
+
+            !problem
+
+        ){
 
             showPopup(
 
@@ -2750,12 +2804,18 @@ entryForm.addEventListener(
 
             );
 
+            problemInput.focus();
+
             return;
 
         }
 
 
-        if(!reference){
+        if(
+
+            !reference
+
+        ){
 
             showPopup(
 
@@ -2772,14 +2832,14 @@ entryForm.addEventListener(
         }
 
 
-        /* OLD BUTTON */
+        /* SAVE OLD BUTTON */
 
         const oldButtonText =
 
         submitBtn.innerHTML;
 
 
-        /* DISABLE */
+        /* DISABLE BUTTON */
 
         submitBtn.disabled =
 
@@ -2791,7 +2851,7 @@ entryForm.addEventListener(
         '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
 
 
-        /* LOADING POPUP */
+        /* SHOW LOADING */
 
         showPopup(
 
@@ -2806,7 +2866,9 @@ entryForm.addEventListener(
         );
 
 
-        /* FORM DATA */
+        /* =================================================
+           CREATE FORM DATA
+        ================================================= */
 
         const formData =
 
@@ -2849,7 +2911,9 @@ entryForm.addEventListener(
         );
 
 
-        /* SEND */
+        /* =================================================
+           SEND DATA
+        ================================================= */
 
         try{
 
@@ -2860,9 +2924,11 @@ entryForm.addEventListener(
 
                 {
 
-                    method:"POST",
+                    method:
+                    "POST",
 
-                    mode:"no-cors",
+                    mode:
+                    "no-cors",
 
                     headers:{
 
@@ -2881,7 +2947,9 @@ entryForm.addEventListener(
             );
 
 
-            /* SUCCESS */
+            /* =================================================
+               SUCCESS
+            ================================================= */
 
             showPopup(
 
@@ -2896,38 +2964,20 @@ entryForm.addEventListener(
 
             /* CLEAR CUSTOMER ID */
 
-            document
-
-            .getElementById(
-
-                "ip"
-
-            )
-
-            .value = "";
+            customerIdInput.value = "";
 
 
             /* CLEAR PROBLEM */
 
-            document
-
-            .getElementById(
-
-                "problem"
-
-            )
-
-            .value = "";
+            problemInput.value = "";
 
 
-            /* KEEP USERNAME */
+            /* KEEP REFERENCE */
 
             referenceInput.value =
 
             localStorage.getItem(
-
                 "username"
-
             )
 
             ||
@@ -2950,6 +3000,8 @@ entryForm.addEventListener(
             );
 
 
+            /* ERROR POPUP */
+
             showPopup(
 
                 "error",
@@ -2963,16 +3015,21 @@ entryForm.addEventListener(
         }
 
 
-        /* RESTORE BUTTON */
-
-        submitBtn.disabled =
-
-        false;
+        finally{
 
 
-        submitBtn.innerHTML =
+            /* RESTORE BUTTON */
 
-        oldButtonText;
+            submitBtn.disabled =
+
+            false;
+
+
+            submitBtn.innerHTML =
+
+            oldButtonText;
+
+        }
 
     }
 
@@ -2989,7 +3046,18 @@ window.addEventListener(
 
     function(){
 
-        checkLogin();
+        if(
+
+            !checkLogin()
+
+        ){
+
+            return;
+
+        }
+
+
+        updateUserInformation();
 
     }
 
@@ -3016,6 +3084,8 @@ document.addEventListener(
 
             checkLogin();
 
+            updateUserInformation();
+
         }
 
     }
@@ -3024,7 +3094,7 @@ document.addEventListener(
 
 
 /* =====================================================
-   AUTO UPDATE USERNAME
+   STORAGE UPDATE
 ===================================================== */
 
 window.addEventListener(
@@ -3033,57 +3103,18 @@ window.addEventListener(
 
     function(){
 
-        const currentUsername =
+        if(
 
-        localStorage.getItem(
+            !checkLogin()
 
-            "username"
+        ){
 
-        )
+            return;
 
-        ||
-
-        "";
+        }
 
 
-        const currentName =
-
-        localStorage.getItem(
-
-            "name"
-
-        )
-
-        ||
-
-        currentUsername
-
-        ||
-
-        "User";
-
-
-        referenceInput.value =
-
-        currentUsername;
-
-
-        document.getElementById(
-
-            "topUserName"
-
-        ).textContent =
-
-        currentName;
-
-
-        document.getElementById(
-
-            "sidebarUserName"
-
-        ).textContent =
-
-        currentName;
+        updateUserInformation();
 
     }
 
@@ -3107,15 +3138,11 @@ window.addEventListener(
         ){
 
             sidebar.classList.remove(
-
                 "mobile-open"
-
             );
 
             sidebarOverlay.classList.remove(
-
                 "active"
-
             );
 
         }

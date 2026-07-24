@@ -4,10 +4,48 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- =====================================================
+     LOGIN SECURITY
+===================================================== -->
+<script>
+(function(){
+
+    try{
+
+        if(localStorage.getItem("loggedIn") !== "true"){
+
+            window.location.replace("../index.html");
+
+        }
+
+    }catch(error){
+
+        window.location.replace("../index.html");
+
+    }
+
+})();
+</script>
+
 <title>Support Log History | LINK4 COMMUNICATION</title>
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com"
+>
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet"
+>
 
 <link
 rel="stylesheet"
@@ -36,10 +74,7 @@ body{
     width:100%;
     min-height:100vh;
 
-    font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+    font-family:'Poppins',Arial,Helvetica,sans-serif;
 
     background:
     linear-gradient(
@@ -49,7 +84,7 @@ body{
         #008f6d
     );
 
-    padding:0 14px 16px 14px;
+    padding:16px 24px;
 
     color:#14201d;
 
@@ -100,7 +135,9 @@ body{
 }
 
 
-/* SIDEBAR COLLAPSED */
+/* =====================================================
+   COLLAPSED SIDEBAR
+===================================================== */
 
 .sidebar.collapsed{
 
@@ -110,7 +147,7 @@ body{
 
 
 /* =====================================================
-   SIDEBAR HEADER
+   SIDEBAR LOGO
 ===================================================== */
 
 .sidebar-header{
@@ -123,8 +160,7 @@ body{
 
     justify-content:center;
 
-    padding:
-    0 10px;
+    padding:0 10px;
 
     margin-bottom:20px;
 
@@ -175,6 +211,10 @@ body{
 }
 
 
+/* =====================================================
+   HIDE LOGO TEXT WHEN COLLAPSED
+===================================================== */
+
 .sidebar.collapsed
 .sidebar-logo span{
 
@@ -200,6 +240,10 @@ body{
 }
 
 
+/* =====================================================
+   SIDEBAR LINK
+===================================================== */
+
 .sidebar-link{
 
     width:100%;
@@ -212,8 +256,7 @@ body{
 
     gap:15px;
 
-    padding:
-    0 13px;
+    padding:0 13px;
 
     border-radius:13px;
 
@@ -224,7 +267,7 @@ body{
 
     font-size:15px;
 
-    font-weight:bold;
+    font-weight:600;
 
     white-space:nowrap;
 
@@ -272,6 +315,10 @@ body{
 }
 
 
+/* =====================================================
+   COLLAPSED MENU
+===================================================== */
+
 .sidebar.collapsed
 .sidebar-link span{
 
@@ -302,31 +349,20 @@ body{
    LOGOUT BUTTON
 ===================================================== */
 
-.logout-area{
-
-    margin-top:auto;
-
-    padding-top:15px;
-
-    border-top:
-    1px solid
-    rgba(255,255,255,.12);
-
-}
-
-
 .logout-btn{
 
     width:100%;
 
     height:52px;
 
+    margin-top:15px;
+
     border:none;
 
     border-radius:13px;
 
     background:
-    rgba(229,57,53,.15);
+    rgba(229,57,53,.16);
 
     color:#ffffff;
 
@@ -336,12 +372,13 @@ body{
 
     gap:15px;
 
-    padding:
-    0 13px;
+    padding:0 13px;
+
+    font-family:inherit;
 
     font-size:15px;
 
-    font-weight:bold;
+    font-weight:600;
 
     cursor:pointer;
 
@@ -367,8 +404,7 @@ body{
 
     background:#e53935;
 
-    transform:
-    translateX(2px);
+    transform:translateX(2px);
 
 }
 
@@ -422,7 +458,7 @@ body.sidebar-collapsed
 
 
 /* =====================================================
-   MAIN CONTAINER
+   CONTAINER
 ===================================================== */
 
 .container{
@@ -442,17 +478,13 @@ body.sidebar-collapsed
 
 .header{
 
-    width:100%;
-
     background:#f7fbfa;
 
-    border-radius:
-    0 0 16px 16px;
+    min-height:72px;
 
-    min-height:70px;
+    padding:10px 18px;
 
-    padding:
-    10px 16px;
+    border-radius:16px;
 
     display:flex;
 
@@ -469,15 +501,17 @@ body.sidebar-collapsed
 }
 
 
+/* =====================================================
+   HEADER LEFT
+===================================================== */
+
 .header-left{
 
     display:flex;
 
     align-items:center;
 
-    gap:14px;
-
-    min-width:0;
+    gap:12px;
 
 }
 
@@ -488,13 +522,13 @@ body.sidebar-collapsed
 
 .top-menu-button{
 
-    width:44px;
+    width:42px;
 
-    height:44px;
+    height:42px;
 
     border:none;
 
-    border-radius:12px;
+    border-radius:10px;
 
     background:#e7f5f0;
 
@@ -510,8 +544,6 @@ body.sidebar-collapsed
 
     cursor:pointer;
 
-    flex-shrink:0;
-
     transition:.2s;
 
 }
@@ -521,8 +553,7 @@ body.sidebar-collapsed
 
     background:#d4eee6;
 
-    transform:
-    translateY(-1px);
+    transform:translateY(-1px);
 
 }
 
@@ -530,13 +561,6 @@ body.sidebar-collapsed
 /* =====================================================
    HEADER TITLE
 ===================================================== */
-
-.header-title{
-
-    min-width:0;
-
-}
-
 
 .header-title h1{
 
@@ -548,11 +572,7 @@ body.sidebar-collapsed
 
     margin:0;
 
-    white-space:nowrap;
-
-    overflow:hidden;
-
-    text-overflow:ellipsis;
+    letter-spacing:.35px;
 
 }
 
@@ -565,7 +585,7 @@ body.sidebar-collapsed
 
     color:#66736f;
 
-    margin-top:3px;
+    margin:3px 0 0;
 
 }
 
@@ -576,48 +596,34 @@ body.sidebar-collapsed
 
 .logged-user{
 
-    margin-left:auto;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:flex-end;
-
-    gap:9px;
-
-    color:#006a4e;
-
-    font-size:14px;
-
-    font-weight:700;
-
-    white-space:nowrap;
-
-    flex-shrink:0;
-
-}
-
-
-.logged-user-icon{
-
-    width:38px;
-
-    height:38px;
-
-    border-radius:50%;
-
-    background:#e7f5f0;
-
-    color:#00785b;
-
     display:flex;
 
     align-items:center;
 
     justify-content:center;
 
-    font-size:16px;
+    gap:7px;
+
+    color:#00785b;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+    padding:9px 13px;
+
+    border-radius:10px;
+
+    background:#e7f5f0;
+
+}
+
+
+.logged-user i{
+
+    font-size:13px;
 
 }
 
@@ -630,32 +636,15 @@ body.sidebar-collapsed
 
     background:#f7fbfa;
 
-    margin-top:20px;
+    margin-top:24px;
 
-    border-radius:20px;
+    border-radius:24px;
 
-    padding:15px;
+    padding:22px;
 
     box-shadow:
     0 10px 30px
     rgba(0,0,0,.06);
-
-}
-
-
-/* =====================================================
-   FILTER ROW
-===================================================== */
-
-.filter-main-row{
-
-    width:100%;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
 
 }
 
@@ -666,9 +655,7 @@ body.sidebar-collapsed
 
 .search-box{
 
-    flex:1;
-
-    min-width:200px;
+    width:100%;
 
     position:relative;
 
@@ -679,7 +666,7 @@ body.sidebar-collapsed
 
     position:absolute;
 
-    left:15px;
+    left:18px;
 
     top:50%;
 
@@ -688,7 +675,7 @@ body.sidebar-collapsed
 
     color:#009875;
 
-    font-size:17px;
+    font-size:19px;
 
 }
 
@@ -697,22 +684,24 @@ body.sidebar-collapsed
 
     width:100%;
 
-    height:48px;
+    height:56px;
 
     border:
     2px solid
     #dcebe7;
 
-    border-radius:12px;
+    border-radius:16px;
 
     outline:none;
 
     padding:
-    0 15px 0 45px;
+    0 20px 0 52px;
 
-    font-size:14px;
+    font-size:15px;
 
     color:#26332f;
+
+    font-family:inherit;
 
     transition:.2s;
 
@@ -731,66 +720,39 @@ body.sidebar-collapsed
 
 
 /* =====================================================
-   DATE FILTER
+   FILTER ROW
 ===================================================== */
 
-.date-filter{
+.filter-row{
+
+    margin-top:15px;
 
     display:flex;
 
     align-items:center;
 
-    gap:7px;
+    justify-content:flex-end;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.filter-label{
+
+    font-weight:bold;
+
+    color:#53625d;
 
     white-space:nowrap;
 
 }
 
 
-.date-filter label{
-
-    font-size:13px;
-
-    color:#53625d;
-
-    font-weight:bold;
-
-}
-
-
-.date-filter input{
-
-    width:105px;
-
-    height:48px;
-
-    border:
-    2px solid
-    #dcebe7;
-
-    border-radius:12px;
-
-    padding:
-    0 8px;
-
-    outline:none;
-
-    font-size:13px;
-
-    color:#40504b;
-
-}
-
-
-.date-filter input:focus{
-
-    border-color:#009b73;
-
-}
-
-
 /* =====================================================
-   LAST DAYS
+   OLDER THAN
 ===================================================== */
 
 .last-days-box{
@@ -800,8 +762,6 @@ body.sidebar-collapsed
     align-items:center;
 
     gap:7px;
-
-    white-space:nowrap;
 
 }
 
@@ -813,28 +773,17 @@ body.sidebar-collapsed
 }
 
 
-.last-days-label{
-
-    font-size:13px;
-
-    font-weight:bold;
-
-    color:#53625d;
-
-}
-
-
 .last-days-input{
 
-    width:90px;
+    width:75px;
 
-    height:48px;
+    height:42px;
 
     border:
     2px solid
     #dcebe7;
 
-    border-radius:12px;
+    border-radius:10px;
 
     outline:none;
 
@@ -857,23 +806,80 @@ body.sidebar-collapsed
 
 
 /* =====================================================
-   STATUS
+   DATE BOX
 ===================================================== */
 
-.filter-select{
+.date-box{
 
-    height:48px;
+    display:flex;
 
-    min-width:100px;
+    align-items:center;
+
+    gap:6px;
+
+}
+
+
+.date-box label{
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    color:#68756f;
+
+}
+
+
+.date-box input{
+
+    width:125px;
+
+    height:42px;
 
     border:
     2px solid
     #dcebe7;
 
-    border-radius:12px;
+    border-radius:10px;
 
-    padding:
-    0 12px;
+    padding:0 8px;
+
+    outline:none;
+
+    font-size:13px;
+
+    color:#40504b;
+
+    font-family:inherit;
+
+}
+
+
+.date-box input:focus{
+
+    border-color:#009b73;
+
+}
+
+
+/* =====================================================
+   SELECT
+===================================================== */
+
+.filter-select{
+
+    height:42px;
+
+    min-width:105px;
+
+    border:
+    2px solid
+    #dcebe7;
+
+    border-radius:10px;
+
+    padding:0 12px;
 
     background:white;
 
@@ -887,6 +893,8 @@ body.sidebar-collapsed
 
     cursor:pointer;
 
+    font-family:inherit;
+
 }
 
 
@@ -896,24 +904,23 @@ body.sidebar-collapsed
 
 .clear-btn{
 
-    height:48px;
+    height:42px;
 
-    padding:
-    0 16px;
+    padding:0 15px;
 
     border:none;
 
-    border-radius:12px;
+    border-radius:10px;
 
     background:#e8f6f2;
 
     color:#007c5e;
 
+    font-family:inherit;
+
     font-weight:bold;
 
     cursor:pointer;
-
-    white-space:nowrap;
 
 }
 
@@ -933,9 +940,9 @@ body.sidebar-collapsed
 
     background:#f7fbfa;
 
-    margin-top:20px;
+    margin-top:24px;
 
-    border-radius:22px;
+    border-radius:26px;
 
     overflow:hidden;
 
@@ -951,7 +958,7 @@ body.sidebar-collapsed
 .content-header{
 
     padding:
-    20px 25px;
+    25px 32px;
 
     display:flex;
 
@@ -968,7 +975,7 @@ body.sidebar-collapsed
 
 .content-header h2{
 
-    font-size:22px;
+    font-size:23px;
 
     color:#26332f;
 
@@ -982,7 +989,7 @@ body.sidebar-collapsed
     color:white;
 
     padding:
-    8px 15px;
+    10px 18px;
 
     border-radius:20px;
 
@@ -1028,7 +1035,7 @@ thead{
 
 th{
 
-    padding:15px;
+    padding:16px;
 
     text-align:left;
 
@@ -1039,13 +1046,13 @@ th{
 
 td{
 
-    padding:15px;
+    padding:17px 16px;
 
     border-bottom:
     1px solid
     #e6eeeb;
 
-    font-size:14px;
+    font-size:13px;
 
 }
 
@@ -1063,6 +1070,10 @@ tbody tr:hover{
 
 }
 
+
+/* =====================================================
+   CUSTOMER BADGE
+===================================================== */
 
 .customer-badge{
 
@@ -1086,6 +1097,10 @@ tbody tr:hover{
 }
 
 
+/* =====================================================
+   REF BADGE
+===================================================== */
+
 .ref-badge{
 
     background:#f1f3f5;
@@ -1102,6 +1117,10 @@ tbody tr:hover{
 }
 
 
+/* =====================================================
+   VIEW BUTTON
+===================================================== */
+
 .view-btn{
 
     border:none;
@@ -1116,6 +1135,8 @@ tbody tr:hover{
     border-radius:9px;
 
     cursor:pointer;
+
+    font-family:inherit;
 
     font-weight:bold;
 
@@ -1134,8 +1155,7 @@ tbody tr:hover{
 
     background:#007657;
 
-    transform:
-    translateY(-1px);
+    transform:translateY(-1px);
 
 }
 
@@ -1273,7 +1293,7 @@ tbody tr:hover{
 
     gap:8px;
 
-    padding:20px 16px;
+    padding:22px 16px;
 
     border-top:
     1px solid
@@ -1293,8 +1313,7 @@ tbody tr:hover{
 
     height:42px;
 
-    padding:
-    0 12px;
+    padding:0 12px;
 
     border:
     1px solid
@@ -1325,13 +1344,19 @@ tbody tr:hover{
 }
 
 
+.page-number{
+
+    padding:0 14px;
+
+}
+
+
 .page-btn:hover:not(:disabled),
 .page-number:hover{
 
     background:#e8f5f1;
 
-    transform:
-    translateY(-1px);
+    transform:translateY(-1px);
 
 }
 
@@ -1343,10 +1368,6 @@ tbody tr:hover{
     border-color:#008f6b;
 
     color:#ffffff;
-
-    box-shadow:
-    0 5px 15px
-    rgba(0,143,107,.22);
 
 }
 
@@ -1395,6 +1416,10 @@ tbody tr:hover{
 
 }
 
+
+/* =====================================================
+   MODAL BOX
+===================================================== */
 
 .modal-box{
 
@@ -1445,6 +1470,10 @@ tbody tr:hover{
 }
 
 
+/* =====================================================
+   MODAL HEADER
+===================================================== */
+
 .modal-header{
 
     background:
@@ -1456,8 +1485,7 @@ tbody tr:hover{
 
     color:white;
 
-    padding:
-    20px 24px;
+    padding:20px 24px;
 
     display:flex;
 
@@ -1497,6 +1525,20 @@ tbody tr:hover{
 }
 
 
+.close-btn:hover{
+
+    background:
+    rgba(255,255,255,.3);
+
+    transform:rotate(90deg);
+
+}
+
+
+/* =====================================================
+   DETAILS
+===================================================== */
+
 .details{
 
     padding:24px;
@@ -1526,6 +1568,8 @@ tbody tr:hover{
 
     padding:17px;
 
+    background:#ffffff;
+
     border:
     1px solid
     rgba(0,0,0,.04);
@@ -1535,8 +1579,6 @@ tbody tr:hover{
     rgba(0,60,45,.05);
 
     min-height:85px;
-
-    background:#eafbf6;
 
 }
 
@@ -1580,6 +1622,10 @@ tbody tr:hover{
 
 }
 
+
+/* =====================================================
+   READONLY
+===================================================== */
 
 .readonly-section{
 
@@ -1633,7 +1679,8 @@ tbody tr:hover{
 
     border-radius:12px;
 
-    background:#f1f6f4;
+    background:
+    #f1f6f4;
 
     color:#007b62;
 
@@ -1663,7 +1710,8 @@ tbody tr:hover{
 
     border-radius:12px;
 
-    background:#fff8ed;
+    background:
+    #fff8ed;
 
     color:#7a521d;
 
@@ -1704,9 +1752,196 @@ tbody tr:hover{
 
     color:#52615c;
 
+    font-family:inherit;
+
     font-weight:bold;
 
     cursor:pointer;
+
+}
+
+
+/* =====================================================
+   CUSTOM LOGOUT MODAL
+===================================================== */
+
+.logout-modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,25,18,.65);
+
+    backdrop-filter:
+    blur(6px);
+
+    z-index:99999;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+}
+
+
+.logout-modal.show{
+
+    display:flex;
+
+}
+
+
+.logout-box{
+
+    width:100%;
+
+    max-width:400px;
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:32px;
+
+    text-align:center;
+
+    box-shadow:
+    0 25px 70px
+    rgba(0,0,0,.3);
+
+    animation:
+    logoutIn .2s ease;
+
+}
+
+
+@keyframes logoutIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+.logout-icon{
+
+    width:75px;
+
+    height:75px;
+
+    margin:
+    0 auto 18px;
+
+    border-radius:50%;
+
+    background:#fff0ef;
+
+    color:#e53935;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:32px;
+
+}
+
+
+.logout-box h3{
+
+    font-size:22px;
+
+    color:#26332f;
+
+    margin-bottom:8px;
+
+}
+
+
+.logout-box p{
+
+    color:#697570;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    margin-bottom:25px;
+
+}
+
+
+.logout-actions{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+.logout-cancel,
+.logout-confirm{
+
+    flex:1;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:11px;
+
+    font-family:inherit;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+
+.logout-cancel{
+
+    background:#e9efed;
+
+    color:#52615c;
+
+}
+
+
+.logout-confirm{
+
+    background:#e53935;
+
+    color:white;
+
+}
+
+
+.logout-confirm:hover{
+
+    background:#c62828;
 
 }
 
@@ -1734,7 +1969,7 @@ tbody tr:hover{
 
     display:none;
 
-    z-index:10000;
+    z-index:100000;
 
 }
 
@@ -1750,31 +1985,11 @@ tbody tr:hover{
    MOBILE
 ===================================================== */
 
-@media(max-width:1100px){
-
-    .filter-main-row{
-
-        flex-wrap:wrap;
-
-    }
-
-
-    .search-box{
-
-        flex:
-        1 1 100%;
-
-    }
-
-}
-
-
 @media(max-width:900px){
 
     body{
 
-        padding:
-        0 10px 12px;
+        padding:12px;
 
     }
 
@@ -1841,47 +2056,16 @@ tbody tr:hover{
 
     .header{
 
-        border-radius:
-        0 0 14px 14px;
+        padding:9px 12px;
 
     }
 
 
     .logged-user{
 
-        margin-left:auto;
+        font-size:10px;
 
-    }
-
-}
-
-
-@media(max-width:600px){
-
-    .header{
-
-        min-height:62px;
-
-        padding:
-        8px 10px;
-
-    }
-
-
-    .header-left{
-
-        gap:9px;
-
-    }
-
-
-    .top-menu-button{
-
-        width:40px;
-
-        height:40px;
-
-        font-size:18px;
+        padding:7px 9px;
 
     }
 
@@ -1895,81 +2079,54 @@ tbody tr:hover{
 
     .header-title p{
 
-        font-size:9px;
+        font-size:10px;
+
+    }
+
+
+    .top-menu-button{
+
+        width:38px;
+
+        height:38px;
+
+        font-size:18px;
+
+    }
+
+
+    .filter-row{
+
+        justify-content:flex-start;
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .header{
+
+        border-radius:12px;
+
+    }
+
+
+    .header-left{
+
+        gap:8px;
 
     }
 
 
     .logged-user{
 
-        gap:5px;
+        max-width:110px;
 
-        font-size:11px;
+        overflow:hidden;
 
-    }
-
-
-    .logged-user-icon{
-
-        width:34px;
-
-        height:34px;
-
-        font-size:14px;
-
-    }
-
-
-    .filter-main-row{
-
-        flex-direction:column;
-
-        align-items:stretch;
-
-    }
-
-
-    .search-box{
-
-        width:100%;
-
-    }
-
-
-    .date-filter{
-
-        width:100%;
-
-    }
-
-
-    .date-filter input{
-
-        flex:1;
-
-        width:auto;
-
-    }
-
-
-    .last-days-box{
-
-        width:100%;
-
-    }
-
-
-    .last-days-input{
-
-        flex:1;
-
-    }
-
-
-    .filter-select,
-    .clear-btn{
-
-        width:100%;
+        text-overflow:ellipsis;
 
     }
 
@@ -1977,24 +2134,14 @@ tbody tr:hover{
     .content-header{
 
         padding:
-        18px;
+        20px;
 
     }
 
 
     .content-header h2{
 
-        font-size:19px;
-
-    }
-
-
-    .pending-count{
-
-        font-size:12px;
-
-        padding:
-        7px 10px;
+        font-size:20px;
 
     }
 
@@ -2013,22 +2160,43 @@ tbody tr:hover{
     }
 
 
-    .pagination{
+    .filter-row{
 
-        padding:
-        15px 8px;
+        flex-direction:column;
+
+        align-items:stretch;
 
     }
 
 
-    .page-btn,
-    .page-number{
+    .last-days-box,
+    .date-box{
 
-        min-width:38px;
+        width:100%;
 
-        height:38px;
+    }
 
-        font-size:13px;
+
+    .last-days-input{
+
+        flex:1;
+
+    }
+
+
+    .date-box input{
+
+        flex:1;
+
+        width:auto;
+
+    }
+
+
+    .filter-select,
+    .clear-btn{
+
+        width:100%;
 
     }
 
@@ -2036,6 +2204,13 @@ tbody tr:hover{
     .page-btn span{
 
         display:none;
+
+    }
+
+
+    .logout-actions{
+
+        flex-direction:column;
 
     }
 
@@ -2057,21 +2232,19 @@ tbody tr:hover{
 class="sidebar"
 id="sidebar"
 >
-<div class="sidebar-header">
-<div class="sidebar-logo">
-<i class="fa-solid fa-clock-rotate-left"></i>
-
-<span>
-
- LINK 4 
-
- </span>
 
 
- </div>
+    <div class="sidebar-header">
 
+        <div class="sidebar-logo">
 
- </div>
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            <span>LINK 4 </span>
+
+        </div>
+
+    </div>
 
 
     <nav class="sidebar-menu">
@@ -2084,11 +2257,7 @@ id="sidebar"
 
             <i class="fa-solid fa-house"></i>
 
-            <span>
-
-                Dashboard
-
-            </span>
+            <span>Dashboard</span>
 
         </a>
 
@@ -2100,11 +2269,7 @@ id="sidebar"
 
             <i class="fa-solid fa-plus-circle"></i>
 
-            <span>
-
-                New Entry
-
-            </span>
+            <span>New Entry</span>
 
         </a>
 
@@ -2116,11 +2281,7 @@ id="sidebar"
 
             <i class="fa-solid fa-headset"></i>
 
-            <span>
-
-                Pending Support
-
-            </span>
+            <span>Pending Support</span>
 
         </a>
 
@@ -2132,14 +2293,12 @@ id="sidebar"
 
             <i class="fa-solid fa-phone"></i>
 
-            <span>
-
-                Pending Call
-
-            </span>
+            <span>Pending Call</span>
 
         </a>
 
+
+        <!-- HISTORY ICON FIXED -->
 
         <a
         href="history.html"
@@ -2148,11 +2307,7 @@ id="sidebar"
 
             <i class="fa-solid fa-clock-rotate-left"></i>
 
-            <span>
-
-                Support Log 
-
-            </span>
+            <span>Support Log History</span>
 
         </a>
 
@@ -2164,11 +2319,7 @@ id="sidebar"
 
             <i class="fa-solid fa-user-gear"></i>
 
-            <span>
-
-                User Account
-
-            </span>
+            <span>User Account</span>
 
         </a>
 
@@ -2176,32 +2327,20 @@ id="sidebar"
     </nav>
 
 
-    <!-- LOGOUT -->
+    <!-- =================================================
+         LOGOUT
+    ================================================== -->
 
-    <div class="logout-area">
+    <button
+    class="logout-btn"
+    onclick="openLogoutModal()"
+    >
 
+        <i class="fa-solid fa-right-from-bracket"></i>
 
-        <button
-        class="logout-btn"
-        onclick="logoutUser()"
-        title="Logout"
-        >
+        <span>Logout</span>
 
-
-            <i class="fa-solid fa-right-from-bracket"></i>
-
-
-            <span>
-
-                Logout
-
-            </span>
-
-
-        </button>
-
-
-    </div>
+    </button>
 
 
 </aside>
@@ -2229,35 +2368,26 @@ id="sidebar"
 
         <button
         class="top-menu-button"
-        id="topMenuButton"
         onclick="toggleSidebar()"
         title="Open / Close Sidebar"
-        aria-label="Open / Close Sidebar"
         >
 
-
-            <i class="fa-solid fa-bars"></i>
-
+            <i
+            class="fa-solid fa-bars"
+            ></i>
 
         </button>
 
 
         <div class="header-title">
 
-
             <h1>
-
                 LINK4 COMMUNICATION
-
             </h1>
 
-
             <p>
-
                 Support Management System
-
             </p>
-
 
         </div>
 
@@ -2267,24 +2397,20 @@ id="sidebar"
 
     <!-- USERNAME RIGHT CORNER -->
 
-    <div class="logged-user">
+    <div
+    class="logged-user"
+    title="Logged in user"
+    >
 
+        <i
+        class="fa-solid fa-user"
+        ></i>
 
-        <div class="logged-user-icon">
-
-
-            <i class="fa-solid fa-user"></i>
-
-
-        </div>
-
-
-        <span id="loggedUser">
-
-            Loading...
-
+        <span
+        id="loggedUser"
+        >
+        User
         </span>
-
 
     </div>
 
@@ -2299,41 +2425,55 @@ id="sidebar"
 <div class="filter-area">
 
 
-    <div class="filter-main-row">
+    <div class="search-box">
 
 
-        <!-- SEARCH -->
+        <i
+        class="fa-solid fa-magnifying-glass"
+        ></i>
 
-        <div class="search-box">
+
+        <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Customer ID, Problem, Reference, Support..."
+        oninput="applyFilters()"
+        >
 
 
-            <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
 
+
+    <div class="filter-row">
+
+
+        <div class="last-days-box">
+
+            <i
+            class="fa-regular fa-calendar"
+            ></i>
+
+            <span class="filter-label">
+                Older Than
+            </span>
 
             <input
-            type="text"
-            id="searchInput"
-            placeholder="Search Customer ID, Problem, Reference, Support..."
+            type="number"
+            id="lastDays"
+            class="last-days-input"
+            min="1"
+            placeholder="All"
             oninput="applyFilters()"
             >
-
 
         </div>
 
 
-        <!-- FROM -->
-
-        <div class="date-filter">
-
+        <div class="date-box">
 
             <label>
-
-                <i class="fa-regular fa-calendar"></i>
-
                 From
-
             </label>
-
 
             <input
             type="date"
@@ -2341,99 +2481,56 @@ id="sidebar"
             onchange="applyFilters()"
             >
 
+        </div>
+
+
+        <div class="date-box">
+
+            <label>
+                To
+            </label>
+
+            <input
+            type="date"
+            id="toDate"
+            onchange="applyFilters()"
+            >
 
         </div>
 
 
-        <!-- TO -->
-
-<div class="date-filter">
-
-
-<label>
-
-To
-
-</label>
-
-
-<input
-type="date"
-id="toDate"
-onchange="applyFilters()"
->
-
-
-</div>
-
-
-        <!-- LAST DAYS -->
-
-<div class="last-days-box">
-
-
-<span class="last-days-label">
-
-Last Days
-
-</span>
-
-
-<input
-type="number"
-id="lastDays"
-class="last-days-input"
-min="1"
-placeholder="All"
-oninput="applyFilters()"
->
-
-
-</div>
-
-
-        <!-- STATUS -->
-
-<select
-id="statusFilter"
-class="filter-select"
-onchange="applyFilters()"
->
-
-
-<option value="all">
-
-All
-
-</option>
-
-
-<option value="completed">
-
-Completed
-
-</option>
-
-
-</select>
-
-
-        <!-- CLEAR -->
-
-<button
-class="clear-btn"
-onclick="clearFilters()"
+        <select
+        id="statusFilter"
+        class="filter-select"
+        onchange="applyFilters()"
         >
 
+            <option value="all">
+                All
+            </option>
 
-<i class="fa-solid fa-filter-circle-xmark"></i>
+            <option value="completed">
+                Completed
+            </option>
 
-Clear
-
-</button>
+        </select>
 
 
-</div>
+        <button
+        class="clear-btn"
+        onclick="clearFilters()"
+        >
+
+            <i
+            class="fa-solid fa-filter-circle-xmark"
+            ></i>
+
+            Clear
+
+        </button>
+
+
+    </div>
 
 
 </div>
@@ -2442,54 +2539,55 @@ Clear
 <!-- =====================================================
      CONTENT
 ===================================================== -->
+
 <div class="content-card">
 
 
-<div class="content-header">
+    <div class="content-header">
 
 
-<h2>
+        <h2>
+
+            <i
+            class="fa-solid fa-list-check"
+            ></i>
+
+            History Records
+
+        </h2>
 
 
-<i class="fa-solid fa-list-check"></i>
+        <div
+        class="pending-count"
+        id="pendingCount"
+        >
 
-History Records
+            0 Records
 
-</h2>
+        </div>
 
-<div
-class="pending-count"
-id="pendingCount"
- >
 
- 0 Records
+    </div>
+
+
+    <div
+    id="content"
+    class="loading"
+    >
+
+        <div
+        class="spinner"
+        ></div>
+
+        Loading History...
+
+    </div>
+
 
 </div>
 
 
 </div>
-
-
-<div
-id="content"
-class="loading"
->
-
-
-<div class="spinner"></div>
-
-
-Loading History...
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
 
 </div>
 
@@ -2513,12 +2611,11 @@ onclick="outsideModal(event)"
 
             <h3>
 
-
-                <i class="fa-solid fa-circle-info"></i>
-
+                <i
+                class="fa-solid fa-circle-info"
+                ></i>
 
                 Support Details
-
 
             </h3>
 
@@ -2528,9 +2625,7 @@ onclick="outsideModal(event)"
             onclick="closeModal()"
             >
 
-
                 ×
-
 
             </button>
 
@@ -2546,138 +2641,120 @@ onclick="outsideModal(event)"
 
                 <div class="detail-item">
 
-
                     <div class="detail-label">
 
-
-                        <i class="fa-solid fa-user"></i>
+                        <i
+                        class="fa-solid fa-user"
+                        ></i>
 
                         Customer ID
 
-
                     </div>
-
 
                     <div
                     class="detail-value"
                     id="mCustomer"
                     ></div>
 
-
                 </div>
 
 
                 <div class="detail-item">
 
-
                     <div class="detail-label">
 
-
-                        <i class="fa-regular fa-calendar"></i>
+                        <i
+                        class="fa-regular fa-calendar"
+                        ></i>
 
                         Date
 
-
                     </div>
-
 
                     <div
                     class="detail-value"
                     id="mDate"
                     ></div>
 
-
                 </div>
 
 
                 <div class="detail-item full">
 
-
                     <div class="detail-label">
 
-
-                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <i
+                        class="fa-solid fa-triangle-exclamation"
+                        ></i>
 
                         Problem
 
-
                     </div>
-
 
                     <div
                     class="detail-value"
                     id="mProblem"
                     ></div>
 
-
                 </div>
 
 
                 <div class="detail-item">
 
-
                     <div class="detail-label">
 
-
-                        <i class="fa-solid fa-link"></i>
+                        <i
+                        class="fa-solid fa-link"
+                        ></i>
 
                         Reference
 
-
                     </div>
-
 
                     <div
                     class="detail-value"
                     id="mReference"
                     ></div>
 
-
                 </div>
 
 
                 <div class="detail-item">
 
-
                     <div class="detail-label">
 
-
-                        <i class="fa-solid fa-headset"></i>
+                        <i
+                        class="fa-solid fa-headset"
+                        ></i>
 
                         Support
 
-
                     </div>
-
 
                     <div
                     class="detail-value"
                     id="mSupport"
                     ></div>
 
-
                 </div>
 
 
                 <div class="detail-item full">
 
-
                     <div class="detail-label">
 
-
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        <i
+                        class="fa-solid fa-screwdriver-wrench"
+                        ></i>
 
                         Support Work
 
-
                     </div>
-
 
                     <div
                     class="detail-value"
                     id="mSupportWork"
                     ></div>
-
 
                 </div>
 
@@ -2690,14 +2767,13 @@ onclick="outsideModal(event)"
 
                 <div class="readonly-box">
 
-
                     <label class="readonly-label">
 
-
-                        <i class="fa-solid fa-phone"></i>
+                        <i
+                        class="fa-solid fa-phone"
+                        ></i>
 
                         Call Person
-
 
                     </label>
 
@@ -2707,20 +2783,18 @@ onclick="outsideModal(event)"
                     id="mCallPerson"
                     ></div>
 
-
                 </div>
 
 
                 <div class="readonly-box">
 
-
                     <label class="readonly-label">
 
-
-                        <i class="fa-solid fa-phone-volume"></i>
+                        <i
+                        class="fa-solid fa-phone-volume"
+                        ></i>
 
                         Call Work
-
 
                     </label>
 
@@ -2730,31 +2804,97 @@ onclick="outsideModal(event)"
                     id="mCallWork"
                     ></div>
 
-
                 </div>
 
 
                 <div class="modal-actions">
-
 
                     <button
                     class="cancel-btn"
                     onclick="closeModal()"
                     >
 
-
-                        <i class="fa-solid fa-xmark"></i>
+                        <i
+                        class="fa-solid fa-xmark"
+                        ></i>
 
                         Close
 
-
                     </button>
-
 
                 </div>
 
 
             </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     CUSTOM LOGOUT CONFIRMATION
+===================================================== -->
+
+<div
+class="logout-modal"
+id="logoutModal"
+onclick="outsideLogoutModal(event)"
+>
+
+
+    <div class="logout-box">
+
+
+        <div class="logout-icon">
+
+            <i
+            class="fa-solid fa-right-from-bracket"
+            ></i>
+
+        </div>
+
+
+        <h3>
+            Logout?
+        </h3>
+
+
+        <p>
+            Are you sure you want to logout from LINK4 COMMUNICATION Support System?
+        </p>
+
+
+        <div class="logout-actions">
+
+
+            <button
+            class="logout-cancel"
+            onclick="closeLogoutModal()"
+            >
+
+                Cancel
+
+            </button>
+
+
+            <button
+            class="logout-confirm"
+            onclick="confirmLogout()"
+            >
+
+                <i
+                class="fa-solid fa-right-from-bracket"
+                ></i>
+
+                Logout
+
+            </button>
 
 
         </div>
@@ -2777,7 +2917,6 @@ id="toast"
 
 
 <script>
-
 
 /* =====================================================
    API URL
@@ -2810,6 +2949,8 @@ document.addEventListener(
 "DOMContentLoaded",
 function(){
 
+    checkLogin();
+
     loadUser();
 
     loadData();
@@ -2821,14 +2962,31 @@ function(){
 
 
 /* =====================================================
-   LOAD LOGIN USERNAME
+   LOGIN CHECK
+===================================================== */
+
+function checkLogin(){
+
+    if(
+        localStorage.getItem("loggedIn")
+        !==
+        "true"
+    ){
+
+        window.location.replace(
+            "../index.html"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   LOAD LOGGED USERNAME
 ===================================================== */
 
 function loadUser(){
-
-    const loggedUser =
-        document.getElementById("loggedUser");
-
 
     const username =
         localStorage.getItem("username");
@@ -2838,99 +2996,32 @@ function loadUser(){
         localStorage.getItem("name");
 
 
-    /*
-       এখানে Username দেখানো হবে।
-
-       Login করার সময়:
-       localStorage.setItem("username", ...)
-       save করা হয়েছে।
-
-       তাই যে Username দিয়ে Login করবে,
-       Header-এর একদম ডান পাশে সেই Username আসবে।
-    */
-
-
-    if(username){
-
-        loggedUser.textContent =
-            username;
-
-    }
-
-    else if(name){
-
-        loggedUser.textContent =
-            name;
-
-    }
-
-    else{
-
-        loggedUser.textContent =
-            "User";
-
-    }
-
-}
-
-
-/* =====================================================
-   LOGOUT
-===================================================== */
-
-function logoutUser(){
-
-    const confirmLogout =
-        confirm(
-            "Are you sure you want to logout?"
+    const loggedUser =
+        document.getElementById(
+            "loggedUser"
         );
 
 
-    if(!confirmLogout){
-
-        return;
-
-    }
-
-
     /*
-       LOGIN SESSION CLEAR
+       এখানে LOGIN করা USERNAME দেখাবে।
+       যেমন:
+       fahim
+       shemanto
+       admin
     */
 
-    localStorage.removeItem(
-        "loggedIn"
-    );
-
-    localStorage.removeItem(
-        "username"
-    );
-
-    localStorage.removeItem(
-        "name"
-    );
-
-    localStorage.removeItem(
-        "role"
-    );
-
-
-    /*
-       LOGIN PAGE
-
-       history.html থেকে এক ধাপ উপরে
-       গিয়ে index.html হলো Login Page।
-    */
-
-    window.location.replace(
-        "../index.html"
-    );
+    loggedUser.textContent =
+        username
+        ||
+        name
+        ||
+        "User";
 
 }
 
 
 /* =====================================================
    SIDEBAR TOGGLE
-   HEADER ☰ BUTTON
 ===================================================== */
 
 function toggleSidebar(){
@@ -2940,10 +3031,6 @@ function toggleSidebar(){
             "sidebar"
         );
 
-
-    /*
-       MOBILE
-    */
 
     if(window.innerWidth <= 900){
 
@@ -2955,10 +3042,6 @@ function toggleSidebar(){
 
     }
 
-
-    /*
-       DESKTOP
-    */
 
     sidebar.classList.toggle(
         "collapsed"
@@ -2984,8 +3067,10 @@ function toggleSidebar(){
     localStorage.setItem(
         "supportSidebarCollapsed",
         collapsed
-            ? "true"
-            : "false"
+        ?
+        "true"
+        :
+        "false"
     );
 
 }
@@ -2997,12 +3082,6 @@ function toggleSidebar(){
 
 function restoreSidebarState(){
 
-    const sidebar =
-        document.getElementById(
-            "sidebar"
-        );
-
-
     if(window.innerWidth <= 900){
 
         document.body.classList.remove(
@@ -3013,10 +3092,6 @@ function restoreSidebarState(){
             "sidebar-collapsed"
         );
 
-        sidebar.classList.remove(
-            "collapsed"
-        );
-
         return;
 
     }
@@ -3025,6 +3100,12 @@ function restoreSidebarState(){
     const collapsed =
         localStorage.getItem(
             "supportSidebarCollapsed"
+        );
+
+
+    const sidebar =
+        document.getElementById(
+            "sidebar"
         );
 
 
@@ -3064,7 +3145,7 @@ function restoreSidebarState(){
 
 
 /* =====================================================
-   LOAD HISTORY DATA
+   LOAD DATA
 ===================================================== */
 
 async function loadData(){
@@ -3085,7 +3166,6 @@ async function loadData(){
 
 
     try{
-
 
         const response =
             await fetch(
@@ -3115,7 +3195,8 @@ async function loadData(){
 
             throw new Error(
 
-                result.message ||
+                result.message
+                ||
                 "Failed to load History."
 
             );
@@ -3139,7 +3220,6 @@ async function loadData(){
     }
 
     catch(error){
-
 
         content.className =
             "empty";
@@ -3216,94 +3296,117 @@ function applyFilters(){
         allData.filter(
             function(item){
 
-
                 const searchable =
 
-                (
+                    (
 
-                    item.customerId ||
+                        item.customerId
+                        ||
+                        item.customerNumber
+                        ||
+                        item.ip
+                        ||
+                        ""
 
-                    item.customerNumber ||
+                    )
 
-                    item.ip ||
+                    +
 
-                    ""
+                    " "
 
-                ) +
+                    +
 
-                " " +
+                    (
 
-                (
+                        item.problem
+                        ||
+                        ""
 
-                    item.problem ||
+                    )
 
-                    ""
+                    +
 
-                ) +
+                    " "
 
-                " " +
+                    +
 
-                (
+                    (
 
-                    item.reference ||
+                        item.reference
+                        ||
+                        item.ref
+                        ||
+                        ""
 
-                    item.ref ||
+                    )
 
-                    ""
+                    +
 
-                ) +
+                    " "
 
-                " " +
+                    +
 
-                (
+                    (
 
-                    item.support ||
+                        item.support
+                        ||
+                        ""
 
-                    ""
+                    )
 
-                ) +
+                    +
 
-                " " +
+                    " "
 
-                (
+                    +
 
-                    item.supportWork ||
+                    (
 
-                    ""
+                        item.supportWork
+                        ||
+                        ""
 
-                ) +
+                    )
 
-                " " +
+                    +
 
-                (
+                    " "
 
-                    item.call ||
+                    +
 
-                    item.callPerson ||
+                    (
 
-                    ""
+                        item.call
+                        ||
+                        item.callPerson
+                        ||
+                        ""
 
-                ) +
+                    )
 
-                " " +
+                    +
 
-                (
+                    " "
 
-                    item.callWork ||
+                    +
 
-                    ""
+                    (
 
-                );
+                        item.callWork
+                        ||
+                        ""
+
+                    );
 
 
                 if(
 
-                    search &&
+                    search
+
+                    &&
 
                     !searchable
-
                     .toLowerCase()
-
                     .includes(search)
 
                 ){
@@ -3319,21 +3422,21 @@ function applyFilters(){
                     );
 
 
-                /* OLDER THAN */
-
                 if(
 
-                    lastDays !== null &&
+                    lastDays !== null
 
-                    !isNaN(lastDays) &&
+                    &&
+
+                    !isNaN(lastDays)
+
+                    &&
 
                     lastDays >= 1
 
                 ){
 
-                    if(
-                        !itemDate
-                    ){
+                    if(!itemDate){
 
                         return false;
 
@@ -3360,8 +3463,8 @@ function applyFilters(){
 
                     cutoff.setDate(
 
-                        cutoff.getDate() -
-
+                        cutoff.getDate()
+                        -
                         lastDays
 
                     );
@@ -3376,9 +3479,7 @@ function applyFilters(){
 
 
                     if(
-
                         itemDate >= cutoff
-
                     ){
 
                         return false;
@@ -3387,8 +3488,6 @@ function applyFilters(){
 
                 }
 
-
-                /* FROM */
 
                 if(fromDate){
 
@@ -3400,11 +3499,9 @@ function applyFilters(){
 
 
                     if(
-
-                        !itemDate ||
-
+                        !itemDate
+                        ||
                         itemDate < from
-
                     ){
 
                         return false;
@@ -3413,8 +3510,6 @@ function applyFilters(){
 
                 }
 
-
-                /* TO */
 
                 if(toDate){
 
@@ -3426,11 +3521,9 @@ function applyFilters(){
 
 
                     if(
-
-                        !itemDate ||
-
+                        !itemDate
+                        ||
                         itemDate > to
-
                     ){
 
                         return false;
@@ -3442,8 +3535,8 @@ function applyFilters(){
 
                 return true;
 
-
             }
+
         );
 
 
@@ -3472,7 +3565,6 @@ function renderData(data){
     document.getElementById(
         "pendingCount"
     ).textContent =
-
         data.length +
         " Records";
 
@@ -3503,11 +3595,8 @@ function renderData(data){
 
     const totalPages =
         Math.ceil(
-
             data.length /
-
             ITEMS_PER_PAGE
-
         );
 
 
@@ -3531,21 +3620,20 @@ function renderData(data){
 
 
     const startIndex =
-
-        (currentPage - 1) *
-
+        (
+            currentPage -
+            1
+        )
+        *
         ITEMS_PER_PAGE;
 
 
     const endIndex =
-
         startIndex +
-
         ITEMS_PER_PAGE;
 
 
     const pageData =
-
         data.slice(
             startIndex,
             endIndex
@@ -3560,7 +3648,9 @@ function renderData(data){
 
         '<table>' +
 
-        '<thead><tr>' +
+        '<thead>' +
+
+        '<tr>' +
 
         '<th>Customer ID</th>' +
 
@@ -3576,18 +3666,18 @@ function renderData(data){
 
         '<th>Action</th>' +
 
-        '</tr></thead><tbody>';
+        '</tr>' +
+
+        '</thead>' +
+
+        '<tbody>';
 
 
     pageData.forEach(
-
         function(item,index){
 
-
             const realIndex =
-
                 startIndex +
-
                 index;
 
 
@@ -3603,12 +3693,12 @@ function renderData(data){
 
                 escapeHtml(
 
-                    item.customerId ||
-
-                    item.customerNumber ||
-
-                    item.ip ||
-
+                    item.customerId
+                    ||
+                    item.customerNumber
+                    ||
+                    item.ip
+                    ||
                     ""
 
                 ) +
@@ -3622,11 +3712,9 @@ function renderData(data){
                 escapeHtml(
 
                     formatDateDMY(
-
-                        item.date ||
-
+                        item.date
+                        ||
                         ""
-
                     )
 
                 ) +
@@ -3637,8 +3725,8 @@ function renderData(data){
 
                 escapeHtml(
 
-                    item.problem ||
-
+                    item.problem
+                    ||
                     ""
 
                 ) +
@@ -3651,10 +3739,10 @@ function renderData(data){
 
                 escapeHtml(
 
-                    item.reference ||
-
-                    item.ref ||
-
+                    item.reference
+                    ||
+                    item.ref
+                    ||
                     "-"
 
                 ) +
@@ -3667,8 +3755,8 @@ function renderData(data){
 
                 escapeHtml(
 
-                    item.support ||
-
+                    item.support
+                    ||
                     ""
 
                 ) +
@@ -3679,10 +3767,10 @@ function renderData(data){
 
                 escapeHtml(
 
-                    item.call ||
-
-                    item.callPerson ||
-
+                    item.call
+                    ||
+                    item.callPerson
+                    ||
                     ""
 
                 ) +
@@ -3708,7 +3796,6 @@ function renderData(data){
                 '</tr>';
 
         }
-
     );
 
 
@@ -3718,30 +3805,31 @@ function renderData(data){
 
     if(totalPages > 1){
 
-
         html +=
-
             '<div class="pagination">';
 
 
         html +=
 
-            '<button class="page-btn" onclick="changePage(' +
+            '<button class="page-btn" ' +
 
-            (currentPage - 1) +
+            'onclick="changePage(' +
+
+            (
+                currentPage -
+                1
+            )
+
+            +
 
             ')" ' +
 
             (
 
                 currentPage === 1
-
                 ?
-
                 'disabled'
-
                 :
-
                 ''
 
             ) +
@@ -3756,45 +3844,30 @@ function renderData(data){
 
 
         let startPage =
-
             Math.max(
-
                 1,
-
                 currentPage - 2
-
             );
 
 
         let endPage =
-
             Math.min(
-
                 totalPages,
-
                 startPage + 4
-
             );
 
 
         if(
-
             endPage -
-
-            startPage <
-
+            startPage
+            <
             4
-
         ){
 
             startPage =
-
                 Math.max(
-
                     1,
-
                     endPage - 4
-
                 );
 
         }
@@ -3802,7 +3875,8 @@ function renderData(data){
 
         for(
 
-            let i = startPage;
+            let i =
+                startPage;
 
             i <= endPage;
 
@@ -3817,13 +3891,9 @@ function renderData(data){
                 (
 
                     i === currentPage
-
                     ?
-
                     'active'
-
                     :
-
                     ''
 
                 ) +
@@ -3843,22 +3913,25 @@ function renderData(data){
 
         html +=
 
-            '<button class="page-btn" onclick="changePage(' +
+            '<button class="page-btn" ' +
 
-            (currentPage + 1) +
+            'onclick="changePage(' +
+
+            (
+                currentPage +
+                1
+            )
+
+            +
 
             ')" ' +
 
             (
 
                 currentPage === totalPages
-
                 ?
-
                 'disabled'
-
                 :
-
                 ''
 
             ) +
@@ -3891,22 +3964,16 @@ function renderData(data){
 function changePage(page){
 
     const totalPages =
-
         Math.ceil(
-
             filteredData.length /
-
             ITEMS_PER_PAGE
-
         );
 
 
     if(
-
-        page < 1 ||
-
+        page < 1
+        ||
         page > totalPages
-
     ){
 
         return;
@@ -3924,7 +3991,6 @@ function changePage(page){
 
 
     const contentCard =
-
         document.querySelector(
             ".content-card"
         );
@@ -3934,11 +4000,9 @@ function changePage(page){
 
         contentCard.scrollIntoView({
 
-            behavior:
-            "smooth",
+            behavior:"smooth",
 
-            block:
-            "start"
+            block:"start"
 
         });
 
@@ -3972,12 +4036,12 @@ function openModal(index){
         "mCustomer"
     ).textContent =
 
-        data.customerId ||
-
-        data.customerNumber ||
-
-        data.ip ||
-
+        data.customerId
+        ||
+        data.customerNumber
+        ||
+        data.ip
+        ||
         "";
 
 
@@ -3987,8 +4051,8 @@ function openModal(index){
 
         formatDateDMY(
 
-            data.date ||
-
+            data.date
+            ||
             ""
 
         );
@@ -3998,8 +4062,8 @@ function openModal(index){
         "mProblem"
     ).textContent =
 
-        data.problem ||
-
+        data.problem
+        ||
         "";
 
 
@@ -4007,10 +4071,10 @@ function openModal(index){
         "mReference"
     ).textContent =
 
-        data.reference ||
-
-        data.ref ||
-
+        data.reference
+        ||
+        data.ref
+        ||
         "-";
 
 
@@ -4018,8 +4082,8 @@ function openModal(index){
         "mSupport"
     ).textContent =
 
-        data.support ||
-
+        data.support
+        ||
         "";
 
 
@@ -4027,8 +4091,8 @@ function openModal(index){
         "mSupportWork"
     ).textContent =
 
-        data.supportWork ||
-
+        data.supportWork
+        ||
         "";
 
 
@@ -4036,10 +4100,10 @@ function openModal(index){
         "mCallPerson"
     ).textContent =
 
-        data.call ||
-
-        data.callPerson ||
-
+        data.call
+        ||
+        data.callPerson
+        ||
         "Unknown";
 
 
@@ -4047,8 +4111,8 @@ function openModal(index){
         "mCallWork"
     ).textContent =
 
-        data.callWork ||
-
+        data.callWork
+        ||
         "No Call Work Available";
 
 
@@ -4087,16 +4151,93 @@ function closeModal(){
 function outsideModal(event){
 
     if(
-
-        event.target.id ===
-
+        event.target.id
+        ===
         "callModal"
-
     ){
 
         closeModal();
 
     }
+
+}
+
+
+/* =====================================================
+   LOGOUT MODAL
+===================================================== */
+
+function openLogoutModal(){
+
+    document.getElementById(
+        "logoutModal"
+    ).classList.add(
+        "show"
+    );
+
+}
+
+
+function closeLogoutModal(){
+
+    document.getElementById(
+        "logoutModal"
+    ).classList.remove(
+        "show"
+    );
+
+}
+
+
+function outsideLogoutModal(event){
+
+    if(
+        event.target.id
+        ===
+        "logoutModal"
+    ){
+
+        closeLogoutModal();
+
+    }
+
+}
+
+
+/* =====================================================
+   CONFIRM LOGOUT
+===================================================== */
+
+function confirmLogout(){
+
+    /*
+       সব Login Session Data Remove
+    */
+
+    localStorage.removeItem(
+        "loggedIn"
+    );
+
+    localStorage.removeItem(
+        "username"
+    );
+
+    localStorage.removeItem(
+        "name"
+    );
+
+    localStorage.removeItem(
+        "role"
+    );
+
+
+    /*
+       Login Page-এ পাঠানো
+    */
+
+    window.location.replace(
+        "../index.html"
+    );
 
 }
 
@@ -4115,18 +4256,14 @@ function formatDateDMY(value){
 
 
     const text =
-
         String(
             value
         ).trim();
 
 
     let match =
-
         text.match(
-
             /^(\d{1,2})-(\d{1,2})-(\d{4})(.*)$/
-
         );
 
 
@@ -4139,20 +4276,30 @@ function formatDateDMY(value){
             ).padStart(
                 2,
                 "0"
-            ) +
+            )
 
-            "-" +
+            +
+
+            "-"
+
+            +
 
             String(
                 match[2]
             ).padStart(
                 2,
                 "0"
-            ) +
+            )
 
-            "-" +
+            +
 
-            match[3] +
+            "-"
+
+            +
+
+            match[3]
+
+            +
 
             match[4]
 
@@ -4162,11 +4309,8 @@ function formatDateDMY(value){
 
 
     match =
-
         text.match(
-
             /^(\d{1,2})\/(\d{1,2})\/(\d{4})(.*)$/
-
         );
 
 
@@ -4179,20 +4323,30 @@ function formatDateDMY(value){
             ).padStart(
                 2,
                 "0"
-            ) +
+            )
 
-            "-" +
+            +
+
+            "-"
+
+            +
 
             String(
                 match[1]
             ).padStart(
                 2,
                 "0"
-            ) +
+            )
 
-            "-" +
+            +
 
-            match[3] +
+            "-"
+
+            +
+
+            match[3]
+
+            +
 
             match[4]
 
@@ -4202,11 +4356,8 @@ function formatDateDMY(value){
 
 
     match =
-
         text.match(
-
             /^(\d{4})-(\d{1,2})-(\d{1,2})(.*)$/
-
         );
 
 
@@ -4219,20 +4370,30 @@ function formatDateDMY(value){
             ).padStart(
                 2,
                 "0"
-            ) +
+            )
 
-            "-" +
+            +
+
+            "-"
+
+            +
 
             String(
                 match[2]
             ).padStart(
                 2,
                 "0"
-            ) +
+            )
 
-            "-" +
+            +
 
-            match[1] +
+            "-"
+
+            +
+
+            match[1]
+
+            +
 
             match[4]
 
@@ -4260,25 +4421,20 @@ function parseDate(value){
 
 
     const text =
-
         String(
             value
         ).trim();
 
 
     let match =
-
         text.match(
-
             /^(\d{1,2})-(\d{1,2})-(\d{4})/
-
         );
 
 
     if(match){
 
         const date =
-
             new Date(
 
                 Number(
@@ -4297,35 +4453,25 @@ function parseDate(value){
 
 
         return isNaN(
-
             date.getTime()
-
         )
-
         ?
-
         null
-
         :
-
         date;
 
     }
 
 
     match =
-
         text.match(
-
             /^(\d{1,2})\/(\d{1,2})\/(\d{4})/
-
         );
 
 
     if(match){
 
         const date =
-
             new Date(
 
                 Number(
@@ -4344,35 +4490,25 @@ function parseDate(value){
 
 
         return isNaN(
-
             date.getTime()
-
         )
-
         ?
-
         null
-
         :
-
         date;
 
     }
 
 
     match =
-
         text.match(
-
             /^(\d{4})-(\d{1,2})-(\d{1,2})/
-
         );
 
 
     if(match){
 
         const date =
-
             new Date(
 
                 Number(
@@ -4391,41 +4527,28 @@ function parseDate(value){
 
 
         return isNaN(
-
             date.getTime()
-
         )
-
         ?
-
         null
-
         :
-
         date;
 
     }
 
 
     const date =
-
         new Date(
             text
         );
 
 
     return isNaN(
-
         date.getTime()
-
     )
-
     ?
-
     null
-
     :
-
     date;
 
 }
@@ -4463,9 +4586,6 @@ function clearFilters(){
         "all";
 
 
-    currentPage = 1;
-
-
     applyFilters();
 
 }
@@ -4478,7 +4598,6 @@ function clearFilters(){
 function showToast(message){
 
     const toast =
-
         document.getElementById(
             "toast"
         );
@@ -4518,8 +4637,8 @@ function escapeHtml(value){
 
     return String(
 
-        value ||
-
+        value
+        ||
         ""
 
     )
@@ -4562,41 +4681,15 @@ document.addEventListener(
 
 function(event){
 
-
     if(
-
-        event.key ===
-
+        event.key
+        ===
         "Escape"
-
     ){
 
         closeModal();
 
-    }
-
-
-    /*
-       MOBILE SIDEBAR CLOSE
-    */
-
-    if(
-
-        event.key ===
-        "Escape" &&
-
-        window.innerWidth <= 900
-
-    ){
-
-        document
-        .getElementById(
-            "sidebar"
-        )
-        .classList
-        .remove(
-            "mobile-open"
-        );
+        closeLogoutModal();
 
     }
 
@@ -4606,7 +4699,7 @@ function(event){
 
 
 /* =====================================================
-   MOBILE SIDEBAR CLOSE
+   MOBILE SIDEBAR
 ===================================================== */
 
 document.addEventListener(
@@ -4616,7 +4709,9 @@ document.addEventListener(
 function(event){
 
     if(
-        window.innerWidth > 900
+        window.innerWidth
+        >
+        900
     ){
 
         return;
@@ -4625,16 +4720,8 @@ function(event){
 
 
     const sidebar =
-
         document.getElementById(
             "sidebar"
-        );
-
-
-    const menuButton =
-
-        document.getElementById(
-            "topMenuButton"
         );
 
 
@@ -4652,8 +4739,8 @@ function(event){
 
         &&
 
-        !menuButton.contains(
-            event.target
+        !event.target.closest(
+            ".top-menu-button"
         )
 
     ){
@@ -4686,7 +4773,6 @@ function(){
 );
 
 </script>
-
 
 </body>
 

@@ -1,1 +1,1573 @@
+/* =========================================================
+   LINK4 COMMUNICATION
+   GLOBAL PREMIUM THEME
+   File: assets/theme.css
+   ========================================================= */
 
+/* =========================================================
+   01. ROOT VARIABLES
+   ========================================================= */
+
+:root {
+
+    /* Main Colors */
+    --bg-main: #061612;
+    --bg-dark: #04110e;
+    --bg-header: #03120f;
+
+    /* Green */
+    --green: #00c98b;
+    --green-light: #16d9a0;
+    --green-dark: #008f68;
+    --green-soft: rgba(0, 201, 139, 0.12);
+    --green-border: rgba(0, 201, 139, 0.25);
+
+    /* Text */
+    --text-primary: #f4f8f6;
+    --text-secondary: #9baea8;
+    --text-muted: #70817c;
+
+    /* Cards */
+    --card-bg: rgba(20, 42, 37, 0.78);
+    --card-bg-hover: rgba(25, 54, 47, 0.88);
+    --card-border: rgba(255, 255, 255, 0.12);
+
+    /* Borders */
+    --border-light: rgba(255, 255, 255, 0.08);
+    --border-green: rgba(0, 201, 139, 0.30);
+
+    /* Shadows */
+    --shadow-sm: 0 8px 25px rgba(0, 0, 0, 0.18);
+    --shadow-md: 0 15px 40px rgba(0, 0, 0, 0.28);
+    --shadow-green: 0 10px 35px rgba(0, 201, 139, 0.12);
+
+    /* Radius */
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+
+    /* Transition */
+    --transition: all 0.25s ease;
+
+    /* Header */
+    --header-height: 68px;
+}
+
+
+/* =========================================================
+   02. RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(0, 110, 75, 0.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(105, 70, 30, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #05251d 0%,
+            #061612 45%,
+            #11130f 100%
+        );
+
+    color: var(--text-primary);
+
+    font-family:
+        "Poppins",
+        "Inter",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   03. BACKGROUND GRID
+   ========================================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 25px 25px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.8),
+            transparent 90%
+        );
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   04. LINKS
+   ========================================================= */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   05. HEADER
+   ========================================================= */
+
+.header,
+.top-header,
+.navbar {
+    position: sticky;
+    top: 0;
+
+    width: 100%;
+    height: var(--header-height);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 4%;
+
+    background:
+        rgba(3, 18, 15, 0.92);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   06. BRAND
+   ========================================================= */
+
+.brand,
+.logo,
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.brand-icon,
+.logo-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #00a978,
+            #007e5c
+        );
+
+    border-radius: 14px;
+
+    color: white;
+
+    font-size: 22px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 201, 139, 0.18);
+}
+
+.brand-name,
+.logo-text {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+.brand-name span,
+.logo-text span {
+    color: var(--green);
+}
+
+
+/* =========================================================
+   07. HEADER RIGHT
+   ========================================================= */
+
+.header-right,
+.nav-right,
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.welcome-text {
+    color: #c8d4d0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.user-button,
+.profile-button {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(0, 201, 139, 0.06);
+
+    border: 1px solid rgba(0, 201, 139, 0.35);
+
+    color: var(--green);
+
+    transition: var(--transition);
+}
+
+.user-button:hover,
+.profile-button:hover {
+    background: rgba(0, 201, 139, 0.15);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   08. LOGOUT BUTTON
+   ========================================================= */
+
+.logout-btn {
+    min-height: 40px;
+
+    padding: 0 17px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background: rgba(80, 45, 35, 0.28);
+
+    color: #ff8179;
+
+    border: 1px solid rgba(255, 125, 115, 0.18);
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.logout-btn:hover {
+    background: rgba(140, 50, 40, 0.35);
+
+    border-color:
+        rgba(255, 125, 115, 0.35);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   09. MAIN CONTAINER
+   ========================================================= */
+
+.container,
+.main-container,
+.page-container {
+    width: min(1100px, 92%);
+
+    margin: 0 auto;
+
+    padding: 65px 0 80px;
+}
+
+
+/* =========================================================
+   10. PAGE HERO
+   ========================================================= */
+
+.hero,
+.page-hero {
+    position: relative;
+
+    margin-bottom: 42px;
+}
+
+.hero-label,
+.page-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--green);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+}
+
+.hero-label::before,
+.page-label::before {
+    content: "";
+
+    width: 8px;
+    height: 8px;
+
+    background: var(--green);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 12px var(--green);
+}
+
+.hero h1,
+.page-hero h1 {
+    font-size: clamp(34px, 5vw, 46px);
+
+    line-height: 1.15;
+
+    letter-spacing: -1.8px;
+
+    font-weight: 750;
+}
+
+.hero h1 span,
+.page-hero h1 span {
+    color: var(--green);
+}
+
+.hero p,
+.page-hero p {
+    margin-top: 10px;
+
+    color: var(--text-secondary);
+
+    font-size: 15px;
+
+    max-width: 650px;
+}
+
+
+/* =========================================================
+   11. SYSTEM STATUS
+   ========================================================= */
+
+.system-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 9px 17px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(0, 201, 139, 0.06);
+
+    border:
+        1px solid rgba(0, 201, 139, 0.25);
+
+    color:
+        #8ed8c2;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.system-status::before {
+    content: "";
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 10px var(--green);
+}
+
+
+/* =========================================================
+   12. DASHBOARD MODULE GRID
+   ========================================================= */
+
+.module-grid,
+.card-grid,
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   13. MODULE CARD
+   ========================================================= */
+
+.module-card,
+.dashboard-card,
+.card {
+    position: relative;
+
+    min-height: 285px;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25, 50, 44, 0.78),
+            rgba(13, 30, 26, 0.82)
+        );
+
+    border:
+        1px solid var(--card-border);
+
+    border-radius: var(--radius-lg);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.module-card::before,
+.dashboard-card::before,
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -90px;
+    right: -90px;
+
+    background:
+        rgba(0, 201, 139, 0.06);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.module-card:hover,
+.dashboard-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(0, 201, 139, 0.25);
+
+    box-shadow:
+        var(--shadow-md),
+        var(--shadow-green);
+}
+
+
+/* =========================================================
+   14. CARD ICON
+   ========================================================= */
+
+.card-icon,
+.module-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    color: white;
+
+    font-size: 24px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.card-icon.green,
+.module-icon.green {
+    background:
+        linear-gradient(
+            145deg,
+            #00b982,
+            #008c66
+        );
+}
+
+.card-icon.blue,
+.module-icon.blue {
+    background:
+        linear-gradient(
+            145deg,
+            #347df5,
+            #1e58d1
+        );
+}
+
+.card-icon.orange,
+.module-icon.orange {
+    background:
+        linear-gradient(
+            145deg,
+            #ff7414,
+            #e95000
+        );
+}
+
+.card-icon.red,
+.module-icon.red {
+    background:
+        linear-gradient(
+            145deg,
+            #ef3d42,
+            #c91d25
+        );
+}
+
+
+/* =========================================================
+   15. CARD NUMBER
+   ========================================================= */
+
+.card-number,
+.module-number {
+    position: absolute;
+
+    top: 30px;
+    right: 30px;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #82958f;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   16. CARD CONTENT
+   ========================================================= */
+
+.module-card h2,
+.dashboard-card h2,
+.card h2 {
+    font-size: 21px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+
+    color: #f3f7f5;
+}
+
+.module-card p,
+.dashboard-card p,
+.card p {
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    max-width: 500px;
+}
+
+
+/* =========================================================
+   17. CARD FOOTER
+   ========================================================= */
+
+.card-footer,
+.module-footer {
+    margin-top: auto;
+
+    padding-top: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.open-module {
+    color: #d3dfda;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   18. ARROW BUTTON
+   ========================================================= */
+
+.arrow-btn {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    font-size: 20px;
+
+    transition: var(--transition);
+}
+
+.arrow-btn:hover {
+    background: var(--green);
+
+    border-color: var(--green);
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   19. GENERAL PANEL
+   ========================================================= */
+
+.panel,
+.content-panel,
+.table-panel {
+    background:
+        rgba(12, 30, 25, 0.82);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius:
+        var(--radius-lg);
+
+    box-shadow:
+        var(--shadow-md);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   20. TOOLBAR
+   ========================================================= */
+
+.toolbar {
+    padding: 20px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.07);
+}
+
+.toolbar-title {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.toolbar-subtitle {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   21. SEARCH
+   ========================================================= */
+
+.search-box {
+    position: relative;
+
+    width: 280px;
+}
+
+.search-box input {
+    width: 100%;
+
+    height: 44px;
+
+    padding:
+        0 15px 0 42px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 11px;
+
+    color: white;
+
+    outline: none;
+
+    transition: var(--transition);
+}
+
+.search-box input:focus {
+    border-color:
+        var(--green);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(0, 201, 139, 0.08);
+}
+
+.search-box input::placeholder {
+    color: #65756f;
+}
+
+
+/* =========================================================
+   22. FORMS
+   ========================================================= */
+
+.form-container {
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #cbd8d3;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.form-control,
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    min-height: 46px;
+
+    padding: 11px 14px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 10px;
+
+    color: white;
+
+    outline: none;
+
+    transition: var(--transition);
+}
+
+.form-group textarea {
+    min-height: 110px;
+
+    resize: vertical;
+}
+
+.form-control:focus,
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color:
+        var(--green);
+
+    background:
+        rgba(0, 201, 139, 0.035);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(0, 201, 139, 0.08);
+}
+
+.form-control::placeholder,
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #667872;
+}
+
+.form-group select option {
+    background: #0c211b;
+    color: white;
+}
+
+
+/* =========================================================
+   23. BUTTONS
+   ========================================================= */
+
+.btn {
+    min-height: 44px;
+
+    padding: 0 20px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background:
+        linear-gradient(
+            135deg,
+            #00c98b,
+            #009c70
+        );
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 201, 139, 0.16);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 28px
+        rgba(0, 201, 139, 0.25);
+}
+
+.btn-secondary {
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    color: #d4dfdb;
+}
+
+.btn-secondary:hover {
+    background:
+        rgba(255, 255, 255, 0.09);
+}
+
+.btn-danger {
+    background:
+        rgba(220, 45, 45, 0.12);
+
+    border:
+        1px solid rgba(255, 80, 80, 0.18);
+
+    color:
+        #ff8585;
+}
+
+
+/* =========================================================
+   24. TABLE
+   ========================================================= */
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 750px;
+}
+
+thead {
+    background:
+        rgba(255, 255, 255, 0.025);
+}
+
+th {
+    padding: 15px 18px;
+
+    text-align: left;
+
+    color: #91a59e;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.6px;
+
+    white-space: nowrap;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.07);
+}
+
+td {
+    padding: 16px 18px;
+
+    color: #c6d3ce;
+
+    font-size: 13px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.05);
+}
+
+tbody tr {
+    transition: var(--transition);
+}
+
+tbody tr:hover {
+    background:
+        rgba(0, 201, 139, 0.035);
+}
+
+
+/* =========================================================
+   25. BADGES
+   ========================================================= */
+
+.badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.badge-green {
+    color: #57e0b5;
+
+    background:
+        rgba(0, 201, 139, 0.10);
+
+    border:
+        1px solid rgba(0, 201, 139, 0.18);
+}
+
+.badge-blue {
+    color: #7eafff;
+
+    background:
+        rgba(50, 120, 255, 0.10);
+
+    border:
+        1px solid rgba(50, 120, 255, 0.18);
+}
+
+.badge-orange {
+    color: #ffae70;
+
+    background:
+        rgba(255, 120, 20, 0.10);
+
+    border:
+        1px solid rgba(255, 120, 20, 0.18);
+}
+
+.badge-red {
+    color: #ff8585;
+
+    background:
+        rgba(240, 50, 50, 0.10);
+
+    border:
+        1px solid rgba(240, 50, 50, 0.18);
+}
+
+
+/* =========================================================
+   26. CHECKBOX
+   ========================================================= */
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+
+    accent-color:
+        var(--green);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   27. MODAL
+   ========================================================= */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.70);
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+    z-index: 9999;
+}
+
+.modal-overlay.active,
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal {
+    width: min(500px, 100%);
+
+    padding: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #102c24,
+            #081b16
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius:
+        var(--radius-lg);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0, 0, 0, 0.45);
+
+    animation:
+        modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+.modal h2 {
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+.modal p {
+    color:
+        var(--text-secondary);
+
+    font-size: 13px;
+}
+
+.modal-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   28. ALERT
+   ========================================================= */
+
+.alert {
+    padding: 13px 16px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    margin-bottom: 18px;
+}
+
+.alert-success {
+    color: #71e4bd;
+
+    background:
+        rgba(0, 201, 139, 0.08);
+
+    border:
+        1px solid rgba(0, 201, 139, 0.18);
+}
+
+.alert-error {
+    color: #ff8c8c;
+
+    background:
+        rgba(240, 50, 50, 0.08);
+
+    border:
+        1px solid rgba(240, 50, 50, 0.18);
+}
+
+
+/* =========================================================
+   29. EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+    padding: 60px 20px;
+
+    text-align: center;
+
+    color: var(--text-muted);
+}
+
+.empty-state-icon {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+
+    opacity: 0.6;
+}
+
+.empty-state h3 {
+    color: #cbd7d2;
+
+    font-size: 17px;
+
+    margin-bottom: 5px;
+}
+
+.empty-state p {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   30. LOADING
+   ========================================================= */
+
+.loading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color: var(--text-secondary);
+
+    padding: 40px;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+
+    border:
+        2px solid rgba(255, 255, 255, 0.12);
+
+    border-top-color:
+        var(--green);
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   31. SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background:
+        #061612;
+}
+
+::-webkit-scrollbar-thumb {
+    background:
+        rgba(0, 201, 139, 0.35);
+
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        rgba(0, 201, 139, 0.55);
+}
+
+
+/* =========================================================
+   32. SELECTION
+   ========================================================= */
+
+::selection {
+    background:
+        rgba(0, 201, 139, 0.30);
+
+    color: white;
+}
+
+
+/* =========================================================
+   33. RESPONSIVE TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .container,
+    .main-container,
+    .page-container {
+        width: 92%;
+
+        padding-top: 45px;
+    }
+
+    .module-grid,
+    .card-grid,
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1,
+    .page-hero h1 {
+        font-size: 38px;
+    }
+
+}
+
+
+/* =========================================================
+   34. RESPONSIVE MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    :root {
+        --header-height: 62px;
+    }
+
+    .header,
+    .top-header,
+    .navbar {
+        padding: 0 16px;
+    }
+
+    .brand-icon,
+    .logo-icon {
+        width: 42px;
+        height: 42px;
+
+        border-radius: 12px;
+
+        font-size: 19px;
+    }
+
+    .brand-name,
+    .logo-text {
+        font-size: 15px;
+    }
+
+    .welcome-text {
+        display: none;
+    }
+
+    .user-button,
+    .profile-button {
+        width: 38px;
+        height: 38px;
+    }
+
+    .logout-btn {
+        width: 40px;
+        height: 40px;
+
+        padding: 0;
+
+        font-size: 0;
+    }
+
+    .logout-btn i,
+    .logout-btn svg {
+        font-size: 15px;
+    }
+
+    .container,
+    .main-container,
+    .page-container {
+        width: 92%;
+
+        padding:
+            38px 0 55px;
+    }
+
+    .hero,
+    .page-hero {
+        margin-bottom: 30px;
+    }
+
+    .hero h1,
+    .page-hero h1 {
+        font-size: 31px;
+
+        letter-spacing: -1px;
+    }
+
+    .hero p,
+    .page-hero p {
+        font-size: 13px;
+    }
+
+    .module-card,
+    .dashboard-card,
+    .card {
+        min-height: 260px;
+
+        padding: 24px;
+
+        border-radius: 18px;
+    }
+
+    .card-number,
+    .module-number {
+        top: 24px;
+        right: 24px;
+    }
+
+    .toolbar {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .modal {
+        padding: 22px;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .modal-actions .btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   35. UTILITY CLASSES
+   ========================================================= */
+
+.text-green {
+    color: var(--green) !important;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.gap-15 {
+    gap: 15px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+
+/* =========================================================
+   END OF LINK4 GLOBAL THEME
+   ========================================================= */

@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,11 +25,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     box-sizing:border-box;
 }
 
+
 /* =====================================================
    BODY
 ===================================================== */
 
 body{
+
     width:100%;
     min-height:100vh;
 
@@ -52,7 +53,9 @@ body{
     color:#14201d;
 
     transition:.3s;
+
 }
+
 
 /* =====================================================
    SIDEBAR
@@ -88,15 +91,29 @@ body{
     transform .3s ease;
 
     overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
 }
 
-/* SIDEBAR COLLAPSED */
+
+/* =====================================================
+   SIDEBAR COLLAPSED
+===================================================== */
 
 .sidebar.collapsed{
+
     width:78px;
+
 }
 
-/* SIDEBAR HEADER */
+
+/* =====================================================
+   SIDEBAR HEADER
+   MINIMIZE BUTTON REMOVED
+===================================================== */
 
 .sidebar-header{
 
@@ -106,22 +123,19 @@ body{
 
     align-items:center;
 
-    justify-content:center;
-
-    padding:0 10px;
+    padding:
+    0 10px;
 
     margin-bottom:20px;
+
 }
 
-/* SIDEBAR LOGO */
 
 .sidebar-logo{
 
     display:flex;
 
     align-items:center;
-
-    justify-content:center;
 
     gap:12px;
 
@@ -132,7 +146,9 @@ body{
     font-size:18px;
 
     font-weight:bold;
+
 }
+
 
 .sidebar-logo i{
 
@@ -153,12 +169,17 @@ body{
     justify-content:center;
 
     font-size:20px;
+
 }
+
 
 .sidebar.collapsed
 .sidebar-logo span{
+
     display:none;
+
 }
+
 
 /* =====================================================
    SIDEBAR MENU
@@ -171,7 +192,11 @@ body{
     flex-direction:column;
 
     gap:8px;
+
+    flex:1;
+
 }
+
 
 .sidebar-link{
 
@@ -185,7 +210,8 @@ body{
 
     gap:15px;
 
-    padding:0 13px;
+    padding:
+    0 13px;
 
     border-radius:13px;
 
@@ -201,7 +227,9 @@ body{
     white-space:nowrap;
 
     transition:.2s;
+
 }
+
 
 .sidebar-link i{
 
@@ -212,7 +240,9 @@ body{
     text-align:center;
 
     font-size:18px;
+
 }
+
 
 .sidebar-link:hover{
 
@@ -223,7 +253,9 @@ body{
 
     transform:
     translateX(2px);
+
 }
+
 
 .sidebar-link.active{
 
@@ -234,12 +266,17 @@ body{
     box-shadow:
     0 7px 18px
     rgba(0,0,0,.15);
+
 }
+
 
 .sidebar.collapsed
 .sidebar-link span{
+
     display:none;
+
 }
+
 
 .sidebar.collapsed
 .sidebar-link{
@@ -247,13 +284,121 @@ body{
     justify-content:center;
 
     padding:0;
+
 }
+
 
 .sidebar.collapsed
 .sidebar-link i{
 
     margin:0;
+
 }
+
+
+/* =====================================================
+   SIDEBAR LOGOUT
+===================================================== */
+
+.sidebar-bottom{
+
+    margin-top:auto;
+
+    padding:
+    15px 0 5px;
+
+    border-top:
+    1px solid
+    rgba(255,255,255,.12);
+
+}
+
+
+.logout-btn{
+
+    width:100%;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:13px;
+
+    background:
+    rgba(229,57,53,.15);
+
+    color:#ffb5b3;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:
+    0 13px;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+
+.logout-btn i{
+
+    min-width:30px;
+
+    width:30px;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+
+
+.logout-btn:hover{
+
+    background:#E53935;
+
+    color:white;
+
+    transform:
+    translateX(2px);
+
+}
+
+
+.sidebar.collapsed
+.logout-btn span{
+
+    display:none;
+
+}
+
+
+.sidebar.collapsed
+.logout-btn{
+
+    justify-content:center;
+
+    padding:0;
+
+}
+
+
+.sidebar.collapsed
+.logout-btn i{
+
+    margin:0;
+
+}
+
 
 /* =====================================================
    MAIN AREA
@@ -265,22 +410,28 @@ body{
 
     transition:
     margin-left .3s ease;
+
 }
+
 
 body.sidebar-open
 .main-area{
 
     margin-left:260px;
+
 }
+
 
 body.sidebar-collapsed
 .main-area{
 
     margin-left:78px;
+
 }
 
+
 /* =====================================================
-   MAIN CONTAINER
+   CONTAINER
 ===================================================== */
 
 .container{
@@ -290,10 +441,12 @@ body.sidebar-collapsed
     max-width:1500px;
 
     margin:auto;
+
 }
 
+
 /* =====================================================
-   HEADER
+   COMPACT HEADER
 ===================================================== */
 
 .header{
@@ -304,7 +457,8 @@ body.sidebar-collapsed
 
     min-height:72px;
 
-    padding:10px 18px;
+    padding:
+    12px 18px;
 
     display:flex;
 
@@ -312,14 +466,12 @@ body.sidebar-collapsed
 
     justify-content:space-between;
 
-    gap:15px;
-
     box-shadow:
     0 10px 30px
     rgba(0,0,0,.08);
+
 }
 
-/* HEADER LEFT */
 
 .header-left{
 
@@ -328,9 +480,9 @@ body.sidebar-collapsed
     align-items:center;
 
     gap:12px;
+
 }
 
-/* HEADER MENU BUTTON */
 
 .top-menu-button{
 
@@ -338,7 +490,7 @@ body.sidebar-collapsed
 
     height:42px;
 
-    border:0;
+    border:none;
 
     border-radius:10px;
 
@@ -357,7 +509,9 @@ body.sidebar-collapsed
     cursor:pointer;
 
     transition:.2s;
+
 }
+
 
 .top-menu-button:hover{
 
@@ -365,13 +519,13 @@ body.sidebar-collapsed
 
     transform:
     translateY(-1px);
+
 }
 
-/* HEADER TITLE */
 
 .header-title h1{
 
-    font-size:19px;
+    font-size:20px;
 
     line-height:1.15;
 
@@ -379,21 +533,24 @@ body.sidebar-collapsed
 
     margin:0;
 
-    letter-spacing:.3px;
+    letter-spacing:.35px;
+
 }
+
 
 .header-title p{
 
-    font-size:11px;
+    font-size:12px;
 
     line-height:1.2;
 
     color:#66736f;
 
-    margin:3px 0;
+    margin:
+    3px 0;
+
 }
 
-/* LOGGED USER */
 
 .logged-user{
 
@@ -401,14 +558,16 @@ body.sidebar-collapsed
 
     align-items:center;
 
-    gap:5px;
+    gap:6px;
 
     color:#00785b;
 
-    font-size:10px;
+    font-size:11px;
 
     font-weight:600;
+
 }
+
 
 /* =====================================================
    FILTER AREA
@@ -427,16 +586,18 @@ body.sidebar-collapsed
     box-shadow:
     0 10px 30px
     rgba(0,0,0,.06);
+
 }
 
-/* SEARCH */
 
 .search-box{
 
     width:100%;
 
     position:relative;
+
 }
+
 
 .search-box i{
 
@@ -452,7 +613,9 @@ body.sidebar-collapsed
     color:#009875;
 
     font-size:19px;
+
 }
+
 
 .search-box input{
 
@@ -476,7 +639,9 @@ body.sidebar-collapsed
     color:#26332f;
 
     transition:.2s;
+
 }
+
 
 .search-box input:focus{
 
@@ -485,9 +650,13 @@ body.sidebar-collapsed
     box-shadow:
     0 0 0 4px
     rgba(0,162,122,.08);
+
 }
 
-/* FILTER ROW */
+
+/* =====================================================
+   FILTER ROW
+===================================================== */
 
 .filter-row{
 
@@ -502,7 +671,9 @@ body.sidebar-collapsed
     gap:10px;
 
     flex-wrap:wrap;
+
 }
+
 
 .filter-label{
 
@@ -511,9 +682,9 @@ body.sidebar-collapsed
     color:#53625d;
 
     white-space:nowrap;
+
 }
 
-/* LAST DAYS */
 
 .last-days-box{
 
@@ -522,12 +693,16 @@ body.sidebar-collapsed
     align-items:center;
 
     gap:7px;
+
 }
+
 
 .last-days-box i{
 
     color:#007e60;
+
 }
+
 
 .last-days-input{
 
@@ -550,9 +725,9 @@ body.sidebar-collapsed
     font-weight:bold;
 
     color:#007b5d;
+
 }
 
-/* DATE */
 
 .date-box{
 
@@ -561,7 +736,9 @@ body.sidebar-collapsed
     align-items:center;
 
     gap:6px;
+
 }
+
 
 .date-box label{
 
@@ -570,7 +747,9 @@ body.sidebar-collapsed
     font-weight:bold;
 
     color:#68756f;
+
 }
+
 
 .date-box input{
 
@@ -584,16 +763,17 @@ body.sidebar-collapsed
 
     border-radius:10px;
 
-    padding:0 8px;
+    padding:
+    0 8px;
 
     outline:none;
 
     font-size:13px;
 
     color:#40504b;
+
 }
 
-/* FILTER SELECT */
 
 .filter-select{
 
@@ -607,7 +787,8 @@ body.sidebar-collapsed
 
     border-radius:10px;
 
-    padding:0 12px;
+    padding:
+    0 12px;
 
     background:white;
 
@@ -620,15 +801,16 @@ body.sidebar-collapsed
     outline:none;
 
     cursor:pointer;
+
 }
 
-/* CLEAR */
 
 .clear-btn{
 
     height:42px;
 
-    padding:0 15px;
+    padding:
+    0 15px;
 
     border:none;
 
@@ -641,7 +823,9 @@ body.sidebar-collapsed
     font-weight:bold;
 
     cursor:pointer;
+
 }
+
 
 /* =====================================================
    CONTENT CARD
@@ -662,7 +846,9 @@ body.sidebar-collapsed
     box-shadow:
     0 10px 30px
     rgba(0,0,0,.06);
+
 }
+
 
 .content-header{
 
@@ -678,14 +864,18 @@ body.sidebar-collapsed
     border-bottom:
     1px solid
     #e6eeeb;
+
 }
+
 
 .content-header h2{
 
     font-size:25px;
 
     color:#26332f;
+
 }
+
 
 .pending-count{
 
@@ -699,7 +889,9 @@ body.sidebar-collapsed
     border-radius:20px;
 
     font-weight:bold;
+
 }
+
 
 /* =====================================================
    TABLE
@@ -710,7 +902,9 @@ body.sidebar-collapsed
     width:100%;
 
     overflow-x:auto;
+
 }
+
 
 table{
 
@@ -719,14 +913,18 @@ table{
     border-collapse:collapse;
 
     min-width:850px;
+
 }
+
 
 thead{
 
     background:#00886a;
 
     color:white;
+
 }
+
 
 th{
 
@@ -735,28 +933,37 @@ th{
     text-align:left;
 
     font-size:14px;
+
 }
+
 
 td{
 
-    padding:17px 16px;
+    padding:
+    17px 16px;
 
     border-bottom:
     1px solid
     #e6eeeb;
 
     font-size:14px;
+
 }
+
 
 tbody tr{
 
     transition:.2s;
+
 }
+
 
 tbody tr:hover{
 
     background:#f0f8f5;
+
 }
+
 
 .customer-badge{
 
@@ -776,7 +983,9 @@ tbody tr:hover{
     border-radius:9px;
 
     font-weight:bold;
+
 }
+
 
 .ref-badge{
 
@@ -790,7 +999,9 @@ tbody tr:hover{
     border-radius:8px;
 
     display:inline-block;
+
 }
+
 
 .view-btn{
 
@@ -816,15 +1027,9 @@ tbody tr:hover{
     gap:7px;
 
     transition:.2s;
+
 }
 
-.view-btn:hover{
-
-    background:#007657;
-
-    transform:
-    translateY(-1px);
-}
 
 /* =====================================================
    EMPTY
@@ -847,7 +1052,9 @@ tbody tr:hover{
     color:#65736e;
 
     padding:30px;
+
 }
+
 
 .empty-icon{
 
@@ -870,7 +1077,9 @@ tbody tr:hover{
     font-size:38px;
 
     margin-bottom:20px;
+
 }
+
 
 .empty h3{
 
@@ -879,7 +1088,9 @@ tbody tr:hover{
     font-size:24px;
 
     margin-bottom:8px;
+
 }
+
 
 /* =====================================================
    LOADING
@@ -900,7 +1111,9 @@ tbody tr:hover{
     font-size:18px;
 
     font-weight:bold;
+
 }
+
 
 .spinner{
 
@@ -920,15 +1133,110 @@ tbody tr:hover{
     spin 1s linear infinite;
 
     margin-right:12px;
+
 }
+
 
 @keyframes spin{
 
     to{
-        transform:rotate(360deg);
+
+        transform:
+        rotate(360deg);
+
     }
 
 }
+
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+.pagination{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+    22px 16px;
+
+    border-top:
+    1px solid
+    #e6eeeb;
+
+    background:#f7fbfa;
+
+    flex-wrap:wrap;
+
+}
+
+
+.page-btn,
+.page-number{
+
+    min-width:42px;
+
+    height:42px;
+
+    padding:
+    0 12px;
+
+    border:
+    1px solid
+    #d8ebe5;
+
+    border-radius:10px;
+
+    background:#ffffff;
+
+    color:#007b5d;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+}
+
+
+.page-number.active{
+
+    background:#008f6b;
+
+    border-color:#008f6b;
+
+    color:white;
+
+}
+
+
+.page-btn:disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+}
+
 
 /* =====================================================
    MODAL
@@ -955,12 +1263,16 @@ tbody tr:hover{
     align-items:center;
 
     justify-content:center;
+
 }
+
 
 .modal.show{
 
     display:flex;
+
 }
+
 
 .modal-box{
 
@@ -979,7 +1291,9 @@ tbody tr:hover{
     box-shadow:
     0 25px 70px
     rgba(0,0,0,.3);
+
 }
+
 
 .modal-header{
 
@@ -992,14 +1306,17 @@ tbody tr:hover{
 
     color:white;
 
-    padding:20px 24px;
+    padding:
+    20px 24px;
 
     display:flex;
 
     justify-content:space-between;
 
     align-items:center;
+
 }
+
 
 .close-btn{
 
@@ -1019,12 +1336,16 @@ tbody tr:hover{
     font-size:22px;
 
     cursor:pointer;
+
 }
+
 
 .details{
 
     padding:24px;
+
 }
+
 
 .detail-grid{
 
@@ -1034,7 +1355,9 @@ tbody tr:hover{
     repeat(2,1fr);
 
     gap:15px;
+
 }
+
 
 .detail-item{
 
@@ -1046,7 +1369,7 @@ tbody tr:hover{
 
     padding:17px;
 
-    background:#eafbf6;
+    background:white;
 
     border:
     1px solid
@@ -1057,13 +1380,17 @@ tbody tr:hover{
     rgba(0,60,45,.05);
 
     min-height:85px;
+
 }
+
 
 .detail-item.full{
 
     grid-column:
     1 / -1;
+
 }
+
 
 .detail-label{
 
@@ -1077,8 +1404,8 @@ tbody tr:hover{
 
     text-transform:uppercase;
 
-    letter-spacing:.5px;
 }
+
 
 .detail-value{
 
@@ -1091,7 +1418,9 @@ tbody tr:hover{
     word-break:break-word;
 
     font-weight:600;
+
 }
+
 
 .readonly-section{
 
@@ -1102,14 +1431,16 @@ tbody tr:hover{
     border-top:
     1px solid
     #dfe9e5;
+
 }
+
 
 .readonly-box{
 
-    margin-top:10px;
-
     margin-bottom:18px;
+
 }
+
 
 .readonly-label{
 
@@ -1122,7 +1453,9 @@ tbody tr:hover{
     color:#26332f;
 
     margin-bottom:8px;
+
 }
+
 
 .readonly-value{
 
@@ -1139,8 +1472,7 @@ tbody tr:hover{
 
     border-radius:12px;
 
-    background:
-    #f1f6f4;
+    background:#f1f6f4;
 
     color:#007b62;
 
@@ -1151,7 +1483,9 @@ tbody tr:hover{
     line-height:1.6;
 
     word-break:break-word;
+
 }
+
 
 .call-work-value{
 
@@ -1168,8 +1502,7 @@ tbody tr:hover{
 
     border-radius:12px;
 
-    background:
-    #fff8ed;
+    background:#fff8ed;
 
     color:#7a521d;
 
@@ -1182,7 +1515,9 @@ tbody tr:hover{
     white-space:pre-wrap;
 
     word-break:break-word;
+
 }
+
 
 .modal-actions{
 
@@ -1191,7 +1526,9 @@ tbody tr:hover{
     display:flex;
 
     justify-content:flex-end;
+
 }
+
 
 .cancel-btn{
 
@@ -1209,115 +1546,9 @@ tbody tr:hover{
     font-weight:bold;
 
     cursor:pointer;
+
 }
 
-/* =====================================================
-   TOAST
-===================================================== */
-
-.toast{
-
-    position:fixed;
-
-    right:25px;
-
-    bottom:25px;
-
-    background:#15221e;
-
-    color:white;
-
-    padding:
-    14px 20px;
-
-    border-radius:12px;
-
-    display:none;
-
-    z-index:10000;
-}
-
-.toast.show{
-
-    display:block;
-}
-
-/* =====================================================
-   PAGINATION
-===================================================== */
-
-.pagination{
-
-    width:100%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:8px;
-
-    padding:22px 16px;
-
-    border-top:
-    1px solid
-    #e6eeeb;
-
-    background:#f7fbfa;
-
-    flex-wrap:wrap;
-}
-
-.page-btn,
-.page-number{
-
-    min-width:42px;
-
-    height:42px;
-
-    padding:0 12px;
-
-    border:
-    1px solid
-    #d8ebe5;
-
-    border-radius:10px;
-
-    background:#ffffff;
-
-    color:#007b5d;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:7px;
-}
-
-.page-number.active{
-
-    background:#008f6b;
-
-    border-color:#008f6b;
-
-    color:#ffffff;
-}
-
-.page-btn:disabled{
-
-    opacity:.45;
-
-    cursor:not-allowed;
-}
 
 /* =====================================================
    MOBILE
@@ -1328,7 +1559,9 @@ tbody tr:hover{
     body{
 
         padding:12px;
+
     }
+
 
     .sidebar{
 
@@ -1336,26 +1569,36 @@ tbody tr:hover{
 
         transform:
         translateX(-100%);
+
     }
+
 
     .sidebar.mobile-open{
 
         transform:
         translateX(0);
+
     }
+
 
     .sidebar.collapsed{
 
         width:260px;
+
     }
+
 
     .sidebar.collapsed
     .sidebar-logo span,
     .sidebar.collapsed
-    .sidebar-link span{
+    .sidebar-link span,
+    .sidebar.collapsed
+    .logout-btn span{
 
         display:block;
+
     }
+
 
     .sidebar.collapsed
     .sidebar-link{
@@ -1364,25 +1607,55 @@ tbody tr:hover{
 
         padding:
         0 13px;
+
     }
+
+
+    .sidebar.collapsed
+    .logout-btn{
+
+        justify-content:flex-start;
+
+        padding:
+        0 13px;
+
+    }
+
 
     body.sidebar-open
     .main-area,
-
     body.sidebar-collapsed
     .main-area{
 
         margin-left:0;
+
     }
 
-    .header{
+}
 
-        min-height:62px;
 
-        padding:9px 12px;
+@media(max-width:600px){
 
-        border-radius:12px;
+    .header-title h1{
+
+        font-size:16px;
+
     }
+
+
+    .header-title p{
+
+        font-size:10px;
+
+    }
+
+
+    .logged-user{
+
+        font-size:10px;
+
+    }
+
 
     .top-menu-button{
 
@@ -1391,112 +1664,52 @@ tbody tr:hover{
         height:38px;
 
         font-size:18px;
+
     }
 
-    .header-title h1{
-
-        font-size:16px;
-    }
-
-    .header-title p{
-
-        font-size:10px;
-    }
-
-    .logged-user{
-
-        font-size:10px;
-    }
-
-    .detail-grid{
-
-        grid-template-columns:1fr;
-    }
-
-    .detail-item.full{
-
-        grid-column:auto;
-    }
-
-    .filter-row{
-
-        justify-content:flex-start;
-    }
-}
-
-@media(max-width:600px){
-
-    .header-title h1{
-
-        font-size:15px;
-    }
-
-    .header-title p{
-
-        font-size:9px;
-    }
-
-    .logged-user{
-
-        font-size:9px;
-    }
-
-    .content-header{
-
-        padding:
-        20px;
-    }
-
-    .content-header h2{
-
-        font-size:20px;
-    }
 
     .filter-row{
 
         flex-direction:column;
 
         align-items:stretch;
+
     }
+
 
     .last-days-box,
     .date-box{
 
         width:100%;
+
     }
 
-    .last-days-input{
 
-        flex:1;
-    }
-
-    .date-box input{
-
-        flex:1;
-
-        width:auto;
-    }
-
+    .last-days-input,
+    .date-box input,
     .filter-select,
     .clear-btn{
 
+        flex:1;
+
         width:100%;
+
     }
 
-    .page-btn,
-    .page-number{
 
-        min-width:38px;
+    .detail-grid{
 
-        height:38px;
+        grid-template-columns:1fr;
 
-        font-size:13px;
     }
 
-    .page-btn span{
 
-        display:none;
+    .detail-item.full{
+
+        grid-column:auto;
+
     }
+
 }
 
 </style>
@@ -1604,6 +1817,25 @@ id="sidebar"
 
     </nav>
 
+
+    <!-- LOGOUT -->
+
+    <div class="sidebar-bottom">
+
+        <button
+        class="logout-btn"
+        onclick="logoutUser()"
+        title="Logout"
+        >
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>Logout</span>
+
+        </button>
+
+    </div>
+
 </aside>
 
 
@@ -1616,22 +1848,17 @@ id="sidebar"
 <div class="container">
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- HEADER -->
 
 <div class="header">
 
     <div class="header-left">
 
-        <!-- ONLY SIDEBAR CONTROL BUTTON -->
-
         <button
         class="top-menu-button"
         id="topMenuButton"
         onclick="toggleSidebar()"
-        title="Minimize / Expand Sidebar"
-        aria-label="Minimize / Expand Sidebar"
+        title="Open / Close Sidebar"
         >
 
             <i class="fa-solid fa-bars"></i>
@@ -1641,16 +1868,20 @@ id="sidebar"
 
         <div class="header-title">
 
-            <h1>LINK4 COMMUNICATION</h1>
+            <h1>
+                LINK4 COMMUNICATION
+            </h1>
 
-            <p>Support Management System</p>
+            <p>
+                Support Management System
+            </p>
 
             <div class="logged-user">
 
                 <i class="fa-solid fa-user"></i>
 
                 <span id="loggedUser">
-                    shemanto
+                    Loading...
                 </span>
 
             </div>
@@ -1662,9 +1893,7 @@ id="sidebar"
 </div>
 
 
-<!-- =====================================================
-     FILTER AREA
-===================================================== -->
+<!-- FILTER -->
 
 <div class="filter-area">
 
@@ -1763,9 +1992,7 @@ id="sidebar"
 </div>
 
 
-<!-- =====================================================
-     CONTENT
-===================================================== -->
+<!-- CONTENT -->
 
 <div class="content-card">
 
@@ -1812,7 +2039,7 @@ id="sidebar"
 
 
 <!-- =====================================================
-     VIEW MODAL
+     MODAL
 ===================================================== -->
 
 <div
@@ -1853,11 +2080,7 @@ onclick="outsideModal(event)"
                 <div class="detail-item">
 
                     <div class="detail-label">
-
-                        <i class="fa-solid fa-user"></i>
-
                         Customer ID
-
                     </div>
 
                     <div
@@ -1871,11 +2094,7 @@ onclick="outsideModal(event)"
                 <div class="detail-item">
 
                     <div class="detail-label">
-
-                        <i class="fa-regular fa-calendar"></i>
-
                         Date
-
                     </div>
 
                     <div
@@ -1889,11 +2108,7 @@ onclick="outsideModal(event)"
                 <div class="detail-item full">
 
                     <div class="detail-label">
-
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-
                         Problem
-
                     </div>
 
                     <div
@@ -1907,11 +2122,7 @@ onclick="outsideModal(event)"
                 <div class="detail-item">
 
                     <div class="detail-label">
-
-                        <i class="fa-solid fa-link"></i>
-
                         Reference
-
                     </div>
 
                     <div
@@ -1925,11 +2136,7 @@ onclick="outsideModal(event)"
                 <div class="detail-item">
 
                     <div class="detail-label">
-
-                        <i class="fa-solid fa-headset"></i>
-
                         Support
-
                     </div>
 
                     <div
@@ -1943,11 +2150,7 @@ onclick="outsideModal(event)"
                 <div class="detail-item full">
 
                     <div class="detail-label">
-
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
-
                         Support Work
-
                     </div>
 
                     <div
@@ -1965,11 +2168,8 @@ onclick="outsideModal(event)"
                 <div class="readonly-box">
 
                     <label class="readonly-label">
-
                         <i class="fa-solid fa-phone"></i>
-
                         Call Person
-
                     </label>
 
                     <div
@@ -1983,11 +2183,8 @@ onclick="outsideModal(event)"
                 <div class="readonly-box">
 
                     <label class="readonly-label">
-
                         <i class="fa-solid fa-phone-volume"></i>
-
                         Call Work
-
                     </label>
 
                     <div
@@ -2020,16 +2217,6 @@ onclick="outsideModal(event)"
     </div>
 
 </div>
-
-
-<!-- =====================================================
-     TOAST
-===================================================== -->
-
-<div
-class="toast"
-id="toast"
-></div>
 
 
 <script>
@@ -2071,18 +2258,126 @@ function(){
 
     restoreSidebarState();
 
-});
+}
+);
+
+
+/* =====================================================
+   LOAD USER
+===================================================== */
+
+function loadUser(){
+
+    const loggedUser =
+    document.getElementById(
+        "loggedUser"
+    );
+
+
+    if(
+        localStorage.getItem(
+            "loggedIn"
+        ) !== "true"
+    ){
+
+        window.location.replace(
+            "../index.html"
+        );
+
+        return;
+
+    }
+
+
+    const username =
+    localStorage.getItem(
+        "username"
+    );
+
+
+    const name =
+    localStorage.getItem(
+        "name"
+    );
+
+
+    if(username){
+
+        loggedUser.textContent =
+        username;
+
+    }
+
+    else if(name){
+
+        loggedUser.textContent =
+        name;
+
+    }
+
+    else{
+
+        loggedUser.textContent =
+        "User";
+
+    }
+
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+function logoutUser(){
+
+    const confirmLogout =
+    confirm(
+        "Are you sure you want to logout?"
+    );
+
+
+    if(!confirmLogout){
+
+        return;
+
+    }
+
+
+    localStorage.removeItem(
+        "loggedIn"
+    );
+
+    localStorage.removeItem(
+        "username"
+    );
+
+    localStorage.removeItem(
+        "name"
+    );
+
+    localStorage.removeItem(
+        "role"
+    );
+
+
+    window.location.replace(
+        "../index.html"
+    );
+
+}
 
 
 /* =====================================================
    SIDEBAR TOGGLE
-   HEADER ☰ BUTTON CONTROLS SIDEBAR
 ===================================================== */
 
 function toggleSidebar(){
 
     const sidebar =
-        document.getElementById("sidebar");
+    document.getElementById(
+        "sidebar"
+    );
 
 
     if(window.innerWidth <= 900){
@@ -2096,27 +2391,30 @@ function toggleSidebar(){
     }
 
 
-    const isCollapsed =
-        sidebar.classList.toggle(
-            "collapsed"
-        );
-
-
-    document.body.classList.toggle(
-        "sidebar-open",
-        !isCollapsed
+    sidebar.classList.toggle(
+        "collapsed"
     );
 
 
     document.body.classList.toggle(
-        "sidebar-collapsed",
-        isCollapsed
+        "sidebar-open"
+    );
+
+
+    document.body.classList.toggle(
+        "sidebar-collapsed"
+    );
+
+
+    const collapsed =
+    sidebar.classList.contains(
+        "collapsed"
     );
 
 
     localStorage.setItem(
         "supportSidebarCollapsed",
-        isCollapsed
+        collapsed
         ? "true"
         : "false"
     );
@@ -2130,17 +2428,7 @@ function toggleSidebar(){
 
 function restoreSidebarState(){
 
-    const sidebar =
-        document.getElementById(
-            "sidebar"
-        );
-
-
     if(window.innerWidth <= 900){
-
-        sidebar.classList.remove(
-            "collapsed"
-        );
 
         document.body.classList.remove(
             "sidebar-open"
@@ -2156,9 +2444,15 @@ function restoreSidebarState(){
 
 
     const collapsed =
-        localStorage.getItem(
-            "supportSidebarCollapsed"
-        );
+    localStorage.getItem(
+        "supportSidebarCollapsed"
+    );
+
+
+    const sidebar =
+    document.getElementById(
+        "sidebar"
+    );
 
 
     if(collapsed === "true"){
@@ -2197,129 +2491,93 @@ function restoreSidebarState(){
 
 
 /* =====================================================
-   LOAD USER
-===================================================== */
-
-function loadUser(){
-
-    const user =
-        localStorage.getItem(
-            "loggedUser"
-        ) ||
-
-        localStorage.getItem(
-            "username"
-        ) ||
-
-        "shemanto";
-
-
-    document.getElementById(
-        "loggedUser"
-    ).textContent = user;
-
-}
-
-
-/* =====================================================
    LOAD DATA
 ===================================================== */
 
 async function loadData(){
 
     const content =
-        document.getElementById(
-            "content"
-        );
+    document.getElementById(
+        "content"
+    );
 
 
     content.className =
-        "loading";
+    "loading";
 
 
     content.innerHTML =
-        '<div class="spinner"></div>' +
-        'Loading History...';
+    '<div class="spinner"></div>Loading History...';
 
 
     try{
 
         const response =
-            await fetch(
+        await fetch(
 
-                API_URL +
-                "?action=history&_=" +
-                Date.now(),
+            API_URL +
+            "?action=history&_=" +
+            Date.now(),
 
-                {
-                    method:"GET",
-                    cache:"no-store"
-                }
+            {
+                method:"GET",
+                cache:"no-store"
+            }
 
-            );
+        );
 
 
         const result =
-            await response.json();
+        await response.json();
 
 
         if(!result.success){
 
             throw new Error(
-
                 result.message ||
-
                 "Failed to load History."
-
             );
 
         }
 
 
         allData =
-            Array.isArray(
-                result.data
-            )
-
-            ?
-
+        Array.isArray(
             result.data
+        )
+        ?
+        result.data
+        :
+        [];
 
-            :
-
-            [];
-
-
-        currentPage = 1;
 
         applyFilters();
-
 
     }
 
     catch(error){
 
         content.className =
-            "empty";
+        "empty";
 
 
         content.innerHTML =
 
-            '<div class="empty-icon">' +
+        '<div class="empty-icon">' +
 
-            '<i class="fa-solid fa-triangle-exclamation"></i>' +
+        '<i class="fa-solid fa-triangle-exclamation"></i>' +
 
-            '</div>' +
+        '</div>' +
 
-            '<h3>Failed to Load</h3>' +
+        '<h3>Failed to Load</h3>' +
 
-            '<p>' +
+        '<p>' +
 
-            escapeHtml(
-                error.message
-            ) +
+        escapeHtml(
+            error.message
+        ) +
 
-            '</p>';
+        '</p>';
 
     }
 
@@ -2333,210 +2591,240 @@ async function loadData(){
 function applyFilters(){
 
     const search =
-        document.getElementById(
-            "searchInput"
-        )
-        .value
-        .toLowerCase()
-        .trim();
+    document.getElementById(
+        "searchInput"
+    ).value
+    .toLowerCase()
+    .trim();
 
 
     const lastDaysValue =
-        document.getElementById(
-            "lastDays"
-        ).value;
+    document.getElementById(
+        "lastDays"
+    ).value;
 
 
     const lastDays =
-        lastDaysValue
-        ?
-        parseInt(
-            lastDaysValue,
-            10
-        )
-        :
-        null;
+    lastDaysValue
+    ?
+    parseInt(
+        lastDaysValue,
+        10
+    )
+    :
+    null;
 
 
     const fromDate =
-        document.getElementById(
-            "fromDate"
-        ).value;
+    document.getElementById(
+        "fromDate"
+    ).value;
 
 
     const toDate =
-        document.getElementById(
-            "toDate"
-        ).value;
+    document.getElementById(
+        "toDate"
+    ).value;
 
 
     filteredData =
-        allData.filter(
-            function(item){
+    allData.filter(
+    function(item){
 
-                const searchable =
+        const searchable =
 
-                    (item.customerId ||
-                    item.customerNumber ||
-                    item.ip ||
-                    "") +
+        (
 
-                    " " +
+            item.customerId ||
+            item.customerNumber ||
+            item.ip ||
+            ""
 
-                    (item.problem || "") +
+        ) +
 
-                    " " +
+        " " +
 
-                    (item.reference ||
-                    item.ref ||
-                    "") +
+        (
 
-                    " " +
+            item.problem ||
+            ""
 
-                    (item.support || "") +
+        ) +
 
-                    " " +
+        " " +
 
-                    (item.supportWork || "") +
+        (
 
-                    " " +
+            item.reference ||
+            item.ref ||
+            ""
 
-                    (item.call ||
-                    item.callPerson ||
-                    "") +
+        ) +
 
-                    " " +
+        " " +
 
-                    (item.callWork || "");
+        (
 
+            item.support ||
+            ""
 
-                if(
+        ) +
 
-                    search &&
+        " " +
 
-                    !searchable
-                    .toLowerCase()
-                    .includes(search)
+        (
 
-                ){
+            item.supportWork ||
+            ""
 
-                    return false;
+        ) +
 
-                }
+        " " +
 
+        (
 
-                const itemDate =
-                    parseDate(
-                        item.date
-                    );
+            item.call ||
+            item.callPerson ||
+            ""
 
+        ) +
 
-                if(
+        " " +
 
-                    lastDays !== null &&
+        (
 
-                    !isNaN(lastDays) &&
+            item.callWork ||
+            ""
 
-                    lastDays >= 1
+        );
 
-                ){
 
-                    if(!itemDate){
+        if(
 
-                        return false;
+            search &&
 
-                    }
+            !searchable
+            .toLowerCase()
+            .includes(search)
 
+        ){
 
-                    const today =
-                        new Date();
+            return false;
 
+        }
 
-                    today.setHours(
-                        23,
-                        59,
-                        59,
-                        999
-                    );
 
+        const itemDate =
+        parseDate(
+            item.date
+        );
 
-                    const cutoff =
-                        new Date(today);
 
+        if(
 
-                    cutoff.setDate(
+            lastDays !== null &&
 
-                        cutoff.getDate() -
+            !isNaN(lastDays) &&
 
-                        lastDays
+            lastDays >= 1
 
-                    );
+        ){
 
+            if(!itemDate){
 
-                    cutoff.setHours(
-                        0,
-                        0,
-                        0,
-                        0
-                    );
-
-
-                    if(itemDate >= cutoff){
-
-                        return false;
-
-                    }
-
-                }
-
-
-                if(fromDate){
-
-                    const from =
-                        new Date(
-                            fromDate +
-                            "T00:00:00"
-                        );
-
-
-                    if(
-                        !itemDate ||
-                        itemDate < from
-                    ){
-
-                        return false;
-
-                    }
-
-                }
-
-
-                if(toDate){
-
-                    const to =
-                        new Date(
-                            toDate +
-                            "T23:59:59"
-                        );
-
-
-                    if(
-                        !itemDate ||
-                        itemDate > to
-                    ){
-
-                        return false;
-
-                    }
-
-                }
-
-
-                return true;
+                return false;
 
             }
 
-        );
+
+            const today =
+            new Date();
+
+
+            today.setHours(
+                23,
+                59,
+                59,
+                999
+            );
+
+
+            const cutoff =
+            new Date(
+                today
+            );
+
+
+            cutoff.setDate(
+                cutoff.getDate() -
+                lastDays
+            );
+
+
+            cutoff.setHours(
+                0,
+                0,
+                0,
+                0
+            );
+
+
+            if(
+                itemDate >= cutoff
+            ){
+
+                return false;
+
+            }
+
+        }
+
+
+        if(fromDate){
+
+            const from =
+            new Date(
+                fromDate +
+                "T00:00:00"
+            );
+
+
+            if(
+                !itemDate ||
+                itemDate < from
+            ){
+
+                return false;
+
+            }
+
+        }
+
+
+        if(toDate){
+
+            const to =
+            new Date(
+                toDate +
+                "T23:59:59"
+            );
+
+
+            if(
+                !itemDate ||
+                itemDate > to
+            ){
+
+                return false;
+
+            }
+
+        }
+
+
+        return true;
+
+    });
 
 
     currentPage = 1;
@@ -2555,37 +2843,35 @@ function applyFilters(){
 function renderData(data){
 
     const content =
-        document.getElementById(
-            "content"
-        );
+    document.getElementById(
+        "content"
+    );
 
 
     document.getElementById(
         "pendingCount"
     ).textContent =
-
-        data.length +
-
-        " Records";
+    data.length +
+    " Records";
 
 
     if(data.length === 0){
 
         content.className =
-            "empty";
+        "empty";
 
 
         content.innerHTML =
 
-            '<div class="empty-icon">' +
+        '<div class="empty-icon">' +
 
-            '<i class="fa-solid fa-folder-open"></i>' +
+        '<i class="fa-solid fa-folder-open"></i>' +
 
-            '</div>' +
+        '</div>' +
 
-            '<h3>No History Found</h3>' +
+        '<h3>No History Found</h3>' +
 
-            '<p>No completed support records found.</p>';
+        '<p>No completed support records found.</p>';
 
 
         return;
@@ -2594,256 +2880,251 @@ function renderData(data){
 
 
     const totalPages =
-        Math.ceil(
-            data.length /
-            ITEMS_PER_PAGE
-        );
+    Math.ceil(
+        data.length /
+        ITEMS_PER_PAGE
+    );
 
 
-    if(currentPage < 1){
+    if(
+        currentPage < 1
+    ){
 
         currentPage = 1;
 
     }
 
 
-    if(currentPage > totalPages){
+    if(
+        currentPage > totalPages
+    ){
 
-        currentPage = totalPages;
+        currentPage =
+        totalPages;
 
     }
 
 
     const startIndex =
-        (currentPage - 1) *
-        ITEMS_PER_PAGE;
-
-
-    const endIndex =
-        startIndex +
-        ITEMS_PER_PAGE;
+    (
+        currentPage - 1
+    ) *
+    ITEMS_PER_PAGE;
 
 
     const pageData =
-        data.slice(
-            startIndex,
-            endIndex
-        );
+    data.slice(
+        startIndex,
+        startIndex +
+        ITEMS_PER_PAGE
+    );
 
 
     content.className =
-        "table-wrapper";
+    "table-wrapper";
 
 
     let html =
 
-        '<table>' +
+    '<table>' +
 
-        '<thead>' +
+    '<thead><tr>' +
 
-        '<tr>' +
+    '<th>Customer ID</th>' +
 
-        '<th>Customer ID</th>' +
+    '<th>Date</th>' +
 
-        '<th>Date</th>' +
+    '<th>Problem</th>' +
 
-        '<th>Problem</th>' +
+    '<th>Reference</th>' +
 
-        '<th>Reference</th>' +
+    '<th>Support</th>' +
 
-        '<th>Support</th>' +
+    '<th>Call</th>' +
 
-        '<th>Call</th>' +
+    '<th>Action</th>' +
 
-        '<th>Action</th>' +
-
-        '</tr>' +
-
-        '</thead>' +
-
-        '<tbody>';
+    '</tr></thead><tbody>';
 
 
     pageData.forEach(
+    function(item,index){
 
-        function(item,index){
-
-            const realIndex =
-                startIndex +
-                index;
+        const realIndex =
+        startIndex +
+        index;
 
 
-            html +=
+        html +=
 
-                '<tr>' +
+        '<tr>' +
 
-                '<td>' +
+        '<td><span class="customer-badge">' +
 
-                '<span class="customer-badge">' +
+        '<i class="fa-solid fa-user"></i>' +
 
-                '<i class="fa-solid fa-user"></i>' +
+        escapeHtml(
 
-                escapeHtml(
+            item.customerId ||
 
-                    item.customerId ||
+            item.customerNumber ||
 
-                    item.customerNumber ||
+            item.ip ||
 
-                    item.ip ||
+            ""
 
-                    ""
+        ) +
 
-                ) +
+        '</span></td>' +
 
-                '</span>' +
+        '<td>' +
 
-                '</td>' +
+        escapeHtml(
 
-                '<td>' +
+            formatDateDMY(
 
-                escapeHtml(
+                item.date ||
 
-                    formatDateDMY(
+                ""
 
-                        item.date ||
+            )
 
-                        ""
+        ) +
 
-                    )
+        '</td>' +
 
-                ) +
+        '<td>' +
 
-                '</td>' +
+        escapeHtml(
 
-                '<td>' +
+            item.problem ||
 
-                escapeHtml(
+            ""
 
-                    item.problem ||
+        ) +
 
-                    ""
+        '</td>' +
 
-                ) +
+        '<td><span class="ref-badge">' +
 
-                '</td>' +
+        escapeHtml(
 
-                '<td>' +
+            item.reference ||
 
-                '<span class="ref-badge">' +
+            item.ref ||
 
-                escapeHtml(
+            "-"
 
-                    item.reference ||
+        ) +
 
-                    item.ref ||
+        '</span></td>' +
 
-                    "-"
+        '<td>' +
 
-                ) +
+        escapeHtml(
 
-                '</span>' +
+            item.support ||
 
-                '</td>' +
+            ""
 
-                '<td>' +
+        ) +
 
-                escapeHtml(
+        '</td>' +
 
-                    item.support ||
+        '<td>' +
 
-                    ""
+        escapeHtml(
 
-                ) +
+            item.call ||
 
-                '</td>' +
+            item.callPerson ||
 
-                '<td>' +
+            ""
 
-                escapeHtml(
+        ) +
 
-                    item.call ||
+        '</td>' +
 
-                    item.callPerson ||
+        '<td>' +
 
-                    ""
+        '<button class="view-btn" onclick="openModal(' +
 
-                ) +
+        realIndex +
 
-                '</td>' +
+        ')">' +
 
-                '<td>' +
+        '<i class="fa-solid fa-eye"></i>' +
 
-                '<button class="view-btn" onclick="openModal(' +
+        'View' +
 
-                realIndex +
+        '</button>' +
 
-                ')">' +
+        '</td>' +
 
-                '<i class="fa-solid fa-eye"></i>' +
+        '</tr>';
 
-                'View' +
-
-                '</button>' +
-
-                '</td>' +
-
-                '</tr>';
-
-        }
-
-    );
+    });
 
 
     html +=
-        '</tbody></table>';
+    '</tbody></table>';
 
 
     if(totalPages > 1){
 
         html +=
-
-            '<div class="pagination">';
+        '<div class="pagination">';
 
 
         html +=
 
-            '<button class="page-btn" onclick="changePage(' +
+        '<button class="page-btn" onclick="changePage(' +
 
-            (currentPage - 1) +
+        (
 
-            ')" ' +
+            currentPage -
 
-            (currentPage === 1
+            1
 
-                ?
+        ) +
 
-                'disabled'
+        ')" ' +
 
-                :
+        (
 
-                '') +
+            currentPage === 1
 
-            '>' +
+            ?
 
-            '<i class="fa-solid fa-chevron-left"></i>' +
+            'disabled'
 
-            '<span>Previous</span>' +
+            :
 
-            '</button>';
+            ''
+
+        ) +
+
+        '>' +
+
+        '<i class="fa-solid fa-chevron-left"></i>' +
+
+        '<span>Previous</span>' +
+
+        '</button>';
 
 
         let startPage =
-            Math.max(
-                1,
-                currentPage - 2
-            );
+        Math.max(
+            1,
+            currentPage - 2
+        );
 
 
         let endPage =
-            Math.min(
-                totalPages,
-                startPage + 4
-            );
+        Math.min(
+            totalPages,
+            startPage + 4
+        );
 
 
         if(
@@ -2853,72 +3134,36 @@ function renderData(data){
         ){
 
             startPage =
-                Math.max(
-                    1,
-                    endPage - 4
-                );
+            Math.max(
+                1,
+                endPage - 4
+            );
 
         }
 
 
         for(
-
             let i =
-                startPage;
+            startPage;
 
             i <=
-                endPage;
+            endPage;
 
             i++
-
         ){
 
             html +=
 
-                '<button class="page-number ' +
-
-                (
-
-                    i === currentPage
-
-                    ?
-
-                    'active'
-
-                    :
-
-                    ''
-
-                ) +
-
-                '" onclick="changePage(' +
-
-                i +
-
-                ')">' +
-
-                i +
-
-                '</button>';
-
-        }
-
-
-        html +=
-
-            '<button class="page-btn" onclick="changePage(' +
-
-            (currentPage + 1) +
-
-            ')" ' +
+            '<button class="page-number ' +
 
             (
 
-                currentPage === totalPages
+                i ===
+                currentPage
 
                 ?
 
-                'disabled'
+                'active'
 
                 :
 
@@ -2926,24 +3171,65 @@ function renderData(data){
 
             ) +
 
-            '>' +
+            '" onclick="changePage(' +
 
-            '<span>Next</span>' +
+            i +
 
-            '<i class="fa-solid fa-chevron-right"></i>' +
+            ')">' +
+
+            i +
 
             '</button>';
+
+        }
 
 
         html +=
 
-            '</div>';
+        '<button class="page-btn" onclick="changePage(' +
+
+        (
+
+            currentPage +
+
+            1
+
+        ) +
+
+        ')" ' +
+
+        (
+
+            currentPage ===
+            totalPages
+
+            ?
+
+            'disabled'
+
+            :
+
+            ''
+
+        ) +
+
+        '>' +
+
+        '<span>Next</span>' +
+
+        '<i class="fa-solid fa-chevron-right"></i>' +
+
+        '</button>';
+
+
+        html +=
+        '</div>';
 
     }
 
 
     content.innerHTML =
-        html;
+    html;
 
 }
 
@@ -2955,10 +3241,10 @@ function renderData(data){
 function changePage(page){
 
     const totalPages =
-        Math.ceil(
-            filteredData.length /
-            ITEMS_PER_PAGE
-        );
+    Math.ceil(
+        filteredData.length /
+        ITEMS_PER_PAGE
+    );
 
 
     if(
@@ -2972,7 +3258,7 @@ function changePage(page){
 
 
     currentPage =
-        page;
+    page;
 
 
     renderData(
@@ -2981,21 +3267,16 @@ function changePage(page){
 
 
     const contentCard =
-        document.querySelector(
-            ".content-card"
-        );
+    document.querySelector(
+        ".content-card"
+    );
 
 
     if(contentCard){
 
         contentCard.scrollIntoView({
-
-            behavior:
-                "smooth",
-
-            block:
-                "start"
-
+            behavior:"smooth",
+            block:"start"
         });
 
     }
@@ -3010,7 +3291,7 @@ function changePage(page){
 function openModal(index){
 
     const data =
-        filteredData[index];
+    filteredData[index];
 
 
     if(!data){
@@ -3021,91 +3302,87 @@ function openModal(index){
 
 
     selectedItem =
-        data;
+    data;
 
 
     document.getElementById(
         "mCustomer"
     ).textContent =
 
-        data.customerId ||
+    data.customerId ||
 
-        data.customerNumber ||
+    data.customerNumber ||
 
-        data.ip ||
+    data.ip ||
 
-        "";
+    "";
 
 
     document.getElementById(
         "mDate"
     ).textContent =
 
-        formatDateDMY(
-
-            data.date ||
-
-            ""
-
-        );
+    formatDateDMY(
+        data.date ||
+        ""
+    );
 
 
     document.getElementById(
         "mProblem"
     ).textContent =
 
-        data.problem ||
-
-        "";
+    data.problem ||
+    "";
 
 
     document.getElementById(
         "mReference"
     ).textContent =
 
-        data.reference ||
+    data.reference ||
 
-        data.ref ||
+    data.ref ||
 
-        "-";
+    "-";
 
 
     document.getElementById(
         "mSupport"
     ).textContent =
 
-        data.support ||
+    data.support ||
 
-        "";
+    "";
 
 
     document.getElementById(
         "mSupportWork"
     ).textContent =
 
-        data.supportWork ||
+    data.supportWork ||
 
-        "";
+    "";
 
 
     document.getElementById(
         "mCallPerson"
     ).textContent =
 
-        data.call ||
+    data.call ||
 
-        data.callPerson ||
+    data.callPerson ||
 
-        "Unknown";
+    "Unknown";
 
 
     document.getElementById(
         "mCallWork"
     ).textContent =
 
-        data.callWork ||
+    data.callWork ||
 
-        "No Call Work Available";
+    "No Call Work Available";
 
 
     document.getElementById(
@@ -3131,7 +3408,7 @@ function closeModal(){
 
 
     selectedItem =
-        null;
+    null;
 
 }
 
@@ -3168,40 +3445,40 @@ function formatDateDMY(value){
 
 
     const text =
-        String(value).trim();
+    String(
+        value
+    ).trim();
 
 
     let match =
-        text.match(
-            /^(\d{1,2})-(\d{1,2})-(\d{4})(.*)$/
-        );
+    text.match(
+        /^(\d{1,2})-(\d{1,2})-(\d{4})(.*)$/
+    );
 
 
     if(match){
 
         return (
 
-            String(match[1])
-            .padStart(2,"0")
+            String(
+                match[1]
+            ).padStart(
+                2,
+                "0"
+            ) +
 
-            +
+            "-" +
 
-            "-"
+            String(
+                match[2]
+            ).padStart(
+                2,
+                "0"
+            ) +
 
-            +
+            "-" +
 
-            String(match[2])
-            .padStart(2,"0")
-
-            +
-
-            "-"
-
-            +
-
-            match[3]
-
-            +
+            match[3] +
 
             match[4]
 
@@ -3211,36 +3488,34 @@ function formatDateDMY(value){
 
 
     match =
-        text.match(
-            /^(\d{1,2})\/(\d{1,2})\/(\d{4})(.*)$/
-        );
+    text.match(
+        /^(\d{1,2})\/(\d{1,2})\/(\d{4})(.*)$/
+    );
 
 
     if(match){
 
         return (
 
-            String(match[2])
-            .padStart(2,"0")
+            String(
+                match[2]
+            ).padStart(
+                2,
+                "0"
+            ) +
 
-            +
+            "-" +
 
-            "-"
+            String(
+                match[1]
+            ).padStart(
+                2,
+                "0"
+            ) +
 
-            +
+            "-" +
 
-            String(match[1])
-            .padStart(2,"0")
-
-            +
-
-            "-"
-
-            +
-
-            match[3]
-
-            +
+            match[3] +
 
             match[4]
 
@@ -3250,36 +3525,34 @@ function formatDateDMY(value){
 
 
     match =
-        text.match(
-            /^(\d{4})-(\d{1,2})-(\d{1,2})(.*)$/
-        );
+    text.match(
+        /^(\d{4})-(\d{1,2})-(\d{1,2})(.*)$/
+    );
 
 
     if(match){
 
         return (
 
-            String(match[3])
-            .padStart(2,"0")
+            String(
+                match[3]
+            ).padStart(
+                2,
+                "0"
+            ) +
 
-            +
+            "-" +
 
-            "-"
+            String(
+                match[2]
+            ).padStart(
+                2,
+                "0"
+            ) +
 
-            +
+            "-" +
 
-            String(match[2])
-            .padStart(2,"0")
-
-            +
-
-            "-"
-
-            +
-
-            match[1]
-
-            +
+            match[1] +
 
             match[4]
 
@@ -3307,128 +3580,134 @@ function parseDate(value){
 
 
     const text =
-        String(value).trim();
+    String(
+        value
+    ).trim();
 
 
     let match =
-        text.match(
-            /^(\d{1,2})-(\d{1,2})-(\d{4})/
-        );
+    text.match(
+        /^(\d{1,2})-(\d{1,2})-(\d{4})/
+    );
 
 
     if(match){
 
         const date =
-            new Date(
+        new Date(
 
-                Number(match[3]),
+            Number(
+                match[3]
+            ),
 
-                Number(match[2]) - 1,
+            Number(
+                match[2]
+            ) - 1,
 
-                Number(match[1])
+            Number(
+                match[1]
+            )
 
-            );
+        );
 
 
         return isNaN(
             date.getTime()
         )
-
         ?
-
         null
-
         :
-
         date;
 
     }
 
 
     match =
-        text.match(
-            /^(\d{1,2})\/(\d{1,2})\/(\d{4})/
-        );
+    text.match(
+        /^(\d{1,2})\/(\d{1,2})\/(\d{4})/
+    );
 
 
     if(match){
 
         const date =
-            new Date(
+        new Date(
 
-                Number(match[3]),
+            Number(
+                match[3]
+            ),
 
-                Number(match[1]) - 1,
+            Number(
+                match[1]
+            ) - 1,
 
-                Number(match[2])
+            Number(
+                match[2]
+            )
 
-            );
+        );
 
 
         return isNaN(
             date.getTime()
         )
-
         ?
-
         null
-
         :
-
         date;
 
     }
 
 
     match =
-        text.match(
-            /^(\d{4})-(\d{1,2})-(\d{1,2})/
-        );
+    text.match(
+        /^(\d{4})-(\d{1,2})-(\d{1,2})/
+    );
 
 
     if(match){
 
         const date =
-            new Date(
+        new Date(
 
-                Number(match[1]),
+            Number(
+                match[1]
+            ),
 
-                Number(match[2]) - 1,
+            Number(
+                match[2]
+            ) - 1,
 
-                Number(match[3])
+            Number(
+                match[3]
+            )
 
-            );
+        );
 
 
         return isNaN(
             date.getTime()
         )
-
         ?
-
         null
-
         :
-
         date;
 
     }
 
 
     const date =
-        new Date(text);
+    new Date(
+        text
+    );
 
 
     return isNaN(
         date.getTime()
     )
-
     ?
-
     null
-
     :
-
     date;
 
 }
@@ -3463,51 +3742,10 @@ function clearFilters(){
     document.getElementById(
         "statusFilter"
     ).value =
-        "all";
-
-
-    currentPage = 1;
+    "all";
 
 
     applyFilters();
-
-}
-
-
-/* =====================================================
-   TOAST
-===================================================== */
-
-function showToast(message){
-
-    const toast =
-        document.getElementById(
-            "toast"
-        );
-
-
-    toast.textContent =
-        message;
-
-
-    toast.classList.add(
-        "show"
-    );
-
-
-    setTimeout(
-
-        function(){
-
-            toast.classList.remove(
-                "show"
-            );
-
-        },
-
-        3000
-
-    );
 
 }
 
@@ -3555,9 +3793,7 @@ function escapeHtml(value){
 ===================================================== */
 
 document.addEventListener(
-
 "keydown",
-
 function(event){
 
     if(
@@ -3570,7 +3806,6 @@ function(event){
     }
 
 }
-
 );
 
 
@@ -3579,9 +3814,7 @@ function(event){
 ===================================================== */
 
 document.addEventListener(
-
 "click",
-
 function(event){
 
     if(
@@ -3595,9 +3828,9 @@ function(event){
 
 
     const sidebar =
-        document.getElementById(
-            "sidebar"
-        );
+    document.getElementById(
+        "sidebar"
+    );
 
 
     if(
@@ -3627,7 +3860,6 @@ function(event){
     }
 
 }
-
 );
 
 
@@ -3636,21 +3868,16 @@ function(event){
 ===================================================== */
 
 window.addEventListener(
-
 "resize",
-
 function(){
 
     restoreSidebarState();
 
 }
-
 );
 
 </script>
 
-
 </body>
 
 </html>
-```

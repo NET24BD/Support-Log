@@ -2057,9 +2057,7 @@ tbody tr:hover{
 class="sidebar"
 id="sidebar"
 >
-
- <div class="sidebar-header">
-
+<div class="sidebar-header">
 <div class="sidebar-logo">
 <i class="fa-solid fa-clock-rotate-left"></i>
 
@@ -2349,94 +2347,93 @@ id="sidebar"
 
         <!-- TO -->
 
-        <div class="date-filter">
+<div class="date-filter">
 
 
-            <label>
+<label>
 
-                To
+To
 
-            </label>
-
-
-            <input
-            type="date"
-            id="toDate"
-            onchange="applyFilters()"
-            >
+</label>
 
 
-        </div>
+<input
+type="date"
+id="toDate"
+onchange="applyFilters()"
+>
+
+
+</div>
 
 
         <!-- LAST DAYS -->
 
-        <div class="last-days-box">
+<div class="last-days-box">
 
 
-            <span class="last-days-label">
+<span class="last-days-label">
 
-                Last Days
+Last Days
 
-            </span>
-
-
-            <input
-            type="number"
-            id="lastDays"
-            class="last-days-input"
-            min="1"
-            placeholder="All"
-            oninput="applyFilters()"
-            >
+</span>
 
 
-        </div>
+<input
+type="number"
+id="lastDays"
+class="last-days-input"
+min="1"
+placeholder="All"
+oninput="applyFilters()"
+>
+
+
+</div>
 
 
         <!-- STATUS -->
 
-        <select
-        id="statusFilter"
-        class="filter-select"
-        onchange="applyFilters()"
-        >
+<select
+id="statusFilter"
+class="filter-select"
+onchange="applyFilters()"
+>
 
 
-            <option value="all">
+<option value="all">
 
-                All
+All
 
-            </option>
-
-
-            <option value="completed">
-
-                Completed
-
-            </option>
+</option>
 
 
-        </select>
+<option value="completed">
+
+Completed
+
+</option>
+
+
+</select>
 
 
         <!-- CLEAR -->
 
-        <button
-        class="clear-btn"
-        onclick="clearFilters()"
+<button
+class="clear-btn"
+onclick="clearFilters()"
         >
 
 
-            <i class="fa-solid fa-filter-circle-xmark"></i>
+<i class="fa-solid fa-filter-circle-xmark"></i>
 
-            Clear
+Clear
+
+</button>
 
 
-        </button>
-
-
-    </div>
+</div>
 
 
 </div>
@@ -2445,51 +2442,47 @@ id="sidebar"
 <!-- =====================================================
      CONTENT
 ===================================================== -->
-
 <div class="content-card">
 
 
-    <div class="content-header">
+<div class="content-header">
 
 
-        <h2>
+<h2>
 
 
-            <i class="fa-solid fa-list-check"></i>
+<i class="fa-solid fa-list-check"></i>
+
+History Records
+
+</h2>
+
+<div
+class="pending-count"
+id="pendingCount"
+ >
+
+ 0 Records
+
+</div>
 
 
-            History Records
+</div>
 
 
-        </h2>
+<div
+id="content"
+class="loading"
+>
 
 
-        <div
-        class="pending-count"
-        id="pendingCount"
-        >
-
-            0 Records
-
-        </div>
+<div class="spinner"></div>
 
 
-    </div>
+Loading History...
 
 
-    <div
-    id="content"
-    class="loading"
-    >
-
-
-        <div class="spinner"></div>
-
-
-        Loading History...
-
-
-    </div>
+</div>
 
 
 </div>

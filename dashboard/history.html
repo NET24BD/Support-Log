@@ -4,13 +4,14 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Support Log History</title>
+<title>Support Log History | LINK4 COMMUNICATION</title>
 
 <link
 rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 >
 
 <style>
@@ -48,7 +49,7 @@ body{
         #008f6d
     );
 
-    padding:16px 24px;
+    padding:0 14px 16px 14px;
 
     color:#14201d;
 
@@ -99,9 +100,7 @@ body{
 }
 
 
-/* =====================================================
-   SIDEBAR COLLAPSED
-===================================================== */
+/* SIDEBAR COLLAPSED */
 
 .sidebar.collapsed{
 
@@ -112,7 +111,6 @@ body{
 
 /* =====================================================
    SIDEBAR HEADER
-   MINIMIZE BUTTON REMOVED
 ===================================================== */
 
 .sidebar-header{
@@ -122,6 +120,8 @@ body{
     display:flex;
 
     align-items:center;
+
+    justify-content:center;
 
     padding:
     0 10px;
@@ -136,6 +136,8 @@ body{
     display:flex;
 
     align-items:center;
+
+    justify-content:center;
 
     gap:12px;
 
@@ -297,15 +299,14 @@ body{
 
 
 /* =====================================================
-   SIDEBAR LOGOUT
+   LOGOUT BUTTON
 ===================================================== */
 
-.sidebar-bottom{
+.logout-area{
 
     margin-top:auto;
 
-    padding:
-    15px 0 5px;
+    padding-top:15px;
 
     border-top:
     1px solid
@@ -327,7 +328,7 @@ body{
     background:
     rgba(229,57,53,.15);
 
-    color:#ffb5b3;
+    color:#ffffff;
 
     display:flex;
 
@@ -364,20 +365,10 @@ body{
 
 .logout-btn:hover{
 
-    background:#E53935;
-
-    color:white;
+    background:#e53935;
 
     transform:
     translateX(2px);
-
-}
-
-
-.sidebar.collapsed
-.logout-btn span{
-
-    display:none;
 
 }
 
@@ -393,9 +384,9 @@ body{
 
 
 .sidebar.collapsed
-.logout-btn i{
+.logout-btn span{
 
-    margin:0;
+    display:none;
 
 }
 
@@ -431,7 +422,7 @@ body.sidebar-collapsed
 
 
 /* =====================================================
-   CONTAINER
+   MAIN CONTAINER
 ===================================================== */
 
 .container{
@@ -446,25 +437,30 @@ body.sidebar-collapsed
 
 
 /* =====================================================
-   COMPACT HEADER
+   HEADER
 ===================================================== */
 
 .header{
 
+    width:100%;
+
     background:#f7fbfa;
 
-    border-radius:16px;
+    border-radius:
+    0 0 16px 16px;
 
-    min-height:72px;
+    min-height:70px;
 
     padding:
-    12px 18px;
+    10px 16px;
 
     display:flex;
 
     align-items:center;
 
     justify-content:space-between;
+
+    gap:15px;
 
     box-shadow:
     0 10px 30px
@@ -479,20 +475,26 @@ body.sidebar-collapsed
 
     align-items:center;
 
-    gap:12px;
+    gap:14px;
+
+    min-width:0;
 
 }
 
 
+/* =====================================================
+   MENU BUTTON
+===================================================== */
+
 .top-menu-button{
 
-    width:42px;
+    width:44px;
 
-    height:42px;
+    height:44px;
 
     border:none;
 
-    border-radius:10px;
+    border-radius:12px;
 
     background:#e7f5f0;
 
@@ -507,6 +509,8 @@ body.sidebar-collapsed
     justify-content:center;
 
     cursor:pointer;
+
+    flex-shrink:0;
 
     transition:.2s;
 
@@ -523,6 +527,17 @@ body.sidebar-collapsed
 }
 
 
+/* =====================================================
+   HEADER TITLE
+===================================================== */
+
+.header-title{
+
+    min-width:0;
+
+}
+
+
 .header-title h1{
 
     font-size:20px;
@@ -533,38 +548,76 @@ body.sidebar-collapsed
 
     margin:0;
 
-    letter-spacing:.35px;
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
 
 }
 
 
 .header-title p{
 
-    font-size:12px;
+    font-size:11px;
 
     line-height:1.2;
 
     color:#66736f;
 
-    margin:
-    3px 0;
+    margin-top:3px;
 
 }
 
 
+/* =====================================================
+   LOGGED USER - RIGHT CORNER
+===================================================== */
+
 .logged-user{
+
+    margin-left:auto;
 
     display:flex;
 
     align-items:center;
 
-    gap:6px;
+    justify-content:flex-end;
+
+    gap:9px;
+
+    color:#006a4e;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+    flex-shrink:0;
+
+}
+
+
+.logged-user-icon{
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:50%;
+
+    background:#e7f5f0;
 
     color:#00785b;
 
-    font-size:11px;
+    display:flex;
 
-    font-weight:600;
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:16px;
 
 }
 
@@ -577,11 +630,11 @@ body.sidebar-collapsed
 
     background:#f7fbfa;
 
-    margin-top:24px;
+    margin-top:20px;
 
-    border-radius:24px;
+    border-radius:20px;
 
-    padding:22px;
+    padding:15px;
 
     box-shadow:
     0 10px 30px
@@ -590,9 +643,32 @@ body.sidebar-collapsed
 }
 
 
-.search-box{
+/* =====================================================
+   FILTER ROW
+===================================================== */
+
+.filter-main-row{
 
     width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-box{
+
+    flex:1;
+
+    min-width:200px;
 
     position:relative;
 
@@ -603,7 +679,7 @@ body.sidebar-collapsed
 
     position:absolute;
 
-    left:18px;
+    left:15px;
 
     top:50%;
 
@@ -612,7 +688,7 @@ body.sidebar-collapsed
 
     color:#009875;
 
-    font-size:19px;
+    font-size:17px;
 
 }
 
@@ -621,20 +697,20 @@ body.sidebar-collapsed
 
     width:100%;
 
-    height:56px;
+    height:48px;
 
     border:
     2px solid
     #dcebe7;
 
-    border-radius:16px;
+    border-radius:12px;
 
     outline:none;
 
     padding:
-    0 20px 0 52px;
+    0 15px 0 45px;
 
-    font-size:16px;
+    font-size:14px;
 
     color:#26332f;
 
@@ -655,38 +731,10 @@ body.sidebar-collapsed
 
 
 /* =====================================================
-   FILTER ROW
+   DATE FILTER
 ===================================================== */
 
-.filter-row{
-
-    margin-top:15px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:flex-end;
-
-    gap:10px;
-
-    flex-wrap:wrap;
-
-}
-
-
-.filter-label{
-
-    font-weight:bold;
-
-    color:#53625d;
-
-    white-space:nowrap;
-
-}
-
-
-.last-days-box{
+.date-filter{
 
     display:flex;
 
@@ -694,74 +742,33 @@ body.sidebar-collapsed
 
     gap:7px;
 
-}
-
-
-.last-days-box i{
-
-    color:#007e60;
+    white-space:nowrap;
 
 }
 
 
-.last-days-input{
-
-    width:75px;
-
-    height:42px;
-
-    border:
-    2px solid
-    #dcebe7;
-
-    border-radius:10px;
-
-    outline:none;
-
-    text-align:center;
-
-    font-size:15px;
-
-    font-weight:bold;
-
-    color:#007b5d;
-
-}
-
-
-.date-box{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:6px;
-
-}
-
-
-.date-box label{
+.date-filter label{
 
     font-size:13px;
 
-    font-weight:bold;
+    color:#53625d;
 
-    color:#68756f;
+    font-weight:bold;
 
 }
 
 
-.date-box input{
+.date-filter input{
 
-    width:125px;
+    width:105px;
 
-    height:42px;
+    height:48px;
 
     border:
     2px solid
     #dcebe7;
 
-    border-radius:10px;
+    border-radius:12px;
 
     padding:
     0 8px;
@@ -775,17 +782,95 @@ body.sidebar-collapsed
 }
 
 
-.filter-select{
+.date-filter input:focus{
 
-    height:42px;
+    border-color:#009b73;
 
-    min-width:105px;
+}
+
+
+/* =====================================================
+   LAST DAYS
+===================================================== */
+
+.last-days-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    white-space:nowrap;
+
+}
+
+
+.last-days-box i{
+
+    color:#007e60;
+
+}
+
+
+.last-days-label{
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    color:#53625d;
+
+}
+
+
+.last-days-input{
+
+    width:90px;
+
+    height:48px;
 
     border:
     2px solid
     #dcebe7;
 
-    border-radius:10px;
+    border-radius:12px;
+
+    outline:none;
+
+    text-align:center;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    color:#007b5d;
+
+}
+
+
+.last-days-input:focus{
+
+    border-color:#009b73;
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.filter-select{
+
+    height:48px;
+
+    min-width:100px;
+
+    border:
+    2px solid
+    #dcebe7;
+
+    border-radius:12px;
 
     padding:
     0 12px;
@@ -805,16 +890,20 @@ body.sidebar-collapsed
 }
 
 
+/* =====================================================
+   CLEAR
+===================================================== */
+
 .clear-btn{
 
-    height:42px;
+    height:48px;
 
     padding:
-    0 15px;
+    0 16px;
 
     border:none;
 
-    border-radius:10px;
+    border-radius:12px;
 
     background:#e8f6f2;
 
@@ -823,6 +912,15 @@ body.sidebar-collapsed
     font-weight:bold;
 
     cursor:pointer;
+
+    white-space:nowrap;
+
+}
+
+
+.clear-btn:hover{
+
+    background:#d5eee7;
 
 }
 
@@ -835,9 +933,9 @@ body.sidebar-collapsed
 
     background:#f7fbfa;
 
-    margin-top:24px;
+    margin-top:20px;
 
-    border-radius:26px;
+    border-radius:22px;
 
     overflow:hidden;
 
@@ -853,7 +951,7 @@ body.sidebar-collapsed
 .content-header{
 
     padding:
-    25px 32px;
+    20px 25px;
 
     display:flex;
 
@@ -870,7 +968,7 @@ body.sidebar-collapsed
 
 .content-header h2{
 
-    font-size:25px;
+    font-size:22px;
 
     color:#26332f;
 
@@ -884,9 +982,11 @@ body.sidebar-collapsed
     color:white;
 
     padding:
-    10px 18px;
+    8px 15px;
 
     border-radius:20px;
+
+    font-size:14px;
 
     font-weight:bold;
 
@@ -928,19 +1028,18 @@ thead{
 
 th{
 
-    padding:16px;
+    padding:15px;
 
     text-align:left;
 
-    font-size:14px;
+    font-size:13px;
 
 }
 
 
 td{
 
-    padding:
-    17px 16px;
+    padding:15px;
 
     border-bottom:
     1px solid
@@ -1027,6 +1126,16 @@ tbody tr:hover{
     gap:7px;
 
     transition:.2s;
+
+}
+
+
+.view-btn:hover{
+
+    background:#007657;
+
+    transform:
+    translateY(-1px);
 
 }
 
@@ -1141,8 +1250,7 @@ tbody tr:hover{
 
     to{
 
-        transform:
-        rotate(360deg);
+        transform:rotate(360deg);
 
     }
 
@@ -1165,8 +1273,7 @@ tbody tr:hover{
 
     gap:8px;
 
-    padding:
-    22px 16px;
+    padding:20px 16px;
 
     border-top:
     1px solid
@@ -1218,13 +1325,28 @@ tbody tr:hover{
 }
 
 
+.page-btn:hover:not(:disabled),
+.page-number:hover{
+
+    background:#e8f5f1;
+
+    transform:
+    translateY(-1px);
+
+}
+
+
 .page-number.active{
 
     background:#008f6b;
 
     border-color:#008f6b;
 
-    color:white;
+    color:#ffffff;
+
+    box-shadow:
+    0 5px 15px
+    rgba(0,143,107,.22);
 
 }
 
@@ -1292,6 +1414,34 @@ tbody tr:hover{
     0 25px 70px
     rgba(0,0,0,.3);
 
+    animation:
+    modalIn .2s ease;
+
+}
+
+
+@keyframes modalIn{
+
+    from{
+
+        transform:
+        translateY(15px)
+        scale(.96);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:
+        translateY(0)
+        scale(1);
+
+        opacity:1;
+
+    }
+
 }
 
 
@@ -1314,6 +1464,13 @@ tbody tr:hover{
     justify-content:space-between;
 
     align-items:center;
+
+}
+
+
+.modal-header h3{
+
+    font-size:21px;
 
 }
 
@@ -1369,8 +1526,6 @@ tbody tr:hover{
 
     padding:17px;
 
-    background:white;
-
     border:
     1px solid
     rgba(0,0,0,.04);
@@ -1380,6 +1535,8 @@ tbody tr:hover{
     rgba(0,60,45,.05);
 
     min-height:85px;
+
+    background:#eafbf6;
 
 }
 
@@ -1403,6 +1560,8 @@ tbody tr:hover{
     margin-bottom:8px;
 
     text-transform:uppercase;
+
+    letter-spacing:.5px;
 
 }
 
@@ -1436,6 +1595,8 @@ tbody tr:hover{
 
 
 .readonly-box{
+
+    margin-top:10px;
 
     margin-bottom:18px;
 
@@ -1551,14 +1712,69 @@ tbody tr:hover{
 
 
 /* =====================================================
+   TOAST
+===================================================== */
+
+.toast{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    background:#15221e;
+
+    color:white;
+
+    padding:
+    14px 20px;
+
+    border-radius:12px;
+
+    display:none;
+
+    z-index:10000;
+
+}
+
+
+.toast.show{
+
+    display:block;
+
+}
+
+
+/* =====================================================
    MOBILE
 ===================================================== */
+
+@media(max-width:1100px){
+
+    .filter-main-row{
+
+        flex-wrap:wrap;
+
+    }
+
+
+    .search-box{
+
+        flex:
+        1 1 100%;
+
+    }
+
+}
+
 
 @media(max-width:900px){
 
     body{
 
-        padding:12px;
+        padding:
+        0 10px 12px;
 
     }
 
@@ -1601,16 +1817,7 @@ tbody tr:hover{
 
 
     .sidebar.collapsed
-    .sidebar-link{
-
-        justify-content:flex-start;
-
-        padding:
-        0 13px;
-
-    }
-
-
+    .sidebar-link,
     .sidebar.collapsed
     .logout-btn{
 
@@ -1631,10 +1838,53 @@ tbody tr:hover{
 
     }
 
+
+    .header{
+
+        border-radius:
+        0 0 14px 14px;
+
+    }
+
+
+    .logged-user{
+
+        margin-left:auto;
+
+    }
+
 }
 
 
 @media(max-width:600px){
+
+    .header{
+
+        min-height:62px;
+
+        padding:
+        8px 10px;
+
+    }
+
+
+    .header-left{
+
+        gap:9px;
+
+    }
+
+
+    .top-menu-button{
+
+        width:40px;
+
+        height:40px;
+
+        font-size:18px;
+
+    }
+
 
     .header-title h1{
 
@@ -1645,30 +1895,32 @@ tbody tr:hover{
 
     .header-title p{
 
-        font-size:10px;
+        font-size:9px;
 
     }
 
 
     .logged-user{
 
-        font-size:10px;
+        gap:5px;
+
+        font-size:11px;
 
     }
 
 
-    .top-menu-button{
+    .logged-user-icon{
 
-        width:38px;
+        width:34px;
 
-        height:38px;
+        height:34px;
 
-        font-size:18px;
+        font-size:14px;
 
     }
 
 
-    .filter-row{
+    .filter-main-row{
 
         flex-direction:column;
 
@@ -1677,22 +1929,72 @@ tbody tr:hover{
     }
 
 
-    .last-days-box,
-    .date-box{
+    .search-box{
 
         width:100%;
 
     }
 
 
-    .last-days-input,
-    .date-box input,
-    .filter-select,
-    .clear-btn{
+    .date-filter{
+
+        width:100%;
+
+    }
+
+
+    .date-filter input{
 
         flex:1;
 
+        width:auto;
+
+    }
+
+
+    .last-days-box{
+
         width:100%;
+
+    }
+
+
+    .last-days-input{
+
+        flex:1;
+
+    }
+
+
+    .filter-select,
+    .clear-btn{
+
+        width:100%;
+
+    }
+
+
+    .content-header{
+
+        padding:
+        18px;
+
+    }
+
+
+    .content-header h2{
+
+        font-size:19px;
+
+    }
+
+
+    .pending-count{
+
+        font-size:12px;
+
+        padding:
+        7px 10px;
 
     }
 
@@ -1707,6 +2009,33 @@ tbody tr:hover{
     .detail-item.full{
 
         grid-column:auto;
+
+    }
+
+
+    .pagination{
+
+        padding:
+        15px 8px;
+
+    }
+
+
+    .page-btn,
+    .page-number{
+
+        min-width:38px;
+
+        height:38px;
+
+        font-size:13px;
+
+    }
+
+
+    .page-btn span{
+
+        display:none;
 
     }
 
@@ -1729,20 +2058,31 @@ class="sidebar"
 id="sidebar"
 >
 
+
     <div class="sidebar-header">
+
 
         <div class="sidebar-logo">
 
+
             <i class="fa-solid fa-headset"></i>
 
-            <span>Support Log</span>
+
+            <span>
+
+                Support Log
+
+            </span>
+
 
         </div>
+
 
     </div>
 
 
     <nav class="sidebar-menu">
+
 
         <a
         href="index.html"
@@ -1751,7 +2091,11 @@ id="sidebar"
 
             <i class="fa-solid fa-house"></i>
 
-            <span>Dashboard</span>
+            <span>
+
+                Dashboard
+
+            </span>
 
         </a>
 
@@ -1763,7 +2107,11 @@ id="sidebar"
 
             <i class="fa-solid fa-plus-circle"></i>
 
-            <span>New Entry</span>
+            <span>
+
+                New Entry
+
+            </span>
 
         </a>
 
@@ -1775,7 +2123,11 @@ id="sidebar"
 
             <i class="fa-solid fa-headset"></i>
 
-            <span>Pending Support</span>
+            <span>
+
+                Pending Support
+
+            </span>
 
         </a>
 
@@ -1787,7 +2139,11 @@ id="sidebar"
 
             <i class="fa-solid fa-phone"></i>
 
-            <span>Pending Call</span>
+            <span>
+
+                Pending Call
+
+            </span>
 
         </a>
 
@@ -1799,7 +2155,11 @@ id="sidebar"
 
             <i class="fa-solid fa-clock-rotate-left"></i>
 
-            <span>Support Log History</span>
+            <span>
+
+                Support Log History
+
+            </span>
 
         </a>
 
@@ -1811,16 +2171,22 @@ id="sidebar"
 
             <i class="fa-solid fa-user-gear"></i>
 
-            <span>User Account</span>
+            <span>
+
+                User Account
+
+            </span>
 
         </a>
+
 
     </nav>
 
 
     <!-- LOGOUT -->
 
-    <div class="sidebar-bottom">
+    <div class="logout-area">
+
 
         <button
         class="logout-btn"
@@ -1828,13 +2194,22 @@ id="sidebar"
         title="Logout"
         >
 
+
             <i class="fa-solid fa-right-from-bracket"></i>
 
-            <span>Logout</span>
+
+            <span>
+
+                Logout
+
+            </span>
+
 
         </button>
 
+
     </div>
+
 
 </aside>
 
@@ -1845,81 +2220,171 @@ id="sidebar"
 
 <div class="main-area">
 
+
 <div class="container">
 
 
-<!-- HEADER -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <div class="header">
 
+
     <div class="header-left">
+
 
         <button
         class="top-menu-button"
         id="topMenuButton"
         onclick="toggleSidebar()"
         title="Open / Close Sidebar"
+        aria-label="Open / Close Sidebar"
         >
 
+
             <i class="fa-solid fa-bars"></i>
+
 
         </button>
 
 
         <div class="header-title">
 
+
             <h1>
+
                 LINK4 COMMUNICATION
+
             </h1>
 
+
             <p>
+
                 Support Management System
+
             </p>
 
-            <div class="logged-user">
-
-                <i class="fa-solid fa-user"></i>
-
-                <span id="loggedUser">
-                    Loading...
-                </span>
-
-            </div>
 
         </div>
 
+
     </div>
+
+
+    <!-- USERNAME RIGHT CORNER -->
+
+    <div class="logged-user">
+
+
+        <div class="logged-user-icon">
+
+
+            <i class="fa-solid fa-user"></i>
+
+
+        </div>
+
+
+        <span id="loggedUser">
+
+            Loading...
+
+        </span>
+
+
+    </div>
+
 
 </div>
 
 
-<!-- FILTER -->
+<!-- =====================================================
+     FILTER AREA
+===================================================== -->
 
 <div class="filter-area">
 
-    <div class="search-box">
 
-        <i class="fa-solid fa-magnifying-glass"></i>
-
-        <input
-        type="text"
-        id="searchInput"
-        placeholder="Search Customer ID, Problem, Reference, Support..."
-        oninput="applyFilters()"
-        >
-
-    </div>
+    <div class="filter-main-row">
 
 
-    <div class="filter-row">
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+
+            <input
+            type="text"
+            id="searchInput"
+            placeholder="Search Customer ID, Problem, Reference, Support..."
+            oninput="applyFilters()"
+            >
+
+
+        </div>
+
+
+        <!-- FROM -->
+
+        <div class="date-filter">
+
+
+            <label>
+
+                <i class="fa-regular fa-calendar"></i>
+
+                From
+
+            </label>
+
+
+            <input
+            type="date"
+            id="fromDate"
+            onchange="applyFilters()"
+            >
+
+
+        </div>
+
+
+        <!-- TO -->
+
+        <div class="date-filter">
+
+
+            <label>
+
+                To
+
+            </label>
+
+
+            <input
+            type="date"
+            id="toDate"
+            onchange="applyFilters()"
+            >
+
+
+        </div>
+
+
+        <!-- LAST DAYS -->
 
         <div class="last-days-box">
 
-            <i class="fa-regular fa-calendar"></i>
 
-            <span class="filter-label">
-                Older Than
+            <span class="last-days-label">
+
+                Last Days
+
             </span>
+
 
             <input
             type="number"
@@ -1930,34 +2395,11 @@ id="sidebar"
             oninput="applyFilters()"
             >
 
-        </div>
-
-
-        <div class="date-box">
-
-            <label>From</label>
-
-            <input
-            type="date"
-            id="fromDate"
-            onchange="applyFilters()"
-            >
 
         </div>
 
 
-        <div class="date-box">
-
-            <label>To</label>
-
-            <input
-            type="date"
-            id="toDate"
-            onchange="applyFilters()"
-            >
-
-        </div>
-
+        <!-- STATUS -->
 
         <select
         id="statusFilter"
@@ -1965,44 +2407,64 @@ id="sidebar"
         onchange="applyFilters()"
         >
 
+
             <option value="all">
+
                 All
+
             </option>
 
+
             <option value="completed">
+
                 Completed
+
             </option>
+
 
         </select>
 
+
+        <!-- CLEAR -->
 
         <button
         class="clear-btn"
         onclick="clearFilters()"
         >
 
+
             <i class="fa-solid fa-filter-circle-xmark"></i>
 
             Clear
 
+
         </button>
 
+
     </div>
+
 
 </div>
 
 
-<!-- CONTENT -->
+<!-- =====================================================
+     CONTENT
+===================================================== -->
 
 <div class="content-card">
 
+
     <div class="content-header">
+
 
         <h2>
 
+
             <i class="fa-solid fa-list-check"></i>
 
+
             History Records
+
 
         </h2>
 
@@ -2016,6 +2478,7 @@ id="sidebar"
 
         </div>
 
+
     </div>
 
 
@@ -2024,22 +2487,27 @@ id="sidebar"
     class="loading"
     >
 
+
         <div class="spinner"></div>
+
 
         Loading History...
 
+
     </div>
 
+
 </div>
 
 
 </div>
+
 
 </div>
 
 
 <!-- =====================================================
-     MODAL
+     VIEW MODAL
 ===================================================== -->
 
 <div
@@ -2048,15 +2516,21 @@ id="callModal"
 onclick="outsideModal(event)"
 >
 
+
     <div class="modal-box">
+
 
         <div class="modal-header">
 
+
             <h3>
+
 
                 <i class="fa-solid fa-circle-info"></i>
 
+
                 Support Details
+
 
             </h3>
 
@@ -2066,160 +2540,256 @@ onclick="outsideModal(event)"
             onclick="closeModal()"
             >
 
+
                 ×
 
+
             </button>
+
 
         </div>
 
 
         <div class="details">
 
+
             <div class="detail-grid">
+
 
                 <div class="detail-item">
 
+
                     <div class="detail-label">
+
+
+                        <i class="fa-solid fa-user"></i>
+
                         Customer ID
+
+
                     </div>
+
 
                     <div
                     class="detail-value"
                     id="mCustomer"
                     ></div>
 
+
                 </div>
 
 
                 <div class="detail-item">
 
+
                     <div class="detail-label">
+
+
+                        <i class="fa-regular fa-calendar"></i>
+
                         Date
+
+
                     </div>
+
 
                     <div
                     class="detail-value"
                     id="mDate"
                     ></div>
 
+
                 </div>
 
 
                 <div class="detail-item full">
 
+
                     <div class="detail-label">
+
+
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+
                         Problem
+
+
                     </div>
+
 
                     <div
                     class="detail-value"
                     id="mProblem"
                     ></div>
 
+
                 </div>
 
 
                 <div class="detail-item">
 
+
                     <div class="detail-label">
+
+
+                        <i class="fa-solid fa-link"></i>
+
                         Reference
+
+
                     </div>
+
 
                     <div
                     class="detail-value"
                     id="mReference"
                     ></div>
 
+
                 </div>
 
 
                 <div class="detail-item">
 
+
                     <div class="detail-label">
+
+
+                        <i class="fa-solid fa-headset"></i>
+
                         Support
+
+
                     </div>
+
 
                     <div
                     class="detail-value"
                     id="mSupport"
                     ></div>
 
+
                 </div>
 
 
                 <div class="detail-item full">
 
+
                     <div class="detail-label">
+
+
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+
                         Support Work
+
+
                     </div>
+
 
                     <div
                     class="detail-value"
                     id="mSupportWork"
                     ></div>
 
+
                 </div>
+
 
             </div>
 
 
             <div class="readonly-section">
 
+
                 <div class="readonly-box">
 
+
                     <label class="readonly-label">
+
+
                         <i class="fa-solid fa-phone"></i>
+
                         Call Person
+
+
                     </label>
+
 
                     <div
                     class="readonly-value"
                     id="mCallPerson"
                     ></div>
 
+
                 </div>
 
 
                 <div class="readonly-box">
 
+
                     <label class="readonly-label">
+
+
                         <i class="fa-solid fa-phone-volume"></i>
+
                         Call Work
+
+
                     </label>
+
 
                     <div
                     class="call-work-value"
                     id="mCallWork"
                     ></div>
 
+
                 </div>
 
 
                 <div class="modal-actions">
+
 
                     <button
                     class="cancel-btn"
                     onclick="closeModal()"
                     >
 
+
                         <i class="fa-solid fa-xmark"></i>
 
                         Close
 
+
                     </button>
+
 
                 </div>
 
+
             </div>
+
 
         </div>
 
+
     </div>
+
 
 </div>
 
 
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+class="toast"
+id="toast"
+></div>
+
+
 <script>
+
 
 /* =====================================================
    API URL
@@ -2263,62 +2833,53 @@ function(){
 
 
 /* =====================================================
-   LOAD USER
+   LOAD LOGIN USERNAME
 ===================================================== */
 
 function loadUser(){
 
     const loggedUser =
-    document.getElementById(
-        "loggedUser"
-    );
-
-
-    if(
-        localStorage.getItem(
-            "loggedIn"
-        ) !== "true"
-    ){
-
-        window.location.replace(
-            "../index.html"
-        );
-
-        return;
-
-    }
+        document.getElementById("loggedUser");
 
 
     const username =
-    localStorage.getItem(
-        "username"
-    );
+        localStorage.getItem("username");
 
 
     const name =
-    localStorage.getItem(
-        "name"
-    );
+        localStorage.getItem("name");
+
+
+    /*
+       এখানে Username দেখানো হবে।
+
+       Login করার সময়:
+       localStorage.setItem("username", ...)
+       save করা হয়েছে।
+
+       তাই যে Username দিয়ে Login করবে,
+       Header-এর একদম ডান পাশে সেই Username আসবে।
+    */
 
 
     if(username){
 
         loggedUser.textContent =
-        username;
+            username;
 
     }
 
     else if(name){
 
         loggedUser.textContent =
-        name;
+            name;
 
     }
 
     else{
 
         loggedUser.textContent =
-        "User";
+            "User";
 
     }
 
@@ -2332,9 +2893,9 @@ function loadUser(){
 function logoutUser(){
 
     const confirmLogout =
-    confirm(
-        "Are you sure you want to logout?"
-    );
+        confirm(
+            "Are you sure you want to logout?"
+        );
 
 
     if(!confirmLogout){
@@ -2343,6 +2904,10 @@ function logoutUser(){
 
     }
 
+
+    /*
+       LOGIN SESSION CLEAR
+    */
 
     localStorage.removeItem(
         "loggedIn"
@@ -2361,6 +2926,13 @@ function logoutUser(){
     );
 
 
+    /*
+       LOGIN PAGE
+
+       history.html থেকে এক ধাপ উপরে
+       গিয়ে index.html হলো Login Page।
+    */
+
     window.location.replace(
         "../index.html"
     );
@@ -2370,15 +2942,20 @@ function logoutUser(){
 
 /* =====================================================
    SIDEBAR TOGGLE
+   HEADER ☰ BUTTON
 ===================================================== */
 
 function toggleSidebar(){
 
     const sidebar =
-    document.getElementById(
-        "sidebar"
-    );
+        document.getElementById(
+            "sidebar"
+        );
 
+
+    /*
+       MOBILE
+    */
 
     if(window.innerWidth <= 900){
 
@@ -2390,6 +2967,10 @@ function toggleSidebar(){
 
     }
 
+
+    /*
+       DESKTOP
+    */
 
     sidebar.classList.toggle(
         "collapsed"
@@ -2407,16 +2988,16 @@ function toggleSidebar(){
 
 
     const collapsed =
-    sidebar.classList.contains(
-        "collapsed"
-    );
+        sidebar.classList.contains(
+            "collapsed"
+        );
 
 
     localStorage.setItem(
         "supportSidebarCollapsed",
         collapsed
-        ? "true"
-        : "false"
+            ? "true"
+            : "false"
     );
 
 }
@@ -2428,6 +3009,12 @@ function toggleSidebar(){
 
 function restoreSidebarState(){
 
+    const sidebar =
+        document.getElementById(
+            "sidebar"
+        );
+
+
     if(window.innerWidth <= 900){
 
         document.body.classList.remove(
@@ -2438,21 +3025,19 @@ function restoreSidebarState(){
             "sidebar-collapsed"
         );
 
+        sidebar.classList.remove(
+            "collapsed"
+        );
+
         return;
 
     }
 
 
     const collapsed =
-    localStorage.getItem(
-        "supportSidebarCollapsed"
-    );
-
-
-    const sidebar =
-    document.getElementById(
-        "sidebar"
-    );
+        localStorage.getItem(
+            "supportSidebarCollapsed"
+        );
 
 
     if(collapsed === "true"){
@@ -2491,93 +3076,104 @@ function restoreSidebarState(){
 
 
 /* =====================================================
-   LOAD DATA
+   LOAD HISTORY DATA
 ===================================================== */
 
 async function loadData(){
 
     const content =
-    document.getElementById(
-        "content"
-    );
+        document.getElementById(
+            "content"
+        );
 
 
     content.className =
-    "loading";
+        "loading";
 
 
     content.innerHTML =
-    '<div class="spinner"></div>Loading History...';
+        '<div class="spinner"></div>' +
+        'Loading History...';
 
 
     try{
 
+
         const response =
-        await fetch(
+            await fetch(
 
-            API_URL +
-            "?action=history&_=" +
-            Date.now(),
+                API_URL +
+                "?action=history&_=" +
+                Date.now(),
 
-            {
-                method:"GET",
-                cache:"no-store"
-            }
+                {
 
-        );
+                    method:"GET",
+
+                    cache:"no-store"
+
+                }
+
+            );
 
 
         const result =
-        await response.json();
+            await response.json();
 
 
-        if(!result.success){
+        if(
+            !result.success
+        ){
 
             throw new Error(
+
                 result.message ||
                 "Failed to load History."
+
             );
 
         }
 
 
         allData =
-        Array.isArray(
+            Array.isArray(
+                result.data
+            )
+            ?
             result.data
-        )
-        ?
-        result.data
-        :
-        [];
+            :
+            [];
 
 
         applyFilters();
+
 
     }
 
     catch(error){
 
+
         content.className =
-        "empty";
+            "empty";
 
 
         content.innerHTML =
 
-        '<div class="empty-icon">' +
+            '<div class="empty-icon">' +
 
-        '<i class="fa-solid fa-triangle-exclamation"></i>' +
+            '<i class="fa-solid fa-triangle-exclamation"></i>' +
 
-        '</div>' +
+            '</div>' +
 
-        '<h3>Failed to Load</h3>' +
+            '<h3>Failed to Load</h3>' +
 
-        '<p>' +
+            '<p>' +
 
-        escapeHtml(
-            error.message
-        ) +
+            escapeHtml(
+                error.message
+            ) +
 
-        '</p>';
+            '</p>';
 
     }
 
@@ -2591,243 +3187,280 @@ async function loadData(){
 function applyFilters(){
 
     const search =
-    document.getElementById(
-        "searchInput"
-    ).value
-    .toLowerCase()
-    .trim();
+        document.getElementById(
+            "searchInput"
+        )
+        .value
+        .toLowerCase()
+        .trim();
 
 
     const lastDaysValue =
-    document.getElementById(
-        "lastDays"
-    ).value;
+        document.getElementById(
+            "lastDays"
+        ).value;
 
 
     const lastDays =
-    lastDaysValue
-    ?
-    parseInt(
-        lastDaysValue,
-        10
-    )
-    :
-    null;
+        lastDaysValue
+        ?
+        parseInt(
+            lastDaysValue,
+            10
+        )
+        :
+        null;
 
 
     const fromDate =
-    document.getElementById(
-        "fromDate"
-    ).value;
+        document.getElementById(
+            "fromDate"
+        ).value;
 
 
     const toDate =
-    document.getElementById(
-        "toDate"
-    ).value;
+        document.getElementById(
+            "toDate"
+        ).value;
 
 
     filteredData =
-    allData.filter(
-    function(item){
+        allData.filter(
+            function(item){
 
-        const searchable =
 
-        (
+                const searchable =
 
-            item.customerId ||
-            item.customerNumber ||
-            item.ip ||
-            ""
+                (
 
-        ) +
+                    item.customerId ||
 
-        " " +
+                    item.customerNumber ||
 
-        (
+                    item.ip ||
 
-            item.problem ||
-            ""
+                    ""
 
-        ) +
+                ) +
 
-        " " +
+                " " +
 
-        (
+                (
 
-            item.reference ||
-            item.ref ||
-            ""
+                    item.problem ||
 
-        ) +
+                    ""
 
-        " " +
+                ) +
 
-        (
+                " " +
 
-            item.support ||
-            ""
+                (
 
-        ) +
+                    item.reference ||
 
-        " " +
+                    item.ref ||
 
-        (
+                    ""
 
-            item.supportWork ||
-            ""
+                ) +
 
-        ) +
+                " " +
 
-        " " +
+                (
 
-        (
+                    item.support ||
 
-            item.call ||
-            item.callPerson ||
-            ""
+                    ""
 
-        ) +
+                ) +
 
-        " " +
+                " " +
 
-        (
+                (
 
-            item.callWork ||
-            ""
+                    item.supportWork ||
 
+                    ""
+
+                ) +
+
+                " " +
+
+                (
+
+                    item.call ||
+
+                    item.callPerson ||
+
+                    ""
+
+                ) +
+
+                " " +
+
+                (
+
+                    item.callWork ||
+
+                    ""
+
+                );
+
+
+                if(
+
+                    search &&
+
+                    !searchable
+
+                    .toLowerCase()
+
+                    .includes(search)
+
+                ){
+
+                    return false;
+
+                }
+
+
+                const itemDate =
+                    parseDate(
+                        item.date
+                    );
+
+
+                /* OLDER THAN */
+
+                if(
+
+                    lastDays !== null &&
+
+                    !isNaN(lastDays) &&
+
+                    lastDays >= 1
+
+                ){
+
+                    if(
+                        !itemDate
+                    ){
+
+                        return false;
+
+                    }
+
+
+                    const today =
+                        new Date();
+
+
+                    today.setHours(
+                        23,
+                        59,
+                        59,
+                        999
+                    );
+
+
+                    const cutoff =
+                        new Date(
+                            today
+                        );
+
+
+                    cutoff.setDate(
+
+                        cutoff.getDate() -
+
+                        lastDays
+
+                    );
+
+
+                    cutoff.setHours(
+                        0,
+                        0,
+                        0,
+                        0
+                    );
+
+
+                    if(
+
+                        itemDate >= cutoff
+
+                    ){
+
+                        return false;
+
+                    }
+
+                }
+
+
+                /* FROM */
+
+                if(fromDate){
+
+                    const from =
+                        new Date(
+                            fromDate +
+                            "T00:00:00"
+                        );
+
+
+                    if(
+
+                        !itemDate ||
+
+                        itemDate < from
+
+                    ){
+
+                        return false;
+
+                    }
+
+                }
+
+
+                /* TO */
+
+                if(toDate){
+
+                    const to =
+                        new Date(
+                            toDate +
+                            "T23:59:59"
+                        );
+
+
+                    if(
+
+                        !itemDate ||
+
+                        itemDate > to
+
+                    ){
+
+                        return false;
+
+                    }
+
+                }
+
+
+                return true;
+
+
+            }
         );
-
-
-        if(
-
-            search &&
-
-            !searchable
-            .toLowerCase()
-            .includes(search)
-
-        ){
-
-            return false;
-
-        }
-
-
-        const itemDate =
-        parseDate(
-            item.date
-        );
-
-
-        if(
-
-            lastDays !== null &&
-
-            !isNaN(lastDays) &&
-
-            lastDays >= 1
-
-        ){
-
-            if(!itemDate){
-
-                return false;
-
-            }
-
-
-            const today =
-            new Date();
-
-
-            today.setHours(
-                23,
-                59,
-                59,
-                999
-            );
-
-
-            const cutoff =
-            new Date(
-                today
-            );
-
-
-            cutoff.setDate(
-                cutoff.getDate() -
-                lastDays
-            );
-
-
-            cutoff.setHours(
-                0,
-                0,
-                0,
-                0
-            );
-
-
-            if(
-                itemDate >= cutoff
-            ){
-
-                return false;
-
-            }
-
-        }
-
-
-        if(fromDate){
-
-            const from =
-            new Date(
-                fromDate +
-                "T00:00:00"
-            );
-
-
-            if(
-                !itemDate ||
-                itemDate < from
-            ){
-
-                return false;
-
-            }
-
-        }
-
-
-        if(toDate){
-
-            const to =
-            new Date(
-                toDate +
-                "T23:59:59"
-            );
-
-
-            if(
-                !itemDate ||
-                itemDate > to
-            ){
-
-                return false;
-
-            }
-
-        }
-
-
-        return true;
-
-    });
 
 
     currentPage = 1;
+
 
     renderData(
         filteredData
@@ -2843,35 +3476,36 @@ function applyFilters(){
 function renderData(data){
 
     const content =
-    document.getElementById(
-        "content"
-    );
+        document.getElementById(
+            "content"
+        );
 
 
     document.getElementById(
         "pendingCount"
     ).textContent =
-    data.length +
-    " Records";
+
+        data.length +
+        " Records";
 
 
     if(data.length === 0){
 
         content.className =
-        "empty";
+            "empty";
 
 
         content.innerHTML =
 
-        '<div class="empty-icon">' +
+            '<div class="empty-icon">' +
 
-        '<i class="fa-solid fa-folder-open"></i>' +
+            '<i class="fa-solid fa-folder-open"></i>' +
 
-        '</div>' +
+            '</div>' +
 
-        '<h3>No History Found</h3>' +
+            '<h3>No History Found</h3>' +
 
-        '<p>No completed support records found.</p>';
+            '<p>No completed support records found.</p>';
 
 
         return;
@@ -2880,10 +3514,13 @@ function renderData(data){
 
 
     const totalPages =
-    Math.ceil(
-        data.length /
-        ITEMS_PER_PAGE
-    );
+        Math.ceil(
+
+            data.length /
+
+            ITEMS_PER_PAGE
+
+        );
 
 
     if(
@@ -2900,270 +3537,220 @@ function renderData(data){
     ){
 
         currentPage =
-        totalPages;
+            totalPages;
 
     }
 
 
     const startIndex =
-    (
-        currentPage - 1
-    ) *
-    ITEMS_PER_PAGE;
+
+        (currentPage - 1) *
+
+        ITEMS_PER_PAGE;
+
+
+    const endIndex =
+
+        startIndex +
+
+        ITEMS_PER_PAGE;
 
 
     const pageData =
-    data.slice(
-        startIndex,
-        startIndex +
-        ITEMS_PER_PAGE
-    );
+
+        data.slice(
+            startIndex,
+            endIndex
+        );
 
 
     content.className =
-    "table-wrapper";
+        "table-wrapper";
 
 
     let html =
 
-    '<table>' +
+        '<table>' +
 
-    '<thead><tr>' +
+        '<thead><tr>' +
 
-    '<th>Customer ID</th>' +
+        '<th>Customer ID</th>' +
 
-    '<th>Date</th>' +
+        '<th>Date</th>' +
 
-    '<th>Problem</th>' +
+        '<th>Problem</th>' +
 
-    '<th>Reference</th>' +
+        '<th>Reference</th>' +
 
-    '<th>Support</th>' +
+        '<th>Support</th>' +
 
-    '<th>Call</th>' +
+        '<th>Call</th>' +
 
-    '<th>Action</th>' +
+        '<th>Action</th>' +
 
-    '</tr></thead><tbody>';
+        '</tr></thead><tbody>';
 
 
     pageData.forEach(
-    function(item,index){
 
-        const realIndex =
-        startIndex +
-        index;
+        function(item,index){
 
 
-        html +=
+            const realIndex =
 
-        '<tr>' +
+                startIndex +
 
-        '<td><span class="customer-badge">' +
+                index;
 
-        '<i class="fa-solid fa-user"></i>' +
 
-        escapeHtml(
+            html +=
 
-            item.customerId ||
+                '<tr>' +
 
-            item.customerNumber ||
+                '<td>' +
 
-            item.ip ||
+                '<span class="customer-badge">' +
 
-            ""
+                '<i class="fa-solid fa-user"></i>' +
 
-        ) +
+                escapeHtml(
 
-        '</span></td>' +
+                    item.customerId ||
 
-        '<td>' +
+                    item.customerNumber ||
 
-        escapeHtml(
+                    item.ip ||
 
-            formatDateDMY(
+                    ""
 
-                item.date ||
+                ) +
 
-                ""
+                '</span>' +
 
-            )
+                '</td>' +
 
-        ) +
+                '<td>' +
 
-        '</td>' +
+                escapeHtml(
 
-        '<td>' +
+                    formatDateDMY(
 
-        escapeHtml(
+                        item.date ||
 
-            item.problem ||
+                        ""
 
-            ""
+                    )
 
-        ) +
+                ) +
 
-        '</td>' +
+                '</td>' +
 
-        '<td><span class="ref-badge">' +
+                '<td>' +
 
-        escapeHtml(
+                escapeHtml(
 
-            item.reference ||
+                    item.problem ||
 
-            item.ref ||
+                    ""
 
-            "-"
+                ) +
 
-        ) +
+                '</td>' +
 
-        '</span></td>' +
+                '<td>' +
 
-        '<td>' +
+                '<span class="ref-badge">' +
 
-        escapeHtml(
+                escapeHtml(
 
-            item.support ||
+                    item.reference ||
 
-            ""
+                    item.ref ||
 
-        ) +
+                    "-"
 
-        '</td>' +
+                ) +
 
-        '<td>' +
+                '</span>' +
 
-        escapeHtml(
+                '</td>' +
 
-            item.call ||
+                '<td>' +
 
-            item.callPerson ||
+                escapeHtml(
 
-            ""
+                    item.support ||
 
-        ) +
+                    ""
 
-        '</td>' +
+                ) +
 
-        '<td>' +
+                '</td>' +
 
-        '<button class="view-btn" onclick="openModal(' +
+                '<td>' +
 
-        realIndex +
+                escapeHtml(
 
-        ')">' +
+                    item.call ||
 
-        '<i class="fa-solid fa-eye"></i>' +
+                    item.callPerson ||
 
-        'View' +
+                    ""
 
-        '</button>' +
+                ) +
 
-        '</td>' +
+                '</td>' +
 
-        '</tr>';
+                '<td>' +
 
-    });
+                '<button class="view-btn" onclick="openModal(' +
+
+                realIndex +
+
+                ')">' +
+
+                '<i class="fa-solid fa-eye"></i>' +
+
+                'View' +
+
+                '</button>' +
+
+                '</td>' +
+
+                '</tr>';
+
+        }
+
+    );
 
 
     html +=
-    '</tbody></table>';
+        '</tbody></table>';
 
 
     if(totalPages > 1){
 
-        html +=
-        '<div class="pagination">';
-
 
         html +=
 
-        '<button class="page-btn" onclick="changePage(' +
-
-        (
-
-            currentPage -
-
-            1
-
-        ) +
-
-        ')" ' +
-
-        (
-
-            currentPage === 1
-
-            ?
-
-            'disabled'
-
-            :
-
-            ''
-
-        ) +
-
-        '>' +
-
-        '<i class="fa-solid fa-chevron-left"></i>' +
-
-        '<span>Previous</span>' +
-
-        '</button>';
+            '<div class="pagination">';
 
 
-        let startPage =
-        Math.max(
-            1,
-            currentPage - 2
-        );
+        html +=
 
+            '<button class="page-btn" onclick="changePage(' +
 
-        let endPage =
-        Math.min(
-            totalPages,
-            startPage + 4
-        );
+            (currentPage - 1) +
 
-
-        if(
-            endPage -
-            startPage <
-            4
-        ){
-
-            startPage =
-            Math.max(
-                1,
-                endPage - 4
-            );
-
-        }
-
-
-        for(
-            let i =
-            startPage;
-
-            i <=
-            endPage;
-
-            i++
-        ){
-
-            html +=
-
-            '<button class="page-number ' +
+            ')" ' +
 
             (
 
-                i ===
-                currentPage
+                currentPage === 1
 
                 ?
 
-                'active'
+                'disabled'
 
                 :
 
@@ -3171,65 +3758,140 @@ function renderData(data){
 
             ) +
 
-            '" onclick="changePage(' +
+            '>' +
 
-            i +
+            '<i class="fa-solid fa-chevron-left"></i>' +
 
-            ')">' +
-
-            i +
+            '<span>Previous</span>' +
 
             '</button>';
+
+
+        let startPage =
+
+            Math.max(
+
+                1,
+
+                currentPage - 2
+
+            );
+
+
+        let endPage =
+
+            Math.min(
+
+                totalPages,
+
+                startPage + 4
+
+            );
+
+
+        if(
+
+            endPage -
+
+            startPage <
+
+            4
+
+        ){
+
+            startPage =
+
+                Math.max(
+
+                    1,
+
+                    endPage - 4
+
+                );
+
+        }
+
+
+        for(
+
+            let i = startPage;
+
+            i <= endPage;
+
+            i++
+
+        ){
+
+            html +=
+
+                '<button class="page-number ' +
+
+                (
+
+                    i === currentPage
+
+                    ?
+
+                    'active'
+
+                    :
+
+                    ''
+
+                ) +
+
+                '" onclick="changePage(' +
+
+                i +
+
+                ')">' +
+
+                i +
+
+                '</button>';
 
         }
 
 
         html +=
 
-        '<button class="page-btn" onclick="changePage(' +
+            '<button class="page-btn" onclick="changePage(' +
 
-        (
+            (currentPage + 1) +
 
-            currentPage +
+            ')" ' +
 
-            1
+            (
 
-        ) +
+                currentPage === totalPages
 
-        ')" ' +
+                ?
 
-        (
+                'disabled'
 
-            currentPage ===
-            totalPages
+                :
 
-            ?
+                ''
 
-            'disabled'
+            ) +
 
-            :
+            '>' +
 
-            ''
+            '<span>Next</span>' +
 
-        ) +
+            '<i class="fa-solid fa-chevron-right"></i>' +
 
-        '>' +
-
-        '<span>Next</span>' +
-
-        '<i class="fa-solid fa-chevron-right"></i>' +
-
-        '</button>';
+            '</button>';
 
 
         html +=
-        '</div>';
+            '</div>';
 
     }
 
 
     content.innerHTML =
-    html;
+        html;
 
 }
 
@@ -3241,15 +3903,22 @@ function renderData(data){
 function changePage(page){
 
     const totalPages =
-    Math.ceil(
-        filteredData.length /
-        ITEMS_PER_PAGE
-    );
+
+        Math.ceil(
+
+            filteredData.length /
+
+            ITEMS_PER_PAGE
+
+        );
 
 
     if(
+
         page < 1 ||
+
         page > totalPages
+
     ){
 
         return;
@@ -3258,7 +3927,7 @@ function changePage(page){
 
 
     currentPage =
-    page;
+        page;
 
 
     renderData(
@@ -3267,16 +3936,22 @@ function changePage(page){
 
 
     const contentCard =
-    document.querySelector(
-        ".content-card"
-    );
+
+        document.querySelector(
+            ".content-card"
+        );
 
 
     if(contentCard){
 
         contentCard.scrollIntoView({
-            behavior:"smooth",
-            block:"start"
+
+            behavior:
+            "smooth",
+
+            block:
+            "start"
+
         });
 
     }
@@ -3291,7 +3966,7 @@ function changePage(page){
 function openModal(index){
 
     const data =
-    filteredData[index];
+        filteredData[index];
 
 
     if(!data){
@@ -3302,87 +3977,91 @@ function openModal(index){
 
 
     selectedItem =
-    data;
+        data;
 
 
     document.getElementById(
         "mCustomer"
     ).textContent =
 
-    data.customerId ||
+        data.customerId ||
 
-    data.customerNumber ||
+        data.customerNumber ||
 
-    data.ip ||
+        data.ip ||
 
-    "";
+        "";
 
 
     document.getElementById(
         "mDate"
     ).textContent =
 
-    formatDateDMY(
-        data.date ||
-        ""
-    );
+        formatDateDMY(
+
+            data.date ||
+
+            ""
+
+        );
 
 
     document.getElementById(
         "mProblem"
     ).textContent =
 
-    data.problem ||
-    "";
+        data.problem ||
+
+        "";
 
 
     document.getElementById(
         "mReference"
     ).textContent =
 
-    data.reference ||
+        data.reference ||
 
-    data.ref ||
+        data.ref ||
 
-    "-";
+        "-";
 
 
     document.getElementById(
         "mSupport"
     ).textContent =
 
-    data.support ||
+        data.support ||
 
-    "";
+        "";
 
 
     document.getElementById(
         "mSupportWork"
     ).textContent =
 
-    data.supportWork ||
+        data.supportWork ||
 
-    "";
+        "";
 
 
     document.getElementById(
         "mCallPerson"
     ).textContent =
 
-    data.call ||
+        data.call ||
 
-    data.callPerson ||
+        data.callPerson ||
 
-    "Unknown";
+        "Unknown";
 
 
     document.getElementById(
         "mCallWork"
     ).textContent =
 
-    data.callWork ||
+        data.callWork ||
 
-    "No Call Work Available";
+        "No Call Work Available";
 
 
     document.getElementById(
@@ -3408,7 +4087,7 @@ function closeModal(){
 
 
     selectedItem =
-    null;
+        null;
 
 }
 
@@ -3420,8 +4099,11 @@ function closeModal(){
 function outsideModal(event){
 
     if(
+
         event.target.id ===
+
         "callModal"
+
     ){
 
         closeModal();
@@ -3445,15 +4127,19 @@ function formatDateDMY(value){
 
 
     const text =
-    String(
-        value
-    ).trim();
+
+        String(
+            value
+        ).trim();
 
 
     let match =
-    text.match(
-        /^(\d{1,2})-(\d{1,2})-(\d{4})(.*)$/
-    );
+
+        text.match(
+
+            /^(\d{1,2})-(\d{1,2})-(\d{4})(.*)$/
+
+        );
 
 
     if(match){
@@ -3488,9 +4174,12 @@ function formatDateDMY(value){
 
 
     match =
-    text.match(
-        /^(\d{1,2})\/(\d{1,2})\/(\d{4})(.*)$/
-    );
+
+        text.match(
+
+            /^(\d{1,2})\/(\d{1,2})\/(\d{4})(.*)$/
+
+        );
 
 
     if(match){
@@ -3525,9 +4214,12 @@ function formatDateDMY(value){
 
 
     match =
-    text.match(
-        /^(\d{4})-(\d{1,2})-(\d{1,2})(.*)$/
-    );
+
+        text.match(
+
+            /^(\d{4})-(\d{1,2})-(\d{1,2})(.*)$/
+
+        );
 
 
     if(match){
@@ -3580,134 +4272,172 @@ function parseDate(value){
 
 
     const text =
-    String(
-        value
-    ).trim();
+
+        String(
+            value
+        ).trim();
 
 
     let match =
-    text.match(
-        /^(\d{1,2})-(\d{1,2})-(\d{4})/
-    );
+
+        text.match(
+
+            /^(\d{1,2})-(\d{1,2})-(\d{4})/
+
+        );
 
 
     if(match){
 
         const date =
-        new Date(
 
-            Number(
-                match[3]
-            ),
+            new Date(
 
-            Number(
-                match[2]
-            ) - 1,
+                Number(
+                    match[3]
+                ),
 
-            Number(
-                match[1]
-            )
+                Number(
+                    match[2]
+                ) - 1,
 
-        );
+                Number(
+                    match[1]
+                )
+
+            );
 
 
         return isNaN(
+
             date.getTime()
+
         )
+
         ?
+
         null
+
         :
+
         date;
 
     }
 
 
     match =
-    text.match(
-        /^(\d{1,2})\/(\d{1,2})\/(\d{4})/
-    );
+
+        text.match(
+
+            /^(\d{1,2})\/(\d{1,2})\/(\d{4})/
+
+        );
 
 
     if(match){
 
         const date =
-        new Date(
 
-            Number(
-                match[3]
-            ),
+            new Date(
 
-            Number(
-                match[1]
-            ) - 1,
+                Number(
+                    match[3]
+                ),
 
-            Number(
-                match[2]
-            )
+                Number(
+                    match[1]
+                ) - 1,
 
-        );
+                Number(
+                    match[2]
+                )
+
+            );
 
 
         return isNaN(
+
             date.getTime()
+
         )
+
         ?
+
         null
+
         :
+
         date;
 
     }
 
 
     match =
-    text.match(
-        /^(\d{4})-(\d{1,2})-(\d{1,2})/
-    );
+
+        text.match(
+
+            /^(\d{4})-(\d{1,2})-(\d{1,2})/
+
+        );
 
 
     if(match){
 
         const date =
-        new Date(
 
-            Number(
-                match[1]
-            ),
+            new Date(
 
-            Number(
-                match[2]
-            ) - 1,
+                Number(
+                    match[1]
+                ),
 
-            Number(
-                match[3]
-            )
+                Number(
+                    match[2]
+                ) - 1,
 
-        );
+                Number(
+                    match[3]
+                )
+
+            );
 
 
         return isNaN(
+
             date.getTime()
+
         )
+
         ?
+
         null
+
         :
+
         date;
 
     }
 
 
     const date =
-    new Date(
-        text
-    );
+
+        new Date(
+            text
+        );
 
 
     return isNaN(
+
         date.getTime()
+
     )
+
     ?
+
     null
+
     :
+
     date;
 
 }
@@ -3742,10 +4472,52 @@ function clearFilters(){
     document.getElementById(
         "statusFilter"
     ).value =
-    "all";
+        "all";
+
+
+    currentPage = 1;
 
 
     applyFilters();
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showToast(message){
+
+    const toast =
+
+        document.getElementById(
+            "toast"
+        );
+
+
+    toast.textContent =
+        message;
+
+
+    toast.classList.add(
+        "show"
+    );
+
+
+    setTimeout(
+
+        function(){
+
+            toast.classList.remove(
+                "show"
+            );
+
+        },
+
+        3000
+
+    );
 
 }
 
@@ -3757,7 +4529,11 @@ function clearFilters(){
 function escapeHtml(value){
 
     return String(
-        value || ""
+
+        value ||
+
+        ""
+
     )
 
     .replace(
@@ -3793,19 +4569,51 @@ function escapeHtml(value){
 ===================================================== */
 
 document.addEventListener(
+
 "keydown",
+
 function(event){
 
+
     if(
+
         event.key ===
+
         "Escape"
+
     ){
 
         closeModal();
 
     }
 
+
+    /*
+       MOBILE SIDEBAR CLOSE
+    */
+
+    if(
+
+        event.key ===
+        "Escape" &&
+
+        window.innerWidth <= 900
+
+    ){
+
+        document
+        .getElementById(
+            "sidebar"
+        )
+        .classList
+        .remove(
+            "mobile-open"
+        );
+
+    }
+
 }
+
 );
 
 
@@ -3814,12 +4622,13 @@ function(event){
 ===================================================== */
 
 document.addEventListener(
+
 "click",
+
 function(event){
 
     if(
-        window.innerWidth >
-        900
+        window.innerWidth > 900
     ){
 
         return;
@@ -3828,9 +4637,17 @@ function(event){
 
 
     const sidebar =
-    document.getElementById(
-        "sidebar"
-    );
+
+        document.getElementById(
+            "sidebar"
+        );
+
+
+    const menuButton =
+
+        document.getElementById(
+            "topMenuButton"
+        );
 
 
     if(
@@ -3847,8 +4664,8 @@ function(event){
 
         &&
 
-        !event.target.closest(
-            "#topMenuButton"
+        !menuButton.contains(
+            event.target
         )
 
     ){
@@ -3860,6 +4677,7 @@ function(event){
     }
 
 }
+
 );
 
 
@@ -3868,15 +4686,19 @@ function(event){
 ===================================================== */
 
 window.addEventListener(
+
 "resize",
+
 function(){
 
     restoreSidebarState();
 
 }
+
 );
 
 </script>
+
 
 </body>
 
